@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A9E835C4-9202-45F6-AF8A-20112B42B6CA}"
+	ProjectSection(SolutionItems) = preProject
+		src\generate.ps1 = src\generate.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{078D7939-1B80-4C72-85FD-18AD6F8EB5E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubSpot.MockServer", "src\HubSpot.MockServer\HubSpot.MockServer.csproj", "{F20ABC06-2DFE-45EF-965E-A88320EA2834}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubSpot.Tests", "test\HubSpot.Tests\HubSpot.Tests.csproj", "{40AA1115-4464-4F6E-A783-C250BC6E3D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubSpot.KiotaClient", "src\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj", "{2734BF5D-F486-4985-8C9E-7088103B636C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generate", "src\Generate\Generate.csproj", "{BDDEC6FD-FA36-49D3-A83D-5AF71169804D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F20ABC06-2DFE-45EF-965E-A88320EA2834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20ABC06-2DFE-45EF-965E-A88320EA2834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20ABC06-2DFE-45EF-965E-A88320EA2834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20ABC06-2DFE-45EF-965E-A88320EA2834}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40AA1115-4464-4F6E-A783-C250BC6E3D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40AA1115-4464-4F6E-A783-C250BC6E3D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40AA1115-4464-4F6E-A783-C250BC6E3D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40AA1115-4464-4F6E-A783-C250BC6E3D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2734BF5D-F486-4985-8C9E-7088103B636C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2734BF5D-F486-4985-8C9E-7088103B636C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2734BF5D-F486-4985-8C9E-7088103B636C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2734BF5D-F486-4985-8C9E-7088103B636C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDDEC6FD-FA36-49D3-A83D-5AF71169804D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDDEC6FD-FA36-49D3-A83D-5AF71169804D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDDEC6FD-FA36-49D3-A83D-5AF71169804D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDDEC6FD-FA36-49D3-A83D-5AF71169804D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F20ABC06-2DFE-45EF-965E-A88320EA2834} = {A9E835C4-9202-45F6-AF8A-20112B42B6CA}
+		{40AA1115-4464-4F6E-A783-C250BC6E3D0F} = {078D7939-1B80-4C72-85FD-18AD6F8EB5E7}
+		{2734BF5D-F486-4985-8C9E-7088103B636C} = {A9E835C4-9202-45F6-AF8A-20112B42B6CA}
+		{BDDEC6FD-FA36-49D3-A83D-5AF71169804D} = {A9E835C4-9202-45F6-AF8A-20112B42B6CA}
+	EndGlobalSection
+EndGlobal
