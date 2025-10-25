@@ -21,43 +21,44 @@ internal class HubSpotProperties
 
 internal class HubSpotObject(
     HubSpotObjectId id,
-    DateTimeOffset  createdAt,
-    DateTimeOffset  updatedAt,
-    bool            archived   = false,
+    DateTimeOffset createdAt,
+    DateTimeOffset updatedAt,
+    bool archived = false,
     DateTimeOffset? archivedAt = null)
 {
     private readonly Dictionary<string, HubSpotObjectProperty> _properties = new();
-    
-    public HubSpotObjectId                                    Id         => id;
+
+    public HubSpotObjectId Id => id;
     public IDictionary<string, HubSpotObjectProperty> Properties => _properties;
-    public bool                                               Archived   => archived;
-    public DateTimeOffset?                                    ArchivedAt => archivedAt;
-    public DateTimeOffset                                     CreatedAt  => createdAt;
-    public DateTimeOffset                                     UpdatedAt  => updatedAt;
+    public bool Archived => archived;
+    public DateTimeOffset? ArchivedAt => archivedAt;
+    public DateTimeOffset CreatedAt => createdAt;
+    public DateTimeOffset UpdatedAt => updatedAt;
 
     public static HubSpotObject Load(
-        int                                              id,
-        DateTimeOffset                                   createdAt,
-        DateTimeOffset                                   updatedAt,
-        bool                                             archived,
-        DateTimeOffset?                                  archivedAt,
+        int id,
+        DateTimeOffset createdAt,
+        DateTimeOffset updatedAt,
+        bool archived,
+        DateTimeOffset? archivedAt,
         Dictionary<string, List<PropertyValueEntryData>> properties)
     {
         var hubSpotObjectId = HubSpotObjectId.From(id);
-        var hubSpotObject   = new HubSpotObject(hubSpotObjectId, createdAt, updatedAt, archived, archivedAt);
+        var hubSpotObject = new HubSpotObject(hubSpotObjectId, createdAt, updatedAt, archived, archivedAt);
         foreach (var property in properties)
         {
             var propertyEntries = property.Value.Select(s => new PropertyValueEntry
             {
-                Timestamp   = s.Timestamp,
-                Value       = s.Value,
-                SourceId    = s.SourceId,
+                Timestamp = s.Timestamp,
+                Value = s.Value,
+                SourceId = s.SourceId,
                 SourceLabel = s.SourceLabel,
-                SourceType  = s.SourceType
+                SourceType = s.SourceType
             }).ToArray();
             var hubSpotObjectProperty = new HubSpotObjectProperty(property.Key, propertyEntries);
             hubSpotObject._properties.Add(property.Key, hubSpotObjectProperty);
         }
+
         return hubSpotObject;
     }
 }

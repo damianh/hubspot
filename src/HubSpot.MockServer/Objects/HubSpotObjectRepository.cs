@@ -108,7 +108,7 @@ internal class HubSpotObjectRepository(HubSpotObjectIdGenerator idGenerator, Tim
     public IReadOnlyList<HubSpotObject> List(int limit = 10, int? after = null, bool archived = false)
     {
         _readerWriterLock.EnterReadLock();
-        
+
         var objects = _objectsById.Values
             .Where(o => o.Archived == archived)
             .OrderBy(o => o.Id)
@@ -143,7 +143,7 @@ internal class HubSpotObjectRepository(HubSpotObjectIdGenerator idGenerator, Tim
     public bool Archive(HubSpotObjectId id)
     {
         _readerWriterLock.EnterWriteLock();
-        
+
         if (!_objectsById.TryGetValue(id, out var data))
         {
             _readerWriterLock.ExitWriteLock();
@@ -165,7 +165,7 @@ internal class HubSpotObjectRepository(HubSpotObjectIdGenerator idGenerator, Tim
         }
 
         _objectsById[id] = archivedData;
-        
+
         _readerWriterLock.ExitWriteLock();
         return true;
     }
