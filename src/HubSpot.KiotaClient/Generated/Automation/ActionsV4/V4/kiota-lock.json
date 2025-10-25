@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "267AC2B31906A9C62491215F8306767EA8876F54A5BEB61720AE1732E565507B1B5C6AE8E3974B3987D5C00CE0A3259ACA91301356FB885E8FAB0FF7064EA352",
+  "descriptionHash": "378FF894A1FB45FA02DCA96C619198A92B872AC55A151A0D92DF0C217BA35FF643476408211EE84E2591A91839B5651440CB88B881C486E15E3A9AECB481DD78",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Automation/Actions%20V4/versions/148901",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotAutomationActionsV4V4Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4",

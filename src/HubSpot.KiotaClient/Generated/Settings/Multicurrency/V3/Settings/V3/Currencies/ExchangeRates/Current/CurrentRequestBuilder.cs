@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         public CurrentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/exchange-rates/current", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve all current exchange rates for all currency pairs.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve all current exchange rates for all currency pairs.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -28,6 +28,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>The maxNumberOfCharacters property</summary>
+        public int? MaxNumberOfCharacters { get; set; }
+        /// <summary>The maxNumberOfOptions property</summary>
+        public int? MaxNumberOfOptions { get; set; }
         /// <summary>Name of the column</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.ColumnRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.ColumnRequest();
         }
         /// <summary>
@@ -75,6 +79,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
                 { "foreignTableId", n => { ForeignTableId = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "maxNumberOfCharacters", n => { MaxNumberOfCharacters = n.GetIntValue(); } },
+                { "maxNumberOfOptions", n => { MaxNumberOfOptions = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.ColumnRequest_type>(); } },
@@ -86,11 +92,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("foreignColumnId", ForeignColumnId);
             writer.WriteLongValue("foreignTableId", ForeignTableId);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("label", Label);
+            writer.WriteIntValue("maxNumberOfCharacters", MaxNumberOfCharacters);
+            writer.WriteIntValue("maxNumberOfOptions", MaxNumberOfOptions);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option>("options", Options);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.ColumnRequest_type>("type", Type);

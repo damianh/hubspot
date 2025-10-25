@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         {
         }
         /// <summary>
-        /// Search for existing custom event definitions.
+        /// Retrieve existing custom event definitions.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,12 +80,12 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition> PostAsync(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Search for existing custom event definitions.
+        /// Retrieve existing custom event definitions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -135,7 +135,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
             return new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.EventDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Search for existing custom event definitions.
+        /// Retrieve existing custom event definitions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventDefinitionsRequestBuilderGetQueryParameters 

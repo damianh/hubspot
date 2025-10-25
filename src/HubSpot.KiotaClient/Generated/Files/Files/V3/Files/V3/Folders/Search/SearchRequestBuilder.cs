@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files/v3/folders/search{?after*,before*,createdAt*,createdAtGte*,createdAtLte*,id*,limit*,name*,parentFolderId*,path*,properties*,sort*,updatedAt*,updatedAtGte*,updatedAtLte*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files/v3/folders/search{?after*,before*,createdAt*,createdAtGte*,createdAtLte*,idGte*,idLte*,ids*,limit*,name*,parentFolderIds*,path*,properties*,sort*,updatedAt*,updatedAtGte*,updatedAtLte*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files/v3/folders/search{?after*,before*,createdAt*,createdAtGte*,createdAtLte*,id*,limit*,name*,parentFolderId*,path*,properties*,sort*,updatedAt*,updatedAtGte*,updatedAtLte*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files/v3/folders/search{?after*,before*,createdAt*,createdAtGte*,createdAtLte*,idGte*,idLte*,ids*,limit*,name*,parentFolderIds*,path*,properties*,sort*,updatedAt*,updatedAtGte*,updatedAtLte*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum offset of items for a given search is 10000. Narrow your search down if you are reaching this limit.</summary>
+            /// <summary>Offset search results by this value. The default offset is 0 and the maximum offset of items for a given search is 10,000. Narrow your search down if you are reaching this limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -104,24 +104,29 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>Search for folders with the given creation timestamp.</summary>
+            /// <summary>Search folders by exact time of creation. Time must be epoch time in milliseconds.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Search folders by greater than or equal to time of creation. Can be used with createdAtLte to create a range.</summary>
             [QueryParameter("createdAtGte")]
             public DateTimeOffset? CreatedAtGte { get; set; }
+            /// <summary>Search folders by less than or equal to time of creation. Can be used with createdAtGte to create a range.</summary>
             [QueryParameter("createdAtLte")]
             public DateTimeOffset? CreatedAtLte { get; set; }
-            /// <summary>Search folder by given ID.</summary>
+            [QueryParameter("idGte")]
+            public long? IdGte { get; set; }
+            [QueryParameter("idLte")]
+            public long? IdLte { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("id")]
-            public string? Id { get; set; }
+            [QueryParameter("ids")]
+            public long?[]? Ids { get; set; }
 #nullable restore
 #else
-            [QueryParameter("id")]
-            public string Id { get; set; }
+            [QueryParameter("ids")]
+            public long?[] Ids { get; set; }
 #endif
-            /// <summary>Limit of results to return. Max limit is 100.</summary>
+            /// <summary>Number of items to return. Default limit is 10, maximum limit is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Search for folders containing the specified name.</summary>
@@ -134,10 +139,17 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>Search for folders with the given parent folderId.</summary>
-            [QueryParameter("parentFolderId")]
-            public long? ParentFolderId { get; set; }
-            /// <summary>Search for folders by path.</summary>
+            /// <summary>Search folders with the given parent folderId.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("parentFolderIds")]
+            public long?[]? ParentFolderIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("parentFolderIds")]
+            public long?[] ParentFolderIds { get; set; }
+#endif
+            /// <summary>Search folders by path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("path")]
@@ -167,11 +179,13 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-            /// <summary>Search for folder at given update timestamp.</summary>
+            /// <summary>Search folders by exact time of latest updated. Time must be epoch time in milliseconds.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Search folders by greater than or equal to time of latest update. Can be used with updatedAtLte to create a range.</summary>
             [QueryParameter("updatedAtGte")]
             public DateTimeOffset? UpdatedAtGte { get; set; }
+            /// <summary>Search folders by less than or equal to time of latest update. Can be used with updatedAtGte to create a range.</summary>
             [QueryParameter("updatedAtLte")]
             public DateTimeOffset? UpdatedAtLte { get; set; }
         }

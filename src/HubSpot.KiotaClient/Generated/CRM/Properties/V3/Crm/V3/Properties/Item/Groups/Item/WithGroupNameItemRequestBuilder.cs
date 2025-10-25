@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.G
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.G
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.G
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

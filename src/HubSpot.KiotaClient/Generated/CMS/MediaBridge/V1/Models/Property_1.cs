@@ -38,6 +38,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string CreatedUserId { get; set; }
 #endif
+        /// <summary>The dataSensitivity property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity? DataSensitivity { get; set; }
+        /// <summary>The dateDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dateDisplayHint? DateDisplayHint { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +118,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ReferencedObjectType { get; set; }
 #endif
+        /// <summary>The sensitiveDataCategories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SensitiveDataCategories { get; set; }
+#nullable restore
+#else
+        public List<string> SensitiveDataCategories { get; set; }
+#endif
         /// <summary>The showCurrencySymbol property</summary>
         public bool? ShowCurrencySymbol { get; set; }
         /// <summary>The type property</summary>
@@ -148,7 +160,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1();
         }
         /// <summary>
@@ -165,6 +177,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetStringValue(); } },
+                { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity>(); } },
+                { "dateDisplayHint", n => { DateDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dateDisplayHint>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
@@ -179,6 +193,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
+                { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -191,13 +206,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteBoolValue("calculated", Calculated);
             writer.WriteStringValue("calculationFormula", CalculationFormula);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdUserId", CreatedUserId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity>("dataSensitivity", DataSensitivity);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dateDisplayHint>("dateDisplayHint", DateDisplayHint);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("externalOptions", ExternalOptions);
@@ -212,6 +229,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
+            writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "ABF0738CA9AA6F7C12EC7F5AD3EBF1031DDAC493ABF8BD3E1F55D31CF6CD6CF9D147F230AE4D8AAD65F702F094EAB90D164EB7A4EA084F6CF2BE1E7E6C5BDAEB",
+  "descriptionHash": "53DB16BAFA68E4AE5EB27F0EC7A4E079E3CCA955AE33086B04EC1874AD95ABDB71E130FEAA7BD87C6694C830C7D5DA643ADE7131ABFF3C200F04C9C356E167F0",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Calling%20Extensions/versions/145891",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCallingExtensionsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3",

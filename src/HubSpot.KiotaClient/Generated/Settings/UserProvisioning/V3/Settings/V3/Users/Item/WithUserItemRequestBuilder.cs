@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUser> PutAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUser>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

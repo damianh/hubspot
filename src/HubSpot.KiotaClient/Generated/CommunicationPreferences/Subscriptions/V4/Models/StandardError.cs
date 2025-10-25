@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
+    /// <summary>
+    /// Ye olde error
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class StandardError : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>The main category of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The context property</summary>
+        /// <summary>Additional context-specific information related to the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_context? Context { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_context Context { get; set; }
 #endif
-        /// <summary>The errors property</summary>
+        /// <summary>The detailed error objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.ErrorDetail>? Errors { get; set; }
@@ -38,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.ErrorDetail> Errors { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>A unique ID for the error instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -46,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>URLs linking to documentation or resources associated with the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_links? Links { get; set; }
@@ -54,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_links Links { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>A human-readable string describing the error and possible remediation steps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -62,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The HTTP status code associated with the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -70,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>The subCategory property</summary>
+        /// <summary>A more specific error category within each main category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_subCategory? SubCategory { get; set; }
@@ -92,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError();
         }
         /// <summary>
@@ -119,7 +120,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError_context>("context", Context);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.ErrorDetail>("errors", Errors);

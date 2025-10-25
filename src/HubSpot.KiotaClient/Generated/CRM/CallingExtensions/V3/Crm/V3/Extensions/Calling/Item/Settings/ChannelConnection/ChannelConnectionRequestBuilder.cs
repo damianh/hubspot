@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         {
         }
         /// <summary>
-        /// Delete a calling extension&apos;s channel connection settings
+        /// Delete the [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#delete-existing-channel-connection-settings) for the app.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a calling extension&apos;s channel connection settings
+        /// Retrieve the settings related to the app&apos;s [channel connection](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#fetch-existing-channel-connection-settings).
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a calling extension&apos;s channel connection settings
+        /// Update existing [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#manage-the-webhook-settings-for-channel-connection) for your app.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -84,12 +84,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Configure a calling extension&apos;s channel connection settings
+        /// Configure [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#create-channel-connection-settings) for the app. 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -104,12 +104,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a calling extension&apos;s channel connection settings
+        /// Delete the [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#delete-existing-channel-connection-settings) for the app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,11 +124,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Get a calling extension&apos;s channel connection settings
+        /// Retrieve the settings related to the app&apos;s [channel connection](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#fetch-existing-channel-connection-settings).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Update a calling extension&apos;s channel connection settings
+        /// Update existing [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#manage-the-webhook-settings-for-channel-connection) for your app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +160,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -169,7 +168,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Configure a calling extension&apos;s channel connection settings
+        /// Configure [channel connection settings](https://developers.hubspot.com/docs/guides/api/crm/extensions/third-party-calling#create-channel-connection-settings) for the app. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -183,7 +182,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.ChannelConnectionSettingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

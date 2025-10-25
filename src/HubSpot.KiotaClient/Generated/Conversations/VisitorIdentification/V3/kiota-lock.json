@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "3BAACB2314E8E7988CDDBA99654B76763237530D5FB56B9162107566646F37F3A4C31A04D6CD93D0F5F88B5161702CD67AE87B9C0ECD0C6C748BDC5A4CF7C7B2",
+  "descriptionHash": "40D1D6DA05440499758B5CAAA370C5065759109E035E2FDEFC6CF440C80650BEF549C624E8723055310D354BD3B0758DFEDCE3157129FF5582D82074659EBA17",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Conversations/Visitor%20Identification/versions/140938",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotConversationsVisitorIdentificationV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V3",

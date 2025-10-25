@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             get => new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Callbacks.Complete.CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.automation.v4.actions.callbacks.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the action execution.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Callbacks.Item.WithCallbackItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Callbacks.Item.WithCallbackItemRequestBuilder this[string position]
         {

@@ -4,6 +4,7 @@ using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Draft;
 using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Export;
 using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows;
 using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Unpublish;
+using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Versions;
 using DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -40,6 +41,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Unpublish.UnpublishRequestBuilder Unpublish
         {
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Unpublish.UnpublishRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The versions property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Versions.VersionsRequestBuilder Versions
+        {
+            get => new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Versions.VersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.WithTableIdOrNameItemRequestBuilder"/> and sets the default values.
@@ -108,7 +114,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

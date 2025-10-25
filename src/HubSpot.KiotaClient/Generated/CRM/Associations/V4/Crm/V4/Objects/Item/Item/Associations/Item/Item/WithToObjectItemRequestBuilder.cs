@@ -53,22 +53,22 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.It
         /// <summary>
         /// Set association labels between two records.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.LabelsBetweenObjectPair"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CreatedResponseLabelsBetweenObjectPair"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.LabelsBetweenObjectPair?> PutAsync(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CreatedResponseLabelsBetweenObjectPair?> PutAsync(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.LabelsBetweenObjectPair> PutAsync(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CreatedResponseLabelsBetweenObjectPair> PutAsync(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.LabelsBetweenObjectPair>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.LabelsBetweenObjectPair.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CreatedResponseLabelsBetweenObjectPair>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CreatedResponseLabelsBetweenObjectPair.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// deletes all associations between two records.
@@ -86,7 +86,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.It
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -97,14 +96,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

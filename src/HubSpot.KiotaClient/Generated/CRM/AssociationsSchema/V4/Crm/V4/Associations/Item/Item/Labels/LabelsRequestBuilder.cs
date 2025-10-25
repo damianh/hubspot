@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Crm.V4.Associati
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.CollectionResponseAssociationSpecWithLabelNoPaging> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.CollectionResponseAssociationSpecWithLabelNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.CollectionResponseAssociationSpecWithLabelNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -112,7 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Crm.V4.Associati
         public async Task PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -150,7 +150,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Crm.V4.Associati
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -172,10 +172,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Crm.V4.Associati
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

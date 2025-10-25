@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The subscriberIdString property</summary>
+        /// <summary>The contact&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriberIdString { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string SubscriberIdString { get; set; }
 #endif
-        /// <summary>The wideStatuses property</summary>
+        /// <summary>An array containing the wide status results for the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicWideStatus>? WideStatuses { get; set; }
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicWideStatusBulkResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicWideStatusBulkResponse();
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("subscriberIdString", SubscriberIdString);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicWideStatus>("wideStatuses", WideStatuses);
             writer.WriteAdditionalData(AdditionalData);

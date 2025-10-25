@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         {
         }
         /// <summary>
-        /// Archive a batch of communications by ID
+        /// Delete a batch of messages by ID. A deleted message can be restored within 90 days of being deleted. Learn more about [restoring activity records](https://knowledge.hubspot.com/records/restore-deleted-activity-in-a-record).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,12 +48,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.BatchInputSimplePublicObjectId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of communications by ID
+        /// Delete a batch of messages by ID. A deleted message can be restored within 90 days of being deleted. Learn more about [restoring activity records](https://knowledge.hubspot.com/records/restore-deleted-activity-in-a-record).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -67,10 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.BatchInputSimplePublicObjectId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

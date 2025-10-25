@@ -7,13 +7,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PropertyUpdate_type
     {
-        [EnumMember(Value = "string")]
+        [EnumMember(Value = "bool")]
         #pragma warning disable CS1591
-        String,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "number")]
-        #pragma warning disable CS1591
-        Number,
+        Bool,
         #pragma warning restore CS1591
         [EnumMember(Value = "date")]
         #pragma warning disable CS1591
@@ -27,9 +23,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         #pragma warning disable CS1591
         Enumeration,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bool")]
+        [EnumMember(Value = "number")]
         #pragma warning disable CS1591
-        Bool,
+        Number,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "phone_number")]
+        #pragma warning disable CS1591
+        Phone_number,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "string")]
+        #pragma warning disable CS1591
+        String,
         #pragma warning restore CS1591
     }
 }

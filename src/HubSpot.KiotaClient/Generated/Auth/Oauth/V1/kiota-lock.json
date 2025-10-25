@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "7BE4E950E11CB179A2AF0A33338103802805A4C47E9022EE027CDC97F59D641DFEF0A318C266D04992ED6AFEBC764289FB8C1FF5DAFAAF64048E1C61D6BEBA9F",
+  "descriptionHash": "294BB7F8357F1234BE60C2564047DB34521D0F750CCE9FC87A4381405114125BD2947F38524288E376DB58CAAC94B5013223CB7456B486E464AFE445D7A74A06",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Auth/Oauth/versions/155908",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotAuthOauthV1Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Auth.Oauth.V1",

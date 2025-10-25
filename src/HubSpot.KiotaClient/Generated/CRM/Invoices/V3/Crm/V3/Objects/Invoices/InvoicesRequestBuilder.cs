@@ -61,20 +61,40 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices
         /// <summary>
         /// Read a page of invoices. Control what is returned via the `properties` query param.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociations?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociations> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CollectionResponseSimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Create a invoice with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard invoices is provided.
+        /// </summary>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CreatedResponseSimplePublicObject"/></returns>
+        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CreatedResponseSimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CreatedResponseSimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CreatedResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.CreatedResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read a page of invoices. Control what is returned via the `properties` query param.
@@ -93,6 +113,28 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Create a invoice with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard invoices is provided.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -146,7 +188,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
-            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of objects that can be read by a single request.</summary>
+            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of invoices that can be read by a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("propertiesWithHistory")]
@@ -163,6 +205,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvoicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class InvoicesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

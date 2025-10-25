@@ -51,6 +51,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string FeedbackSurveyId { get; set; }
 #endif
+        /// <summary>The folderIdV2 property</summary>
+        public long? FolderIdV2 { get; set; }
         /// <summary>Data structure representing the from fields on the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +143,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailCreateRequest();
         }
         /// <summary>
@@ -158,6 +160,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
                 { "campaign", n => { Campaign = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent.CreateFromDiscriminatorValue); } },
                 { "feedbackSurveyId", n => { FeedbackSurveyId = n.GetStringValue(); } },
+                { "folderIdV2", n => { FolderIdV2 = n.GetLongValue(); } },
                 { "from", n => { From = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails.CreateFromDiscriminatorValue); } },
                 { "jitterSendTime", n => { JitterSendTime = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailCreateRequest_language>(); } },
@@ -180,13 +183,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("activeDomain", ActiveDomain);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteLongValue("businessUnitId", BusinessUnitId);
             writer.WriteStringValue("campaign", Campaign);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent>("content", Content);
             writer.WriteStringValue("feedbackSurveyId", FeedbackSurveyId);
+            writer.WriteLongValue("folderIdV2", FolderIdV2);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails>("from", From);
             writer.WriteBoolValue("jitterSendTime", JitterSendTime);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailCreateRequest_language>("language", Language);

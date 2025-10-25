@@ -49,20 +49,20 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.It
         /// <summary>
         /// List all associations of an object by object type. Limit 500 per call.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabel?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabel> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Objects.Item.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabel>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.CollectionResponseMultiAssociatedObjectWithLabel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all associations of an object by object type. Limit 500 per call.

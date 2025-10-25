@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Crm.V3.Objects.Deals.Spl
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.BatchResponseDealToDealSplits> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.BatchInputPublicObjectId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.BatchResponseDealToDealSplits>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.BatchResponseDealToDealSplits.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Crm.V3.Objects.Deals.Spl
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.BatchInputPublicObjectId body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Archive an extension definition
+        /// Delete an action definition by ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get extension definition by Id
+        /// Retrieve a custom workflow action definition by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Patch an existing extension definition
+        /// Update an existing action definition by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -96,12 +96,12 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         public async Task<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition> PatchAsync(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive an extension definition
+        /// Delete an action definition by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,11 +116,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Get extension definition by Id
+        /// Retrieve a custom workflow action definition by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +138,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return requestInfo;
         }
         /// <summary>
-        /// Patch an existing extension definition
+        /// Update an existing action definition by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +152,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -178,7 +177,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Get extension definition by Id
+        /// Retrieve a custom workflow action definition by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDefinitionItemRequestBuilderGetQueryParameters 

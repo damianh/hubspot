@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "0DC25F2CB78A92754837033F5C0C7E6E1E49A7B282784FE19C7D221F6017DBF0A11A74CFCEB539E7CA9B410F52F56E483D91FFEEE2D48ABEA7788704015B7005",
+  "descriptionHash": "6DF7EFE6F1CC6E406A1339A9D6C6D42ACBD97BA5A108F2A6E103DB8F5F23714BFC94C4ABFB639BD171FF995F297B4FD0E915F15CE65F8F457071EAFF4BF09CDF",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Blog%20Settings/versions/635",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSBlogSettingsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3",

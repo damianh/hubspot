@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "2D2405D6933EB72E2720E1AFA729833744D6E83BEB422CA64EC0F66F41C1ACD87BCD1FD6E934EA0FE17A9740F379328BA8FF9BCA6D09F3E5B8969A7A41CBA227",
+  "descriptionHash": "DB51BD8A2DB6557A254D2E04F5D4F28130BA63249622F93903FE513FEDEE0289358CCCE7AEA87F85BDC005626611376B19B1911015EED8FB0AA1DAE07A516887",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Carts/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCartsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Carts.V3",

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         {
         }
         /// <summary>
-        /// Get the PublicConversationsMessage that represents a message sent over a custom channel
+        /// Get the details for a specific message sent over a custom channel
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to update a message&apos;s status to indicate if it was successfully sent, failed to send, or was read
+        /// Update a message&apos;s status to indicate if it was successfully sent, failed to send, or was read. For failed messages, this can also include the error message for the failure.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -67,12 +67,12 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage> PatchAsync(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationMessageUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the PublicConversationsMessage that represents a message sent over a custom channel
+        /// Get the details for a specific message sent over a custom channel
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to update a message&apos;s status to indicate if it was successfully sent, failed to send, or was read
+        /// Update a message&apos;s status to indicate if it was successfully sent, failed to send, or was read. For failed messages, this can also include the error message for the failure.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationMessageUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

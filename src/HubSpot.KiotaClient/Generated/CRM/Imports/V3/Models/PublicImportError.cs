@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The invalidPropertyValue property</summary>
+        /// <summary>Represents a single custom property of a marketing event, storing its name, value, metadata (like source, timestamp, and sensitivity), and related audit information for tracking changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue? InvalidPropertyValue { get; set; }
@@ -100,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError();
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("createdAt", CreatedAt);
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError_errorType>("errorType", ErrorType);

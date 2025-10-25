@@ -153,7 +153,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage();
         }
         /// <summary>
@@ -192,7 +192,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.PublicConversationsMessage_attachments>("attachments", Attachments);
             writer.WriteStringValue("channelAccountId", ChannelAccountId);
@@ -216,7 +216,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicContact"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicLocation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicMessageHeader"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicQuickReplies"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicUnsupportedContent"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicContact"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicLocation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicMessageHeader"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicQuickReplies"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicUnsupportedContent"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicConversationsMessage_attachments : IComposedTypeWrapper, IParsable
@@ -261,6 +261,14 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicQuickReplies PublicQuickReplies { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment? PublicSocialMetadataAttachment { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment PublicSocialMetadataAttachment { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicUnsupportedContent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -284,7 +292,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.PublicConversationsMessage_attachments CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.PublicConversationsMessage_attachments();
                 if("PublicContact".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -306,6 +314,10 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
                 else if("PublicQuickReplies".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicQuickReplies = new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicQuickReplies();
+                }
+                else if("PublicSocialMetadataAttachment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicSocialMetadataAttachment = new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment();
                 }
                 else if("PublicUnsupportedContent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -343,6 +355,10 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
                 {
                     return PublicQuickReplies.GetFieldDeserializers();
                 }
+                else if(PublicSocialMetadataAttachment != null)
+                {
+                    return PublicSocialMetadataAttachment.GetFieldDeserializers();
+                }
                 else if(PublicUnsupportedContent != null)
                 {
                     return PublicUnsupportedContent.GetFieldDeserializers();
@@ -359,7 +375,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicContact != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicContact>(null, PublicContact);
@@ -379,6 +395,10 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
                 else if(PublicQuickReplies != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicQuickReplies>(null, PublicQuickReplies);
+                }
+                else if(PublicSocialMetadataAttachment != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicSocialMetadataAttachment>(null, PublicSocialMetadataAttachment);
                 }
                 else if(PublicUnsupportedContent != null)
                 {

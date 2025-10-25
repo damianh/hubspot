@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.automation.v4.actions.item.item.revisions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the revision.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Get all revisions for a given definition
+        /// Retrieve the versions of a definition by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionRevisionForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionRevisionForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionRevisionForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all revisions for a given definition
+        /// Retrieve the versions of a definition by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all revisions for a given definition
+        /// Retrieve the versions of a definition by ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RevisionsRequestBuilderGetQueryParameters 

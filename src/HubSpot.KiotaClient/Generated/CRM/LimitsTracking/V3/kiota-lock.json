@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "75A9FE7A2E2D50512E63C6D654C44DD1939D653BDE73A5261544276F2B8ACF0CC7F748EC6B0BD6B276412E04D4338D7B4CA937B0B2A4B8E2AF988BC4BA3F0987",
+  "descriptionHash": "D43B0CD6C7EE070786C0D88D90522AFB33B03349B599AA5665F726C642FFB623737134408842994BBE6AC4C7637AF8A5948F2F970980BBD23F0F6DCD5EA3F43A",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Limits%20Tracking/versions/199890",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMLimitsTrackingV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3",

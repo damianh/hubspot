@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "FA1FD04F2AE86918F69471E7D0FD7FB333F2714DC1C9002C1BAF9526FBC09C20B175EB17BEFB27A4194CE9E00CFB08D9A14A77C9E279269A93BBCF5C5F0F7AC1",
+  "descriptionHash": "57DF8B65B319C83E8EAA7214EA3603F60DCB30D98F888C5C44ECDA2E89CC217F3CCD846D89A8F7DA98DEA294E3B593B224C0635EC2C9DB00DBD81FF0EE19E0C0",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Orders/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMOrdersV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Orders.V3",

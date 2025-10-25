@@ -19,10 +19,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError>? Errors { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError_1>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError> Errors { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError_1> Errors { get; set; }
 #endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.BatchResponsePublicDefaultAssociation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.BatchResponsePublicDefaultAssociation();
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "links", n => { Links = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.BatchResponsePublicDefaultAssociation_links>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.BatchResponsePublicDefaultAssociation_links.CreateFromDiscriminatorValue); } },
                 { "numErrors", n => { NumErrors = n.GetIntValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
@@ -89,9 +89,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.StandardError_1>("errors", Errors);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.BatchResponsePublicDefaultAssociation_links>("links", Links);
             writer.WriteIntValue("numErrors", NumErrors);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);

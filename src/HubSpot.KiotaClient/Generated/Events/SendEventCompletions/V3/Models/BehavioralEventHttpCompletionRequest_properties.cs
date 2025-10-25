@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 {
     /// <summary>
-    /// Map of properties for the event in the format property internal name - property value
+    /// The event properties to update. Takes the format of key-value pairs (property internal name and property value). Learn more about [HubSpot&apos;s default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BehavioralEventHttpCompletionRequest_properties : IAdditionalDataHolder, IParsable
@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest_properties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest_properties();
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteAdditionalData(AdditionalData);
         }
     }

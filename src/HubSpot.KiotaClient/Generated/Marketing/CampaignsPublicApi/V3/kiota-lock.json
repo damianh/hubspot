@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "943605552F5D1C06AACB66127D8C9A6FB38593C242AF227AD63CF716EE0BDB921CC811AC5521DDDE73F23EA5AB7848D42D1F041E5FD37D10C6AB2437C17A6BA8",
+  "descriptionHash": "B96D25FE80365AF943C17CEA8D44DE1D1FA04D789B543D816A6B8A9B0260FCD4CF8E5F68372A76D6CF7C136DA53A2D0E3AD7874708BA46A34837B1007C254A18",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Campaigns%20Public%20Api/versions/177944",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingCampaignsPublicApiV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3",

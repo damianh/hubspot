@@ -1,8 +1,6 @@
 using System.Net;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Shouldly;
-using Xunit.Abstractions;
 
 namespace DamianH.HubSpot.MockServer;
 
@@ -10,10 +8,9 @@ public class OpenApiDocumentTests(ITestOutputHelper outputHelper) : IAsyncLifeti
 {
     private HubSpotMockServer _server = null!;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         var services = new ServiceCollection()
-            .AddLogging(logging => logging.AddXUnit(outputHelper))
             .BuildServiceProvider();
 
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();
@@ -39,5 +36,5 @@ public class OpenApiDocumentTests(ITestOutputHelper outputHelper) : IAsyncLifeti
         var body = await response.Content.ReadAsStringAsync();
     }
 
-    public  Task                      DisposeAsync() => _server.DisposeAsync().AsTask();
+    public ValueTask DisposeAsync() => _server.DisposeAsync();
 }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
+    /// <summary>The origin of the property value, such as &quot;IMPORT&quot; or &quot;API&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyValue_source
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
@@ -375,6 +374,34 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         [EnumMember(Value = "CENTRAL_EXCHANGE_RATES")]
         #pragma warning disable CS1591
         CENTRAL_EXCHANGE_RATES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "HELP_DESK_AI")]
+        #pragma warning disable CS1591
+        HELP_DESK_AI,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONVERSATIONAL_ENRICHMENT")]
+        #pragma warning disable CS1591
+        CONVERSATIONAL_ENRICHMENT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CRM_PROCESSES_PLATFORM")]
+        #pragma warning disable CS1591
+        CRM_PROCESSES_PLATFORM,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CLONE_OBJECTS")]
+        #pragma warning disable CS1591
+        CLONE_OBJECTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MARKET_SOURCING")]
+        #pragma warning disable CS1591
+        MARKET_SOURCING,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DATASET")]
+        #pragma warning disable CS1591
+        DATASET,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROPERTY_RESTORE")]
+        #pragma warning disable CS1591
+        PROPERTY_RESTORE,
         #pragma warning restore CS1591
     }
 }

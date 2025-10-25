@@ -179,5 +179,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
         #pragma warning disable CS1591
         GDPR_DOI_ENABLED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HUBL_LIMIT_EXCEEDED")]
+        #pragma warning disable CS1591
+        HUBL_LIMIT_EXCEEDED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LOW_CONTACT_QUALITY_SCORE")]
+        #pragma warning disable CS1591
+        LOW_CONTACT_QUALITY_SCORE,
+        #pragma warning restore CS1591
     }
 }

@@ -30,6 +30,30 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl ChannelAccountConnectionRedirectUrl { get; set; }
 #endif
+        /// <summary>The channelDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelDescription? ChannelDescription { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelDescription ChannelDescription { get; set; }
+#endif
+        /// <summary>The channelLogoUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl? ChannelLogoUrl { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl ChannelLogoUrl { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_name? Name { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_name Name { get; set; }
+#endif
         /// <summary>The webhookUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch();
         }
         /// <summary>
@@ -65,6 +89,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             {
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_capabilities>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_capabilities.CreateFromDiscriminatorValue); } },
                 { "channelAccountConnectionRedirectUrl", n => { ChannelAccountConnectionRedirectUrl = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl.CreateFromDiscriminatorValue); } },
+                { "channelDescription", n => { ChannelDescription = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelDescription>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelDescription.CreateFromDiscriminatorValue); } },
+                { "channelLogoUrl", n => { ChannelLogoUrl = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_name>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_name.CreateFromDiscriminatorValue); } },
                 { "webhookUrl", n => { WebhookUrl = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_webhookUrl>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_webhookUrl.CreateFromDiscriminatorValue); } },
             };
         }
@@ -74,9 +101,12 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_capabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl>("channelAccountConnectionRedirectUrl", ChannelAccountConnectionRedirectUrl);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelDescription>("channelDescription", ChannelDescription);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl>("channelLogoUrl", ChannelLogoUrl);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_name>("name", Name);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch_webhookUrl>("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

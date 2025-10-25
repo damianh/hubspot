@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult();
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult.IntegratorObjectResult_actions>("actions", Actions);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("linkUrl", LinkUrl);
@@ -129,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult.IntegratorObjectResult_actions CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult.IntegratorObjectResult_actions();
                 if("ActionHookActionBody".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -164,7 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(ActionHookActionBody != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.ActionHookActionBody>(null, ActionHookActionBody);

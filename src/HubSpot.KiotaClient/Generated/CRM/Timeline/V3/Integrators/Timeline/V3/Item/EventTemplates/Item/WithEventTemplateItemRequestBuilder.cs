@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         {
         }
         /// <summary>
-        /// This will delete the event template. All associated events will be removed from search results and the timeline UI.This action can&apos;t be undone, so it&apos;s highly recommended that you stop using any associated events before deleting a template.
+        /// Delete an event type template by ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// View the current state of a specific template and its tokens.
+        /// Retrieve an event type template by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing template and its tokens. This is primarily used to update the headerTemplate/detailTemplate, and those changes will take effect for existing events.You can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.
+        /// Update an existing event template, specified by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate"/></returns>
         /// <param name="body">State of the template definition being updated.</param>
@@ -90,12 +90,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will delete the event template. All associated events will be removed from search results and the timeline UI.This action can&apos;t be undone, so it&apos;s highly recommended that you stop using any associated events before deleting a template.
+        /// Delete an event type template by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,11 +110,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// View the current state of a specific template and its tokens.
+        /// Retrieve an event type template by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing template and its tokens. This is primarily used to update the headerTemplate/detailTemplate, and those changes will take effect for existing events.You can also update or replace all the tokens in the template here instead of doing individual API calls on the `/tokens` endpoint.
+        /// Update an existing event template, specified by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">State of the template definition being updated.</param>
@@ -147,7 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

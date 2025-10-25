@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
+    /// <summary>The legal basis for communication, with options including &apos;LEGITIMATE_INTEREST_PQL&apos;, &apos;LEGITIMATE_INTEREST_CLIENT&apos;, &apos;PERFORMANCE_OF_CONTRACT&apos;, &apos;CONSENT_WITH_NOTICE&apos;, &apos;NON_GDPR&apos;, &apos;PROCESS_AND_STORE&apos;, and &apos;LEGITIMATE_INTEREST_OTHER&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PartialPublicStatusRequest_legalBasis
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "LEGITIMATE_INTEREST_PQL")]
         #pragma warning disable CS1591

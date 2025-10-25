@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item
         public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/oauth/v1/refresh-tokens/{token}", rawUrl)
         {
         }
+        /// <summary>
+        /// Delete a refresh token, typically after a user uninstalls your app. Access tokens generated with the refresh token will not be affected.This will not uninstall the application from HubSpot or inhibit data syncing between an account and the app.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +50,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a refresh token&apos;s metadata, including the email address of the user that the token was created for and the ID of the account it&apos;s associated with. Learn more about [refresh tokens](https://developers.hubspot.com/docs/guides/api/app-management/oauth-tokens#generate-initial-access-and-refresh-tokens).
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.RefreshTokenInfoResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,6 +68,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.RefreshTokenInfoResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.RefreshTokenInfoResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Delete a refresh token, typically after a user uninstalls your app. Access tokens generated with the refresh token will not be affected.This will not uninstall the application from HubSpot or inhibit data syncing between an account and the app.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,9 +84,11 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
+        /// <summary>
+        /// Retrieve a refresh token&apos;s metadata, including the email address of the user that the token was created for and the ID of the account it&apos;s associated with. Learn more about [refresh tokens](https://developers.hubspot.com/docs/guides/api/app-management/oauth-tokens#generate-initial-access-and-refresh-tokens).
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

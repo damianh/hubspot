@@ -40,6 +40,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #endif
         /// <summary>The deleted property</summary>
         public bool? Deleted { get; set; }
+        /// <summary>The deletedAt property</summary>
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>Specifies the key value pairs of the [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages) with the associated column IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,7 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3();
         }
         /// <summary>
@@ -126,6 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
+                { "deletedAt", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "dynamicMetaTags", n => { DynamicMetaTags = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3_dynamicMetaTags>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3_dynamicMetaTags.CreateFromDiscriminatorValue); } },
                 { "enableChildTablePages", n => { EnableChildTablePages = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -146,7 +149,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowChildTables", AllowChildTables);
             writer.WriteBoolValue("allowPublicApiAccess", AllowPublicApiAccess);
             writer.WriteIntValue("columnCount", ColumnCount);
@@ -154,6 +157,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser>("createdBy", CreatedBy);
             writer.WriteBoolValue("deleted", Deleted);
+            writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3_dynamicMetaTags>("dynamicMetaTags", DynamicMetaTags);
             writer.WriteBoolValue("enableChildTablePages", EnableChildTablePages);
             writer.WriteStringValue("id", Id);

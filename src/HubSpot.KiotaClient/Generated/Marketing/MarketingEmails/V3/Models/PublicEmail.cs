@@ -23,6 +23,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>List of emailCampaignIds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllEmailCampaignIds { get; set; }
+#nullable restore
+#else
+        public List<string> AllEmailCampaignIds { get; set; }
+#endif
         /// <summary>Determines if the email is archived or not.</summary>
         public bool? Archived { get; set; }
         /// <summary>The businessUnitId property</summary>
@@ -33,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string BusinessUnitId { get; set; }
 #endif
-        /// <summary>The campaign id on the email.</summary>
+        /// <summary>The campaign GUID on the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Campaign { get; set; }
@@ -41,13 +49,29 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string Campaign { get; set; }
 #endif
-        /// <summary>The campaignName property</summary>
+        /// <summary>The name of the campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignName { get; set; }
 #nullable restore
 #else
         public string CampaignName { get; set; }
+#endif
+        /// <summary>The campaignUtm property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CampaignUtm { get; set; }
+#nullable restore
+#else
+        public string CampaignUtm { get; set; }
+#endif
+        /// <summary>The ID of the email this email was cloned from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClonedFrom { get; set; }
+#nullable restore
+#else
+        public string ClonedFrom { get; set; }
 #endif
         /// <summary>Data structure representing the content of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,8 +91,18 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string CreatedById { get; set; }
 #endif
-        /// <summary>The deletedAt property</summary>
+        /// <summary>The date and time the email was deleted at, in ISO8601 representation.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
+        /// <summary>The emailCampaignGroupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmailCampaignGroupId { get; set; }
+#nullable restore
+#else
+        public string EmailCampaignGroupId { get; set; }
+#endif
+        /// <summary>The emailTemplateMode property</summary>
+        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_emailTemplateMode? EmailTemplateMode { get; set; }
         /// <summary>The ID of the feedback survey linked to the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +113,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #endif
         /// <summary>The folderId property</summary>
         public long? FolderId { get; set; }
+        /// <summary>The folderIdV2 property</summary>
+        public long? FolderIdV2 { get; set; }
         /// <summary>Data structure representing the from fields on the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +131,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The isAb property</summary>
+        public bool? IsAb { get; set; }
         /// <summary>Returns the published status of the email. This is read only.</summary>
         public bool? IsPublished { get; set; }
         /// <summary>Returns whether the email is a transactional email or not. This is read only.</summary>
@@ -111,17 +149,49 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The previewKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewKey { get; set; }
+#nullable restore
+#else
+        public string PreviewKey { get; set; }
+#endif
+        /// <summary>The primaryEmailCampaignId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrimaryEmailCampaignId { get; set; }
+#nullable restore
+#else
+        public string PrimaryEmailCampaignId { get; set; }
+#endif
         /// <summary>The date and time the email is scheduled for, in ISO8601 representation. This is only used in local time or scheduled emails.</summary>
         public DateTimeOffset? PublishDate { get; set; }
         /// <summary>The date and time the email was published at, in ISO8601 representation.</summary>
         public DateTimeOffset? PublishedAt { get; set; }
-        /// <summary>The publishedById property</summary>
+        /// <summary>Email of the user who published/sent the email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublishedByEmail { get; set; }
+#nullable restore
+#else
+        public string PublishedByEmail { get; set; }
+#endif
+        /// <summary>The ID of the user who published the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublishedById { get; set; }
 #nullable restore
 #else
         public string PublishedById { get; set; }
+#endif
+        /// <summary>Name of the user who published the email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublishedByName { get; set; }
+#nullable restore
+#else
+        public string PublishedByName { get; set; }
 #endif
         /// <summary>RSS related data if it is a blog or rss email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,6 +237,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailSubscriptionDetails SubscriptionDetails { get; set; }
 #endif
+        /// <summary>The teamsWithAccess property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamsWithAccess { get; set; }
+#nullable restore
+#else
+        public List<string> TeamsWithAccess { get; set; }
+#endif
         /// <summary>AB testing related data. This property is only returned for AB type emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,15 +263,25 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #endif
         /// <summary>The email type, this is derived from other properties on the email such as subcategory.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_type? Type { get; set; }
+        /// <summary>The unpublishedAt property</summary>
+        public DateTimeOffset? UnpublishedAt { get; set; }
         /// <summary>The date and time of the last update to the email, in ISO8601 representation.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The id of the user who last updated the email.</summary>
+        /// <summary>The ID of the user who last updated the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedById { get; set; }
 #nullable restore
 #else
         public string UpdatedById { get; set; }
+#endif
+        /// <summary>The usersWithAccess property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UsersWithAccess { get; set; }
+#nullable restore
+#else
+        public List<string> UsersWithAccess { get; set; }
 #endif
         /// <summary>The webversion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,7 +291,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails Webversion { get; set; }
 #endif
-        /// <summary>The workflowNames property</summary>
+        /// <summary>Names of workflows in which the email is used within a &quot;send email&quot; action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkflowNames { get; set; }
@@ -225,7 +313,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail();
         }
         /// <summary>
@@ -237,26 +325,37 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activeDomain", n => { ActiveDomain = n.GetStringValue(); } },
+                { "allEmailCampaignIds", n => { AllEmailCampaignIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "businessUnitId", n => { BusinessUnitId = n.GetStringValue(); } },
                 { "campaign", n => { Campaign = n.GetStringValue(); } },
                 { "campaignName", n => { CampaignName = n.GetStringValue(); } },
+                { "campaignUtm", n => { CampaignUtm = n.GetStringValue(); } },
+                { "clonedFrom", n => { ClonedFrom = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdById", n => { CreatedById = n.GetStringValue(); } },
                 { "deletedAt", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
+                { "emailCampaignGroupId", n => { EmailCampaignGroupId = n.GetStringValue(); } },
+                { "emailTemplateMode", n => { EmailTemplateMode = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_emailTemplateMode>(); } },
                 { "feedbackSurveyId", n => { FeedbackSurveyId = n.GetStringValue(); } },
                 { "folderId", n => { FolderId = n.GetLongValue(); } },
+                { "folderIdV2", n => { FolderIdV2 = n.GetLongValue(); } },
                 { "from", n => { From = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "isAb", n => { IsAb = n.GetBoolValue(); } },
                 { "isPublished", n => { IsPublished = n.GetBoolValue(); } },
                 { "isTransactional", n => { IsTransactional = n.GetBoolValue(); } },
                 { "jitterSendTime", n => { JitterSendTime = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_language>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "previewKey", n => { PreviewKey = n.GetStringValue(); } },
+                { "primaryEmailCampaignId", n => { PrimaryEmailCampaignId = n.GetStringValue(); } },
                 { "publishDate", n => { PublishDate = n.GetDateTimeOffsetValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                { "publishedByEmail", n => { PublishedByEmail = n.GetStringValue(); } },
                 { "publishedById", n => { PublishedById = n.GetStringValue(); } },
+                { "publishedByName", n => { PublishedByName = n.GetStringValue(); } },
                 { "rssData", n => { RssData = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails.CreateFromDiscriminatorValue); } },
                 { "sendOnPublish", n => { SendOnPublish = n.GetBoolValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_state>(); } },
@@ -264,11 +363,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
                 { "subcategory", n => { Subcategory = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "subscriptionDetails", n => { SubscriptionDetails = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailSubscriptionDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailSubscriptionDetails.CreateFromDiscriminatorValue); } },
+                { "teamsWithAccess", n => { TeamsWithAccess = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "testing", n => { Testing = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailToDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailToDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_type>(); } },
+                { "unpublishedAt", n => { UnpublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedById", n => { UpdatedById = n.GetStringValue(); } },
+                { "usersWithAccess", n => { UsersWithAccess = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webversion", n => { Webversion = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails.CreateFromDiscriminatorValue); } },
                 { "workflowNames", n => { WorkflowNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -279,28 +381,39 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("activeDomain", ActiveDomain);
+            writer.WriteCollectionOfPrimitiveValues<string>("allEmailCampaignIds", AllEmailCampaignIds);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteStringValue("businessUnitId", BusinessUnitId);
             writer.WriteStringValue("campaign", Campaign);
             writer.WriteStringValue("campaignName", CampaignName);
+            writer.WriteStringValue("campaignUtm", CampaignUtm);
+            writer.WriteStringValue("clonedFrom", ClonedFrom);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent>("content", Content);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdById", CreatedById);
             writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
+            writer.WriteStringValue("emailCampaignGroupId", EmailCampaignGroupId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_emailTemplateMode>("emailTemplateMode", EmailTemplateMode);
             writer.WriteStringValue("feedbackSurveyId", FeedbackSurveyId);
             writer.WriteLongValue("folderId", FolderId);
+            writer.WriteLongValue("folderIdV2", FolderIdV2);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails>("from", From);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("isAb", IsAb);
             writer.WriteBoolValue("isPublished", IsPublished);
             writer.WriteBoolValue("isTransactional", IsTransactional);
             writer.WriteBoolValue("jitterSendTime", JitterSendTime);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_language>("language", Language);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("previewKey", PreviewKey);
+            writer.WriteStringValue("primaryEmailCampaignId", PrimaryEmailCampaignId);
             writer.WriteDateTimeOffsetValue("publishDate", PublishDate);
             writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
+            writer.WriteStringValue("publishedByEmail", PublishedByEmail);
             writer.WriteStringValue("publishedById", PublishedById);
+            writer.WriteStringValue("publishedByName", PublishedByName);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails>("rssData", RssData);
             writer.WriteBoolValue("sendOnPublish", SendOnPublish);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_state>("state", State);
@@ -308,11 +421,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             writer.WriteStringValue("subcategory", Subcategory);
             writer.WriteStringValue("subject", Subject);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailSubscriptionDetails>("subscriptionDetails", SubscriptionDetails);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamsWithAccess", TeamsWithAccess);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails>("testing", Testing);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailToDetails>("to", To);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail_type>("type", Type);
+            writer.WriteDateTimeOffsetValue("unpublishedAt", UnpublishedAt);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedById", UpdatedById);
+            writer.WriteCollectionOfPrimitiveValues<string>("usersWithAccess", UsersWithAccess);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails>("webversion", Webversion);
             writer.WriteCollectionOfPrimitiveValues<string>("workflowNames", WorkflowNames);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>
+    /// An object list definition.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PublicObjectList : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -44,8 +45,24 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ListId { get; set; }
 #endif
+        /// <summary>The listPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions? ListPermissions { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions ListPermissions { get; set; }
+#endif
         /// <summary>The version of the list.</summary>
         public int? ListVersion { get; set; }
+        /// <summary>The membershipSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings? MembershipSettings { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings MembershipSettings { get; set; }
+#endif
         /// <summary>The name of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ProcessingType { get; set; }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>Size of the list</summary>
         public long? Size { get; set; }
         /// <summary>The time the list was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -104,7 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList();
         }
         /// <summary>
@@ -121,7 +138,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 { "filterBranch", n => { FilterBranch = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch.CreateFromDiscriminatorValue); } },
                 { "filtersUpdatedAt", n => { FiltersUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "listId", n => { ListId = n.GetStringValue(); } },
+                { "listPermissions", n => { ListPermissions = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions.CreateFromDiscriminatorValue); } },
                 { "listVersion", n => { ListVersion = n.GetIntValue(); } },
+                { "membershipSettings", n => { MembershipSettings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetStringValue(); } },
@@ -137,14 +156,16 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdById", CreatedById);
             writer.WriteDateTimeOffsetValue("deletedAt", DeletedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch>("filterBranch", FilterBranch);
             writer.WriteDateTimeOffsetValue("filtersUpdatedAt", FiltersUpdatedAt);
             writer.WriteStringValue("listId", ListId);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions>("listPermissions", ListPermissions);
             writer.WriteIntValue("listVersion", ListVersion);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings>("membershipSettings", MembershipSettings);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteStringValue("processingStatus", ProcessingStatus);
@@ -231,7 +252,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch();
                 if("PublicAndFilterBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -314,7 +335,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicAndFilterBranch != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAndFilterBranch>(null, PublicAndFilterBranch);

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "96AE02AB6AFA72B82C067132551AF395B958D1E3FC3C60F0E59AFF1C4011734EAC73426284FA17B40D06C8A5CB2942EE808F255ADC1EC77D4B1013C7456BD9FD",
+  "descriptionHash": "128CC7E83BA9FED1F807A367B5F99C19DC4C20353F2194E9F9980CA3FD50F49A37BFB6A9FBEAD71894D2BC55767E1CB0647A006D126AEAE5DE4AECC2B0C56B1B",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Invoices/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMInvoicesV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Invoices.V3",

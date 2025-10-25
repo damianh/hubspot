@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "D1A2F9D16FC9DC7D99CA1794AAB10424F38F449B55BBFDFC87CA9176E22AA15AE7D6F0BFAD9A8329EBFF9305831AEC48E541F1B56028E99EC78A3BC720D8E44C",
+  "descriptionHash": "0D7E2AA5E85974E743451FC152F71849FD5DFB3A45ECEAF191D63918E3D50468328DEC374DD23D4C6874927012273FAB861313A5F42812282039424F578FAEAE",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Custom%20Objects/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCustomObjectsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3",

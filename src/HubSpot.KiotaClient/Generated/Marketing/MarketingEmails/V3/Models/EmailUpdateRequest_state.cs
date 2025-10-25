@@ -131,5 +131,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         AUTOMATED_LOSER_ABVARIANT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "AGENT_GENERATED")]
+        #pragma warning disable CS1591
+        AGENT_GENERATED,
+        #pragma warning restore CS1591
     }
 }

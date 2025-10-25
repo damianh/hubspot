@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F6C85116978D9D8ED88710F77756A0B53767800FE54C3287623A4CCB0B52EF7F5E168766CA2F9470E18FB2DD9D61C5EECDC7B01BED9FB1612935ECD507BEADA9",
+  "descriptionHash": "B2A82AAC47A53EEC4880F4BD9A75C142655E06D43350C2B329E1D1EBA722A04B6AD87D8AA9F5DB6B747A1DAD3FB6FC355336A89277BC94AC4E837B77E89A4C55",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Schemas/versions/145900",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMSchemasV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Schemas.V3",

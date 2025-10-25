@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 {
+    /// <summary>
+    /// A HubSpot property
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Property : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -28,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the property was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The internal user ID of the user who created the property in HubSpot. This field may not exist if the property was created outside of HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,6 +39,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #else
         public string CreatedUserId { get; set; }
 #endif
+        /// <summary>Indicates the sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, or &quot;highly_sensitive&quot;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dataSensitivity? DataSensitivity { get; set; }
+        /// <summary>The dateDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dateDisplayHint? DateDisplayHint { get; set; }
         /// <summary>A description of the property that will be shown as help text in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #endif
         /// <summary>Whether or not the property&apos;s value must be unique. Once set, this can&apos;t be changed.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>Whether or not the property will be hidden from the HubSpot UI. It&apos;s recommended this be set to false for custom properties.</summary>
+        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
         public bool? Hidden { get; set; }
         /// <summary>This will be true for default object properties built into HubSpot.</summary>
         public bool? HubspotDefined { get; set; }
@@ -114,6 +119,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #else
         public string ReferencedObjectType { get; set; }
 #endif
+        /// <summary>When sensitiveData is true, lists the type of sensitive data contained in the property (e.g., &quot;HIPAA&quot;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SensitiveDataCategories { get; set; }
+#nullable restore
+#else
+        public List<string> SensitiveDataCategories { get; set; }
+#endif
         /// <summary>Whether or not the property will display the currency symbol set in the account settings.</summary>
         public bool? ShowCurrencySymbol { get; set; }
         /// <summary>The property data type.</summary>
@@ -124,7 +137,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the property was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The internal user ID of the user who updated the property in HubSpot. This field may not exist if the property was updated outside of HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +161,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property();
         }
         /// <summary>
@@ -165,6 +178,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetStringValue(); } },
+                { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dataSensitivity>(); } },
+                { "dateDisplayHint", n => { DateDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dateDisplayHint>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
@@ -179,6 +194,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Option>(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Option.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
+                { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -191,13 +207,15 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteBoolValue("calculated", Calculated);
             writer.WriteStringValue("calculationFormula", CalculationFormula);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdUserId", CreatedUserId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dataSensitivity>("dataSensitivity", DataSensitivity);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property_dateDisplayHint>("dateDisplayHint", DateDisplayHint);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("externalOptions", ExternalOptions);
@@ -212,6 +230,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Option>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
+            writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

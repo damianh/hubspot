@@ -65,7 +65,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Restore
 #endif
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

@@ -94,7 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch();
         }
         /// <summary>
@@ -122,7 +122,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actionUrl", ActionUrl);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicExecutionTranslationRule>("executionRules", ExecutionRules);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch.PublicActionDefinitionPatch_inputFieldDependencies>("inputFieldDependencies", InputFieldDependencies);
@@ -163,7 +163,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch.PublicActionDefinitionPatch_inputFieldDependencies CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinitionPatch.PublicActionDefinitionPatch_inputFieldDependencies();
                 if("PublicConditionalSingleFieldDependency".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -198,7 +198,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicConditionalSingleFieldDependency != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicConditionalSingleFieldDependency>(null, PublicConditionalSingleFieldDependency);

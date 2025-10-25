@@ -22,6 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
+        /// <summary>The dataSensitivity property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyCreate_dataSensitivity? DataSensitivity { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyCreate();
         }
         /// <summary>
@@ -110,6 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
+                { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyCreate_dataSensitivity>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
@@ -131,8 +134,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calculationFormula", CalculationFormula);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyCreate_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("externalOptions", ExternalOptions);

@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         {
         }
         /// <summary>
-        /// Use this to list all event templates owned by your app.
+        /// Retrieve all templates defined for an app.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.CollectionResponseTimelineEventTemplateNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.CollectionResponseTimelineEventTemplateNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.CollectionResponseTimelineEventTemplateNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Event templates define the general structure for a custom timeline event. This includes formatted copy for its heading and details, as well as any custom property definitions. The event could be something like viewing a video, registering for a webinar, or filling out a survey. A single app can define multiple event templates.Event templates will be created for contacts by default, but they can be created for companies, tickets, and deals as well.Each event template contains its own set of tokens and `Markdown` templates. These tokens can be associated with any CRM object properties via the `objectPropertyName` field to fully build out CRM objects.You must create an event template before you can create events.
+        /// Event templates define the general structure for a custom timeline event, and enable you to send event data to HubSpot. A template includes formatted copy for its heading and details, as well as any custom property definitions. A single app can include up to 750 event templates.&lt;br/&gt;&lt;Warning&gt;the `v1` and `v3` timeline events APIs are only available for app partners with existing `v1`/`v3` timeline events defined in their public app. &lt;ul&gt;&lt;li&gt;If your app doesn&apos;t include any timeline events yet, requests to this endpoint will fail. Instead, you can get started on [latest version of the developer platform](/apps/developer-platform/build-apps/overview). Note that you&apos;ll need to request approval before you can define app events for your app. Learn more in the [app events overview](/apps/developer-platform/add-features/app-events/overview).&lt;/li&gt;&lt;li&gt;If your app includes a `v1`/`v3` timeline event, learn how to [migrate it to the developer platform](/apps/developer-platform/add-features/app-events/create-and-manage-event-types#migrate-an-existing-timeline-event-type). You don&apos;t need to request approval before migrating existing event types.&lt;/li&gt;&lt;/ul&gt;If you&apos;re not an app partner, you can send custom event data to HubSpot using the [custom events API](/api-reference/events-manage-event-definitions-v3/guide).&lt;/Warning&gt;
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate"/></returns>
         /// <param name="body">State of the template definition being created.</param>
@@ -80,12 +80,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this to list all event templates owned by your app.
+        /// Retrieve all templates defined for an app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             return requestInfo;
         }
         /// <summary>
-        /// Event templates define the general structure for a custom timeline event. This includes formatted copy for its heading and details, as well as any custom property definitions. The event could be something like viewing a video, registering for a webinar, or filling out a survey. A single app can define multiple event templates.Event templates will be created for contacts by default, but they can be created for companies, tickets, and deals as well.Each event template contains its own set of tokens and `Markdown` templates. These tokens can be associated with any CRM object properties via the `objectPropertyName` field to fully build out CRM objects.You must create an event template before you can create events.
+        /// Event templates define the general structure for a custom timeline event, and enable you to send event data to HubSpot. A template includes formatted copy for its heading and details, as well as any custom property definitions. A single app can include up to 750 event templates.&lt;br/&gt;&lt;Warning&gt;the `v1` and `v3` timeline events APIs are only available for app partners with existing `v1`/`v3` timeline events defined in their public app. &lt;ul&gt;&lt;li&gt;If your app doesn&apos;t include any timeline events yet, requests to this endpoint will fail. Instead, you can get started on [latest version of the developer platform](/apps/developer-platform/build-apps/overview). Note that you&apos;ll need to request approval before you can define app events for your app. Learn more in the [app events overview](/apps/developer-platform/add-features/app-events/overview).&lt;/li&gt;&lt;li&gt;If your app includes a `v1`/`v3` timeline event, learn how to [migrate it to the developer platform](/apps/developer-platform/add-features/app-events/create-and-manage-event-types#migrate-an-existing-timeline-event-type). You don&apos;t need to request approval before migrating existing event types.&lt;/li&gt;&lt;/ul&gt;If you&apos;re not an app partner, you can send custom event data to HubSpot using the [custom events API](/api-reference/events-manage-event-definitions-v3/guide).&lt;/Warning&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">State of the template definition being created.</param>
@@ -118,7 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

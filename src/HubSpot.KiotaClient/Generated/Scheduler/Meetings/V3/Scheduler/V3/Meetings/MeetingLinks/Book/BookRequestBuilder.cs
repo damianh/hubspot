@@ -52,6 +52,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         public BookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scheduler/v3/meetings/meeting-links/book", rawUrl)
         {
         }
+        /// <summary>
+        /// Book a meeting for a specified meeting page.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBookingResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,10 +68,13 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBookingResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBooking body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBookingResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBookingResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Book a meeting for a specified meeting page.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingBooking body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

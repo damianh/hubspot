@@ -7,20 +7,21 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 {
+    /// <summary>
+    /// Represents a single custom property of a marketing event, storing its name, value, metadata (like source, timestamp, and sensitivity), and related audit information for tracking changes.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PropertyValue : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataSensitivity property</summary>
+        /// <summary>The sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, and &quot;highly_sensitive&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>The isEncrypted property</summary>
+        /// <summary>Whether the property value is encrypted.</summary>
         public bool? IsEncrypted { get; set; }
         /// <summary>The isLargeValue property</summary>
         public bool? IsLargeValue { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The unique property name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #endif
         /// <summary>The persistenceTimestamp property</summary>
         public long? PersistenceTimestamp { get; set; }
-        /// <summary>The requestId property</summary>
+        /// <summary>A unique ID associated with this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId { get; set; }
@@ -38,13 +39,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The selectedByUser property</summary>
+        /// <summary>Whether the value was selected by a user.</summary>
         public bool? SelectedByUser { get; set; }
-        /// <summary>The selectedByUserTimestamp property</summary>
+        /// <summary>The timestamp when the value was selected by a user, if applicable.</summary>
         public long? SelectedByUserTimestamp { get; set; }
-        /// <summary>The source property</summary>
+        /// <summary>The origin of the property value, such as &quot;IMPORT&quot; or &quot;API&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue_source? Source { get; set; }
-        /// <summary>The sourceId property</summary>
+        /// <summary>The ID of the property source indicating where it was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -52,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>The sourceLabel property</summary>
+        /// <summary>A human-readable label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceLabel { get; set; }
@@ -60,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string SourceLabel { get; set; }
 #endif
-        /// <summary>The sourceMetadata property</summary>
+        /// <summary>Metadata providing additional context about the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceMetadata { get; set; }
@@ -68,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string SourceMetadata { get; set; }
 #endif
-        /// <summary>The sourceVid property</summary>
+        /// <summary>The unique identifier associated with the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<long?>? SourceVid { get; set; }
@@ -76,9 +77,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public List<long?> SourceVid { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>When the value was set, as a 64-bit integer.</summary>
         public long? Timestamp { get; set; }
-        /// <summary>The unit property</summary>
+        /// <summary>The unit of measurement or context for the value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -86,11 +87,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>The updatedByUserId property</summary>
+        /// <summary>The ID of the user who updated the property.</summary>
         public int? UpdatedByUserId { get; set; }
         /// <summary>The useTimestampAsPersistenceTimestamp property</summary>
         public bool? UseTimestampAsPersistenceTimestamp { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -112,7 +113,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue();
         }
         /// <summary>
@@ -149,7 +150,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteBoolValue("isEncrypted", IsEncrypted);
             writer.WriteBoolValue("isLargeValue", IsLargeValue);

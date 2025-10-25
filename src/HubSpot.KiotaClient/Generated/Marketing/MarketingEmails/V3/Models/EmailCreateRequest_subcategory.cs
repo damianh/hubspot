@@ -83,6 +83,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Automated_for_form_draft,
         #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_crm")]
+        #pragma warning disable CS1591
+        Automated_for_crm,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rss_to_email")]
         #pragma warning disable CS1591
         Rss_to_email,
@@ -259,6 +263,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Kb_support_form,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kb_404_page")]
+        #pragma warning disable CS1591
+        Kb_404_page,
+        #pragma warning restore CS1591
         [EnumMember(Value = "case_study")]
         #pragma warning disable CS1591
         Case_study,
@@ -270,6 +278,34 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "case_study_instance_layout")]
         #pragma warning disable CS1591
         Case_study_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "scp_static_page")]
+        #pragma warning disable CS1591
+        Scp_static_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "scp_instance_layout_page")]
+        #pragma warning disable CS1591
+        Scp_instance_layout_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "podcast_instance_layout")]
+        #pragma warning disable CS1591
+        Podcast_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "podcast_listing")]
+        #pragma warning disable CS1591
+        Podcast_listing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_article_instance_layout")]
+        #pragma warning disable CS1591
+        Blog_article_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_article_listing")]
+        #pragma warning disable CS1591
+        Blog_article_listing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_author_detail")]
+        #pragma warning disable CS1591
+        Blog_author_detail,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591

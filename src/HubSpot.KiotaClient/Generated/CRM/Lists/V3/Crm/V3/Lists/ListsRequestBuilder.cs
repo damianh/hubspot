@@ -6,14 +6,11 @@ using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Records;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Search;
-using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
-using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using System.Threading;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists
 {
@@ -23,6 +20,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The EmptyPathSegment property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.EmptyPathSegmentRequestBuilder EmptyPathSegment
+        {
+            get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The folders property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.FoldersRequestBuilder Folders
         {
@@ -65,7 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists/{?includeFilters*,listIds*}", pathParameters)
+        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists", pathParameters)
         {
         }
         /// <summary>
@@ -73,131 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists/{?includeFilters*,listIds*}", rawUrl)
-        {
-        }
-        /// <summary>
-        /// Fetch multiple lists in a single request by **ILS list ID**. The response will include the definitions of all lists that exist for the `listIds` provided.
-        /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListsByIdResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListsByIdResponse?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListsByIdResponse> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListsByIdResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListsByIdResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Create a new list with the provided object list definition.
-        /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Fetch multiple lists in a single request by **ILS list ID**. The response will include the definitions of all lists that exist for the `listIds` provided.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Create a new list with the provided object list definition.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
-        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-        /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder"/></returns>
-        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder WithUrl(string rawUrl)
-        {
-            return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Fetch multiple lists in a single request by **ILS list ID**. The response will include the definitions of all lists that exist for the `listIds` provided.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ListsRequestBuilderGetQueryParameters 
-        {
-            /// <summary>A flag indicating whether or not the response object list definitions should include a filter branch definition. By default, object list definitions will not have their filter branch definitions included in the response.</summary>
-            [QueryParameter("includeFilters")]
-            public bool? IncludeFilters { get; set; }
-            /// <summary>The **ILS IDs** of the lists to fetch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("listIds")]
-            public string[]? ListIds { get; set; }
-#nullable restore
-#else
-            [QueryParameter("listIds")]
-            public string[] ListIds { get; set; }
-#endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ListsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ListsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists", rawUrl)
         {
         }
     }

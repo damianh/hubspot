@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         {
         }
         /// <summary>
-        /// Deletes a property from an existing custom event definition.
+        /// Delete an existing property from a custom event definition.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an existing property in a custom event definition.
+        /// Update an existing property in a custom event definition.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property"/></returns>
         /// <param name="body">The request body</param>
@@ -66,12 +66,12 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property> PatchAsync(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventPropertyDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a property from an existing custom event definition.
+        /// Delete an existing property from a custom event definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,11 +86,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Updates an existing property in a custom event definition.
+        /// Update an existing property in a custom event definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +103,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventPropertyDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "95E898356CD2CB6EB7FEAE3A575F33816F81258E9C7585957D406F4D8245940D7A52A04F4E5795837EF0F261ACD90F314B3560505349032B0940C37C392F0ACB",
+  "descriptionHash": "481E3A90209191A2A5BE1F1465FBF3C22D1D12DBCC320815E850D1D81E6870B22A78578286877E5647F21774023A788459FFDBC7C04222B2CC9D605EF59CC441",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Communication%20Preferences/Subscriptions/versions/176901",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCommunicationPreferencesSubscriptionsV4Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4",

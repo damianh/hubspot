@@ -7,16 +7,17 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>
+    /// The definition of an association
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AssociationDefinition : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the association was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The fromObjectTypeId property</summary>
+        /// <summary>The ID of the source object type (e.g., 0-1 for contacts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromObjectTypeId { get; set; }
@@ -24,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string FromObjectTypeId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique ID of the associated object (e.g., a contact ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>For labeled association types, the internal name of the association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The toObjectTypeId property</summary>
+        /// <summary>The ID of the destination object type (e.g., 0-3 for deals).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectTypeId { get; set; }
@@ -48,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ToObjectTypeId { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the last update was made to an association, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition"/> and sets the default values.
@@ -64,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition();
         }
         /// <summary>
@@ -89,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("fromObjectTypeId", FromObjectTypeId);
             writer.WriteStringValue("id", Id);

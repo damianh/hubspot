@@ -90,7 +90,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

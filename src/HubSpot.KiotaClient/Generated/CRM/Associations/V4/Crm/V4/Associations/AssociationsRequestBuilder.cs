@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Associations
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Associations.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Associations.V4.crm.v4.associations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Type of the toObject for this association definition (ex. &quot;0-2&quot;)</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Associations.Item.WithFromObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Crm.V4.Associations.Item.WithFromObjectTypeItemRequestBuilder this[string position]
         {

@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         {
         }
         /// <summary>
-        /// Delete a marketing email.
+        /// Delete a marketing email by its ID
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,12 +114,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail> PatchAsync(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailUpdateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.WithEmailItemRequestBuilder.WithEmailItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a marketing email.
+        /// Delete a marketing email by its ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -171,7 +170,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailUpdateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.WithEmailItemRequestBuilder.WithEmailItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -188,7 +187,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.WithEmailItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a marketing email.
+        /// Delete a marketing email by its ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithEmailItemRequestBuilderDeleteQueryParameters 
@@ -214,6 +213,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Limit the response to only include the specified properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includedProperties")]
@@ -223,11 +223,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("includedProperties")]
             public string[] IncludedProperties { get; set; }
 #endif
-            /// <summary>Include statistics with email</summary>
+            /// <summary>Include statistics with email.</summary>
             [QueryParameter("includeStats")]
             public bool? IncludeStats { get; set; }
+            /// <summary>If set to true, loads `campaignName` and `campaignUtm`.</summary>
             [QueryParameter("marketingCampaignNames")]
             public bool? MarketingCampaignNames { get; set; }
+            /// <summary>If set to true, loads workflows in which the email is used within a &quot;send email&quot; action. </summary>
             [QueryParameter("workflowNames")]
             public bool? WorkflowNames { get; set; }
         }

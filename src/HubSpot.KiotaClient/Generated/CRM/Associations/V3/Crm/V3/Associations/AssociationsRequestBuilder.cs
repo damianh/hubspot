@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations
     public partial class AssociationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Associations.V3.crm.v3.associations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The type of the object from which associations will be created.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.Item.WithFromObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.Item.WithFromObjectTypeItemRequestBuilder this[string position]
         {

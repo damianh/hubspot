@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Expo
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/vnd.ms-excel, text/csv, */*");
+            requestInfo.Headers.TryAdd("Accept", "application/vnd.ms-excel, text/csv");
             return requestInfo;
         }
         /// <summary>

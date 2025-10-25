@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Events.V3.Events.EventTyp
         {
         }
         /// <summary>
-        /// This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.
+        /// This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.Note: the `get_types` method is only supported in the Python SDK version `12.0.0-beta.1` or later. 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.VisibleExternalEventTypeNames"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Events.V3.Events.EventTyp
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.VisibleExternalEventTypeNames>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.VisibleExternalEventTypeNames.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.
+        /// This endpoint returns a list of event type names which are visible to you. You may use these event type names to query the API for specific event instances of a desired type.Note: the `get_types` method is only supported in the Python SDK version `12.0.0-beta.1` or later. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

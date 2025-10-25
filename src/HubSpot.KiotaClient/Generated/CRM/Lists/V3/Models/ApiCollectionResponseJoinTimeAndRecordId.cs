@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The paging property</summary>
+        /// <summary>The cursor to be used for paging through records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.Paging? Paging { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId();
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.Paging>("paging", Paging);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.JoinTimeAndRecordId>("results", Results);
             writer.WriteLongValue("total", Total);

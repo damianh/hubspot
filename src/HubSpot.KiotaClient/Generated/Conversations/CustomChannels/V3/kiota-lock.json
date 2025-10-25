@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "7D4F4EBE2785648D71C405AA180C7EEBCF0414010B7C568BE8EA51B2464909DBDD30C55F94AA63BEA70EEABDA34D13EF255E51E2714020D0DF837CA8F7EAD596",
+  "descriptionHash": "638EC5AB7AF3AB7BBEA66D2490C7A755F1D4E67ACB85B012E9E73EE6E7A9F98968577E7106F3C10180E72A058DB6D366AA1EB213523FF76CC98B9377F5FAFDAE",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Conversations/Custom%20Channels/versions/160898",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotConversationsCustomChannelsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3",

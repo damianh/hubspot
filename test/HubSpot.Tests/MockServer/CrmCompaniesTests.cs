@@ -5,18 +5,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
-using Xunit.Abstractions;
 
 namespace DamianH.HubSpot.MockServer;
+
 public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
 {
     private HubSpotMockServer           _server = null!;
     private HubSpotCRMCompaniesV3Client _client = null!;
 
-    public async Task InitializeAsync()
+    public async ValueTask InitializeAsync()
     {
         var services = new ServiceCollection()
-            .AddLogging(logging => logging.AddXUnit(outputHelper))
             .BuildServiceProvider();
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();
         _server = await HubSpotMockServer.StartNew(loggerFactory);

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>Hint for how a number property is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted&quot;, &quot;formatted&quot;, &quot;currency&quot;, &quot;percentage&quot;, &quot;duration&quot;, or &quot;probability&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Property_numberDisplayHint
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unformatted")]
         #pragma warning disable CS1591

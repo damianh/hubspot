@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.crm.v3.objects.tickets.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the ticket.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.Item.WithTicketItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.Item.WithTicketItemRequestBuilder this[string position]
         {
@@ -67,40 +67,40 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets
         /// <summary>
         /// Read a page of tickets. Control what is returned via the `properties` query param.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.TicketsRequestBuilder.TicketsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociations?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.TicketsRequestBuilder.TicketsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.TicketsRequestBuilder.TicketsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociations> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets.TicketsRequestBuilder.TicketsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CollectionResponseSimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a ticket with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard tickets is provided.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CreatedResponseSimplePublicObject"/></returns>
+        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CreatedResponseSimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CreatedResponseSimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CreatedResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.CreatedResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read a page of tickets. Control what is returned via the `properties` query param.
@@ -125,7 +125,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets
         /// Create a ticket with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard tickets is provided.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,7 +136,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -194,7 +194,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Crm.V3.Objects.Tickets
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
-            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of objects that can be read by a single request.</summary>
+            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of tickets that can be read by a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("propertiesWithHistory")]

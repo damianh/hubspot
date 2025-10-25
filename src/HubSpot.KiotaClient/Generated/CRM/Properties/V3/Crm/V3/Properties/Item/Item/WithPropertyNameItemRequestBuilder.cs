@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of a property identified by {propertyName}. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -127,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of a property identified by {propertyName}. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

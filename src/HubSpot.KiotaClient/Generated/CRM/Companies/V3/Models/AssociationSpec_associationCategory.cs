@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
 {
+    /// <summary>For [labeled associations](https://developers.hubspot.com/docs/guides/api/crm/associations/associations-v4#associate-records-with-a-label), the category of the association.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AssociationSpec_associationCategory
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HUBSPOT_DEFINED")]
         #pragma warning disable CS1591

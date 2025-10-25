@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The date and time when the batch process was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>A collection of related links associated with the batch response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse_links? Links { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The date and time when the batch request was made.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>The array of results from the batch process, each containing subscription status information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatusBulkResponse>? Results { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatusBulkResponse> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The date and time when the batch process began.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the batch process, with possible values: PENDING, PROCESSING, CANCELED, COMPLETE.</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse"/> and sets the default values.
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse();
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse_links>("links", Links);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);

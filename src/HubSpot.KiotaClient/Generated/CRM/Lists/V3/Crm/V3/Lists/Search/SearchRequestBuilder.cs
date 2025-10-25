@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Search
         /// Search lists by list name or page through all lists by providing an empty `query` value.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The request object used for searching through lists.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Search
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Search
         /// Search lists by list name or page through all lists by providing an empty `query` value.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The request object used for searching through lists.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Search
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListSearchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

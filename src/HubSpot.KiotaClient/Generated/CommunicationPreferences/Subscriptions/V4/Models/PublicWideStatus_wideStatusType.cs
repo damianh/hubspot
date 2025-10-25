@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
+    /// <summary>The type of wide status, which can be &apos;PORTAL_WIDE&apos; or &apos;BUSINESS_UNIT_WIDE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicWideStatus_wideStatusType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PORTAL_WIDE")]
         #pragma warning disable CS1591

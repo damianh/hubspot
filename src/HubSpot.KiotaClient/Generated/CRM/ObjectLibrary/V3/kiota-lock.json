@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "ADF4D9B5F2A12337337D2C8B8738E174BE2B3C301BD0C34932E9029629EF6BEE18D27A6AB6B914EF9A7F86E0B6DA85C141ABEFA24F1F303FD4EB6253335F775C",
+  "descriptionHash": "CE3461AAFB48FF56F1F7456166E6F375DBE19B361F4A5418D45B9C94CAECFC34C1AC0D77D93EF681C3FE27F3EC20973D524BF6DE4B7B5A4B32B43E6E47E2C41C",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Object%20Library/versions/196908",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMObjectLibraryV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3",

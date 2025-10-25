@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
         {
         }
         /// <summary>
-        /// Create or update a batch of products by unique property values
+        /// Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicUpsertObject"/></returns>
         /// <param name="body">The request body</param>
@@ -49,12 +49,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicUpsertObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchInputSimplePublicObjectBatchInputUpsert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicUpsertObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicUpsertObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update a batch of products by unique property values
+        /// Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchInputSimplePublicObjectBatchInputUpsert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

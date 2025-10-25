@@ -672,9 +672,17 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         EnEe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "en-eg")]
+        #pragma warning disable CS1591
+        EnEg,
+        #pragma warning restore CS1591
         [EnumMember(Value = "en-er")]
         #pragma warning disable CS1591
         EnEr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "en-es")]
+        #pragma warning disable CS1591
+        EnEs,
         #pragma warning restore CS1591
         [EnumMember(Value = "en-fi")]
         #pragma warning disable CS1591
@@ -943,6 +951,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "en-tk")]
         #pragma warning disable CS1591
         EnTk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "en-tn")]
+        #pragma warning disable CS1591
+        EnTn,
         #pragma warning restore CS1591
         [EnumMember(Value = "en-to")]
         #pragma warning disable CS1591
@@ -1552,6 +1564,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         He,
         #pragma warning restore CS1591
+        [EnumMember(Value = "he-il")]
+        #pragma warning disable CS1591
+        HeIl,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hi")]
         #pragma warning disable CS1591
         Hi,
@@ -1655,10 +1671,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "it-va")]
         #pragma warning disable CS1591
         ItVa,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "he-il")]
-        #pragma warning disable CS1591
-        HeIl,
         #pragma warning restore CS1591
         [EnumMember(Value = "ja")]
         #pragma warning disable CS1591

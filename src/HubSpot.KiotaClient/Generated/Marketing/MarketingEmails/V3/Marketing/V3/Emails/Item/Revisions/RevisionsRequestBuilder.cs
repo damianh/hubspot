@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         {
         }
         /// <summary>
-        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. The current revision has the ID -1.
+        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. To view the most recent version, sort by the updatedAt parameter. 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. The current revision has the ID -1.
+        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. To view the most recent version, sort by the updatedAt parameter. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. The current revision has the ID -1.
+        /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. To view the most recent version, sort by the updatedAt parameter. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RevisionsRequestBuilderGetQueryParameters 
@@ -118,7 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The maximum number of results to return. Default is 100.</summary>
+            /// <summary>The maximum number of results to return. Default is 10.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

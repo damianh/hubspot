@@ -8,13 +8,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     public enum MediaBridgePropertyUpdate_fieldType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "textarea")]
+        [EnumMember(Value = "booleancheckbox")]
         #pragma warning disable CS1591
-        Textarea,
+        Booleancheckbox,
         #pragma warning restore CS1591
-        [EnumMember(Value = "text")]
+        [EnumMember(Value = "calculation_equation")]
         #pragma warning disable CS1591
-        Text,
+        Calculation_equation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "checkbox")]
+        #pragma warning disable CS1591
+        Checkbox,
         #pragma warning restore CS1591
         [EnumMember(Value = "date")]
         #pragma warning disable CS1591
@@ -24,33 +28,33 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         File,
         #pragma warning restore CS1591
+        [EnumMember(Value = "html")]
+        #pragma warning disable CS1591
+        Html,
+        #pragma warning restore CS1591
         [EnumMember(Value = "number")]
         #pragma warning disable CS1591
         Number,
         #pragma warning restore CS1591
-        [EnumMember(Value = "select")]
+        [EnumMember(Value = "phonenumber")]
         #pragma warning disable CS1591
-        Select,
+        Phonenumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "radio")]
         #pragma warning disable CS1591
         Radio,
         #pragma warning restore CS1591
-        [EnumMember(Value = "checkbox")]
+        [EnumMember(Value = "select")]
         #pragma warning disable CS1591
-        Checkbox,
+        Select,
         #pragma warning restore CS1591
-        [EnumMember(Value = "booleancheckbox")]
+        [EnumMember(Value = "text")]
         #pragma warning disable CS1591
-        Booleancheckbox,
+        Text,
         #pragma warning restore CS1591
-        [EnumMember(Value = "calculation_equation")]
+        [EnumMember(Value = "textarea")]
         #pragma warning disable CS1591
-        Calculation_equation,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "html")]
-        #pragma warning disable CS1591
-        Html,
+        Textarea,
         #pragma warning restore CS1591
     }
 }

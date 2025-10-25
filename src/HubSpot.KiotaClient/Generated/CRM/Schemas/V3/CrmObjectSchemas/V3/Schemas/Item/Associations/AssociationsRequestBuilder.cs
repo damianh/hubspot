@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinitionEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinitionEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

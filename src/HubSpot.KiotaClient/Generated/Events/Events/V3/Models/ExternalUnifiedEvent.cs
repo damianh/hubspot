@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
 #endif
         /// <summary>An ISO 8601 timestamp when the event occurred.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>The properties property</summary>
+        /// <summary>A key-value map of event-specific properties. The available properties depend on the event type definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.ExternalUnifiedEvent_properties? Properties { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.ExternalUnifiedEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.ExternalUnifiedEvent();
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("objectId", ObjectId);

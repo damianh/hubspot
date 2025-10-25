@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "B15DCDE53144838CAC1A664873CB4000204539714876E0AF965D17BB5CFB7C1889F12E474153C67D0F9F0F6AD0723B22C5D378C9E16DE9EF6CDEA6909A194E98",
+  "descriptionHash": "2C1A0E9167955D61576993BA05858A0205EAB052CA4BC63FF8F1485A285D9C4C3D6EE476150311DF700603267032EE579D6C2F0C25665A00782CB08CD0FD6170",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Timeline/versions/147898",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMTimelineV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Timeline.V3",

@@ -69,10 +69,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{communicationId}`. `{communicationId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Perform a partial update of an Object identified by `{communicationId}`or optionally a unique property value as specified by the `idProperty` query param. `{communicationId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObject> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Communications.Item.WithCommunicationItemRequestBuilder.WithCommunicationItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -127,10 +126,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{communicationId}`. `{communicationId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Perform a partial update of an Object identified by `{communicationId}`or optionally a unique property value as specified by the `idProperty` query param. `{communicationId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Communications.Item.WithCommunicationItemRequestBuilder.WithCommunicationItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -184,7 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
-            /// <summary>The name of a property whose values are unique for this object type</summary>
+            /// <summary>The name of a property whose values are unique for this object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]
@@ -224,12 +223,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Crm.V3.Objects.Commu
         {
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{communicationId}`. `{communicationId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Perform a partial update of an Object identified by `{communicationId}`or optionally a unique property value as specified by the `idProperty` query param. `{communicationId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCommunicationItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The name of a property whose values are unique for this object type</summary>
+            /// <summary>The name of a property whose values are unique for this object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]

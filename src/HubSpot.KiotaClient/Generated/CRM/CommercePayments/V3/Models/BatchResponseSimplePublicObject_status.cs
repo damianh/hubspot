@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Models
 {
-    /// <summary> The status of the batch processing request. It indicates the current state of the batch operation, such as &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;COMPLETED&quot;, or &quot;CANCELLED&quot;</summary>
+    /// <summary>The status of the batch processing request: &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;CANCELLED&quot;, or &quot;COMPLETE&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BatchResponseSimplePublicObject_status
     {

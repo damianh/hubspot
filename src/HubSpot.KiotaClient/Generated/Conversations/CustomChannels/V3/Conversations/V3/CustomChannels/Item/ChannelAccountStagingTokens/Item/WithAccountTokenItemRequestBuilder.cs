@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         {
         }
         /// <summary>
-        /// This API is used for integrators creating public apps. Use this API to update a channel account staging token&apos;s account name and delivery identifier. This information will be applied to the channel account created from this staging token.
+        /// Update a channel account staging token&apos;s account name and delivery identifier. This information will be applied to the channel account created from this staging token. This is used for public apps.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingToken"/></returns>
         /// <param name="body">The request body</param>
@@ -49,12 +49,12 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingToken> PatchAsync(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingTokenUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingToken>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This API is used for integrators creating public apps. Use this API to update a channel account staging token&apos;s account name and delivery identifier. This information will be applied to the channel account created from this staging token.
+        /// Update a channel account staging token&apos;s account name and delivery identifier. This information will be applied to the channel account created from this staging token. This is used for public apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccountStagingTokenUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

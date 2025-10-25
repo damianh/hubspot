@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.
         /// Retrieve a batch of companies by ID (`companyId`) or by a unique property (`idProperty`). You can specify what is returned using the `properties` query parameter.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchReadInputSimplePublicObjectId body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.
         /// Retrieve a batch of companies by ID (`companyId`) or by a unique property (`idProperty`). You can specify what is returned using the `properties` query parameter.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchReadInputSimplePublicObjectId body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Crm.V3.Objects.Companies.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

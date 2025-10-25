@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Events.V3.S
         {
         }
         /// <summary>
-        /// Endpoint to send an instance of a custom event.
+        /// Send data for a single event completion.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,12 +54,12 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Events.V3.S
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Endpoint to send an instance of a custom event.
+        /// Send data for a single event completion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -73,10 +73,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Events.V3.S
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

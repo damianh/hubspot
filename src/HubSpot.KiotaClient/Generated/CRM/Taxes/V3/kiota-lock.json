@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "32C3D4713E7D143F12AE9DF1F94B1876A273454F8FF3C7E7E1EF94DCBB0A53F29D884173FB51E6AC71D29FD3A688BBE1C448DD681110992E82A8AE3003527E1B",
+  "descriptionHash": "E7F5657FC0BF127F65C51E380F368DEBAC2679D646208BA13EAF2D252620018CAB937F62C36FC430B098E906220BB6DD1CA131F2981E3B75155AA4C2AC756754",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Taxes/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMTaxesV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Taxes.V3",

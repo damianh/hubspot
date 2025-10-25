@@ -22,6 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string Domain { get; set; }
 #endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The expiresAt property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The isPageRedirected property</summary>
@@ -90,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicWebversionDetails();
         }
         /// <summary>
@@ -102,6 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "isPageRedirected", n => { IsPageRedirected = n.GetBoolValue(); } },
                 { "metaDescription", n => { MetaDescription = n.GetStringValue(); } },
@@ -119,8 +122,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteBoolValue("isPageRedirected", IsPageRedirected);
             writer.WriteStringValue("metaDescription", MetaDescription);

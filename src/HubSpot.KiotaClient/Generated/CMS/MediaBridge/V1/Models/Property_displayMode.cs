@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>The mode in which the property is displayed. Can be: &quot;current_value&quot; or &quot;all_unique_versions&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Property_displayMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "current_value")]
         #pragma warning disable CS1591

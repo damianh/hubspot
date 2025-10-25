@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
+    /// <summary>The current status of the bulk opt-out operation, which can be PENDING, PROCESSING, CANCELED, or COMPLETE.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum BatchResponsePublicBulkOptOutFromAllResponse_status
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591

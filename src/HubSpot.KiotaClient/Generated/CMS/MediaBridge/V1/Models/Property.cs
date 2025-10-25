@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>
+    /// A HubSpot property
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Property : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowedObjectTypes property</summary>
+        /// <summary>Object types permitted to use this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeIdProto>? AllowedObjectTypes { get; set; }
@@ -22,13 +23,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeIdProto> AllowedObjectTypes { get; set; }
 #endif
-        /// <summary>The calculated property</summary>
+        /// <summary>Whether the property is a calculated field.</summary>
         public bool? Calculated { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The canArchive property</summary>
+        public bool? CanArchive { get; set; }
+        /// <summary>The canRestore property</summary>
+        public bool? CanRestore { get; set; }
+        /// <summary>The timestamp when the property was created, in ISO 8601 format.</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The createdUserId property</summary>
+        /// <summary>The ID of the user who created the property.</summary>
         public long? CreatedUserId { get; set; }
-        /// <summary>The currencyPropertyName property</summary>
+        /// <summary>The name of the related currency property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyPropertyName { get; set; }
@@ -36,9 +41,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string CurrencyPropertyName { get; set; }
 #endif
-        /// <summary>The deleted property</summary>
+        /// <summary>Indicates the sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, or &quot;highly_sensitive&quot;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dataSensitivity? DataSensitivity { get; set; }
+        /// <summary>The dateDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dateDisplayHint? DateDisplayHint { get; set; }
+        /// <summary>Whether the property has been deleted.</summary>
         public bool? Deleted { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A summary of the property&apos;s purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -46,13 +55,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayMode property</summary>
+        /// <summary>The mode in which the property is displayed. Can be: &quot;current_value&quot; or &quot;all_unique_versions&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_displayMode? DisplayMode { get; set; }
-        /// <summary>The displayOrder property</summary>
+        /// <summary>The position of the item relative to others in the list.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The externalOptions property</summary>
+        /// <summary>The enforceMultivalueUniqueness property</summary>
+        public bool? EnforceMultivalueUniqueness { get; set; }
+        /// <summary>Applicable only for enumeration type properties. Should be set to true with a &apos;referencedObjectType&apos; of &apos;OWNER&apos;. Otherwise false.</summary>
         public bool? ExternalOptions { get; set; }
-        /// <summary>The externalOptionsReferenceType property</summary>
+        /// <summary>When externalOptions is true, indicates the property&apos;s option values will be populated from other systems (e.g., &quot;OWNER&quot; for the hubspot_owner_id property).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalOptionsReferenceType { get; set; }
@@ -60,11 +71,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ExternalOptionsReferenceType { get; set; }
 #endif
-        /// <summary>The favorited property</summary>
+        /// <summary>Deprecated. Whether the property is marked as a favorite.</summary>
         public bool? Favorited { get; set; }
-        /// <summary>The favoritedOrder property</summary>
+        /// <summary>Deprecated. The order position when marked as favorited.</summary>
         public int? FavoritedOrder { get; set; }
-        /// <summary>The fieldType property</summary>
+        /// <summary>Determines how the property will appear in HubSpot&apos;s UI or on a form. Learn more in the properties API guide.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldType { get; set; }
@@ -72,11 +83,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string FieldType { get; set; }
 #endif
-        /// <summary>The formField property</summary>
+        /// <summary>Whether the property can appear on forms.</summary>
         public bool? FormField { get; set; }
-        /// <summary>The fromUserId property</summary>
+        /// <summary>The ID of the user who last updated the property.</summary>
         public long? FromUserId { get; set; }
-        /// <summary>The groupName property</summary>
+        /// <summary>The name of the group to which the property is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName { get; set; }
@@ -84,19 +95,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>The hasUniqueValue property</summary>
+        /// <summary>Whether the property is a unique identifier property.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>Whether or not the property will be hidden from the HubSpot UI. It&apos;s recommended that this be set to false for custom properties.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The hubspotDefined property</summary>
+        /// <summary>A boolean value set to true for HubSpot default properties.</summary>
         public bool? HubspotDefined { get; set; }
-        /// <summary>The isCustomizedDefault property</summary>
+        /// <summary>For default properties, whether the property has been customized. Equivalent to the &apos;isCustomizedDefault&apos; field.</summary>
         public bool? IsCustomizedDefault { get; set; }
-        /// <summary>The isMultiValued property</summary>
+        /// <summary>Whether the property can contain multiple values.</summary>
         public bool? IsMultiValued { get; set; }
-        /// <summary>The isPartial property</summary>
+        /// <summary>For default properties, whether the property has been customized. Equivalent to the &apos;isCustomizedDefault&apos; field.</summary>
         public bool? IsPartial { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The display label for the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -104,9 +115,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The mutableDefinitionNotDeletable property</summary>
+        /// <summary>Whether the property definition can be customized but not deleted.</summary>
         public bool? MutableDefinitionNotDeletable { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The internal name for the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -114,9 +125,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The numberDisplayHint property</summary>
+        /// <summary>Hint for how a number property is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted&quot;, &quot;formatted&quot;, &quot;currency&quot;, &quot;percentage&quot;, &quot;duration&quot;, or &quot;probability&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_numberDisplayHint? NumberDisplayHint { get; set; }
-        /// <summary>The options property</summary>
+        /// <summary>A list of valid options for the property. This field is required for enumerated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option>? Options { get; set; }
@@ -124,29 +135,39 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option> Options { get; set; }
 #endif
-        /// <summary>The optionsAreMutable property</summary>
+        /// <summary>Whether options can be modified after creation.</summary>
         public bool? OptionsAreMutable { get; set; }
-        /// <summary>The optionSortStrategy property</summary>
+        /// <summary>Specifies how to sort property options. Can be either &quot;DISPLAY_ORDER&quot; to defer to the displayOrder field, or &quot;ALPHABETICAL&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_optionSortStrategy? OptionSortStrategy { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>The owningAppId property</summary>
+        public long? OwningAppId { get; set; }
+        /// <summary>The ID of the HubSpot account where the property is defined.</summary>
         public long? PortalId { get; set; }
-        /// <summary>The readOnlyDefinition property</summary>
+        /// <summary>Whether the property&apos;s description is read-only.</summary>
         public bool? ReadOnlyDefinition { get; set; }
-        /// <summary>The readOnlyValue property</summary>
+        /// <summary>Indicates if the property&apos;s value is read-only.</summary>
         public bool? ReadOnlyValue { get; set; }
-        /// <summary>The referencedObjectType property</summary>
+        /// <summary>Deprecated. Use externalOptionsReferenceType instead.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_referencedObjectType? ReferencedObjectType { get; set; }
-        /// <summary>The searchableInGlobalSearch property</summary>
+        /// <summary>Whether the property is searchable globaly.</summary>
         public bool? SearchableInGlobalSearch { get; set; }
         /// <summary>The searchTextAnalysisMode property</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_searchTextAnalysisMode? SearchTextAnalysisMode { get; set; }
-        /// <summary>The showCurrencySymbol property</summary>
+        /// <summary>When sensitiveData is true, lists the type of sensitive data contained in the property (e.g., &quot;HIPAA&quot;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SensitiveDataCategories { get; set; }
+#nullable restore
+#else
+        public List<string> SensitiveDataCategories { get; set; }
+#endif
+        /// <summary>Whether to show the currency symbol in HubSpot&apos;s UI.</summary>
         public bool? ShowCurrencySymbol { get; set; }
-        /// <summary>The textDisplayHint property</summary>
+        /// <summary>Hint for how the text is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted_single_line&quot;, &quot;multi_line&quot;, &quot;email&quot;, &quot;phone_number&quot;, &quot;domain_name&quot;, &quot;ip_address&quot;, &quot;physical_address&quot;, or &quot;postal_code&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_textDisplayHint? TextDisplayHint { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The data type of the property, such as string or number.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_type? Type { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the property was last updated, in ISO 8601 format.</summary>
         public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property"/> and sets the default values.
@@ -162,7 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property();
         }
         /// <summary>
@@ -175,13 +196,18 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             {
                 { "allowedObjectTypes", n => { AllowedObjectTypes = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeIdProto>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeIdProto.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calculated", n => { Calculated = n.GetBoolValue(); } },
+                { "canArchive", n => { CanArchive = n.GetBoolValue(); } },
+                { "canRestore", n => { CanRestore = n.GetBoolValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetLongValue(); } },
                 { "currencyPropertyName", n => { CurrencyPropertyName = n.GetStringValue(); } },
+                { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dataSensitivity>(); } },
+                { "dateDisplayHint", n => { DateDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dateDisplayHint>(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayMode", n => { DisplayMode = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_displayMode>(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
+                { "enforceMultivalueUniqueness", n => { EnforceMultivalueUniqueness = n.GetBoolValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
                 { "externalOptionsReferenceType", n => { ExternalOptionsReferenceType = n.GetStringValue(); } },
                 { "favorited", n => { Favorited = n.GetBoolValue(); } },
@@ -203,12 +229,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "optionSortStrategy", n => { OptionSortStrategy = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_optionSortStrategy>(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "optionsAreMutable", n => { OptionsAreMutable = n.GetBoolValue(); } },
+                { "owningAppId", n => { OwningAppId = n.GetLongValue(); } },
                 { "portalId", n => { PortalId = n.GetLongValue(); } },
                 { "readOnlyDefinition", n => { ReadOnlyDefinition = n.GetBoolValue(); } },
                 { "readOnlyValue", n => { ReadOnlyValue = n.GetBoolValue(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_referencedObjectType>(); } },
                 { "searchTextAnalysisMode", n => { SearchTextAnalysisMode = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_searchTextAnalysisMode>(); } },
                 { "searchableInGlobalSearch", n => { SearchableInGlobalSearch = n.GetBoolValue(); } },
+                { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
                 { "textDisplayHint", n => { TextDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_textDisplayHint>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_type>(); } },
@@ -221,16 +249,21 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeIdProto>("allowedObjectTypes", AllowedObjectTypes);
             writer.WriteBoolValue("calculated", Calculated);
+            writer.WriteBoolValue("canArchive", CanArchive);
+            writer.WriteBoolValue("canRestore", CanRestore);
             writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteLongValue("createdUserId", CreatedUserId);
             writer.WriteStringValue("currencyPropertyName", CurrencyPropertyName);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dataSensitivity>("dataSensitivity", DataSensitivity);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_dateDisplayHint>("dateDisplayHint", DateDisplayHint);
             writer.WriteBoolValue("deleted", Deleted);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_displayMode>("displayMode", DisplayMode);
             writer.WriteIntValue("displayOrder", DisplayOrder);
+            writer.WriteBoolValue("enforceMultivalueUniqueness", EnforceMultivalueUniqueness);
             writer.WriteBoolValue("externalOptions", ExternalOptions);
             writer.WriteStringValue("externalOptionsReferenceType", ExternalOptionsReferenceType);
             writer.WriteBoolValue("favorited", Favorited);
@@ -252,12 +285,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option>("options", Options);
             writer.WriteBoolValue("optionsAreMutable", OptionsAreMutable);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_optionSortStrategy>("optionSortStrategy", OptionSortStrategy);
+            writer.WriteLongValue("owningAppId", OwningAppId);
             writer.WriteLongValue("portalId", PortalId);
             writer.WriteBoolValue("readOnlyDefinition", ReadOnlyDefinition);
             writer.WriteBoolValue("readOnlyValue", ReadOnlyValue);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_referencedObjectType>("referencedObjectType", ReferencedObjectType);
             writer.WriteBoolValue("searchableInGlobalSearch", SearchableInGlobalSearch);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_searchTextAnalysisMode>("searchTextAnalysisMode", SearchTextAnalysisMode);
+            writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_textDisplayHint>("textDisplayHint", TextDisplayHint);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_type>("type", Type);

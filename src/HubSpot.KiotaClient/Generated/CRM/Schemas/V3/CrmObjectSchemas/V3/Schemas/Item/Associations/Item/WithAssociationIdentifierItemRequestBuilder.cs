@@ -65,7 +65,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

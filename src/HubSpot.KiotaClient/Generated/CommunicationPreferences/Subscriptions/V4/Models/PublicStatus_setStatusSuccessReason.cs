@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
+    /// <summary>The reason for the successful change in subscription status, such as &apos;RESUBSCRIBE_OCCURRED&apos; or &apos;NO_STATUS_CHANGE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicStatus_setStatusSuccessReason
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "RESUBSCRIBE_OCCURRED")]
         #pragma warning disable CS1591

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Draft
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DraftRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables/draft{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", pathParameters)
+        public DraftRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables/draft{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,isGetLocalizedSchema*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Draft
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DraftRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables/draft{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", rawUrl)
+        public DraftRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables/draft{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,isGetLocalizedSchema*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", rawUrl)
         {
         }
         /// <summary>
@@ -116,6 +116,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Draft
             /// <summary>Only return tables created before the specified time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
+            [QueryParameter("isGetLocalizedSchema")]
+            public bool? IsGetLocalizedSchema { get; set; }
             /// <summary>The maximum number of results to return. Default is 1000.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

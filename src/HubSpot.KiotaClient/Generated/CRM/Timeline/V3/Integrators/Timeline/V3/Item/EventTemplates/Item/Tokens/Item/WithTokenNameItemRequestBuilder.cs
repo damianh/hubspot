@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         {
         }
         /// <summary>
-        /// This will remove the token from an existing template. Existing events and CRM objects will still retain the token and its mapped object properties, but new ones will not.The timeline will still display this property for older CRM objects if it&apos;s still referenced in the template `Markdown`. New events will not.Any lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.
+        /// Delete an existing token from a specific event type template.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will update the existing token on an event template. Name and type can&apos;t be changed on existing tokens.
+        /// Update an event type template token, specified by token name.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken"/></returns>
         /// <param name="body">State of the token definition for update requests.</param>
@@ -66,12 +66,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateTokenUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will remove the token from an existing template. Existing events and CRM objects will still retain the token and its mapped object properties, but new ones will not.The timeline will still display this property for older CRM objects if it&apos;s still referenced in the template `Markdown`. New events will not.Any lists or reports referencing deleted tokens will no longer return new contacts, but old ones will still exist in the lists.
+        /// Delete an existing token from a specific event type template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,11 +86,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// This will update the existing token on an event template. Name and type can&apos;t be changed on existing tokens.
+        /// Update an event type template token, specified by token name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">State of the token definition for update requests.</param>
@@ -104,7 +103,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateTokenUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

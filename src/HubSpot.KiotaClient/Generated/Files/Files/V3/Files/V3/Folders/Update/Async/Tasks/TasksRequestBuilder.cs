@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Update.Asy
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Files.Files.V3.files.v3.folders.update.async.tasks.item collection</summary>
-        /// <param name="position">TaskId of folder update</param>
+        /// <param name="position">The ID of the folder update task.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Update.Async.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Update.Async.Tasks.Item.WithTaskItemRequestBuilder this[string position]
         {

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>Specifies the paging information needed to retrieve the next set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.NextPage? Next { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.NextPage Next { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>specifies the paging information needed to retrieve the previous set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.PreviousPage? Prev { get; set; }
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.Paging CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.Paging();
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.NextPage>("next", Next);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.PreviousPage>("prev", Prev);
             writer.WriteAdditionalData(AdditionalData);

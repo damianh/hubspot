@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models
 {
+    /// <summary>
+    /// Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BatchReadInputSimplePublicObjectId : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The idProperty property</summary>
+        /// <summary>When using a custom unique value property to retrieve records, the name of the property. Do not include this parameter if retrieving by record ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdProperty { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectId> Inputs { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>Key-value pairs for setting properties for the new object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Properties { get; set; }
@@ -38,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models
 #else
         public List<string> Properties { get; set; }
 #endif
-        /// <summary>The propertiesWithHistory property</summary>
+        /// <summary>Key-value pairs for setting properties for the new object and their histories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PropertiesWithHistory { get; set; }
@@ -60,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.BatchReadInputSimplePublicObjectId CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.BatchReadInputSimplePublicObjectId();
         }
         /// <summary>
@@ -83,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("idProperty", IdProperty);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectId>("inputs", Inputs);
             writer.WriteCollectionOfPrimitiveValues<string>("properties", Properties);

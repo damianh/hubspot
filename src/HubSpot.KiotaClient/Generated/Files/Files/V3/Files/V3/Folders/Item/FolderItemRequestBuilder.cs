@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get folder by ID
+        /// Retrieve a folder by its ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,6 +66,26 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder>(requestInfo, global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Update a folder&apos;s properties, identified by folder ID.
+        /// </summary>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder"/></returns>
+        /// <param name="body">Object for updating folders.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder?> PatchAsync(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FolderUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder> PatchAsync(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FolderUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder>(requestInfo, global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.Folder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -84,11 +104,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Get folder by ID
+        /// Retrieve a folder by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,6 +123,28 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update a folder&apos;s properties, identified by folder ID.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Object for updating folders.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FolderUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FolderUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -124,7 +165,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
         {
         }
         /// <summary>
-        /// Get folder by ID
+        /// Retrieve a folder by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FolderItemRequestBuilderGetQueryParameters 
@@ -146,6 +187,14 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FolderItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Item.FolderItemRequestBuilder.FolderItemRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FolderItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

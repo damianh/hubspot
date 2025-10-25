@@ -109,7 +109,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse> PatchAsync(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventUpdateRequestParams body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.Item.WithExternalEventItemRequestBuilder.WithExternalEventItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -129,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse> PutAsync(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventCreateRequestParams body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -149,7 +149,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -186,7 +185,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventUpdateRequestParams body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.Item.WithExternalEventItemRequestBuilder.WithExternalEventItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -208,7 +207,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventCreateRequestParams body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/marketing/v3/marketing-events/events/{externalEventId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item.GdprDel
         {
         }
         /// <summary>
-        /// GDRP delete file
+        /// Delete a file in accordance with GDPR regulations.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item.GdprDel
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// GDRP delete file
+        /// Delete a file in accordance with GDPR regulations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,7 +65,6 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item.GdprDel
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

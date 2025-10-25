@@ -7,6 +7,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ColumnRequest_type
     {
+        [EnumMember(Value = "NULL")]
+        #pragma warning disable CS1591
+        NULL,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TEXT")]
         #pragma warning disable CS1591
         TEXT,
@@ -82,6 +86,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         [EnumMember(Value = "CODE")]
         #pragma warning disable CS1591
         CODE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "HUBSPOT_VIDEO")]
+        #pragma warning disable CS1591
+        HUBSPOT_VIDEO,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMBED")]
+        #pragma warning disable CS1591
+        EMBED,
         #pragma warning restore CS1591
     }
 }

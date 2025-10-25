@@ -33,7 +33,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <summary>The time the folder was created at.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The Id of the folder.</summary>
-        public int? Id { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The name of the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +49,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         public string Name { get; set; }
 #endif
         /// <summary>The Id of the folder this folder is in, the root folder is represented as 0.</summary>
-        public int? ParentFolderId { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentFolderId { get; set; }
+#nullable restore
+#else
+        public string ParentFolderId { get; set; }
+#endif
         /// <summary>The time the folder was last updated at.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The time that the contents of the folder was last updated at.</summary>
@@ -64,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListFolder CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListFolder();
         }
         /// <summary>
@@ -78,9 +90,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 { "childLists", n => { ChildLists = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "childNodes", n => { ChildNodes = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListFolder>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListFolder.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parentFolderId", n => { ParentFolderId = n.GetIntValue(); } },
+                { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedContentsAt", n => { UpdatedContentsAt = n.GetDateTimeOffsetValue(); } },
                 { "userId", n => { UserId = n.GetIntValue(); } },
@@ -92,13 +104,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("childLists", ChildLists);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListFolder>("childNodes", ChildNodes);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("parentFolderId", ParentFolderId);
+            writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteDateTimeOffsetValue("updatedContentsAt", UpdatedContentsAt);
             writer.WriteIntValue("userId", UserId);

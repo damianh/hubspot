@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>Deprecated. Use externalOptionsReferenceType instead.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Property_referencedObjectType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONTACT")]
         #pragma warning disable CS1591
@@ -611,6 +610,42 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         [EnumMember(Value = "AUDIENCE")]
         #pragma warning disable CS1591
         AUDIENCE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PARTNER_CLIENT_REVENUE")]
+        #pragma warning disable CS1591
+        PARTNER_CLIENT_REVENUE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATION_JOURNEY")]
+        #pragma warning disable CS1591
+        AUTOMATION_JOURNEY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMBO_EVENT_CONFIGURATION")]
+        #pragma warning disable CS1591
+        COMBO_EVENT_CONFIGURATION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CRM_OBJECTS_DUMMY_TYPE")]
+        #pragma warning disable CS1591
+        CRM_OBJECTS_DUMMY_TYPE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CASE_STUDY")]
+        #pragma warning disable CS1591
+        CASE_STUDY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE")]
+        #pragma warning disable CS1591
+        SERVICE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PODCAST_EPISODE")]
+        #pragma warning disable CS1591
+        PODCAST_EPISODE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PARTNER_SERVICE")]
+        #pragma warning disable CS1591
+        PARTNER_SERVICE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROSPECTING_AGENT_CONTACT_ASSIGNMENT")]
+        #pragma warning disable CS1591
+        PROSPECTING_AGENT_CONTACT_ASSIGNMENT,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591

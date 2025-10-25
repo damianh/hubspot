@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "4B6C9AE8D0A6DA69CFC83CB78FE126EE9F0FC9CC1D3FC3D9F8DD6F4900367C4DF4C3071E3528BA4D3E83CBD00A5F4578CD2C9A3305FED24E27F6A7312E0B40A4",
+  "descriptionHash": "F08D5E0392ED415E5B2EC619454DACFCA4F4855636EE6A0EB7247959BAB3479348C871E7E71A6811549172CF1CE3142B4B4DEAAC7CD970B99EF07A532D8F2210",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Cms%20Content%20Audit/versions/144888",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSCmsContentAuditV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3",

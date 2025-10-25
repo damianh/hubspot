@@ -33,9 +33,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/archive", rawUrl)
         {
         }
-        /// <summary>
-        /// Remove the associations between all pairs of objects identified in the request body.
-        /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,13 +45,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchInputPublicAssociation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Remove the associations between all pairs of objects identified in the request body.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,10 +61,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchInputPublicAssociation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

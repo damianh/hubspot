@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 {
+    /// <summary>The data type of the property, such as string or number.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Property_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "string")]
         #pragma warning disable CS1591

@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -30,22 +29,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3 StreamingCollectionResponseWithTotalHubDbTableRowV3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3? UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3 { get; set; }
-#nullable restore
-#else
-        public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3 UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3? UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3 { get; set; }
-#nullable restore
-#else
-        public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3 UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3();
             if("RandomAccessCollectionResponseWithTotalHubDbTableRowV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -63,14 +46,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             else if("StreamingCollectionResponseWithTotalHubDbTableRowV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.StreamingCollectionResponseWithTotalHubDbTableRowV3 = new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3();
-            }
-            else if("RandomAccessCollectionResponseWithTotalHubDbTableRowV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3 = new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3();
-            }
-            else if("StreamingCollectionResponseWithTotalHubDbTableRowV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3 = new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3();
             }
             return result;
         }
@@ -88,14 +63,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             {
                 return StreamingCollectionResponseWithTotalHubDbTableRowV3.GetFieldDeserializers();
             }
-            else if(UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3 != null)
-            {
-                return UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3.GetFieldDeserializers();
-            }
-            else if(UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3 != null)
-            {
-                return UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -104,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RandomAccessCollectionResponseWithTotalHubDbTableRowV3 != null)
             {
                 writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3>(null, RandomAccessCollectionResponseWithTotalHubDbTableRowV3);
@@ -112,14 +79,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             else if(StreamingCollectionResponseWithTotalHubDbTableRowV3 != null)
             {
                 writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3>(null, StreamingCollectionResponseWithTotalHubDbTableRowV3);
-            }
-            else if(UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3 != null)
-            {
-                writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.RandomAccessCollectionResponseWithTotalHubDbTableRowV3>(null, UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3RandomAccessCollectionResponseWithTotalHubDbTableRowV3);
-            }
-            else if(UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3 != null)
-            {
-                writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3>(null, UnifiedCollectionResponseWithTotalBaseHubDbTableRowV3StreamingCollectionResponseWithTotalHubDbTableRowV3);
             }
         }
     }

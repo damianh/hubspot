@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "48CF70B0CE77ED62934501BE4F7A26C17FAC0F2C2F4C526E5F8CA4EEAB9C3F936B6A46B9E1460633BBE7B6099C1FD7936BF6702093776EA38EC624DC52BCB944",
+  "descriptionHash": "7543CC9E6CBFEC64C975B6F935A1F4A94A54BC70A39122AF0F694D6353B43EA692F2F46EDD6CD8631D4256BF8ED8781A414A632F328A462D8562ACCBBB65B1B9",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Url%20Redirects/versions/149916",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSUrlRedirectsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3",

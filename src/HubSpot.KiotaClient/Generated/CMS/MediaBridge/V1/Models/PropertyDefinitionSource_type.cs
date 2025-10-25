@@ -12,5 +12,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         GLOBAL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "OBJECT_TYPE")]
+        #pragma warning disable CS1591
+        OBJECT_TYPE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "HAVEN_BRANCH")]
+        #pragma warning disable CS1591
+        HAVEN_BRANCH,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PORTAL")]
+        #pragma warning disable CS1591
+        PORTAL,
+        #pragma warning restore CS1591
     }
 }

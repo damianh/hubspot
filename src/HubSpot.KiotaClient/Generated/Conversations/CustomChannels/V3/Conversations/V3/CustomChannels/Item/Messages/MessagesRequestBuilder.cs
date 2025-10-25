@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
     public partial class MessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.conversations.v3.customChannels.item.messages.item collection</summary>
-        /// <param name="position">The id of the message</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.Messages.Item.WithMessageItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.Messages.Item.WithMessageItemRequestBuilder this[string position]
         {
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage> PostAsync(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.ChannelIntegrationMessageEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicConversationsMessage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.ChannelIntegrationMessageEgg body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

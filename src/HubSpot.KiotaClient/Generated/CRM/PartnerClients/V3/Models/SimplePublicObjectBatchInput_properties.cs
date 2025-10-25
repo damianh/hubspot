@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
 {
     /// <summary>
-    /// The properties to set.
+    /// Key-value pairs representing the properties of the object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimplePublicObjectBatchInput_properties : IAdditionalDataHolder, IParsable
@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectBatchInput_properties CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectBatchInput_properties();
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteAdditionalData(AdditionalData);
         }
     }

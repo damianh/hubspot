@@ -7,16 +7,25 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
 {
+    /// <summary>
+    /// A public object batch response object
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BatchResponseSimplePublicObject : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The timestamp when the batch processing was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>The errors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.StandardError>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.StandardError> Errors { get; set; }
+#endif
+        /// <summary>An object containing relevant links related to the batch request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_links? Links { get; set; }
@@ -24,7 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The numErrors property</summary>
+        public int? NumErrors { get; set; }
+        /// <summary>The timestamp when the batch request was initially made, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +45,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.SimplePublicObject> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The timestamp when the batch processing began, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the batch processing request: &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;CANCELLED&quot;, or &quot;COMPLETE&quot;</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject"/> and sets the default values.
@@ -52,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject();
         }
         /// <summary>
@@ -64,7 +75,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.StandardError>(global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.StandardError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "links", n => { Links = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_links>(global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_links.CreateFromDiscriminatorValue); } },
+                { "numErrors", n => { NumErrors = n.GetIntValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.SimplePublicObject>(global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -77,9 +90,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.StandardError>("errors", Errors);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.BatchResponseSimplePublicObject_links>("links", Links);
+            writer.WriteIntValue("numErrors", NumErrors);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models.SimplePublicObject>("results", Results);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

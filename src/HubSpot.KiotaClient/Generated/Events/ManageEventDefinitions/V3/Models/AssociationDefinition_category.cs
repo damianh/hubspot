@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 {
+    /// <summary>The category of the association. Can be: &quot;HUBSPOT_DEFINED&quot;, &quot;USER_DEFINED&quot;, or &quot;INTEGRATOR_DEFINED&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AssociationDefinition_category
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HUBSPOT_DEFINED")]
         #pragma warning disable CS1591

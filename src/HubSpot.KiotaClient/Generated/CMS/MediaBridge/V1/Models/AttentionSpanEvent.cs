@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactId property</summary>
+        /// <summary>The ID of the contact in HubSpot’s system that consumed the media. This can be fetched using HubSpot&apos;s Get contact by usertoken (utk) API. The API also supports supplying a usertoken, and will handle converting this into a contact ID automatically.</summary>
         public long? ContactId { get; set; }
         /// <summary>The mediaBridgeId property</summary>
         public long? MediaBridgeId { get; set; }
@@ -52,11 +52,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string MediaUrl { get; set; }
 #endif
-        /// <summary>The occurredTimestamp property</summary>
+        /// <summary>The timestamp at which this event occurred, in milliseconds since the epoch.</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The pageId property</summary>
+        /// <summary>The ID of the page, if hosted on HubSpot. Required for HubSpot pages.</summary>
         public long? PageId { get; set; }
-        /// <summary>The pageName property</summary>
+        /// <summary>The name of the page. Required if the page is not hosted on HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string PageObjectCoordinates { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the page that an event happened on. Required if the page is not hosted on HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -88,11 +88,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string PercentRange { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>The ID of the HubSpot account.</summary>
         public int? PortalId { get; set; }
         /// <summary>The providerId property</summary>
         public int? ProviderId { get; set; }
-        /// <summary>The rawData property</summary>
+        /// <summary>This is the raw data which provides the most granular data about spans of the media, and how many times each span was consumed by the user. For example, for a 10 second video where each second is a span, if a visitor watches the first 5 seconds of the video, then restarts the video and watches the first 2 seconds again, the resulting `rawDataString` would be `“0=2;1=2;2=1;3=1;4=1;5=0;6=0;7=0;8=0;9=0;”`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RawData { get; set; }
@@ -108,9 +108,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string SessionId { get; set; }
 #endif
-        /// <summary>The totalPercentPlayed property</summary>
+        /// <summary>The percent of the media that the user consumed. Providers may calculate this differently depending on how they consider repeated views of the same portion of media. For this reason, the API will not attempt to validate totalPercentWatched against the attention span information for the event. If it is missing, HubSpot will calculate this from the attention span map as follows: (number of spans with a value of 1 or more)/(Total number of spans).</summary>
         public double? TotalPercentPlayed { get; set; }
-        /// <summary>The totalSecondsPlayed property</summary>
+        /// <summary>The seconds that a user spent consuming the media. The media bridge calculates this as `totalPercentPlayed`*`mediaDuration`. If a provider would like this to be calculated differently, they can provide the pre-calculated value when they create the event.</summary>
         public int? TotalSecondsPlayed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEvent"/> and sets the default values.
@@ -126,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEvent();
         }
         /// <summary>
@@ -164,7 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("contactId", ContactId);
             writer.WriteLongValue("mediaBridgeId", MediaBridgeId);
             writer.WriteStringValue("mediaBridgeObjectCoordinates", MediaBridgeObjectCoordinates);

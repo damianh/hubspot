@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.MarkRecordingAsReadyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -67,10 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.MarkRecordingAsReadyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

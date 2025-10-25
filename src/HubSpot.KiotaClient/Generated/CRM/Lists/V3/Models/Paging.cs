@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>
+    /// The cursor to be used for paging through records.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Paging : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>The cursor for the next page of records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.NextPage? Next { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.NextPage Next { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>The cursor for the previous page of records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PreviousPage? Prev { get; set; }
@@ -44,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.Paging CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.Paging();
         }
         /// <summary>
@@ -65,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.NextPage>("next", Next);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PreviousPage>("prev", Prev);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "1254170FD7C61516C80BDD1E568FE9DDE619495D2B9809EF785947F43638C52C33E42C0A1AE6737FF560B69A65AD526AD16E80FD44AA527F53A667391207EDA7",
+  "descriptionHash": "5B67FD21224D63589E482FCCE87D700CDDA2D5BD1792F67B2FD5A47D1326034D251A9D620B25BB40DD97A6FE9F0C0D6EAD537B3BF636DA44221CB7BA9D0CA357",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Account/Account%20Info/versions/144923",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotAccountAccountInfoV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3",

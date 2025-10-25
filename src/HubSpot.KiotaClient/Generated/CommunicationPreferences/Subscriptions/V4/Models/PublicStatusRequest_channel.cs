@@ -11,13 +11,5 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         #pragma warning disable CS1591
         EMAIL,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WHATSAPP")]
-        #pragma warning disable CS1591
-        WHATSAPP,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SMS")]
-        #pragma warning disable CS1591
-        SMS,
-        #pragma warning restore CS1591
     }
 }

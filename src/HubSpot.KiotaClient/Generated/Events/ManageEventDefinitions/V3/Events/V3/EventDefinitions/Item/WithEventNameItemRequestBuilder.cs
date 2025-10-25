@@ -39,6 +39,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public WithEventNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events/v3/event-definitions/{eventName}", rawUrl)
         {
         }
+        /// <summary>
+        /// Delete a custom event definition by name.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +90,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition> PatchAsync(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Delete a custom event definition by name.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +110,6 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -141,7 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

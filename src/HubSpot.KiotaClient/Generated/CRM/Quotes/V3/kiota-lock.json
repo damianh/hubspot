@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "8F892CE524969E83EEC92CADA90C881E61680F8730526D4D4F617480C4D8D9DF985B5FF7CB112BE6D4B3600CE11BC13BE59898773ADEBAF58347DCF6253A02D6",
+  "descriptionHash": "0B6702B0FFEE888C56F569FB7EB1B0974B81F6E8B4A2B1E54339F9663711A610050247496187E766F39F218318F30CD22C160AF93F9D4A0B6BCE41EB2803563C",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Quotes/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMQuotesV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Quotes.V3",

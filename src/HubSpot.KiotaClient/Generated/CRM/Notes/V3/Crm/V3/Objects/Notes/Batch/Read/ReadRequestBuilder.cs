@@ -34,10 +34,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Re
         {
         }
         /// <summary>
-        /// Read a batch of notes by internal ID, or unique property values
+        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,15 +49,15 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Re
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchReadInputSimplePublicObjectId body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read a batch of notes by internal ID, or unique property values
+        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Re
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchReadInputSimplePublicObjectId body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Re
             return new global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read a batch of notes by internal ID, or unique property values
+        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 

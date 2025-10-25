@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         /// Add and/or remove records that have already been created in the system to and/or from a list.This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipsUpdateResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The IDs of the records to add and/or remove from a list.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipsUpdateResponse> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipsUpdateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipsUpdateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         /// Add and/or remove records that have already been created in the system to and/or from a list.This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">The IDs of the records to add and/or remove from a list.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.MembershipChangeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

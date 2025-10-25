@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>
+    /// The updated definition of the list in response to a list update request.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListUpdateResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The updatedList property</summary>
+        /// <summary>An object list definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList? UpdatedList { get; set; }
@@ -36,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListUpdateResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListUpdateResponse();
         }
         /// <summary>
@@ -56,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList>("updatedList", UpdatedList);
             writer.WriteAdditionalData(AdditionalData);
         }

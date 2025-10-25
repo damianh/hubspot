@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associationSpec property</summary>
+        /// <summary>Defines the type, direction, and details of the relationship between two CRM objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec? AssociationSpec { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1? AssociationSpec { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec AssociationSpec { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1 AssociationSpec { get; set; }
 #endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicDefaultAssociation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicDefaultAssociation();
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "associationSpec", n => { AssociationSpec = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec.CreateFromDiscriminatorValue); } },
+                { "associationSpec", n => { AssociationSpec = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1.CreateFromDiscriminatorValue); } },
                 { "from", n => { From = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId.CreateFromDiscriminatorValue); } },
             };
@@ -74,8 +74,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec>("associationSpec", AssociationSpec);
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpec_1>("associationSpec", AssociationSpec);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId>("from", From);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId>("to", To);
             writer.WriteAdditionalData(AdditionalData);

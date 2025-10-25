@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "5019AFA74C2B62C219F714103A8212EC24AE096032A0A5351923E9F67B57D1118EB733D125B019A3BFDA7113277E2EA16E4FE8222DD35994AF33FE5693036B16",
+  "descriptionHash": "A52D8ABC2CA1B1BD6B8E8DA94A646C0631E0B0FE975052D321AE44F709C32B32069091864E4E257C1C33B3D828ECABB7DE9E8D82730804D14EA27F3A5C9FA634",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Goal%20Targets/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMGoalTargetsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3",

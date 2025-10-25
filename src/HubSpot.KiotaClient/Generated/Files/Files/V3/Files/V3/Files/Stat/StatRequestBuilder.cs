@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat
     public partial class StatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Files.Files.V3.files.v3.files.stat.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The path of the file. </param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item.WithPathItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item.WithPathItemRequestBuilder this[string position]
         {

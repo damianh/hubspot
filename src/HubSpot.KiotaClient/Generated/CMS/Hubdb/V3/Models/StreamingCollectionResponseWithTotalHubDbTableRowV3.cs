@@ -25,10 +25,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3>? Results { get; set; }
+        public List<UntypedNode>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3> Results { get; set; }
+        public List<UntypedNode> Results { get; set; }
 #endif
         /// <summary>The total property</summary>
         public int? Total { get; set; }
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3();
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "paging", n => { Paging = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Paging>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Paging.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3_type>(); } },
             };
@@ -72,9 +72,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Paging>("paging", Paging);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3>("results", Results);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("results", Results);
             writer.WriteIntValue("total", Total);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

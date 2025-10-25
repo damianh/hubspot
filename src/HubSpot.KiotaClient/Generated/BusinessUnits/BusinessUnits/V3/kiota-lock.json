@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "5D637B2F664CA266873FCBF06FA3F6DA37B9BF8D23951901F18B9E2EE720F77E4462DAB853DE879AED11A61EF1F9D8B17A1EC81752DA2BDBCA22A19A0585676F",
+  "descriptionHash": "35EE8BBF63A8CC454703C9EC0407C55304DE83F2FCDE05401A0BC79C6BEA218C029FAFF37D5DE129C076C1D390DB749036B55975DBDC8D7E20A40DB35B3591F3",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Business%20Units/Business%20Units/versions/140946",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotBusinessUnitsBusinessUnitsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3",

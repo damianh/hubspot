@@ -48,6 +48,14 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         public int? SendWindowStartMinute { get; set; }
         /// <summary>The taskReminderMinute property</summary>
         public int? TaskReminderMinute { get; set; }
+        /// <summary>The unenrollmentSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse? UnenrollmentSettings { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse UnenrollmentSettings { get; set; }
+#endif
         /// <summary>The updatedAt property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -64,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse();
         }
         /// <summary>
@@ -83,6 +91,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
                 { "sendWindowEndMinute", n => { SendWindowEndMinute = n.GetIntValue(); } },
                 { "sendWindowStartMinute", n => { SendWindowStartMinute = n.GetIntValue(); } },
                 { "taskReminderMinute", n => { TaskReminderMinute = n.GetIntValue(); } },
+                { "unenrollmentSettings", n => { UnenrollmentSettings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse>(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -92,7 +101,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("eligibleFollowUpDays", EligibleFollowUpDays);
             writer.WriteStringValue("id", Id);
@@ -101,6 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
             writer.WriteIntValue("sendWindowEndMinute", SendWindowEndMinute);
             writer.WriteIntValue("sendWindowStartMinute", SendWindowStartMinute);
             writer.WriteIntValue("taskReminderMinute", TaskReminderMinute);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse>("unenrollmentSettings", UnenrollmentSettings);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

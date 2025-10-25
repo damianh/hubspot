@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>
+    /// The request object used when creating a new object list.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListCreateRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -32,6 +33,22 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #endif
         /// <summary>The ID of the folder that the list should be created in. If left blank, then the list will be created in the root of the list folder structure.</summary>
         public int? ListFolderId { get; set; }
+        /// <summary>The listPermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions? ListPermissions { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions ListPermissions { get; set; }
+#endif
+        /// <summary>The membershipSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings? MembershipSettings { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings MembershipSettings { get; set; }
+#endif
         /// <summary>The name of the list, which must be globally unique across all public lists in the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest();
         }
         /// <summary>
@@ -84,6 +101,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 { "customProperties", n => { CustomProperties = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest_customProperties>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest_customProperties.CreateFromDiscriminatorValue); } },
                 { "filterBranch", n => { FilterBranch = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch.CreateFromDiscriminatorValue); } },
                 { "listFolderId", n => { ListFolderId = n.GetIntValue(); } },
+                { "listPermissions", n => { ListPermissions = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions.CreateFromDiscriminatorValue); } },
+                { "membershipSettings", n => { MembershipSettings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "processingType", n => { ProcessingType = n.GetStringValue(); } },
@@ -95,10 +114,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest_customProperties>("customProperties", CustomProperties);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch>("filterBranch", FilterBranch);
             writer.WriteIntValue("listFolderId", ListFolderId);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListPermissions>("listPermissions", ListPermissions);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings>("membershipSettings", MembershipSettings);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteStringValue("processingType", ProcessingType);
@@ -181,7 +202,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch();
                 if("PublicAndFilterBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -264,7 +285,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicAndFilterBranch != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAndFilterBranch>(null, PublicAndFilterBranch);

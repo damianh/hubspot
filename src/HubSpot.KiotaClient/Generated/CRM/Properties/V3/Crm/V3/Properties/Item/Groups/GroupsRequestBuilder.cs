@@ -49,40 +49,40 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.G
         /// <summary>
         /// Read all existing property groups for the specified object type and HubSpot account.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroupNoPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroupNoPaging?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroup?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroupNoPaging> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroup> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroupNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroupNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroup>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CollectionResponsePropertyGroup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create and return a copy of a new property group.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CreatedResponsePropertyGroup"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CreatedResponsePropertyGroup?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CreatedResponsePropertyGroup> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CreatedResponsePropertyGroup>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.CreatedResponsePropertyGroup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read all existing property groups for the specified object type and HubSpot account.
@@ -118,7 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.G
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

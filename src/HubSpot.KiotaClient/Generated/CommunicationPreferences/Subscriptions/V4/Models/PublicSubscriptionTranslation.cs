@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp indicating when the subscription translation was created.</summary>
         public int? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A text description of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The languageCode property</summary>
+        /// <summary>The code representing the language of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageCode { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string LanguageCode { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The unique identifier for the subscription associated with the translation.</summary>
         public int? SubscriptionId { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp indicating when the subscription translation was last updated.</summary>
         public int? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicSubscriptionTranslation"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicSubscriptionTranslation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicSubscriptionTranslation();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("languageCode", LanguageCode);

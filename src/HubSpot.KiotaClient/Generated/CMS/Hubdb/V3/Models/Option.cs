@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 {
+    /// <summary>
+    /// A HubSpot property option
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Option : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the option was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,9 +25,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser CreatedBy { get; set; }
 #endif
-        /// <summary>The createdByUserId property</summary>
+        /// <summary>The ID of the user who created the option.</summary>
         public int? CreatedByUserId { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique ID of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -34,7 +35,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>A user-friendly label that identifies the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -42,7 +43,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>An internal name assigned to the option, distinct from the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -52,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #endif
         /// <summary>The order property</summary>
         public int? Order { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Indicates the category or data type of the option (e.g., string, number).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -60,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the option was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The updatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser UpdatedBy { get; set; }
 #endif
-        /// <summary>The updatedByUserId property</summary>
+        /// <summary>The ID of the user who last updated the option.</summary>
         public int? UpdatedByUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option"/> and sets the default values.
@@ -86,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Option();
         }
         /// <summary>
@@ -116,7 +117,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser>("createdBy", CreatedBy);
             writer.WriteIntValue("createdByUserId", CreatedByUserId);

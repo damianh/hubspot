@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.Token
         public TokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/oauth/v1/token", rawUrl)
         {
         }
+        /// <summary>
+        /// Use a [previously obtained refresh token](#get-oauth-2.0-access-and-refresh-tokens) to generate a new access token. Access tokens are short lived. You can check the `expires_in` parameter when generating an access token to determine its lifetime (in seconds). If you need offline access to HubSpot data, store the refresh token you get when [initiating your OAuth integration](https://developers.hubspot.com/docs/guides/api/app-management/oauth-tokens#initiating-oauth-access) and use it to generate a new access token once the initial one expires.Note: HubSpot access tokens will fluctuate in size as the information that&apos;s encoded in them changes over time. It&apos;s recommended to allow for tokens to be up to 300 characters to account for any potential changes.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.TokenResponseIF"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -46,10 +49,13 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.Token
         public async Task<global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.TokenResponseIF> PostAsync(global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.Token.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.TokenResponseIF>(requestInfo, global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.TokenResponseIF.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Use a [previously obtained refresh token](#get-oauth-2.0-access-and-refresh-tokens) to generate a new access token. Access tokens are short lived. You can check the `expires_in` parameter when generating an access token to determine its lifetime (in seconds). If you need offline access to HubSpot data, store the refresh token you get when [initiating your OAuth integration](https://developers.hubspot.com/docs/guides/api/app-management/oauth-tokens#initiating-oauth-access) and use it to generate a new access token once the initial one expires.Note: HubSpot access tokens will fluctuate in size as the information that&apos;s encoded in them changes over time. It&apos;s recommended to allow for tokens to be up to 300 characters to account for any potential changes.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.Token
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.Token.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         {
         }
         /// <summary>
-        /// Use this API to archive a registered custom channel
+        /// Archive an existing registered custom channel
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint can be used to update a channel&apos;s capabilities. You can also use it to update the channel&apos;s webhookUri and its channelAccountConnectionRedirectUrl.
+        /// Update the capabilities for an existing. You can also use it to update the channel&apos;s webhookUri and its channelAccountConnectionRedirectUrl.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel"/></returns>
         /// <param name="body">The request body</param>
@@ -102,12 +102,12 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel> PatchAsync(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to archive a registered custom channel
+        /// Archive an existing registered custom channel
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,6 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -145,7 +144,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             return requestInfo;
         }
         /// <summary>
-        /// This endpoint can be used to update a channel&apos;s capabilities. You can also use it to update the channel&apos;s webhookUri and its channelAccountConnectionRedirectUrl.
+        /// Update the capabilities for an existing. You can also use it to update the channel&apos;s webhookUri and its channelAccountConnectionRedirectUrl.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +158,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

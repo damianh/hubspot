@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "021144E08F0B68C8950571A30BFEB7ED5E85FF87D696644243085DB6C372E6460B158E8CC447C75B94C1F22694EAD3C8E12ADAD54F3286078620E0C578C81AF5",
+  "descriptionHash": "B940F5861BD7CC44CE43B1684B677A80C83D8C01DD135BCDDF0A4B633F38FBE76E5582DEA94896D31CDB721075A17CBB0E5ED33CB6D3BE868E3203A227F6864F",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Webhooks/Webhooks/versions/147891",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotWebhooksWebhooksV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3",

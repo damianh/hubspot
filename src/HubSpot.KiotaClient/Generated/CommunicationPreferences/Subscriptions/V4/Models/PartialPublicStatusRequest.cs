@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The channel property</summary>
+        /// <summary>The type of communication channel, with &apos;EMAIL&apos; as the only supported option.</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest_channel? Channel { get; set; }
-        /// <summary>The legalBasis property</summary>
+        /// <summary>The legal basis for communication, with options including &apos;LEGITIMATE_INTEREST_PQL&apos;, &apos;LEGITIMATE_INTEREST_CLIENT&apos;, &apos;PERFORMANCE_OF_CONTRACT&apos;, &apos;CONSENT_WITH_NOTICE&apos;, &apos;NON_GDPR&apos;, &apos;PROCESS_AND_STORE&apos;, and &apos;LEGITIMATE_INTEREST_OTHER&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest_legalBasis? LegalBasis { get; set; }
-        /// <summary>The legalBasisExplanation property</summary>
+        /// <summary>An explanation for the legal basis used for communication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalBasisExplanation { get; set; }
@@ -26,9 +26,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string LegalBasisExplanation { get; set; }
 #endif
-        /// <summary>The statusState property</summary>
+        /// <summary>The current subscription status of the contact, which can be &apos;SUBSCRIBED&apos;, &apos;UNSUBSCRIBED&apos;, or &apos;NOT_SPECIFIED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest_statusState? StatusState { get; set; }
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The unique identifier of the subscription to be updated.</summary>
         public long? SubscriptionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest"/> and sets the default values.
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest();
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest_channel>("channel", Channel);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PartialPublicStatusRequest_legalBasis>("legalBasis", LegalBasis);
             writer.WriteStringValue("legalBasisExplanation", LegalBasisExplanation);

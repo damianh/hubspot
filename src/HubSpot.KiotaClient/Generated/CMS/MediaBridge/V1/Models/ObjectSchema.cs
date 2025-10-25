@@ -14,6 +14,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowsSensitiveProperties property</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
         /// <summary>The archived property</summary>
         public bool? Archived { get; set; }
         /// <summary>The associations property</summary>
@@ -26,6 +28,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The createdByUserId property</summary>
+        public int? CreatedByUserId { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +120,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The updatedAt property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The updatedByUserId property</summary>
+        public int? UpdatedByUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectSchema"/> and sets the default values.
         /// </summary>
@@ -130,7 +136,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectSchema();
         }
         /// <summary>
@@ -141,9 +147,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "associations", n => { Associations = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "fullyQualifiedName", n => { FullyQualifiedName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -156,6 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "searchableProperties", n => { SearchableProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secondaryDisplayProperties", n => { SecondaryDisplayProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updatedByUserId", n => { UpdatedByUserId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -164,10 +173,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AssociationDefinition>("associations", Associations);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteIntValue("createdByUserId", CreatedByUserId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("fullyQualifiedName", FullyQualifiedName);
             writer.WriteStringValue("id", Id);
@@ -180,6 +191,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteCollectionOfPrimitiveValues<string>("searchableProperties", SearchableProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayProperties", SecondaryDisplayProperties);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteIntValue("updatedByUserId", UpdatedByUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

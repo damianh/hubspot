@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "CF76EA3F56B484AF51B486BF220D7D1F6D5C1BE6CF47672780953109F01C9E1D8AABAA0134A66EBD93F0A1B64630E7AB34454C803BC3505921E22FA1BD4E7D03",
+  "descriptionHash": "B02313ACCD7FCB258493974DC134FECD89AD748F2025B76BD1067BAE8F7DF26E865788F849BCE46EB3DD03FCCEC41E10FEE34CBF561FA3C7F88A315C15BAC98A",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Deal%20Splits/versions/157885",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMDealSplitsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3",

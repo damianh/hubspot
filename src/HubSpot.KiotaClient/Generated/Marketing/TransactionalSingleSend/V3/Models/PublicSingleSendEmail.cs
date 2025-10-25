@@ -77,7 +77,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendEmail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendEmail();
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("bcc", Bcc);
             writer.WriteCollectionOfPrimitiveValues<string>("cc", Cc);
             writer.WriteStringValue("from", From);

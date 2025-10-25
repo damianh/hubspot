@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Email of visitor</summary>
+        /// <summary>The visitor&apos;s email address. Used for associating the event data with a CRM record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>Internal name of the event-type to trigger</summary>
+        /// <summary>The internal name of the event (`pe&lt;portalID&gt;_eventName`). Can be retrieved through the [event definitions API](https://developers.hubspot.com/docs/reference/api/analytics-and-events/custom-events/custom-event-definitions#get-%2Fevents%2Fv3%2Fevent-definitions) or in [HubSpot&apos;s UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name). </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventName { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string EventName { get; set; }
 #endif
-        /// <summary>The object id that this event occurred on. Could be a contact id or a visitor id.</summary>
+        /// <summary>The ID of the object that completed the event (e.g., contact ID or visitor ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -38,9 +38,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The time when this event occurred (if any). If this isn&apos;t set, the current time will be used</summary>
+        /// <summary>The time when this event occurred. If this isn&apos;t set, the current time will be used.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>Map of properties for the event in the format property internal name - property value</summary>
+        /// <summary>The event properties to update. Takes the format of key-value pairs (property internal name and property value). Learn more about [HubSpot&apos;s default event properties](https://developers.hubspot.com/docs/guides/api/analytics-and-events/custom-events/custom-event-definitions#hubspot-s-default-event-properties).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest_properties? Properties { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest_properties Properties { get; set; }
 #endif
-        /// <summary>User token</summary>
+        /// <summary>The visitor&apos;s usertoken. Used for associating the event data with a CRM record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Utk { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string Utk { get; set; }
 #endif
-        /// <summary>The uuid property</summary>
+        /// <summary>Include a universally unique identifier to assign a unique ID to the event completion. Can be useful for matching data between HubSpot and other external systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uuid { get; set; }
@@ -78,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models.BehavioralEventHttpCompletionRequest();
         }
         /// <summary>
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("eventName", EventName);
             writer.WriteStringValue("objectId", ObjectId);

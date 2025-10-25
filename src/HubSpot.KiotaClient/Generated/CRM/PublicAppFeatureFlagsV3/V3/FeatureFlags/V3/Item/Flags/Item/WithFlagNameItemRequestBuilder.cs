@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         {
         }
         /// <summary>
-        /// Delete your app&apos;s App Card Release feature flag after all accounts have been migrated.
+        /// Delete a feature flag in an app.  For example, delete the `hs-release-app-cards` flag after all accounts have been migrated.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an app&apos;s hs-release-app-cards feature flag. No request body is included.
+        /// Retrieve the current status of the app&apos;s feature flags. No request body is included.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an app&apos;s feature flag
+        /// Set a feature flag for an app. For example, update the `hs-hide-crm-cards` flag&apos;s `defaultState` to `ON` to hide classic CRM cards from new installs.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -91,12 +91,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagPutRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete your app&apos;s App Card Release feature flag after all accounts have been migrated.
+        /// Delete a feature flag in an app.  For example, delete the `hs-release-app-cards` flag after all accounts have been migrated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an app&apos;s hs-release-app-cards feature flag. No request body is included.
+        /// Retrieve the current status of the app&apos;s feature flags. No request body is included.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return requestInfo;
         }
         /// <summary>
-        /// Update an app&apos;s feature flag
+        /// Set a feature flag for an app. For example, update the `hs-hide-crm-cards` flag&apos;s `defaultState` to `ON` to hide classic CRM cards from new installs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -148,7 +148,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagPutRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

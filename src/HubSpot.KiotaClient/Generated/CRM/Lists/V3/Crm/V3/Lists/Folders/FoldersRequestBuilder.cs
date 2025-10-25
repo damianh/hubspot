@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.MoveList.MoveListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V3.crm.v3.lists.folders.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the folder to delete</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.WithFolderItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.WithFolderItemRequestBuilder this[string position]
         {
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderCreateResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderCreateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -124,7 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

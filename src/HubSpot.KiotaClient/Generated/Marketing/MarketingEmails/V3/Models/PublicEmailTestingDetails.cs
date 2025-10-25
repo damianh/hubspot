@@ -27,6 +27,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time limit on gathering test results. After this time is up, the winning version will be sent to the remaining contacts.</summary>
         public int? HoursToWait { get; set; }
+        /// <summary>The isAbVariation property</summary>
+        public bool? IsAbVariation { get; set; }
         /// <summary>The ID of the AB test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails();
         }
         /// <summary>
@@ -66,6 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
                 { "abSuccessMetric", n => { AbSuccessMetric = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails_abSuccessMetric>(); } },
                 { "abTestPercentage", n => { AbTestPercentage = n.GetIntValue(); } },
                 { "hoursToWait", n => { HoursToWait = n.GetIntValue(); } },
+                { "isAbVariation", n => { IsAbVariation = n.GetBoolValue(); } },
                 { "testId", n => { TestId = n.GetStringValue(); } },
             };
         }
@@ -75,13 +78,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails_abSampleSizeDefault>("abSampleSizeDefault", AbSampleSizeDefault);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails_abSamplingDefault>("abSamplingDefault", AbSamplingDefault);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails_abStatus>("abStatus", AbStatus);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailTestingDetails_abSuccessMetric>("abSuccessMetric", AbSuccessMetric);
             writer.WriteIntValue("abTestPercentage", AbTestPercentage);
             writer.WriteIntValue("hoursToWait", HoursToWait);
+            writer.WriteBoolValue("isAbVariation", IsAbVariation);
             writer.WriteStringValue("testId", TestId);
             writer.WriteAdditionalData(AdditionalData);
         }

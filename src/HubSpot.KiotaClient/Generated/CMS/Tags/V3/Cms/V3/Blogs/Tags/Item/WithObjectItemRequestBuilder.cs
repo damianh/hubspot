@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item
         public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag> PatchAsync(global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

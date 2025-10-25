@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F8F0FE60D237601B1EBE5DEAE4379FB4DFB9186F7A8C58EDEAA758E5C8590AABE554015944C90D7D8C289DAB7FA8FAF1AC848D7D3F6E81BB088E3BBDCD0B5CAD",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Hubdb/versions/146890",
+  "descriptionHash": "B0D912543D1ECF09586FE2691FFC555FFC2C833FFF32262AEF492CE82CAB736D6238BBD49903A769D944F32DB737D3CA3B194356D331EC457CA07E42F6185A0E",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Hubdb/versions/243927",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSHubdbV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3",

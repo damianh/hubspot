@@ -41,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", pathParameters)
+        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,isGetLocalizedSchema*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", rawUrl)
+        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/v3/hubdb/tables{?after*,archived*,contentType*,createdAfter*,createdAt*,createdBefore*,isGetLocalizedSchema*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables
         public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -124,7 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableV3Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -177,6 +177,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables
             /// <summary>Only return tables created before the specified time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
+            [QueryParameter("isGetLocalizedSchema")]
+            public bool? IsGetLocalizedSchema { get; set; }
             /// <summary>The maximum number of results to return. Default is 1000.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

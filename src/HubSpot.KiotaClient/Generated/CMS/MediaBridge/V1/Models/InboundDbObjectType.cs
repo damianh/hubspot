@@ -22,6 +22,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowsSensitiveProperties property</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
+        /// <summary>The createdAt property</summary>
+        public long? CreatedAt { get; set; }
         /// <summary>The createDatePropertyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -208,6 +212,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string SingularForm { get; set; }
 #endif
+        /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
+        /// <summary>The visibility property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Visibility { get; set; }
+#nullable restore
+#else
+        public string Visibility { get; set; }
+#endif
         /// <summary>The writeScopeName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -230,7 +250,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType();
         }
         /// <summary>
@@ -242,7 +262,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessScopeName", n => { AccessScopeName = n.GetStringValue(); } },
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "createDatePropertyName", n => { CreateDatePropertyName = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "defaultSearchPropertyNames", n => { DefaultSearchPropertyNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -275,6 +297,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "scopeMappings", n => { ScopeMappings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secondaryDisplayLabelPropertyNames", n => { SecondaryDisplayLabelPropertyNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "singularForm", n => { SingularForm = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetStringValue(); } },
                 { "writeScopeName", n => { WriteScopeName = n.GetStringValue(); } },
             };
         }
@@ -284,8 +308,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessScopeName", AccessScopeName);
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("createDatePropertyName", CreateDatePropertyName);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultSearchPropertyNames", DefaultSearchPropertyNames);
             writer.WriteBoolValue("deleted", Deleted);
@@ -319,6 +345,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping>("scopeMappings", ScopeMappings);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayLabelPropertyNames", SecondaryDisplayLabelPropertyNames);
             writer.WriteStringValue("singularForm", SingularForm);
+            writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("visibility", Visibility);
             writer.WriteStringValue("writeScopeName", WriteScopeName);
             writer.WriteAdditionalData(AdditionalData);
         }

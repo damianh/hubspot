@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         public string Name { get; set; }
 #endif
         /// <summary>Size in bytes of the requested file.</summary>
-        public int? Size { get; set; }
+        public long? Size { get; set; }
         /// <summary>Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.SignedUrl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.SignedUrl();
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
                 { "extension", n => { Extension = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "width", n => { Width = n.GetIntValue(); } },
@@ -96,12 +96,12 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("extension", Extension);
             writer.WriteIntValue("height", Height);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("size", Size);
+            writer.WriteLongValue("size", Size);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteIntValue("width", Width);

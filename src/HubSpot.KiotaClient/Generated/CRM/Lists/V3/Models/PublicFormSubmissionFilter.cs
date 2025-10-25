@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter();
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter.PublicFormSubmissionFilter_coalescingRefineBy>("coalescingRefineBy", CoalescingRefineBy);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter_filterType>("filterType", FilterType);
             writer.WriteStringValue("formId", FormId);
@@ -174,7 +174,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter.PublicFormSubmissionFilter_coalescingRefineBy CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter.PublicFormSubmissionFilter_coalescingRefineBy();
                 if("PublicAbsoluteComparativeTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -265,7 +265,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicAbsoluteComparativeTimestampRefineBy != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy>(null, PublicAbsoluteComparativeTimestampRefineBy);
@@ -389,7 +389,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter.PublicFormSubmissionFilter_pruningRefineBy CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionFilter.PublicFormSubmissionFilter_pruningRefineBy();
                 if("PublicAbsoluteComparativeTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -480,7 +480,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(PublicAbsoluteComparativeTimestampRefineBy != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy>(null, PublicAbsoluteComparativeTimestampRefineBy);

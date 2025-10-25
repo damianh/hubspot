@@ -14,6 +14,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowsSensitiveProperties property</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
         /// <summary>The clearDescription property</summary>
         public bool? ClearDescription { get; set; }
         /// <summary>The description property</summary>
@@ -80,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeDefinitionPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeDefinitionPatch();
         }
         /// <summary>
@@ -91,6 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "clearDescription", n => { ClearDescription = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeDefinitionLabels>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeDefinitionLabels.CreateFromDiscriminatorValue); } },
@@ -107,7 +110,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
             writer.WriteBoolValue("clearDescription", ClearDescription);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ObjectTypeDefinitionLabels>("labels", Labels);

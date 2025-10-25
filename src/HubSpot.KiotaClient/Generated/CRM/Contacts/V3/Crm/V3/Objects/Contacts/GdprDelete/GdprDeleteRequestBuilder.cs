@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Gd
         {
         }
         /// <summary>
-        /// Permanently delete a contact and all associated content to follow GDPR. Use optional property &apos;idProperty&apos; set to &apos;email&apos; to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future.
+        /// Permanently delete a contact and all associated content to follow GDPR. Use optional property `idProperty` set to `email` to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future. Learn more about [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,12 +48,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Gd
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.PublicGdprDeleteInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently delete a contact and all associated content to follow GDPR. Use optional property &apos;idProperty&apos; set to &apos;email&apos; to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future.
+        /// Permanently delete a contact and all associated content to follow GDPR. Use optional property `idProperty` set to `email` to identify contact by email address. If email address is not found, the email address will be added to a blocklist and prevent it from being used in the future. Learn more about [permanently deleting contacts](https://knowledge.hubspot.com/privacy-and-consent/how-do-i-perform-a-gdpr-delete-in-hubspot).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -67,10 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Gd
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.PublicGdprDeleteInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens
     public partial class RefreshTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.oauth.v1.refreshTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The refresh token to retrieve information about.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.RefreshTokens.Item.WithTokenItemRequestBuilder this[string position]
         {

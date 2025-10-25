@@ -30,6 +30,22 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
 #else
         public string ChannelAccountConnectionRedirectUrl { get; set; }
 #endif
+        /// <summary>The channelDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChannelDescription { get; set; }
+#nullable restore
+#else
+        public string ChannelDescription { get; set; }
+#endif
+        /// <summary>The channelLogoUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChannelLogoUrl { get; set; }
+#nullable restore
+#else
+        public string ChannelLogoUrl { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelCreate();
         }
         /// <summary>
@@ -73,6 +89,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             {
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelCreate_capabilities>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelCreate_capabilities.CreateFromDiscriminatorValue); } },
                 { "channelAccountConnectionRedirectUrl", n => { ChannelAccountConnectionRedirectUrl = n.GetStringValue(); } },
+                { "channelDescription", n => { ChannelDescription = n.GetStringValue(); } },
+                { "channelLogoUrl", n => { ChannelLogoUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -83,9 +101,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelIntegrationChannelCreate_capabilities>("capabilities", Capabilities);
             writer.WriteStringValue("channelAccountConnectionRedirectUrl", ChannelAccountConnectionRedirectUrl);
+            writer.WriteStringValue("channelDescription", ChannelDescription);
+            writer.WriteStringValue("channelLogoUrl", ChannelLogoUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

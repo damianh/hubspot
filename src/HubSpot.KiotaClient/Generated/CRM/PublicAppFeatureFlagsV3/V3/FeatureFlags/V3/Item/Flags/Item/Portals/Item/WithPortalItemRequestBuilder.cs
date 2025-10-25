@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         {
         }
         /// <summary>
-        /// Delete a Portal Flag State for a specific HubSpot account. No request body is included.
+        /// Delete an account-level flag state for a specific HubSpot account. No request body is included.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve an individual account&apos;s App Card Release flag state setting.
+        /// Retrieve the account-level flag state of a specific HubSpot account.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specify an account-level flag state for a specific HubSpot account and the hs-release-app-cards flag.
+        /// Specify an account-level flag state for a specific HubSpot account.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,12 +85,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStatePutRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a Portal Flag State for a specific HubSpot account. No request body is included.
+        /// Delete an account-level flag state for a specific HubSpot account. No request body is included.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve an individual account&apos;s App Card Release flag state setting.
+        /// Retrieve the account-level flag state of a specific HubSpot account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return requestInfo;
         }
         /// <summary>
-        /// Specify an account-level flag state for a specific HubSpot account and the hs-release-app-cards flag.
+        /// Specify an account-level flag state for a specific HubSpot account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -142,7 +142,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStatePutRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

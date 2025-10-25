@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Internal event name, which must be used when referencing the event from the API. If a name is not supplied, one will be generated based on the label. The name does not include the pe&lt;PORTAL_ID&gt;_ prefix used when sending event completions.</summary>
+        /// <summary>Internal event name, which must be used when referencing the event from this event definitions API. If a name is not supplied, one will be generated based on the label. The `name` value will also be used to automatically generate a `fullyQualifiedName` for the event definition, which you&apos;ll use when sending event completions to this event. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionEgg CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionEgg();
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);

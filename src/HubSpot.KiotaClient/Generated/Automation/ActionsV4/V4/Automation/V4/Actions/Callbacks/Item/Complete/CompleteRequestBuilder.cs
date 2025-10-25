@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Completes a single callback
+        /// Complete a specific blocked action execution by ID.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,12 +48,12 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         public async Task PostAsync(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Completes a single callback
+        /// Complete a specific blocked action execution by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -67,10 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

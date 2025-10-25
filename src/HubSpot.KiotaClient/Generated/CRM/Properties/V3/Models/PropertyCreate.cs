@@ -22,6 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
+        /// <summary>The dataSensitivity property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyCreate_dataSensitivity? DataSensitivity { get; set; }
         /// <summary>A description of the property that will be shown as help text in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #endif
         /// <summary>Whether or not the property&apos;s value must be unique. Once set, this can&apos;t be changed.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>If true, the property won&apos;t be visible and can&apos;t be used in HubSpot.</summary>
+        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
         public bool? Hidden { get; set; }
         /// <summary>A human-readable property label that will be shown in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyCreate();
         }
         /// <summary>
@@ -110,6 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
+                { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyCreate_dataSensitivity>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
@@ -131,8 +134,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calculationFormula", CalculationFormula);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.PropertyCreate_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("externalOptions", ExternalOptions);

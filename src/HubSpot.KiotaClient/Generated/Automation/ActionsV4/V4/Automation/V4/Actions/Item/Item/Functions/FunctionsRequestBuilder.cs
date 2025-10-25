@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
     public partial class FunctionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.automation.v4.actions.item.item.functions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The type of function. Can be `PRE_ACTION_EXECUTION`, `PRE_FETCH_OPTIONS`, `POST_FETCH_OPTIONS`, `POST_ACTION_EXECUTION`.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.Item.Functions.Item.WithFunctionTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.Item.Functions.Item.WithFunctionTypeItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Get all functions for a given definition
+        /// Retrieve all functions included in a definition.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionFunctionIdentifierNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionFunctionIdentifierNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CollectionResponsePublicActionFunctionIdentifierNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all functions for a given definition
+        /// Retrieve all functions included in a definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

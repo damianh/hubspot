@@ -55,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public string BodyBorderColorChoice { get; set; }
 #endif
         /// <summary>The bodyBorderWidth property</summary>
-        public int? BodyBorderWidth { get; set; }
+        public double? BodyBorderWidth { get; set; }
         /// <summary>The bodyColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,7 +201,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public string PrimaryFontLineHeight { get; set; }
 #endif
         /// <summary>The primaryFontSize property</summary>
-        public int? PrimaryFontSize { get; set; }
+        public double? PrimaryFontSize { get; set; }
         /// <summary>The secondaryAccentColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,7 +235,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public string SecondaryFontLineHeight { get; set; }
 #endif
         /// <summary>The secondaryFontSize property</summary>
-        public int? SecondaryFontSize { get; set; }
+        public double? SecondaryFontSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings"/> and sets the default values.
         /// </summary>
@@ -250,7 +250,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings();
         }
         /// <summary>
@@ -266,7 +266,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
                 { "backgroundImageType", n => { BackgroundImageType = n.GetStringValue(); } },
                 { "bodyBorderColor", n => { BodyBorderColor = n.GetStringValue(); } },
                 { "bodyBorderColorChoice", n => { BodyBorderColorChoice = n.GetStringValue(); } },
-                { "bodyBorderWidth", n => { BodyBorderWidth = n.GetIntValue(); } },
+                { "bodyBorderWidth", n => { BodyBorderWidth = n.GetDoubleValue(); } },
                 { "bodyColor", n => { BodyColor = n.GetStringValue(); } },
                 { "buttonStyleSettings", n => { ButtonStyleSettings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicButtonStyleSettings>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicButtonStyleSettings.CreateFromDiscriminatorValue); } },
                 { "colorPickerFavorite1", n => { ColorPickerFavorite1 = n.GetStringValue(); } },
@@ -285,12 +285,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
                 { "primaryFont", n => { PrimaryFont = n.GetStringValue(); } },
                 { "primaryFontColor", n => { PrimaryFontColor = n.GetStringValue(); } },
                 { "primaryFontLineHeight", n => { PrimaryFontLineHeight = n.GetStringValue(); } },
-                { "primaryFontSize", n => { PrimaryFontSize = n.GetIntValue(); } },
+                { "primaryFontSize", n => { PrimaryFontSize = n.GetDoubleValue(); } },
                 { "secondaryAccentColor", n => { SecondaryAccentColor = n.GetStringValue(); } },
                 { "secondaryFont", n => { SecondaryFont = n.GetStringValue(); } },
                 { "secondaryFontColor", n => { SecondaryFontColor = n.GetStringValue(); } },
                 { "secondaryFontLineHeight", n => { SecondaryFontLineHeight = n.GetStringValue(); } },
-                { "secondaryFontSize", n => { SecondaryFontSize = n.GetIntValue(); } },
+                { "secondaryFontSize", n => { SecondaryFontSize = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -299,13 +299,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backgroundColor", BackgroundColor);
             writer.WriteStringValue("backgroundImage", BackgroundImage);
             writer.WriteStringValue("backgroundImageType", BackgroundImageType);
             writer.WriteStringValue("bodyBorderColor", BodyBorderColor);
             writer.WriteStringValue("bodyBorderColorChoice", BodyBorderColorChoice);
-            writer.WriteIntValue("bodyBorderWidth", BodyBorderWidth);
+            writer.WriteDoubleValue("bodyBorderWidth", BodyBorderWidth);
             writer.WriteStringValue("bodyColor", BodyColor);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicButtonStyleSettings>("buttonStyleSettings", ButtonStyleSettings);
             writer.WriteStringValue("colorPickerFavorite1", ColorPickerFavorite1);
@@ -324,12 +324,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             writer.WriteStringValue("primaryFont", PrimaryFont);
             writer.WriteStringValue("primaryFontColor", PrimaryFontColor);
             writer.WriteStringValue("primaryFontLineHeight", PrimaryFontLineHeight);
-            writer.WriteIntValue("primaryFontSize", PrimaryFontSize);
+            writer.WriteDoubleValue("primaryFontSize", PrimaryFontSize);
             writer.WriteStringValue("secondaryAccentColor", SecondaryAccentColor);
             writer.WriteStringValue("secondaryFont", SecondaryFont);
             writer.WriteStringValue("secondaryFontColor", SecondaryFontColor);
             writer.WriteStringValue("secondaryFontLineHeight", SecondaryFontLineHeight);
-            writer.WriteIntValue("secondaryFontSize", SecondaryFontSize);
+            writer.WriteDoubleValue("secondaryFontSize", SecondaryFontSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

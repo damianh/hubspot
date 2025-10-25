@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             get => new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Callbacks.CallbacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.automation.v4.actions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the app.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.automation.v4.actions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the app.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Actions.Item.WithAppItemRequestBuilder this[string position]

@@ -17,8 +17,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput_access? Access { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The clearExpires property</summary>
+        public bool? ClearExpires { get; set; }
         /// <summary>The expiresAt property</summary>
-        public long? ExpiresAt { get; set; }
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Mark whether the file should be used in new content or not.</summary>
         public bool? IsUsableInContent { get; set; }
         /// <summary>New name for the file.</summary>
@@ -59,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput();
         }
         /// <summary>
@@ -71,7 +73,8 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access", n => { Access = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput_access>(); } },
-                { "expiresAt", n => { ExpiresAt = n.GetLongValue(); } },
+                { "clearExpires", n => { ClearExpires = n.GetBoolValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "isUsableInContent", n => { IsUsableInContent = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
@@ -84,9 +87,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput_access>("access", Access);
-            writer.WriteLongValue("expiresAt", ExpiresAt);
+            writer.WriteBoolValue("clearExpires", ClearExpires);
+            writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteBoolValue("isUsableInContent", IsUsableInContent);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parentFolderId", ParentFolderId);

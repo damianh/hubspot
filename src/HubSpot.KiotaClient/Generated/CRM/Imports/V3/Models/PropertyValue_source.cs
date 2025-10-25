@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 {
+    /// <summary>The origin of the property value, such as &quot;IMPORT&quot; or &quot;API&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyValue_source
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591

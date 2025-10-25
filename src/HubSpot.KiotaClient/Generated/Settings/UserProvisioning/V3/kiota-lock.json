@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "64ACA126C0EEA3AEE87E07F20666D7CB3C2721C00AF145DCAF8DFE61E2C4DA1F07E23AA5E21F4763DC9F308AD01A3518A0DA36BFFFC2EE157EF7778403CCC02F",
+  "descriptionHash": "40C26A5A9A5DB9FA8C28C5A6F06215AEE301063EA973D1BAEC7DF594E339C3750F0B6D73CF441D93B1B0E4A55ECE3D43483BCF2B18B3D41E02097FAD93D10A37",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Settings/User%20Provisioning/versions/144927",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotSettingsUserProvisioningV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3",

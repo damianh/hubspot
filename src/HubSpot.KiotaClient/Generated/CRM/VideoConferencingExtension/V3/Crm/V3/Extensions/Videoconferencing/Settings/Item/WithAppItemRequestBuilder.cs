@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -104,7 +104,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
         public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

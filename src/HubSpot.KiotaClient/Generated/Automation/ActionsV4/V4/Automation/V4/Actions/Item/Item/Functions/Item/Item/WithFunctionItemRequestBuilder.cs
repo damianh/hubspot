@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a function for a given definition
+        /// Retrieve a specific function from a given definition.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunction>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunction.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Insert a function for a definition
+        /// Update a function for a given definition by ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunctionIdentifier"/></returns>
         /// <param name="body">The request body</param>
@@ -104,11 +104,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Get a function for a given definition
+        /// Retrieve a specific function from a given definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return requestInfo;
         }
         /// <summary>
-        /// Insert a function for a definition
+        /// Update a function for a given definition by ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

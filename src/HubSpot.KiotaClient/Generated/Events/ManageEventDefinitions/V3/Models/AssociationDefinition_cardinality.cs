@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 {
+    /// <summary>The cardinality from the source object&apos;s perspective, either &quot;ONE_TO_ONE&quot; or &quot;ONE_TO_MANY&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AssociationDefinition_cardinality
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ONE_TO_ONE")]
         #pragma warning disable CS1591

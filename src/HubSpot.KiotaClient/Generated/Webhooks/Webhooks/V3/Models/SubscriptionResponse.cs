@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The identifier of the object type associated with the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse();
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse_eventType>("eventType", EventType);

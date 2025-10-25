@@ -65,7 +65,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item.Draft
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.AccessTokens.Item
         public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/oauth/v1/access-tokens/{token}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a token&apos;s metadata, including the email address of the user that the token was created for and the ID of the account it&apos;s associated with.Note: HubSpot access tokens will fluctuate in size as the information that&apos;s encoded in them changes over time. It&apos;s recommended to allow for tokens to be up to 300 characters to account for any potential changes.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.AccessTokenInfoResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.AccessTokens.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.AccessTokenInfoResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Models.AccessTokenInfoResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a token&apos;s metadata, including the email address of the user that the token was created for and the ID of the account it&apos;s associated with.Note: HubSpot access tokens will fluctuate in size as the information that&apos;s encoded in them changes over time. It&apos;s recommended to allow for tokens to be up to 300 characters to account for any potential changes.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

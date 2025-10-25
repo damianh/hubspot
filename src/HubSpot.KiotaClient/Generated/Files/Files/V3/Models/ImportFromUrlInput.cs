@@ -20,6 +20,8 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationScope? DuplicateValidationScope { get; set; }
         /// <summary>NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload a new file and return the found duplicate instead.</summary>
         public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationStrategy? DuplicateValidationStrategy { get; set; }
+        /// <summary>Specifies the date and time when the file will expire.</summary>
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>One of folderId or folderPath is required. Destination folderId for the uploaded file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput();
         }
         /// <summary>
@@ -90,6 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
                 { "access", n => { Access = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_access>(); } },
                 { "duplicateValidationScope", n => { DuplicateValidationScope = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationScope>(); } },
                 { "duplicateValidationStrategy", n => { DuplicateValidationStrategy = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationStrategy>(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "folderId", n => { FolderId = n.GetStringValue(); } },
                 { "folderPath", n => { FolderPath = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -104,10 +107,11 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_access>("access", Access);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationScope>("duplicateValidationScope", DuplicateValidationScope);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.ImportFromUrlInput_duplicateValidationStrategy>("duplicateValidationStrategy", DuplicateValidationStrategy);
+            writer.WriteDateTimeOffsetValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("folderId", FolderId);
             writer.WriteStringValue("folderPath", FolderPath);
             writer.WriteStringValue("name", Name);

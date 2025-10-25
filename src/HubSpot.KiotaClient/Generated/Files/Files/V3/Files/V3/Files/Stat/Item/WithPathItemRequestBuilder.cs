@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item
         public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/files/v3/files/stat/{path}{?properties*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a file by its path.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileStat"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileStat>(requestInfo, global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileStat.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a file by its path.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,11 +79,13 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item
         {
             return new global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Stat.Item.WithPathItemRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a file by its path.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class WithPathItemRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
+            /// <summary>Properties to return in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

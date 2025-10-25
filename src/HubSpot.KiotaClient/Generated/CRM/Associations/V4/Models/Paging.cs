@@ -14,21 +14,21 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The next property</summary>
+        /// <summary>Specifies the paging information needed to retrieve the next set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage? Next { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1? Next { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage Next { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1 Next { get; set; }
 #endif
-        /// <summary>The prev property</summary>
+        /// <summary>specifies the paging information needed to retrieve the previous set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage? Prev { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1? Prev { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage Prev { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1 Prev { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.Paging"/> and sets the default values.
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.Paging CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.Paging();
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage.CreateFromDiscriminatorValue); } },
+                { "next", n => { Next = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1.CreateFromDiscriminatorValue); } },
+                { "prev", n => { Prev = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,9 +65,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage>("next", Next);
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage>("prev", Prev);
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1>("next", Next);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1>("prev", Prev);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

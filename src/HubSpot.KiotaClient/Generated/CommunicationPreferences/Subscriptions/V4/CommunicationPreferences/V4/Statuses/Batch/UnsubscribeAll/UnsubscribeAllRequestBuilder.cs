@@ -55,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public async Task<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchInputString body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.UnsubscribeAll.UnsubscribeAllRequestBuilder.UnsubscribeAllRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchInputString body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.UnsubscribeAll.UnsubscribeAllRequestBuilder.UnsubscribeAllRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

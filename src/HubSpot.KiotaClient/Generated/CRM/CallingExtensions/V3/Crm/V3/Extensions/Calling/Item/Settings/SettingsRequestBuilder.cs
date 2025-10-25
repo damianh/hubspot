@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         {
         }
         /// <summary>
-        /// Deletes this calling extension. This will remove your service as an option for all connected accounts.
+        /// Delete a calling extension. This will remove your service as an option for all connected accounts.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the calling extension settings configured for your app.
+        /// Retrieve the settings configured for the app.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates existing calling extension settings.
+        /// Update existing calling extension settings.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -96,12 +96,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Used to set the menu label, target iframe URL, and dimensions for your calling extension.
+        /// Set the menu label, target iframe URL, and dimensions for your calling extension.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -116,12 +116,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes this calling extension. This will remove your service as an option for all connected accounts.
+        /// Delete a calling extension. This will remove your service as an option for all connected accounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,11 +136,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Returns the calling extension settings configured for your app.
+        /// Retrieve the settings configured for the app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +158,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Updates existing calling extension settings.
+        /// Update existing calling extension settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +172,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -181,7 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Used to set the menu label, target iframe URL, and dimensions for your calling extension.
+        /// Set the menu label, target iframe URL, and dimensions for your calling extension.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -195,7 +194,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

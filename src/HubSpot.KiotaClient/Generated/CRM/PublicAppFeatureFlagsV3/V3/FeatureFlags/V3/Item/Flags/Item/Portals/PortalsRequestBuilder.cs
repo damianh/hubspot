@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         {
         }
         /// <summary>
-        /// Retrieve a list of HubSpot accounts with an account-specific flag setting for the App Card Release flag for your app. No request body is included.
+        /// Retrieve a list of HubSpot accounts with an account-level flag setting for the specified app. No request body is included.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateBatchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateBatchResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateBatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of HubSpot accounts with an account-specific flag setting for the App Card Release flag for your app. No request body is included.
+        /// Retrieve a list of HubSpot accounts with an account-level flag setting for the specified app. No request body is included.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             return new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.PortalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of HubSpot accounts with an account-specific flag setting for the App Card Release flag for your app. No request body is included.
+        /// Retrieve a list of HubSpot accounts with an account-level flag setting for the specified app. No request body is included.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PortalsRequestBuilderGetQueryParameters 

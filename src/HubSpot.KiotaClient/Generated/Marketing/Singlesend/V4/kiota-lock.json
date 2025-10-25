@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "927BAB636CFE09EC46BE27CA92D2A1052450082228EBAEA9E30218F0908D4D7E3334CC3D9E3014261D419A1FE8BE1E1409D6EA257E41DBCEAD9AFC011E1B14EC",
+  "descriptionHash": "D31A42293B238E0DBBECB8C41CFAE60B14AF411EA5FB8626702D34DB8E3AAA95B0EC5CC9DC20E3892DB05C35AEC970376A148F4D8C11582554077C7BA424474B",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Single-send/versions/106894",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingSinglesendV4Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4",

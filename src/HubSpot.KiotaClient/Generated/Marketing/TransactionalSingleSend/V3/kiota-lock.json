@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "738229C7DEF4529EB5C253A19B8AE018E62C8EE437BF00B5A4897F1FEF385BA26B7716A4CB6739B90899E6E355C70EB6F3FE98C35DCC5D10FDD072736828A6EE",
+  "descriptionHash": "0E4E0FD880E9BA2E4AAFB9AAC971E0076D99541350C128E1861F8C631C2F1A2F5778B65C1A4432AB9B5ADDB3794CCF86A2F8BC788612B13D3730D95653546310",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Transactional%20Single%20Send/versions/140892",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingTransactionalSingleSendV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3",

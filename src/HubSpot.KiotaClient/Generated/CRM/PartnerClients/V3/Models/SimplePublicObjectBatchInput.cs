@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
 {
+    /// <summary>
+    /// Contains an array of CRM object records to be processed in a batch operation, each defined by their ID and properties.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SimplePublicObjectBatchInput : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the record to be updated. This can be the object ID, or the unique property value of the `idProperty` property.</summary>
+        /// <summary>The unique ID of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of a unique property, when identifying records by property. </summary>
+        /// <summary>The name of a unique identifier property, which can be used for identifying objects instead of the object ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdProperty { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
 #else
         public string IdProperty { get; set; }
 #endif
-        /// <summary>Include this field in each input object along with a unique ID to enable more granular debugging for error responses. Learn more about [multi-status errors](https://developers.hubspot.com/docs/reference/api/other-resources/error-handling#multi-status-errors).</summary>
+        /// <summary>A unique identifier for tracing the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectWriteTraceId { get; set; }
@@ -38,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
 #else
         public string ObjectWriteTraceId { get; set; }
 #endif
-        /// <summary>The properties to set.</summary>
+        /// <summary>Key-value pairs representing the properties of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectBatchInput_properties? Properties { get; set; }
@@ -60,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectBatchInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectBatchInput();
         }
         /// <summary>
@@ -83,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("idProperty", IdProperty);
             writer.WriteStringValue("objectWriteTraceId", ObjectWriteTraceId);

@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #endif
         /// <summary>Options are shown in order starting with the lowest positive integer value. Values of -1 will cause the option to be displayed after any positive values.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>Hidden options won&apos;t be shown in HubSpot.</summary>
+        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
         public bool? Hidden { get; set; }
         /// <summary>A human-readable option label that will be shown in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.OptionInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.OptionInput();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("hidden", Hidden);

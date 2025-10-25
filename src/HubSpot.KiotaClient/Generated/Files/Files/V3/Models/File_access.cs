@@ -31,5 +31,13 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         #pragma warning disable CS1591
         PRIVATE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HIDDEN_SENSITIVE")]
+        #pragma warning disable CS1591
+        HIDDEN_SENSITIVE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SENSITIVE")]
+        #pragma warning disable CS1591
+        SENSITIVE,
+        #pragma warning restore CS1591
     }
 }

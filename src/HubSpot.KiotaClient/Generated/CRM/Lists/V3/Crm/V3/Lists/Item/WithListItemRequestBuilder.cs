@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Restore;
+using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.ScheduleConversion;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.UpdateListFilters;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.UpdateListName;
 using DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models;
@@ -30,6 +31,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scheduleConversion property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.ScheduleConversion.ScheduleConversionRequestBuilder ScheduleConversion
+        {
+            get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.ScheduleConversion.ScheduleConversionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The updateListFilters property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.UpdateListFilters.UpdateListFiltersRequestBuilder UpdateListFilters
@@ -108,7 +114,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>

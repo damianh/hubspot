@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The date and time when the bulk opt-out operation was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>An array of error objects detailing any issues encountered during the bulk opt-out operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError>? Errors { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError> Errors { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>A collection of URLs linking to related resources or documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse_links? Links { get; set; }
@@ -32,11 +32,11 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse_links Links { get; set; }
 #endif
-        /// <summary>The numErrors property</summary>
+        /// <summary>The total number of errors encountered during the bulk opt-out operation.</summary>
         public int? NumErrors { get; set; }
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The date and time when the bulk opt-out request was made.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array containing the results of the bulk opt-out from all communications operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicBulkOptOutFromAllResponse>? Results { get; set; }
@@ -44,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicBulkOptOutFromAllResponse> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The date and time when the bulk opt-out operation began.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the bulk opt-out operation, which can be PENDING, PROCESSING, CANCELED, or COMPLETE.</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse"/> and sets the default values.
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse();
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.StandardError>("errors", Errors);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicBulkOptOutFromAllResponse_links>("links", Links);

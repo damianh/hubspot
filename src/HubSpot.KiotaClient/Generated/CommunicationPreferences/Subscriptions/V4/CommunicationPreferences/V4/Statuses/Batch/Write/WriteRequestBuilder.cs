@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public async Task<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatus> PostAsync(global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchInputPublicStatusRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatus>(requestInfo, global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatus.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchInputPublicStatusRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

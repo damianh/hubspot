@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchInputJsonNode body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Batch.Update.UpdateRequestBuilder.UpdateRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchInputJsonNode body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Batch.Update.UpdateRequestBuilder.UpdateRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
         {
         }
         /// <summary>
-        /// Gets a revision for a given definition by revision id
+        /// Retrieve a specific revision of a definition by revision ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionRevision"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Automation.V4.Acti
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionRevision>(requestInfo, global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionRevision.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a revision for a given definition by revision id
+        /// Retrieve a specific revision of a definition by revision ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

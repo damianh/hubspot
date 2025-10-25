@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExchangeRatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/exchange-rates{?after*,fromCurrencyCode*,limit*,toCurrencyCode*}", pathParameters)
+        public ExchangeRatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/exchange-rates", pathParameters)
         {
         }
         /// <summary>
@@ -61,24 +61,30 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExchangeRatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/exchange-rates{?after*,fromCurrencyCode*,limit*,toCurrencyCode*}", rawUrl)
+        public ExchangeRatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/exchange-rates", rawUrl)
         {
         }
+        /// <summary>
+        /// Get a list of exchange rates
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CollectionResponseExchangeRateForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new exchange rate with specified conversion rate and currency codes.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,19 +98,22 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         public async Task<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate> PostAsync(global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRateCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Get a list of exchange rates
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -112,6 +121,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a new exchange rate with specified conversion rate and currency codes.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +136,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRateCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -140,55 +152,12 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         {
             return new global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder(rawUrl, RequestAdapter);
         }
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
-        public partial class ExchangeRatesRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
-        {
-            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("after")]
-            public string? After { get; set; }
-#nullable restore
-#else
-            [QueryParameter("after")]
-            public string After { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("fromCurrencyCode")]
-            public string? FromCurrencyCode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("fromCurrencyCode")]
-            public string FromCurrencyCode { get; set; }
-#endif
-            [QueryParameter("fromCurrencyCode")]
-            public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.GetFromCurrencyCodeQueryParameterType? FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType { get; set; }
-            /// <summary>The maximum number of results to display per page.</summary>
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
-            [Obsolete("This property is deprecated, use ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("toCurrencyCode")]
-            public string? ToCurrencyCode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("toCurrencyCode")]
-            public string ToCurrencyCode { get; set; }
-#endif
-            [QueryParameter("toCurrencyCode")]
-            public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.GetToCurrencyCodeQueryParameterType? ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType { get; set; }
-        }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ExchangeRatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.ExchangeRatesRequestBuilder.ExchangeRatesRequestBuilderGetQueryParameters>
+        public partial class ExchangeRatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>

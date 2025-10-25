@@ -4,7 +4,6 @@ using DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Archiv
 using DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Create;
 using DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Read;
 using DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Update;
-using DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Upsert;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -38,11 +37,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch
         public global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Update.UpdateRequestBuilder Update
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Update.UpdateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The upsert property</summary>
-        public global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Upsert.UpsertRequestBuilder Upsert
-        {
-            get => new global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Upsert.UpsertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.BatchRequestBuilder"/> and sets the default values.

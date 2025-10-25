@@ -44,6 +44,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
 #endif
         /// <summary>When false, this indicates that your calling app does not require the use of the separate calling window to hold the call connection. </summary>
         public bool? UsesCallingWindow { get; set; }
+        /// <summary>When false, this indicates that your calling app does not use the anchored calling remote within the HubSpot app. </summary>
+        public bool? UsesRemote { get; set; }
         /// <summary>The target width of the iframe that will contain your phone/calling UI.</summary>
         public int? Width { get; set; }
         /// <summary>
@@ -60,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse();
         }
         /// <summary>
@@ -80,6 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "usesCallingWindow", n => { UsesCallingWindow = n.GetBoolValue(); } },
+                { "usesRemote", n => { UsesRemote = n.GetBoolValue(); } },
                 { "width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -89,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteIntValue("height", Height);
             writer.WriteBoolValue("isReady", IsReady);
@@ -99,6 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("usesCallingWindow", UsesCallingWindow);
+            writer.WriteBoolValue("usesRemote", UsesRemote);
             writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

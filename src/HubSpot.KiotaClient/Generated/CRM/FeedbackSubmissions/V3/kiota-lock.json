@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "271F2296907AF9B1BD30EC6A44F7C0A3F66DC3DC03F63E0DD2405C5504E6B00392373488E923E984309331806A7EF498C65D031F0B95B005BD42FA0C0376AB01",
+  "descriptionHash": "5F58C5C55849CA8251A1541AA6FCD41FAA83B6882BBB9E3D38D437BA639BF092F3994F8EDBD88FDF5190086CD13439223F14DBA04BA3120D09773387DE7261DC",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Feedback%20Submissions/versions/424",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMFeedbackSubmissionsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.FeedbackSubmissions.V3",

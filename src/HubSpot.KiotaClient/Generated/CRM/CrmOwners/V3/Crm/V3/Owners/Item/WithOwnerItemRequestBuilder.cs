@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
         {
         }
         /// <summary>
-        /// Read an owner by given `id` or `userId`
+        /// Retrieve details of a specific owner using either their &apos;id&apos; or &apos;userId&apos;.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicOwner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicOwner>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicOwner.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read an owner by given `id` or `userId`
+        /// Retrieve details of a specific owner using either their &apos;id&apos; or &apos;userId&apos;.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             return new global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item.WithOwnerItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read an owner by given `id` or `userId`
+        /// Retrieve details of a specific owner using either their &apos;id&apos; or &apos;userId&apos;.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithOwnerItemRequestBuilderGetQueryParameters 
@@ -88,6 +88,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Specifies whether to use &apos;id&apos; or &apos;userId&apos; as the identifier for the owner.</summary>
             [Obsolete("This property is deprecated, use IdPropertyAsGetIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +99,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
 #endif
+            /// <summary>Specifies whether to use &apos;id&apos; or &apos;userId&apos; as the identifier for the owner.</summary>
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item.GetIdPropertyQueryParameterType? IdPropertyAsGetIdPropertyQueryParameterType { get; set; }
         }

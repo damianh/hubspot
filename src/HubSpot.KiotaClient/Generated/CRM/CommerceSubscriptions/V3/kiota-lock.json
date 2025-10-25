@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "34711832CFC696FCCD09363563F80C5282F6211E73FBF70524EFEB7236975A44E55F9EC8F575836DDA818F38E7BD5C42246A43D7BDE39A881133C0DB550B4420",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Commerce%20Subscriptions/versions/424",
+  "descriptionHash": "2E60F66502AF375E66A88A7BA38DCE0AD6DB2959464970C3793EBB1DF665966E362AA0DDC0D4398135FB854C1EE0801F6D994D9E6C22D735ED4D32B71F7EBE89",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Commerce%20Subscriptions/versions/206901",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCommerceSubscriptionsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3",

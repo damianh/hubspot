@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint();
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference>("indexReference", IndexReference);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexOffset>("offset", Offset);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timeType>("timeType", TimeType);
@@ -166,7 +166,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference();
                 if("FiscalQuarter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -249,7 +249,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(FiscalQuarter != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.FiscalQuarter>(null, FiscalQuarter);

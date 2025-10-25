@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.communicationPreferences.v3.status.email.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The email address of the contact whose subscription statuses are being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.CommunicationPreferences.V3.Status.Email.Item.WithEmailAddressItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.CommunicationPreferences.V3.Status.Email.Item.WithEmailAddressItemRequestBuilder this[string position]
         {

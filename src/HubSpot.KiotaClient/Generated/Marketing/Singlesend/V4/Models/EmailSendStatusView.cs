@@ -25,6 +25,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EventIdView EventId { get; set; }
 #endif
+        /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
         /// <summary>Time when the send was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>Result of the send.</summary>
@@ -55,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EmailSendStatusView CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EmailSendStatusView();
         }
         /// <summary>
@@ -68,6 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "eventId", n => { EventId = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EventIdView>(global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EventIdView.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "sendResult", n => { SendResult = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EmailSendStatusView_sendResult>(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -81,9 +90,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EventIdView>("eventId", EventId);
+            writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EmailSendStatusView_sendResult>("sendResult", SendResult);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

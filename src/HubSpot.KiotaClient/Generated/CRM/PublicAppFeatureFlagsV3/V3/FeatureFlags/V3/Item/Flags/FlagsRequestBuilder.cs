@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
     public partial class FlagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.featureFlags.v3.item.flags.item collection</summary>
-        /// <param name="position">`hs-release-app-cards`</param>
+        /// <param name="position">The name of the flag, either `hs-release-app-cards` or `hs-hide-crm-cards`.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.WithFlagNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.WithFlagNameItemRequestBuilder this[string position]
         {

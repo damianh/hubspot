@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "9919BC27D060414E6BA6A3FDB88F421C5547E94F956D4E92ACFDEBA82E3C275C07DC8A5FF27041E2D6789E166B5D777C5F71877B976BD3583CEFD4FA1746B9DB",
+  "descriptionHash": "56E194E7F02FE96C11181645EF26A8BD04ABCA9396B18B7F95B0731098A6B4517F4E5B0BAC489432E12D9E2F01ECB698C6E81EE637F089AC79B080082F3024CA",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Posts/versions/635",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.19.1",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSPostsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.Posts.V3",

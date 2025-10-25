@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         {
         }
         /// <summary>
-        /// Delete file by ID
+        /// Delete a file by ID
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get file by ID.
+        /// Retrieve a file by its ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         public async Task<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject> PatchAsync(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -116,12 +116,12 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         public async Task<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete file by ID
+        /// Delete a file by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,11 +136,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
             return requestInfo;
         }
         /// <summary>
-        /// Get file by ID.
+        /// Retrieve a file by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +172,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FileUpdateInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -195,7 +194,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -220,7 +219,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item
         {
         }
         /// <summary>
-        /// Get file by ID.
+        /// Retrieve a file by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithFileItemRequestBuilderGetQueryParameters 

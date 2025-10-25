@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactId property</summary>
+        /// <summary>The ID of the contact in HubSpot’s system that consumed the media. This can be fetched using HubSpot&apos;s Get contact by usertoken (utk) API. The API also supports supplying a usertoken, and will handle converting this into a contact ID automatically.</summary>
         public long? ContactId { get; set; }
         /// <summary>The mediaBridgeId property</summary>
         public long? MediaBridgeId { get; set; }
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The occurredTimestamp property</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The pageId property</summary>
+        /// <summary>The content ID of the page that an event happened on, for HubSpot pages. Required if the page is a HubSpot page.</summary>
         public long? PageId { get; set; }
-        /// <summary>The pageName property</summary>
+        /// <summary>The name or title of the page that an event happened on. Required for non-HubSpot pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string PageObjectCoordinates { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the page that an event happened on. Required for non-HubSpot pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -82,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The playedPercent property</summary>
         public int? PlayedPercent { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>The ID of the HubSpot account.</summary>
         public int? PortalId { get; set; }
         /// <summary>The providerId property</summary>
         public int? ProviderId { get; set; }
@@ -108,7 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedPercentageEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedPercentageEvent();
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("contactId", ContactId);
             writer.WriteLongValue("mediaBridgeId", MediaBridgeId);
             writer.WriteStringValue("mediaBridgeObjectCoordinates", MediaBridgeObjectCoordinates);

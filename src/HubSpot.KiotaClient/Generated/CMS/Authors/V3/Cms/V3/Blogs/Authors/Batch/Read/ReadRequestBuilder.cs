@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Cms.V3.Blogs.Authors.Batch.
         public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.BatchResponseBlogAuthor> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.BatchInputString body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Cms.V3.Blogs.Authors.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.BatchResponseBlogAuthor>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.BatchResponseBlogAuthor.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Cms.V3.Blogs.Authors.Batch.
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.BatchInputString body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Cms.V3.Blogs.Authors.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

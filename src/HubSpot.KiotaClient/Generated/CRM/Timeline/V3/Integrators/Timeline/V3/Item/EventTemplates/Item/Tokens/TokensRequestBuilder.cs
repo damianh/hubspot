@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         {
         }
         /// <summary>
-        /// Once you&apos;ve defined an event template, it&apos;s likely that you&apos;ll want to define tokens for it as well. You can do this on the event template itself or update individual tokens here.Event type tokens allow you to attach custom data to events displayed in a timeline or used for list segmentation.You can also use `objectPropertyName` to associate any CRM object properties. This will allow you to fully build out CRM objects.Token names should be unique across the template.
+        /// Update an existing event type template with new tokens.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken"/></returns>
         /// <param name="body">State of the token definition.</param>
@@ -62,12 +62,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Once you&apos;ve defined an event template, it&apos;s likely that you&apos;ll want to define tokens for it as well. You can do this on the event template itself or update individual tokens here.Event type tokens allow you to attach custom data to events displayed in a timeline or used for list segmentation.You can also use `objectPropertyName` to associate any CRM object properties. This will allow you to fully build out CRM objects.Token names should be unique across the template.
+        /// Update an existing event type template with new tokens.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">State of the token definition.</param>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.TimelineEventTemplateToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

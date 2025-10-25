@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Ev
         {
         }
         /// <summary>
-        /// This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn&apos;t found in the event, it will be ignored and we&apos;ll render without it.
+        /// Retrieve details for a specific event, specified by template ID and event ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.EventDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Ev
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.EventDetail>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.EventDetail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will take the `detailTemplate` from the event template and return an object rendering the specified event. If the template references `extraData` that isn&apos;t found in the event, it will be ignored and we&apos;ll render without it.
+        /// Retrieve details for a specific event, specified by template ID and event ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

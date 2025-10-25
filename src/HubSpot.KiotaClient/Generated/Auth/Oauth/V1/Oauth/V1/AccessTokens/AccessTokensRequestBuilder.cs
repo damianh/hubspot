@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.AccessTokens
     public partial class AccessTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.oauth.v1.accessTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The access token that you want to retrieve information about.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.AccessTokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Auth.Oauth.V1.Oauth.V1.AccessTokens.Item.WithTokenItemRequestBuilder this[string position]
         {

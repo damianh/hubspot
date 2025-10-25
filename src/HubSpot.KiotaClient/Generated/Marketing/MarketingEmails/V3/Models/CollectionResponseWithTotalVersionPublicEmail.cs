@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.VersionPublicEmail> Results { get; set; }
 #endif
-        /// <summary>Total number of content emails.</summary>
+        /// <summary>Total number of emails.</summary>
         public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail();
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.Paging>("paging", Paging);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.VersionPublicEmail>("results", Results);
             writer.WriteIntValue("total", Total);
