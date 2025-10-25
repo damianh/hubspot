@@ -55,6 +55,17 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<ListRepository>()
             .AddSingleton<FileRepository>()
             .AddSingleton<EventRepository>()
+            .AddSingleton<MarketingEventRepository>()
+            .AddSingleton<MarketingEmailRepository>()
+            .AddSingleton<CampaignRepository>()
+            .AddSingleton<SingleSendRepository>()
+            .AddSingleton<SubscriptionRepository>()
+            .AddSingleton<ConversationRepository>()
+            .AddSingleton<CustomChannelRepository>()
+            .AddSingleton<VisitorIdentificationRepository>()
+            .AddSingleton<SchemaRepository>()
+            .AddSingleton<ImportRepository>()
+            .AddSingleton<TimelineRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
@@ -131,6 +142,14 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register Marketing APIs
         ApiRoutes.Marketing.RegisterMarketingTransactionalApi(app);
+        ApiRoutes.Marketing.RegisterMarketingEventsApi(app);
+        ApiRoutes.Marketing.RegisterMarketingEmailsApi(app);
+        ApiRoutes.Marketing.RegisterCampaignsApi(app);
+        ApiRoutes.Marketing.RegisterSingleSendApi(app);
+        
+        // Register Communication Preferences APIs
+        ApiRoutes.Subscriptions.RegisterSubscriptionsV3Api(app);
+        ApiRoutes.Subscriptions.RegisterSubscriptionsV4Api(app);
         
         // Register Webhooks APIs
         ApiRoutes.Webhooks.RegisterWebhooksApi(app);
@@ -143,6 +162,18 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register Events API
         ApiRoutes.RegisterEvents(app);
+        
+        // Register Conversations APIs
+        ApiRoutes.RegisterConversationsApi(
+            app,
+            app.Services.GetRequiredService<ConversationRepository>(),
+            app.Services.GetRequiredService<CustomChannelRepository>(),
+            app.Services.GetRequiredService<VisitorIdentificationRepository>());
+        
+        // Register CRM Extensions APIs (Batch 6)
+        ApiRoutes.RegisterSchemasApi(app, app.Services.GetRequiredService<SchemaRepository>());
+        ApiRoutes.RegisterImportsApi(app, app.Services.GetRequiredService<ImportRepository>());
+        ApiRoutes.RegisterTimelineApi(app, app.Services.GetRequiredService<TimelineRepository>());
 
         await app.StartAsync();
 
