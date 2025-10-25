@@ -47,9 +47,16 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<HubSpotObjectRepository>()
             .AddSingleton<HubSpotObjectIdGenerator>()
             .AddSingleton<TransactionalEmailRepository>()
+            .AddSingleton<WebhookRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
+        
+        // Configure JSON serialization to handle enums as strings
+        builder.Services.ConfigureHttpJsonOptions(options =>
+        {
+            options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+        });
 
         var app = builder.Build();
 
@@ -76,6 +83,9 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register Marketing APIs
         ApiRoutes.Marketing.RegisterMarketingTransactionalApi(app);
+        
+        // Register Webhooks APIs
+        ApiRoutes.Webhooks.RegisterWebhooksApi(app);
 
         await app.StartAsync();
 
