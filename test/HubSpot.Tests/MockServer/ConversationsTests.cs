@@ -88,7 +88,9 @@ public class ConversationsTests : IAsyncLifetime
         var createResponse = await httpClient.PostAsync("/conversations/v3/custom-channels", content);
         createResponse.IsSuccessStatusCode.ShouldBeTrue();
         
-        var channelId = "1"; // First channel will have ID 1
+        var createBody = await createResponse.Content.ReadAsStringAsync();
+        var createDoc = System.Text.Json.JsonDocument.Parse(createBody);
+        var channelId = createDoc.RootElement.GetProperty("id").GetString()!;
         
         // Update the channel
         var updateJson = @"{""name"": ""Updated Name"", ""active"": false}";
@@ -117,7 +119,9 @@ public class ConversationsTests : IAsyncLifetime
         var createResponse = await httpClient.PostAsync("/conversations/v3/custom-channels", content);
         createResponse.IsSuccessStatusCode.ShouldBeTrue();
         
-        var channelId = "1";
+        var createBody = await createResponse.Content.ReadAsStringAsync();
+        var createDoc = System.Text.Json.JsonDocument.Parse(createBody);
+        var channelId = createDoc.RootElement.GetProperty("id").GetString()!;
         
         // Delete the channel
         var deleteResponse = await httpClient.DeleteAsync($"/conversations/v3/custom-channels/{channelId}");
@@ -156,7 +160,9 @@ public class ConversationsTests : IAsyncLifetime
         var createResponse = await httpClient.PostAsync("/conversations/v3/visitor-identification/tokens/create", content);
         createResponse.IsSuccessStatusCode.ShouldBeTrue();
         
-        var visitorId = "1"; // First visitor will have ID 1
+        var createBody = await createResponse.Content.ReadAsStringAsync();
+        var createDoc = System.Text.Json.JsonDocument.Parse(createBody);
+        var visitorId = createDoc.RootElement.GetProperty("visitorId").GetString()!;
         
         // Get the token by visitor ID
         var getResponse = await httpClient.GetAsync($"/conversations/v3/visitor-identification/tokens/visitor/{visitorId}");
