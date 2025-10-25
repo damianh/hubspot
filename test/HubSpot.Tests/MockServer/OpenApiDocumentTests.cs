@@ -12,6 +12,7 @@ public class OpenApiDocumentTests : IAsyncLifetime
     public async ValueTask InitializeAsync()
     {
         var services = new ServiceCollection()
+            .AddLogging()
             .BuildServiceProvider();
 
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();

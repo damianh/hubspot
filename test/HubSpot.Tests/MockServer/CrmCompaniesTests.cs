@@ -11,11 +11,12 @@ namespace DamianH.HubSpot.MockServer;
 public class CrmCompaniesTests : IAsyncLifetime
 {
     private HubSpotMockServer _server = null!;
-    private HubSpotCRMCompaniesV3Client _client = null!;
+    private HubSpotCRMCompaniesV3Client _v3Client = null!;
 
     public async ValueTask InitializeAsync()
     {
         var services = new ServiceCollection()
+            .AddLogging()
             .BuildServiceProvider();
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();
         _server = await HubSpotMockServer.StartNew(loggerFactory);
@@ -23,16 +24,18 @@ public class CrmCompaniesTests : IAsyncLifetime
         {
             BaseUrl = _server.Uri.ToString()
         };
-        _client = new HubSpotCRMCompaniesV3Client(requestAdapter);
-        var hubSpotCrmContactsClient = new HubSpotCRMCompaniesV3Client(requestAdapter);
+        _v3Client = new HubSpotCRMCompaniesV3Client(requestAdapter);
     }
 
-    [Fact]
-    public async Task Can_create_company()
-    {
-        var request = CreateCompanyRequest();
+    #region V3 Client Tests
 
-        var simplePublicObject = await _client.Crm.V3.Objects.Companies.PostAsync(request);
+    [Fact]
+    public async Task V3_Can_create_company()
+    {
+        var request = CreateV3CompanyRequest();
+
+        var response = await _v3Client.Crm.V3.Objects.Companies.PostAsync(request);
+        var simplePublicObject = response!.Entity!;
 
         simplePublicObject.ShouldNotBeNull();
         simplePublicObject.Id.ShouldNotBeNullOrWhiteSpace();
@@ -44,12 +47,12 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task Can_get_company_with_no_properties()
+    public async Task V3_Can_get_company_with_no_properties()
     {
-        var request = CreateCompanyRequest();
-        var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
 
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync();
+        var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync();
 
         retrievedCompany!.Id.ShouldNotBeNullOrWhiteSpace();
         retrievedCompany.Properties.ShouldNotBeNull();
@@ -57,12 +60,12 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task Can_get_company_with_specified_properties()
+    public async Task V3_Can_get_company_with_specified_properties()
     {
-        var request = CreateCompanyRequest();
-        var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
 
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+        var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id]
             .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
@@ -79,12 +82,12 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task Can_update_company_with_changed_property()
+    public async Task V3_Can_update_company_with_changed_property()
     {
-        var request = CreateCompanyRequest();
-        var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
 
-        var updatedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
+        var updatedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
             new SimplePublicObjectInput
             {
                 Properties = new SimplePublicObjectInput_properties
@@ -98,7 +101,7 @@ public class CrmCompaniesTests : IAsyncLifetime
         updatedCompany!.Properties!.AdditionalData
             .ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "Bar");
 
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+        var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id]
             .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
@@ -113,12 +116,12 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task Can_update_company_with_new_property()
+    public async Task V3_Can_update_company_with_new_property()
     {
-        var request = CreateCompanyRequest();
-        var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
         var newPropertyName = "NewProperty";
-        var updatedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
+        var updatedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
             new SimplePublicObjectInput
             {
                 Properties = new SimplePublicObjectInput_properties
@@ -132,7 +135,7 @@ public class CrmCompaniesTests : IAsyncLifetime
         updatedCompany!.Properties!.AdditionalData
             .ShouldContainKeyAndValue(newPropertyName, "Bar");
 
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+        var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id]
             .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
@@ -147,16 +150,16 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task Can_list_companies()
+    public async Task V3_Can_list_companies()
     {
-        for (var i = 0; i < 100; i++)
+        for (var i = 0; i < 25; i++)
         {
             var name = $"Company-{i}";
-            var request = CreateCompanyRequest(name);
-            await _client.Crm.V3.Objects.Companies.PostAsync(request);
+            var request = CreateV3CompanyRequest(name);
+            await _v3Client.Crm.V3.Objects.Companies.PostAsync(request);
         }
 
-        var page = await _client.Crm.V3.Objects.Companies.GetAsync(parameters =>
+        var page = await _v3Client.Crm.V3.Objects.Companies.GetAsync(parameters =>
         {
             parameters.QueryParameters.Limit = 10;
             parameters.QueryParameters.Properties =
@@ -166,11 +169,82 @@ public class CrmCompaniesTests : IAsyncLifetime
         });
 
         page.ShouldNotBeNull();
+        page.Results.ShouldNotBeNull();
+        page.Results.Count.ShouldBe(10);
+        page.Paging.ShouldNotBeNull();
+        page.Paging.Next.ShouldNotBeNull();
+        page.Paging.Next.After.ShouldNotBeNull();
     }
 
-    public Task DisposeAsync() => _server.DisposeAsync().AsTask();
+    [Fact]
+    public async Task V3_Can_list_companies_with_paging()
+    {
+        for (var i = 0; i < 25; i++)
+        {
+            var name = $"Company-{i}";
+            var request = CreateV3CompanyRequest(name);
+            await _v3Client.Crm.V3.Objects.Companies.PostAsync(request);
+        }
 
-    private static SimplePublicObjectInputForCreate CreateCompanyRequest(string name = "Foo") =>
+        var page1 = await _v3Client.Crm.V3.Objects.Companies.GetAsync(parameters =>
+        {
+            parameters.QueryParameters.Limit = 10;
+        });
+
+        page1.ShouldNotBeNull();
+        page1.Results!.Count.ShouldBe(10);
+
+        var page2 = await _v3Client.Crm.V3.Objects.Companies.GetAsync(parameters =>
+        {
+            parameters.QueryParameters.Limit = 10;
+            parameters.QueryParameters.After = page1.Paging!.Next!.After;
+        });
+
+        page2.ShouldNotBeNull();
+        page2.Results!.Count.ShouldBe(10);
+
+        // IDs should be different
+        page1.Results.First().Id.ShouldNotBe(page2.Results.First().Id);
+    }
+
+    [Fact]
+    public async Task V3_Can_archive_company()
+    {
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+
+        await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].DeleteAsync();
+
+        // Attempting to get the archived company should return 404
+        await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
+        {
+            await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync();
+        });
+    }
+
+    [Fact]
+    public async Task V3_Can_list_archived_companies()
+    {
+        var request = CreateV3CompanyRequest();
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+
+        await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].DeleteAsync();
+
+        var archivedList = await _v3Client.Crm.V3.Objects.Companies.GetAsync(parameters =>
+        {
+            parameters.QueryParameters.Archived = true;
+        });
+
+        archivedList.ShouldNotBeNull();
+        archivedList.Results!.Count.ShouldBeGreaterThan(0);
+        archivedList.Results.Any(c => c.Id == createdCompany.Id).ShouldBeTrue();
+    }
+
+    #endregion
+
+    public ValueTask DisposeAsync() => _server.DisposeAsync();
+
+    private static SimplePublicObjectInputForCreate CreateV3CompanyRequest(string name = "Foo") =>
         new()
         {
             Properties = new SimplePublicObjectInputForCreate_properties
