@@ -1,4 +1,5 @@
 using DamianH.HubSpot.MockServer.Objects;
+using DamianH.HubSpot.MockServer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DamianH.HubSpot.MockServer;
 
-public partial class HubSpotMockServer : IAsyncDisposable
+public class HubSpotMockServer : IAsyncDisposable
 {
     private readonly WebApplication _app;
 
@@ -18,6 +19,13 @@ public partial class HubSpotMockServer : IAsyncDisposable
     }
 
     public Uri Uri { get; private set; }
+    
+    public Uri BaseUri => Uri;
+
+    public static Task<HubSpotMockServer> StartAsync()
+    {
+        return StartNew(new LoggerFactoryAdapter());
+    }
 
     public static async Task<HubSpotMockServer> StartNew(ILoggerFactory loggerFactory)
     {
@@ -38,6 +46,7 @@ public partial class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<LoggerFactoryLoggerProvider>()
             .AddSingleton<HubSpotObjectRepository>()
             .AddSingleton<HubSpotObjectIdGenerator>()
+            .AddSingleton<TransactionalEmailRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
@@ -49,7 +58,24 @@ public partial class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmContacts(app);
         ApiRoutes.RegisterCrmDeals(app);
         ApiRoutes.RegisterCrmLineItems(app);
-        // ... other APIs
+        ApiRoutes.RegisterCrmTickets(app);
+        ApiRoutes.RegisterCrmProducts(app);
+        ApiRoutes.RegisterCrmQuotes(app);
+        ApiRoutes.RegisterCrmCalls(app);
+        ApiRoutes.RegisterCrmEmails(app);
+        ApiRoutes.RegisterCrmMeetings(app);
+        ApiRoutes.RegisterCrmNotes(app);
+        ApiRoutes.RegisterCrmTasks(app);
+        ApiRoutes.RegisterCrmCommunications(app);
+        ApiRoutes.RegisterCrmPostalMail(app);
+        ApiRoutes.RegisterCrmFeedbackSubmissions(app);
+        ApiRoutes.RegisterCrmGoals(app);
+        
+        // Register generic CRM Objects API for dynamic/custom object types
+        ApiRoutes.RegisterGenericCrmObjectsApi(app);
+        
+        // Register Marketing APIs
+        ApiRoutes.Marketing.RegisterMarketingTransactionalApi(app);
 
         await app.StartAsync();
 

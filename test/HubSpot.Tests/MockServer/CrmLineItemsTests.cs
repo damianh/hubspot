@@ -1,11 +1,9 @@
 using DamianH.HubSpot.KiotaClient.CRM.LineItems.V3;
 using DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models;
-using DamianH.HubSpot.KiotaClient.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
-using System.Linq;
 
 namespace DamianH.HubSpot.MockServer;
 
@@ -50,16 +48,16 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var lineitem = created!.Entity!;
+        var LineItem = created!.Entity!;
 
-        lineitem.ShouldNotBeNull();
-        lineitem.Id.ShouldNotBeNullOrEmpty();
-        lineitem.Properties.ShouldNotBeNull();
-        lineitem.Properties.AdditionalData.ShouldContainKeyAndValue("email", "test@example.com");
-        lineitem.Properties.AdditionalData.ShouldContainKeyAndValue("firstname", "John");
-        lineitem.Properties.AdditionalData.ShouldContainKeyAndValue("lastname", "Doe");
-        lineitem.CreatedAt.ShouldNotBeNull();
-        lineitem.UpdatedAt.ShouldNotBeNull();
+        LineItem.ShouldNotBeNull();
+        LineItem.Id.ShouldNotBeNullOrEmpty();
+        LineItem.Properties.ShouldNotBeNull();
+        LineItem.Properties.AdditionalData.ShouldContainKeyAndValue("email", "test@example.com");
+        LineItem.Properties.AdditionalData.ShouldContainKeyAndValue("firstname", "John");
+        LineItem.Properties.AdditionalData.ShouldContainKeyAndValue("lastname", "Doe");
+        LineItem.CreatedAt.ShouldNotBeNull();
+        LineItem.UpdatedAt.ShouldNotBeNull();
     }
 
     [Fact]
@@ -204,7 +202,7 @@ public class CrmLineItemsTests : IAsyncLifetime
             {
                 AdditionalData = new Dictionary<string, object>
                 {
-                    { "email", "lineitem1@example.com" }
+                    { "email", "LineItem1@example.com" }
                 }
             }
         };
@@ -214,7 +212,7 @@ public class CrmLineItemsTests : IAsyncLifetime
             {
                 AdditionalData = new Dictionary<string, object>
                 {
-                    { "email", "lineitem2@example.com" }
+                    { "email", "LineItem2@example.com" }
                 }
             }
         };
@@ -230,8 +228,8 @@ public class CrmLineItemsTests : IAsyncLifetime
         list.ShouldNotBeNull();
         list.Results.ShouldNotBeNull();
         list.Results.Count.ShouldBeGreaterThanOrEqualTo(2);
-        list.Results.Any(c => c.Properties.AdditionalData["email"] as string == "lineitem1@example.com").ShouldBeTrue();
-        list.Results.Any(c => c.Properties.AdditionalData["email"] as string == "lineitem2@example.com").ShouldBeTrue();
+        list.Results.Any(c => c.Properties.AdditionalData["email"] as string == "LineItem1@example.com").ShouldBeTrue();
+        list.Results.Any(c => c.Properties.AdditionalData["email"] as string == "LineItem2@example.com").ShouldBeTrue();
     }
 
     [Fact]

@@ -20,4 +20,8 @@
     <InternalsVisibleTo Include="HubSpot.Tests" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
+  </ItemGroup>
+
 </Project>

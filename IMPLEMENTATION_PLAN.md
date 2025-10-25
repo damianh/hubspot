@@ -11,6 +11,12 @@ This plan outlines the implementation of mock endpoints for all HubSpot APIs tha
   - Property filtering
   - Pagination support
   - Archived filtering
+- **CRM Contacts V3** (`/crm/v3/objects/contacts`) - Fully implemented with comprehensive tests
+- **CRM Deals V3** (`/crm/v3/objects/0-3`) - Fully implemented with comprehensive tests  
+- **CRM Line Items V3** (`/crm/v3/objects/line_items`) - Fully implemented with comprehensive tests
+- **CRM Tickets V3** (`/crm/v3/objects/0-5`) - Registered via standard helper
+- **CRM Products V3** (`/crm/v3/objects/0-7`) - Registered via standard helper
+- **CRM Quotes V3** (`/crm/v3/objects/0-14`) - Registered via standard helper
 
 ### Infrastructure
 - ✅ `HubSpotObjectRepository` - Generic repository for CRM objects
@@ -18,75 +24,47 @@ This plan outlines the implementation of mock endpoints for all HubSpot APIs tha
 - ✅ API Models (`SimplePublicObject`, `CollectionResponseSimplePublicObject`, etc.)
 - ✅ MapGroup-based routing architecture
 - ✅ Test fixtures and helpers
+- ✅ **Refactoring Complete**: Extracted `RegisterStandardCrmObject` helper method
+  - Drastically reduces code duplication
+  - Makes adding new CRM object types trivial (1 line of code)
+  - Separated into partial classes:
+    - `ApiRoutes.StandardCrmObject.cs` - Helper method
+    - `ApiRoutes.CrmObjects.cs` - Registration calls for all CRM objects
 
 ---
 
 ## Priority 1: Core CRM Objects (High Priority)
-These are the most commonly used HubSpot objects and should be implemented first.
+✅ **COMPLETED** - These are the most commonly used HubSpot objects.
 
-### 1.1 CRM Contacts V3 (`/crm/v3/objects/contacts`)
-**Kiota Client:** `HubSpotCrmContactsClient`  
-**Generated from:** `https://api.hubspot.com/api-catalog-public/v1/apis/crm/v3/objects/contacts`
+### 1.1 CRM Contacts V3 (`/crm/v3/objects/contacts`) ✅
+**Status:** Complete with full test coverage
 
-**Endpoints:**
-- `GET /crm/v3/objects/contacts` - List contacts
-- `GET /crm/v3/objects/contacts/{contactId}` - Get contact by ID
-- `POST /crm/v3/objects/contacts` - Create contact
-- `PATCH /crm/v3/objects/contacts/{contactId}` - Update contact
-- `DELETE /crm/v3/objects/contacts/{contactId}` - Archive contact
+### 1.2 CRM Deals V3 (`/crm/v3/objects/deals`) ✅
+**Status:** Complete with full test coverage
 
-**Implementation:**
-- Reuse existing `HubSpotObjectRepository` with object type "contact"
-- Add `RegisterCrmContactsApi(WebApplication app)` method in `HubSpotMockServer.cs`
-- Create `CrmContactsTests.cs` with similar test coverage as `CrmCompaniesTests.cs`
-
-**Estimated Effort:** 2-3 hours (copy/paste from Companies with minor adjustments)
+### 1.3 CRM Line Items V3 (`/crm/v3/objects/line_items`) ✅
+**Status:** Complete with full test coverage
 
 ---
 
-### 1.2 CRM Deals V3 (`/crm/v3/objects/deals`)
-**Kiota Client:** `HubSpotCrmDealsClient`  
-**Generated from:** `https://api.hubspot.com/api-catalog-public/v1/apis/crm/v3/objects/deals`
+## Priority 2: Generic CRM Objects API & Refactoring (Medium Priority)
+✅ **REFACTORING COMPLETE** - 🎉 Massive code reduction achieved!
 
-**Endpoints:**
-- `GET /crm/v3/objects/deals` - List deals
-- `GET /crm/v3/objects/deals/{dealId}` - Get deal by ID
-- `POST /crm/v3/objects/deals` - Create deal
-- `PATCH /crm/v3/objects/deals/{dealId}` - Update deal
-- `DELETE /crm/v3/objects/deals/{dealId}` - Archive deal
+### 2.1 Extract Common CRM Object Registration Helper ✅
+**Status:** Complete - Reduced ~800 lines to ~30 lines
 
-**Implementation:**
-- Reuse existing `HubSpotObjectRepository` with object type "deal"
-- Add `RegisterCrmDealsApi(WebApplication app)` method
-- Create `CrmDealsTests.cs`
+**What Changed:**
+- Created `RegisterStandardCrmObject()` helper method
+- All standard CRM object APIs now use this single helper
+- Adding new CRM object types requires only 1 line of code
+- Organized into partial classes for better maintainability
 
-**Estimated Effort:** 2-3 hours
+**Additional Objects Added (via helper):**
+- ✅ Tickets (`/crm/v3/objects/0-5`)
+- ✅ Products (`/crm/v3/objects/0-7`)
+- ✅ Quotes (`/crm/v3/objects/0-14`)
 
----
-
-### 1.3 CRM Line Items V3 (`/crm/v3/objects/line_items`)
-**Kiota Client:** `HubSpotCrmLineItemsClient`  
-**Generated from:** `https://api.hubspot.com/api-catalog-public/v1/apis/crm/v3/objects/line_items`
-
-**Endpoints:**
-- `GET /crm/v3/objects/line_items` - List line items
-- `GET /crm/v3/objects/line_items/{lineItemId}` - Get line item by ID
-- `POST /crm/v3/objects/line_items` - Create line item
-- `PATCH /crm/v3/objects/line_items/{lineItemId}` - Update line item
-- `DELETE /crm/v3/objects/line_items/{lineItemId}` - Archive line item
-
-**Implementation:**
-- Reuse existing `HubSpotObjectRepository` with object type "line_item"
-- Add `RegisterCrmLineItemsApi(WebApplication app)` method
-- Create `CrmLineItemsTests.cs`
-
-**Estimated Effort:** 2-3 hours
-
----
-
-## Priority 2: Generic CRM Objects API (Medium Priority)
-
-### 2.1 CRM Objects V3 (`/crm/v3/objects`)
+### 2.2 CRM Objects V3 (`/crm/v3/objects`) - Generic API
 **Kiota Client:** `HubSpotCrmObjectsClient`  
 **Generated from:** `https://api.hubspot.com/api-catalog-public/v1/apis/crm/v3/objects`
 

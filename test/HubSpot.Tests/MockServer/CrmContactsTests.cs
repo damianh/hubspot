@@ -1,6 +1,5 @@
 using DamianH.HubSpot.KiotaClient.CRM.Contacts.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models;
-using DamianH.HubSpot.KiotaClient.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;

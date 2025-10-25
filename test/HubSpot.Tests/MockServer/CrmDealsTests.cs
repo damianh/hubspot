@@ -1,11 +1,9 @@
 using DamianH.HubSpot.KiotaClient.CRM.Deals.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models;
-using DamianH.HubSpot.KiotaClient.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
-using System.Linq;
 
 namespace DamianH.HubSpot.MockServer;
 
