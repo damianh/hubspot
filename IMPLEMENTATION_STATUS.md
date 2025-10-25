@@ -76,9 +76,9 @@
 - ❌ Users (`/crm/v3/objects/users`)
 
 ### CRM Metadata & Configuration (HIGH PRIORITY)
-- ❌ **Properties** (`/crm/v3/properties`) - CRITICAL
-- ❌ **Pipelines** (`/crm/v3/pipelines`) - CRITICAL
-- ❌ **Owners** (`/crm/v3/owners`) - CRITICAL
+- ✅ **Properties** (`/crm/v3/properties`, `/crm/v202509/properties`) - CRITICAL
+- ✅ **Pipelines** (`/crm/v3/pipelines`) - CRITICAL
+- ✅ **Owners** (`/crm/v3/owners`) - CRITICAL
 - ❌ Lists (`/crm/v3/lists`)
 - ❌ Schemas (`/crm/v3/schemas`)
 - ❌ Property Validations (`/crm/v3/property-validations`)
@@ -162,8 +162,11 @@
 ### Implemented Repositories
 1. ✅ `HubSpotObjectRepository` - Handles all CRM objects
 2. ✅ `AssociationRepository` - Handles associations between objects
-3. ✅ `TransactionalEmailRepository` - Marketing transactional emails
-4. ✅ `WebhookRepository` - Webhook subscriptions
+3. ✅ `PropertyDefinitionRepository` - Property definitions and groups
+4. ✅ `PipelineRepository` - Pipelines and stages
+5. ✅ `OwnerRepository` - Users and teams
+6. ✅ `TransactionalEmailRepository` - Marketing transactional emails
+7. ✅ `WebhookRepository` - Webhook subscriptions
 
 ### Repository Infrastructure
 - ✅ `HubSpotObjectIdGenerator` - ID generation
@@ -196,6 +199,9 @@
 - ✅ `ApiRoutes.StandardCrmObject.cs` - Reusable standard object registration
 - ✅ `ApiRoutes.CrmObjects.cs` - Individual CRM object routes
 - ✅ `ApiRoutes.Associations.cs` - Association routes
+- ✅ `ApiRoutes.Properties.cs` - Property definitions routes
+- ✅ `ApiRoutes.Pipelines.cs` - Pipeline routes
+- ✅ `ApiRoutes.Owners.cs` - Owner routes
 - ✅ `ApiRoutes.Marketing.cs` - Marketing routes
 - ✅ `ApiRoutes.Webhooks.cs` - Webhook routes
 
@@ -206,12 +212,12 @@ The `RegisterStandardCrmObject` method provides a template for quickly adding ne
 
 ## Next Steps (Prioritized)
 
-### Phase 1: Critical CRM Metadata (Week 1)
+### Phase 1: Critical CRM Metadata (Week 1) ✅ COMPLETED
 **Essential for real-world testing**
-1. ❌ Properties API - Property definitions and custom fields
-2. ❌ Pipelines API - Deal/Ticket stages
-3. ❌ Owners API - User/team assignments
-4. ❌ Lists API - Contact/company lists
+1. ✅ Properties API - Property definitions and custom fields
+2. ✅ Pipelines API - Deal/Ticket stages
+3. ✅ Owners API - User/team assignments
+4. ❌ Lists API - Contact/company lists (deferred to Phase 2)
 
 ### Phase 2: Remaining CRM Objects (Week 2)
 **Commerce & specialized objects**
@@ -239,9 +245,17 @@ The `RegisterStandardCrmObject` method provides a template for quickly adding ne
 ---
 
 ## Estimated Completion
-- **Current Progress:** ~22% (30/135 APIs)
-- **With Critical APIs (Phase 1):** ~25%
-- **Full Implementation:** 8-10 weeks at current pace
+- **Current Progress:** ~24% (33/135 APIs)
+- **Phase 1 (Critical CRM Metadata):** ✅ COMPLETED (except Lists)
+- **Full Implementation:** 7-9 weeks at current pace
+
+## Recent Updates (2025-10-25)
+✅ **Just Implemented:**
+- Properties API (V3 + V202509) - Property definitions, groups, CRUD operations
+- Pipelines API (V3) - Pipelines and stages for deals/tickets
+- Owners API (V3) - Users and teams (read-only)
+
+These three critical APIs enable realistic CRM testing scenarios with proper metadata support.
 
 ## Recommendation
-Focus on **Phase 1 (Critical CRM Metadata)** next, as these APIs are essential for realistic testing scenarios and are frequently used in combination with the already-implemented object APIs.
+Continue with **Phase 2 (Remaining CRM Objects)** - implement commerce objects and specialized object types to expand CRM coverage.
