@@ -1,6 +1,4 @@
-﻿using Shouldly;
-
-namespace DamianH.HubSpot;
+﻿namespace DamianH.HubSpot;
 
 public static class ShouldlyExtensions
 {

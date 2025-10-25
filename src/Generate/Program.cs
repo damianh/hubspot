@@ -20,10 +20,10 @@ void RunKiota(string group, string name, int version, string openApiUrl)
     name = name.Replace(" ", "");
     name = name.Replace("-", "");
     group = group.Replace(" ", "");
-    var          namespaceName = $"DamianH.HubSpot.KiotaClient.{group}.{name}.V{version}";
-    var          output        = Path.Join(generatedPath, group, name, $"V{version}");
-    var          className     = $"HubSpot{group}{name}V{version}Client";
-    
+    var namespaceName = $"DamianH.HubSpot.KiotaClient.{group}.{name}.V{version}";
+    var output = Path.Join(generatedPath, group, name, $"V{version}");
+    var className = $"HubSpot{group}{name}V{version}Client";
+
     var args = $"kiota generate --openapi {openApiUrl} --language csharp --output {output} --class-name {className} --namespace-name {namespaceName}";
 
     try
@@ -68,13 +68,13 @@ foreach (var item in failed)
     WriteLine($"  {item}");
 }
 
-public class HubSpotApiCatalog
+internal class HubSpotApiCatalog
 {
     [JsonPropertyName("results")]
     public List<Result> Results { get; set; } = [];
 }
 
-public class Result
+internal class Result
 {
     [JsonPropertyName("name")]
     public required string Name { get; set; }
@@ -86,7 +86,7 @@ public class Result
     public List<ApiVersion> Versions { get; set; } = [];
 }
 
-public class ApiVersion
+internal class ApiVersion
 {
     [JsonPropertyName("version")]
     public int Version { get; set; }
@@ -113,7 +113,7 @@ public class ApiVersion
     public required string DocumentationBanner { get; set; }
 }
 
-public class ApiRequirements
+internal class ApiRequirements
 {
     [JsonPropertyName("marketing")]
     public required string Marketing { get; set; }
@@ -128,7 +128,7 @@ public class ApiRequirements
     public required string Cms { get; set; }
 }
 
-public class RelatedDocumentation
+internal class RelatedDocumentation
 {
     [JsonPropertyName("name")]
     public required string Name { get; set; }

@@ -8,9 +8,9 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace DamianH.HubSpot.MockServer;
 
-public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
+public class CrmCompaniesTests : IAsyncLifetime
 {
-    private HubSpotMockServer           _server = null!;
+    private HubSpotMockServer _server = null!;
     private HubSpotCRMCompaniesV3Client _client = null!;
 
     public async ValueTask InitializeAsync()
@@ -42,11 +42,11 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
         simplePublicObject.Properties.AdditionalData
             .ShouldContainKeyAndValue(PropertyNames.CrmCompany.Domain, "example.com");
     }
-    
+
     [Fact]
     public async Task Can_get_company_with_no_properties()
     {
-        var request        = CreateCompanyRequest();
+        var request = CreateCompanyRequest();
         var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync();
@@ -55,15 +55,15 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
         retrievedCompany.Properties.ShouldNotBeNull();
         retrievedCompany.Properties.AdditionalData.Count.ShouldBe(0);
     }
-    
+
     [Fact]
     public async Task Can_get_company_with_specified_properties()
     {
-        var request        = CreateCompanyRequest();
+        var request = CreateCompanyRequest();
         var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync(
-            requestConfiguration =>
+        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+            .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
                 [
@@ -74,13 +74,14 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
         retrievedCompany!.Id.ShouldNotBeNullOrWhiteSpace();
         retrievedCompany.Properties.ShouldNotBeNull();
         retrievedCompany.Properties.AdditionalData.Count.ShouldBe(1);
-        retrievedCompany.Properties.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Domain, "example.com");
+        retrievedCompany.Properties.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Domain,
+            "example.com");
     }
-    
+
     [Fact]
     public async Task Can_update_company_with_changed_property()
     {
-        var request        = CreateCompanyRequest();
+        var request = CreateCompanyRequest();
         var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         var updatedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
@@ -96,9 +97,9 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
             });
         updatedCompany!.Properties!.AdditionalData
             .ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "Bar");
-        
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync(
-            requestConfiguration =>
+
+        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+            .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
                 [
@@ -110,12 +111,12 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
         retrievedCompany.Properties.AdditionalData
             .ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "Bar");
     }
-    
+
     [Fact]
     public async Task Can_update_company_with_new_property()
     {
-        var request         = CreateCompanyRequest();
-        var createdCompany  = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
+        var request = CreateCompanyRequest();
+        var createdCompany = (await _client.Crm.V3.Objects.Companies.PostAsync(request))!;
         var newPropertyName = "NewProperty";
         var updatedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
             new SimplePublicObjectInput
@@ -130,9 +131,9 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
             });
         updatedCompany!.Properties!.AdditionalData
             .ShouldContainKeyAndValue(newPropertyName, "Bar");
-        
-        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync(
-            requestConfiguration =>
+
+        var retrievedCompany = await _client.Crm.V3.Objects.Companies[createdCompany.Id]
+            .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties =
                 [
@@ -150,8 +151,8 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
     {
         for (var i = 0; i < 100; i++)
         {
-            var name           = $"Company-{i}";
-            var request        = CreateCompanyRequest(name);
+            var name = $"Company-{i}";
+            var request = CreateCompanyRequest(name);
             await _client.Crm.V3.Objects.Companies.PostAsync(request);
         }
 
@@ -166,9 +167,9 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
 
         page.ShouldNotBeNull();
     }
-    
+
     public Task DisposeAsync() => _server.DisposeAsync().AsTask();
-    
+
     private static SimplePublicObjectInputForCreate CreateCompanyRequest(string name = "Foo") =>
         new()
         {
@@ -180,8 +181,8 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
                     { PropertyNames.CrmCompany.Domain, "example.com" }
                 }
             },
-            Associations = new List<PublicAssociationsForObject>
-            {
+            Associations =
+            [
                 new()
                 {
                     To = new PublicObjectId
@@ -192,11 +193,11 @@ public class CrmCompaniesTests(ITestOutputHelper outputHelper) : IAsyncLifetime
                     [
                         new AssociationSpec
                         {
-                            AssociationTypeId   = 456,
+                            AssociationTypeId = 456,
                             AssociationCategory = AssociationSpec_associationCategory.HUBSPOT_DEFINED
                         }
                     ]
                 }
-            }
+            ]
         };
 }

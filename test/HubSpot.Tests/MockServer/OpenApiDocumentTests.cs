@@ -4,8 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace DamianH.HubSpot.MockServer;
 
-public class OpenApiDocumentTests(ITestOutputHelper outputHelper) : IAsyncLifetime
+public class OpenApiDocumentTests : IAsyncLifetime
 {
+    private readonly ITestOutputHelper _outputHelper = TestContext.Current.TestOutputHelper!;
     private HubSpotMockServer _server = null!;
 
     public async ValueTask InitializeAsync()
@@ -15,7 +16,7 @@ public class OpenApiDocumentTests(ITestOutputHelper outputHelper) : IAsyncLifeti
 
         var loggerFactory = services.GetRequiredService<ILoggerFactory>();
         _server = await HubSpotMockServer.StartNew(loggerFactory);
-        outputHelper.WriteLine(_server.Uri.ToString());
+        _outputHelper.WriteLine(_server.Uri.ToString());
     }
 
     [Theory]
