@@ -82,6 +82,32 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmFeedbackSubmissions(app);
         ApiRoutes.RegisterCrmGoals(app);
         
+        // Batch 1: Additional standard objects
+        ApiRoutes.RegisterCrmAppointments(app);
+        ApiRoutes.RegisterCrmLeads(app);
+        ApiRoutes.RegisterCrmUsers(app);
+        
+        // Batch 2: Commerce objects
+        ApiRoutes.RegisterCrmCarts(app);
+        ApiRoutes.RegisterCrmOrders(app);
+        ApiRoutes.RegisterCrmInvoices(app);
+        ApiRoutes.RegisterCrmDiscounts(app);
+        ApiRoutes.RegisterCrmFees(app);
+        ApiRoutes.RegisterCrmTaxes(app);
+        ApiRoutes.RegisterCrmCommercePayments(app);
+        ApiRoutes.RegisterCrmCommerceSubscriptions(app);
+        
+        // Batch 3: Specialized objects
+        ApiRoutes.RegisterCrmListings(app);
+        ApiRoutes.RegisterCrmContracts(app);
+        ApiRoutes.RegisterCrmCourses(app);
+        ApiRoutes.RegisterCrmServices(app);
+        ApiRoutes.RegisterCrmDealSplits(app);
+        ApiRoutes.RegisterCrmGoalTargets(app);
+        ApiRoutes.RegisterCrmPartnerClients(app);
+        ApiRoutes.RegisterCrmPartnerServices(app);
+        ApiRoutes.RegisterCrmTranscriptions(app);
+        
         // Register Associations APIs
         ApiRoutes.Associations.RegisterAssociationsV3(app);
         ApiRoutes.Associations.RegisterAssociationsV4(app);

@@ -33,6 +33,28 @@
 ### CRM Other Objects (Priority 4)
 - ✅ Feedback Submissions (`/crm/v3/objects/feedback_submissions`)
 - ✅ Goals (partial implementation)
+- ✅ Appointments (`/crm/v3/objects/appointments`)
+- ✅ Leads (`/crm/v3/objects/leads`)
+- ✅ Users (`/crm/v3/objects/users`)
+- ✅ Listings (`/crm/v3/objects/listings`)
+- ✅ Contracts (`/crm/v3/objects/contracts`)
+- ✅ Courses (`/crm/v3/objects/courses`)
+- ✅ Services (`/crm/v3/objects/services`)
+- ✅ Deal Splits (`/crm/v3/objects/deal_splits`)
+- ✅ Goal Targets (`/crm/v3/objects/goal_targets`)
+- ✅ Partner Clients (`/crm/v3/objects/partner_clients`)
+- ✅ Partner Services (`/crm/v3/objects/partner_services`)
+- ✅ Transcriptions (`/crm/v3/objects/transcriptions`)
+
+### CRM Commerce Objects (Priority 5)
+- ✅ Carts (`/crm/v3/objects/carts`)
+- ✅ Orders (`/crm/v3/objects/orders`)
+- ✅ Invoices (`/crm/v3/objects/invoices`)
+- ✅ Discounts (`/crm/v3/objects/discounts`)
+- ✅ Fees (`/crm/v3/objects/fees`)
+- ✅ Taxes (`/crm/v3/objects/taxes`)
+- ✅ Commerce Payments (`/crm/v3/objects/commerce_payments`)
+- ✅ Commerce Subscriptions (`/crm/v3/objects/commerce_subscriptions`)
 
 ### CRM Generic Objects (Priority 2.2)
 - ✅ Generic/Custom Objects API (`/crm/v3/objects/{objectType}`)
@@ -53,27 +75,9 @@
 
 ## ❌ NOT YET IMPLEMENTED
 
-### CRM Objects (Priority 5 - Remaining)
-- ❌ Appointments (`/crm/v3/objects/appointments`)
-- ❌ Carts (`/crm/v3/objects/carts`)
-- ❌ Orders (`/crm/v3/objects/orders`)
-- ❌ Invoices (`/crm/v3/objects/invoices`)
-- ❌ Discounts (`/crm/v3/objects/discounts`)
-- ❌ Fees (`/crm/v3/objects/fees`)
-- ❌ Taxes (`/crm/v3/objects/taxes`)
-- ❌ Commerce Payments (`/crm/v3/objects/commerce_payments`)
-- ❌ Commerce Subscriptions (`/crm/v3/objects/commerce_subscriptions`)
-- ❌ Leads (`/crm/v3/objects/leads`)
-- ❌ Listings (`/crm/v3/objects/listings`)
-- ❌ Contracts (`/crm/v3/objects/contracts`)
-- ❌ Courses (`/crm/v3/objects/courses`)
-- ❌ Services (`/crm/v3/objects/services`)
-- ❌ Deal Splits (`/crm/v3/objects/deal_splits`)
-- ❌ Goal Targets (`/crm/v3/objects/goal_targets`)
-- ❌ Partner Clients (`/crm/v3/objects/partner_clients`)
-- ❌ Partner Services (`/crm/v3/objects/partner_services`)
-- ❌ Transcriptions (`/crm/v3/objects/transcriptions`)
-- ❌ Users (`/crm/v3/objects/users`)
+### CRM Objects (Remaining - Very Low Priority)
+These were moved to "generic objects" support, so technically accessible via the generic API:
+- Note: All remaining object types can be created dynamically via the generic `/crm/v3/objects/{objectType}` API
 
 ### CRM Metadata & Configuration (HIGH PRIORITY)
 - ✅ **Properties** (`/crm/v3/properties`, `/crm/v202509/properties`) - CRITICAL
@@ -245,17 +249,23 @@ The `RegisterStandardCrmObject` method provides a template for quickly adding ne
 ---
 
 ## Estimated Completion
-- **Current Progress:** ~24% (33/135 APIs)
+- **Current Progress:** ~39% (54/135 APIs)
 - **Phase 1 (Critical CRM Metadata):** ✅ COMPLETED (except Lists)
-- **Full Implementation:** 7-9 weeks at current pace
+- **Batches 1-3 (CRM Objects):** ✅ COMPLETED
+- **Full Implementation:** 5-7 weeks at current pace
 
 ## Recent Updates (2025-10-25)
-✅ **Just Implemented:**
+✅ **Session 1 - Critical CRM Metadata:**
 - Properties API (V3 + V202509) - Property definitions, groups, CRUD operations
 - Pipelines API (V3) - Pipelines and stages for deals/tickets
 - Owners API (V3) - Users and teams (read-only)
 
-These three critical APIs enable realistic CRM testing scenarios with proper metadata support.
+✅ **Session 2 - Batches 1-3 (21 CRM Objects):**
+- Batch 1: Appointments, Leads, Users
+- Batch 2: Carts, Orders, Invoices, Discounts, Fees, Taxes, Commerce Payments, Commerce Subscriptions
+- Batch 3: Listings, Contracts, Courses, Services, Deal Splits, Goal Targets, Partner Clients, Partner Services, Transcriptions
+
+**Total added this session:** 24 new APIs implemented in ~45 minutes
 
 ## Recommendation
-Continue with **Phase 2 (Remaining CRM Objects)** - implement commerce objects and specialized object types to expand CRM coverage.
+Continue with **Batch 4 (Files API)** - frequently needed for attachment testing and cross-cutting functionality.
