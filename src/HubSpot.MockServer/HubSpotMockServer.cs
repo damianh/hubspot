@@ -52,6 +52,9 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<PropertyDefinitionRepository>()
             .AddSingleton<PipelineRepository>()
             .AddSingleton<OwnerRepository>()
+            .AddSingleton<ListRepository>()
+            .AddSingleton<FileRepository>()
+            .AddSingleton<EventRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
@@ -131,6 +134,15 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register Webhooks APIs
         ApiRoutes.Webhooks.RegisterWebhooksApi(app);
+        
+        // Register Lists API
+        ApiRoutes.RegisterCrmLists(app);
+        
+        // Register Files API
+        ApiRoutes.RegisterFiles(app);
+        
+        // Register Events API
+        ApiRoutes.RegisterEvents(app);
 
         await app.StartAsync();
 
