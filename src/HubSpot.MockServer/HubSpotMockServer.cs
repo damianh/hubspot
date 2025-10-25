@@ -48,6 +48,10 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<HubSpotObjectIdGenerator>()
             .AddSingleton<TransactionalEmailRepository>()
             .AddSingleton<WebhookRepository>()
+            .AddSingleton<AssociationRepository>()
+            .AddSingleton<PropertyDefinitionRepository>()
+            .AddSingleton<PipelineRepository>()
+            .AddSingleton<OwnerRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
@@ -77,6 +81,21 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmPostalMail(app);
         ApiRoutes.RegisterCrmFeedbackSubmissions(app);
         ApiRoutes.RegisterCrmGoals(app);
+        
+        // Register Associations APIs
+        ApiRoutes.Associations.RegisterAssociationsV3(app);
+        ApiRoutes.Associations.RegisterAssociationsV4(app);
+        ApiRoutes.Associations.RegisterAssociationsV202509(app);
+        
+        // Register Properties APIs
+        ApiRoutes.Properties.RegisterPropertiesV3(app);
+        ApiRoutes.Properties.RegisterPropertiesV202509(app);
+        
+        // Register Pipelines APIs
+        ApiRoutes.Pipelines.RegisterPipelinesV3(app);
+        
+        // Register Owners APIs
+        ApiRoutes.Owners.RegisterOwnersV3(app);
         
         // Register generic CRM Objects API for dynamic/custom object types
         ApiRoutes.RegisterGenericCrmObjectsApi(app);
