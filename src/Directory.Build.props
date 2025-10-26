@@ -9,6 +9,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
     <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == ''">0</BUILD_NUMBER>
+    <AnalysisMode>All</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <!--MinVer-->
     <MinVerTagPrefix>hs-</MinVerTagPrefix>
