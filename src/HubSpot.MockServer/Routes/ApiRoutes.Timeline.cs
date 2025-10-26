@@ -17,8 +17,8 @@ internal static partial class ApiRoutes
         // GET /crm/v3/timeline/events/templates - List all templates (alternate path)
         var eventsTemplates = v3.MapGroup("/events/templates");
         eventsTemplates.MapGet("/", (
-            [FromServices] TimelineRepository timelineRepo,
-            [FromQuery] string? appId) =>
+            TimelineRepository timelineRepo,
+            string? appId) =>
         {
             var allTemplates = timelineRepo.ListEventTemplates();
             return Results.Ok(new { results = allTemplates });
@@ -26,7 +26,7 @@ internal static partial class ApiRoutes
 
         // POST /crm/v3/timeline/events/templates - Create template (alternate path)
         eventsTemplates.MapPost("/", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             [FromBody] TimelineEventTemplateRequest request) =>
         {
             var template = timelineRepo.CreateEventTemplate(
@@ -42,7 +42,7 @@ internal static partial class ApiRoutes
 
         // POST /crm/v3/timeline/event-templates
         templates.MapPost("/", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             [FromBody] TimelineEventTemplateRequest request) =>
         {
             var template = timelineRepo.CreateEventTemplate(
@@ -58,7 +58,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/timeline/event-templates/{templateId}
         templates.MapGet("/{templateId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string templateId) =>
         {
             var template = timelineRepo.GetEventTemplate(templateId);
@@ -72,7 +72,7 @@ internal static partial class ApiRoutes
 
         // PUT /crm/v3/timeline/event-templates/{templateId}
         templates.MapPut("/{templateId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string templateId,
             [FromBody] TimelineEventTemplateUpdateRequest request) =>
         {
@@ -94,7 +94,7 @@ internal static partial class ApiRoutes
 
         // DELETE /crm/v3/timeline/event-templates/{templateId}
         templates.MapDelete("/{templateId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string templateId) =>
         {
             var deleted = timelineRepo.DeleteEventTemplate(templateId);
@@ -108,7 +108,7 @@ internal static partial class ApiRoutes
 
         // POST /crm/v3/timeline/events
         events.MapPost("/", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             [FromBody] TimelineEventRequest request) =>
         {
             var timelineEvent = timelineRepo.CreateEvent(
@@ -124,7 +124,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/timeline/events/{objectType}/{objectId}
         events.MapGet("/{objectType}/{objectId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string objectType,
             string objectId) =>
         {
@@ -135,7 +135,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/timeline/events/{eventId} - Get specific event by ID
         events.MapGet("/{eventId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string eventId) =>
         {
             var timelineEvent = timelineRepo.GetEvent(eventId);
@@ -146,7 +146,7 @@ internal static partial class ApiRoutes
 
         // DELETE /crm/v3/timeline/events/{eventId}
         events.MapDelete("/{eventId}", (
-            [FromServices] TimelineRepository timelineRepo,
+            TimelineRepository timelineRepo,
             string eventId) =>
         {
             var deleted = timelineRepo.DeleteEvent(eventId);

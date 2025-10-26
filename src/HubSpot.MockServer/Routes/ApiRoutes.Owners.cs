@@ -19,8 +19,8 @@ internal static partial class ApiRoutes
 
             // Get all owners
             group.MapGet("", (
-                [FromQuery] string? email,
-                [FromServices] OwnerRepository repo) =>
+                string? email,
+                OwnerRepository repo) =>
             {
                 var owners = repo.GetAllOwners(email);
 
@@ -44,7 +44,7 @@ internal static partial class ApiRoutes
             // Create an owner
             group.MapPost("", (
                 [FromBody] OwnerCreateRequest request,
-                [FromServices] OwnerRepository repo) =>
+                OwnerRepository repo) =>
             {
                 var owner = repo.CreateOwner(request.Email, request.FirstName, request.LastName);
 
@@ -65,7 +65,7 @@ internal static partial class ApiRoutes
             // Get a specific owner by ID
             group.MapGet("/{ownerId}", (
                 [FromRoute] string ownerId,
-                [FromServices] OwnerRepository repo) =>
+                OwnerRepository repo) =>
             {
                 var owner = repo.GetOwner(ownerId);
                 if (owner == null)

@@ -14,7 +14,7 @@ internal static partial class ApiRoutes
         // POST /events/v3/send - Send single analytics event
         events.MapPost("/send", (
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var customEvent = new CustomEvent
             {
@@ -43,7 +43,7 @@ internal static partial class ApiRoutes
         // POST /events/v3/send/batch - Send batch analytics events
         events.MapPost("/send/batch", (
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var eventsToSend = new List<CustomEvent>();
 
@@ -81,7 +81,7 @@ internal static partial class ApiRoutes
         // POST /events/v3/events - Create custom behavioral event
         events.MapPost("/events", (
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var customEvent = new CustomEvent
             {
@@ -109,9 +109,9 @@ internal static partial class ApiRoutes
 
         // GET /events/v3/events - List events for an object
         events.MapGet("/events", (
-            [FromQuery] string? objectType,
-            [FromQuery] string? objectId,
-            [FromServices] EventRepository repo) =>
+            string? objectType,
+            string? objectId,
+            EventRepository repo) =>
         {
             var allEvents = repo.GetAllEvents();
 
@@ -142,7 +142,7 @@ internal static partial class ApiRoutes
         var definitions = app.MapGroup("/events/v3/event-definitions");
 
         definitions.MapGet("/", (
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var allDefinitions = repo.GetAllDefinitions();
             return Results.Ok(new
@@ -166,7 +166,7 @@ internal static partial class ApiRoutes
 
         definitions.MapPost("/", (
             [FromBody] dynamic request,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var definition = new EventDefinition
             {
@@ -210,7 +210,7 @@ internal static partial class ApiRoutes
 
         definitions.MapGet("/{definitionId}", (
             string definitionId,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var definition = repo.GetDefinition(definitionId);
             if (definition == null)
@@ -236,7 +236,7 @@ internal static partial class ApiRoutes
 
         definitions.MapDelete("/{definitionId}", (
             string definitionId,
-            [FromServices] EventRepository repo) =>
+            EventRepository repo) =>
         {
             var deleted = repo.DeleteDefinition(definitionId);
             return deleted ? Results.NoContent() : Results.NotFound();

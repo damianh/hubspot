@@ -20,7 +20,7 @@ internal static partial class ApiRoutes
             // Get all pipelines for an object type
             group.MapGet("", (
                 [FromRoute] string objectType,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var pipelines = repo.GetPipelines(objectType);
 
@@ -50,7 +50,7 @@ internal static partial class ApiRoutes
             group.MapPost("", (
                 [FromRoute] string objectType,
                 [FromBody] CreatePipelineRequest request,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var pipeline = repo.CreatePipeline(
                     objectType,
@@ -96,7 +96,7 @@ internal static partial class ApiRoutes
             group.MapGet("/{pipelineId}", (
                 [FromRoute] string objectType,
                 [FromRoute] string pipelineId,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var pipeline = repo.GetPipeline(objectType, pipelineId);
                 if (pipeline == null)
@@ -128,7 +128,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string objectType,
                 [FromRoute] string pipelineId,
                 [FromBody] UpdatePipelineRequest request,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var pipeline = repo.UpdatePipeline(
                     objectType,
@@ -164,7 +164,7 @@ internal static partial class ApiRoutes
             group.MapDelete("/{pipelineId}", (
                 [FromRoute] string objectType,
                 [FromRoute] string pipelineId,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var deleted = repo.DeletePipeline(objectType, pipelineId);
                 return deleted ? Results.NoContent() : Results.NotFound();
@@ -177,7 +177,7 @@ internal static partial class ApiRoutes
             // Get all stages
             stagesGroup.MapGet("", (
                 [FromRoute] string pipelineId,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var stages = repo.GetStages(pipelineId);
 
@@ -201,7 +201,7 @@ internal static partial class ApiRoutes
             stagesGroup.MapPost("", (
                 [FromRoute] string pipelineId,
                 [FromBody] CreateStageRequest request,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var stage = repo.CreateStage(
                     pipelineId,
@@ -226,7 +226,7 @@ internal static partial class ApiRoutes
             stagesGroup.MapGet("/{stageId}", (
                 [FromRoute] string pipelineId,
                 [FromRoute] string stageId,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var stage = repo.GetStage(pipelineId, stageId);
                 if (stage == null)
@@ -252,7 +252,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string pipelineId,
                 [FromRoute] string stageId,
                 [FromBody] UpdateStageRequest request,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var stage = repo.UpdateStage(
                     pipelineId,
@@ -283,7 +283,7 @@ internal static partial class ApiRoutes
             stagesGroup.MapDelete("/{stageId}", (
                 [FromRoute] string pipelineId,
                 [FromRoute] string stageId,
-                [FromServices] PipelineRepository repo) =>
+                PipelineRepository repo) =>
             {
                 var deleted = repo.DeleteStage(pipelineId, stageId);
                 return deleted ? Results.NoContent() : Results.NotFound();

@@ -11,8 +11,8 @@ namespace DamianH.HubSpot.MockServer.Routes;
 internal static partial class ApiRoutes
 {
     /*
-     [FromServices] BlogPostRepository repository,
-     [FromServices] ContentAuditRepository auditRepository
+     BlogPostRepository repository,
+     ContentAuditRepository auditRepository
      */
     public static void RegisterCmsBlogPostsApi(WebApplication app)
     {

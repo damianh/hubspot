@@ -19,7 +19,7 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/schemas/{objectType}
-        v3.MapGet("{objectType}", ([FromServices] SchemaRepository schemaRepo, string objectType) =>
+        v3.MapGet("{objectType}", (SchemaRepository schemaRepo, string objectType) =>
         {
             var schema = schemaRepo.GetSchema(objectType);
             if (schema == null)
@@ -48,7 +48,7 @@ internal static partial class ApiRoutes
         });
 
         // POST /crm/v3/schemas
-        v3.MapPost("", ([FromServices] SchemaRepository schemaRepo, [FromBody] SchemaCreateRequest request) =>
+        v3.MapPost("", (SchemaRepository schemaRepo, [FromBody] SchemaCreateRequest request) =>
         {
             var schema = schemaRepo.CreateSchema(
                 request.Name,
@@ -99,7 +99,7 @@ internal static partial class ApiRoutes
         });
 
         // PATCH /crm/v3/schemas/{objectType}
-        v3.MapPatch("{objectType}", ([FromServices] SchemaRepository schemaRepo, string objectType, [FromBody] SchemaUpdateRequest request) =>
+        v3.MapPatch("{objectType}", (SchemaRepository schemaRepo, string objectType, [FromBody] SchemaUpdateRequest request) =>
         {
             var schema = schemaRepo.UpdateSchema(
                 objectType,
@@ -136,7 +136,7 @@ internal static partial class ApiRoutes
         });
 
         // DELETE /crm/v3/schemas/{objectType}
-        v3.MapDelete("{objectType}", ([FromServices] SchemaRepository schemaRepo, string objectType) =>
+        v3.MapDelete("{objectType}", (SchemaRepository schemaRepo, string objectType) =>
         {
             var deleted = schemaRepo.DeleteSchema(objectType);
             if (!deleted)
@@ -151,7 +151,7 @@ internal static partial class ApiRoutes
         var associations = v3.MapGroup("{objectType}/associations");
 
         // POST /crm/v3/schemas/{objectType}/associations
-        associations.MapPost("", ([FromServices] SchemaRepository schemaRepo, string objectType, [FromBody] AssociationDefinitionRequest request) =>
+        associations.MapPost("", (SchemaRepository schemaRepo, string objectType, [FromBody] AssociationDefinitionRequest request) =>
         {
             var definition = schemaRepo.CreateAssociationDefinition(
                 objectType,
@@ -164,7 +164,7 @@ internal static partial class ApiRoutes
         });
 
         // DELETE /crm/v3/schemas/{objectType}/associations/{associationId}
-        associations.MapDelete("{associationId}", ([FromServices] SchemaRepository schemaRepo, string objectType, string associationId) =>
+        associations.MapDelete("{associationId}", (SchemaRepository schemaRepo, string objectType, string associationId) =>
         {
             var deleted = schemaRepo.DeleteAssociationDefinition(objectType, associationId);
             return !deleted

@@ -14,9 +14,9 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/tax-rates/v1/tax-rates");
 
             group.MapGet("", (
-                [FromServices] TaxRateRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after) =>
+                TaxRateRepository repository,
+                int? limit,
+                string? after) =>
             {
                 var groups = repository.GetTaxRateGroups(limit, after);
                 var hasMore = limit.HasValue && groups.Count >= limit.Value;
@@ -38,7 +38,7 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/{taxRateGroupId}", (
-                [FromServices] TaxRateRepository repository,
+                TaxRateRepository repository,
                 string taxRateGroupId) =>
             {
                 var group = repository.GetTaxRateGroup(taxRateGroupId);

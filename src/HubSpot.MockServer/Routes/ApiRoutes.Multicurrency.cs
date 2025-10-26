@@ -15,14 +15,14 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/settings/v3/currencies");
 
             group.MapGet("/company-currency", (
-                [FromServices] CurrencyRepository repository) =>
+                CurrencyRepository repository) =>
             {
                 var companyCurrency = repository.GetCompanyCurrency();
                 return Results.Ok(companyCurrency);
             });
 
             group.MapPut("/company-currency", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<CompanyCurrencyUpdate>();
@@ -37,14 +37,14 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/codes", (
-                [FromServices] CurrencyRepository repository) =>
+                CurrencyRepository repository) =>
             {
                 var codes = repository.GetSupportedCurrencyCodes();
                 return Results.Ok(new { results = codes });
             });
 
             group.MapPost("/add-currency", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<CurrencyCreateRequest>();
@@ -66,7 +66,7 @@ internal static partial class ApiRoutes
             });
 
             group.MapPut("/update-visibility", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<CurrencyVisibilityUpdate>();
@@ -82,9 +82,9 @@ internal static partial class ApiRoutes
             var exchangeRatesGroup = group.MapGroup("/exchange-rates");
 
             exchangeRatesGroup.MapGet("", (
-                [FromServices] CurrencyRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after) =>
+                CurrencyRepository repository,
+                int? limit,
+                string? after) =>
             {
                 var rates = repository.GetExchangeRates(limit, after);
                 var hasMore = limit.HasValue && rates.Count >= limit.Value;
@@ -106,7 +106,7 @@ internal static partial class ApiRoutes
             });
 
             exchangeRatesGroup.MapPost("", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<ExchangeRateCreateRequest>();
@@ -124,7 +124,7 @@ internal static partial class ApiRoutes
             });
 
             exchangeRatesGroup.MapGet("/{exchangeRateId}", (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 string exchangeRateId) =>
             {
                 var rate = repository.GetExchangeRate(exchangeRateId);
@@ -137,7 +137,7 @@ internal static partial class ApiRoutes
             });
 
             exchangeRatesGroup.MapPut("/{exchangeRateId}", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 string exchangeRateId,
                 HttpContext context) =>
             {
@@ -159,7 +159,7 @@ internal static partial class ApiRoutes
             });
 
             exchangeRatesGroup.MapDelete("/{exchangeRateId}", (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 string exchangeRateId) =>
             {
                 repository.DeleteExchangeRate(exchangeRateId);
@@ -167,7 +167,7 @@ internal static partial class ApiRoutes
             });
 
             exchangeRatesGroup.MapGet("/current", (
-                [FromServices] CurrencyRepository repository) =>
+                CurrencyRepository repository) =>
             {
                 var rates = repository.GetCurrentExchangeRates();
                 return Results.Ok(new { results = rates });
@@ -176,7 +176,7 @@ internal static partial class ApiRoutes
             var batchGroup = exchangeRatesGroup.MapGroup("/batch");
 
             batchGroup.MapPost("/create", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchExchangeRateCreateRequest>();
@@ -205,7 +205,7 @@ internal static partial class ApiRoutes
             });
 
             batchGroup.MapPost("/read", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchReadRequest>();
@@ -227,7 +227,7 @@ internal static partial class ApiRoutes
             });
 
             batchGroup.MapPost("/update", async (
-                [FromServices] CurrencyRepository repository,
+                CurrencyRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchExchangeRateUpdateRequest>();

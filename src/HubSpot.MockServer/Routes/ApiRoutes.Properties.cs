@@ -52,7 +52,7 @@ internal static partial class ApiRoutes
             // Get all properties for an object type
             group.MapGet("", (
                 [FromRoute] string objectType,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var properties = repo.GetProperties(objectType);
 
@@ -81,7 +81,7 @@ internal static partial class ApiRoutes
             group.MapPost("", (
                 [FromRoute] string objectType,
                 [FromBody] CreatePropertyRequest request,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var property = repo.CreateProperty(
                     objectType,
@@ -115,7 +115,7 @@ internal static partial class ApiRoutes
             group.MapGet("/{propertyName}", (
                 [FromRoute] string objectType,
                 [FromRoute] string propertyName,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var property = repo.GetProperty(objectType, propertyName);
                 if (property == null)
@@ -146,7 +146,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string objectType,
                 [FromRoute] string propertyName,
                 [FromBody] UpdatePropertyRequest request,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var property = repo.UpdateProperty(
                     objectType,
@@ -182,7 +182,7 @@ internal static partial class ApiRoutes
             group.MapDelete("/{propertyName}", (
                 [FromRoute] string objectType,
                 [FromRoute] string propertyName,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var deleted = repo.DeleteProperty(objectType, propertyName);
                 return deleted ? Results.NoContent() : Results.NotFound();
@@ -195,7 +195,7 @@ internal static partial class ApiRoutes
             // Get all property groups
             groupsGroup.MapGet("", (
                 [FromRoute] string objectType,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var groups = repo.GetGroups(objectType);
 
@@ -218,7 +218,7 @@ internal static partial class ApiRoutes
             groupsGroup.MapPost("", (
                 [FromRoute] string objectType,
                 [FromBody] CreatePropertyGroupRequest request,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var group = repo.CreateGroup(
                     objectType,
@@ -242,7 +242,7 @@ internal static partial class ApiRoutes
             groupsGroup.MapGet("/{groupName}", (
                 [FromRoute] string objectType,
                 [FromRoute] string groupName,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var group = repo.GetGroup(objectType, groupName);
                 if (group == null)
@@ -266,7 +266,7 @@ internal static partial class ApiRoutes
             groupsGroup.MapDelete("/{groupName}", (
                 [FromRoute] string objectType,
                 [FromRoute] string groupName,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var deleted = repo.DeleteGroup(objectType, groupName);
                 return deleted ? Results.NoContent() : Results.NotFound();
@@ -284,7 +284,7 @@ internal static partial class ApiRoutes
             // Same implementation as V3
             group.MapGet("", (
                 [FromRoute] string objectType,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var properties = repo.GetProperties(objectType);
 
@@ -312,7 +312,7 @@ internal static partial class ApiRoutes
             group.MapPost("", (
                 [FromRoute] string objectType,
                 [FromBody] CreatePropertyRequest request,
-                [FromServices] PropertyDefinitionRepository repo) =>
+                PropertyDefinitionRepository repo) =>
             {
                 var property = repo.CreateProperty(
                     objectType,

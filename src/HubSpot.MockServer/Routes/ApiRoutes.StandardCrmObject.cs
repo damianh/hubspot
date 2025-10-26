@@ -27,13 +27,13 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/objects/{objectType} - List objects
         group.MapGet("", (
-            [FromServices] HubSpotObjectRepository repo,
-            [FromQuery] int limit = 10,
-            [FromQuery] string? after = null,
-            [FromQuery] bool archived = false,
-            [FromQuery] string[]? properties = null,
-            [FromQuery] string[]? propertiesWithHistory = null,
-            [FromQuery] string[]? associations = null) =>
+            HubSpotObjectRepository repo,
+            int limit = 10,
+            string? after = null,
+            bool archived = false,
+            string[]? properties = null,
+            string[]? propertiesWithHistory = null,
+            string[]? associations = null) =>
         {
             int? afterId = null;
             if (!string.IsNullOrEmpty(after) && int.TryParse(after, out var parsedAfter))
@@ -85,11 +85,11 @@ internal static partial class ApiRoutes
         // GET /crm/v3/objects/{objectType}/{objectId} - Get object by ID
         group.MapGet($"/{{{idParameterName}}}", (
             HttpContext context,
-            [FromServices] HubSpotObjectRepository repo,
-            [FromQuery] string[]? properties = null,
-            [FromQuery] string[]? propertiesWithHistory = null,
-            [FromQuery] string[]? associations = null,
-            [FromQuery] bool archived = false) =>
+            HubSpotObjectRepository repo,
+            string[]? properties = null,
+            string[]? propertiesWithHistory = null,
+            string[]? associations = null,
+            bool archived = false) =>
         {
             var objectId = context.Request.RouteValues[idParameterName]?.ToString();
             if (string.IsNullOrEmpty(objectId))
@@ -126,7 +126,7 @@ internal static partial class ApiRoutes
         // POST /crm/v3/objects/{objectType} - Create object
         group.MapPost("", (
             [FromBody] SimplePublicObjectInputForCreate inputForCreate,
-            [FromServices] HubSpotObjectRepository repo) =>
+            HubSpotObjectRepository repo) =>
         {
             var hubSpotAssociations = inputForCreate.Associations
                 .Select(association => new
@@ -171,7 +171,7 @@ internal static partial class ApiRoutes
         // PATCH /crm/v3/objects/{objectType}/{objectId} - Update object
         group.MapPatch($"/{{{idParameterName}}}", (
             HttpContext context,
-            [FromServices] HubSpotObjectRepository repo,
+            HubSpotObjectRepository repo,
             [FromBody] SimplePublicObjectInput inputForUpdate) =>
         {
             var objectId = context.Request.RouteValues[idParameterName]?.ToString();
@@ -222,7 +222,7 @@ internal static partial class ApiRoutes
         // DELETE /crm/v3/objects/{objectType}/{objectId} - Archive object
         group.MapDelete($"/{{{idParameterName}}}", (
             HttpContext context,
-            [FromServices] HubSpotObjectRepository repo) =>
+            HubSpotObjectRepository repo) =>
         {
             var objectId = context.Request.RouteValues[idParameterName]?.ToString();
             if (string.IsNullOrEmpty(objectId))

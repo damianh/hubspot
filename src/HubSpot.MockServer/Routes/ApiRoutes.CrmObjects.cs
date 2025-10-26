@@ -117,13 +117,13 @@ internal static partial class ApiRoutes
 
     private static IResult GetGenericObjects(
         string objectType,
-        [FromServices] HubSpotObjectRepository repo,
-        [FromQuery] int limit = 10,
-        [FromQuery] string? after = null,
-        [FromQuery] bool archived = false,
-        [FromQuery] string[]? properties = null,
-        [FromQuery] string[]? propertiesWithHistory = null,
-        [FromQuery] string[]? associations = null)
+        HubSpotObjectRepository repo,
+        int limit = 10,
+        string? after = null,
+        bool archived = false,
+        string[]? properties = null,
+        string[]? propertiesWithHistory = null,
+        string[]? associations = null)
     {
         int? afterId = null;
         if (!string.IsNullOrEmpty(after) && int.TryParse(after, out var parsedAfter))
@@ -194,7 +194,7 @@ internal static partial class ApiRoutes
     private static IResult CreateGenericObject(
         string objectType,
         [FromBody] SimplePublicObjectInputForCreate input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var hubSpotAssociations = input.Associations
             .Select(association => new
@@ -242,12 +242,12 @@ internal static partial class ApiRoutes
     private static IResult GetGenericObjectById(
         string objectType,
         string objectId,
-        [FromServices] HubSpotObjectRepository repo,
-        [FromQuery] string[]? properties = null,
-        [FromQuery] string[]? propertiesWithHistory = null,
-        [FromQuery] string[]? associations = null,
-        [FromQuery] bool archived = false,
-        [FromQuery] string? idProperty = null)
+        HubSpotObjectRepository repo,
+        string[]? properties = null,
+        string[]? propertiesWithHistory = null,
+        string[]? associations = null,
+        bool archived = false,
+        string? idProperty = null)
     {
         if (!int.TryParse(objectId, out var id))
         {
@@ -297,8 +297,8 @@ internal static partial class ApiRoutes
         string objectType,
         string objectId,
         [FromBody] SimplePublicObjectInput input,
-        [FromServices] HubSpotObjectRepository repo,
-        [FromQuery] string? idProperty = null)
+        HubSpotObjectRepository repo,
+        string? idProperty = null)
     {
         if (!int.TryParse(objectId, out var id))
         {
@@ -353,7 +353,7 @@ internal static partial class ApiRoutes
     private static IResult DeleteGenericObject(
         string objectType,
         string objectId,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         if (!int.TryParse(objectId, out var id))
         {
@@ -388,7 +388,7 @@ internal static partial class ApiRoutes
     private static IResult BatchCreateGeneric(
         string objectType,
         [FromBody] BatchInputSimplePublicObjectInputForCreate input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var results = new List<CreatedResponseSimplePublicObject>();
 
@@ -451,7 +451,7 @@ internal static partial class ApiRoutes
     private static IResult BatchReadGeneric(
         string objectType,
         [FromBody] BatchReadInputSimplePublicObjectId input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var results = new List<CreatedResponseSimplePublicObject>();
 
@@ -502,7 +502,7 @@ internal static partial class ApiRoutes
     private static IResult BatchUpdateGeneric(
         string objectType,
         [FromBody] BatchInputSimplePublicObjectBatchInput input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var results = new List<CreatedResponseSimplePublicObject>();
 
@@ -570,7 +570,7 @@ internal static partial class ApiRoutes
     private static IResult BatchUpsertGeneric(
         string objectType,
         [FromBody] BatchInputSimplePublicObjectBatchInputUpsert input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var results = new List<CreatedResponseSimplePublicObject>();
 
@@ -673,7 +673,7 @@ internal static partial class ApiRoutes
     private static IResult BatchArchiveGeneric(
         string objectType,
         [FromBody] BatchInputSimplePublicObjectId input,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         foreach (var item in input.Inputs)
         {
@@ -700,7 +700,7 @@ internal static partial class ApiRoutes
     private static IResult SearchGenericObjects(
         string objectType,
         [FromBody] PublicObjectSearchRequest request,
-        [FromServices] HubSpotObjectRepository repo)
+        HubSpotObjectRepository repo)
     {
         var allObjects = repo.List(10000, null, false);
 

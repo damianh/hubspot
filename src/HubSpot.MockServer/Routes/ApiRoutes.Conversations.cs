@@ -15,10 +15,10 @@ internal static partial class ApiRoutes
         var conversations = app.MapGroup("/conversations/v3/conversations");
 
         conversations.MapGet("/", (
-            [FromServices] ConversationRepository conversationRepo,
-            [FromQuery] string? status,
-            [FromQuery] int? limit,
-            [FromQuery] string? after) =>
+            ConversationRepository conversationRepo,
+            string? status,
+            int? limit,
+            string? after) =>
         {
             var results = conversationRepo.ListConversations(status, limit, after);
             return Results.Ok(new
@@ -31,7 +31,7 @@ internal static partial class ApiRoutes
         });
 
         conversations.MapGet("/{conversationId}", (
-            [FromServices] ConversationRepository conversationRepo,
+            ConversationRepository conversationRepo,
             string conversationId) =>
         {
             var conversation = conversationRepo.GetConversation(conversationId);
@@ -41,7 +41,7 @@ internal static partial class ApiRoutes
         });
 
         conversations.MapPatch("/{conversationId}", async (
-            [FromServices] ConversationRepository conversationRepo,
+            ConversationRepository conversationRepo,
             string conversationId,
             HttpRequest request) =>
         {
@@ -69,7 +69,7 @@ internal static partial class ApiRoutes
         });
 
         conversations.MapPost("/{conversationId}/messages", async (
-            [FromServices] ConversationRepository conversationRepo,
+            ConversationRepository conversationRepo,
             string conversationId,
             HttpRequest request) =>
         {
@@ -108,9 +108,9 @@ internal static partial class ApiRoutes
         });
 
         conversations.MapGet("/{conversationId}/messages", (
-            [FromServices] ConversationRepository conversationRepo,
+            ConversationRepository conversationRepo,
             string conversationId,
-            [FromQuery] int? limit) =>
+            int? limit) =>
         {
             var messages = conversationRepo.ListMessages(conversationId, limit);
             return Results.Ok(new
@@ -123,7 +123,7 @@ internal static partial class ApiRoutes
         // Custom Channels API
         var channels = app.MapGroup("/conversations/v3/custom-channels");
 
-        channels.MapPost("/", async([FromServices] CustomChannelRepository channelRepo, HttpRequest request) =>
+        channels.MapPost("/", async(CustomChannelRepository channelRepo, HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -138,7 +138,7 @@ internal static partial class ApiRoutes
             return Results.Ok(ToChannelResponse(channel));
         });
 
-        channels.MapGet("/", ([FromServices] CustomChannelRepository channelRepo) =>
+        channels.MapGet("/", (CustomChannelRepository channelRepo) =>
         {
             var results = channelRepo.ListChannels();
             return Results.Ok(new
@@ -148,7 +148,7 @@ internal static partial class ApiRoutes
         });
 
         channels.MapGet("/{channelId}", (
-            [FromServices] CustomChannelRepository channelRepo,
+            CustomChannelRepository channelRepo,
             string channelId) =>
         {
             var channel = channelRepo.GetChannel(channelId);
@@ -160,7 +160,7 @@ internal static partial class ApiRoutes
         });
 
         channels.MapPatch("/{channelId}", async(
-            [FromServices] CustomChannelRepository channelRepo,
+            CustomChannelRepository channelRepo,
             string channelId,
             HttpRequest request) =>
         {
@@ -191,7 +191,7 @@ internal static partial class ApiRoutes
         });
 
         channels.MapDelete("/{channelId}", (
-            [FromServices] CustomChannelRepository channelRepo,
+            CustomChannelRepository channelRepo,
             string channelId) =>
         {
             var deleted = channelRepo.DeleteChannel(channelId);
@@ -204,7 +204,7 @@ internal static partial class ApiRoutes
         var visitors = app.MapGroup("/conversations/v3/visitor-identification");
 
         visitors.MapPost("/tokens/create", async(
-            [FromServices] VisitorIdentificationRepository visitorRepo,
+            VisitorIdentificationRepository visitorRepo,
             HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
@@ -225,7 +225,7 @@ internal static partial class ApiRoutes
         });
 
         visitors.MapGet("/tokens/visitor/{visitorId}", (
-            [FromServices] VisitorIdentificationRepository visitorRepo,
+            VisitorIdentificationRepository visitorRepo,
             string visitorId) =>
         {
             var token = visitorRepo.GetTokenByVisitorId(visitorId);
@@ -237,7 +237,7 @@ internal static partial class ApiRoutes
         });
 
         visitors.MapPost("/identify", async (
-            [FromServices] VisitorIdentificationRepository visitorRepo,
+            VisitorIdentificationRepository visitorRepo,
             HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);

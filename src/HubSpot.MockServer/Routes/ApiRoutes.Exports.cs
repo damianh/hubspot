@@ -13,7 +13,7 @@ internal static partial class ApiRoutes
 
         // POST /crm/v3/exports/export/async
         v3.MapPost("export/async", (
-            [FromServices] ExportRepository exportRepo,
+            ExportRepository exportRepo,
             [FromBody] ExportCreateRequest request) =>
         {
             var job = exportRepo.CreateExport(

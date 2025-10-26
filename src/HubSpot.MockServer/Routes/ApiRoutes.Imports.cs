@@ -43,7 +43,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/imports/{importId}
         v3.MapGet("/{importId}", (
-            [FromServices] ImportRepository importRepo,
+            ImportRepository importRepo,
             string importId) =>
         {
             var job = importRepo.GetImport(importId);
@@ -67,7 +67,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/imports
         v3.MapGet("/", (
-            [FromServices] ImportRepository importRepo,
+            ImportRepository importRepo,
             string? after,
             int? limit) =>
         {
@@ -91,7 +91,7 @@ internal static partial class ApiRoutes
 
         // POST /crm/v3/imports/{importId}/cancel
         v3.MapPost("/{importId}/cancel", (
-            [FromServices] ImportRepository importRepo,
+            ImportRepository importRepo,
             string importId) =>
         {
             var job = importRepo.CancelImport(importId);
@@ -113,7 +113,7 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/imports/{importId}/errors
         v3.MapGet("/{importId}/errors", (
-            [FromServices] ImportRepository importRepo,
+            ImportRepository importRepo,
             string importId,
             string? after,
             int? limit) =>

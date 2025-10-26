@@ -12,7 +12,7 @@ internal static partial class ApiRoutes
         var lists = app.MapGroup("/crm/v3/lists");
 
         lists.MapGet("/", (
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var allLists = repo.GetAllLists();
             return Results.Ok(new
@@ -32,7 +32,7 @@ internal static partial class ApiRoutes
 
         lists.MapPost("/", (
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var list = new ListDefinition
             {
@@ -57,7 +57,7 @@ internal static partial class ApiRoutes
 
         lists.MapGet("/{listId}", (
             string listId,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var list = repo.GetList(listId);
             if (list == null)
@@ -80,7 +80,7 @@ internal static partial class ApiRoutes
         lists.MapPatch("/{listId}", (
             string listId,
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var updates = new ListDefinition
             {
@@ -108,7 +108,7 @@ internal static partial class ApiRoutes
 
         lists.MapDelete("/{listId}", (
             string listId,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var deleted = repo.DeleteList(listId);
             return deleted ? Results.NoContent() : Results.NotFound();
@@ -117,7 +117,7 @@ internal static partial class ApiRoutes
         lists.MapPut("/{listId}/memberships/add", (
             string listId,
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
@@ -132,7 +132,7 @@ internal static partial class ApiRoutes
         lists.MapPut("/{listId}/memberships/remove", (
             string listId,
             [FromBody] System.Text.Json.JsonElement request,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
@@ -146,7 +146,7 @@ internal static partial class ApiRoutes
 
         lists.MapGet("/{listId}/memberships", (
             string listId,
-            [FromServices] ListRepository repo) =>
+            ListRepository repo) =>
         {
             var members = repo.GetMemberships(listId);
             return Results.Ok(new { results = members });

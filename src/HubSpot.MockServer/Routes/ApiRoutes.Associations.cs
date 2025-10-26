@@ -23,7 +23,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchReadRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
 
@@ -59,7 +59,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchCreateRequestV3? request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 if (request == null || request.Inputs == null || request.Inputs.Length == 0)
                 {
@@ -110,7 +110,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchArchiveRequestV3 request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
@@ -128,7 +128,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string fromObjectId,
                 [FromRoute] string toObjectType,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var associations = repo.GetAssociations(fromObjectType, fromObjectId, toObjectType);
 
@@ -160,7 +160,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string toObjectType,
                 [FromRoute] string toObjectId,
                 [FromBody] CreateAssociationRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var association = repo.Create(
                     fromObjectType,
@@ -188,7 +188,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectId,
                 [FromRoute] string toObjectType,
                 [FromRoute] string toObjectId,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 // Default association type if not specified
                 repo.Delete(fromObjectType, fromObjectId, toObjectType, toObjectId, "1");
@@ -206,7 +206,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string toObjectType,
                 [FromRoute] string toObjectId,
                 [FromRoute] string associationTypeId,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var association = repo.Create(
                     objectType,
@@ -233,7 +233,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string objectType,
                 [FromRoute] string objectId,
                 [FromRoute] string toObjectType,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var associations = repo.GetAssociations(objectType, objectId, toObjectType);
 
@@ -265,7 +265,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string toObjectType,
                 [FromRoute] string toObjectId,
                 [FromRoute] string associationTypeId,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 repo.Delete(objectType, objectId, toObjectType, toObjectId, associationTypeId);
                 return Results.NoContent();
@@ -285,7 +285,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchReadRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
 
@@ -321,7 +321,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchCreateRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
@@ -367,7 +367,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchLabelsRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 // For simplicity, just return success
                 var response = new
@@ -389,7 +389,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchArchiveRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
@@ -410,7 +410,7 @@ internal static partial class ApiRoutes
             schemaGroup.MapGet("", (
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var types = repo.GetAssociationTypes(fromObjectType, toObjectType);
 
@@ -432,7 +432,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] CreateAssociationTypeRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var definition = repo.CreateAssociationType(request.Label ?? request.Name, "USER_DEFINED");
 
@@ -452,7 +452,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string toObjectType,
                 [FromRoute] string associationTypeId,
                 [FromBody] UpdateAssociationTypeRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var type = repo.GetAssociationType(associationTypeId);
                 if (type == null)
@@ -475,7 +475,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromRoute] string associationTypeId,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var deleted = repo.DeleteAssociationType(associationTypeId);
                 return deleted ? Results.NoContent() : Results.NotFound();
@@ -495,7 +495,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchReadRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
 
@@ -530,7 +530,7 @@ internal static partial class ApiRoutes
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
                 [FromBody] BatchCreateRequest request,
-                [FromServices] AssociationRepository repo) =>
+                AssociationRepository repo) =>
             {
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,

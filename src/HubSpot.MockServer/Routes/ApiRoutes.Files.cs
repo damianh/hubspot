@@ -13,7 +13,7 @@ internal static partial class ApiRoutes
 
         files.MapPost("/files", async (
             HttpRequest request,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             if (!request.HasFormContentType)
             {
@@ -50,7 +50,7 @@ internal static partial class ApiRoutes
         });
 
         files.MapGet("/files", (
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var allFiles = repo.GetAllFiles();
             return Results.Ok(new
@@ -71,7 +71,7 @@ internal static partial class ApiRoutes
 
         files.MapGet("/files/{fileId}", (
             string fileId,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var file = repo.GetFile(fileId);
             if (file == null)
@@ -95,7 +95,7 @@ internal static partial class ApiRoutes
         files.MapPatch("/files/{fileId}", (
             string fileId,
             [FromBody] FileUpdateRequest request,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var updated = repo.UpdateFile(fileId, request.Name);
             if (updated == null)
@@ -118,7 +118,7 @@ internal static partial class ApiRoutes
 
         files.MapDelete("/files/{fileId}", (
             string fileId,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var deleted = repo.DeleteFile(fileId);
             return deleted ? Results.NoContent() : Results.NotFound();
@@ -126,7 +126,7 @@ internal static partial class ApiRoutes
 
         files.MapGet("/files/{fileId}/signed-url", (
             string fileId,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var file = repo.GetFile(fileId);
             if (file == null)
@@ -143,7 +143,7 @@ internal static partial class ApiRoutes
 
         files.MapGet("/files/{fileId}/download", (
             string fileId,
-            [FromServices] FileRepository repo) =>
+            FileRepository repo) =>
         {
             var file = repo.GetFile(fileId);
             if (file == null)

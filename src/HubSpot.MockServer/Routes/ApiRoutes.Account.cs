@@ -1,4 +1,3 @@
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.AccountInfo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -15,14 +14,14 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/account-info/v3/api-usage");
 
             group.MapGet("/daily", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var usage = repository.GetDailyApiUsage(30);
                 return Results.Ok(new { results = usage });
             });
 
             group.MapGet("/daily/private-apps", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var usage = repository.GetPrivateAppsDailyUsage(30);
                 return Results.Ok(new { results = usage });
@@ -31,7 +30,7 @@ internal static partial class ApiRoutes
             var detailsGroup = app.MapGroup("/account-info/v3");
 
             detailsGroup.MapGet("/details", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var details = repository.GetAccountDetails();
                 return Results.Ok(details);
@@ -43,14 +42,14 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/account-info/api/v202509/api-usage");
 
             group.MapGet("/daily", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var usage = repository.GetDailyApiUsage(30);
                 return Results.Ok(new { results = usage });
             });
 
             group.MapGet("/daily/private-apps", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var usage = repository.GetPrivateAppsDailyUsage(30);
                 return Results.Ok(new { results = usage });
@@ -59,7 +58,7 @@ internal static partial class ApiRoutes
             var detailsGroup = app.MapGroup("/account-info/api/v202509");
 
             detailsGroup.MapGet("/details", (
-                [FromServices] AccountInfoRepository repository) =>
+                AccountInfoRepository repository) =>
             {
                 var details = repository.GetAccountDetails();
                 return Results.Ok(details);
@@ -71,9 +70,9 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/account-info/v3/activity");
 
             group.MapGet("/audit-logs", (
-                [FromServices] AccountInfoRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after) =>
+                AccountInfoRepository repository,
+                int? limit,
+                string? after) =>
             {
                 var logs = repository.GetAuditLogs("ACTIVITY", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);
@@ -95,9 +94,9 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/login", (
-                [FromServices] AccountInfoRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after) =>
+                AccountInfoRepository repository,
+                int? limit,
+                string? after) =>
             {
                 var logs = repository.GetAuditLogs("LOGIN", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);
@@ -119,9 +118,9 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/security", (
-                [FromServices] AccountInfoRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after) =>
+                AccountInfoRepository repository,
+                int? limit,
+                string? after) =>
             {
                 var logs = repository.GetAuditLogs("SECURITY", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);

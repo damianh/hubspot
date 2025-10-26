@@ -16,7 +16,7 @@ internal static partial class ApiRoutes
 
             // POST /automation/v4/actions/callbacks/complete
             group.MapPost("/callbacks/complete", (
-                [FromServices] AutomationRepository repository,
+                AutomationRepository repository,
                 [FromBody] BatchInputCallbackCompletionRequest request) =>
             {
                 foreach (var input in request.Inputs)
@@ -52,7 +52,7 @@ internal static partial class ApiRoutes
             // POST /automation/v4/sequences/enrollments
             group.MapPost("/enrollments", (
                 [FromBody] PublicSequenceEnrollmentRequest request,
-                [FromServices] SequenceRepository repo) =>
+                SequenceRepository repo) =>
             {
                 // Check if sequence exists, create if not (for testing purposes)
                 var sequence = repo.GetSequence(request.SequenceId);

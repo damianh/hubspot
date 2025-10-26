@@ -15,10 +15,10 @@ internal static partial class ApiRoutes
             var group = app.MapGroup("/settings/v3/users");
 
             group.MapGet("", (
-                [FromServices] UserProvisioningRepository repository,
-                [FromQuery] int? limit,
-                [FromQuery] string? after,
-                [FromQuery] string? email) =>
+                UserProvisioningRepository repository,
+                int? limit,
+                string? after,
+                string? email) =>
             {
                 var users = repository.GetUsers(limit, after, email);
                 var hasMore = limit.HasValue && users.Count >= limit.Value;
@@ -40,7 +40,7 @@ internal static partial class ApiRoutes
             });
 
             group.MapPost("", async (
-                [FromServices] UserProvisioningRepository repository,
+                UserProvisioningRepository repository,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<UserProvisionRequest>();
@@ -65,9 +65,9 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/{userId}", (
-                [FromServices] UserProvisioningRepository repository,
+                UserProvisioningRepository repository,
                 string userId,
-                [FromQuery] string? idProperty) =>
+                string? idProperty) =>
             {
                 var user = repository.GetUser(userId, idProperty ?? "id");
                 if (user == null)
@@ -79,9 +79,9 @@ internal static partial class ApiRoutes
             });
 
             group.MapPut("/{userId}", async (
-                [FromServices] UserProvisioningRepository repository,
+                UserProvisioningRepository repository,
                 string userId,
-                [FromQuery] string? idProperty,
+                string? idProperty,
                 HttpContext context) =>
             {
                 var body = await context.Request.ReadFromJsonAsync<UserUpdateRequest>();
@@ -111,9 +111,9 @@ internal static partial class ApiRoutes
             });
 
             group.MapDelete("/{userId}", (
-                [FromServices] UserProvisioningRepository repository,
+                UserProvisioningRepository repository,
                 string userId,
-                [FromQuery] string? idProperty) =>
+                string? idProperty) =>
             {
                 var deleted = repository.DeleteUser(userId, idProperty ?? "id");
                 if (!deleted)
@@ -125,14 +125,14 @@ internal static partial class ApiRoutes
             });
 
             group.MapGet("/roles", (
-                [FromServices] UserProvisioningRepository repository) =>
+                UserProvisioningRepository repository) =>
             {
                 var roles = repository.GetRoles();
                 return Results.Ok(new { results = roles });
             });
 
             group.MapGet("/teams", (
-                [FromServices] UserProvisioningRepository repository) =>
+                UserProvisioningRepository repository) =>
             {
                 var teams = repository.GetTeams();
                 return Results.Ok(new { results = teams });
