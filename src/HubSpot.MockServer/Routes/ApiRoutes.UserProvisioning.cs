@@ -69,12 +69,9 @@ internal static partial class ApiRoutes
                 string? idProperty) =>
             {
                 var user = repository.GetUser(userId, idProperty ?? "id");
-                if (user == null)
-                {
-                    return Results.NotFound(new { message = "User not found" });
-                }
-
-                return Results.Ok(user);
+                return user == null
+                    ? Results.NotFound(new { message = "User not found" })
+                    : Results.Ok(user);
             });
 
             group.MapPut("/{userId}", async (
@@ -101,12 +98,9 @@ internal static partial class ApiRoutes
                 };
 
                 var updated = repository.UpdateUser(userId, updates, idProperty ?? "id");
-                if (updated == null)
-                {
-                    return Results.NotFound(new { message = "User not found" });
-                }
-
-                return Results.Ok(updated);
+                return updated == null
+                    ? Results.NotFound(new { message = "User not found" })
+                    : Results.Ok(updated);
             });
 
             group.MapDelete("/{userId}", (
@@ -115,12 +109,9 @@ internal static partial class ApiRoutes
                 string? idProperty) =>
             {
                 var deleted = repository.DeleteUser(userId, idProperty ?? "id");
-                if (!deleted)
-                {
-                    return Results.NotFound(new { message = "User not found" });
-                }
-
-                return Results.NoContent();
+                return !deleted
+                    ? Results.NotFound(new { message = "User not found" })
+                    : Results.NoContent();
             });
 
             group.MapGet("/roles", (
