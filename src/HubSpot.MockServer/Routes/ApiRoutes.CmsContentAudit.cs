@@ -7,11 +7,11 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsContentAuditApi(this IEndpointRouteBuilder app, ContentAuditRepository repository)
+    public static void RegisterCmsContentAuditApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/audit-logs");
 
-        group.MapGet("/", (HttpContext context) =>
+        group.MapGet("/", (ContentAuditRepository repository, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;

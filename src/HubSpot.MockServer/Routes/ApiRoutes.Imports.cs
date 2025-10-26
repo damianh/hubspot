@@ -1,3 +1,4 @@
+using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -7,12 +8,14 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    internal static void RegisterImportsApi(WebApplication app, ImportRepository importRepo)
+    internal static void RegisterImportsApi(WebApplication app)
     {
         var v3 = app.MapGroup("/crm/v3/imports");
 
         // POST /crm/v3/imports
-        v3.MapPost("/", ([FromBody] System.Text.Json.JsonElement request) =>
+        v3.MapPost("/", (
+            [FromServices]ImportRepository importRepo,
+            [FromBody] JsonElement request) =>
         {
             var importName = request.TryGetProperty("name", out var name) ? name.GetString() : "Import";
             var objectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : "contact";
@@ -39,7 +42,9 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports/{importId}
-        v3.MapGet("/{importId}", (string importId) =>
+        v3.MapGet("/{importId}", (
+            [FromServices] ImportRepository importRepo,
+            string importId) =>
         {
             var job = importRepo.GetImport(importId);
             if (job == null)
@@ -61,7 +66,10 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports
-        v3.MapGet("/", (string? after, int? limit) =>
+        v3.MapGet("/", (
+            [FromServices] ImportRepository importRepo,
+            string? after,
+            int? limit) =>
         {
             var result = importRepo.ListImports(after, limit ?? 10);
 
@@ -82,7 +90,9 @@ internal static partial class ApiRoutes
         });
 
         // POST /crm/v3/imports/{importId}/cancel
-        v3.MapPost("/{importId}/cancel", (string importId) =>
+        v3.MapPost("/{importId}/cancel", (
+            [FromServices] ImportRepository importRepo,
+            string importId) =>
         {
             var job = importRepo.CancelImport(importId);
             if (job == null)
@@ -102,7 +112,11 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports/{importId}/errors
-        v3.MapGet("/{importId}/errors", (string importId, string? after, int? limit) =>
+        v3.MapGet("/{importId}/errors", (
+            [FromServices] ImportRepository importRepo,
+            string importId,
+            string? after,
+            int? limit) =>
         {
             var result = importRepo.GetImportErrors(importId, after, limit ?? 50);
 

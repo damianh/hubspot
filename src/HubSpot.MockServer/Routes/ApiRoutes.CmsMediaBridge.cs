@@ -8,11 +8,11 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsMediaBridgeApi(this IEndpointRouteBuilder app, MediaBridgeRepository repository)
+    public static void RegisterCmsMediaBridgeApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/media-bridge");
 
-        group.MapGet("/", (HttpContext context) =>
+        group.MapGet("/", (MediaBridgeRepository repository, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -27,7 +27,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapGet("/{assetId}", (string assetId) =>
+        group.MapGet("/{assetId}", (MediaBridgeRepository repository, string assetId) =>
         {
             var asset = repository.GetById(assetId);
             if (asset == null)
@@ -38,7 +38,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapMediaAssetToResponse(asset));
         });
 
-        group.MapPost("/", async (HttpContext context) =>
+        group.MapPost("/", async (MediaBridgeRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -52,7 +52,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapMediaAssetToResponse(created));
         });
 
-        group.MapPatch("/{assetId}", async (string assetId, HttpContext context) =>
+        group.MapPatch("/{assetId}", async (MediaBridgeRepository repository, string assetId, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -63,23 +63,17 @@ internal static partial class ApiRoutes
             var asset = MapMediaAssetFromRequest(request);
             var updated = repository.Update(assetId, asset);
 
-            if (updated == null)
-            {
-                return Results.NotFound(new { message = $"Media asset {assetId} not found" });
-            }
-
-            return Results.Ok(MapMediaAssetToResponse(updated));
+            return updated == null
+                ? Results.NotFound(new { message = $"Media asset {assetId} not found" })
+                : Results.Ok(MapMediaAssetToResponse(updated));
         });
 
-        group.MapDelete("/{assetId}", (string assetId) =>
+        group.MapDelete("/{assetId}", (MediaBridgeRepository repository, string assetId) =>
         {
             var success = repository.Delete(assetId);
-            if (!success)
-            {
-                return Results.NotFound(new { message = $"Media asset {assetId} not found" });
-            }
-
-            return Results.NoContent();
+            return !success
+                ? Results.NotFound(new { message = $"Media asset {assetId} not found" })
+                : Results.NoContent();
         });
     }
 

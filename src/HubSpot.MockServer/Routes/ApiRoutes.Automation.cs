@@ -10,12 +10,13 @@ internal static partial class ApiRoutes
 {
     internal static class Automation
     {
-        public static void RegisterAutomationActionsV4(WebApplication app, AutomationRepository repository)
+        public static void RegisterAutomationActionsV4(WebApplication app)
         {
             var group = app.MapGroup("/automation/v4/actions");
 
             // POST /automation/v4/actions/callbacks/complete
             group.MapPost("/callbacks/complete", (
+                [FromServices] AutomationRepository repository,
                 [FromBody] BatchInputCallbackCompletionRequest request) =>
             {
                 foreach (var input in request.Inputs)
@@ -44,14 +45,14 @@ internal static partial class ApiRoutes
             });
         }
 
-        public static void RegisterAutomationSequencesV4(WebApplication app, SequenceRepository repository)
+        public static void RegisterAutomationSequencesV4(WebApplication app)
         {
             var group = app.MapGroup("/automation/v4/sequences");
 
             // POST /automation/v4/sequences/enrollments
             group.MapPost("/enrollments", (
                 [FromBody] PublicSequenceEnrollmentRequest request,
-                SequenceRepository repo) =>
+                [FromServices] SequenceRepository repo) =>
             {
                 // Check if sequence exists, create if not (for testing purposes)
                 var sequence = repo.GetSequence(request.SequenceId);

@@ -190,24 +190,20 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterEvents(app);
 
         // Register Conversations APIs
-        ApiRoutes.RegisterConversationsApi(
-            app,
-            app.Services.GetRequiredService<ConversationRepository>(),
-            app.Services.GetRequiredService<CustomChannelRepository>(),
-            app.Services.GetRequiredService<VisitorIdentificationRepository>());
+        ApiRoutes.RegisterConversationsApi(app);
 
         // Register CRM Extensions APIs (Batch 6)
-        ApiRoutes.RegisterSchemasApi(app, app.Services.GetRequiredService<SchemaRepository>());
-        ApiRoutes.RegisterImportsApi(app, app.Services.GetRequiredService<ImportRepository>());
-        ApiRoutes.RegisterExportsApi(app, app.Services.GetRequiredService<ExportRepository>());
-        ApiRoutes.RegisterTimelineApi(app, app.Services.GetRequiredService<TimelineRepository>());
+        ApiRoutes.RegisterSchemasApi(app);
+        ApiRoutes.RegisterImportsApi(app);
+        ApiRoutes.RegisterExportsApi(app);
+        ApiRoutes.RegisterTimelineApi(app);
 
         // Register CRM Extensions Integration APIs
         ApiRoutes.RegisterCrmExtensions(app);
 
         // Register Automation APIs
-        ApiRoutes.Automation.RegisterAutomationActionsV4(app, app.Services.GetRequiredService<AutomationRepository>());
-        ApiRoutes.Automation.RegisterAutomationSequencesV4(app, app.Services.GetRequiredService<SequenceRepository>());
+        ApiRoutes.Automation.RegisterAutomationActionsV4(app);
+        ApiRoutes.Automation.RegisterAutomationSequencesV4(app);
 
         // Register Account & Settings APIs
         ApiRoutes.Account.RegisterAccountInfoV3Api(app);
@@ -226,31 +222,20 @@ public class HubSpotMockServer : IAsyncDisposable
         // Register CMS Blog APIs
         ApiRoutes.CmsTags.RegisterCmsTagsV3Api(app);
         ApiRoutes.CmsBlogSettings.RegisterCmsBlogSettingsV3Api(app);
-        ApiRoutes.RegisterCmsBlogPostsApi(app,
-            app.Services.GetRequiredService<BlogPostRepository>(),
-            app.Services.GetRequiredService<ContentAuditRepository>());
-        ApiRoutes.RegisterCmsBlogAuthorsApi(app,
-            app.Services.GetRequiredService<BlogAuthorRepository>());
+        ApiRoutes.RegisterCmsBlogPostsApi(app);
+        ApiRoutes.RegisterCmsBlogAuthorsApi(app);
 
         // Register CMS Pages & Content APIs
-        ApiRoutes.RegisterCmsPagesApi(app,
-            app.Services.GetRequiredService<PageRepository>());
-        ApiRoutes.RegisterCmsDomainsApi(app,
-            app.Services.GetRequiredService<DomainRepository>());
-        ApiRoutes.RegisterCmsUrlRedirectsApi(app,
-            app.Services.GetRequiredService<UrlRedirectRepository>());
+        ApiRoutes.RegisterCmsPagesApi(app);
+        ApiRoutes.RegisterCmsDomainsApi(app);
+        ApiRoutes.RegisterCmsUrlRedirectsApi(app);
 
         // Register CMS Advanced Features APIs
-        ApiRoutes.RegisterCmsHubDbApi(app,
-            app.Services.GetRequiredService<HubDbRepository>());
-        ApiRoutes.RegisterCmsSourceCodeApi(app,
-            app.Services.GetRequiredService<SourceCodeRepository>());
-        ApiRoutes.RegisterCmsSiteSearchApi(app,
-            app.Services.GetRequiredService<SiteSearchRepository>());
-        ApiRoutes.RegisterCmsContentAuditApi(app,
-            app.Services.GetRequiredService<ContentAuditRepository>());
-        ApiRoutes.RegisterCmsMediaBridgeApi(app,
-            app.Services.GetRequiredService<MediaBridgeRepository>());
+        ApiRoutes.RegisterCmsHubDbApi(app);
+        ApiRoutes.RegisterCmsSourceCodeApi(app);
+        ApiRoutes.RegisterCmsSiteSearchApi(app);
+        ApiRoutes.RegisterCmsContentAuditApi(app);
+        ApiRoutes.RegisterCmsMediaBridgeApi(app);
 
         await app.StartAsync();
 

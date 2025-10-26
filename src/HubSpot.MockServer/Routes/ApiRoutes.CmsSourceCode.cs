@@ -8,22 +8,19 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsSourceCodeApi(this IEndpointRouteBuilder app, SourceCodeRepository repository)
+    public static void RegisterCmsSourceCodeApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/source-code/{environment}");
 
-        group.MapGet("/content/{**path}", (string environment, string path) =>
+        group.MapGet("/content/{**path}", (SourceCodeRepository repository, string environment, string path) =>
         {
             var file = repository.GetByPath(path);
-            if (file == null)
-            {
-                return Results.NotFound(new { message = $"File {path} not found" });
-            }
-
-            return Results.Ok(MapFileToResponse(file));
+            return file == null
+                ? Results.NotFound(new { message = $"File {path} not found" })
+                : Results.Ok(MapFileToResponse(file));
         });
 
-        group.MapGet("/content", (string environment, HttpContext context) =>
+        group.MapGet("/content", (SourceCodeRepository repository, string environment, HttpContext context) =>
         {
             var files = repository.GetAll();
 
@@ -34,7 +31,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapPost("/content/{**path}", async (string environment, string path, HttpContext context) =>
+        group.MapPost("/content/{**path}", async (SourceCodeRepository repository, string environment, string path, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -49,7 +46,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapFileToResponse(created));
         });
 
-        group.MapPut("/content/{**path}", async (string environment, string path, HttpContext context) =>
+        group.MapPut("/content/{**path}", async (SourceCodeRepository repository, string environment, string path, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -68,7 +65,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapFileToResponse(updated));
         });
 
-        group.MapDelete("/content/{**path}", (string environment, string path) =>
+        group.MapDelete("/content/{**path}", (SourceCodeRepository repository, string environment, string path) =>
         {
             var success = repository.Delete(path);
             if (!success)
@@ -80,7 +77,7 @@ internal static partial class ApiRoutes
         });
 
         // Metadata endpoints
-        group.MapGet("/metadata/{**path}", (string environment, string path) =>
+        group.MapGet("/metadata/{**path}", (SourceCodeRepository repository, string environment, string path) =>
         {
             var file = repository.GetByPath(path);
             if (file == null)

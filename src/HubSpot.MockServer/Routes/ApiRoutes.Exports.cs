@@ -7,12 +7,14 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    internal static void RegisterExportsApi(WebApplication app, ExportRepository exportRepo)
+    internal static void RegisterExportsApi(WebApplication app)
     {
         var v3 = app.MapGroup("/crm/v3/exports");
 
         // POST /crm/v3/exports/export/async
-        v3.MapPost("export/async", ([FromBody] ExportCreateRequest request) =>
+        v3.MapPost("export/async", (
+            [FromServices] ExportRepository exportRepo,
+            [FromBody] ExportCreateRequest request) =>
         {
             var job = exportRepo.CreateExport(
                 request.ExportName ?? $"export-{DateTime.UtcNow:yyyyMMdd-HHmmss}",

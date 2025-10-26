@@ -3,18 +3,25 @@ using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Blog;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsBlogPostsApi(this IEndpointRouteBuilder app, BlogPostRepository repository, ContentAuditRepository auditRepository)
+    /*
+     [FromServices] BlogPostRepository repository,
+     [FromServices] ContentAuditRepository auditRepository
+     */
+    public static void RegisterCmsBlogPostsApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/blogs/posts");
 
         // List all posts
-        group.MapGet("/", (HttpContext context) =>
+        group.MapGet("/", (
+            BlogPostRepository repository,
+            HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -30,7 +37,7 @@ internal static partial class ApiRoutes
         });
 
         // Get single post
-        group.MapGet("/{objectId}", (string objectId) =>
+        group.MapGet("/{objectId}", (BlogPostRepository repository, string objectId) =>
         {
             var post = repository.GetById(objectId);
             if (post == null)
@@ -42,7 +49,7 @@ internal static partial class ApiRoutes
         });
 
         // Create post
-        group.MapPost("/", async (HttpContext context) =>
+        group.MapPost("/", async (BlogPostRepository repository, ContentAuditRepository auditRepository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -66,7 +73,11 @@ internal static partial class ApiRoutes
         });
 
         // Update post
-        group.MapPatch("/{objectId}", async (string objectId, HttpContext context) =>
+        group.MapPatch("/{objectId}", async (
+            BlogPostRepository repository,
+            ContentAuditRepository auditRepository,
+            string objectId,
+            HttpContext context) =>
         {
             var post = repository.GetById(objectId);
             if (post == null)
@@ -96,7 +107,10 @@ internal static partial class ApiRoutes
         });
 
         // Delete post
-        group.MapDelete("/{objectId}", (string objectId) =>
+        group.MapDelete("/{objectId}", (
+            BlogPostRepository repository,
+            ContentAuditRepository auditRepository,
+            string objectId) =>
         {
             var deleted = repository.Delete(objectId);
             if (!deleted)
@@ -119,15 +133,15 @@ internal static partial class ApiRoutes
         // Batch operations
         var batchGroup = group.MapGroup("/batch");
 
-        batchGroup.MapPost("/create", async (HttpContext context) =>
+        batchGroup.MapPost("/create", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
-            if (request == null || !request.ContainsKey("inputs"))
+            if (request == null || !request.TryGetValue("inputs", out var value))
             {
                 return Results.BadRequest(new { message = "Invalid request body" });
             }
 
-            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
+            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(value.ToString()!);
             if (inputs == null)
             {
                 return Results.BadRequest(new { message = "Invalid inputs" });
@@ -139,19 +153,19 @@ internal static partial class ApiRoutes
             return Results.Ok(new
             {
                 status = "COMPLETE",
-                results = created.Select(p => MapToResponse(p))
+                results = created.Select(MapToResponse)
             });
         });
 
-        batchGroup.MapPost("/read", async (HttpContext context) =>
+        batchGroup.MapPost("/read", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
-            if (request == null || !request.ContainsKey("inputs"))
+            if (request == null || !request.TryGetValue("inputs", out var value))
             {
                 return Results.BadRequest(new { message = "Invalid request body" });
             }
 
-            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
+            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(value.ToString()!);
             if (inputs == null)
             {
                 return Results.BadRequest(new { message = "Invalid inputs" });
@@ -167,15 +181,15 @@ internal static partial class ApiRoutes
             });
         });
 
-        batchGroup.MapPost("/update", async (HttpContext context) =>
+        batchGroup.MapPost("/update", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
-            if (request == null || !request.ContainsKey("inputs"))
+            if (request == null || !request.TryGetValue("inputs", out var value))
             {
                 return Results.BadRequest(new { message = "Invalid request body" });
             }
 
-            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
+            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(value.ToString()!);
             if (inputs == null)
             {
                 return Results.BadRequest(new { message = "Invalid inputs" });
@@ -191,7 +205,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        batchGroup.MapPost("/archive", async (HttpContext context) =>
+        batchGroup.MapPost("/archive", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.ContainsKey("inputs"))
@@ -214,7 +228,7 @@ internal static partial class ApiRoutes
         // Multi-language operations
         var multiLangGroup = group.MapGroup("/multi-language");
 
-        multiLangGroup.MapPost("/attach-to-lang-group", async (HttpContext context) =>
+        multiLangGroup.MapPost("/attach-to-lang-group", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -230,7 +244,7 @@ internal static partial class ApiRoutes
             return Results.NoContent();
         });
 
-        multiLangGroup.MapPost("/detach-from-lang-group", async (HttpContext context) =>
+        multiLangGroup.MapPost("/detach-from-lang-group", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -245,7 +259,7 @@ internal static partial class ApiRoutes
         });
 
         // Revision operations
-        group.MapGet("/{objectId}/revisions", (string objectId) =>
+        group.MapGet("/{objectId}/revisions", (BlogPostRepository repository, string objectId) =>
         {
             var revisions = repository.GetRevisions(objectId);
             return Results.Ok(new
@@ -258,7 +272,10 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapGet("/{objectId}/revisions/{revisionId}", (string objectId, string revisionId) =>
+        group.MapGet("/{objectId}/revisions/{revisionId}", (
+            BlogPostRepository repository,
+            string objectId,
+            string revisionId) =>
         {
             var revision = repository.GetRevisionById(objectId, revisionId);
             if (revision == null)
@@ -274,7 +291,10 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapPost("/{objectId}/revisions/{revisionId}/restore-to-draft", (string objectId, string revisionId) =>
+        group.MapPost("/{objectId}/revisions/{revisionId}/restore-to-draft", (
+            BlogPostRepository repository,
+            string objectId,
+            string revisionId) =>
         {
             var restored = repository.RestoreRevision(objectId, revisionId);
             return restored == null

@@ -8,12 +8,12 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsHubDbApi(this IEndpointRouteBuilder app, HubDbRepository repository)
+    public static void RegisterCmsHubDbApi(WebApplication app)
     {
         var tablesGroup = app.MapGroup("/cms/v3/hubdb/tables");
 
         // Tables endpoints
-        tablesGroup.MapGet("/", (HttpContext context) =>
+        tablesGroup.MapGet("/", (HubDbRepository repository, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -28,7 +28,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        tablesGroup.MapGet("/{tableIdOrName}", (string tableIdOrName) =>
+        tablesGroup.MapGet("/{tableIdOrName}", (HubDbRepository repository, string tableIdOrName) =>
         {
             var table = repository.GetTableById(tableIdOrName);
             if (table == null)
@@ -39,7 +39,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapTableToResponse(table));
         });
 
-        tablesGroup.MapPost("/", async (HttpContext context) =>
+        tablesGroup.MapPost("/", async (HubDbRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -53,7 +53,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapTableToResponse(created));
         });
 
-        tablesGroup.MapPatch("/{tableIdOrName}", async (string tableIdOrName, HttpContext context) =>
+        tablesGroup.MapPatch("/{tableIdOrName}", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -72,7 +72,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapTableToResponse(updated));
         });
 
-        tablesGroup.MapDelete("/{tableIdOrName}", (string tableIdOrName) =>
+        tablesGroup.MapDelete("/{tableIdOrName}", (HubDbRepository repository, string tableIdOrName) =>
         {
             var success = repository.DeleteTable(tableIdOrName);
             if (!success)
@@ -86,7 +86,7 @@ internal static partial class ApiRoutes
         // Rows endpoints (nested under tables)
         var rowsGroup = app.MapGroup("/cms/v3/hubdb/tables/{tableIdOrName}/rows");
 
-        rowsGroup.MapGet("/", (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapGet("/", (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -101,7 +101,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        rowsGroup.MapGet("/{rowId}", (string tableIdOrName, string rowId) =>
+        rowsGroup.MapGet("/{rowId}", (HubDbRepository repository, string tableIdOrName, string rowId) =>
         {
             var row = repository.GetRowById(tableIdOrName, rowId);
             if (row == null)
@@ -112,7 +112,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapRowToResponse(row));
         });
 
-        rowsGroup.MapPost("/", async (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapPost("/", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -132,7 +132,7 @@ internal static partial class ApiRoutes
             }
         });
 
-        rowsGroup.MapPatch("/{rowId}", async (string tableIdOrName, string rowId, HttpContext context) =>
+        rowsGroup.MapPatch("/{rowId}", async (HubDbRepository repository, string tableIdOrName, string rowId, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -151,7 +151,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapRowToResponse(updated));
         });
 
-        rowsGroup.MapDelete("/{rowId}", (string tableIdOrName, string rowId) =>
+        rowsGroup.MapDelete("/{rowId}", (HubDbRepository repository, string tableIdOrName, string rowId) =>
         {
             var success = repository.DeleteRow(tableIdOrName, rowId);
             if (!success)
@@ -163,7 +163,7 @@ internal static partial class ApiRoutes
         });
 
         // Batch operations for rows
-        rowsGroup.MapPost("/batch/create", async (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapPost("/batch/create", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
@@ -195,7 +195,7 @@ internal static partial class ApiRoutes
             return Results.Ok(new { results });
         });
 
-        rowsGroup.MapPost("/batch/read", async (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapPost("/batch/read", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
@@ -225,7 +225,7 @@ internal static partial class ApiRoutes
             return Results.Ok(new { results });
         });
 
-        rowsGroup.MapPost("/batch/update", async (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapPost("/batch/update", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
@@ -256,7 +256,7 @@ internal static partial class ApiRoutes
             return Results.Ok(new { results });
         });
 
-        rowsGroup.MapPost("/batch/archive", async (string tableIdOrName, HttpContext context) =>
+        rowsGroup.MapPost("/batch/archive", async (HubDbRepository repository, string tableIdOrName, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))

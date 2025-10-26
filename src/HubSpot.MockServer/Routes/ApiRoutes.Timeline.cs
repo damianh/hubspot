@@ -7,7 +7,7 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    internal static void RegisterTimelineApi(WebApplication app, TimelineRepository timelineRepo)
+    internal static void RegisterTimelineApi(WebApplication app)
     {
         var v3 = app.MapGroup("/crm/v3/timeline");
 
@@ -16,14 +16,18 @@ internal static partial class ApiRoutes
 
         // GET /crm/v3/timeline/events/templates - List all templates (alternate path)
         var eventsTemplates = v3.MapGroup("/events/templates");
-        eventsTemplates.MapGet("/", ([FromQuery] string? appId) =>
+        eventsTemplates.MapGet("/", (
+            [FromServices] TimelineRepository timelineRepo,
+            [FromQuery] string? appId) =>
         {
             var allTemplates = timelineRepo.ListEventTemplates();
             return Results.Ok(new { results = allTemplates });
         });
 
         // POST /crm/v3/timeline/events/templates - Create template (alternate path)
-        eventsTemplates.MapPost("/", ([FromBody] TimelineEventTemplateRequest request) =>
+        eventsTemplates.MapPost("/", (
+            [FromServices] TimelineRepository timelineRepo,
+            [FromBody] TimelineEventTemplateRequest request) =>
         {
             var template = timelineRepo.CreateEventTemplate(
                 request.Name,
@@ -37,7 +41,9 @@ internal static partial class ApiRoutes
         });
 
         // POST /crm/v3/timeline/event-templates
-        templates.MapPost("/", ([FromBody] TimelineEventTemplateRequest request) =>
+        templates.MapPost("/", (
+            [FromServices] TimelineRepository timelineRepo,
+            [FromBody] TimelineEventTemplateRequest request) =>
         {
             var template = timelineRepo.CreateEventTemplate(
                 request.Name,
@@ -51,7 +57,9 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/timeline/event-templates/{templateId}
-        templates.MapGet("/{templateId}", (string templateId) =>
+        templates.MapGet("/{templateId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string templateId) =>
         {
             var template = timelineRepo.GetEventTemplate(templateId);
             if (template == null)
@@ -63,7 +71,10 @@ internal static partial class ApiRoutes
         });
 
         // PUT /crm/v3/timeline/event-templates/{templateId}
-        templates.MapPut("/{templateId}", (string templateId, [FromBody] TimelineEventTemplateUpdateRequest request) =>
+        templates.MapPut("/{templateId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string templateId,
+            [FromBody] TimelineEventTemplateUpdateRequest request) =>
         {
             var template = timelineRepo.UpdateEventTemplate(
                 templateId,
@@ -82,22 +93,23 @@ internal static partial class ApiRoutes
         });
 
         // DELETE /crm/v3/timeline/event-templates/{templateId}
-        templates.MapDelete("/{templateId}", (string templateId) =>
+        templates.MapDelete("/{templateId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string templateId) =>
         {
             var deleted = timelineRepo.DeleteEventTemplate(templateId);
-            if (!deleted)
-            {
-                return Results.NotFound(new { message = $"Event template not found: {templateId}" });
-            }
-
-            return Results.NoContent();
+            return !deleted
+                ? Results.NotFound(new { message = $"Event template not found: {templateId}" })
+                : Results.NoContent();
         });
 
         // Events
         var events = v3.MapGroup("/events");
 
         // POST /crm/v3/timeline/events
-        events.MapPost("/", ([FromBody] TimelineEventRequest request) =>
+        events.MapPost("/", (
+            [FromServices] TimelineRepository timelineRepo,
+            [FromBody] TimelineEventRequest request) =>
         {
             var timelineEvent = timelineRepo.CreateEvent(
                 request.EventTemplateId,
@@ -111,7 +123,10 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/timeline/events/{objectType}/{objectId}
-        events.MapGet("/{objectType}/{objectId}", (string objectType, string objectId) =>
+        events.MapGet("/{objectType}/{objectId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string objectType,
+            string objectId) =>
         {
             var eventsList = timelineRepo.ListEvents(objectType, objectId);
 
@@ -119,27 +134,25 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/timeline/events/{eventId} - Get specific event by ID
-        events.MapGet("/{eventId}", (string eventId) =>
+        events.MapGet("/{eventId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string eventId) =>
         {
             var timelineEvent = timelineRepo.GetEvent(eventId);
-            if (timelineEvent == null)
-            {
-                return Results.NotFound(new { message = $"Event not found: {eventId}" });
-            }
-
-            return Results.Ok(timelineEvent);
+            return timelineEvent == null
+                ? Results.NotFound(new { message = $"Event not found: {eventId}" })
+                : Results.Ok(timelineEvent);
         });
 
         // DELETE /crm/v3/timeline/events/{eventId}
-        events.MapDelete("/{eventId}", (string eventId) =>
+        events.MapDelete("/{eventId}", (
+            [FromServices] TimelineRepository timelineRepo,
+            string eventId) =>
         {
             var deleted = timelineRepo.DeleteEvent(eventId);
-            if (!deleted)
-            {
-                return Results.NotFound(new { message = $"Event not found: {eventId}" });
-            }
-
-            return Results.NoContent();
+            return !deleted
+                ? Results.NotFound(new { message = $"Event not found: {eventId}" })
+                : Results.NoContent();
         });
     }
 }

@@ -8,11 +8,11 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsUrlRedirectsApi(this IEndpointRouteBuilder app, UrlRedirectRepository repository)
+    public static void RegisterCmsUrlRedirectsApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/url-redirects");
 
-        group.MapGet("/", (HttpContext context) =>
+        group.MapGet("/", (UrlRedirectRepository repository, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -27,7 +27,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapGet("/{urlRedirectId}", (string urlRedirectId) =>
+        group.MapGet("/{urlRedirectId}", (UrlRedirectRepository repository, string urlRedirectId) =>
         {
             var redirect = repository.GetById(urlRedirectId);
             if (redirect == null)
@@ -38,7 +38,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapRedirectToResponse(redirect));
         });
 
-        group.MapPost("/", async (HttpContext context) =>
+        group.MapPost("/", async (UrlRedirectRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -52,7 +52,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapRedirectToResponse(created));
         });
 
-        group.MapPatch("/{urlRedirectId}", async (string urlRedirectId, HttpContext context) =>
+        group.MapPatch("/{urlRedirectId}", async (UrlRedirectRepository repository, string urlRedirectId, HttpContext context) =>
         {
             var redirect = repository.GetById(urlRedirectId);
             if (redirect == null)
@@ -72,7 +72,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapRedirectToResponse(updated!));
         });
 
-        group.MapDelete("/{urlRedirectId}", (string urlRedirectId) =>
+        group.MapDelete("/{urlRedirectId}", (UrlRedirectRepository repository, string urlRedirectId) =>
         {
             var deleted = repository.Delete(urlRedirectId);
             if (!deleted)

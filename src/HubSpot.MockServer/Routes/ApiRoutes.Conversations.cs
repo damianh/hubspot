@@ -9,16 +9,16 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    internal static void RegisterConversationsApi(
-        WebApplication app,
-        ConversationRepository conversationRepo,
-        CustomChannelRepository channelRepo,
-        VisitorIdentificationRepository visitorRepo)
+    internal static void RegisterConversationsApi(WebApplication app)
     {
         // Conversations Inbox & Messages API
         var conversations = app.MapGroup("/conversations/v3/conversations");
 
-        conversations.MapGet("/", ([FromQuery] string? status, [FromQuery] int? limit, [FromQuery] string? after) =>
+        conversations.MapGet("/", (
+            [FromServices] ConversationRepository conversationRepo,
+            [FromQuery] string? status,
+            [FromQuery] int? limit,
+            [FromQuery] string? after) =>
         {
             var results = conversationRepo.ListConversations(status, limit, after);
             return Results.Ok(new
@@ -30,7 +30,9 @@ internal static partial class ApiRoutes
             });
         });
 
-        conversations.MapGet("/{conversationId}", (string conversationId) =>
+        conversations.MapGet("/{conversationId}", (
+            [FromServices] ConversationRepository conversationRepo,
+            string conversationId) =>
         {
             var conversation = conversationRepo.GetConversation(conversationId);
             return conversation == null
@@ -38,7 +40,10 @@ internal static partial class ApiRoutes
                 : Results.Ok(ToConversationResponse(conversation));
         });
 
-        conversations.MapPatch("/{conversationId}", async (string conversationId, HttpRequest request) =>
+        conversations.MapPatch("/{conversationId}", async (
+            [FromServices] ConversationRepository conversationRepo,
+            string conversationId,
+            HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -63,7 +68,10 @@ internal static partial class ApiRoutes
                 : Results.Ok(ToConversationResponse(conversation));
         });
 
-        conversations.MapPost("/{conversationId}/messages", async (string conversationId, HttpRequest request) =>
+        conversations.MapPost("/{conversationId}/messages", async (
+            [FromServices] ConversationRepository conversationRepo,
+            string conversationId,
+            HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -99,12 +107,15 @@ internal static partial class ApiRoutes
             }
         });
 
-        conversations.MapGet("/{conversationId}/messages", (string conversationId, [FromQuery] int? limit) =>
+        conversations.MapGet("/{conversationId}/messages", (
+            [FromServices] ConversationRepository conversationRepo,
+            string conversationId,
+            [FromQuery] int? limit) =>
         {
             var messages = conversationRepo.ListMessages(conversationId, limit);
             return Results.Ok(new
             {
-                results = messages.Select(m => ToMessageResponse(m)),
+                results = messages.Select(ToMessageResponse),
                 paging = new { }
             });
         });
@@ -112,7 +123,7 @@ internal static partial class ApiRoutes
         // Custom Channels API
         var channels = app.MapGroup("/conversations/v3/custom-channels");
 
-        channels.MapPost("/", async (HttpRequest request) =>
+        channels.MapPost("/", async([FromServices] CustomChannelRepository channelRepo, HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -127,16 +138,18 @@ internal static partial class ApiRoutes
             return Results.Ok(ToChannelResponse(channel));
         });
 
-        channels.MapGet("/", () =>
+        channels.MapGet("/", ([FromServices] CustomChannelRepository channelRepo) =>
         {
             var results = channelRepo.ListChannels();
             return Results.Ok(new
             {
-                results = results.Select(c => ToChannelResponse(c))
+                results = results.Select(ToChannelResponse)
             });
         });
 
-        channels.MapGet("/{channelId}", (string channelId) =>
+        channels.MapGet("/{channelId}", (
+            [FromServices] CustomChannelRepository channelRepo,
+            string channelId) =>
         {
             var channel = channelRepo.GetChannel(channelId);
             if (channel == null)
@@ -146,7 +159,10 @@ internal static partial class ApiRoutes
             return Results.Ok(ToChannelResponse(channel));
         });
 
-        channels.MapPatch("/{channelId}", async (string channelId, HttpRequest request) =>
+        channels.MapPatch("/{channelId}", async(
+            [FromServices] CustomChannelRepository channelRepo,
+            string channelId,
+            HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -174,20 +190,22 @@ internal static partial class ApiRoutes
             return Results.Ok(ToChannelResponse(channel));
         });
 
-        channels.MapDelete("/{channelId}", (string channelId) =>
+        channels.MapDelete("/{channelId}", (
+            [FromServices] CustomChannelRepository channelRepo,
+            string channelId) =>
         {
             var deleted = channelRepo.DeleteChannel(channelId);
-            if (!deleted)
-            {
-                return Results.NotFound(new { message = $"Channel {channelId} not found" });
-            }
-            return Results.NoContent();
+            return !deleted
+                ? Results.NotFound(new { message = $"Channel {channelId} not found" })
+                : Results.NoContent();
         });
 
         // Visitor Identification API
         var visitors = app.MapGroup("/conversations/v3/visitor-identification");
 
-        visitors.MapPost("/tokens/create", async (HttpRequest request) =>
+        visitors.MapPost("/tokens/create", async(
+            [FromServices] VisitorIdentificationRepository visitorRepo,
+            HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -206,7 +224,9 @@ internal static partial class ApiRoutes
             return Results.Ok(ToVisitorTokenResponse(token));
         });
 
-        visitors.MapGet("/tokens/visitor/{visitorId}", (string visitorId) =>
+        visitors.MapGet("/tokens/visitor/{visitorId}", (
+            [FromServices] VisitorIdentificationRepository visitorRepo,
+            string visitorId) =>
         {
             var token = visitorRepo.GetTokenByVisitorId(visitorId);
             if (token == null)
@@ -216,7 +236,9 @@ internal static partial class ApiRoutes
             return Results.Ok(ToVisitorTokenResponse(token));
         });
 
-        visitors.MapPost("/identify", async (HttpRequest request) =>
+        visitors.MapPost("/identify", async (
+            [FromServices] VisitorIdentificationRepository visitorRepo,
+            HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();

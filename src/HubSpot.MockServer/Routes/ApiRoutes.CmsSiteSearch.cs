@@ -8,11 +8,11 @@ namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsSiteSearchApi(this IEndpointRouteBuilder app, SiteSearchRepository repository)
+    public static void RegisterCmsSiteSearchApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/site-search");
 
-        group.MapGet("/search", (HttpContext context) =>
+        group.MapGet("/search", (SiteSearchRepository repository, HttpContext context) =>
         {
             var query = context.Request.Query["q"].ToString();
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 20;
@@ -28,7 +28,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapPost("/index", async (HttpContext context) =>
+        group.MapPost("/index", async (SiteSearchRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -42,7 +42,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapSearchContentToResponse(indexed));
         });
 
-        group.MapDelete("/index/{contentId}", (string contentId) =>
+        group.MapDelete("/index/{contentId}", (SiteSearchRepository repository, string contentId) =>
         {
             var success = repository.Delete(contentId);
             if (!success)

@@ -2,17 +2,16 @@ using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 
 namespace DamianH.HubSpot.MockServer.Routes;
 
 internal static partial class ApiRoutes
 {
-    public static void RegisterCmsDomainsApi(this IEndpointRouteBuilder app, DomainRepository repository)
+    public static void RegisterCmsDomainsApi(WebApplication app)
     {
         var group = app.MapGroup("/cms/v3/domains");
 
-        group.MapGet("/", (HttpContext context) =>
+        group.MapGet("/", (DomainRepository repository, HttpContext context) =>
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
@@ -27,7 +26,7 @@ internal static partial class ApiRoutes
             });
         });
 
-        group.MapGet("/{domainId}", (string domainId) =>
+        group.MapGet("/{domainId}", (DomainRepository repository, string domainId) =>
         {
             var domain = repository.GetById(domainId);
             if (domain == null)
@@ -40,7 +39,7 @@ internal static partial class ApiRoutes
 
         // Note: In real HubSpot API, domains are typically managed through UI
         // These endpoints are for testing purposes
-        group.MapPost("/", async (HttpContext context) =>
+        group.MapPost("/", async (DomainRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
@@ -54,7 +53,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapDomainToResponse(created));
         });
 
-        group.MapPatch("/{domainId}", async (string domainId, HttpContext context) =>
+        group.MapPatch("/{domainId}", async (DomainRepository repository, string domainId, HttpContext context) =>
         {
             var domain = repository.GetById(domainId);
             if (domain == null)
@@ -74,7 +73,7 @@ internal static partial class ApiRoutes
             return Results.Ok(MapDomainToResponse(updated!));
         });
 
-        group.MapDelete("/{domainId}", (string domainId) =>
+        group.MapDelete("/{domainId}", (DomainRepository repository, string domainId) =>
         {
             var deleted = repository.Delete(domainId);
             if (!deleted)
