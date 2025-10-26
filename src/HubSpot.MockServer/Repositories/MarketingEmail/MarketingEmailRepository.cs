@@ -2,10 +2,10 @@ namespace DamianH.HubSpot.MockServer.Repositories.MarketingEmail;
 
 internal class MarketingEmailRepository
 {
-    private readonly Dictionary<string, Objects.MarketingEmail> _emails = new();
+    private readonly Dictionary<string, MarketingEmail> _emails = new();
     private int _nextId = 1;
 
-    public Objects.MarketingEmail Create(Objects.MarketingEmail email)
+    public MarketingEmail Create(MarketingEmail email)
     {
         email.Id = _nextId++.ToString();
         email.CreatedAt = DateTime.UtcNow;
@@ -14,13 +14,13 @@ internal class MarketingEmailRepository
         return email;
     }
 
-    public Objects.MarketingEmail? GetById(string id)
+    public MarketingEmail? GetById(string id)
     {
         _emails.TryGetValue(id, out var email);
         return email;
     }
 
-    public Objects.MarketingEmail Update(string id, Objects.MarketingEmail email)
+    public MarketingEmail Update(string id, MarketingEmail email)
     {
         if (!_emails.ContainsKey(id))
         {
@@ -35,7 +35,7 @@ internal class MarketingEmailRepository
 
     public void Delete(string id) => _emails.Remove(id);
 
-    public IEnumerable<Objects.MarketingEmail> GetAll() => _emails.Values;
+    public IEnumerable<MarketingEmail> GetAll() => _emails.Values;
 
     public void Clear()
     {

@@ -57,6 +57,4 @@ internal class CustomChannelRepository
         _channels.Clear();
         _nextChannelId = 1;
     }
-
-
 }

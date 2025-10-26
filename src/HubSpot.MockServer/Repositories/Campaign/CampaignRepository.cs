@@ -2,10 +2,10 @@ namespace DamianH.HubSpot.MockServer.Repositories.Campaign;
 
 internal class CampaignRepository
 {
-    private readonly Dictionary<string, Objects.Campaign> _campaigns = new();
+    private readonly Dictionary<string, Campaign> _campaigns = new();
     private int _nextId = 1;
 
-    public Objects.Campaign Create(Objects.Campaign campaign)
+    public Campaign Create(Campaign campaign)
     {
         campaign.Id = _nextId++.ToString();
         campaign.CreatedAt = DateTime.UtcNow;
@@ -14,13 +14,13 @@ internal class CampaignRepository
         return campaign;
     }
 
-    public Objects.Campaign? GetById(string id)
+    public Campaign? GetById(string id)
     {
         _campaigns.TryGetValue(id, out var campaign);
         return campaign;
     }
 
-    public Objects.Campaign Update(string id, Objects.Campaign campaign)
+    public Campaign Update(string id, Campaign campaign)
     {
         if (!_campaigns.ContainsKey(id))
         {
@@ -35,7 +35,7 @@ internal class CampaignRepository
 
     public void Delete(string id) => _campaigns.Remove(id);
 
-    public IEnumerable<Objects.Campaign> GetAll() => _campaigns.Values;
+    public IEnumerable<Campaign> GetAll() => _campaigns.Values;
 
     public void Clear()
     {

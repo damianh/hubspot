@@ -6,7 +6,7 @@ internal class CurrencyRepository
 {
     private readonly TimeProvider _timeProvider;
     private CompanyCurrency _companyCurrency;
-    private readonly Dictionary<string, Objects.Currency> _currencies = new();
+    private readonly Dictionary<string, Currency> _currencies = new();
     private readonly Dictionary<string, ExchangeRate> _exchangeRates = new();
     private int _exchangeRateIdCounter = 1;
 
@@ -28,11 +28,11 @@ internal class CurrencyRepository
     {
         var currencies = new[]
         {
-            new Objects.Currency { CurrencyCode = "USD", DisplayName = "US Dollar", Symbol = "$", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
-            new Objects.Currency { CurrencyCode = "EUR", DisplayName = "Euro", Symbol = "€", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
-            new Objects.Currency { CurrencyCode = "GBP", DisplayName = "British Pound", Symbol = "£", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
-            new Objects.Currency { CurrencyCode = "JPY", DisplayName = "Japanese Yen", Symbol = "¥", IsVisible = false, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
-            new Objects.Currency { CurrencyCode = "CAD", DisplayName = "Canadian Dollar", Symbol = "C$", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
+            new Currency { CurrencyCode = "USD", DisplayName = "US Dollar", Symbol = "$", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
+            new Currency { CurrencyCode = "EUR", DisplayName = "Euro", Symbol = "€", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
+            new Currency { CurrencyCode = "GBP", DisplayName = "British Pound", Symbol = "£", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
+            new Currency { CurrencyCode = "JPY", DisplayName = "Japanese Yen", Symbol = "¥", IsVisible = false, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
+            new Currency { CurrencyCode = "CAD", DisplayName = "Canadian Dollar", Symbol = "C$", IsVisible = true, CreatedAt = _timeProvider.GetUtcNow(), UpdatedAt = _timeProvider.GetUtcNow() },
         };
 
         foreach (var currency in currencies)
@@ -57,9 +57,9 @@ internal class CurrencyRepository
         UpdatedAt = _timeProvider.GetUtcNow()
     };
 
-    public List<Objects.Currency> GetSupportedCurrencyCodes() => _currencies.Values.ToList();
+    public List<Currency> GetSupportedCurrencyCodes() => _currencies.Values.ToList();
 
-    public void AddCurrency(Objects.Currency currency)
+    public void AddCurrency(Currency currency)
     {
         currency.CreatedAt = _timeProvider.GetUtcNow();
         currency.UpdatedAt = _timeProvider.GetUtcNow();

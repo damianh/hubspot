@@ -51,16 +51,3 @@ internal class FileRepository
 
     public byte[]? GetFileContent(string fileId) => _files.TryGetValue(fileId, out var file) ? file.Content : null;
 }
-
-public class FileMetadata
-{
-    public string Id { get; set; } = null!;
-    public string Name { get; set; } = null!;
-    public string Type { get; set; } = null!;
-    public string Extension { get; set; } = null!;
-    public long Size { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public string Url { get; set; } = null!;
-    public byte[] Content { get; set; } = null!;
-}

@@ -2,10 +2,10 @@ namespace DamianH.HubSpot.MockServer.Repositories.MarketingEvent;
 
 internal class MarketingEventRepository
 {
-    private readonly Dictionary<string, Objects.MarketingEvent> _events = new();
+    private readonly Dictionary<string, MarketingEvent> _events = new();
     private int _nextId = 1;
 
-    public Objects.MarketingEvent Create(Objects.MarketingEvent marketingEvent)
+    public MarketingEvent Create(MarketingEvent marketingEvent)
     {
         marketingEvent.Id = _nextId++.ToString();
         marketingEvent.CreatedAt = DateTime.UtcNow;
@@ -14,13 +14,13 @@ internal class MarketingEventRepository
         return marketingEvent;
     }
 
-    public Objects.MarketingEvent? GetById(string id)
+    public MarketingEvent? GetById(string id)
     {
         _events.TryGetValue(id, out var marketingEvent);
         return marketingEvent;
     }
 
-    public Objects.MarketingEvent Update(string id, Objects.MarketingEvent marketingEvent)
+    public MarketingEvent Update(string id, MarketingEvent marketingEvent)
     {
         if (!_events.ContainsKey(id))
         {
@@ -35,7 +35,7 @@ internal class MarketingEventRepository
 
     public void Delete(string id) => _events.Remove(id);
 
-    public IEnumerable<Objects.MarketingEvent> GetAll() => _events.Values;
+    public IEnumerable<MarketingEvent> GetAll() => _events.Values;
 
     public void Clear()
     {

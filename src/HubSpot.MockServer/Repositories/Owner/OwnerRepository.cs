@@ -10,15 +10,6 @@ internal class OwnerRepository
     private readonly ConcurrentDictionary<string, Owner> _owners = new();
     private int _nextId = 1;
 
-    public record Owner(
-        string Id,
-        string Email,
-        string FirstName,
-        string LastName,
-        string Type, // USER or TEAM
-        DateTime CreatedAt = default,
-        DateTime UpdatedAt = default);
-
     public OwnerRepository() => SeedDefaultOwners();
 
     private void SeedDefaultOwners()

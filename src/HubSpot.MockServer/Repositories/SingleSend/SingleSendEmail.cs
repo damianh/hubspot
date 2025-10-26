@@ -1,6 +1,6 @@
-namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Repositories.SingleSend;
 
-internal class MarketingEmail
+internal class SingleSendEmail
 {
     public string? Id { get; set; }
     public string? Name { get; set; }
@@ -9,7 +9,6 @@ internal class MarketingEmail
     public string? FromName { get; set; }
     public string? FromEmail { get; set; }
     public string? ReplyTo { get; set; }
-    public string? CampaignId { get; set; }
     public string? State { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }

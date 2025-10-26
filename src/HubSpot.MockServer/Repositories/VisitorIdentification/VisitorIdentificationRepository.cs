@@ -65,12 +65,3 @@ internal class VisitorIdentificationRepository
         return Convert.ToBase64String(bytes).TrimEnd('=').Replace('+', '-').Replace('/', '_');
     }
 }
-
-public class VisitorTokenData
-{
-    public string Token { get; set; } = string.Empty;
-    public string VisitorId { get; set; } = string.Empty;
-    public string? Email { get; set; }
-    public DateTimeOffset CreatedAt { get; set; }
-    public DateTimeOffset ExpiresAt { get; set; }
-}

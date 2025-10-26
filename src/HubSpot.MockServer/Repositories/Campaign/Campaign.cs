@@ -1,6 +1,6 @@
-namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Repositories.Campaign;
 
-public class Campaign
+internal class Campaign
 {
     public string? Id { get; set; }
     public string? Name { get; set; }

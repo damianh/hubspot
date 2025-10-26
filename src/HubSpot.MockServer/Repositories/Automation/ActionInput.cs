@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories.Automation;
 
-public record ActionInput
+internal record ActionInput
 {
     public string Name { get; init; } = string.Empty;
     public string Type { get; init; } = ""; // TEXT, NUMBER, BOOLEAN, etc.

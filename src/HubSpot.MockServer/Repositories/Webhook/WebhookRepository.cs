@@ -126,14 +126,8 @@ internal class WebhookRepository
         return null;
     }
 
-    public bool DeleteSubscription(string appId, string subscriptionId)
-    {
-        if (_subscriptions.TryGetValue(appId, out var appSubscriptions))
-        {
-            return appSubscriptions.TryRemove(subscriptionId, out _);
-        }
-        return false;
-    }
+    public bool DeleteSubscription(string appId, string subscriptionId) =>
+        _subscriptions.TryGetValue(appId, out var appSubscriptions) && appSubscriptions.TryRemove(subscriptionId, out _);
 
     public BatchResponseSubscriptionResponse BatchUpdateSubscriptions(string appId, WebhookBatchInputRequest request)
     {
@@ -187,7 +181,7 @@ internal class WebhookRepository
         {
             TargetUrl = request.TargetUrl,
             Throttling = throttling,
-            CreatedAt = _settings.ContainsKey(appId) ? _settings[appId].CreatedAt : now,
+            CreatedAt = _settings.TryGetValue(appId, out var setting) ? setting.CreatedAt : now,
             UpdatedAt = now
         };
 

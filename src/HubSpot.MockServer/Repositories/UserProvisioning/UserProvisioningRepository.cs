@@ -65,7 +65,7 @@ internal class UserProvisioningRepository
 
         if (!string.IsNullOrEmpty(after))
         {
-            query = query.Where(u => string.Compare(u.Id, after) > 0);
+            query = query.Where(u => string.CompareOrdinal(u.Id, after) > 0);
         }
 
         query = query.OrderBy(u => u.Id);

@@ -1,6 +1,6 @@
-namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Repositories.UserProvisioning;
 
-public class UserAccount
+internal class UserAccount
 {
     public required string Id { get; set; }
     public required string Email { get; set; }
@@ -11,17 +11,4 @@ public class UserAccount
     public List<string> SecondaryTeamIds { get; set; } = [];
     public DateTimeOffset CreatedAt { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
-}
-
-public class RolePermissionSet
-{
-    public required string Id { get; set; }
-    public required string Name { get; set; }
-    public List<string> Permissions { get; set; } = [];
-}
-
-public class Team
-{
-    public required string Id { get; set; }
-    public required string Name { get; set; }
 }

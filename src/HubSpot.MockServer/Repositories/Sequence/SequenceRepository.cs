@@ -105,29 +105,3 @@ internal class SequenceRepository
         _nextEnrollmentId = 1;
     }
 }
-
-public record Sequence
-{
-    public string Id { get; init; } = string.Empty;
-    public string Name { get; init; } = string.Empty;
-    public List<SequenceStep> Steps { get; init; } = [];
-    public DateTimeOffset CreatedAt { get; init; }
-    public DateTimeOffset UpdatedAt { get; init; }
-}
-
-public record SequenceStep
-{
-    public int StepNumber { get; init; }
-    public string Type { get; init; } = ""; // EMAIL, TASK, etc.
-    public int DelayMinutes { get; init; }
-}
-
-public record SequenceEnrollment
-{
-    public string EnrollmentId { get; init; } = string.Empty;
-    public string ContactId { get; init; } = string.Empty;
-    public string SequenceId { get; init; } = string.Empty;
-    public int UserId { get; init; }
-    public string State { get; init; } = "ENROLLED"; // ENROLLED, PAUSED, COMPLETED, UNENROLLED, etc.
-    public DateTimeOffset EnrolledAt { get; init; }
-}

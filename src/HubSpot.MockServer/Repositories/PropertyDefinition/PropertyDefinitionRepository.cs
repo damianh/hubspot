@@ -10,28 +10,6 @@ internal class PropertyDefinitionRepository
     private readonly ConcurrentDictionary<string, PropertyDefinition> _properties = new();
     private readonly ConcurrentDictionary<string, PropertyGroup> _groups = new();
 
-    public record PropertyDefinition(
-        string Name,
-        string Label,
-        string Type,
-        string FieldType,
-        string ObjectType,
-        string? GroupName = null,
-        string? Description = null,
-        string[]? Options = null,
-        bool Hidden = false,
-        int DisplayOrder = 0,
-        DateTime CreatedAt = default,
-        DateTime UpdatedAt = default);
-
-    public record PropertyGroup(
-        string Name,
-        string Label,
-        string ObjectType,
-        int DisplayOrder = 0,
-        DateTime CreatedAt = default,
-        DateTime UpdatedAt = default);
-
     public PropertyDefinitionRepository() => SeedDefaultProperties();
 
     private void SeedDefaultProperties()

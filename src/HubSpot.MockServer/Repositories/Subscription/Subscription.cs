@@ -1,4 +1,4 @@
-namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Repositories.Subscription;
 
 internal class Subscription
 {

@@ -155,27 +155,3 @@ internal class ConversationRepository
         _nextMessageId = 1;
     }
 }
-
-public class ConversationData
-{
-    public string Id { get; set; } = string.Empty;
-    public DateTimeOffset CreatedAt { get; set; }
-    public DateTimeOffset UpdatedAt { get; set; }
-    public string Status { get; set; } = "OPEN";
-    public string ChannelId { get; set; } = string.Empty;
-    public string InboxId { get; set; } = string.Empty;
-    public string? AssignedTo { get; set; }
-    public List<string> Participants { get; set; } = [];
-    public DateTimeOffset LatestMessageTimestamp { get; set; }
-}
-
-public class MessageData
-{
-    public string Id { get; set; } = string.Empty;
-    public string ConversationId { get; set; } = string.Empty;
-    public string Type { get; set; } = "MESSAGE";
-    public string Text { get; set; } = string.Empty;
-    public DateTimeOffset CreatedAt { get; set; }
-    public string SenderActorId { get; set; } = string.Empty;
-    public string SenderType { get; set; } = "VISITOR";
-}

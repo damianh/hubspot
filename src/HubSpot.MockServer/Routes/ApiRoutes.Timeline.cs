@@ -158,7 +158,7 @@ internal static partial class ApiRoutes
     }
 }
 
-public record TimelineEventTemplateRequest(
+internal record TimelineEventTemplateRequest(
     string Name,
     string ObjectType,
     List<EventToken> Tokens,
@@ -166,14 +166,14 @@ public record TimelineEventTemplateRequest(
     string? DetailTemplate = null
 );
 
-public record TimelineEventTemplateUpdateRequest(
+internal record TimelineEventTemplateUpdateRequest(
     string? Name = null,
     List<EventToken>? Tokens = null,
     string? HeaderTemplate = null,
     string? DetailTemplate = null
 );
 
-public record TimelineEventRequest(
+internal record TimelineEventRequest(
     string EventTemplateId,
     string ObjectType,
     string ObjectId,

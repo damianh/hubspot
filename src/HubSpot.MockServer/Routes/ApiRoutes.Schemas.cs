@@ -175,7 +175,7 @@ internal static partial class ApiRoutes
     }
 }
 
-public record SchemaCreateRequest(
+internal record SchemaCreateRequest(
     string Name,
     Dictionary<string, string> Labels,
     string PrimaryDisplayProperty,
@@ -185,7 +185,7 @@ public record SchemaCreateRequest(
     List<PropertyCreateRequest>? Properties = null
 );
 
-public record SchemaUpdateRequest(
+internal record SchemaUpdateRequest(
     Dictionary<string, string>? Labels = null,
     string? PrimaryDisplayProperty = null,
     List<string>? RequiredProperties = null,
@@ -193,7 +193,7 @@ public record SchemaUpdateRequest(
     List<string>? SecondaryDisplayProperties = null
 );
 
-public record PropertyCreateRequest(
+internal record PropertyCreateRequest(
     string Name,
     string Label,
     string Type,
@@ -204,7 +204,7 @@ public record PropertyCreateRequest(
     int? DisplayOrder = null
 );
 
-public record AssociationDefinitionRequest(
+internal record AssociationDefinitionRequest(
     string ToObjectType,
     string Name,
     string? Label = null

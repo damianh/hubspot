@@ -12,14 +12,6 @@ internal class PipelineRepository
     private int _nextPipelineId = 1;
     private int _nextStageId = 1;
 
-    public record Pipeline(
-        string Id,
-        string Label,
-        string ObjectType,
-        int DisplayOrder = 0,
-        DateTime CreatedAt = default,
-        DateTime UpdatedAt = default);
-
     public record PipelineStage(
         string Id,
         string PipelineId,
@@ -202,3 +194,11 @@ internal class PipelineRepository
 
     private static string GetStageKey(string pipelineId, string stageId) => $"{pipelineId}:{stageId}";
 }
+
+internal record Pipeline(
+    string Id,
+    string Label,
+    string ObjectType,
+    int DisplayOrder = 0,
+    DateTime CreatedAt = default,
+    DateTime UpdatedAt = default);

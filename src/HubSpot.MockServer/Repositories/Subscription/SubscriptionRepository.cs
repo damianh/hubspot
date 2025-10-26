@@ -1,15 +1,13 @@
-using DamianH.HubSpot.MockServer.Objects;
-
 namespace DamianH.HubSpot.MockServer.Repositories.Subscription;
 
 internal class SubscriptionRepository
 {
-    private readonly Dictionary<string, Objects.Subscription> _subscriptions = new();
+    private readonly Dictionary<string, Subscription> _subscriptions = new();
     private readonly Dictionary<string, SubscriptionDefinition> _definitions = new();
     private int _nextSubscriptionId = 1;
     private int _nextDefinitionId = 1;
 
-    public Objects.Subscription CreateSubscription(Objects.Subscription subscription)
+    public Subscription CreateSubscription(Subscription subscription)
     {
         subscription.Id = _nextSubscriptionId++.ToString();
         subscription.CreatedAt = DateTime.UtcNow;
@@ -18,13 +16,13 @@ internal class SubscriptionRepository
         return subscription;
     }
 
-    public Objects.Subscription? GetSubscriptionById(string id)
+    public Subscription? GetSubscriptionById(string id)
     {
         _subscriptions.TryGetValue(id, out var subscription);
         return subscription;
     }
 
-    public Objects.Subscription UpdateSubscription(string id, Objects.Subscription subscription)
+    public Subscription UpdateSubscription(string id, Subscription subscription)
     {
         if (!_subscriptions.ContainsKey(id))
         {
@@ -39,7 +37,7 @@ internal class SubscriptionRepository
 
     public void DeleteSubscription(string id) => _subscriptions.Remove(id);
 
-    public IEnumerable<Objects.Subscription> GetAllSubscriptions() => _subscriptions.Values;
+    public IEnumerable<Subscription> GetAllSubscriptions() => _subscriptions.Values;
 
     public SubscriptionDefinition CreateDefinition(SubscriptionDefinition definition)
     {

@@ -51,31 +51,3 @@ internal class EventRepository
 
     public bool DeleteDefinition(string definitionId) => _definitions.TryRemove(definitionId, out _);
 }
-
-public class CustomEvent
-{
-    public string? Id { get; set; }
-    public string EventName { get; set; } = null!;
-    public string? Email { get; set; }
-    public string? ObjectId { get; set; }
-    public string? ObjectType { get; set; }
-    public DateTime OccurredAt { get; set; }
-    public Dictionary<string, object>? Properties { get; set; }
-}
-
-public class EventDefinition
-{
-    public string? Id { get; set; }
-    public string Name { get; set; } = null!;
-    public string? Label { get; set; }
-    public string? Description { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public List<EventPropertyDefinition>? PropertyDefinitions { get; set; }
-}
-
-public class EventPropertyDefinition
-{
-    public string Name { get; set; } = null!;
-    public string? Label { get; set; }
-    public string Type { get; set; } = "string";
-}

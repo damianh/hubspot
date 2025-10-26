@@ -112,37 +112,3 @@ internal class HubDbRepository
         _nextTableId = 1;
     }
 }
-
-public class HubDbTable
-{
-    public string? Id { get; set; }
-    public string? Name { get; set; }
-    public string? Label { get; set; }
-    public bool Published { get; set; }
-    public List<HubDbColumn>? Columns { get; set; }
-    public bool AllowPublicApiAccess { get; set; }
-    public bool AllowChildTables { get; set; }
-    public bool EnableChildTablePages { get; set; }
-    public bool UseForPages { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-}
-
-public class HubDbColumn
-{
-    public string? Id { get; set; }
-    public string? Name { get; set; }
-    public string? Label { get; set; }
-    public string? Type { get; set; } // TEXT, NUMBER, URL, DATE, etc.
-    public Dictionary<string, object>? Options { get; set; }
-}
-
-public class HubDbRow
-{
-    public string? Id { get; set; }
-    public Dictionary<string, object>? Values { get; set; }
-    public string? Path { get; set; }
-    public string? Name { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime UpdatedAt { get; set; }
-}

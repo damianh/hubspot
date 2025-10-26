@@ -149,34 +149,3 @@ internal class TimelineRepository
     private static int _eventIdCounter;
     private static string GenerateEventId() => $"event-{Interlocked.Increment(ref _eventIdCounter)}";
 }
-
-public class TimelineEventTemplate
-{
-    public required string Id { get; init; }
-    public required string Name { get; set; }
-    public required string ObjectType { get; init; }
-    public required List<EventToken> Tokens { get; set; }
-    public required string HeaderTemplate { get; set; }
-    public required string DetailTemplate { get; set; }
-    public DateTimeOffset CreatedAt { get; init; }
-    public DateTimeOffset UpdatedAt { get; set; }
-}
-
-public class EventToken
-{
-    public required string Name { get; init; }
-    public required string Label { get; init; }
-    public required string Type { get; init; } // string, number, date, enumeration
-    public List<string>? Options { get; init; } // For enumeration type
-}
-
-public class TimelineEvent
-{
-    public required string Id { get; init; }
-    public required string EventTemplateId { get; init; }
-    public required string ObjectType { get; init; }
-    public required string ObjectId { get; init; }
-    public required Dictionary<string, string> Tokens { get; init; }
-    public DateTimeOffset Timestamp { get; init; }
-    public DateTimeOffset CreatedAt { get; init; }
-}

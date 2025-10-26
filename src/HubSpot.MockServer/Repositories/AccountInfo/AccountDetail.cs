@@ -1,4 +1,4 @@
-namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Repositories.AccountInfo;
 
 internal class AccountDetail
 {
