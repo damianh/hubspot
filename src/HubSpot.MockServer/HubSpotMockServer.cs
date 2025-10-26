@@ -71,6 +71,8 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<CrmCardRepository>()
             .AddSingleton<VideoConferencingRepository>()
             .AddSingleton<TranscriptionRepository>()
+            .AddSingleton<SequenceRepository>()
+            .AddSingleton<AutomationRepository>()
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
@@ -186,6 +188,10 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register CRM Extensions Integration APIs
         ApiRoutes.RegisterCrmExtensions(app);
+        
+        // Register Automation APIs
+        ApiRoutes.Automation.RegisterAutomationActionsV4(app, app.Services.GetRequiredService<AutomationRepository>());
+        ApiRoutes.Automation.RegisterAutomationSequencesV4(app, app.Services.GetRequiredService<SequenceRepository>());
 
         await app.StartAsync();
 
