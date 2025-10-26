@@ -37,15 +37,9 @@ public class SubscriptionRepository
         return subscription;
     }
 
-    public void DeleteSubscription(string id)
-    {
-        _subscriptions.Remove(id);
-    }
+    public void DeleteSubscription(string id) => _subscriptions.Remove(id);
 
-    public IEnumerable<Subscription> GetAllSubscriptions()
-    {
-        return _subscriptions.Values;
-    }
+    public IEnumerable<Subscription> GetAllSubscriptions() => _subscriptions.Values;
 
     public SubscriptionDefinition CreateDefinition(SubscriptionDefinition definition)
     {
@@ -62,10 +56,7 @@ public class SubscriptionRepository
         return definition;
     }
 
-    public IEnumerable<SubscriptionDefinition> GetAllDefinitions()
-    {
-        return _definitions.Values;
-    }
+    public IEnumerable<SubscriptionDefinition> GetAllDefinitions() => _definitions.Values;
 
     public void Clear()
     {

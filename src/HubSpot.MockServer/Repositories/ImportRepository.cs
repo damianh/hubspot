@@ -8,9 +8,8 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
     private readonly ConcurrentDictionary<string, ImportJob> _imports = new();
     private readonly ConcurrentDictionary<string, List<ImportRow>> _importData = new();
     private readonly ConcurrentDictionary<string, List<ImportError>> _importErrors = new();
-    private readonly HubSpotObjectRepository? _objectRepository = objectRepository;
 
-    public ImportJob CreateImport(string importName, string objectType, 
+    public ImportJob CreateImport(string importName, string objectType,
         List<Dictionary<string, string>> rows, Dictionary<string, string>? config = null)
     {
         var importId = GenerateImportId();
@@ -46,15 +45,12 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
         return job;
     }
 
-    public ImportJob? GetImport(string importId)
-    {
-        return _imports.TryGetValue(importId, out var job) ? job : null;
-    }
+    public ImportJob? GetImport(string importId) => _imports.GetValueOrDefault(importId);
 
     public PagedResult<ImportJob> ListImports(string? after = null, int limit = 10)
     {
         var imports = _imports.Values.OrderByDescending(i => i.CreatedAt).ToList();
-        
+
         var startIndex = 0;
         if (!string.IsNullOrEmpty(after))
         {
@@ -136,8 +132,6 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
             return;
         }
 
-        await Task.Delay(100); // Simulate processing delay
-
         job.State = ImportState.PROCESSING;
         job.UpdatedAt = DateTimeOffset.UtcNow;
 
@@ -157,8 +151,6 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
             {
                 break;
             }
-
-            await Task.Delay(10); // Simulate per-row processing
 
             // Basic validation
             var validationError = ValidateRow(row.Data, objectType);

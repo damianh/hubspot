@@ -23,22 +23,22 @@ public class TagRepository
         return tag;
     }
 
-    public TagData? Get(string id) => _tags.TryGetValue(id, out var tag) ? tag : null;
+    public TagData? Get(string id) => _tags.GetValueOrDefault(id);
 
     public IEnumerable<TagData> List(int? limit = null, string? after = null)
     {
         var query = _tags.Values.OrderBy(t => t.Id).AsEnumerable();
-        
+
         if (after != null)
         {
             query = query.SkipWhile(t => t.Id != after).Skip(1);
         }
-        
+
         if (limit.HasValue)
         {
             query = query.Take(limit.Value);
         }
-        
+
         return query.ToList();
     }
 
@@ -76,10 +76,7 @@ public class TagRepository
         }
     }
 
-    public IEnumerable<string> GetLanguageGroup(string id)
-    {
-        return _languageGroups.TryGetValue(id, out var group) ? group : Enumerable.Empty<string>();
-    }
+    public IEnumerable<string> GetLanguageGroup(string id) => _languageGroups.TryGetValue(id, out var group) ? group : Enumerable.Empty<string>();
 }
 
 public class TagData

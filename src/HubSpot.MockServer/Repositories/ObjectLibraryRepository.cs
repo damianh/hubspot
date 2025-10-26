@@ -13,14 +13,11 @@ public class ObjectLibraryRepository
         return Task.FromResult(items);
     }
 
-    public Task<JsonElement?> GetByObjectTypeAsync(string objectType)
-    {
-        return Task.FromResult(
-            _objectLibraryItems.TryGetValue(objectType, out var item) 
-                ? (JsonElement?)item 
+    public Task<JsonElement?> GetByObjectTypeAsync(string objectType) => Task.FromResult(
+            _objectLibraryItems.TryGetValue(objectType, out var item)
+                ? (JsonElement?)item
                 : null
         );
-    }
 
     public Task<JsonElement> CreateAsync(string objectType, JsonElement definition)
     {

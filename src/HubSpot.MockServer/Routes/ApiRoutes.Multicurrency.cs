@@ -88,7 +88,7 @@ internal static partial class ApiRoutes
             {
                 var rates = repository.GetExchangeRates(limit, after);
                 var hasMore = limit.HasValue && rates.Count >= limit.Value;
-                
+
                 var response = new
                 {
                     results = rates,

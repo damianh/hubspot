@@ -64,10 +64,7 @@ public class TaxRateRepository
         return query.ToList();
     }
 
-    public TaxRateGroup? GetTaxRateGroup(string id)
-    {
-        return _taxRateGroups.GetValueOrDefault(id);
-    }
+    public TaxRateGroup? GetTaxRateGroup(string id) => _taxRateGroups.GetValueOrDefault(id);
 
     public TaxRateGroup CreateTaxRateGroup(TaxRateGroup group)
     {

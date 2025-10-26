@@ -13,7 +13,7 @@ public class CurrencyRepository
     public CurrencyRepository(TimeProvider timeProvider)
     {
         _timeProvider = timeProvider;
-        
+
         _companyCurrency = new CompanyCurrency
         {
             CurrencyCode = "USD",
@@ -51,14 +51,11 @@ public class CurrencyRepository
 
     public CompanyCurrency GetCompanyCurrency() => _companyCurrency;
 
-    public void UpdateCompanyCurrency(string currencyCode)
+    public void UpdateCompanyCurrency(string currencyCode) => _companyCurrency = new CompanyCurrency
     {
-        _companyCurrency = new CompanyCurrency
-        {
-            CurrencyCode = currencyCode,
-            UpdatedAt = _timeProvider.GetUtcNow()
-        };
-    }
+        CurrencyCode = currencyCode,
+        UpdatedAt = _timeProvider.GetUtcNow()
+    };
 
     public List<Currency> GetSupportedCurrencyCodes() => _currencies.Values.ToList();
 
@@ -95,24 +92,15 @@ public class CurrencyRepository
         return query.OrderBy(er => er.Id).ToList();
     }
 
-    public ExchangeRate? GetExchangeRate(string id)
-    {
-        return _exchangeRates.GetValueOrDefault(id);
-    }
+    public ExchangeRate? GetExchangeRate(string id) => _exchangeRates.GetValueOrDefault(id);
 
-    public List<ExchangeRate> GetExchangeRatesByIds(List<string> ids)
-    {
-        return ids
+    public List<ExchangeRate> GetExchangeRatesByIds(List<string> ids) => ids
             .Select(id => _exchangeRates.GetValueOrDefault(id))
             .Where(er => er != null)
             .Cast<ExchangeRate>()
             .ToList();
-    }
 
-    public ExchangeRate CreateExchangeRate(string fromCurrencyCode, string toCurrencyCode, decimal rate)
-    {
-        return AddExchangeRate(fromCurrencyCode, toCurrencyCode, rate);
-    }
+    public ExchangeRate CreateExchangeRate(string fromCurrencyCode, string toCurrencyCode, decimal rate) => AddExchangeRate(fromCurrencyCode, toCurrencyCode, rate);
 
     private ExchangeRate AddExchangeRate(string fromCurrencyCode, string toCurrencyCode, decimal rate)
     {
@@ -140,15 +128,9 @@ public class CurrencyRepository
         }
     }
 
-    public void DeleteExchangeRate(string id)
-    {
-        _exchangeRates.Remove(id);
-    }
+    public void DeleteExchangeRate(string id) => _exchangeRates.Remove(id);
 
-    public List<ExchangeRate> GetCurrentExchangeRates()
-    {
-        return _exchangeRates.Values
+    public List<ExchangeRate> GetCurrentExchangeRates() => _exchangeRates.Values
             .OrderByDescending(er => er.EffectiveDate)
             .ToList();
-    }
 }

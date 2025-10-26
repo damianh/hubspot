@@ -22,6 +22,7 @@ csharp_style_prefer_switch_expression = true
 csharp_style_var_elsewhere = true
 csharp_style_var_for_built_in_types = true
 csharp_style_var_when_type_is_apparent = true
+dotnet_diagnostic.CA2007.severity = none # Do not await non-async methods
 dotnet_diagnostic.IDE0003.severity = warning # Remove this or Me qualification
 dotnet_diagnostic.IDE0005.severity = warning # Remove unnecessary using directives
 dotnet_diagnostic.IDE0007.severity = warning # Use var instead of explicit type
@@ -47,8 +48,10 @@ dotnet_style_qualification_for_event = false:warning
 dotnet_style_qualification_for_field = false:warning
 dotnet_style_qualification_for_method = false:warning
 dotnet_style_qualification_for_property = false:warning
-file_header_template = Copyright (c) Duende Software. All rights reserved.\nSee LICENSE in the project root for license information.
 indent_size = 4
 
 [*.razor]
 indent_size = 4
+
+[*.csproj]
+indent_size = 2

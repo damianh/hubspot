@@ -61,7 +61,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     {
         var appId = "test-calling-app-2";
         var createRequest = new { name = "My Calling App", url = "https://example.com/widget" };
-        
+
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/calling/{appId}/settings", createRequest);
 
         var response = await _httpClient.GetAsync($"/crm/v3/extensions/calling/{appId}/settings");
@@ -130,7 +130,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
         };
 
         var response = await _httpClient.PostAsJsonAsync(
-            $"/crm/v3/extensions/calling/{engagementId}/recordings/{recordingId}", 
+            $"/crm/v3/extensions/calling/{engagementId}/recordings/{recordingId}",
             request);
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.Created);
 
@@ -145,10 +145,10 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     public async Task CallingExtensions_GetRecordings_ShouldSucceed()
     {
         var engagementId = "engagement-789";
-        
+
         var recording1 = new { url = "https://example.com/rec1.mp3", duration = 100 };
         var recording2 = new { url = "https://example.com/rec2.mp3", duration = 200 };
-        
+
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/calling/{engagementId}/recordings/rec1", recording1);
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/calling/{engagementId}/recordings/rec2", recording2);
 
@@ -199,10 +199,10 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     public async Task CrmCards_ListCards_ShouldSucceed()
     {
         var appId = "test-card-app-2";
-        
+
         var card1 = new { title = "Card 1" };
         var card2 = new { title = "Card 2" };
-        
+
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/cards/{appId}", card1);
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/cards/{appId}", card2);
 
@@ -219,7 +219,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     {
         var appId = "test-card-app-3";
         var createRequest = new { title = "Original Title" };
-        
+
         var createResponse = await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/cards/{appId}", createRequest);
         var created = await createResponse.Content.ReadFromJsonAsync<JsonElement>();
         var cardId = created.GetProperty("id").GetString();
@@ -237,7 +237,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     {
         var appId = "test-card-app-4";
         var createRequest = new { title = "Card to Delete" };
-        
+
         var createResponse = await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/cards/{appId}", createRequest);
         var created = await createResponse.Content.ReadFromJsonAsync<JsonElement>();
         var cardId = created.GetProperty("id").GetString();
@@ -254,7 +254,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     public async Task CrmCards_GetSampleResponse_ShouldSucceed()
     {
         var request = new { objectId = 12345 };
-        
+
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/extensions/cards/sample-response", request);
         response.EnsureSuccessStatusCode();
 
@@ -293,7 +293,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     {
         var appId = "test-video-app-2";
         var createRequest = new { name = "Teams Integration", url = "https://teams.microsoft.com" };
-        
+
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/videoconferencing/{appId}/settings", createRequest);
 
         var response = await _httpClient.GetAsync($"/crm/v3/extensions/videoconferencing/{appId}/settings");
@@ -369,7 +369,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
             confidence = 0.92,
             language = "en-US"
         };
-        
+
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/transcriptions/{engagementId}", createRequest);
 
         var response = await _httpClient.GetAsync($"/crm/v3/extensions/transcriptions/{engagementId}");
@@ -392,7 +392,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
     public async Task Transcriptions_OverwriteTranscription_ShouldSucceed()
     {
         var engagementId = "call-11111";
-        
+
         var firstRequest = new { text = "First transcription", confidence = 0.8 };
         await _httpClient.PostAsJsonAsync($"/crm/v3/extensions/transcriptions/{engagementId}", firstRequest);
 

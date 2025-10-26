@@ -1,4 +1,4 @@
-﻿namespace DamianH.HubSpot.MockServer.Objects;
+namespace DamianH.HubSpot.MockServer.Objects;
 
 internal class NewHubSpotObject(
     IReadOnlyDictionary<string, string> properties,

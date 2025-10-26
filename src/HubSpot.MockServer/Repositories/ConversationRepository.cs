@@ -13,7 +13,7 @@ public class ConversationRepository
     {
         var id = Interlocked.Increment(ref _nextConversationId).ToString();
         var now = DateTimeOffset.UtcNow;
-        
+
         var conversation = new ConversationData
         {
             Id = id,
@@ -28,16 +28,11 @@ public class ConversationRepository
 
         _conversations[id] = conversation;
         _conversationMessages[id] = [];
-        
+
         return conversation;
     }
 
-    public ConversationData? GetConversation(string conversationId)
-    {
-        return _conversations.TryGetValue(conversationId, out var conversation) 
-            ? conversation 
-            : null;
-    }
+    public ConversationData? GetConversation(string conversationId) => _conversations.GetValueOrDefault(conversationId);
 
     public List<ConversationData> ListConversations(string? status = null, int? limit = null, string? after = null)
     {
@@ -72,7 +67,7 @@ public class ConversationRepository
 
         conversation.Status = status;
         conversation.UpdatedAt = DateTimeOffset.UtcNow;
-        
+
         return conversation;
     }
 
@@ -85,7 +80,7 @@ public class ConversationRepository
 
         conversation.AssignedTo = ownerId;
         conversation.UpdatedAt = DateTimeOffset.UtcNow;
-        
+
         return conversation;
     }
 
@@ -120,7 +115,7 @@ public class ConversationRepository
         // Update conversation
         conversation.LatestMessageTimestamp = now;
         conversation.UpdatedAt = now;
-        
+
         if (!conversation.Participants.Contains(senderId))
         {
             conversation.Participants.Add(senderId);

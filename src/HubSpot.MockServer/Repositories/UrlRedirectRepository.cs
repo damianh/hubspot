@@ -14,19 +14,13 @@ public class UrlRedirectRepository
         return redirect;
     }
 
-    public UrlRedirect? GetById(string id)
-    {
-        return _redirects.GetValueOrDefault(id);
-    }
+    public UrlRedirect? GetById(string id) => _redirects.GetValueOrDefault(id);
 
-    public List<UrlRedirect> GetAll(int offset = 0, int limit = 100)
-    {
-        return _redirects.Values
+    public List<UrlRedirect> GetAll(int offset = 0, int limit = 100) => _redirects.Values
             .OrderBy(r => r.RoutePrefix)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public UrlRedirect? Update(string id, UrlRedirect updatedRedirect)
     {
@@ -41,15 +35,9 @@ public class UrlRedirectRepository
         return updatedRedirect;
     }
 
-    public bool Delete(string id)
-    {
-        return _redirects.Remove(id);
-    }
+    public bool Delete(string id) => _redirects.Remove(id);
 
-    public int Count()
-    {
-        return _redirects.Count;
-    }
+    public int Count() => _redirects.Count;
 
     public void Clear()
     {

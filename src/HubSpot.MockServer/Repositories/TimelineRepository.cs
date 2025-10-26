@@ -33,15 +33,9 @@ public class TimelineRepository
         return template;
     }
 
-    public TimelineEventTemplate? GetEventTemplate(string templateId)
-    {
-        return _templates.TryGetValue(templateId, out var template) ? template : null;
-    }
+    public TimelineEventTemplate? GetEventTemplate(string templateId) => _templates.GetValueOrDefault(templateId);
 
-    public List<TimelineEventTemplate> ListEventTemplates()
-    {
-        return _templates.Values.OrderBy(t => t.Name).ToList();
-    }
+    public List<TimelineEventTemplate> ListEventTemplates() => _templates.Values.OrderBy(t => t.Name).ToList();
 
     public TimelineEventTemplate? UpdateEventTemplate(string templateId,
         string? name = null,
@@ -79,10 +73,7 @@ public class TimelineRepository
         return template;
     }
 
-    public bool DeleteEventTemplate(string templateId)
-    {
-        return _templates.TryRemove(templateId, out _);
-    }
+    public bool DeleteEventTemplate(string templateId) => _templates.TryRemove(templateId, out _);
 
     public TimelineEvent CreateEvent(
         string eventTemplateId,
@@ -117,10 +108,7 @@ public class TimelineRepository
         return timelineEvent;
     }
 
-    public TimelineEvent? GetEvent(string eventId)
-    {
-        return _events.TryGetValue(eventId, out var evt) ? evt : null;
-    }
+    public TimelineEvent? GetEvent(string eventId) => _events.GetValueOrDefault(eventId);
 
     public List<TimelineEvent> ListEvents(string objectType, string objectId)
     {
@@ -131,7 +119,7 @@ public class TimelineRepository
         }
 
         return eventIds
-            .Select(id => _events.TryGetValue(id, out var evt) ? evt : null)
+            .Select(id => _events.GetValueOrDefault(id))
             .Where(e => e != null)
             .Cast<TimelineEvent>()
             .OrderByDescending(e => e.Timestamp)

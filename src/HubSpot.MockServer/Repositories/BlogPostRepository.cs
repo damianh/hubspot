@@ -13,25 +13,19 @@ public class BlogPostRepository
         post.Created = DateTime.UtcNow;
         post.Updated = DateTime.UtcNow;
         _posts[post.Id] = post;
-        
+
         AddRevision(post.Id, post);
-        
+
         return post;
     }
 
-    public BlogPost? GetById(string id)
-    {
-        return _posts.GetValueOrDefault(id);
-    }
+    public BlogPost? GetById(string id) => _posts.GetValueOrDefault(id);
 
-    public List<BlogPost> GetAll(int offset = 0, int limit = 100)
-    {
-        return _posts.Values
+    public List<BlogPost> GetAll(int offset = 0, int limit = 100) => _posts.Values
             .OrderByDescending(p => p.Created)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public BlogPost? Update(string id, BlogPost updatedPost)
     {
@@ -43,9 +37,9 @@ public class BlogPostRepository
         updatedPost.Id = id;
         updatedPost.Updated = DateTime.UtcNow;
         _posts[id] = updatedPost;
-        
+
         AddRevision(id, updatedPost);
-        
+
         return updatedPost;
     }
 
@@ -59,18 +53,12 @@ public class BlogPostRepository
         return removed;
     }
 
-    public List<BlogPost> BatchCreate(List<BlogPost> posts)
-    {
-        return posts.Select(Create).ToList();
-    }
+    public List<BlogPost> BatchCreate(List<BlogPost> posts) => posts.Select(Create).ToList();
 
-    public List<BlogPost> BatchRead(List<string> ids)
-    {
-        return ids.Select(id => _posts.GetValueOrDefault(id))
+    public List<BlogPost> BatchRead(List<string> ids) => ids.Select(id => _posts.GetValueOrDefault(id))
             .Where(p => p != null)
             .Cast<BlogPost>()
             .ToList();
-    }
 
     public List<BlogPost> BatchUpdate(List<BlogPost> posts)
     {
@@ -89,10 +77,7 @@ public class BlogPostRepository
         return results;
     }
 
-    public int BatchDelete(List<string> ids)
-    {
-        return ids.Count(Delete);
-    }
+    public int BatchDelete(List<string> ids) => ids.Count(Delete);
 
     private void AddRevision(string postId, BlogPost post)
     {
@@ -108,20 +93,14 @@ public class BlogPostRepository
             CreatedAt = DateTime.UtcNow,
             Content = post
         };
-        
+
         _revisions[postId].Add(revision);
     }
 
-    public List<BlogPostRevision> GetRevisions(string postId)
-    {
-        return _revisions.GetValueOrDefault(postId) ?? [];
-    }
+    public List<BlogPostRevision> GetRevisions(string postId) => _revisions.GetValueOrDefault(postId) ?? [];
 
-    public BlogPostRevision? GetRevisionById(string postId, string revisionId)
-    {
-        return _revisions.GetValueOrDefault(postId)
+    public BlogPostRevision? GetRevisionById(string postId, string revisionId) => _revisions.GetValueOrDefault(postId)
             ?.FirstOrDefault(r => r.Id == revisionId);
-    }
 
     public BlogPost? RestoreRevision(string postId, string revisionId)
     {
@@ -179,10 +158,7 @@ public class BlogPostRepository
             .ToList();
     }
 
-    public int Count()
-    {
-        return _posts.Count;
-    }
+    public int Count() => _posts.Count;
 
     public void Clear()
     {

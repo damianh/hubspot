@@ -1,13 +1,13 @@
-using DamianH.HubSpot.KiotaClient.CRM.Products.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Tickets.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Quotes.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Communications.V3;
+using DamianH.HubSpot.KiotaClient.CRM.Products.V3;
+using DamianH.HubSpot.KiotaClient.CRM.Quotes.V3;
+using DamianH.HubSpot.KiotaClient.CRM.Tickets.V3;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
-using ProductsModels = DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models;
-using TicketsModels = DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models;
-using QuotesModels = DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Models;
 using CommunicationsModels = DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models;
+using ProductsModels = DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models;
+using QuotesModels = DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Models;
+using TicketsModels = DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models;
 
 namespace DamianH.HubSpot.MockServer;
 

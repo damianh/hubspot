@@ -49,15 +49,12 @@ public class SchemaRepository
         return _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
     }
 
-    public List<ObjectSchema> ListSchemas(bool archived = false)
-    {
-        return _schemas.Values
+    public List<ObjectSchema> ListSchemas(bool archived = false) => _schemas.Values
             .Where(s => s.Archived == archived)
             .OrderBy(s => s.Name)
             .ToList();
-    }
 
-    public ObjectSchema? UpdateSchema(string objectTypeOrId, Dictionary<string, string>? labels = null, 
+    public ObjectSchema? UpdateSchema(string objectTypeOrId, Dictionary<string, string>? labels = null,
         string? primaryDisplayProperty = null,
         List<string>? requiredProperties = null,
         List<string>? searchableProperties = null,
@@ -122,7 +119,7 @@ public class SchemaRepository
         return true;
     }
 
-    public SchemaProperty AddProperty(string objectType, string name, string label, string type, 
+    public SchemaProperty AddProperty(string objectType, string name, string label, string type,
         string fieldType, string? groupName = null, string? description = null,
         List<PropertyOption>? options = null, int? displayOrder = null)
     {
@@ -151,14 +148,11 @@ public class SchemaRepository
         return property;
     }
 
-    public List<SchemaProperty> GetProperties(string objectType)
-    {
-        return _properties.TryGetValue(objectType, out var props) 
-            ? props.Where(p => !p.Archived).ToList() 
+    public List<SchemaProperty> GetProperties(string objectType) => _properties.TryGetValue(objectType, out var props)
+            ? props.Where(p => !p.Archived).ToList()
             : [];
-    }
 
-    public AssociationDefinition CreateAssociationDefinition(string fromObjectType, 
+    public AssociationDefinition CreateAssociationDefinition(string fromObjectType,
         string toObjectType, string name, string? label = null)
     {
         if (!_associations.ContainsKey(fromObjectType))
@@ -182,10 +176,7 @@ public class SchemaRepository
         return definition;
     }
 
-    public List<AssociationDefinition> GetAssociationDefinitions(string objectType)
-    {
-        return _associations.TryGetValue(objectType, out var defs) ? defs : [];
-    }
+    public List<AssociationDefinition> GetAssociationDefinitions(string objectType) => _associations.TryGetValue(objectType, out var defs) ? defs : [];
 
     public bool DeleteAssociationDefinition(string objectType, string associationId)
     {

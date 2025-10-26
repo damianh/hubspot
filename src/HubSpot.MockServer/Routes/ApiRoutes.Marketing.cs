@@ -13,7 +13,7 @@ internal static partial class ApiRoutes
         public static void RegisterMarketingEventsApi(WebApplication app)
         {
             var group = app.MapGroup("/marketing/v3/marketing-events");
-            
+
             group.MapPost("/events", CreateMarketingEvent);
             group.MapGet("/events", ListMarketingEvents);
             group.MapGet("/events/{eventId}", GetMarketingEvent);
@@ -24,7 +24,7 @@ internal static partial class ApiRoutes
         public static void RegisterMarketingEmailsApi(WebApplication app)
         {
             var group = app.MapGroup("/marketing/v3/emails");
-            
+
             group.MapPost("", CreateMarketingEmail);
             group.MapGet("", ListMarketingEmails);
             group.MapGet("/{emailId}", GetMarketingEmail);
@@ -35,7 +35,7 @@ internal static partial class ApiRoutes
         public static void RegisterCampaignsApi(WebApplication app)
         {
             var group = app.MapGroup("/marketing/v3/campaigns");
-            
+
             group.MapPost("", CreateCampaign);
             group.MapGet("", ListCampaigns);
             group.MapGet("/{campaignId}", GetCampaign);
@@ -46,7 +46,7 @@ internal static partial class ApiRoutes
         public static void RegisterSingleSendApi(WebApplication app)
         {
             var group = app.MapGroup("/marketing/v4/singlesend");
-            
+
             group.MapPost("", CreateSingleSend);
             group.MapGet("", ListSingleSends);
             group.MapGet("/{emailId}", GetSingleSend);

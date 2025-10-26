@@ -66,10 +66,7 @@ public class BlogAuthorRepository
         return results;
     }
 
-    public int BatchDelete(List<string> ids)
-    {
-        return ids.Count(Delete);
-    }
+    public int BatchDelete(List<string> ids) => ids.Count(Delete);
 
     public void AttachToLanguageGroup(string authorId, string languageGroupId)
     {
@@ -92,10 +89,7 @@ public class BlogAuthorRepository
         }
     }
 
-    public int Count()
-    {
-        return _authors.Count;
-    }
+    public int Count() => _authors.Count;
 
     public void Clear()
     {

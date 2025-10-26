@@ -30,6 +30,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanCreateSubscription()
     {
         var request = new SubscriptionCreateRequest
@@ -49,6 +50,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanListSubscriptions()
     {
         var appId = "app-456";
@@ -77,6 +79,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanGetSubscriptionById()
     {
         var appId = "app-789";
@@ -98,6 +101,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanUpdateSubscription()
     {
         var appId = "app-update";
@@ -124,6 +128,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanDeleteSubscription()
     {
         var appId = "app-delete";
@@ -145,6 +150,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanBatchUpdateSubscriptions()
     {
         var appId = "app-batch";
@@ -184,6 +190,7 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanUpdateSettings()
     {
         var appId = "app-settings";
@@ -207,10 +214,11 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanGetSettings()
     {
         var appId = "app-get-settings";
-        
+
         // Create settings first
         var createRequest = new SettingsChangeRequest
         {
@@ -230,10 +238,11 @@ public class WebhooksTests : IAsyncLifetime
     }
 
     [Fact]
+    [Obsolete]
     public async Task CanClearSettings()
     {
         var appId = "app-clear-settings";
-        
+
         // Create settings first
         var createRequest = new SettingsChangeRequest
         {

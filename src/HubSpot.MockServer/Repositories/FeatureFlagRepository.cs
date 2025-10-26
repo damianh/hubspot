@@ -13,14 +13,11 @@ public class FeatureFlagRepository
         return Task.FromResult(flags);
     }
 
-    public Task<JsonElement?> GetAsync(string featureKey)
-    {
-        return Task.FromResult(
-            _featureFlags.TryGetValue(featureKey, out var flag) 
-                ? (JsonElement?)flag 
+    public Task<JsonElement?> GetAsync(string featureKey) => Task.FromResult(
+            _featureFlags.TryGetValue(featureKey, out var flag)
+                ? (JsonElement?)flag
                 : null
         );
-    }
 
     public Task<JsonElement> EnableAsync(string featureKey, JsonElement? configuration = null)
     {
@@ -57,8 +54,5 @@ public class FeatureFlagRepository
         return Task.FromResult(true);
     }
 
-    public Task<bool> DeleteAsync(string featureKey)
-    {
-        return Task.FromResult(_featureFlags.TryRemove(featureKey, out _));
-    }
+    public Task<bool> DeleteAsync(string featureKey) => Task.FromResult(_featureFlags.TryRemove(featureKey, out _));
 }

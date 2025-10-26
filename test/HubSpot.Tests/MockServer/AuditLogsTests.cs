@@ -19,7 +19,7 @@ public class AuditLogsTests : IAsyncLifetime
         _client = new HubSpotAccountAuditLogsV3Client(adapter);
     }
 
-    public async ValueTask DisposeAsync() 
+    public async ValueTask DisposeAsync()
         => await _server.DisposeAsync();
 
     [Fact]

@@ -1,5 +1,5 @@
-using DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models;
 using System.Collections.Concurrent;
+using DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
@@ -142,7 +142,7 @@ public class TransactionalEmailRepository
         {
             var newPassword = Guid.NewGuid().ToString("N");
             token.Password = newPassword;
-            
+
             return new SmtpApiTokenView
             {
                 Id = token.Id,
@@ -157,8 +157,5 @@ public class TransactionalEmailRepository
         return null;
     }
 
-    public bool DeleteSmtpToken(string tokenId)
-    {
-        return _smtpTokens.TryRemove(tokenId, out _);
-    }
+    public bool DeleteSmtpToken(string tokenId) => _smtpTokens.TryRemove(tokenId, out _);
 }

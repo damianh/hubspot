@@ -1,8 +1,8 @@
-﻿using static SimpleExec.Command;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
+using static SimpleExec.Command;
 
-var client  = new HttpClient();
+var client = new HttpClient();
 var catalog = await client.GetFromJsonAsync<HubSpotApiCatalog>("https://api.hubspot.com/public/api/spec/v1/specs");
 const string ProjectPath = "HubSpot.KiotaClient";
 var generatedPath = Path.Join(ProjectPath, "Generated");
@@ -13,7 +13,7 @@ if (Directory.Exists(generatedPath))
 }
 
 var succeeded = new List<string>();
-var failed  = new List<string>();
+var failed = new List<string>();
 
 void RunKiota(string group, string name, int version, string openApiUrl)
 {

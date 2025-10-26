@@ -32,7 +32,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
         var response = await _httpClient.PutAsync(
             $"/crm/v3/objects/{fromObjectType}/{fromObjectId}/associations/{toObjectType}/{toObjectId}/{associationTypeId}",
             null);
-        
+
         response.EnsureSuccessStatusCode();
     }
 
@@ -45,7 +45,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var response = await _httpClient.GetAsync($"/crm/v3/objects/{objectType}/{objectId}/associations/{toObjectType}");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -62,7 +62,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var response = await _httpClient.DeleteAsync(
             $"/crm/v3/objects/{fromObjectType}/{fromObjectId}/associations/{toObjectType}/{toObjectId}/{associationTypeId}");
-        
+
         response.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 
@@ -92,9 +92,9 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
         };
 
         var response = await _httpClient.PostAsJsonAsync(
-            $"/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/create", 
+            $"/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/create",
             batchRequest);
-        
+
         response.EnsureSuccessStatusCode();
     }
 
@@ -124,7 +124,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
         var response = await _httpClient.PostAsJsonAsync(
             $"/crm/v4/associations/{fromObjectType}/{toObjectType}/batch/create",
             createRequest);
-        
+
         response.EnsureSuccessStatusCode();
     }
 
@@ -144,7 +144,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync($"/crm/v3/properties/{objectType}", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("name");
@@ -154,10 +154,10 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
     public async Task PropertiesV3_ListProperties_ShouldSucceed()
     {
         var objectType = "contacts";
-        
+
         var response = await _httpClient.GetAsync($"/crm/v3/properties/{objectType}");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -168,10 +168,10 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
     {
         var objectType = "contacts";
         var propertyName = "email";
-        
+
         var response = await _httpClient.GetAsync($"/crm/v3/properties/{objectType}/{propertyName}");
         response.EnsureSuccessStatusCode();
-        
+
         var property = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         property.ShouldNotBeNull();
         property!["name"].ToString().ShouldBe(propertyName);
@@ -200,7 +200,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
         var updateResponse = await _httpClient.PatchAsJsonAsync(
             $"/crm/v3/properties/{objectType}/update_test",
             updateRequest);
-        
+
         updateResponse.EnsureSuccessStatusCode();
     }
 
@@ -236,7 +236,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync($"/crm/v3/properties/{objectType}/groups", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("name");
@@ -246,10 +246,10 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
     public async Task PropertiesV3_ListPropertyGroups_ShouldSucceed()
     {
         var objectType = "contacts";
-        
+
         var response = await _httpClient.GetAsync($"/crm/v3/properties/{objectType}/groups");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -283,7 +283,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync($"/crm/v3/pipelines/{objectType}", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -293,10 +293,10 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
     public async Task PipelinesV3_ListPipelines_ShouldSucceed()
     {
         var objectType = "deals";
-        
+
         var response = await _httpClient.GetAsync($"/crm/v3/pipelines/{objectType}");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -342,7 +342,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
         var updateResponse = await _httpClient.PatchAsJsonAsync(
             $"/crm/v3/pipelines/{objectType}/{pipelineId}",
             updateRequest);
-        
+
         updateResponse.EnsureSuccessStatusCode();
     }
 
@@ -370,7 +370,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/crm/v3/owners");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -394,7 +394,7 @@ public class AssociationsAndPropertiesTests : IAsyncLifetime
 
         var getResponse = await _httpClient.GetAsync($"/crm/v3/owners/{ownerId}");
         getResponse.EnsureSuccessStatusCode();
-        
+
         var owner = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         owner.ShouldNotBeNull();
         owner!["id"].ToString().ShouldBe(ownerId);

@@ -16,15 +16,9 @@ public class SequenceRepository
         return sequence;
     }
 
-    public IReadOnlyList<Sequence> GetAllSequences()
-    {
-        return _sequences.Values.ToList();
-    }
+    public IReadOnlyList<Sequence> GetAllSequences() => _sequences.Values.ToList();
 
-    public void AddSequence(Sequence sequence)
-    {
-        _sequences[sequence.Id] = sequence;
-    }
+    public void AddSequence(Sequence sequence) => _sequences[sequence.Id] = sequence;
 
     public SequenceEnrollment CreateEnrollment(string contactId, string sequenceId, int userId)
     {
@@ -40,7 +34,7 @@ public class SequenceRepository
         };
 
         _enrollments[enrollmentId] = enrollment;
-        
+
         _enrollmentsByContact.AddOrUpdate(
             contactId,
             [enrollmentId],
@@ -76,7 +70,7 @@ public class SequenceRepository
         }
 
         return enrollmentIds
-            .Select(id => _enrollments.TryGetValue(id, out var e) ? e : null)
+            .Select(id => _enrollments.GetValueOrDefault(id))
             .Where(e => e != null)
             .ToList()!;
     }
@@ -89,7 +83,7 @@ public class SequenceRepository
         }
 
         return enrollmentIds
-            .Select(id => _enrollments.TryGetValue(id, out var e) ? e : null)
+            .Select(id => _enrollments.GetValueOrDefault(id))
             .Where(e => e != null)
             .ToList()!;
     }

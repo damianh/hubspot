@@ -13,25 +13,19 @@ public class PageRepository
         page.Created = DateTime.UtcNow;
         page.Updated = DateTime.UtcNow;
         _pages[page.Id] = page;
-        
+
         AddRevision(page.Id, page);
-        
+
         return page;
     }
 
-    public Page? GetById(string id)
-    {
-        return _pages.GetValueOrDefault(id);
-    }
+    public Page? GetById(string id) => _pages.GetValueOrDefault(id);
 
-    public List<Page> GetAll(int offset = 0, int limit = 100)
-    {
-        return _pages.Values
+    public List<Page> GetAll(int offset = 0, int limit = 100) => _pages.Values
             .OrderByDescending(p => p.Created)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public Page? Update(string id, Page updatedPage)
     {
@@ -43,9 +37,9 @@ public class PageRepository
         updatedPage.Id = id;
         updatedPage.Updated = DateTime.UtcNow;
         _pages[id] = updatedPage;
-        
+
         AddRevision(id, updatedPage);
-        
+
         return updatedPage;
     }
 
@@ -59,18 +53,12 @@ public class PageRepository
         return removed;
     }
 
-    public List<Page> BatchCreate(List<Page> pages)
-    {
-        return pages.Select(Create).ToList();
-    }
+    public List<Page> BatchCreate(List<Page> pages) => pages.Select(Create).ToList();
 
-    public List<Page> BatchRead(List<string> ids)
-    {
-        return ids.Select(id => _pages.GetValueOrDefault(id))
+    public List<Page> BatchRead(List<string> ids) => ids.Select(id => _pages.GetValueOrDefault(id))
             .Where(p => p != null)
             .Cast<Page>()
             .ToList();
-    }
 
     public List<Page> BatchUpdate(List<Page> pages)
     {
@@ -89,10 +77,7 @@ public class PageRepository
         return results;
     }
 
-    public int BatchDelete(List<string> ids)
-    {
-        return ids.Count(Delete);
-    }
+    public int BatchDelete(List<string> ids) => ids.Count(Delete);
 
     private void AddRevision(string pageId, Page page)
     {
@@ -108,20 +93,14 @@ public class PageRepository
             CreatedAt = DateTime.UtcNow,
             Content = page
         };
-        
+
         _revisions[pageId].Add(revision);
     }
 
-    public List<PageRevision> GetRevisions(string pageId)
-    {
-        return _revisions.GetValueOrDefault(pageId) ?? [];
-    }
+    public List<PageRevision> GetRevisions(string pageId) => _revisions.GetValueOrDefault(pageId) ?? [];
 
-    public PageRevision? GetRevisionById(string pageId, string revisionId)
-    {
-        return _revisions.GetValueOrDefault(pageId)
+    public PageRevision? GetRevisionById(string pageId, string revisionId) => _revisions.GetValueOrDefault(pageId)
             ?.FirstOrDefault(r => r.Id == revisionId);
-    }
 
     public Page? RestoreRevision(string pageId, string revisionId)
     {
@@ -155,10 +134,7 @@ public class PageRepository
         }
     }
 
-    public int Count()
-    {
-        return _pages.Count;
-    }
+    public int Count() => _pages.Count;
 
     public void Clear()
     {

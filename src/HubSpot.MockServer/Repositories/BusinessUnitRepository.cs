@@ -14,19 +14,16 @@ public class BusinessUnitRepository
         return Task.FromResult(units);
     }
 
-    public Task<JsonElement?> GetByIdAsync(string businessUnitId)
-    {
-        return Task.FromResult(
-            _businessUnits.TryGetValue(businessUnitId, out var unit) 
-                ? (JsonElement?)unit 
+    public Task<JsonElement?> GetByIdAsync(string businessUnitId) => Task.FromResult(
+            _businessUnits.TryGetValue(businessUnitId, out var unit)
+                ? (JsonElement?)unit
                 : null
         );
-    }
 
     public Task<JsonElement> CreateAsync(JsonElement businessUnit)
     {
         var id = Interlocked.Increment(ref _nextId).ToString();
-        
+
         var unit = JsonSerializer.SerializeToElement(new
         {
             id,

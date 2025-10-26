@@ -37,8 +37,8 @@ internal static partial class ApiRoutes
 
         group.MapPost("", async (JsonElement body, ObjectLibraryRepository repo) =>
         {
-            var objectType = body.TryGetProperty("objectType", out var ot) 
-                ? ot.GetString() ?? "custom_object" 
+            var objectType = body.TryGetProperty("objectType", out var ot)
+                ? ot.GetString() ?? "custom_object"
                 : "custom_object";
             var item = await repo.CreateAsync(objectType, body);
             return Results.Created($"/crm/v4/object-library/{objectType}", item);

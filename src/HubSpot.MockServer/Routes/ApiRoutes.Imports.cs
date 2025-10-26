@@ -16,7 +16,7 @@ internal static partial class ApiRoutes
         {
             var importName = request.TryGetProperty("name", out var name) ? name.GetString() : "Import";
             var objectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : "contact";
-            
+
             // For now, create a simple import job
             var job = importRepo.CreateImport(
                 importName!,
@@ -64,7 +64,7 @@ internal static partial class ApiRoutes
         v3.MapGet("/", (string? after, int? limit) =>
         {
             var result = importRepo.ListImports(after, limit ?? 10);
-            
+
             return Results.Ok(new
             {
                 results = result.Results.Select(job => new
@@ -105,7 +105,7 @@ internal static partial class ApiRoutes
         v3.MapGet("/{importId}/errors", (string importId, string? after, int? limit) =>
         {
             var result = importRepo.GetImportErrors(importId, after, limit ?? 50);
-            
+
             return Results.Ok(new
             {
                 results = result.Results,

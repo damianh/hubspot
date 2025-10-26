@@ -16,10 +16,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var assets = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -48,7 +48,7 @@ internal static partial class ApiRoutes
 
             var asset = MapMediaAssetFromRequest(request);
             var created = repository.Create(asset);
-            
+
             return Results.Ok(MapMediaAssetToResponse(created));
         });
 
@@ -62,7 +62,7 @@ internal static partial class ApiRoutes
 
             var asset = MapMediaAssetFromRequest(request);
             var updated = repository.Update(assetId, asset);
-            
+
             if (updated == null)
             {
                 return Results.NotFound(new { message = $"Media asset {assetId} not found" });
@@ -83,26 +83,23 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapMediaAssetToResponse(MediaAsset asset)
+    private static object MapMediaAssetToResponse(MediaAsset asset) => new
     {
-        return new
-        {
-            id = asset.Id,
-            name = asset.Name,
-            url = asset.Url,
-            thumbnailUrl = asset.ThumbnailUrl,
-            type = asset.Type,
-            size = asset.Size,
-            mimeType = asset.MimeType,
-            width = asset.Width,
-            height = asset.Height,
-            externalId = asset.ExternalId,
-            providerId = asset.ProviderId,
-            createdAt = asset.CreatedAt,
-            updatedAt = asset.UpdatedAt,
-            metadata = asset.Metadata
-        };
-    }
+        id = asset.Id,
+        name = asset.Name,
+        url = asset.Url,
+        thumbnailUrl = asset.ThumbnailUrl,
+        type = asset.Type,
+        size = asset.Size,
+        mimeType = asset.MimeType,
+        width = asset.Width,
+        height = asset.Height,
+        externalId = asset.ExternalId,
+        providerId = asset.ProviderId,
+        createdAt = asset.CreatedAt,
+        updatedAt = asset.UpdatedAt,
+        metadata = asset.Metadata
+    };
 
     private static MediaAsset MapMediaAssetFromRequest(Dictionary<string, object> request)
     {

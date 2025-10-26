@@ -16,10 +16,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var redirects = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -48,7 +48,7 @@ internal static partial class ApiRoutes
 
             var redirect = MapRedirectFromRequest(request);
             var created = repository.Create(redirect);
-            
+
             return Results.Ok(MapRedirectToResponse(created));
         });
 
@@ -68,7 +68,7 @@ internal static partial class ApiRoutes
 
             var updated = MapRedirectFromRequest(request, redirect);
             updated = repository.Update(urlRedirectId, updated);
-            
+
             return Results.Ok(MapRedirectToResponse(updated!));
         });
 
@@ -84,28 +84,25 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapRedirectToResponse(UrlRedirect redirect)
+    private static object MapRedirectToResponse(UrlRedirect redirect) => new
     {
-        return new
-        {
-            id = redirect.Id,
-            routePrefix = redirect.RoutePrefix,
-            destination = redirect.Destination,
-            redirectStyle = redirect.RedirectStyle,
-            isOnlyAfterNotFound = redirect.IsOnlyAfterNotFound,
-            isMatchFullUrl = redirect.IsMatchFullUrl,
-            isMatchQueryString = redirect.IsMatchQueryString,
-            isPattern = redirect.IsPattern,
-            precedence = redirect.Precedence,
-            created = redirect.Created,
-            updated = redirect.Updated
-        };
-    }
+        id = redirect.Id,
+        routePrefix = redirect.RoutePrefix,
+        destination = redirect.Destination,
+        redirectStyle = redirect.RedirectStyle,
+        isOnlyAfterNotFound = redirect.IsOnlyAfterNotFound,
+        isMatchFullUrl = redirect.IsMatchFullUrl,
+        isMatchQueryString = redirect.IsMatchQueryString,
+        isPattern = redirect.IsPattern,
+        precedence = redirect.Precedence,
+        created = redirect.Created,
+        updated = redirect.Updated
+    };
 
     private static UrlRedirect MapRedirectFromRequest(Dictionary<string, object> request, UrlRedirect? existing = null)
     {
         var redirect = existing ?? new UrlRedirect();
-        
+
         if (request.TryGetValue("id", out var id))
         {
             redirect.Id = id.ToString();

@@ -13,7 +13,7 @@ public class AccountInfoRepository
     public AccountInfoRepository(TimeProvider timeProvider)
     {
         _timeProvider = timeProvider;
-        
+
         _accountDetail = new AccountDetail
         {
             PortalId = 12345678,

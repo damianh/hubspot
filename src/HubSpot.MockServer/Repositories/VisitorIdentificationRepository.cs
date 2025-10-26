@@ -26,7 +26,7 @@ public class VisitorIdentificationRepository
         };
 
         _tokens[token] = tokenData;
-        
+
         return tokenData;
     }
 
@@ -45,22 +45,11 @@ public class VisitorIdentificationRepository
         return tokenData;
     }
 
-    public VisitorTokenData? GetTokenByVisitorId(string visitorId)
-    {
-        return _tokens.Values.FirstOrDefault(t => t.VisitorId == visitorId);
-    }
+    public VisitorTokenData? GetTokenByVisitorId(string visitorId) => _tokens.Values.FirstOrDefault(t => t.VisitorId == visitorId);
 
-    public void IdentifyVisitor(string visitorId, string contactId)
-    {
-        _visitorToContact[visitorId] = contactId;
-    }
+    public void IdentifyVisitor(string visitorId, string contactId) => _visitorToContact[visitorId] = contactId;
 
-    public string? GetContactForVisitor(string visitorId)
-    {
-        return _visitorToContact.TryGetValue(visitorId, out var contactId) 
-            ? contactId 
-            : null;
-    }
+    public string? GetContactForVisitor(string visitorId) => _visitorToContact.GetValueOrDefault(visitorId);
 
     public void Clear()
     {

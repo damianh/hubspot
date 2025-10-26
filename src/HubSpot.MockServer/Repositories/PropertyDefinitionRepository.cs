@@ -37,7 +37,7 @@ public class PropertyDefinitionRepository
     private void SeedDefaultProperties()
     {
         var now = DateTime.UtcNow;
-        
+
         // Contact properties
         AddProperty(new PropertyDefinition("email", "Email", "string", "text", "contacts", Description: "Email address", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("firstname", "First Name", "string", "text", "contacts", Description: "First name", CreatedAt: now, UpdatedAt: now));
@@ -45,7 +45,7 @@ public class PropertyDefinitionRepository
         AddProperty(new PropertyDefinition("phone", "Phone Number", "string", "text", "contacts", Description: "Phone number", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("company", "Company Name", "string", "text", "contacts", Description: "Associated company", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("website", "Website", "string", "text", "contacts", Description: "Website URL", CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("lifecyclestage", "Lifecycle Stage", "enumeration", "select", "contacts", 
+        AddProperty(new PropertyDefinition("lifecyclestage", "Lifecycle Stage", "enumeration", "select", "contacts",
             Options: ["subscriber", "lead", "marketingqualifiedlead", "salesqualifiedlead", "opportunity", "customer", "evangelist", "other"
             ], CreatedAt: now, UpdatedAt: now));
 
@@ -60,21 +60,21 @@ public class PropertyDefinitionRepository
         // Deal properties
         AddProperty(new PropertyDefinition("dealname", "Deal Name", "string", "text", "deals", Description: "Deal name", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("amount", "Amount", "number", "number", "deals", Description: "Deal amount", CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("dealstage", "Deal Stage", "enumeration", "select", "deals", 
+        AddProperty(new PropertyDefinition("dealstage", "Deal Stage", "enumeration", "select", "deals",
             Options: ["appointmentscheduled", "qualifiedtobuy", "presentationscheduled", "decisionmakerboughtin", "contractsent", "closedwon", "closedlost"
             ], CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("pipeline", "Pipeline", "enumeration", "select", "deals", 
+        AddProperty(new PropertyDefinition("pipeline", "Pipeline", "enumeration", "select", "deals",
             Options: ["default"], CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("closedate", "Close Date", "datetime", "date", "deals", Description: "Expected close date", CreatedAt: now, UpdatedAt: now));
 
         // Ticket properties
         AddProperty(new PropertyDefinition("subject", "Subject", "string", "text", "tickets", Description: "Ticket subject", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("content", "Description", "string", "textarea", "tickets", Description: "Ticket description", CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("hs_pipeline", "Pipeline", "enumeration", "select", "tickets", 
+        AddProperty(new PropertyDefinition("hs_pipeline", "Pipeline", "enumeration", "select", "tickets",
             Options: ["0"], CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("hs_pipeline_stage", "Ticket Status", "enumeration", "select", "tickets", 
+        AddProperty(new PropertyDefinition("hs_pipeline_stage", "Ticket Status", "enumeration", "select", "tickets",
             Options: ["1", "2", "3", "4"], CreatedAt: now, UpdatedAt: now));
-        AddProperty(new PropertyDefinition("hs_ticket_priority", "Priority", "enumeration", "select", "tickets", 
+        AddProperty(new PropertyDefinition("hs_ticket_priority", "Priority", "enumeration", "select", "tickets",
             Options: ["LOW", "MEDIUM", "HIGH"], CreatedAt: now, UpdatedAt: now));
 
         // Product properties
@@ -96,17 +96,14 @@ public class PropertyDefinitionRepository
     public PropertyDefinition? GetProperty(string objectType, string propertyName)
     {
         var key = GetKey(objectType, propertyName);
-        return _properties.TryGetValue(key, out var prop) ? prop : null;
+        return _properties.GetValueOrDefault(key);
     }
 
-    public IReadOnlyList<PropertyDefinition> GetProperties(string objectType)
-    {
-        return _properties.Values
+    public IReadOnlyList<PropertyDefinition> GetProperties(string objectType) => _properties.Values
             .Where(p => p.ObjectType == objectType)
             .OrderBy(p => p.DisplayOrder)
             .ThenBy(p => p.Name)
             .ToList();
-    }
 
     public PropertyDefinition CreateProperty(
         string objectType,
@@ -171,17 +168,14 @@ public class PropertyDefinitionRepository
     public PropertyGroup? GetGroup(string objectType, string groupName)
     {
         var key = GetKey(objectType, groupName);
-        return _groups.TryGetValue(key, out var group) ? group : null;
+        return _groups.GetValueOrDefault(key);
     }
 
-    public IReadOnlyList<PropertyGroup> GetGroups(string objectType)
-    {
-        return _groups.Values
+    public IReadOnlyList<PropertyGroup> GetGroups(string objectType) => _groups.Values
             .Where(g => g.ObjectType == objectType)
             .OrderBy(g => g.DisplayOrder)
             .ThenBy(g => g.Name)
             .ToList();
-    }
 
     public PropertyGroup CreateGroup(
         string objectType,
@@ -191,7 +185,7 @@ public class PropertyDefinitionRepository
     {
         var now = DateTime.UtcNow;
         var group = new PropertyGroup(name, label, objectType, displayOrder, now, now);
-        
+
         var key = GetKey(objectType, name);
         _groups[key] = group;
         return group;
@@ -216,8 +210,5 @@ public class PropertyDefinitionRepository
         _properties[key] = property;
     }
 
-    private static string GetKey(string objectType, string name)
-    {
-        return $"{objectType}:{name}";
-    }
+    private static string GetKey(string objectType, string name) => $"{objectType}:{name}";
 }

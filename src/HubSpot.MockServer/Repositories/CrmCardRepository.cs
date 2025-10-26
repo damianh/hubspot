@@ -33,7 +33,7 @@ public class CrmCardRepository
             return Task.FromResult<JsonElement?>(null);
         }
 
-        var index = cards.FindIndex(c => 
+        var index = cards.FindIndex(c =>
             c.TryGetProperty("id", out var id) && id.GetString() == cardId);
 
         if (index == -1)
@@ -53,7 +53,7 @@ public class CrmCardRepository
         var cards = _cardsByApp.GetValueOrDefault(appId);
         if (cards != null)
         {
-            var index = cards.FindIndex(c => 
+            var index = cards.FindIndex(c =>
                 c.TryGetProperty("id", out var id) && id.GetString() == cardId);
             if (index != -1)
             {
@@ -72,9 +72,9 @@ public class CrmCardRepository
             return Task.FromResult<JsonElement?>(null);
         }
 
-        var card = cards.FirstOrDefault(c => 
+        var card = cards.FirstOrDefault(c =>
             c.TryGetProperty("id", out var id) && id.GetString() == cardId);
-        
+
         return Task.FromResult(card.ValueKind != JsonValueKind.Undefined ? (JsonElement?)card : null);
     }
 
@@ -109,7 +109,7 @@ public class CrmCardRepository
 
     private static JsonElement MergeCard(JsonElement existing, JsonElement updates)
     {
-        var card = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText()) 
+        var card = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText())
             ?? new Dictionary<string, object?>();
 
         if (updates.TryGetProperty("title", out var title))

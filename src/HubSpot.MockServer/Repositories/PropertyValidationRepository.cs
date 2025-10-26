@@ -13,8 +13,8 @@ public class PropertyValidationRepository
     {
         var key = GetKey(objectType, propertyName);
         return Task.FromResult(
-            _validations.TryGetValue(key, out var validations) 
-                ? validations.ToList() 
+            _validations.TryGetValue(key, out var validations)
+                ? validations.ToList()
                 : []
         );
     }
@@ -51,7 +51,7 @@ public class PropertyValidationRepository
             return Task.FromResult<JsonElement?>(null);
         }
 
-        var index = validations.FindIndex(v => 
+        var index = validations.FindIndex(v =>
             v.TryGetProperty("id", out var id) && id.GetString() == validationId);
 
         if (index < 0)
@@ -85,7 +85,7 @@ public class PropertyValidationRepository
             return Task.FromResult(false);
         }
 
-        var index = validations.FindIndex(v => 
+        var index = validations.FindIndex(v =>
             v.TryGetProperty("id", out var id) && id.GetString() == validationId);
 
         if (index < 0)

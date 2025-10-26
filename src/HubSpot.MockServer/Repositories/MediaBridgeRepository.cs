@@ -14,19 +14,13 @@ public class MediaBridgeRepository
         return asset;
     }
 
-    public MediaAsset? GetById(string id)
-    {
-        return _assets.GetValueOrDefault(id);
-    }
+    public MediaAsset? GetById(string id) => _assets.GetValueOrDefault(id);
 
-    public List<MediaAsset> GetAll(int offset = 0, int limit = 100)
-    {
-        return _assets.Values
+    public List<MediaAsset> GetAll(int offset = 0, int limit = 100) => _assets.Values
             .OrderByDescending(a => a.CreatedAt)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public MediaAsset? Update(string id, MediaAsset updatedAsset)
     {
@@ -41,15 +35,9 @@ public class MediaBridgeRepository
         return updatedAsset;
     }
 
-    public bool Delete(string id)
-    {
-        return _assets.Remove(id);
-    }
+    public bool Delete(string id) => _assets.Remove(id);
 
-    public int Count()
-    {
-        return _assets.Count;
-    }
+    public int Count() => _assets.Count;
 
     public void Clear()
     {

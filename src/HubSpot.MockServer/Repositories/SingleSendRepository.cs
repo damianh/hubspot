@@ -35,15 +35,9 @@ public class SingleSendRepository
         return email;
     }
 
-    public void Delete(string id)
-    {
-        _emails.Remove(id);
-    }
+    public void Delete(string id) => _emails.Remove(id);
 
-    public IEnumerable<SingleSendEmail> GetAll()
-    {
-        return _emails.Values;
-    }
+    public IEnumerable<SingleSendEmail> GetAll() => _emails.Values;
 
     public void Clear()
     {

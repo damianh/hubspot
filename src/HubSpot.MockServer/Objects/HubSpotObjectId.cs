@@ -1,4 +1,4 @@
-﻿using ValueOf;
+using ValueOf;
 
 namespace DamianH.HubSpot.MockServer.Objects;
 

@@ -15,19 +15,13 @@ public class BlogTagRepository
         return tag;
     }
 
-    public BlogTag? GetById(string id)
-    {
-        return _tags.GetValueOrDefault(id);
-    }
+    public BlogTag? GetById(string id) => _tags.GetValueOrDefault(id);
 
-    public List<BlogTag> GetAll(int offset = 0, int limit = 100)
-    {
-        return _tags.Values
+    public List<BlogTag> GetAll(int offset = 0, int limit = 100) => _tags.Values
             .OrderBy(t => t.Name)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public BlogTag? Update(string id, BlogTag updatedTag)
     {
@@ -42,23 +36,14 @@ public class BlogTagRepository
         return updatedTag;
     }
 
-    public bool Delete(string id)
-    {
-        return _tags.Remove(id);
-    }
+    public bool Delete(string id) => _tags.Remove(id);
 
-    public List<BlogTag> BatchCreate(List<BlogTag> tags)
-    {
-        return tags.Select(Create).ToList();
-    }
+    public List<BlogTag> BatchCreate(List<BlogTag> tags) => tags.Select(Create).ToList();
 
-    public List<BlogTag> BatchRead(List<string> ids)
-    {
-        return ids.Select(id => _tags.GetValueOrDefault(id))
+    public List<BlogTag> BatchRead(List<string> ids) => ids.Select(id => _tags.GetValueOrDefault(id))
             .Where(t => t != null)
             .Cast<BlogTag>()
             .ToList();
-    }
 
     public List<BlogTag> BatchUpdate(List<BlogTag> tags)
     {
@@ -77,10 +62,7 @@ public class BlogTagRepository
         return results;
     }
 
-    public int BatchDelete(List<string> ids)
-    {
-        return ids.Count(Delete);
-    }
+    public int BatchDelete(List<string> ids) => ids.Count(Delete);
 
     public void AttachToLanguageGroup(string tagId, string languageGroupId)
     {
@@ -103,10 +85,7 @@ public class BlogTagRepository
         }
     }
 
-    public int Count()
-    {
-        return _tags.Count;
-    }
+    public int Count() => _tags.Count;
 
     public void Clear()
     {

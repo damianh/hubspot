@@ -24,10 +24,10 @@ public class CallingExtensionRepository
     public Task<JsonElement> UpdateSettingsAsync(string appId, JsonElement body)
     {
         var existing = _settings.GetValueOrDefault(appId);
-        var settings = existing.ValueKind != JsonValueKind.Undefined 
+        var settings = existing.ValueKind != JsonValueKind.Undefined
             ? MergeSettings(existing, body, appId)
             : CreateSettingsObject(appId, body);
-        
+
         _settings[appId] = settings;
         return Task.FromResult(settings);
     }
@@ -93,7 +93,7 @@ public class CallingExtensionRepository
 
     private static JsonElement MergeSettings(JsonElement existing, JsonElement updates, string appId)
     {
-        var settings = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText()) 
+        var settings = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText())
             ?? new Dictionary<string, object?>();
 
         if (updates.TryGetProperty("name", out var name))
@@ -133,7 +133,7 @@ public class CallingExtensionRepository
 
     private static JsonElement SetPropertyValue(JsonElement element, string propertyName, object value)
     {
-        var dict = JsonSerializer.Deserialize<Dictionary<string, object?>>(element.GetRawText()) 
+        var dict = JsonSerializer.Deserialize<Dictionary<string, object?>>(element.GetRawText())
             ?? new Dictionary<string, object?>();
         dict[propertyName] = value;
         dict["updatedAt"] = DateTimeOffset.UtcNow;

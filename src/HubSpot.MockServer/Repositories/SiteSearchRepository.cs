@@ -22,7 +22,7 @@ public class SiteSearchRepository
 
         var lowerQuery = query.ToLowerInvariant();
         return _content
-            .Where(c => 
+            .Where(c =>
                 (c.Title?.ToLowerInvariant().Contains(lowerQuery) ?? false) ||
                 (c.Description?.ToLowerInvariant().Contains(lowerQuery) ?? false) ||
                 (c.Content?.ToLowerInvariant().Contains(lowerQuery) ?? false))
@@ -31,10 +31,7 @@ public class SiteSearchRepository
             .ToList();
     }
 
-    public SearchableContent? GetById(string id)
-    {
-        return _content.FirstOrDefault(c => c.Id == id);
-    }
+    public SearchableContent? GetById(string id) => _content.FirstOrDefault(c => c.Id == id);
 
     public bool Delete(string id)
     {
@@ -48,10 +45,7 @@ public class SiteSearchRepository
         return true;
     }
 
-    public int Count()
-    {
-        return _content.Count;
-    }
+    public int Count() => _content.Count;
 
     public void Clear()
     {

@@ -49,14 +49,14 @@ internal static partial class ApiRoutes
                 .WithTags("Scheduler Availability V3");
 
             availabilityGroup.MapGet("/{linkId}", async (
-                string linkId, 
-                string? startDate, 
-                string? endDate, 
+                string linkId,
+                string? startDate,
+                string? endDate,
                 SchedulerMeetingRepository repository) =>
             {
                 var start = startDate != null ? DateTimeOffset.Parse(startDate) : DateTimeOffset.UtcNow;
                 var end = endDate != null ? DateTimeOffset.Parse(endDate) : start.AddDays(7);
-                
+
                 var availability = await repository.GetAvailabilityAsync(linkId, start, end);
                 return Results.Ok(availability);
             });

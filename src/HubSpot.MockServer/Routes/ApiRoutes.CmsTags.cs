@@ -95,7 +95,7 @@ internal static partial class ApiRoutes
 
             // Batch endpoints
             RegisterBatchEndpoints(tags);
-            
+
             // Multi-language endpoints
             RegisterMultiLanguageEndpoints(tags);
         }
@@ -107,7 +107,7 @@ internal static partial class ApiRoutes
             // Batch create
             batch.MapPost("/create", (TagRepository repo, TagBatchCreateRequest request) =>
             {
-                var results = request.Inputs.Select(input => 
+                var results = request.Inputs.Select(input =>
                 {
                     var tag = repo.Create(input.Name, input.Language);
                     return new
@@ -195,7 +195,7 @@ internal static partial class ApiRoutes
             {
                 var tag = repo.Create(request.Name, request.Language);
                 repo.AttachToLanguageGroup(request.PrimaryId, tag.Id);
-                
+
                 return Results.Ok(new
                 {
                     id = tag.Id,

@@ -53,7 +53,7 @@ public class CrmGenericObjectsTests : IAsyncLifetime
     public async Task Can_list_custom_objects()
     {
         var customObjectType = "custom_books";
-        
+
         await _client.Crm.V3.Objects[customObjectType].PostAsync(new SimplePublicObjectInputForCreate
         {
             Properties = new SimplePublicObjectInputForCreate_properties

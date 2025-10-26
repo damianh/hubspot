@@ -9,6 +9,8 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+    <!-- Replace call ToLowerInvariant with ToUpperInvariant -->
+    <NoWarn>$(NoWarn);CA1308</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

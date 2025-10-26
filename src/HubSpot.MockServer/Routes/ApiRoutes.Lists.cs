@@ -121,7 +121,9 @@ internal static partial class ApiRoutes
         {
             List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
+            {
                 recordIds.Add(id.GetString()!);
+            }
 
             repo.AddMemberships(listId, recordIds);
             return Results.Ok();
@@ -134,7 +136,9 @@ internal static partial class ApiRoutes
         {
             List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
+            {
                 recordIds.Add(id.GetString()!);
+            }
 
             repo.RemoveMemberships(listId, recordIds);
             return Results.Ok();

@@ -121,8 +121,8 @@ internal static partial class ApiRoutes
             var channelData = JsonSerializer.Deserialize<JsonElement>(body);
 
             var name = channelData.GetProperty("name").GetString() ?? "Unnamed Channel";
-            var accountId = channelData.TryGetProperty("accountId", out var accId) 
-                ? accId.GetString() 
+            var accountId = channelData.TryGetProperty("accountId", out var accId)
+                ? accId.GetString()
                 : null;
 
             var channel = channelRepo.CreateChannel(name, accountId);
@@ -193,7 +193,7 @@ internal static partial class ApiRoutes
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
-            
+
             string? email = null;
             if (!string.IsNullOrWhiteSpace(body))
             {
@@ -228,7 +228,7 @@ internal static partial class ApiRoutes
             var contactId = identifyData.GetProperty("contactId").GetString() ?? "";
 
             visitorRepo.IdentifyVisitor(visitorId, contactId);
-            
+
             return Results.Ok(new
             {
                 visitorId,
@@ -238,64 +238,52 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object ToConversationResponse(ConversationData conversation)
+    private static object ToConversationResponse(ConversationData conversation) => new
     {
-        return new
-        {
-            id = conversation.Id,
-            createdAt = conversation.CreatedAt,
-            updatedAt = conversation.UpdatedAt,
-            status = conversation.Status,
-            channelId = conversation.ChannelId,
-            inboxId = conversation.InboxId,
-            assignedTo = conversation.AssignedTo,
-            participants = conversation.Participants,
-            latestMessageTimestamp = conversation.LatestMessageTimestamp
-        };
-    }
+        id = conversation.Id,
+        createdAt = conversation.CreatedAt,
+        updatedAt = conversation.UpdatedAt,
+        status = conversation.Status,
+        channelId = conversation.ChannelId,
+        inboxId = conversation.InboxId,
+        assignedTo = conversation.AssignedTo,
+        participants = conversation.Participants,
+        latestMessageTimestamp = conversation.LatestMessageTimestamp
+    };
 
-    private static object ToMessageResponse(MessageData message)
+    private static object ToMessageResponse(MessageData message) => new
     {
-        return new
+        id = message.Id,
+        conversationId = message.ConversationId,
+        type = message.Type,
+        text = message.Text,
+        createdAt = message.CreatedAt,
+        sender = new
         {
-            id = message.Id,
-            conversationId = message.ConversationId,
-            type = message.Type,
-            text = message.Text,
-            createdAt = message.CreatedAt,
-            sender = new
+            actorId = message.SenderActorId,
+            deliveryIdentifier = new
             {
-                actorId = message.SenderActorId,
-                deliveryIdentifier = new
-                {
-                    type = message.SenderType,
-                    value = message.SenderActorId
-                }
+                type = message.SenderType,
+                value = message.SenderActorId
             }
-        };
-    }
+        }
+    };
 
-    private static object ToChannelResponse(CustomChannelData channel)
+    private static object ToChannelResponse(CustomChannelData channel) => new
     {
-        return new
-        {
-            id = channel.Id,
-            accountId = channel.AccountId,
-            name = channel.Name,
-            createdAt = channel.CreatedAt,
-            active = channel.Active
-        };
-    }
+        id = channel.Id,
+        accountId = channel.AccountId,
+        name = channel.Name,
+        createdAt = channel.CreatedAt,
+        active = channel.Active
+    };
 
-    private static object ToVisitorTokenResponse(VisitorTokenData token)
+    private static object ToVisitorTokenResponse(VisitorTokenData token) => new
     {
-        return new
-        {
-            token = token.Token,
-            visitorId = token.VisitorId,
-            email = token.Email,
-            createdAt = token.CreatedAt,
-            expiresAt = token.ExpiresAt
-        };
-    }
+        token = token.Token,
+        visitorId = token.VisitorId,
+        email = token.Email,
+        createdAt = token.CreatedAt,
+        expiresAt = token.ExpiresAt
+    };
 }

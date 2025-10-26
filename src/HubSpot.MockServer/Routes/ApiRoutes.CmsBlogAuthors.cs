@@ -16,10 +16,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var authors = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -48,7 +48,7 @@ internal static partial class ApiRoutes
 
             var author = MapAuthorFromRequest(request);
             var created = repository.Create(author);
-            
+
             return Results.Ok(MapAuthorToResponse(created));
         });
 
@@ -68,7 +68,7 @@ internal static partial class ApiRoutes
 
             var updated = MapAuthorFromRequest(request, author);
             updated = repository.Update(objectId, updated);
-            
+
             return Results.Ok(MapAuthorToResponse(updated!));
         });
 
@@ -102,7 +102,7 @@ internal static partial class ApiRoutes
 
             var authors = inputs.Select(i => MapAuthorFromRequest(i)).ToList();
             var created = repository.BatchCreate(authors);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -126,7 +126,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             var authors = repository.BatchRead(ids);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -150,7 +150,7 @@ internal static partial class ApiRoutes
 
             var authors = inputs.Select(i => MapAuthorFromRequest(i)).ToList();
             var updated = repository.BatchUpdate(authors);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -174,7 +174,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             repository.BatchDelete(ids);
-            
+
             return Results.NoContent();
         });
 
@@ -191,9 +191,9 @@ internal static partial class ApiRoutes
 
             var authorId = request["id"].ToString()!;
             var langGroupId = request["language"]?.ToString() ?? "default";
-            
+
             repository.AttachToLanguageGroup(authorId, langGroupId);
-            
+
             return Results.NoContent();
         });
 
@@ -207,35 +207,32 @@ internal static partial class ApiRoutes
 
             var authorId = request["id"].ToString()!;
             repository.DetachFromLanguageGroup(authorId);
-            
+
             return Results.NoContent();
         });
     }
 
-    private static object MapAuthorToResponse(BlogAuthor author)
+    private static object MapAuthorToResponse(BlogAuthor author) => new
     {
-        return new
-        {
-            id = author.Id,
-            fullName = author.FullName,
-            email = author.Email,
-            slug = author.Slug,
-            bio = author.Bio,
-            website = author.Website,
-            twitter = author.Twitter,
-            facebook = author.Facebook,
-            linkedin = author.Linkedin,
-            avatar = author.Avatar,
-            language = author.Language,
-            created = author.Created,
-            updated = author.Updated
-        };
-    }
+        id = author.Id,
+        fullName = author.FullName,
+        email = author.Email,
+        slug = author.Slug,
+        bio = author.Bio,
+        website = author.Website,
+        twitter = author.Twitter,
+        facebook = author.Facebook,
+        linkedin = author.Linkedin,
+        avatar = author.Avatar,
+        language = author.Language,
+        created = author.Created,
+        updated = author.Updated
+    };
 
     private static BlogAuthor MapAuthorFromRequest(Dictionary<string, object> request, BlogAuthor? existing = null)
     {
         var author = existing ?? new BlogAuthor();
-        
+
         if (request.TryGetValue("id", out var id))
         {
             author.Id = id.ToString();

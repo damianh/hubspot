@@ -18,15 +18,9 @@ public class ListRepository
         return list;
     }
 
-    public ListDefinition? GetList(string listId)
-    {
-        return _lists.TryGetValue(listId, out var list) ? list : null;
-    }
+    public ListDefinition? GetList(string listId) => _lists.GetValueOrDefault(listId);
 
-    public IEnumerable<ListDefinition> GetAllLists()
-    {
-        return _lists.Values.ToList();
-    }
+    public IEnumerable<ListDefinition> GetAllLists() => _lists.Values.ToList();
 
     public ListDefinition? UpdateList(string listId, ListDefinition updates)
     {
@@ -55,7 +49,9 @@ public class ListRepository
         }
 
         foreach (var id in recordIds)
+        {
             members.Add(id);
+        }
 
         if (_lists.TryGetValue(listId, out var list))
         {
@@ -71,7 +67,9 @@ public class ListRepository
         }
 
         foreach (var id in recordIds)
+        {
             members.Remove(id);
+        }
 
         if (_lists.TryGetValue(listId, out var list))
         {
@@ -79,12 +77,9 @@ public class ListRepository
         }
     }
 
-    public IEnumerable<string> GetMemberships(string listId)
-    {
-        return _memberships.TryGetValue(listId, out var members) 
-            ? members.ToList() 
+    public IEnumerable<string> GetMemberships(string listId) => _memberships.TryGetValue(listId, out var members)
+            ? members.ToList()
             : Enumerable.Empty<string>();
-    }
 }
 
 public class ListDefinition

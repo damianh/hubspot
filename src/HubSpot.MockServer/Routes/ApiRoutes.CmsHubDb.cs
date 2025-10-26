@@ -17,10 +17,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var tables = repository.GetAllTables(offset, limit);
             var total = repository.GetTableCount();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -49,7 +49,7 @@ internal static partial class ApiRoutes
 
             var table = MapTableFromRequest(request);
             var created = repository.CreateTable(table);
-            
+
             return Results.Ok(MapTableToResponse(created));
         });
 
@@ -63,7 +63,7 @@ internal static partial class ApiRoutes
 
             var table = MapTableFromRequest(request);
             var updated = repository.UpdateTable(tableIdOrName, table);
-            
+
             if (updated == null)
             {
                 return Results.NotFound(new { message = $"Table {tableIdOrName} not found" });
@@ -90,10 +90,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var rows = repository.GetAllRows(tableIdOrName, offset, limit);
             var total = repository.GetRowCount(tableIdOrName);
-            
+
             return Results.Ok(new
             {
                 total,
@@ -142,7 +142,7 @@ internal static partial class ApiRoutes
 
             var row = MapRowFromRequest(request);
             var updated = repository.UpdateRow(tableIdOrName, rowId, row);
-            
+
             if (updated == null)
             {
                 return Results.NotFound(new { message = $"Row {rowId} not found in table {tableIdOrName}" });
@@ -282,23 +282,20 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapTableToResponse(HubDbTable table)
+    private static object MapTableToResponse(HubDbTable table) => new
     {
-        return new
-        {
-            id = table.Id,
-            name = table.Name,
-            label = table.Label,
-            published = table.Published,
-            columns = table.Columns,
-            allowPublicApiAccess = table.AllowPublicApiAccess,
-            allowChildTables = table.AllowChildTables,
-            enableChildTablePages = table.EnableChildTablePages,
-            useForPages = table.UseForPages,
-            createdAt = table.CreatedAt,
-            updatedAt = table.UpdatedAt
-        };
-    }
+        id = table.Id,
+        name = table.Name,
+        label = table.Label,
+        published = table.Published,
+        columns = table.Columns,
+        allowPublicApiAccess = table.AllowPublicApiAccess,
+        allowChildTables = table.AllowChildTables,
+        enableChildTablePages = table.EnableChildTablePages,
+        useForPages = table.UseForPages,
+        createdAt = table.CreatedAt,
+        updatedAt = table.UpdatedAt
+    };
 
     private static HubDbTable MapTableFromRequest(Dictionary<string, object> request)
     {
@@ -322,18 +319,15 @@ internal static partial class ApiRoutes
         return table;
     }
 
-    private static object MapRowToResponse(HubDbRow row)
+    private static object MapRowToResponse(HubDbRow row) => new
     {
-        return new
-        {
-            id = row.Id,
-            values = row.Values,
-            path = row.Path,
-            name = row.Name,
-            createdAt = row.CreatedAt,
-            updatedAt = row.UpdatedAt
-        };
-    }
+        id = row.Id,
+        values = row.Values,
+        path = row.Path,
+        name = row.Name,
+        createdAt = row.CreatedAt,
+        updatedAt = row.UpdatedAt
+    };
 
     private static HubDbRow MapRowFromRequest(Dictionary<string, object> request)
     {

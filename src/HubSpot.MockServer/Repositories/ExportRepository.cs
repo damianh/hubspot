@@ -1,15 +1,14 @@
 using System.Collections.Concurrent;
-using DamianH.HubSpot.MockServer.Objects;
+using System.Globalization;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-internal class ExportRepository(HubSpotObjectRepository? objectRepository = null)
+internal class ExportRepository
 {
     private readonly ConcurrentDictionary<string, ExportJob> _exports = new();
     private readonly ConcurrentDictionary<string, byte[]> _exportFiles = new();
-    private readonly HubSpotObjectRepository? _objectRepository = objectRepository;
 
-    public ExportJob CreateExport(string exportName, string exportType, string objectType, 
+    public ExportJob CreateExport(string exportName, string exportType, string objectType,
         List<string>? properties = null, string? format = null, DateTimeOffset? startDate = null, DateTimeOffset? endDate = null)
     {
         var exportId = GenerateExportId();
@@ -34,15 +33,12 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         return job;
     }
 
-    public ExportJob? GetExport(string exportId)
-    {
-        return _exports.TryGetValue(exportId, out var job) ? job : null;
-    }
+    public ExportJob? GetExport(string exportId) => _exports.GetValueOrDefault(exportId);
 
     public PagedResult<ExportJob> ListExports(string? after = null, int limit = 10)
     {
         var exports = _exports.Values.OrderByDescending(e => e.CreatedAt).ToList();
-        
+
         var startIndex = 0;
         if (!string.IsNullOrEmpty(after))
         {
@@ -83,10 +79,7 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         return job;
     }
 
-    public byte[]? GetExportFile(string exportId)
-    {
-        return _exportFiles.TryGetValue(exportId, out var file) ? file : null;
-    }
+    public byte[]? GetExportFile(string exportId) => _exportFiles.GetValueOrDefault(exportId);
 
     private async Task ProcessExport(string exportId)
     {
@@ -94,8 +87,6 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         {
             return;
         }
-
-        await Task.Delay(500); // Simulate processing delay
 
         // Generate mock CSV content
         var csv = GenerateMockCsvData(job.ObjectType, job.Properties);
@@ -105,11 +96,11 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         job.CompletedAt = DateTimeOffset.UtcNow;
     }
 
-    private string GenerateMockCsvData(string objectType, List<string> properties)
+    private static string GenerateMockCsvData(string objectType, List<string> properties)
     {
         // Generate header
-        var columns = properties.Count > 0 
-            ? properties 
+        var columns = properties.Count > 0
+            ? properties
             : ["id", "createdAt", "updatedAt", "name", "email"];
 
         var header = string.Join(",", columns);
@@ -118,14 +109,15 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         // Generate 10 mock rows
         for (var i = 1; i <= 10; i++)
         {
-            var values = columns.Select(col => col.ToLower() switch
+            var i1 = i;
+            var values = columns.Select(col => col.ToLower(CultureInfo.InvariantCulture) switch
             {
-                "id" => $"{objectType.ToLower()}-{i}",
-                "createdat" => DateTimeOffset.UtcNow.AddDays(-i).ToString("o"),
+                "id" => $"{objectType.ToLower(CultureInfo.InvariantCulture)}-{i1}",
+                "createdat" => DateTimeOffset.UtcNow.AddDays(-i1).ToString("o"),
                 "updatedat" => DateTimeOffset.UtcNow.ToString("o"),
-                "name" => $"Sample {objectType} {i}",
-                "email" => $"sample{i}@example.com",
-                _ => $"value-{i}"
+                "name" => $"Sample {objectType} {i1}",
+                "email" => $"sample{i1}@example.com",
+                _ => $"value-{i1}"
             });
             rows.Add(string.Join(",", values));
         }
@@ -134,7 +126,9 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
     }
 
     private static int _exportIdCounter;
-    private static string GenerateExportId() => Interlocked.Increment(ref _exportIdCounter).ToString();
+
+    private static string GenerateExportId() =>
+        Interlocked.Increment(ref _exportIdCounter).ToString(CultureInfo.InvariantCulture);
 }
 
 public class ExportJob

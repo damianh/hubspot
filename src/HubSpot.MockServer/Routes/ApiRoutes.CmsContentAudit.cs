@@ -17,7 +17,7 @@ internal static partial class ApiRoutes
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
             var objectId = context.Request.Query["objectId"].ToString();
             var userId = context.Request.Query["userId"].ToString();
-            
+
             List<ContentAuditEntry> entries;
             if (!string.IsNullOrEmpty(objectId))
             {
@@ -31,9 +31,9 @@ internal static partial class ApiRoutes
             {
                 entries = repository.GetAll(offset, limit);
             }
-            
+
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -42,18 +42,15 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapAuditEntryToResponse(ContentAuditEntry entry)
+    private static object MapAuditEntryToResponse(ContentAuditEntry entry) => new
     {
-        return new
-        {
-            id = entry.Id,
-            timestamp = entry.Timestamp,
-            eventType = entry.EventType,
-            objectType = entry.ObjectType,
-            objectId = entry.ObjectId,
-            userId = entry.UserId,
-            userEmail = entry.UserEmail,
-            changes = entry.Changes
-        };
-    }
+        id = entry.Id,
+        timestamp = entry.Timestamp,
+        eventType = entry.EventType,
+        objectType = entry.ObjectType,
+        objectId = entry.ObjectId,
+        userId = entry.UserId,
+        userEmail = entry.UserEmail,
+        changes = entry.Changes
+    };
 }

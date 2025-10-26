@@ -42,7 +42,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/schemas", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -54,7 +54,7 @@ public class CrmExtensionsTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/crm/v3/schemas");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -75,7 +75,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var getResponse = await _httpClient.GetAsync($"/crm/v3/schemas/{schemaId}");
         getResponse.EnsureSuccessStatusCode();
-        
+
         var schema = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         schema.ShouldNotBeNull();
         schema!["name"].ToString().ShouldBe("TestSchema");
@@ -146,7 +146,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/imports", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -157,7 +157,7 @@ public class CrmExtensionsTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/crm/v3/imports");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -209,7 +209,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/exports/export/async", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -232,7 +232,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var getResponse = await _httpClient.GetAsync($"/crm/v3/exports/export/async/tasks/{exportId}/status");
         getResponse.EnsureSuccessStatusCode();
-        
+
         var status = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         status.ShouldNotBeNull();
         status.ShouldContainKey("status");
@@ -251,7 +251,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/timeline/events/templates", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -263,7 +263,7 @@ public class CrmExtensionsTests : IAsyncLifetime
         var appId = "test-app";
         var response = await _httpClient.GetAsync($"/crm/v3/timeline/events/templates?appId={appId}");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -284,7 +284,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/timeline/events", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -312,10 +312,10 @@ public class CrmExtensionsTests : IAsyncLifetime
     {
         var objectType = "contacts";
         var objectId = "12345";
-        
+
         var response = await _httpClient.GetAsync($"/crm/v3/timeline/events/{objectType}/{objectId}");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");

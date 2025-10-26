@@ -19,10 +19,7 @@ public class OwnerRepository
         DateTime CreatedAt = default,
         DateTime UpdatedAt = default);
 
-    public OwnerRepository()
-    {
-        SeedDefaultOwners();
-    }
+    public OwnerRepository() => SeedDefaultOwners();
 
     private void SeedDefaultOwners()
     {
@@ -35,10 +32,7 @@ public class OwnerRepository
         AddOwner(new Owner("100", "sales-team@example.com", "Sales", "Team", "TEAM", now, now));
     }
 
-    public Owner? GetOwner(string ownerId)
-    {
-        return _owners.TryGetValue(ownerId, out var owner) ? owner : null;
-    }
+    public Owner? GetOwner(string ownerId) => _owners.GetValueOrDefault(ownerId);
 
     public IReadOnlyList<Owner> GetAllOwners(string? email = null)
     {
@@ -75,8 +69,5 @@ public class OwnerRepository
         SeedDefaultOwners();
     }
 
-    private void AddOwner(Owner owner)
-    {
-        _owners[owner.Id] = owner;
-    }
+    private void AddOwner(Owner owner) => _owners[owner.Id] = owner;
 }

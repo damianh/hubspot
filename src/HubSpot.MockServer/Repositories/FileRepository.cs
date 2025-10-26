@@ -26,15 +26,9 @@ public class FileRepository
         return file;
     }
 
-    public FileMetadata? GetFile(string fileId)
-    {
-        return _files.TryGetValue(fileId, out var file) ? file : null;
-    }
+    public FileMetadata? GetFile(string fileId) => _files.GetValueOrDefault(fileId);
 
-    public IEnumerable<FileMetadata> GetAllFiles()
-    {
-        return _files.Values.ToList();
-    }
+    public IEnumerable<FileMetadata> GetAllFiles() => _files.Values.ToList();
 
     public FileMetadata? UpdateFile(string fileId, string? newName)
     {
@@ -53,15 +47,9 @@ public class FileRepository
         return file;
     }
 
-    public bool DeleteFile(string fileId)
-    {
-        return _files.TryRemove(fileId, out _);
-    }
+    public bool DeleteFile(string fileId) => _files.TryRemove(fileId, out _);
 
-    public byte[]? GetFileContent(string fileId)
-    {
-        return _files.TryGetValue(fileId, out var file) ? file.Content : null;
-    }
+    public byte[]? GetFileContent(string fileId) => _files.TryGetValue(fileId, out var file) ? file.Content : null;
 }
 
 public class FileMetadata

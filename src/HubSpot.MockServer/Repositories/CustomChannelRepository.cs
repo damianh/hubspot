@@ -11,7 +11,7 @@ public class CustomChannelRepository
     {
         var id = Interlocked.Increment(ref _nextChannelId).ToString();
         var now = DateTimeOffset.UtcNow;
-        
+
         var channel = new CustomChannelData
         {
             Id = id,
@@ -22,21 +22,13 @@ public class CustomChannelRepository
         };
 
         _channels[id] = channel;
-        
+
         return channel;
     }
 
-    public CustomChannelData? GetChannel(string channelId)
-    {
-        return _channels.TryGetValue(channelId, out var channel) 
-            ? channel 
-            : null;
-    }
+    public CustomChannelData? GetChannel(string channelId) => _channels.GetValueOrDefault(channelId);
 
-    public List<CustomChannelData> ListChannels()
-    {
-        return _channels.Values.OrderBy(c => c.CreatedAt).ToList();
-    }
+    public List<CustomChannelData> ListChannels() => _channels.Values.OrderBy(c => c.CreatedAt).ToList();
 
     public CustomChannelData? UpdateChannel(string channelId, string? name = null, bool? active = null)
     {
@@ -58,10 +50,7 @@ public class CustomChannelRepository
         return channel;
     }
 
-    public bool DeleteChannel(string channelId)
-    {
-        return _channels.TryRemove(channelId, out _);
-    }
+    public bool DeleteChannel(string channelId) => _channels.TryRemove(channelId, out _);
 
     public void Clear()
     {

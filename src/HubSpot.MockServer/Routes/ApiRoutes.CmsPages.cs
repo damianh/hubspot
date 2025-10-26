@@ -16,10 +16,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var pages = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -48,7 +48,7 @@ internal static partial class ApiRoutes
 
             var page = MapPageFromRequest(request);
             var created = repository.Create(page);
-            
+
             return Results.Ok(MapPageToResponse(created));
         });
 
@@ -68,7 +68,7 @@ internal static partial class ApiRoutes
 
             var updated = MapPageFromRequest(request, page);
             updated = repository.Update(objectId, updated);
-            
+
             return Results.Ok(MapPageToResponse(updated!));
         });
 
@@ -102,7 +102,7 @@ internal static partial class ApiRoutes
 
             var pages = inputs.Select(i => MapPageFromRequest(i)).ToList();
             var created = repository.BatchCreate(pages);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -126,7 +126,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             var pages = repository.BatchRead(ids);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -150,7 +150,7 @@ internal static partial class ApiRoutes
 
             var pages = inputs.Select(i => MapPageFromRequest(i)).ToList();
             var updated = repository.BatchUpdate(pages);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -174,7 +174,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             repository.BatchDelete(ids);
-            
+
             return Results.NoContent();
         });
 
@@ -209,32 +209,29 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapPageToResponse(Page page)
+    private static object MapPageToResponse(Page page) => new
     {
-        return new
-        {
-            id = page.Id,
-            name = page.Name,
-            slug = page.Slug,
-            state = page.State ?? "DRAFT",
-            htmlTitle = page.HtmlTitle,
-            pageBody = page.PageBody,
-            metaDescription = page.MetaDescription,
-            useFeaturedImage = page.UseFeaturedImage ?? false,
-            featuredImage = page.FeaturedImage,
-            featuredImageAltText = page.FeaturedImageAltText,
-            publishDate = page.PublishDate,
-            created = page.Created,
-            updated = page.Updated,
-            language = page.Language,
-            translatedFromId = page.TranslatedFromId
-        };
-    }
+        id = page.Id,
+        name = page.Name,
+        slug = page.Slug,
+        state = page.State ?? "DRAFT",
+        htmlTitle = page.HtmlTitle,
+        pageBody = page.PageBody,
+        metaDescription = page.MetaDescription,
+        useFeaturedImage = page.UseFeaturedImage ?? false,
+        featuredImage = page.FeaturedImage,
+        featuredImageAltText = page.FeaturedImageAltText,
+        publishDate = page.PublishDate,
+        created = page.Created,
+        updated = page.Updated,
+        language = page.Language,
+        translatedFromId = page.TranslatedFromId
+    };
 
     private static Page MapPageFromRequest(Dictionary<string, object> request, Page? existing = null)
     {
         var page = existing ?? new Page();
-        
+
         if (request.TryGetValue("id", out var id))
         {
             page.Id = id.ToString();

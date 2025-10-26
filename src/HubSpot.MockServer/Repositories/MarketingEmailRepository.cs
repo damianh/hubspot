@@ -35,15 +35,9 @@ public class MarketingEmailRepository
         return email;
     }
 
-    public void Delete(string id)
-    {
-        _emails.Remove(id);
-    }
+    public void Delete(string id) => _emails.Remove(id);
 
-    public IEnumerable<MarketingEmail> GetAll()
-    {
-        return _emails.Values;
-    }
+    public IEnumerable<MarketingEmail> GetAll() => _emails.Values;
 
     public void Clear()
     {

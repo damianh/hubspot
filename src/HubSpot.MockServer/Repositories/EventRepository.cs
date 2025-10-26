@@ -12,8 +12,8 @@ public class EventRepository
     public void SendEvent(CustomEvent customEvent)
     {
         customEvent.Id = _nextEventId++.ToString();
-        customEvent.OccurredAt = customEvent.OccurredAt == default 
-            ? DateTime.UtcNow 
+        customEvent.OccurredAt = customEvent.OccurredAt == default
+            ? DateTime.UtcNow
             : customEvent.OccurredAt;
         _events[customEvent.Id] = customEvent;
     }
@@ -35,10 +35,7 @@ public class EventRepository
         return events.OrderByDescending(e => e.OccurredAt).ToList();
     }
 
-    public List<CustomEvent> GetAllEvents()
-    {
-        return _events.Values.OrderByDescending(e => e.OccurredAt).ToList();
-    }
+    public List<CustomEvent> GetAllEvents() => _events.Values.OrderByDescending(e => e.OccurredAt).ToList();
 
     public EventDefinition CreateDefinition(EventDefinition definition)
     {
@@ -48,20 +45,11 @@ public class EventRepository
         return definition;
     }
 
-    public EventDefinition? GetDefinition(string definitionId)
-    {
-        return _definitions.TryGetValue(definitionId, out var def) ? def : null;
-    }
+    public EventDefinition? GetDefinition(string definitionId) => _definitions.GetValueOrDefault(definitionId);
 
-    public IEnumerable<EventDefinition> GetAllDefinitions()
-    {
-        return _definitions.Values.ToList();
-    }
+    public IEnumerable<EventDefinition> GetAllDefinitions() => _definitions.Values.ToList();
 
-    public bool DeleteDefinition(string definitionId)
-    {
-        return _definitions.TryRemove(definitionId, out _);
-    }
+    public bool DeleteDefinition(string definitionId) => _definitions.TryRemove(definitionId, out _);
 }
 
 public class CustomEvent

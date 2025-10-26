@@ -12,10 +12,10 @@ internal static partial class ApiRoutes
         public static void RegisterSubscriptionsV3Api(WebApplication app)
         {
             var group = app.MapGroup("/communication-preferences/v3/subscriptions");
-            
+
             group.MapPost("/{emailAddress}", CreateOrUpdateSubscription);
             group.MapGet("/{emailAddress}", GetSubscriptionStatus);
-            
+
             var defsGroup = app.MapGroup("/communication-preferences/v3/definitions");
             defsGroup.MapGet("", ListDefinitions);
             defsGroup.MapPost("", CreateDefinition);
@@ -25,7 +25,7 @@ internal static partial class ApiRoutes
         public static void RegisterSubscriptionsV4Api(WebApplication app)
         {
             var group = app.MapGroup("/communication-preferences/v4/subscriptions");
-            
+
             group.MapPost("/status/email/{emailAddress}", CreateOrUpdateSubscriptionV4);
             group.MapGet("/status/email/{emailAddress}", GetSubscriptionStatusV4);
         }

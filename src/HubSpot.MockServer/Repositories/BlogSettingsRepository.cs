@@ -26,12 +26,9 @@ public class BlogSettingsRepository
         return settings;
     }
 
-    public BlogSettingsData? Get(string blogId) => _settings.TryGetValue(blogId, out var settings) ? settings : null;
+    public BlogSettingsData? Get(string blogId) => _settings.GetValueOrDefault(blogId);
 
-    public IEnumerable<BlogSettingsData> List()
-    {
-        return _settings.Values.OrderBy(s => s.BlogId).ToList();
-    }
+    public IEnumerable<BlogSettingsData> List() => _settings.Values.OrderBy(s => s.BlogId).ToList();
 
     public BlogSettingsData? Update(string blogId, Action<BlogSettingsData> updateAction)
     {
@@ -46,10 +43,7 @@ public class BlogSettingsRepository
         return settings;
     }
 
-    public IEnumerable<BlogSettingsRevision> GetRevisions(string blogId)
-    {
-        return _revisions.TryGetValue(blogId, out var revs) ? revs : Enumerable.Empty<BlogSettingsRevision>();
-    }
+    public IEnumerable<BlogSettingsRevision> GetRevisions(string blogId) => _revisions.TryGetValue(blogId, out var revs) ? revs : Enumerable.Empty<BlogSettingsRevision>();
 
     public BlogSettingsRevision? GetRevision(string blogId, string revisionId)
     {
@@ -67,7 +61,7 @@ public class BlogSettingsRepository
         {
             _revisions[blogId] = [];
         }
-        
+
         var revision = new BlogSettingsRevision
         {
             Id = Guid.NewGuid().ToString(),

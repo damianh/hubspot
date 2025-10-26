@@ -47,7 +47,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsJsonAsync("/crm/v3/lists", createRequest);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("listId");
@@ -69,7 +69,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
 
         var getResponse = await _httpClient.GetAsync($"/crm/v3/lists/{listId}");
         getResponse.EnsureSuccessStatusCode();
-        
+
         var list = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         list.ShouldNotBeNull();
         list!["listId"].ToString().ShouldBe(listId);
@@ -121,7 +121,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/crm/v3/lists");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("lists");
@@ -183,7 +183,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
 
         var response = await _httpClient.PostAsync("/files/v3/files", formData);
         response.EnsureSuccessStatusCode();
-        
+
         var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
@@ -209,7 +209,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/files/v3/files");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
@@ -265,9 +265,9 @@ public class ListsFilesEventsTests : IAsyncLifetime
             }
         };
 
-        var response = await _httpClient.PostAsync("/events/v3/send", 
+        var response = await _httpClient.PostAsync("/events/v3/send",
             new StringContent(System.Text.Json.JsonSerializer.Serialize(createRequest), Encoding.UTF8, "application/json"));
-        
+
         response.EnsureSuccessStatusCode();
     }
 
@@ -320,7 +320,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
     {
         var response = await _httpClient.GetAsync("/events/v3/events?objectType=contact&objectId=123");
         response.EnsureSuccessStatusCode();
-        
+
         var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");

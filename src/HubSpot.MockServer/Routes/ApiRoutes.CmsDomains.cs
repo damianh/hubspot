@@ -16,10 +16,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var domains = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -50,7 +50,7 @@ internal static partial class ApiRoutes
 
             var domain = MapDomainFromRequest(request);
             var created = repository.Create(domain);
-            
+
             return Results.Ok(MapDomainToResponse(created));
         });
 
@@ -70,7 +70,7 @@ internal static partial class ApiRoutes
 
             var updated = MapDomainFromRequest(request, domain);
             updated = repository.Update(domainId, updated);
-            
+
             return Results.Ok(MapDomainToResponse(updated!));
         });
 
@@ -86,30 +86,27 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapDomainToResponse(Domain domain)
+    private static object MapDomainToResponse(Domain domain) => new
     {
-        return new
-        {
-            id = domain.Id,
-            domain = domain.Domain1,
-            isPrimary = domain.IsPrimary,
-            isResolving = domain.IsResolving,
-            isLegacyDomain = domain.IsLegacyDomain,
-            isUsedForBlogPost = domain.IsUsedForBlogPost,
-            isUsedForSitePage = domain.IsUsedForSitePage,
-            isUsedForLandingPage = domain.IsUsedForLandingPage,
-            isUsedForEmail = domain.IsUsedForEmail,
-            isSetupComplete = domain.IsSetupComplete,
-            correctCname = domain.CorrectCname,
-            created = domain.Created,
-            updated = domain.Updated
-        };
-    }
+        id = domain.Id,
+        domain = domain.Domain1,
+        isPrimary = domain.IsPrimary,
+        isResolving = domain.IsResolving,
+        isLegacyDomain = domain.IsLegacyDomain,
+        isUsedForBlogPost = domain.IsUsedForBlogPost,
+        isUsedForSitePage = domain.IsUsedForSitePage,
+        isUsedForLandingPage = domain.IsUsedForLandingPage,
+        isUsedForEmail = domain.IsUsedForEmail,
+        isSetupComplete = domain.IsSetupComplete,
+        correctCname = domain.CorrectCname,
+        created = domain.Created,
+        updated = domain.Updated
+    };
 
     private static Domain MapDomainFromRequest(Dictionary<string, object> request, Domain? existing = null)
     {
         var domain = existing ?? new Domain();
-        
+
         if (request.TryGetValue("id", out var id))
         {
             domain.Id = id.ToString();

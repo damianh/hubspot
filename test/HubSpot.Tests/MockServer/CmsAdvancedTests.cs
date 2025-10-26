@@ -4,10 +4,10 @@ public class CmsAdvancedTests : IAsyncLifetime
 {
     private HubSpotMockServer _server = null!;
 
-    public async ValueTask InitializeAsync() 
+    public async ValueTask InitializeAsync()
         => _server = await HubSpotMockServer.StartNew();
 
-    public async ValueTask DisposeAsync() 
+    public async ValueTask DisposeAsync()
         => await _server.DisposeAsync();
 
     #region HubDB Tests
@@ -29,12 +29,12 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createTableRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
-        
+
         // Act
         var response = await httpClient.PostAsync("/cms/v3/hubdb/tables", content);
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -59,7 +59,7 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var tableJson = System.Text.Json.JsonSerializer.Serialize(createTableRequest);
         var tableContent = new StringContent(tableJson, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         var tableResponse = await httpClient.PostAsync("/cms/v3/hubdb/tables", tableContent);
         var tableResponseJson = await tableResponse.Content.ReadAsStringAsync();
@@ -78,10 +78,10 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var rowJson = System.Text.Json.JsonSerializer.Serialize(createRowRequest);
         var rowContent = new StringContent(rowJson, System.Text.Encoding.UTF8, "application/json");
-        
+
         // Act
         var response = await httpClient.PostAsync($"/cms/v3/hubdb/tables/{tableId}/rows", rowContent);
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -101,13 +101,13 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createTableRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         await httpClient.PostAsync("/cms/v3/hubdb/tables", content);
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/hubdb/tables");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -132,12 +132,12 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createFileRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
-        
+
         // Act
         var response = await httpClient.PostAsync("/cms/v3/source-code/draft/content/templates/page.html", content);
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -158,13 +158,13 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createFileRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         await httpClient.PostAsync("/cms/v3/source-code/draft/content/templates/test.html", content);
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/source-code/draft/content/templates/test.html");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -185,13 +185,13 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createFileRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         await httpClient.PostAsync("/cms/v3/source-code/draft/content/templates/list.html", content);
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/source-code/draft/content");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -218,12 +218,12 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(indexRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
-        
+
         // Act
         var response = await httpClient.PostAsync("/cms/v3/site-search/index", content);
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -246,13 +246,13 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(indexRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         await httpClient.PostAsync("/cms/v3/site-search/index", content);
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/site-search/search?q=foobar");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -269,10 +269,10 @@ public class CmsAdvancedTests : IAsyncLifetime
     {
         // Arrange
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/audit-logs");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -299,12 +299,12 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createAssetRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
-        
+
         // Act
         var response = await httpClient.PostAsync("/cms/v3/media-bridge", content);
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -326,13 +326,13 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createAssetRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         await httpClient.PostAsync("/cms/v3/media-bridge", content);
-        
+
         // Act
         var response = await httpClient.GetAsync("/cms/v3/media-bridge");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -354,16 +354,16 @@ public class CmsAdvancedTests : IAsyncLifetime
 
         var json = System.Text.Json.JsonSerializer.Serialize(createAssetRequest);
         var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        
+
         using var httpClient = new HttpClient { BaseAddress = _server.BaseUri };
         var createResponse = await httpClient.PostAsync("/cms/v3/media-bridge", content);
         var createResponseJson = await createResponse.Content.ReadAsStringAsync();
         var doc = System.Text.Json.JsonDocument.Parse(createResponseJson);
         var assetId = doc.RootElement.GetProperty("id").GetString();
-        
+
         // Act
         var response = await httpClient.GetAsync($"/cms/v3/media-bridge/{assetId}");
-        
+
         // Assert
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();

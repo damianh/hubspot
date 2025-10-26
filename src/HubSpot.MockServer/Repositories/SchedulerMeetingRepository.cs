@@ -14,19 +14,16 @@ public class SchedulerMeetingRepository
         return Task.FromResult(links);
     }
 
-    public Task<JsonElement?> GetLinkAsync(string linkId)
-    {
-        return Task.FromResult(
-            _meetingLinks.TryGetValue(linkId, out var link) 
-                ? (JsonElement?)link 
+    public Task<JsonElement?> GetLinkAsync(string linkId) => Task.FromResult(
+            _meetingLinks.TryGetValue(linkId, out var link)
+                ? (JsonElement?)link
                 : null
         );
-    }
 
     public Task<JsonElement> CreateLinkAsync(JsonElement linkDefinition)
     {
         var id = Interlocked.Increment(ref _nextId).ToString();
-        
+
         var link = JsonSerializer.SerializeToElement(new
         {
             id,
@@ -72,10 +69,7 @@ public class SchedulerMeetingRepository
         return Task.FromResult<JsonElement?>(updated);
     }
 
-    public Task<bool> DeleteLinkAsync(string linkId)
-    {
-        return Task.FromResult(_meetingLinks.TryRemove(linkId, out _));
-    }
+    public Task<bool> DeleteLinkAsync(string linkId) => Task.FromResult(_meetingLinks.TryRemove(linkId, out _));
 
     public Task<JsonElement> GetAvailabilityAsync(string linkId, DateTimeOffset startDate, DateTimeOffset endDate)
     {

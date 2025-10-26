@@ -13,35 +13,23 @@ public class ContentAuditRepository
         return entry;
     }
 
-    public List<ContentAuditEntry> GetAll(int offset = 0, int limit = 100)
-    {
-        return _entries
+    public List<ContentAuditEntry> GetAll(int offset = 0, int limit = 100) => _entries
             .OrderByDescending(e => e.Timestamp)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
-    public List<ContentAuditEntry> GetByObjectId(string objectId)
-    {
-        return _entries
+    public List<ContentAuditEntry> GetByObjectId(string objectId) => _entries
             .Where(e => e.ObjectId == objectId)
             .OrderByDescending(e => e.Timestamp)
             .ToList();
-    }
 
-    public List<ContentAuditEntry> GetByUserId(string userId)
-    {
-        return _entries
+    public List<ContentAuditEntry> GetByUserId(string userId) => _entries
             .Where(e => e.UserId == userId)
             .OrderByDescending(e => e.Timestamp)
             .ToList();
-    }
 
-    public int Count()
-    {
-        return _entries.Count;
-    }
+    public int Count() => _entries.Count;
 
     public void Clear()
     {

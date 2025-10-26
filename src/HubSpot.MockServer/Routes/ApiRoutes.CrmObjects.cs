@@ -12,188 +12,80 @@ internal static partial class ApiRoutes
     private static readonly Dictionary<int, string> _objectTypeMap = new();
     private static readonly object _objectTypeMapLock = new();
 
-    internal static void RegisterCrmCompanies(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "companies", "Companies", "companyId");
-    }
+    internal static void RegisterCrmCompanies(WebApplication app) => RegisterStandardCrmObject(app, "companies", "Companies", "companyId");
 
-    internal static void RegisterCrmContacts(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "contacts", "Contacts", "contactId");
-    }
+    internal static void RegisterCrmContacts(WebApplication app) => RegisterStandardCrmObject(app, "contacts", "Contacts", "contactId");
 
-    internal static void RegisterCrmDeals(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "0-3", "Deals", "dealId");
-    }
+    internal static void RegisterCrmDeals(WebApplication app) => RegisterStandardCrmObject(app, "0-3", "Deals", "dealId");
 
-    internal static void RegisterCrmLineItems(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "line_items", "LineItems", "lineItemId");
-    }
+    internal static void RegisterCrmLineItems(WebApplication app) => RegisterStandardCrmObject(app, "line_items", "LineItems", "lineItemId");
 
-    internal static void RegisterCrmTickets(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "tickets", "Tickets", "ticketId");
-    }
+    internal static void RegisterCrmTickets(WebApplication app) => RegisterStandardCrmObject(app, "tickets", "Tickets", "ticketId");
 
-    internal static void RegisterCrmProducts(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "products", "Products", "productId");
-    }
+    internal static void RegisterCrmProducts(WebApplication app) => RegisterStandardCrmObject(app, "products", "Products", "productId");
 
-    internal static void RegisterCrmQuotes(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "quotes", "Quotes", "quoteId");
-    }
+    internal static void RegisterCrmQuotes(WebApplication app) => RegisterStandardCrmObject(app, "quotes", "Quotes", "quoteId");
 
-    internal static void RegisterCrmCalls(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "calls", "Calls", "callId");
-    }
+    internal static void RegisterCrmCalls(WebApplication app) => RegisterStandardCrmObject(app, "calls", "Calls", "callId");
 
-    internal static void RegisterCrmEmails(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "emails", "Emails", "emailId");
-    }
+    internal static void RegisterCrmEmails(WebApplication app) => RegisterStandardCrmObject(app, "emails", "Emails", "emailId");
 
-    internal static void RegisterCrmMeetings(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "meetings", "Meetings", "meetingId");
-    }
+    internal static void RegisterCrmMeetings(WebApplication app) => RegisterStandardCrmObject(app, "meetings", "Meetings", "meetingId");
 
-    internal static void RegisterCrmNotes(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "notes", "Notes", "noteId");
-    }
+    internal static void RegisterCrmNotes(WebApplication app) => RegisterStandardCrmObject(app, "notes", "Notes", "noteId");
 
-    internal static void RegisterCrmTasks(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "tasks", "Tasks", "taskId");
-    }
+    internal static void RegisterCrmTasks(WebApplication app) => RegisterStandardCrmObject(app, "tasks", "Tasks", "taskId");
 
-    internal static void RegisterCrmCommunications(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "communications", "Communications", "communicationId");
-    }
+    internal static void RegisterCrmCommunications(WebApplication app) => RegisterStandardCrmObject(app, "communications", "Communications", "communicationId");
 
-    internal static void RegisterCrmPostalMail(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "postal_mail", "PostalMail", "postalMailId");
-    }
+    internal static void RegisterCrmPostalMail(WebApplication app) => RegisterStandardCrmObject(app, "postal_mail", "PostalMail", "postalMailId");
 
-    internal static void RegisterCrmFeedbackSubmissions(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "feedback_submissions", "FeedbackSubmissions", "feedbackSubmissionId");
-    }
+    internal static void RegisterCrmFeedbackSubmissions(WebApplication app) => RegisterStandardCrmObject(app, "feedback_submissions", "FeedbackSubmissions", "feedbackSubmissionId");
 
-    internal static void RegisterCrmGoals(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "goal_targets", "Goals", "goalId");
-    }
+    internal static void RegisterCrmGoals(WebApplication app) => RegisterStandardCrmObject(app, "goal_targets", "Goals", "goalId");
 
     // Batch 1: Additional standard objects
-    internal static void RegisterCrmAppointments(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "appointments", "Appointments", "appointmentId");
-    }
+    internal static void RegisterCrmAppointments(WebApplication app) => RegisterStandardCrmObject(app, "appointments", "Appointments", "appointmentId");
 
-    internal static void RegisterCrmLeads(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "leads", "Leads", "leadId");
-    }
+    internal static void RegisterCrmLeads(WebApplication app) => RegisterStandardCrmObject(app, "leads", "Leads", "leadId");
 
-    internal static void RegisterCrmUsers(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "users", "Users", "userId");
-    }
+    internal static void RegisterCrmUsers(WebApplication app) => RegisterStandardCrmObject(app, "users", "Users", "userId");
 
     // Batch 2: Commerce objects
-    internal static void RegisterCrmCarts(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "carts", "Carts", "cartId");
-    }
+    internal static void RegisterCrmCarts(WebApplication app) => RegisterStandardCrmObject(app, "carts", "Carts", "cartId");
 
-    internal static void RegisterCrmOrders(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "orders", "Orders", "orderId");
-    }
+    internal static void RegisterCrmOrders(WebApplication app) => RegisterStandardCrmObject(app, "orders", "Orders", "orderId");
 
-    internal static void RegisterCrmInvoices(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "invoices", "Invoices", "invoiceId");
-    }
+    internal static void RegisterCrmInvoices(WebApplication app) => RegisterStandardCrmObject(app, "invoices", "Invoices", "invoiceId");
 
-    internal static void RegisterCrmDiscounts(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "discounts", "Discounts", "discountId");
-    }
+    internal static void RegisterCrmDiscounts(WebApplication app) => RegisterStandardCrmObject(app, "discounts", "Discounts", "discountId");
 
-    internal static void RegisterCrmFees(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "fees", "Fees", "feeId");
-    }
+    internal static void RegisterCrmFees(WebApplication app) => RegisterStandardCrmObject(app, "fees", "Fees", "feeId");
 
-    internal static void RegisterCrmTaxes(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "taxes", "Taxes", "taxId");
-    }
+    internal static void RegisterCrmTaxes(WebApplication app) => RegisterStandardCrmObject(app, "taxes", "Taxes", "taxId");
 
-    internal static void RegisterCrmCommercePayments(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "commerce_payments", "CommercePayments", "commercePaymentId");
-    }
+    internal static void RegisterCrmCommercePayments(WebApplication app) => RegisterStandardCrmObject(app, "commerce_payments", "CommercePayments", "commercePaymentId");
 
-    internal static void RegisterCrmCommerceSubscriptions(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "commerce_subscriptions", "CommerceSubscriptions", "commerceSubscriptionId");
-    }
+    internal static void RegisterCrmCommerceSubscriptions(WebApplication app) => RegisterStandardCrmObject(app, "commerce_subscriptions", "CommerceSubscriptions", "commerceSubscriptionId");
 
     // Batch 3: Specialized objects
-    internal static void RegisterCrmListings(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "listings", "Listings", "listingId");
-    }
+    internal static void RegisterCrmListings(WebApplication app) => RegisterStandardCrmObject(app, "listings", "Listings", "listingId");
 
-    internal static void RegisterCrmContracts(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "contracts", "Contracts", "contractId");
-    }
+    internal static void RegisterCrmContracts(WebApplication app) => RegisterStandardCrmObject(app, "contracts", "Contracts", "contractId");
 
-    internal static void RegisterCrmCourses(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "courses", "Courses", "courseId");
-    }
+    internal static void RegisterCrmCourses(WebApplication app) => RegisterStandardCrmObject(app, "courses", "Courses", "courseId");
 
-    internal static void RegisterCrmServices(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "services", "Services", "serviceId");
-    }
+    internal static void RegisterCrmServices(WebApplication app) => RegisterStandardCrmObject(app, "services", "Services", "serviceId");
 
-    internal static void RegisterCrmDealSplits(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "deal_splits", "DealSplits", "dealSplitId");
-    }
+    internal static void RegisterCrmDealSplits(WebApplication app) => RegisterStandardCrmObject(app, "deal_splits", "DealSplits", "dealSplitId");
 
-    internal static void RegisterCrmGoalTargets(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "goal_targets", "GoalTargets", "goalTargetId");
-    }
+    internal static void RegisterCrmGoalTargets(WebApplication app) => RegisterStandardCrmObject(app, "goal_targets", "GoalTargets", "goalTargetId");
 
-    internal static void RegisterCrmPartnerClients(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "partner_clients", "PartnerClients", "partnerClientId");
-    }
+    internal static void RegisterCrmPartnerClients(WebApplication app) => RegisterStandardCrmObject(app, "partner_clients", "PartnerClients", "partnerClientId");
 
-    internal static void RegisterCrmPartnerServices(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "partner_services", "PartnerServices", "partnerServiceId");
-    }
+    internal static void RegisterCrmPartnerServices(WebApplication app) => RegisterStandardCrmObject(app, "partner_services", "PartnerServices", "partnerServiceId");
 
-    internal static void RegisterCrmTranscriptions(WebApplication app)
-    {
-        RegisterStandardCrmObject(app, "transcriptions", "Transcriptions", "transcriptionId");
-    }
+    internal static void RegisterCrmTranscriptions(WebApplication app) => RegisterStandardCrmObject(app, "transcriptions", "Transcriptions", "transcriptionId");
 
     /// <summary>
     /// Registers the generic CRM Objects API that works with any object type dynamically.
@@ -240,7 +132,7 @@ internal static partial class ApiRoutes
         }
 
         var allObjects = repo.List(10000, null, archived);
-        
+
         // Filter by object type
         var objectsOfType = allObjects.Where(obj =>
         {
@@ -870,7 +762,7 @@ internal static partial class ApiRoutes
 
         var limit = request.Limit ?? 10;
         var after = request.After != null && int.TryParse(request.After, out var afterId) ? afterId : (int?)null;
-        
+
         var paged = after.HasValue
             ? sorted.SkipWhile(obj => obj.Id!.Value != after.Value).Skip(1).Take(limit).ToList()
             : sorted.Take(limit).ToList();

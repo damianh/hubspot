@@ -35,15 +35,9 @@ public class MarketingEventRepository
         return marketingEvent;
     }
 
-    public void Delete(string id)
-    {
-        _events.Remove(id);
-    }
+    public void Delete(string id) => _events.Remove(id);
 
-    public IEnumerable<MarketingEvent> GetAll()
-    {
-        return _events.Values;
-    }
+    public IEnumerable<MarketingEvent> GetAll() => _events.Values;
 
     public void Clear()
     {

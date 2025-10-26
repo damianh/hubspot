@@ -114,7 +114,7 @@ internal static partial class ApiRoutes
         events.MapGet("/{objectType}/{objectId}", (string objectType, string objectId) =>
         {
             var eventsList = timelineRepo.ListEvents(objectType, objectId);
-            
+
             return Results.Ok(new { results = eventsList });
         });
 

@@ -70,7 +70,7 @@ internal static partial class ApiRoutes
                 // Check if contact is already enrolled in this sequence
                 var existingEnrollments = repo.GetEnrollmentsByContact(request.ContactId);
                 var activeEnrollment = existingEnrollments
-                    .FirstOrDefault(e => e.SequenceId == request.SequenceId && 
+                    .FirstOrDefault(e => e.SequenceId == request.SequenceId &&
                                         e.State == "ENROLLED");
 
                 if (activeEnrollment != null)

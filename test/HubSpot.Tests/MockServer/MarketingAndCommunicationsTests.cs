@@ -117,7 +117,7 @@ public class MarketingAndCommunicationsTests : IAsyncLifetime
 
         var createResponse = await client.PostAsJsonAsync($"/communication-preferences/v3/subscriptions/{email}", createRequest);
         createResponse.EnsureSuccessStatusCode();
-        
+
         var getResponse = await client.GetAsync($"/communication-preferences/v3/subscriptions/{email}");
         getResponse.EnsureSuccessStatusCode();
         var result = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
@@ -139,7 +139,7 @@ public class MarketingAndCommunicationsTests : IAsyncLifetime
 
         var createResponse = await client.PostAsJsonAsync($"/communication-preferences/v4/subscriptions/status/email/{email}", createRequest);
         createResponse.EnsureSuccessStatusCode();
-        
+
         var getResponse = await client.GetAsync($"/communication-preferences/v4/subscriptions/status/email/{email}");
         getResponse.EnsureSuccessStatusCode();
         var result = await getResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();

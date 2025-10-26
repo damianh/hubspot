@@ -14,15 +14,9 @@ public class SourceCodeRepository
         return file;
     }
 
-    public SourceCodeFile? GetByPath(string path)
-    {
-        return _files.GetValueOrDefault(path);
-    }
+    public SourceCodeFile? GetByPath(string path) => _files.GetValueOrDefault(path);
 
-    public List<SourceCodeFile> GetAll()
-    {
-        return _files.Values.OrderBy(f => f.Path).ToList();
-    }
+    public List<SourceCodeFile> GetAll() => _files.Values.OrderBy(f => f.Path).ToList();
 
     public SourceCodeFile? Update(string path, SourceCodeFile updatedFile)
     {
@@ -37,15 +31,9 @@ public class SourceCodeRepository
         return updatedFile;
     }
 
-    public bool Delete(string path)
-    {
-        return _files.Remove(path);
-    }
+    public bool Delete(string path) => _files.Remove(path);
 
-    public int Count()
-    {
-        return _files.Count;
-    }
+    public int Count() => _files.Count;
 
     public void Clear()
     {

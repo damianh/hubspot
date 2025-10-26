@@ -25,7 +25,7 @@ internal static partial class ApiRoutes
                 [FromServices] AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
-                
+
                 var response = new
                 {
                     status = "COMPLETE",
@@ -287,7 +287,7 @@ internal static partial class ApiRoutes
                 [FromServices] AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
-                
+
                 var response = new
                 {
                     status = "COMPLETE",
@@ -412,7 +412,7 @@ internal static partial class ApiRoutes
                 [FromServices] AssociationRepository repo) =>
             {
                 var types = repo.GetAssociationTypes(fromObjectType, toObjectType);
-                
+
                 var response = new
                 {
                     results = types.Select(t => new
@@ -497,7 +497,7 @@ internal static partial class ApiRoutes
                 [FromServices] AssociationRepository repo) =>
             {
                 var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
-                
+
                 var response = new
                 {
                     status = "COMPLETE",
@@ -577,7 +577,7 @@ internal static partial class ApiRoutes
             [System.Text.Json.Serialization.JsonPropertyName("inputs")]
             public ObjectIdInput[] Inputs { get; init; } = [];
         }
-        
+
         private record ObjectIdInput
         {
             [System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -590,19 +590,19 @@ internal static partial class ApiRoutes
             [System.Text.Json.Serialization.JsonPropertyName("inputs")]
             public AssociationInputV3[] Inputs { get; init; } = [];
         }
-        
+
         private record AssociationInputV3
         {
             [System.Text.Json.Serialization.JsonPropertyName("from")]
             public ObjectIdInput From { get; init; } = new();
-            
+
             [System.Text.Json.Serialization.JsonPropertyName("to")]
             public ObjectIdInput To { get; init; } = new();
-            
+
             [System.Text.Json.Serialization.JsonPropertyName("type")]
             public string Type { get; init; } = string.Empty;
         }
-        
+
         private record BatchArchiveRequestV3
         {
             [System.Text.Json.Serialization.JsonPropertyName("inputs")]
@@ -615,24 +615,24 @@ internal static partial class ApiRoutes
             [System.Text.Json.Serialization.JsonPropertyName("inputs")]
             public AssociationInput[] Inputs { get; init; } = [];
         }
-        
+
         private record AssociationInput
         {
             [System.Text.Json.Serialization.JsonPropertyName("from")]
             public ObjectIdInput From { get; init; } = new();
-            
+
             [System.Text.Json.Serialization.JsonPropertyName("to")]
             public ObjectIdInput To { get; init; } = new();
-            
+
             [System.Text.Json.Serialization.JsonPropertyName("types")]
             public AssociationType[] Types { get; init; } = [];
         }
-        
+
         private record AssociationType
         {
             [System.Text.Json.Serialization.JsonPropertyName("associationCategory")]
             public string AssociationCategory { get; init; } = string.Empty;
-            
+
             [System.Text.Json.Serialization.JsonPropertyName("associationTypeId")]
             public int AssociationTypeId { get; init; }
         }

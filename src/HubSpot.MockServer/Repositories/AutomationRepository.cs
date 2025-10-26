@@ -26,10 +26,7 @@ public class AutomationRepository
                 return list;
             });
 
-    public void CompleteCallback(CallbackCompletion completion)
-    {
-        _callbacks[completion.CallbackId] = completion;
-    }
+    public void CompleteCallback(CallbackCompletion completion) => _callbacks[completion.CallbackId] = completion;
 
     public CallbackCompletion? GetCallback(string callbackId)
     {

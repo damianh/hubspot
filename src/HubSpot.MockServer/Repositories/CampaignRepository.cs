@@ -35,15 +35,9 @@ public class CampaignRepository
         return campaign;
     }
 
-    public void Delete(string id)
-    {
-        _campaigns.Remove(id);
-    }
+    public void Delete(string id) => _campaigns.Remove(id);
 
-    public IEnumerable<Campaign> GetAll()
-    {
-        return _campaigns.Values;
-    }
+    public IEnumerable<Campaign> GetAll() => _campaigns.Values;
 
     public void Clear()
     {

@@ -29,10 +29,7 @@ public class PipelineRepository
         DateTime CreatedAt = default,
         DateTime UpdatedAt = default);
 
-    public PipelineRepository()
-    {
-        SeedDefaultPipelines();
-    }
+    public PipelineRepository() => SeedDefaultPipelines();
 
     private void SeedDefaultPipelines()
     {
@@ -65,17 +62,14 @@ public class PipelineRepository
     public Pipeline? GetPipeline(string objectType, string pipelineId)
     {
         var key = GetPipelineKey(objectType, pipelineId);
-        return _pipelines.TryGetValue(key, out var pipeline) ? pipeline : null;
+        return _pipelines.GetValueOrDefault(key);
     }
 
-    public IReadOnlyList<Pipeline> GetPipelines(string objectType)
-    {
-        return _pipelines.Values
+    public IReadOnlyList<Pipeline> GetPipelines(string objectType) => _pipelines.Values
             .Where(p => p.ObjectType == objectType)
             .OrderBy(p => p.DisplayOrder)
             .ThenBy(p => p.Label)
             .ToList();
-    }
 
     public Pipeline CreatePipeline(
         string objectType,
@@ -135,17 +129,14 @@ public class PipelineRepository
     public PipelineStage? GetStage(string pipelineId, string stageId)
     {
         var key = GetStageKey(pipelineId, stageId);
-        return _stages.TryGetValue(key, out var stage) ? stage : null;
+        return _stages.GetValueOrDefault(key);
     }
 
-    public IReadOnlyList<PipelineStage> GetStages(string pipelineId)
-    {
-        return _stages.Values
+    public IReadOnlyList<PipelineStage> GetStages(string pipelineId) => _stages.Values
             .Where(s => s.PipelineId == pipelineId)
             .OrderBy(s => s.DisplayOrder)
             .ThenBy(s => s.Label)
             .ToList();
-    }
 
     public PipelineStage CreateStage(
         string pipelineId,
@@ -207,13 +198,7 @@ public class PipelineRepository
         _stages[key] = stage;
     }
 
-    private static string GetPipelineKey(string objectType, string pipelineId)
-    {
-        return $"{objectType}:{pipelineId}";
-    }
+    private static string GetPipelineKey(string objectType, string pipelineId) => $"{objectType}:{pipelineId}";
 
-    private static string GetStageKey(string pipelineId, string stageId)
-    {
-        return $"{pipelineId}:{stageId}";
-    }
+    private static string GetStageKey(string pipelineId, string stageId) => $"{pipelineId}:{stageId}";
 }

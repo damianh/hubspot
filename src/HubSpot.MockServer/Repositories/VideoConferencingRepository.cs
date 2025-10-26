@@ -23,10 +23,10 @@ public class VideoConferencingRepository
     public Task<JsonElement> UpdateSettingsAsync(string appId, JsonElement body)
     {
         var existing = _settings.GetValueOrDefault(appId);
-        var settings = existing.ValueKind != JsonValueKind.Undefined 
+        var settings = existing.ValueKind != JsonValueKind.Undefined
             ? MergeSettings(existing, body)
             : CreateSettingsObject(appId, body);
-        
+
         _settings[appId] = settings;
         return Task.FromResult(settings);
     }
@@ -54,7 +54,7 @@ public class VideoConferencingRepository
 
     private static JsonElement MergeSettings(JsonElement existing, JsonElement updates)
     {
-        var settings = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText()) 
+        var settings = JsonSerializer.Deserialize<Dictionary<string, object?>>(existing.GetRawText())
             ?? new Dictionary<string, object?>();
 
         if (updates.TryGetProperty("name", out var name))

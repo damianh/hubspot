@@ -18,19 +18,13 @@ public class HubDbRepository
         return table;
     }
 
-    public HubDbTable? GetTableById(string id)
-    {
-        return _tables.GetValueOrDefault(id);
-    }
+    public HubDbTable? GetTableById(string id) => _tables.GetValueOrDefault(id);
 
-    public List<HubDbTable> GetAllTables(int offset = 0, int limit = 100)
-    {
-        return _tables.Values
+    public List<HubDbTable> GetAllTables(int offset = 0, int limit = 100) => _tables.Values
             .OrderBy(t => t.Name)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public HubDbTable? UpdateTable(string id, HubDbTable updatedTable)
     {
@@ -75,10 +69,7 @@ public class HubDbRepository
         return row;
     }
 
-    public HubDbRow? GetRowById(string tableId, string rowId)
-    {
-        return _rows.GetValueOrDefault(tableId)?.GetValueOrDefault(rowId);
-    }
+    public HubDbRow? GetRowById(string tableId, string rowId) => _rows.GetValueOrDefault(tableId)?.GetValueOrDefault(rowId);
 
     public List<HubDbRow> GetAllRows(string tableId, int offset = 0, int limit = 100)
     {
@@ -107,20 +98,11 @@ public class HubDbRepository
         return updatedRow;
     }
 
-    public bool DeleteRow(string tableId, string rowId)
-    {
-        return _rows.GetValueOrDefault(tableId)?.Remove(rowId) ?? false;
-    }
+    public bool DeleteRow(string tableId, string rowId) => _rows.GetValueOrDefault(tableId)?.Remove(rowId) ?? false;
 
-    public int GetTableCount()
-    {
-        return _tables.Count;
-    }
+    public int GetTableCount() => _tables.Count;
 
-    public int GetRowCount(string tableId)
-    {
-        return _rows.GetValueOrDefault(tableId)?.Count ?? 0;
-    }
+    public int GetRowCount(string tableId) => _rows.GetValueOrDefault(tableId)?.Count ?? 0;
 
     public void Clear()
     {

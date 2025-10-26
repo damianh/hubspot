@@ -92,7 +92,7 @@ internal static partial class ApiRoutes
                         s.Domain = request.Domain;
                     }
                 });
-                
+
                 if (blogSettings == null)
                 {
                     return Results.NotFound();
@@ -113,7 +113,7 @@ internal static partial class ApiRoutes
 
             // Revisions
             RegisterRevisionEndpoints(settings);
-            
+
             // Multi-language
             RegisterMultiLanguageEndpoints(settings);
         }
@@ -180,7 +180,7 @@ internal static partial class ApiRoutes
             {
                 var blogSettings = repo.Create(request.BlogId, request.Name, request.Language);
                 repo.AttachToLanguageGroup(request.PrimaryId, blogSettings.BlogId);
-                
+
                 return Results.Ok(new
                 {
                     blogId = blogSettings.BlogId,

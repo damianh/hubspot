@@ -14,19 +14,13 @@ public class DomainRepository
         return domain;
     }
 
-    public Domain? GetById(string id)
-    {
-        return _domains.GetValueOrDefault(id);
-    }
+    public Domain? GetById(string id) => _domains.GetValueOrDefault(id);
 
-    public List<Domain> GetAll(int offset = 0, int limit = 100)
-    {
-        return _domains.Values
+    public List<Domain> GetAll(int offset = 0, int limit = 100) => _domains.Values
             .OrderBy(d => d.Domain1)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public Domain? Update(string id, Domain updatedDomain)
     {
@@ -41,15 +35,9 @@ public class DomainRepository
         return updatedDomain;
     }
 
-    public bool Delete(string id)
-    {
-        return _domains.Remove(id);
-    }
+    public bool Delete(string id) => _domains.Remove(id);
 
-    public int Count()
-    {
-        return _domains.Count;
-    }
+    public int Count() => _domains.Count;
 
     public void Clear()
     {

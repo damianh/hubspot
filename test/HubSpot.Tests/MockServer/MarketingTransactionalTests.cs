@@ -97,7 +97,7 @@ public class MarketingTransactionalTests : IAsyncLifetime
         response.Results.Count.ShouldBeGreaterThanOrEqualTo(2);
         response.Results.ShouldContain(t => t.Id == token1!.Id);
         response.Results.ShouldContain(t => t.Id == token2!.Id);
-        
+
         // Password should not be included in list results
         response.Results.ShouldAllBe(t => t.Password == null);
     }
@@ -143,7 +143,7 @@ public class MarketingTransactionalTests : IAsyncLifetime
         response.ShouldNotBeNull();
         response.Id.ShouldBe(created.Id);
         response.CampaignName.ShouldBe("Get Test");
-        
+
         // Password should not be included when getting by ID
         response.Password.ShouldBeNull();
     }

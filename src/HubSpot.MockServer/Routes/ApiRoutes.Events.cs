@@ -22,8 +22,8 @@ internal static partial class ApiRoutes
                 Email = request.TryGetProperty("email", out var email) ? email.GetString() : null,
                 ObjectId = request.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
                 ObjectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : null,
-                OccurredAt = request.TryGetProperty("occurredAt", out var occurred) 
-                    ? DateTime.Parse(occurred.GetString()!) 
+                OccurredAt = request.TryGetProperty("occurredAt", out var occurred)
+                    ? DateTime.Parse(occurred.GetString()!)
                     : DateTime.UtcNow,
                 Properties = request.TryGetProperty("properties", out var props)
                     ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
@@ -46,7 +46,7 @@ internal static partial class ApiRoutes
             [FromServices] EventRepository repo) =>
         {
             var eventsToSend = new List<CustomEvent>();
-            
+
             foreach (var input in request.GetProperty("inputs").EnumerateArray())
             {
                 var customEvent = new CustomEvent
@@ -55,14 +55,14 @@ internal static partial class ApiRoutes
                     Email = input.TryGetProperty("email", out var email) ? email.GetString() : null,
                     ObjectId = input.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
                     ObjectType = input.TryGetProperty("objectType", out var ot) ? ot.GetString() : null,
-                    OccurredAt = input.TryGetProperty("occurredAt", out var occurred) 
-                        ? DateTime.Parse(occurred.GetString()!) 
+                    OccurredAt = input.TryGetProperty("occurredAt", out var occurred)
+                        ? DateTime.Parse(occurred.GetString()!)
                         : DateTime.UtcNow,
                     Properties = input.TryGetProperty("properties", out var props)
                         ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
                         : null
                 };
-                
+
                 repo.SendEvent(customEvent);
                 eventsToSend.Add(customEvent);
             }
@@ -88,8 +88,8 @@ internal static partial class ApiRoutes
                 EventName = request.GetProperty("eventName").GetString()!,
                 ObjectId = request.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
                 ObjectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : "contact",
-                OccurredAt = request.TryGetProperty("occurredAt", out var occurred) 
-                    ? DateTime.Parse(occurred.GetString()!) 
+                OccurredAt = request.TryGetProperty("occurredAt", out var occurred)
+                    ? DateTime.Parse(occurred.GetString()!)
                     : DateTime.UtcNow,
                 Properties = request.TryGetProperty("properties", out var props)
                     ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
@@ -114,7 +114,7 @@ internal static partial class ApiRoutes
             [FromServices] EventRepository repo) =>
         {
             var allEvents = repo.GetAllEvents();
-            
+
             if (!string.IsNullOrEmpty(objectType))
             {
                 allEvents = allEvents.Where(e => e.ObjectType == objectType).ToList();

@@ -17,10 +17,10 @@ internal static partial class ApiRoutes
         {
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var posts = repository.GetAll(offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -51,7 +51,7 @@ internal static partial class ApiRoutes
 
             var post = MapFromRequest(request);
             var created = repository.Create(post);
-            
+
             auditRepository.AddEntry(new ContentAuditEntry
             {
                 EventType = "CREATED",
@@ -60,7 +60,7 @@ internal static partial class ApiRoutes
                 UserId = "mock-user",
                 UserEmail = "mock@example.com"
             });
-            
+
             return Results.Ok(MapToResponse(created));
         });
 
@@ -81,7 +81,7 @@ internal static partial class ApiRoutes
 
             var updated = MapFromRequest(request, post);
             updated = repository.Update(objectId, updated);
-            
+
             auditRepository.AddEntry(new ContentAuditEntry
             {
                 EventType = "UPDATED",
@@ -90,7 +90,7 @@ internal static partial class ApiRoutes
                 UserId = "mock-user",
                 UserEmail = "mock@example.com"
             });
-            
+
             return Results.Ok(MapToResponse(updated!));
         });
 
@@ -111,7 +111,7 @@ internal static partial class ApiRoutes
                 UserId = "mock-user",
                 UserEmail = "mock@example.com"
             });
-            
+
             return Results.NoContent();
         });
 
@@ -134,7 +134,7 @@ internal static partial class ApiRoutes
 
             var posts = inputs.Select(i => MapFromRequest(i)).ToList();
             var created = repository.BatchCreate(posts);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -158,7 +158,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             var posts = repository.BatchRead(ids);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -182,7 +182,7 @@ internal static partial class ApiRoutes
 
             var posts = inputs.Select(i => MapFromRequest(i)).ToList();
             var updated = repository.BatchUpdate(posts);
-            
+
             return Results.Ok(new
             {
                 status = "COMPLETE",
@@ -206,7 +206,7 @@ internal static partial class ApiRoutes
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             repository.BatchDelete(ids);
-            
+
             return Results.NoContent();
         });
 
@@ -223,9 +223,9 @@ internal static partial class ApiRoutes
 
             var postId = request["id"].ToString()!;
             var langGroupId = request["language"]?.ToString() ?? "default";
-            
+
             repository.AttachToLanguageGroup(postId, langGroupId);
-            
+
             return Results.NoContent();
         });
 
@@ -239,7 +239,7 @@ internal static partial class ApiRoutes
 
             var postId = request["id"].ToString()!;
             repository.DetachFromLanguageGroup(postId);
-            
+
             return Results.NoContent();
         });
 
@@ -311,7 +311,7 @@ internal static partial class ApiRoutes
     private static BlogPost MapFromRequest(Dictionary<string, object> request, BlogPost? existing = null)
     {
         var post = existing ?? new BlogPost();
-        
+
         if (request.TryGetValue("id", out var id))
         {
             post.Id = id.ToString();

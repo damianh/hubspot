@@ -1,4 +1,4 @@
-﻿namespace DamianH.HubSpot.MockServer.Apis.Models;
+namespace DamianH.HubSpot.MockServer.Apis.Models;
 
 internal class SimplePublicObjectInput
 {

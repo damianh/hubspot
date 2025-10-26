@@ -17,10 +17,10 @@ internal static partial class ApiRoutes
             var query = context.Request.Query["q"].ToString();
             var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 20;
             var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
-            
+
             var results = repository.Search(query, offset, limit);
             var total = repository.Count();
-            
+
             return Results.Ok(new
             {
                 total,
@@ -38,7 +38,7 @@ internal static partial class ApiRoutes
 
             var content = MapSearchContentFromRequest(request);
             var indexed = repository.AddContent(content);
-            
+
             return Results.Ok(MapSearchContentToResponse(indexed));
         });
 
@@ -54,21 +54,18 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapSearchContentToResponse(SearchableContent content)
+    private static object MapSearchContentToResponse(SearchableContent content) => new
     {
-        return new
-        {
-            id = content.Id,
-            title = content.Title,
-            description = content.Description,
-            content = content.Content,
-            url = content.Url,
-            type = content.Type,
-            language = content.Language,
-            indexedAt = content.IndexedAt,
-            metadata = content.Metadata
-        };
-    }
+        id = content.Id,
+        title = content.Title,
+        description = content.Description,
+        content = content.Content,
+        url = content.Url,
+        type = content.Type,
+        language = content.Language,
+        indexedAt = content.IndexedAt,
+        metadata = content.Metadata
+    };
 
     private static SearchableContent MapSearchContentFromRequest(Dictionary<string, object> request)
     {

@@ -26,7 +26,7 @@ internal static partial class ApiRoutes
         group.MapGet("/content", (string environment, HttpContext context) =>
         {
             var files = repository.GetAll();
-            
+
             return Results.Ok(new
             {
                 total = files.Count,
@@ -45,7 +45,7 @@ internal static partial class ApiRoutes
             var file = MapFileFromRequest(request);
             file.Path = path;
             var created = repository.Create(file);
-            
+
             return Results.Ok(MapFileToResponse(created));
         });
 
@@ -59,7 +59,7 @@ internal static partial class ApiRoutes
 
             var file = MapFileFromRequest(request);
             var updated = repository.Update(path, file);
-            
+
             if (updated == null)
             {
                 return Results.NotFound(new { message = $"File {path} not found" });
@@ -99,26 +99,20 @@ internal static partial class ApiRoutes
         });
     }
 
-    private static object MapFileToResponse(SourceCodeFile file)
+    private static object MapFileToResponse(SourceCodeFile file) => new
     {
-        return new
-        {
-            id = file.Id,
-            path = file.Path,
-            content = file.Content,
-            type = file.Type,
-            createdAt = file.CreatedAt,
-            updatedAt = file.UpdatedAt
-        };
-    }
+        id = file.Id,
+        path = file.Path,
+        content = file.Content,
+        type = file.Type,
+        createdAt = file.CreatedAt,
+        updatedAt = file.UpdatedAt
+    };
 
-    private static SourceCodeFile MapFileFromRequest(Dictionary<string, object> request)
+    private static SourceCodeFile MapFileFromRequest(Dictionary<string, object> request) => new SourceCodeFile
     {
-        return new SourceCodeFile
-        {
-            Path = request.GetValueOrDefault("path")?.ToString(),
-            Content = request.GetValueOrDefault("content")?.ToString(),
-            Type = request.GetValueOrDefault("type")?.ToString()
-        };
-    }
+        Path = request.GetValueOrDefault("path")?.ToString(),
+        Content = request.GetValueOrDefault("content")?.ToString(),
+        Type = request.GetValueOrDefault("type")?.ToString()
+    };
 }

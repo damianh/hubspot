@@ -19,7 +19,7 @@ public class HubSpotMockServer : IAsyncDisposable
     }
 
     public Uri Uri { get; private set; }
-    
+
     public Uri BaseUri => Uri;
 
     public static async Task<HubSpotMockServer> StartNew()
@@ -86,7 +86,7 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton(TimeProvider.System);
 
         builder.Services.AddEndpointsApiExplorer();
-        
+
         // Configure JSON serialization to handle enums as strings
         builder.Services.ConfigureHttpJsonOptions(options =>
         {
@@ -113,12 +113,12 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmPostalMail(app);
         ApiRoutes.RegisterCrmFeedbackSubmissions(app);
         ApiRoutes.RegisterCrmGoals(app);
-        
+
         // Batch 1: Additional standard objects
         ApiRoutes.RegisterCrmAppointments(app);
         ApiRoutes.RegisterCrmLeads(app);
         ApiRoutes.RegisterCrmUsers(app);
-        
+
         // Batch 2: Commerce objects
         ApiRoutes.RegisterCrmCarts(app);
         ApiRoutes.RegisterCrmOrders(app);
@@ -128,7 +128,7 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmTaxes(app);
         ApiRoutes.RegisterCrmCommercePayments(app);
         ApiRoutes.RegisterCrmCommerceSubscriptions(app);
-        
+
         // Batch 3: Specialized objects
         ApiRoutes.RegisterCrmListings(app);
         ApiRoutes.RegisterCrmContracts(app);
@@ -139,71 +139,71 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmPartnerClients(app);
         ApiRoutes.RegisterCrmPartnerServices(app);
         ApiRoutes.RegisterCrmTranscriptions(app);
-        
+
         // Register Associations APIs (must be before RegisterGenericCrmObjectsApi to match specific routes first)
         ApiRoutes.Associations.RegisterAssociationsV3(app);
         ApiRoutes.Associations.RegisterAssociationsV4(app);
         ApiRoutes.Associations.RegisterAssociationsV202509(app);
-        
+
         // Register generic CRM Objects API for dynamic/custom object types
         // Note: This must be registered AFTER specific object routes and associations
         // as it uses catch-all pattern /crm/v3/objects/{objectType}
         ApiRoutes.RegisterGenericCrmObjectsApi(app);
-        
+
         // Register Properties APIs
         ApiRoutes.Properties.RegisterPropertiesV3(app);
         ApiRoutes.Properties.RegisterPropertiesV202509(app);
         ApiRoutes.Properties.RegisterPropertyValidationsV3(app);
-        
+
         // Register Pipelines APIs
         ApiRoutes.Pipelines.RegisterPipelinesV3(app);
-        
+
         // Register Owners APIs
         ApiRoutes.Owners.RegisterOwnersV3(app);
-        
+
         // Register Marketing APIs
         ApiRoutes.Marketing.RegisterMarketingTransactionalApi(app);
         ApiRoutes.Marketing.RegisterMarketingEventsApi(app);
         ApiRoutes.Marketing.RegisterMarketingEmailsApi(app);
         ApiRoutes.Marketing.RegisterCampaignsApi(app);
         ApiRoutes.Marketing.RegisterSingleSendApi(app);
-        
+
         // Register Communication Preferences APIs
         ApiRoutes.Subscriptions.RegisterSubscriptionsV3Api(app);
         ApiRoutes.Subscriptions.RegisterSubscriptionsV4Api(app);
-        
+
         // Register Webhooks APIs
         ApiRoutes.Webhooks.RegisterWebhooksApi(app);
-        
+
         // Register Lists API
         ApiRoutes.RegisterCrmLists(app);
-        
+
         // Register Files API
         ApiRoutes.RegisterFiles(app);
-        
+
         // Register Events API
         ApiRoutes.RegisterEvents(app);
-        
+
         // Register Conversations APIs
         ApiRoutes.RegisterConversationsApi(
             app,
             app.Services.GetRequiredService<ConversationRepository>(),
             app.Services.GetRequiredService<CustomChannelRepository>(),
             app.Services.GetRequiredService<VisitorIdentificationRepository>());
-        
+
         // Register CRM Extensions APIs (Batch 6)
         ApiRoutes.RegisterSchemasApi(app, app.Services.GetRequiredService<SchemaRepository>());
         ApiRoutes.RegisterImportsApi(app, app.Services.GetRequiredService<ImportRepository>());
         ApiRoutes.RegisterExportsApi(app, app.Services.GetRequiredService<ExportRepository>());
         ApiRoutes.RegisterTimelineApi(app, app.Services.GetRequiredService<TimelineRepository>());
-        
+
         // Register CRM Extensions Integration APIs
         ApiRoutes.RegisterCrmExtensions(app);
-        
+
         // Register Automation APIs
         ApiRoutes.Automation.RegisterAutomationActionsV4(app, app.Services.GetRequiredService<AutomationRepository>());
         ApiRoutes.Automation.RegisterAutomationSequencesV4(app, app.Services.GetRequiredService<SequenceRepository>());
-        
+
         // Register Account & Settings APIs
         ApiRoutes.Account.RegisterAccountInfoV3Api(app);
         ApiRoutes.Account.RegisterAccountInfoV202509Api(app);
@@ -211,22 +211,22 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.Multicurrency.RegisterMulticurrencyV3Api(app);
         ApiRoutes.UserProvisioning.RegisterUserProvisioningV3Api(app);
         ApiRoutes.TaxRates.RegisterTaxRatesV1Api(app);
-        
+
         // Register Business Units APIs
         ApiRoutes.BusinessUnits.RegisterBusinessUnitsV3Api(app);
-        
+
         // Register Scheduler APIs
         ApiRoutes.Scheduler.RegisterSchedulerMeetingsV3Api(app);
-        
+
         // Register CMS Blog APIs
         ApiRoutes.CmsTags.RegisterCmsTagsV3Api(app);
         ApiRoutes.CmsBlogSettings.RegisterCmsBlogSettingsV3Api(app);
-        ApiRoutes.RegisterCmsBlogPostsApi(app, 
+        ApiRoutes.RegisterCmsBlogPostsApi(app,
             app.Services.GetRequiredService<BlogPostRepository>(),
             app.Services.GetRequiredService<ContentAuditRepository>());
         ApiRoutes.RegisterCmsBlogAuthorsApi(app,
             app.Services.GetRequiredService<BlogAuthorRepository>());
-        
+
         // Register CMS Pages & Content APIs
         ApiRoutes.RegisterCmsPagesApi(app,
             app.Services.GetRequiredService<PageRepository>());
@@ -234,7 +234,7 @@ public class HubSpotMockServer : IAsyncDisposable
             app.Services.GetRequiredService<DomainRepository>());
         ApiRoutes.RegisterCmsUrlRedirectsApi(app,
             app.Services.GetRequiredService<UrlRedirectRepository>());
-        
+
         // Register CMS Advanced Features APIs
         ApiRoutes.RegisterCmsHubDbApi(app,
             app.Services.GetRequiredService<HubDbRepository>());

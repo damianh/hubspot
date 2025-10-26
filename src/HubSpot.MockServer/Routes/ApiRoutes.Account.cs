@@ -28,7 +28,7 @@ internal static partial class ApiRoutes
             });
 
             var detailsGroup = app.MapGroup("/account-info/v3");
-            
+
             detailsGroup.MapGet("/details", (
                 [FromServices] AccountInfoRepository repository) =>
             {
@@ -56,7 +56,7 @@ internal static partial class ApiRoutes
             });
 
             var detailsGroup = app.MapGroup("/account-info/api/v202509");
-            
+
             detailsGroup.MapGet("/details", (
                 [FromServices] AccountInfoRepository repository) =>
             {
@@ -76,7 +76,7 @@ internal static partial class ApiRoutes
             {
                 var logs = repository.GetAuditLogs("ACTIVITY", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);
-                
+
                 var response = new
                 {
                     results = logs,
@@ -100,7 +100,7 @@ internal static partial class ApiRoutes
             {
                 var logs = repository.GetAuditLogs("LOGIN", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);
-                
+
                 var response = new
                 {
                     results = logs,
@@ -124,7 +124,7 @@ internal static partial class ApiRoutes
             {
                 var logs = repository.GetAuditLogs("SECURITY", limit ?? 100, after);
                 var hasMore = logs.Count >= (limit ?? 100);
-                
+
                 var response = new
                 {
                     results = logs,
