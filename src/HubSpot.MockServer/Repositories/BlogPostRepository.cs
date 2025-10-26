@@ -1,0 +1,212 @@
+namespace DamianH.HubSpot.MockServer.Repositories;
+
+public class BlogPostRepository
+{
+    private readonly Dictionary<string, BlogPost> _posts = new();
+    private readonly Dictionary<string, List<BlogPostRevision>> _revisions = new();
+    private readonly Dictionary<string, List<string>> _languageGroups = new();
+    private int _nextId = 1;
+
+    public BlogPost Create(BlogPost post)
+    {
+        post.Id = _nextId++.ToString();
+        post.Created = DateTime.UtcNow;
+        post.Updated = DateTime.UtcNow;
+        _posts[post.Id] = post;
+        
+        AddRevision(post.Id, post);
+        
+        return post;
+    }
+
+    public BlogPost? GetById(string id)
+    {
+        return _posts.GetValueOrDefault(id);
+    }
+
+    public List<BlogPost> GetAll(int offset = 0, int limit = 100)
+    {
+        return _posts.Values
+            .OrderByDescending(p => p.Created)
+            .Skip(offset)
+            .Take(limit)
+            .ToList();
+    }
+
+    public BlogPost? Update(string id, BlogPost updatedPost)
+    {
+        if (!_posts.ContainsKey(id))
+            return null;
+
+        updatedPost.Id = id;
+        updatedPost.Updated = DateTime.UtcNow;
+        _posts[id] = updatedPost;
+        
+        AddRevision(id, updatedPost);
+        
+        return updatedPost;
+    }
+
+    public bool Delete(string id)
+    {
+        var removed = _posts.Remove(id);
+        if (removed)
+        {
+            _revisions.Remove(id);
+        }
+        return removed;
+    }
+
+    public List<BlogPost> BatchCreate(List<BlogPost> posts)
+    {
+        return posts.Select(Create).ToList();
+    }
+
+    public List<BlogPost> BatchRead(List<string> ids)
+    {
+        return ids.Select(id => _posts.GetValueOrDefault(id))
+            .Where(p => p != null)
+            .Cast<BlogPost>()
+            .ToList();
+    }
+
+    public List<BlogPost> BatchUpdate(List<BlogPost> posts)
+    {
+        var results = new List<BlogPost>();
+        foreach (var post in posts)
+        {
+            if (post.Id != null)
+            {
+                var updated = Update(post.Id, post);
+                if (updated != null)
+                    results.Add(updated);
+            }
+        }
+        return results;
+    }
+
+    public int BatchDelete(List<string> ids)
+    {
+        return ids.Count(Delete);
+    }
+
+    private void AddRevision(string postId, BlogPost post)
+    {
+        if (!_revisions.ContainsKey(postId))
+            _revisions[postId] = new List<BlogPostRevision>();
+
+        var revision = new BlogPostRevision
+        {
+            Id = (_revisions[postId].Count + 1).ToString(),
+            PostId = postId,
+            CreatedAt = DateTime.UtcNow,
+            Content = post
+        };
+        
+        _revisions[postId].Add(revision);
+    }
+
+    public List<BlogPostRevision> GetRevisions(string postId)
+    {
+        return _revisions.GetValueOrDefault(postId) ?? new List<BlogPostRevision>();
+    }
+
+    public BlogPostRevision? GetRevisionById(string postId, string revisionId)
+    {
+        return _revisions.GetValueOrDefault(postId)
+            ?.FirstOrDefault(r => r.Id == revisionId);
+    }
+
+    public BlogPost? RestoreRevision(string postId, string revisionId)
+    {
+        var revision = GetRevisionById(postId, revisionId);
+        if (revision?.Content == null)
+            return null;
+
+        return Update(postId, revision.Content);
+    }
+
+    public void AttachToLanguageGroup(string postId, string languageGroupId)
+    {
+        if (!_languageGroups.ContainsKey(languageGroupId))
+            _languageGroups[languageGroupId] = new List<string>();
+
+        if (!_languageGroups[languageGroupId].Contains(postId))
+            _languageGroups[languageGroupId].Add(postId);
+    }
+
+    public void DetachFromLanguageGroup(string postId)
+    {
+        foreach (var group in _languageGroups.Values)
+        {
+            group.Remove(postId);
+        }
+    }
+
+    public List<BlogPost> GetLanguageVariants(string postId)
+    {
+        var post = GetById(postId);
+        if (post?.Language == null)
+            return new List<BlogPost>();
+
+        var groupId = _languageGroups
+            .FirstOrDefault(g => g.Value.Contains(postId))
+            .Key;
+
+        if (groupId == null)
+            return new List<BlogPost> { post };
+
+        return _languageGroups[groupId]
+            .Select(GetById)
+            .Where(p => p != null)
+            .Cast<BlogPost>()
+            .ToList();
+    }
+
+    public int Count()
+    {
+        return _posts.Count;
+    }
+
+    public void Clear()
+    {
+        _posts.Clear();
+        _revisions.Clear();
+        _languageGroups.Clear();
+        _nextId = 1;
+    }
+}
+
+public class BlogPost
+{
+    public string? Id { get; set; }
+    public string? Name { get; set; }
+    public string? Slug { get; set; }
+    public string? ContentGroupId { get; set; }
+    public string? BlogAuthorId { get; set; }
+    public string? Campaign { get; set; }
+    public string? State { get; set; } // "DRAFT", "PUBLISHED", "SCHEDULED"
+    public Dictionary<string, object>? PostBody { get; set; }
+    public string? PostSummary { get; set; }
+    public string? RssBody { get; set; }
+    public string? RssSummary { get; set; }
+    public string? MetaDescription { get; set; }
+    public bool? UseFeaturedImage { get; set; }
+    public string? FeaturedImage { get; set; }
+    public string? FeaturedImageAltText { get; set; }
+    public DateTime? PublishDate { get; set; }
+    public DateTime Created { get; set; }
+    public DateTime Updated { get; set; }
+    public List<string>? TagIds { get; set; }
+    public string? Language { get; set; }
+    public string? TranslatedFromId { get; set; }
+    public Dictionary<string, object>? AdditionalProperties { get; set; }
+}
+
+public class BlogPostRevision
+{
+    public string? Id { get; set; }
+    public string? PostId { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public BlogPost? Content { get; set; }
+}
