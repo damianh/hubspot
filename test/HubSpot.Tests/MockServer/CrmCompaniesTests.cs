@@ -1,6 +1,6 @@
+using DamianH.HubSpot.KiotaClient;
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models;
-using DamianH.HubSpot.KiotaClient.Extensions;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 

@@ -1,4 +1,4 @@
-﻿namespace DamianH.HubSpot.KiotaClient.Extensions;
+namespace DamianH.HubSpot.KiotaClient;
 
 public static class PropertyNames
 {

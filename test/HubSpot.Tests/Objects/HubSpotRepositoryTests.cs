@@ -1,4 +1,4 @@
-﻿using DamianH.HubSpot.KiotaClient.Extensions;
+﻿using DamianH.HubSpot.KiotaClient;
 using DamianH.HubSpot.MockServer.Objects;
 using Microsoft.Extensions.Time.Testing;
 
