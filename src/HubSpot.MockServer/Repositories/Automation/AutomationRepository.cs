@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 
-namespace DamianH.HubSpot.MockServer.Repositories;
+namespace DamianH.HubSpot.MockServer.Repositories.Automation;
 
 internal class AutomationRepository
 {
@@ -39,29 +39,4 @@ internal class AutomationRepository
         _actionsByApp.Clear();
         _callbacks.Clear();
     }
-}
-
-public record CustomAction
-{
-    public string Id { get; init; } = string.Empty;
-    public int AppId { get; init; }
-    public string Label { get; init; } = string.Empty;
-    public string ActionUrl { get; init; } = string.Empty;
-    public List<ActionInput> InputFields { get; init; } = [];
-}
-
-public record ActionInput
-{
-    public string Name { get; init; } = string.Empty;
-    public string Type { get; init; } = ""; // TEXT, NUMBER, BOOLEAN, etc.
-    public string Label { get; init; } = string.Empty;
-    public bool Required { get; init; }
-}
-
-public record CallbackCompletion
-{
-    public string CallbackId { get; init; } = string.Empty;
-    public string Status { get; init; } = ""; // SUCCESS, FAILURE
-    public Dictionary<string, object> OutputFields { get; init; } = new();
-    public DateTimeOffset CompletedAt { get; init; }
 }

@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>DamianH.HubSpot.MockServer</RootNamespace>
     <IsTrimmable>false</IsTrimmable>
+    <NoWarn>$(NoWarn);CA2007</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

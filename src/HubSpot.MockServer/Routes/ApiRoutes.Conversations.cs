@@ -1,5 +1,6 @@
 using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.CustomChannel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,19 +23,19 @@ internal static partial class ApiRoutes
             var results = conversationRepo.ListConversations(status, limit, after);
             return Results.Ok(new
             {
-                results = results.Select(c => ToConversationResponse(c)),
-                paging = new { next = results.Count >= (limit ?? 100) ? new { after = results.Last().Id } : null }
+                results = results.Select(ToConversationResponse),
+                paging = new { next = results.Count >= (limit ?? 100)
+                    ? new { after = results.Last().Id }
+                    : null }
             });
         });
 
         conversations.MapGet("/{conversationId}", (string conversationId) =>
         {
             var conversation = conversationRepo.GetConversation(conversationId);
-            if (conversation == null)
-            {
-                return Results.NotFound(new { message = $"Conversation {conversationId} not found" });
-            }
-            return Results.Ok(ToConversationResponse(conversation));
+            return conversation == null
+                ? Results.NotFound(new { message = $"Conversation {conversationId} not found" })
+                : Results.Ok(ToConversationResponse(conversation));
         });
 
         conversations.MapPatch("/{conversationId}", async (string conversationId, HttpRequest request) =>
@@ -57,12 +58,9 @@ internal static partial class ApiRoutes
                 conversation = conversationRepo.AssignConversation(conversationId, ownerId ?? "");
             }
 
-            if (conversation == null)
-            {
-                return Results.NotFound(new { message = $"Conversation {conversationId} not found" });
-            }
-
-            return Results.Ok(ToConversationResponse(conversation));
+            return conversation == null
+                ? Results.NotFound(new { message = $"Conversation {conversationId} not found" })
+                : Results.Ok(ToConversationResponse(conversation));
         });
 
         conversations.MapPost("/{conversationId}/messages", async (string conversationId, HttpRequest request) =>

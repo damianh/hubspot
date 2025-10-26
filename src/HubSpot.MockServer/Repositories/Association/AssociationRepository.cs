@@ -1,6 +1,6 @@
 using System.Collections.Concurrent;
 
-namespace DamianH.HubSpot.MockServer.Repositories;
+namespace DamianH.HubSpot.MockServer.Repositories.Association;
 
 /// <summary>
 /// Repository for managing associations between HubSpot objects
@@ -9,15 +9,6 @@ internal class AssociationRepository
 {
     private readonly ConcurrentDictionary<string, Association> _associations = new();
     private int _nextId = 1;
-
-    public record Association(
-        string Id,
-        string FromObjectType,
-        string FromObjectId,
-        string ToObjectType,
-        string ToObjectId,
-        string AssociationTypeId,
-        string? AssociationLabel = null);
 
     public record AssociationTypeDefinition(
         string Id,

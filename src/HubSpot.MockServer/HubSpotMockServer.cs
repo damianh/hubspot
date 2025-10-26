@@ -1,5 +1,10 @@
 using DamianH.HubSpot.MockServer.Objects;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.AccountInfo;
+using DamianH.HubSpot.MockServer.Repositories.Association;
+using DamianH.HubSpot.MockServer.Repositories.Automation;
+using DamianH.HubSpot.MockServer.Repositories.Blog;
+using DamianH.HubSpot.MockServer.Repositories.CustomChannel;
 using DamianH.HubSpot.MockServer.Routes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

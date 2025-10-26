@@ -1,5 +1,6 @@
 using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.Blog;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;

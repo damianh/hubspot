@@ -1,6 +1,6 @@
 using DamianH.HubSpot.MockServer.Objects;
 
-namespace DamianH.HubSpot.MockServer.Repositories;
+namespace DamianH.HubSpot.MockServer.Repositories.AccountInfo;
 
 internal class AccountInfoRepository
 {
