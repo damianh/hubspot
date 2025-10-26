@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class UrlRedirectRepository
+internal class UrlRedirectRepository
 {
     private readonly Dictionary<string, UrlRedirect> _redirects = new();
     private int _nextId = 1;

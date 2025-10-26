@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class AccountInfoRepository
+internal class AccountInfoRepository
 {
     private readonly TimeProvider _timeProvider;
     private AccountDetail _accountDetail;

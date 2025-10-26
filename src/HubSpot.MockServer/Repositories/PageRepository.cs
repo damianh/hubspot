@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class PageRepository
+internal class PageRepository
 {
     private readonly Dictionary<string, Page> _pages = new();
     private readonly Dictionary<string, List<PageRevision>> _revisions = new();

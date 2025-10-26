@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Objects;
 
-public class ApiUsageData
+internal class ApiUsageData
 {
     public required string Date { get; set; }
     public int TotalUsage { get; set; }

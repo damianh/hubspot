@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class CustomChannelRepository
+internal class CustomChannelRepository
 {
     private readonly ConcurrentDictionary<string, CustomChannelData> _channels = new();
     private long _nextChannelId = 1;

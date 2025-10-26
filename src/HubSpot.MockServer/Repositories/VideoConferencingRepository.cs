@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class VideoConferencingRepository
+internal class VideoConferencingRepository
 {
     private readonly ConcurrentDictionary<string, JsonElement> _settings = new();
 

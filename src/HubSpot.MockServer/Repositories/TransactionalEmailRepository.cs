@@ -3,12 +3,12 @@ using DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class TransactionalEmailRepository
+internal class TransactionalEmailRepository
 {
     private readonly ConcurrentDictionary<string, EmailSendStatusView> _emailSends = new();
     private readonly ConcurrentDictionary<string, SmtpApiTokenView> _smtpTokens = new();
-    private int _emailSendCounter = 0;
-    private int _smtpTokenCounter = 0;
+    private int _emailSendCounter;
+    private int _smtpTokenCounter;
 
     public EmailSendStatusView SendEmail(PublicSingleSendRequestEgg request)
     {

@@ -5,7 +5,7 @@ namespace DamianH.HubSpot.MockServer.Repositories;
 /// <summary>
 /// Repository for managing associations between HubSpot objects
 /// </summary>
-public class AssociationRepository
+internal class AssociationRepository
 {
     private readonly ConcurrentDictionary<string, Association> _associations = new();
     private int _nextId = 1;

@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SiteSearchRepository
+internal class SiteSearchRepository
 {
     private readonly List<SearchableContent> _content = [];
     private int _nextId = 1;

@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class BusinessUnitRepository
+internal class BusinessUnitRepository
 {
     private readonly ConcurrentDictionary<string, JsonElement> _businessUnits = new();
     private int _nextId = 1;

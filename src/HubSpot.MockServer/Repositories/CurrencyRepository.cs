@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class CurrencyRepository
+internal class CurrencyRepository
 {
     private readonly TimeProvider _timeProvider;
     private CompanyCurrency _companyCurrency;

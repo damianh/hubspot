@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Objects;
 
-public class AuditLogEntry
+internal class AuditLogEntry
 {
     public required string Id { get; set; }
     public required string EventType { get; set; }

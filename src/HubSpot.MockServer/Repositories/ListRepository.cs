@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class ListRepository
+internal class ListRepository
 {
     private readonly ConcurrentDictionary<string, ListDefinition> _lists = new();
     private readonly ConcurrentDictionary<string, HashSet<string>> _memberships = new();

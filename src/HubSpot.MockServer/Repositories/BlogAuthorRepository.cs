@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class BlogAuthorRepository
+internal class BlogAuthorRepository
 {
     private readonly Dictionary<string, BlogAuthor> _authors = new();
     private readonly Dictionary<string, List<string>> _languageGroups = new();

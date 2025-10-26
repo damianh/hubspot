@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class ContentAuditRepository
+internal class ContentAuditRepository
 {
     private readonly List<ContentAuditEntry> _entries = [];
     private int _nextId = 1;

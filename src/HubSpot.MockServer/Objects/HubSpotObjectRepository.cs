@@ -191,8 +191,8 @@ internal class HubSpotObjectRepository(HubSpotObjectIdGenerator idGenerator, Tim
     private class HubSpotObjectData
     {
         public required int Id { get; init; }
-        public bool Archived { get; init; } = false;
-        public DateTimeOffset? ArchivedAt { get; init; } = null;
+        public bool Archived { get; init; }
+        public DateTimeOffset? ArchivedAt { get; init; }
         public required DateTimeOffset CreatedAt { get; init; }
         public required DateTimeOffset UpdatedAt { get; set; }
         public Dictionary<string, List<PropertyValueEntryData>> Properties { get; } = new();

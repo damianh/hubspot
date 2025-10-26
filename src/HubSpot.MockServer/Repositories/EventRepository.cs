@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class EventRepository
+internal class EventRepository
 {
     private readonly ConcurrentDictionary<string, CustomEvent> _events = new();
     private readonly ConcurrentDictionary<string, EventDefinition> _definitions = new();

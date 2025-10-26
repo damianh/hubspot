@@ -5,7 +5,7 @@ namespace DamianH.HubSpot.MockServer.Repositories;
 /// <summary>
 /// Repository for managing HubSpot owners (users and teams)
 /// </summary>
-public class OwnerRepository
+internal class OwnerRepository
 {
     private readonly ConcurrentDictionary<string, Owner> _owners = new();
     private int _nextId = 1;

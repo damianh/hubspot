@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class TimelineRepository
+internal class TimelineRepository
 {
     private readonly ConcurrentDictionary<string, TimelineEventTemplate> _templates = new();
     private readonly ConcurrentDictionary<string, TimelineEvent> _events = new();

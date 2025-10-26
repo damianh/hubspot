@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class BlogSettingsRepository
+internal class BlogSettingsRepository
 {
     private readonly ConcurrentDictionary<string, BlogSettingsData> _settings = new();
     private readonly ConcurrentDictionary<string, List<BlogSettingsRevision>> _revisions = new();

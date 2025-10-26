@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Objects;
 
-public class ExchangeRate
+internal class ExchangeRate
 {
     public required string Id { get; set; }
     public required string FromCurrencyCode { get; set; }

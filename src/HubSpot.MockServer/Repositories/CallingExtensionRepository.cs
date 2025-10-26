@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class CallingExtensionRepository
+internal class CallingExtensionRepository
 {
     private readonly ConcurrentDictionary<string, JsonElement> _settings = new();
     private readonly ConcurrentDictionary<string, List<CallRecording>> _recordings = new();

@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class PropertyValidationRepository
+internal class PropertyValidationRepository
 {
     private readonly ConcurrentDictionary<string, List<JsonElement>> _validations = new();
 

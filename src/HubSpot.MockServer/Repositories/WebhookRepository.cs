@@ -4,11 +4,11 @@ using DamianH.HubSpot.MockServer.Apis.Models;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class WebhookRepository
+internal class WebhookRepository
 {
     private readonly ConcurrentDictionary<string, ConcurrentDictionary<string, SubscriptionResponse>> _subscriptions = new();
     private readonly ConcurrentDictionary<string, SettingsResponse> _settings = new();
-    private int _subscriptionCounter = 0;
+    private int _subscriptionCounter;
 
     public SubscriptionResponse CreateSubscription(string appId, WebhookSubscriptionCreateRequest request)
     {

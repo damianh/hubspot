@@ -5,7 +5,7 @@ namespace DamianH.HubSpot.MockServer.Repositories;
 /// <summary>
 /// Repository for managing pipelines and their stages
 /// </summary>
-public class PipelineRepository
+internal class PipelineRepository
 {
     private readonly ConcurrentDictionary<string, Pipeline> _pipelines = new();
     private readonly ConcurrentDictionary<string, PipelineStage> _stages = new();

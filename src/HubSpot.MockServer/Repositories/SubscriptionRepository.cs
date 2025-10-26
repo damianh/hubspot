@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SubscriptionRepository
+internal class SubscriptionRepository
 {
     private readonly Dictionary<string, Subscription> _subscriptions = new();
     private readonly Dictionary<string, SubscriptionDefinition> _definitions = new();

@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SingleSendRepository
+internal class SingleSendRepository
 {
     private readonly Dictionary<string, SingleSendEmail> _emails = new();
     private int _nextId = 1;

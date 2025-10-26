@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class TagRepository
+internal class TagRepository
 {
     private readonly ConcurrentDictionary<string, TagData> _tags = new();
     private readonly ConcurrentDictionary<string, List<string>> _languageGroups = new();

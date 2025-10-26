@@ -1,24 +1,5 @@
 namespace DamianH.HubSpot.MockServer.Objects;
 
-/*
-internal class HubSpotProperties
-{
-    private readonly Dictionary<string, HubSpotObjectProperty> _properties = new();
-
-    public HubSpotObjectProperty GetOrAdd(string name)
-    {
-        if(!_properties.TryGetValue(name, out var property))
-        {
-            property = new HubSpotObjectProperty(name, []);
-            _properties.Add(name, property);
-        }
-        return property;
-    }
-    
-    public IReadOnlyDictionary<string, HubSpotObjectProperty> Items => _properties;
-}
-*/
-
 internal class HubSpotObject(
     HubSpotObjectId id,
     DateTimeOffset createdAt,

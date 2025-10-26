@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class BlogTagRepository
+internal class BlogTagRepository
 {
     private readonly Dictionary<string, BlogTag> _tags = new();
     private readonly Dictionary<string, List<string>> _languageGroups = new();

@@ -3,10 +3,10 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class CrmCardRepository
+internal class CrmCardRepository
 {
     private readonly ConcurrentDictionary<string, List<JsonElement>> _cardsByApp = new();
-    private int _nextId = 0;
+    private int _nextId;
 
     public Task<List<JsonElement>> GetCardsAsync(string appId)
     {

@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class UserProvisioningRepository
+internal class UserProvisioningRepository
 {
     private readonly TimeProvider _timeProvider;
     private readonly Dictionary<string, UserAccount> _users = new();

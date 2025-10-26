@@ -5,7 +5,7 @@ namespace DamianH.HubSpot.MockServer.Repositories;
 /// <summary>
 /// Repository for managing property definitions for HubSpot objects
 /// </summary>
-public class PropertyDefinitionRepository
+internal class PropertyDefinitionRepository
 {
     private readonly ConcurrentDictionary<string, PropertyDefinition> _properties = new();
     private readonly ConcurrentDictionary<string, PropertyGroup> _groups = new();

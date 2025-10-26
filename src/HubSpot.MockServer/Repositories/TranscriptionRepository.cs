@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class TranscriptionRepository
+internal class TranscriptionRepository
 {
     private readonly ConcurrentDictionary<string, Transcription> _transcriptions = new();
 

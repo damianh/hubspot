@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class DomainRepository
+internal class DomainRepository
 {
     private readonly Dictionary<string, Domain> _domains = new();
     private int _nextId = 1;

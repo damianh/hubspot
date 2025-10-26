@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SequenceRepository
+internal class SequenceRepository
 {
     private readonly ConcurrentDictionary<string, Sequence> _sequences = new();
     private readonly ConcurrentDictionary<string, SequenceEnrollment> _enrollments = new();

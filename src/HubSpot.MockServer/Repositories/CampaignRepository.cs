@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class CampaignRepository
+internal class CampaignRepository
 {
     private readonly Dictionary<string, Campaign> _campaigns = new();
     private int _nextId = 1;

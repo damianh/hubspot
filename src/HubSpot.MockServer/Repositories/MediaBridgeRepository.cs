@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class MediaBridgeRepository
+internal class MediaBridgeRepository
 {
     private readonly Dictionary<string, MediaAsset> _assets = new();
     private int _nextId = 1;

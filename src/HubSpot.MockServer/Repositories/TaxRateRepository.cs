@@ -2,7 +2,7 @@ using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class TaxRateRepository
+internal class TaxRateRepository
 {
     private readonly TimeProvider _timeProvider;
     private readonly Dictionary<string, TaxRateGroup> _taxRateGroups = new();

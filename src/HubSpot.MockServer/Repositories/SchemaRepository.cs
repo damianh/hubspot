@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SchemaRepository
+internal class SchemaRepository
 {
     private readonly ConcurrentDictionary<string, ObjectSchema> _schemas = new();
     private readonly ConcurrentDictionary<string, List<SchemaProperty>> _properties = new();

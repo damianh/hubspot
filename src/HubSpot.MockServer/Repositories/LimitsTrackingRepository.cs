@@ -2,7 +2,7 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class LimitsTrackingRepository(TimeProvider timeProvider)
+internal class LimitsTrackingRepository(TimeProvider timeProvider)
 {
     private readonly Dictionary<string, int> _apiCallCounts = new();
     private readonly Dictionary<string, DateTimeOffset> _resetTimes = new();

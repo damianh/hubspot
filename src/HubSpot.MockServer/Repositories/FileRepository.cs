@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class FileRepository
+internal class FileRepository
 {
     private readonly ConcurrentDictionary<string, FileMetadata> _files = new();
     private long _nextFileId = 1;

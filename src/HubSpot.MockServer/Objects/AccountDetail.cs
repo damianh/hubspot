@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Objects;
 
-public class AccountDetail
+internal class AccountDetail
 {
     public int PortalId { get; set; }
     public string? AccountType { get; set; }

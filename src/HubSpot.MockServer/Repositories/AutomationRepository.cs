@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class AutomationRepository
+internal class AutomationRepository
 {
     private readonly ConcurrentDictionary<int, List<CustomAction>> _actionsByApp = new();
     private readonly ConcurrentDictionary<string, CallbackCompletion> _callbacks = new();

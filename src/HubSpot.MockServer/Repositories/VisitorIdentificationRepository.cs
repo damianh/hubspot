@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class VisitorIdentificationRepository
+internal class VisitorIdentificationRepository
 {
     private readonly ConcurrentDictionary<string, VisitorTokenData> _tokens = new();
     private readonly ConcurrentDictionary<string, string> _visitorToContact = new();

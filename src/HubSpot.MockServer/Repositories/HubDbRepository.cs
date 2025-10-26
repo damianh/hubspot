@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class HubDbRepository
+internal class HubDbRepository
 {
     private readonly Dictionary<string, HubDbTable> _tables = new();
     private readonly Dictionary<string, Dictionary<string, HubDbRow>> _rows = new();

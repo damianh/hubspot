@@ -1,6 +1,6 @@
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class SourceCodeRepository
+internal class SourceCodeRepository
 {
     private readonly Dictionary<string, SourceCodeFile> _files = new();
     private int _nextId = 1;
