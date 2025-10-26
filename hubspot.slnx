@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/sample/">
+    <Project Path="sample/Sample/Sample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/generate.ps1" />
+    <Project Path="src/Generate/Generate.csproj" />
+    <Project Path="src/HubSpot.KiotaClient/HubSpot.KiotaClient.csproj" />
+    <Project Path="src/HubSpot.MockServer/HubSpot.MockServer.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/HubSpot.Tests/HubSpot.Tests.csproj" />
+  </Folder>
+</Solution>
