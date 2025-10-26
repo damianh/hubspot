@@ -31,6 +31,11 @@ public class EventRepository
         return events.OrderByDescending(e => e.OccurredAt).ToList();
     }
 
+    public List<CustomEvent> GetAllEvents()
+    {
+        return _events.Values.OrderByDescending(e => e.OccurredAt).ToList();
+    }
+
     public EventDefinition CreateDefinition(EventDefinition definition)
     {
         definition.Id = _nextDefinitionId++.ToString();
@@ -59,6 +64,7 @@ public class CustomEvent
 {
     public string? Id { get; set; }
     public string EventName { get; set; } = null!;
+    public string? Email { get; set; }
     public string? ObjectId { get; set; }
     public string? ObjectType { get; set; }
     public DateTime OccurredAt { get; set; }

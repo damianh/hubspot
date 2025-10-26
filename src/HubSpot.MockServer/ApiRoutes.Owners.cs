@@ -41,6 +41,27 @@ internal static partial class ApiRoutes
                 return Results.Ok(response);
             });
 
+            // Create an owner
+            group.MapPost("", (
+                [FromBody] OwnerCreateRequest request,
+                [FromServices] OwnerRepository repo) =>
+            {
+                var owner = repo.CreateOwner(request.Email, request.FirstName, request.LastName);
+
+                var response = new
+                {
+                    id = owner.Id,
+                    email = owner.Email,
+                    firstName = owner.FirstName,
+                    lastName = owner.LastName,
+                    type = owner.Type,
+                    createdAt = owner.CreatedAt,
+                    updatedAt = owner.UpdatedAt
+                };
+
+                return Results.Created($"/crm/v3/owners/{owner.Id}", response);
+            });
+
             // Get a specific owner by ID
             group.MapGet("/{ownerId}", (
                 [FromRoute] string ownerId,
@@ -64,5 +85,7 @@ internal static partial class ApiRoutes
                 return Results.Ok(response);
             });
         }
+
+        private record OwnerCreateRequest(string Email, string? FirstName, string? LastName);
     }
 }

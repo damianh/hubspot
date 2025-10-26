@@ -37,9 +37,14 @@ public class SchemaRepository
         return schema;
     }
 
-    public ObjectSchema? GetSchema(string objectType)
+    public ObjectSchema? GetSchema(string objectTypeOrId)
     {
-        return _schemas.TryGetValue(objectType, out var schema) ? schema : null;
+        // Try by name first
+        if (_schemas.TryGetValue(objectTypeOrId, out var schema))
+            return schema;
+
+        // Try by ID
+        return _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
     }
 
     public List<ObjectSchema> ListSchemas(bool archived = false)
@@ -50,14 +55,20 @@ public class SchemaRepository
             .ToList();
     }
 
-    public ObjectSchema? UpdateSchema(string objectType, Dictionary<string, string>? labels = null, 
+    public ObjectSchema? UpdateSchema(string objectTypeOrId, Dictionary<string, string>? labels = null, 
         string? primaryDisplayProperty = null,
         List<string>? requiredProperties = null,
         List<string>? searchableProperties = null,
         List<string>? secondaryDisplayProperties = null)
     {
-        if (!_schemas.TryGetValue(objectType, out var schema))
-            return null;
+        // Try by name first
+        if (!_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
+            // Try by ID
+            schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
+            if (schema == null)
+                return null;
+        }
 
         if (labels != null)
             schema.Labels = labels;
@@ -75,10 +86,16 @@ public class SchemaRepository
         return schema;
     }
 
-    public bool DeleteSchema(string objectType)
+    public bool DeleteSchema(string objectTypeOrId)
     {
-        if (!_schemas.TryGetValue(objectType, out var schema))
-            return false;
+        // Try by name first
+        if (!_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
+            // Try by ID
+            schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
+            if (schema == null)
+                return false;
+        }
 
         schema.Archived = true;
         schema.UpdatedAt = DateTimeOffset.UtcNow;

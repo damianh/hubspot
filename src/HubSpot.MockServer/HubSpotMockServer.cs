@@ -75,6 +75,7 @@ public class HubSpotMockServer : IAsyncDisposable
         builder.Services.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+            options.SerializerOptions.PropertyNameCaseInsensitive = true;
         });
 
         var app = builder.Build();
@@ -123,10 +124,15 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmPartnerServices(app);
         ApiRoutes.RegisterCrmTranscriptions(app);
         
-        // Register Associations APIs
+        // Register Associations APIs (must be before RegisterGenericCrmObjectsApi to match specific routes first)
         ApiRoutes.Associations.RegisterAssociationsV3(app);
         ApiRoutes.Associations.RegisterAssociationsV4(app);
         ApiRoutes.Associations.RegisterAssociationsV202509(app);
+        
+        // Register generic CRM Objects API for dynamic/custom object types
+        // Note: This must be registered AFTER specific object routes and associations
+        // as it uses catch-all pattern /crm/v3/objects/{objectType}
+        ApiRoutes.RegisterGenericCrmObjectsApi(app);
         
         // Register Properties APIs
         ApiRoutes.Properties.RegisterPropertiesV3(app);
@@ -137,9 +143,6 @@ public class HubSpotMockServer : IAsyncDisposable
         
         // Register Owners APIs
         ApiRoutes.Owners.RegisterOwnersV3(app);
-        
-        // Register generic CRM Objects API for dynamic/custom object types
-        ApiRoutes.RegisterGenericCrmObjectsApi(app);
         
         // Register Marketing APIs
         ApiRoutes.Marketing.RegisterMarketingTransactionalApi(app);

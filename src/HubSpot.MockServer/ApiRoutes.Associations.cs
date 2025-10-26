@@ -40,8 +40,8 @@ internal static partial class ApiRoutes
                                 new
                                 {
                                     category = "HUBSPOT_DEFINED",
-                                    typeId = int.Parse(a.AssociationTypeId),
-                                    label = a.AssociationLabel
+                                    typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                    label = a.AssociationLabel ?? a.AssociationTypeId
                                 }
                             }
                         }).ToArray()
@@ -57,14 +57,19 @@ internal static partial class ApiRoutes
             group.MapPost("/{fromObjectType}/{toObjectType}/batch/create", (
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
-                [FromBody] BatchCreateRequest request,
+                [FromBody] BatchCreateRequestV3? request,
                 [FromServices] AssociationRepository repo) =>
             {
+                if (request == null || request.Inputs == null || request.Inputs.Length == 0)
+                {
+                    return Results.BadRequest(new { error = "Request body is required and must contain inputs" });
+                }
+
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
                     i.To.Id,
-                    i.Types[0].AssociationTypeId,
-                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId : null
+                    i.Type,
+                    (string?)null
                 ));
 
                 var created = repo.CreateBatch(inputs, fromObjectType, toObjectType);
@@ -85,8 +90,8 @@ internal static partial class ApiRoutes
                                     new
                                     {
                                         category = "HUBSPOT_DEFINED",
-                                        typeId = int.Parse(a.AssociationTypeId),
-                                        label = a.AssociationLabel
+                                        typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                        label = a.AssociationLabel ?? a.AssociationTypeId
                                     }
                                 }
                             }
@@ -103,13 +108,13 @@ internal static partial class ApiRoutes
             group.MapPost("/{fromObjectType}/{toObjectType}/batch/archive", (
                 [FromRoute] string fromObjectType,
                 [FromRoute] string toObjectType,
-                [FromBody] BatchArchiveRequest request,
+                [FromBody] BatchArchiveRequestV3 request,
                 [FromServices] AssociationRepository repo) =>
             {
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
                     i.To.Id,
-                    i.Types[0].AssociationTypeId
+                    i.Type
                 ));
 
                 repo.DeleteBatch(inputs, fromObjectType, toObjectType);
@@ -136,8 +141,8 @@ internal static partial class ApiRoutes
                             new
                             {
                                 category = "HUBSPOT_DEFINED",
-                                typeId = int.Parse(a.AssociationTypeId),
-                                label = a.AssociationLabel
+                                typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                label = a.AssociationLabel ?? a.AssociationTypeId
                             }
                         }
                     }).ToArray(),
@@ -188,6 +193,82 @@ internal static partial class ApiRoutes
                 repo.Delete(fromObjectType, fromObjectId, toObjectType, toObjectId, "1");
                 return Results.NoContent();
             });
+
+            // Also register routes under /crm/v3/objects pattern for compatibility
+            var objectsGroup = app.MapGroup("/crm/v3/objects/{objectType}/{objectId}/associations")
+                .WithTags("Associations V3 (Objects)");
+
+            // PUT /crm/v3/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}/{associationTypeId}
+            objectsGroup.MapPut("/{toObjectType}/{toObjectId}/{associationTypeId}", (
+                [FromRoute] string objectType,
+                [FromRoute] string objectId,
+                [FromRoute] string toObjectType,
+                [FromRoute] string toObjectId,
+                [FromRoute] string associationTypeId,
+                [FromServices] AssociationRepository repo) =>
+            {
+                var association = repo.Create(
+                    objectType,
+                    objectId,
+                    toObjectType,
+                    toObjectId,
+                    associationTypeId,
+                    null);
+
+                var response = new
+                {
+                    fromObjectTypeId = objectType,
+                    fromObjectId = association.FromObjectId,
+                    toObjectTypeId = toObjectType,
+                    toObjectId = association.ToObjectId,
+                    labels = new[] { association.AssociationLabel }.Where(l => l != null).ToArray()
+                };
+
+                return Results.Ok(response);
+            });
+
+            // GET /crm/v3/objects/{objectType}/{objectId}/associations/{toObjectType}
+            objectsGroup.MapGet("/{toObjectType}", (
+                [FromRoute] string objectType,
+                [FromRoute] string objectId,
+                [FromRoute] string toObjectType,
+                [FromServices] AssociationRepository repo) =>
+            {
+                var associations = repo.GetAssociations(objectType, objectId, toObjectType);
+
+                var response = new
+                {
+                    results = associations.Select(a => new
+                    {
+                        toObjectId = a.ToObjectId,
+                        associationTypes = new[]
+                        {
+                            new
+                            {
+                                category = "HUBSPOT_DEFINED",
+                                typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                label = a.AssociationLabel ?? a.AssociationTypeId
+                            }
+                        }
+                    }).ToArray(),
+                    paging = (object?)null
+                };
+
+                return Results.Ok(response);
+            });
+
+            // DELETE /crm/v3/objects/{objectType}/{objectId}/associations/{toObjectType}/{toObjectId}/{associationTypeId}
+            objectsGroup.MapDelete("/{toObjectType}/{toObjectId}/{associationTypeId}", (
+                [FromRoute] string objectType,
+                [FromRoute] string objectId,
+                [FromRoute] string toObjectType,
+                [FromRoute] string toObjectId,
+                [FromRoute] string associationTypeId,
+                [FromServices] AssociationRepository repo) =>
+            {
+                repo.Delete(objectType, objectId, toObjectType, toObjectId, associationTypeId);
+                return Results.NoContent();
+            });
         }
 
         /// <summary>
@@ -221,8 +302,8 @@ internal static partial class ApiRoutes
                                 new
                                 {
                                     category = "HUBSPOT_DEFINED",
-                                    typeId = int.Parse(a.AssociationTypeId),
-                                    label = a.AssociationLabel
+                                    typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                    label = a.AssociationLabel ?? a.AssociationTypeId
                                 }
                             }
                         }).ToArray()
@@ -244,8 +325,8 @@ internal static partial class ApiRoutes
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
                     i.To.Id,
-                    i.Types[0].AssociationTypeId,
-                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId : null
+                    i.Types[0].AssociationTypeId.ToString(),
+                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId.ToString() : null
                 ));
 
                 var created = repo.CreateBatch(inputs, fromObjectType, toObjectType);
@@ -266,8 +347,8 @@ internal static partial class ApiRoutes
                                     new
                                     {
                                         category = "HUBSPOT_DEFINED",
-                                        typeId = int.Parse(a.AssociationTypeId),
-                                        label = a.AssociationLabel
+                                        typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                        label = a.AssociationLabel ?? a.AssociationTypeId
                                     }
                                 }
                             }
@@ -312,7 +393,7 @@ internal static partial class ApiRoutes
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
                     i.To.Id,
-                    i.Types[0].AssociationTypeId
+                    i.Types[0].AssociationTypeId.ToString()
                 ));
 
                 repo.DeleteBatch(inputs, fromObjectType, toObjectType);
@@ -429,8 +510,8 @@ internal static partial class ApiRoutes
                                 new
                                 {
                                     category = "HUBSPOT_DEFINED",
-                                    typeId = int.Parse(a.AssociationTypeId),
-                                    label = a.AssociationLabel
+                                    typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                    label = a.AssociationLabel ?? a.AssociationTypeId
                                 }
                             }
                         }).ToArray()
@@ -451,8 +532,8 @@ internal static partial class ApiRoutes
                 var inputs = request.Inputs.Select(i => (
                     i.From.Id,
                     i.To.Id,
-                    i.Types[0].AssociationTypeId,
-                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId : null
+                    i.Types[0].AssociationTypeId.ToString(),
+                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId.ToString() : (string?)null
                 ));
 
                 var created = repo.CreateBatch(inputs, fromObjectType, toObjectType);
@@ -473,8 +554,8 @@ internal static partial class ApiRoutes
                                     new
                                     {
                                         category = "HUBSPOT_DEFINED",
-                                        typeId = int.Parse(a.AssociationTypeId),
-                                        label = a.AssociationLabel
+                                        typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                        label = a.AssociationLabel ?? a.AssociationTypeId
                                     }
                                 }
                             }
@@ -489,14 +570,76 @@ internal static partial class ApiRoutes
         }
 
         // Request/Response models
-        private record BatchReadRequest(ObjectIdInput[] Inputs);
-        private record ObjectIdInput(string Id);
+        private record BatchReadRequest
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("inputs")]
+            public ObjectIdInput[] Inputs { get; init; } = [];
+        }
+        
+        private record ObjectIdInput
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("id")]
+            public string Id { get; init; } = string.Empty;
+        }
 
-        private record BatchCreateRequest(AssociationInput[] Inputs);
-        private record AssociationInput(ObjectIdInput From, ObjectIdInput To, AssociationType[] Types);
-        private record AssociationType(string AssociationCategory, string AssociationTypeId);
+        // V3 models (simpler format with type as string)
+        private record BatchCreateRequestV3
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("inputs")]
+            public AssociationInputV3[] Inputs { get; init; } = [];
+        }
+        
+        private record AssociationInputV3
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("from")]
+            public ObjectIdInput From { get; init; } = new();
+            
+            [System.Text.Json.Serialization.JsonPropertyName("to")]
+            public ObjectIdInput To { get; init; } = new();
+            
+            [System.Text.Json.Serialization.JsonPropertyName("type")]
+            public string Type { get; init; } = string.Empty;
+        }
+        
+        private record BatchArchiveRequestV3
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("inputs")]
+            public AssociationInputV3[] Inputs { get; init; } = [];
+        }
 
-        private record BatchArchiveRequest(AssociationInput[] Inputs);
+        // V4 models (more complex with Types array)
+        private record BatchCreateRequest
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("inputs")]
+            public AssociationInput[] Inputs { get; init; } = [];
+        }
+        
+        private record AssociationInput
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("from")]
+            public ObjectIdInput From { get; init; } = new();
+            
+            [System.Text.Json.Serialization.JsonPropertyName("to")]
+            public ObjectIdInput To { get; init; } = new();
+            
+            [System.Text.Json.Serialization.JsonPropertyName("types")]
+            public AssociationType[] Types { get; init; } = [];
+        }
+        
+        private record AssociationType
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("associationCategory")]
+            public string AssociationCategory { get; init; } = string.Empty;
+            
+            [System.Text.Json.Serialization.JsonPropertyName("associationTypeId")]
+            public int AssociationTypeId { get; init; }
+        }
+
+        private record BatchArchiveRequest
+        {
+            [System.Text.Json.Serialization.JsonPropertyName("inputs")]
+            public AssociationInput[] Inputs { get; init; } = [];
+        }
 
         private record BatchLabelsRequest(LabelInput[] Inputs);
         private record LabelInput(ObjectIdInput From, ObjectIdInput To, string[] Labels);
@@ -507,3 +650,4 @@ internal static partial class ApiRoutes
         private record UpdateAssociationTypeRequest(string Label);
     }
 }
+

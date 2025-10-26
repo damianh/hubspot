@@ -17,7 +17,7 @@ internal static partial class ApiRoutes
             var allLists = repo.GetAllLists();
             return Results.Ok(new
             {
-                results = allLists.Select(l => new
+                lists = allLists.Select(l => new
                 {
                     listId = l.Id,
                     name = l.Name,
@@ -31,15 +31,15 @@ internal static partial class ApiRoutes
         });
 
         lists.MapPost("/", (
-            [FromBody] dynamic request,
+            [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
             var list = new ListDefinition
             {
-                Name = request.name,
-                ObjectTypeId = request.objectTypeId ?? "0-1",
-                ProcessingType = request.processingType ?? "MANUAL",
-                FilterBranch = request.filterBranch
+                Name = request.GetProperty("name").GetString(),
+                ObjectTypeId = request.TryGetProperty("objectTypeId", out var oti) ? oti.GetString() : "0-1",
+                ProcessingType = request.TryGetProperty("processingType", out var pt) ? pt.GetString() : "MANUAL",
+                FilterBranch = request.TryGetProperty("filterBranch", out var fb) ? System.Text.Json.JsonSerializer.Deserialize<object>(fb.GetRawText()) : null
             };
 
             var created = repo.CreateList(list);
@@ -75,15 +75,15 @@ internal static partial class ApiRoutes
             });
         });
 
-        lists.MapPut("/{listId}", (
+        lists.MapPatch("/{listId}", (
             string listId,
-            [FromBody] dynamic request,
+            [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
             var updates = new ListDefinition
             {
-                Name = request.name,
-                FilterBranch = request.filterBranch
+                Name = request.TryGetProperty("name", out var name) ? name.GetString() : null,
+                FilterBranch = request.TryGetProperty("filterBranch", out var fb) ? System.Text.Json.JsonSerializer.Deserialize<object>(fb.GetRawText()) : null
             };
 
             var updated = repo.UpdateList(listId, updates);
@@ -112,12 +112,12 @@ internal static partial class ApiRoutes
 
         lists.MapPut("/{listId}/memberships/add", (
             string listId,
-            [FromBody] dynamic request,
+            [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
             List<string> recordIds = new();
-            foreach (var id in request.recordIds)
-                recordIds.Add(id.ToString());
+            foreach (var id in request.GetProperty("recordIds").EnumerateArray())
+                recordIds.Add(id.GetString()!);
 
             repo.AddMemberships(listId, recordIds);
             return Results.Ok();
@@ -125,12 +125,12 @@ internal static partial class ApiRoutes
 
         lists.MapPut("/{listId}/memberships/remove", (
             string listId,
-            [FromBody] dynamic request,
+            [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
             List<string> recordIds = new();
-            foreach (var id in request.recordIds)
-                recordIds.Add(id.ToString());
+            foreach (var id in request.GetProperty("recordIds").EnumerateArray())
+                recordIds.Add(id.GetString()!);
 
             repo.RemoveMemberships(listId, recordIds);
             return Results.Ok();

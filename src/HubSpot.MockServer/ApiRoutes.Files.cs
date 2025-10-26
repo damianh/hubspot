@@ -88,10 +88,10 @@ internal static partial class ApiRoutes
 
         files.MapPatch("/files/{fileId}", (
             string fileId,
-            [FromBody] dynamic request,
+            [FromBody] FileUpdateRequest request,
             [FromServices] FileRepository repo) =>
         {
-            var updated = repo.UpdateFile(fileId, request.name?.ToString());
+            var updated = repo.UpdateFile(fileId, request.Name);
             if (updated == null)
                 return Results.NotFound();
 
@@ -145,5 +145,11 @@ internal static partial class ApiRoutes
 
             return Results.File(content, file.Type, file.Name);
         });
+    }
+
+    private record FileUpdateRequest
+    {
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; init; }
     }
 }

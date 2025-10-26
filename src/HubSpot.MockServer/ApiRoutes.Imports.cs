@@ -12,13 +12,17 @@ internal static partial class ApiRoutes
         var v3 = app.MapGroup("/crm/v3/imports");
 
         // POST /crm/v3/imports
-        v3.MapPost("", ([FromBody] ImportCreateRequest request) =>
+        v3.MapPost("/", ([FromBody] System.Text.Json.JsonElement request) =>
         {
+            var importName = request.TryGetProperty("name", out var name) ? name.GetString() : "Import";
+            var objectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : "contact";
+            
+            // For now, create a simple import job
             var job = importRepo.CreateImport(
-                request.ImportName,
-                request.ObjectType,
-                request.Rows,
-                request.Config
+                importName!,
+                objectType!,
+                new List<Dictionary<string, string>>(),
+                null
             );
 
             return Results.Created($"/crm/v3/imports/{job.Id}", new
@@ -35,7 +39,7 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports/{importId}
-        v3.MapGet("{importId}", (string importId) =>
+        v3.MapGet("/{importId}", (string importId) =>
         {
             var job = importRepo.GetImport(importId);
             if (job == null)
@@ -55,7 +59,7 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports
-        v3.MapGet("", (string? after, int? limit) =>
+        v3.MapGet("/", (string? after, int? limit) =>
         {
             var result = importRepo.ListImports(after, limit ?? 10);
             
@@ -76,7 +80,7 @@ internal static partial class ApiRoutes
         });
 
         // POST /crm/v3/imports/{importId}/cancel
-        v3.MapPost("{importId}/cancel", (string importId) =>
+        v3.MapPost("/{importId}/cancel", (string importId) =>
         {
             var job = importRepo.CancelImport(importId);
             if (job == null)
@@ -94,7 +98,7 @@ internal static partial class ApiRoutes
         });
 
         // GET /crm/v3/imports/{importId}/errors
-        v3.MapGet("{importId}/errors", (string importId, string? after, int? limit) =>
+        v3.MapGet("/{importId}/errors", (string importId, string? after, int? limit) =>
         {
             var result = importRepo.GetImportErrors(importId, after, limit ?? 50);
             

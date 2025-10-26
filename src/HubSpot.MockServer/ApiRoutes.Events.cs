@@ -11,23 +11,22 @@ internal static partial class ApiRoutes
     {
         var events = app.MapGroup("/events/v3");
 
+        // POST /events/v3/send - Send single analytics event
         events.MapPost("/send", (
-            [FromBody] dynamic request,
+            [FromBody] System.Text.Json.JsonElement request,
             [FromServices] EventRepository repo) =>
         {
             var customEvent = new CustomEvent
             {
-                EventName = request.eventName,
-                ObjectId = request.objectId,
-                ObjectType = request.objectType,
-                OccurredAt = request.occurredAt != null 
-                    ? DateTime.Parse(request.occurredAt.ToString()) 
+                EventName = request.GetProperty("eventName").GetString()!,
+                Email = request.TryGetProperty("email", out var email) ? email.GetString() : null,
+                ObjectId = request.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
+                ObjectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : null,
+                OccurredAt = request.TryGetProperty("occurredAt", out var occurred) 
+                    ? DateTime.Parse(occurred.GetString()!) 
                     : DateTime.UtcNow,
-                Properties = request.properties != null
-                    ? ((object)request.properties).ToString()!
-                        .Split(',')
-                        .Select(kv => kv.Split('='))
-                        .ToDictionary(kv => kv[0], kv => (object)kv[1])
+                Properties = request.TryGetProperty("properties", out var props)
+                    ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
                     : null
             };
 
@@ -38,6 +37,101 @@ internal static partial class ApiRoutes
                 eventName = customEvent.EventName,
                 objectId = customEvent.ObjectId,
                 occurredAt = customEvent.OccurredAt
+            });
+        });
+
+        // POST /events/v3/send/batch - Send batch analytics events
+        events.MapPost("/send/batch", (
+            [FromBody] System.Text.Json.JsonElement request,
+            [FromServices] EventRepository repo) =>
+        {
+            var eventsToSend = new List<CustomEvent>();
+            
+            foreach (var input in request.GetProperty("inputs").EnumerateArray())
+            {
+                var customEvent = new CustomEvent
+                {
+                    EventName = input.GetProperty("eventName").GetString()!,
+                    Email = input.TryGetProperty("email", out var email) ? email.GetString() : null,
+                    ObjectId = input.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
+                    ObjectType = input.TryGetProperty("objectType", out var ot) ? ot.GetString() : null,
+                    OccurredAt = input.TryGetProperty("occurredAt", out var occurred) 
+                        ? DateTime.Parse(occurred.GetString()!) 
+                        : DateTime.UtcNow,
+                    Properties = input.TryGetProperty("properties", out var props)
+                        ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
+                        : null
+                };
+                
+                repo.SendEvent(customEvent);
+                eventsToSend.Add(customEvent);
+            }
+
+            return Results.Ok(new
+            {
+                results = eventsToSend.Select(e => new
+                {
+                    id = e.Id,
+                    eventName = e.EventName,
+                    occurredAt = e.OccurredAt
+                })
+            });
+        });
+
+        // POST /events/v3/events - Create custom behavioral event
+        events.MapPost("/events", (
+            [FromBody] System.Text.Json.JsonElement request,
+            [FromServices] EventRepository repo) =>
+        {
+            var customEvent = new CustomEvent
+            {
+                EventName = request.GetProperty("eventName").GetString()!,
+                ObjectId = request.TryGetProperty("objectId", out var oid) ? oid.GetString() : null,
+                ObjectType = request.TryGetProperty("objectType", out var ot) ? ot.GetString() : "contact",
+                OccurredAt = request.TryGetProperty("occurredAt", out var occurred) 
+                    ? DateTime.Parse(occurred.GetString()!) 
+                    : DateTime.UtcNow,
+                Properties = request.TryGetProperty("properties", out var props)
+                    ? System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(props.GetRawText())
+                    : null
+            };
+
+            repo.SendEvent(customEvent);
+            return Results.Ok(new
+            {
+                id = customEvent.Id,
+                eventName = customEvent.EventName,
+                objectId = customEvent.ObjectId,
+                objectType = customEvent.ObjectType,
+                occurredAt = customEvent.OccurredAt
+            });
+        });
+
+        // GET /events/v3/events - List events for an object
+        events.MapGet("/events", (
+            [FromQuery] string? objectType,
+            [FromQuery] string? objectId,
+            [FromServices] EventRepository repo) =>
+        {
+            var allEvents = repo.GetAllEvents();
+            
+            if (!string.IsNullOrEmpty(objectType))
+                allEvents = allEvents.Where(e => e.ObjectType == objectType).ToList();
+            
+            if (!string.IsNullOrEmpty(objectId))
+                allEvents = allEvents.Where(e => e.ObjectId == objectId).ToList();
+
+            return Results.Ok(new
+            {
+                results = allEvents.Select(e => new
+                {
+                    id = e.Id,
+                    eventName = e.EventName,
+                    objectId = e.ObjectId,
+                    objectType = e.ObjectType,
+                    occurredAt = e.OccurredAt,
+                    properties = e.Properties
+                })
             });
         });
 
