@@ -55,7 +55,9 @@ internal static partial class ApiRoutes
         {
             var template = timelineRepo.GetEventTemplate(templateId);
             if (template == null)
+            {
                 return Results.NotFound(new { message = $"Event template not found: {templateId}" });
+            }
 
             return Results.Ok(template);
         });
@@ -72,7 +74,9 @@ internal static partial class ApiRoutes
             );
 
             if (template == null)
+            {
                 return Results.NotFound(new { message = $"Event template not found: {templateId}" });
+            }
 
             return Results.Ok(template);
         });
@@ -82,7 +86,9 @@ internal static partial class ApiRoutes
         {
             var deleted = timelineRepo.DeleteEventTemplate(templateId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Event template not found: {templateId}" });
+            }
 
             return Results.NoContent();
         });
@@ -117,7 +123,9 @@ internal static partial class ApiRoutes
         {
             var timelineEvent = timelineRepo.GetEvent(eventId);
             if (timelineEvent == null)
+            {
                 return Results.NotFound(new { message = $"Event not found: {eventId}" });
+            }
 
             return Results.Ok(timelineEvent);
         });
@@ -127,7 +135,9 @@ internal static partial class ApiRoutes
         {
             var deleted = timelineRepo.DeleteEvent(eventId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Event not found: {eventId}" });
+            }
 
             return Results.NoContent();
         });

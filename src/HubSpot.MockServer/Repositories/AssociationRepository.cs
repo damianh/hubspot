@@ -227,7 +227,9 @@ public class AssociationRepository
     {
         // Can't delete standard types
         if (_standardTypes.ContainsKey(associationTypeId))
+        {
             return false;
+        }
 
         return _customTypes.TryRemove(associationTypeId, out _);
     }

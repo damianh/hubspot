@@ -60,7 +60,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
         {
             var afterIndex = imports.FindIndex(i => i.Id == after);
             if (afterIndex >= 0)
+            {
                 startIndex = afterIndex + 1;
+            }
         }
 
         var results = imports.Skip(startIndex).Take(limit).ToList();
@@ -80,7 +82,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
     public ImportJob? CancelImport(string importId)
     {
         if (!_imports.TryGetValue(importId, out var job))
+        {
             return null;
+        }
 
         if (job.State == ImportState.STARTED || job.State == ImportState.PROCESSING)
         {
@@ -106,7 +110,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
         if (!string.IsNullOrEmpty(after))
         {
             if (int.TryParse(after, out var afterIdx))
+            {
                 startIndex = afterIdx + 1;
+            }
         }
 
         var results = errors.Skip(startIndex).Take(limit).ToList();
@@ -126,7 +132,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
     private async Task ProcessImport(string importId)
     {
         if (!_imports.TryGetValue(importId, out var job))
+        {
             return;
+        }
 
         await Task.Delay(100); // Simulate processing delay
 
@@ -146,7 +154,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
         foreach (var row in rows)
         {
             if (job.State == ImportState.CANCELED)
+            {
                 break;
+            }
 
             await Task.Delay(10); // Simulate per-row processing
 
@@ -187,7 +197,9 @@ internal class ImportRepository(HubSpotObjectRepository? objectRepository = null
             if (data.TryGetValue("email", out var email))
             {
                 if (!email.Contains('@'))
+                {
                     return "INVALID_EMAIL";
+                }
             }
         }
 

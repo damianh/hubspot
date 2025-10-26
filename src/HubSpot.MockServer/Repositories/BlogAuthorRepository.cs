@@ -15,24 +15,21 @@ public class BlogAuthorRepository
         return author;
     }
 
-    public BlogAuthor? GetById(string id)
-    {
-        return _authors.GetValueOrDefault(id);
-    }
+    public BlogAuthor? GetById(string id) => _authors.GetValueOrDefault(id);
 
-    public List<BlogAuthor> GetAll(int offset = 0, int limit = 100)
-    {
-        return _authors.Values
+    public List<BlogAuthor> GetAll(int offset = 0, int limit = 100) =>
+        _authors.Values
             .OrderBy(a => a.FullName)
             .Skip(offset)
             .Take(limit)
             .ToList();
-    }
 
     public BlogAuthor? Update(string id, BlogAuthor updatedAuthor)
     {
         if (!_authors.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedAuthor.Id = id;
         updatedAuthor.Updated = DateTime.UtcNow;
@@ -40,23 +37,17 @@ public class BlogAuthorRepository
         return updatedAuthor;
     }
 
-    public bool Delete(string id)
-    {
-        return _authors.Remove(id);
-    }
+    public bool Delete(string id) =>
+        _authors.Remove(id);
 
-    public List<BlogAuthor> BatchCreate(List<BlogAuthor> authors)
-    {
-        return authors.Select(Create).ToList();
-    }
+    public List<BlogAuthor> BatchCreate(List<BlogAuthor> authors) =>
+        authors.Select(Create).ToList();
 
-    public List<BlogAuthor> BatchRead(List<string> ids)
-    {
-        return ids.Select(id => _authors.GetValueOrDefault(id))
+    public List<BlogAuthor> BatchRead(List<string> ids) =>
+        ids.Select(id => _authors.GetValueOrDefault(id))
             .Where(a => a != null)
             .Cast<BlogAuthor>()
             .ToList();
-    }
 
     public List<BlogAuthor> BatchUpdate(List<BlogAuthor> authors)
     {
@@ -67,7 +58,9 @@ public class BlogAuthorRepository
             {
                 var updated = Update(author.Id, author);
                 if (updated != null)
+                {
                     results.Add(updated);
+                }
             }
         }
         return results;
@@ -81,10 +74,14 @@ public class BlogAuthorRepository
     public void AttachToLanguageGroup(string authorId, string languageGroupId)
     {
         if (!_languageGroups.ContainsKey(languageGroupId))
-            _languageGroups[languageGroupId] = new List<string>();
+        {
+            _languageGroups[languageGroupId] = [];
+        }
 
         if (!_languageGroups[languageGroupId].Contains(authorId))
+        {
             _languageGroups[languageGroupId].Add(authorId);
+        }
     }
 
     public void DetachFromLanguageGroup(string authorId)

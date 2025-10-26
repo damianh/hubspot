@@ -31,8 +31,10 @@ internal static partial class ApiRoutes
         {
             var redirect = repository.GetById(urlRedirectId);
             if (redirect == null)
+            {
                 return Results.NotFound(new { message = $"URL Redirect {urlRedirectId} not found" });
-                
+            }
+
             return Results.Ok(MapRedirectToResponse(redirect));
         });
 
@@ -40,7 +42,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var redirect = MapRedirectFromRequest(request);
             var created = repository.Create(redirect);
@@ -52,11 +56,15 @@ internal static partial class ApiRoutes
         {
             var redirect = repository.GetById(urlRedirectId);
             if (redirect == null)
+            {
                 return Results.NotFound(new { message = $"URL Redirect {urlRedirectId} not found" });
+            }
 
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var updated = MapRedirectFromRequest(request, redirect);
             updated = repository.Update(urlRedirectId, updated);
@@ -68,8 +76,10 @@ internal static partial class ApiRoutes
         {
             var deleted = repository.Delete(urlRedirectId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"URL Redirect {urlRedirectId} not found" });
-            
+            }
+
             return Results.NoContent();
         });
     }
@@ -97,24 +107,50 @@ internal static partial class ApiRoutes
         var redirect = existing ?? new UrlRedirect();
         
         if (request.TryGetValue("id", out var id))
+        {
             redirect.Id = id.ToString();
+        }
+
         if (request.TryGetValue("routePrefix", out var route))
+        {
             redirect.RoutePrefix = route.ToString();
+        }
+
         if (request.TryGetValue("destination", out var dest))
+        {
             redirect.Destination = dest.ToString();
+        }
+
         if (request.TryGetValue("redirectStyle", out var style))
+        {
             redirect.RedirectStyle = int.Parse(style.ToString()!);
+        }
+
         if (request.TryGetValue("isOnlyAfterNotFound", out var onlyAfter))
+        {
             redirect.IsOnlyAfterNotFound = bool.Parse(onlyAfter.ToString()!);
+        }
+
         if (request.TryGetValue("isMatchFullUrl", out var matchFull))
+        {
             redirect.IsMatchFullUrl = bool.Parse(matchFull.ToString()!);
+        }
+
         if (request.TryGetValue("isMatchQueryString", out var matchQuery))
+        {
             redirect.IsMatchQueryString = bool.Parse(matchQuery.ToString()!);
+        }
+
         if (request.TryGetValue("isPattern", out var isPattern))
+        {
             redirect.IsPattern = bool.Parse(isPattern.ToString()!);
+        }
+
         if (request.TryGetValue("precedence", out var prec))
+        {
             redirect.Precedence = int.Parse(prec.ToString()!);
-            
+        }
+
         return redirect;
     }
 }

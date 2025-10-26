@@ -42,7 +42,9 @@ internal static partial class ApiRoutes
         {
             var job = repo.GetExport(exportId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Export not found: {exportId}" });
+            }
 
             return Results.Ok(new
             {
@@ -63,7 +65,9 @@ internal static partial class ApiRoutes
         {
             var job = repo.GetExport(exportId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Export not found: {exportId}" });
+            }
 
             var file = repo.GetExportFile(exportId);
 
@@ -87,11 +91,15 @@ internal static partial class ApiRoutes
         {
             var job = repo.GetExport(exportId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Export not found: {exportId}" });
+            }
 
             var file = repo.GetExportFile(exportId);
             if (file == null)
+            {
                 return Results.NotFound(new { message = $"Export file not ready: {exportId}" });
+            }
 
             var fileName = $"{job.ExportName}.{job.Format.ToLower()}";
             return Results.File(file, "text/csv", fileName);
@@ -122,7 +130,9 @@ internal static partial class ApiRoutes
         {
             var job = repo.CancelExport(exportId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Export not found: {exportId}" });
+            }
 
             return Results.Ok(new
             {

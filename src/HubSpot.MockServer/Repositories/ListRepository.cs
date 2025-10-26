@@ -14,7 +14,7 @@ public class ListRepository
         list.CreatedAt = DateTime.UtcNow;
         list.UpdatedAt = DateTime.UtcNow;
         _lists[list.Id] = list;
-        _memberships[list.Id] = new HashSet<string>();
+        _memberships[list.Id] = [];
         return list;
     }
 
@@ -31,7 +31,9 @@ public class ListRepository
     public ListDefinition? UpdateList(string listId, ListDefinition updates)
     {
         if (!_lists.TryGetValue(listId, out var existing))
+        {
             return null;
+        }
 
         existing.Name = updates.Name ?? existing.Name;
         existing.FilterBranch = updates.FilterBranch ?? existing.FilterBranch;
@@ -48,25 +50,33 @@ public class ListRepository
     public void AddMemberships(string listId, IEnumerable<string> recordIds)
     {
         if (!_memberships.TryGetValue(listId, out var members))
+        {
             return;
+        }
 
         foreach (var id in recordIds)
             members.Add(id);
 
         if (_lists.TryGetValue(listId, out var list))
+        {
             list.UpdatedAt = DateTime.UtcNow;
+        }
     }
 
     public void RemoveMemberships(string listId, IEnumerable<string> recordIds)
     {
         if (!_memberships.TryGetValue(listId, out var members))
+        {
             return;
+        }
 
         foreach (var id in recordIds)
             members.Remove(id);
 
         if (_lists.TryGetValue(listId, out var list))
+        {
             list.UpdatedAt = DateTime.UtcNow;
+        }
     }
 
     public IEnumerable<string> GetMemberships(string listId)

@@ -1,14 +1,12 @@
-using DamianH.HubSpot.MockServer;
-using Shouldly;
 using System.Net.Http.Json;
 
-namespace DamianH.HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class MarketingAndCommunicationsTests : IAsyncLifetime
 {
     private HubSpotMockServer _mockServer = null!;
 
-    public async ValueTask InitializeAsync() => _mockServer = await HubSpotMockServer.StartAsync();
+    public async ValueTask InitializeAsync() => _mockServer = await HubSpotMockServer.StartNew();
 
     public async ValueTask DisposeAsync() => await _mockServer.DisposeAsync();
 

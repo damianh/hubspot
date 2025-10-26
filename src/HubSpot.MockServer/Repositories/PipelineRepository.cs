@@ -98,7 +98,10 @@ public class PipelineRepository
         int? displayOrder = null)
     {
         var existing = GetPipeline(objectType, pipelineId);
-        if (existing == null) return null;
+        if (existing == null)
+        {
+            return null;
+        }
 
         var updated = existing with
         {
@@ -166,7 +169,10 @@ public class PipelineRepository
         Dictionary<string, string>? metadata = null)
     {
         var existing = GetStage(pipelineId, stageId);
-        if (existing == null) return null;
+        if (existing == null)
+        {
+            return null;
+        }
 
         var updated = existing with
         {

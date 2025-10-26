@@ -1,8 +1,6 @@
-using DamianH.HubSpot.MockServer;
-using Shouldly;
 using System.Net.Http.Json;
 
-namespace DamianH.HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class CrmExtensionsTests : IAsyncLifetime
 {
@@ -11,7 +9,7 @@ public class CrmExtensionsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _mockServer = await HubSpotMockServer.StartAsync();
+        _mockServer = await HubSpotMockServer.StartNew();
         _httpClient = new HttpClient { BaseAddress = _mockServer.Uri };
     }
 

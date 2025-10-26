@@ -39,7 +39,9 @@ public class FileRepository
     public FileMetadata? UpdateFile(string fileId, string? newName)
     {
         if (!_files.TryGetValue(fileId, out var file))
+        {
             return null;
+        }
 
         if (newName != null)
         {

@@ -12,7 +12,7 @@ public class WebhooksTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _server = await HubSpotMockServer.StartAsync();
+        _server = await HubSpotMockServer.StartNew();
         var authProvider = new AnonymousAuthenticationProvider();
         var adapter = new HttpClientRequestAdapter(authProvider)
         {

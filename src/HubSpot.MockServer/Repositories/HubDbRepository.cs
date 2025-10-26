@@ -35,7 +35,9 @@ public class HubDbRepository
     public HubDbTable? UpdateTable(string id, HubDbTable updatedTable)
     {
         if (!_tables.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedTable.Id = id;
         updatedTable.UpdatedAt = DateTime.UtcNow;
@@ -57,10 +59,14 @@ public class HubDbRepository
     public HubDbRow CreateRow(string tableId, HubDbRow row)
     {
         if (!_tables.ContainsKey(tableId))
+        {
             throw new InvalidOperationException($"Table {tableId} not found");
+        }
 
         if (!_nextRowIds.ContainsKey(tableId))
+        {
             _nextRowIds[tableId] = 1;
+        }
 
         row.Id = _nextRowIds[tableId]++.ToString();
         row.CreatedAt = DateTime.UtcNow;
@@ -77,7 +83,9 @@ public class HubDbRepository
     public List<HubDbRow> GetAllRows(string tableId, int offset = 0, int limit = 100)
     {
         if (!_rows.ContainsKey(tableId))
-            return new List<HubDbRow>();
+        {
+            return [];
+        }
 
         return _rows[tableId].Values
             .OrderBy(r => r.Id)
@@ -89,7 +97,9 @@ public class HubDbRepository
     public HubDbRow? UpdateRow(string tableId, string rowId, HubDbRow updatedRow)
     {
         if (!_rows.ContainsKey(tableId) || !_rows[tableId].ContainsKey(rowId))
+        {
             return null;
+        }
 
         updatedRow.Id = rowId;
         updatedRow.UpdatedAt = DateTime.UtcNow;

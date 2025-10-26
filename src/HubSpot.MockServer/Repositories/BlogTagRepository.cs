@@ -32,7 +32,9 @@ public class BlogTagRepository
     public BlogTag? Update(string id, BlogTag updatedTag)
     {
         if (!_tags.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedTag.Id = id;
         updatedTag.Updated = DateTime.UtcNow;
@@ -67,7 +69,9 @@ public class BlogTagRepository
             {
                 var updated = Update(tag.Id, tag);
                 if (updated != null)
+                {
                     results.Add(updated);
+                }
             }
         }
         return results;
@@ -81,10 +85,14 @@ public class BlogTagRepository
     public void AttachToLanguageGroup(string tagId, string languageGroupId)
     {
         if (!_languageGroups.ContainsKey(languageGroupId))
-            _languageGroups[languageGroupId] = new List<string>();
+        {
+            _languageGroups[languageGroupId] = [];
+        }
 
         if (!_languageGroups[languageGroupId].Contains(tagId))
+        {
             _languageGroups[languageGroupId].Add(tagId);
+        }
     }
 
     public void DetachFromLanguageGroup(string tagId)

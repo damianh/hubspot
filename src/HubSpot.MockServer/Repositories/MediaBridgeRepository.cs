@@ -31,7 +31,9 @@ public class MediaBridgeRepository
     public MediaAsset? Update(string id, MediaAsset updatedAsset)
     {
         if (!_assets.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedAsset.Id = id;
         updatedAsset.UpdatedAt = DateTime.UtcNow;

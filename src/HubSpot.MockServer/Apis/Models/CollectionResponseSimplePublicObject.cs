@@ -2,7 +2,7 @@ namespace DamianH.HubSpot.MockServer.Apis.Models;
 
 internal class CollectionResponseSimplePublicObject
 {
-    public List<SimplePublicObject> Results { get; set; } = new();
+    public List<SimplePublicObject> Results { get; set; } = [];
     public Paging? Paging { get; set; }
 }
 

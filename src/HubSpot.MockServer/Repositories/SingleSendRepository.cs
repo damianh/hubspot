@@ -25,7 +25,9 @@ public class SingleSendRepository
     public SingleSendEmail Update(string id, SingleSendEmail email)
     {
         if (!_emails.ContainsKey(id))
+        {
             throw new KeyNotFoundException($"Single send email {id} not found");
+        }
 
         email.Id = id;
         email.UpdatedAt = DateTime.UtcNow;

@@ -31,7 +31,9 @@ public class UrlRedirectRepository
     public UrlRedirect? Update(string id, UrlRedirect updatedRedirect)
     {
         if (!_redirects.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedRedirect.Id = id;
         updatedRedirect.Updated = DateTime.UtcNow;

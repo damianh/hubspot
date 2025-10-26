@@ -100,7 +100,9 @@ internal static partial class ApiRoutes
             {
                 var pipeline = repo.GetPipeline(objectType, pipelineId);
                 if (pipeline == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {
@@ -135,7 +137,9 @@ internal static partial class ApiRoutes
                     request.DisplayOrder);
 
                 if (pipeline == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {
@@ -226,7 +230,9 @@ internal static partial class ApiRoutes
             {
                 var stage = repo.GetStage(pipelineId, stageId);
                 if (stage == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {
@@ -256,7 +262,9 @@ internal static partial class ApiRoutes
                     request.Metadata);
 
                 if (stage == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {

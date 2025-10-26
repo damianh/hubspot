@@ -22,12 +22,12 @@ public class ConversationRepository
             Status = status ?? "OPEN",
             ChannelId = channelId ?? "default-channel",
             InboxId = inboxId ?? "default-inbox",
-            Participants = new List<string>(),
+            Participants = [],
             LatestMessageTimestamp = now
         };
 
         _conversations[id] = conversation;
-        _conversationMessages[id] = new List<MessageData>();
+        _conversationMessages[id] = [];
         
         return conversation;
     }
@@ -112,7 +112,7 @@ public class ConversationRepository
 
         if (!_conversationMessages.ContainsKey(conversationId))
         {
-            _conversationMessages[conversationId] = new List<MessageData>();
+            _conversationMessages[conversationId] = [];
         }
 
         _conversationMessages[conversationId].Add(message);
@@ -133,7 +133,7 @@ public class ConversationRepository
     {
         if (!_conversationMessages.TryGetValue(conversationId, out var messages))
         {
-            return new List<MessageData>();
+            return [];
         }
 
         var result = messages.OrderBy(m => m.CreatedAt).AsEnumerable();
@@ -170,7 +170,7 @@ public class ConversationData
     public string ChannelId { get; set; } = string.Empty;
     public string InboxId { get; set; } = string.Empty;
     public string? AssignedTo { get; set; }
-    public List<string> Participants { get; set; } = new();
+    public List<string> Participants { get; set; } = [];
     public DateTimeOffset LatestMessageTimestamp { get; set; }
 }
 

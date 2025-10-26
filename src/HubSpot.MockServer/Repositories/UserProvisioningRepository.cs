@@ -22,19 +22,19 @@ public class UserProvisioningRepository
         {
             Id = "admin",
             Name = "Super Admin",
-            Permissions = new List<string> { "ADMIN", "VIEW", "EDIT", "DELETE" }
+            Permissions = ["ADMIN", "VIEW", "EDIT", "DELETE"]
         };
         _roles["sales"] = new RolePermissionSet
         {
             Id = "sales",
             Name = "Sales",
-            Permissions = new List<string> { "VIEW", "EDIT" }
+            Permissions = ["VIEW", "EDIT"]
         };
         _roles["marketing"] = new RolePermissionSet
         {
             Id = "marketing",
             Name = "Marketing",
-            Permissions = new List<string> { "VIEW", "EDIT" }
+            Permissions = ["VIEW", "EDIT"]
         };
 
         _teams["team1"] = new Team { Id = "team1", Name = "Sales Team" };
@@ -47,8 +47,8 @@ public class UserProvisioningRepository
             Email = "admin@example.com",
             FirstName = "Admin",
             LastName = "User",
-            RoleIds = new List<string> { "admin" },
-            PrimaryTeamId = new List<string> { "team1" },
+            RoleIds = ["admin"],
+            PrimaryTeamId = ["team1"],
             CreatedAt = _timeProvider.GetUtcNow(),
             UpdatedAt = _timeProvider.GetUtcNow()
         });
@@ -102,7 +102,10 @@ public class UserProvisioningRepository
     public UserAccount? UpdateUser(string identifier, UserAccount updates, string idProperty = "id")
     {
         var user = GetUser(identifier, idProperty);
-        if (user == null) return null;
+        if (user == null)
+        {
+            return null;
+        }
 
         user.FirstName = updates.FirstName;
         user.LastName = updates.LastName;
@@ -117,7 +120,11 @@ public class UserProvisioningRepository
     public bool DeleteUser(string identifier, string idProperty = "id")
     {
         var user = GetUser(identifier, idProperty);
-        if (user == null) return false;
+        if (user == null)
+        {
+            return false;
+        }
+
         return _users.Remove(user.Id);
     }
 

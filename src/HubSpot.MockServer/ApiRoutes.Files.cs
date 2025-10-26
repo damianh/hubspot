@@ -16,12 +16,16 @@ internal static partial class ApiRoutes
             [FromServices] FileRepository repo) =>
         {
             if (!request.HasFormContentType)
+            {
                 return Results.BadRequest("Must be multipart/form-data");
+            }
 
             var form = await request.ReadFormAsync();
             var file = form.Files.FirstOrDefault();
             if (file == null)
+            {
                 return Results.BadRequest("No file uploaded");
+            }
 
             using var ms = new MemoryStream();
             await file.CopyToAsync(ms);
@@ -71,7 +75,9 @@ internal static partial class ApiRoutes
         {
             var file = repo.GetFile(fileId);
             if (file == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {
@@ -93,7 +99,9 @@ internal static partial class ApiRoutes
         {
             var updated = repo.UpdateFile(fileId, request.Name);
             if (updated == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {
@@ -122,7 +130,9 @@ internal static partial class ApiRoutes
         {
             var file = repo.GetFile(fileId);
             if (file == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {
@@ -137,11 +147,15 @@ internal static partial class ApiRoutes
         {
             var file = repo.GetFile(fileId);
             if (file == null)
+            {
                 return Results.NotFound();
+            }
 
             var content = repo.GetFileContent(fileId);
             if (content == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.File(content, file.Type, file.Name);
         });

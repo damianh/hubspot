@@ -27,7 +27,9 @@ public class SourceCodeRepository
     public SourceCodeFile? Update(string path, SourceCodeFile updatedFile)
     {
         if (!_files.ContainsKey(path))
+        {
             return null;
+        }
 
         updatedFile.Path = path;
         updatedFile.UpdatedAt = DateTime.UtcNow;

@@ -36,7 +36,9 @@ public class BlogPostRepository
     public BlogPost? Update(string id, BlogPost updatedPost)
     {
         if (!_posts.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedPost.Id = id;
         updatedPost.Updated = DateTime.UtcNow;
@@ -79,7 +81,9 @@ public class BlogPostRepository
             {
                 var updated = Update(post.Id, post);
                 if (updated != null)
+                {
                     results.Add(updated);
+                }
             }
         }
         return results;
@@ -93,7 +97,9 @@ public class BlogPostRepository
     private void AddRevision(string postId, BlogPost post)
     {
         if (!_revisions.ContainsKey(postId))
-            _revisions[postId] = new List<BlogPostRevision>();
+        {
+            _revisions[postId] = [];
+        }
 
         var revision = new BlogPostRevision
         {
@@ -108,7 +114,7 @@ public class BlogPostRepository
 
     public List<BlogPostRevision> GetRevisions(string postId)
     {
-        return _revisions.GetValueOrDefault(postId) ?? new List<BlogPostRevision>();
+        return _revisions.GetValueOrDefault(postId) ?? [];
     }
 
     public BlogPostRevision? GetRevisionById(string postId, string revisionId)
@@ -121,7 +127,9 @@ public class BlogPostRepository
     {
         var revision = GetRevisionById(postId, revisionId);
         if (revision?.Content == null)
+        {
             return null;
+        }
 
         return Update(postId, revision.Content);
     }
@@ -129,10 +137,14 @@ public class BlogPostRepository
     public void AttachToLanguageGroup(string postId, string languageGroupId)
     {
         if (!_languageGroups.ContainsKey(languageGroupId))
-            _languageGroups[languageGroupId] = new List<string>();
+        {
+            _languageGroups[languageGroupId] = [];
+        }
 
         if (!_languageGroups[languageGroupId].Contains(postId))
+        {
             _languageGroups[languageGroupId].Add(postId);
+        }
     }
 
     public void DetachFromLanguageGroup(string postId)
@@ -147,14 +159,18 @@ public class BlogPostRepository
     {
         var post = GetById(postId);
         if (post?.Language == null)
-            return new List<BlogPost>();
+        {
+            return [];
+        }
 
         var groupId = _languageGroups
             .FirstOrDefault(g => g.Value.Contains(postId))
             .Key;
 
         if (groupId == null)
-            return new List<BlogPost> { post };
+        {
+            return [post];
+        }
 
         return _languageGroups[groupId]
             .Select(GetById)

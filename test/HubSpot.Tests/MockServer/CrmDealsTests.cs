@@ -1,7 +1,5 @@
 using DamianH.HubSpot.KiotaClient.CRM.Deals.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -15,12 +13,7 @@ public class CrmDealsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         _outputHelper.WriteLine(_server.Uri.ToString());
 
         var authenticationProvider = new AnonymousAuthenticationProvider();
@@ -236,7 +229,7 @@ public class CrmDealsTests : IAsyncLifetime
     [Fact]
     public async Task V3_Can_list_Deals_with_paging()
     {
-        for (int i = 0; i < 15; i++)
+        for (var i = 0; i < 15; i++)
         {
             var input = new SimplePublicObjectInputForCreate
             {

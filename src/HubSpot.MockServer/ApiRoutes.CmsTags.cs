@@ -52,8 +52,11 @@ internal static partial class ApiRoutes
             tags.MapGet("/{objectId}", (TagRepository repo, string objectId) =>
             {
                 var tag = repo.Get(objectId);
-                if (tag == null) return Results.NotFound();
-                
+                if (tag == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(new
                 {
                     id = tag.Id,
@@ -68,8 +71,11 @@ internal static partial class ApiRoutes
             tags.MapPatch("/{objectId}", (TagRepository repo, string objectId, TagUpdateRequest request) =>
             {
                 var tag = repo.Update(objectId, request.Name);
-                if (tag == null) return Results.NotFound();
-                
+                if (tag == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(new
                 {
                     id = tag.Id,

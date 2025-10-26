@@ -6,8 +6,8 @@ public class AccountInfoRepository
 {
     private readonly TimeProvider _timeProvider;
     private AccountDetail _accountDetail;
-    private readonly List<ApiUsageData> _apiUsageData = new();
-    private readonly List<AuditLogEntry> _auditLogs = new();
+    private readonly List<ApiUsageData> _apiUsageData = [];
+    private readonly List<AuditLogEntry> _auditLogs = [];
     private int _auditLogIdCounter = 1;
 
     public AccountInfoRepository(TimeProvider timeProvider)
@@ -20,7 +20,7 @@ public class AccountInfoRepository
             AccountType = "MARKETING_HUB_PROFESSIONAL",
             TimeZone = "US/Eastern",
             CompanyCurrency = "USD",
-            AdditionalCurrencies = new List<string> { "EUR", "GBP" },
+            AdditionalCurrencies = ["EUR", "GBP"],
             DataHostingLocation = "US",
             UiDomain = "app.hubspot.com",
             UtcOffset = "-05:00",
@@ -33,7 +33,7 @@ public class AccountInfoRepository
     private void InitializeDefaultData()
     {
         var today = _timeProvider.GetUtcNow().Date;
-        for (int i = 0; i < 30; i++)
+        for (var i = 0; i < 30; i++)
         {
             var date = today.AddDays(-i);
             _apiUsageData.Add(new ApiUsageData
@@ -58,21 +58,16 @@ public class AccountInfoRepository
     public AccountDetail GetAccountDetails() => _accountDetail;
 
     public void UpdateAccountDetails(AccountDetail details)
-    {
-        _accountDetail = details;
-    }
+        => _accountDetail = details;
 
-    public List<ApiUsageData> GetDailyApiUsage(int days = 30)
-    {
-        return _apiUsageData
+    public List<ApiUsageData> GetDailyApiUsage(int days = 30) =>
+        _apiUsageData
             .OrderByDescending(d => d.Date)
             .Take(days)
             .ToList();
-    }
 
-    public List<ApiUsageData> GetPrivateAppsDailyUsage(int days = 30)
-    {
-        return _apiUsageData
+    public List<ApiUsageData> GetPrivateAppsDailyUsage(int days = 30) =>
+        _apiUsageData
             .OrderByDescending(d => d.Date)
             .Take(days)
             .Select(d => new ApiUsageData
@@ -86,7 +81,6 @@ public class AccountInfoRepository
                 }
             })
             .ToList();
-    }
 
     public List<AuditLogEntry> GetAuditLogs(string eventType, int limit = 100, string? after = null)
     {

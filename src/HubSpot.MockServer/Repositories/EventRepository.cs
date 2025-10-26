@@ -23,10 +23,14 @@ public class EventRepository
         var events = _events.Values.AsEnumerable();
 
         if (eventName != null)
+        {
             events = events.Where(e => e.EventName == eventName);
+        }
 
         if (after.HasValue)
+        {
             events = events.Where(e => e.OccurredAt >= after.Value);
+        }
 
         return events.OrderByDescending(e => e.OccurredAt).ToList();
     }

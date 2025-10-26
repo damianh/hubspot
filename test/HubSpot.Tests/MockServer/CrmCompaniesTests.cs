@@ -1,8 +1,6 @@
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models;
 using DamianH.HubSpot.KiotaClient.Extensions;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -15,11 +13,7 @@ public class CrmCompaniesTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()

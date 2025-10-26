@@ -1,7 +1,5 @@
 using DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4;
 using DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -14,11 +12,7 @@ public class AutomationActionsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
@@ -34,13 +28,13 @@ public class AutomationActionsTests : IAsyncLifetime
     {
         var request = new BatchInputCallbackCompletionBatchRequest
         {
-            Inputs = new List<CallbackCompletionBatchRequest>
-            {
-                new CallbackCompletionBatchRequest
+            Inputs =
+            [
+                new()
                 {
                     CallbackId = "callback-1"
                 }
-            }
+            ]
         };
 
         // Should not throw

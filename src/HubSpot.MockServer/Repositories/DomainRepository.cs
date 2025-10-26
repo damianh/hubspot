@@ -31,7 +31,9 @@ public class DomainRepository
     public Domain? Update(string id, Domain updatedDomain)
     {
         if (!_domains.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedDomain.Id = id;
         updatedDomain.Updated = DateTime.UtcNow;

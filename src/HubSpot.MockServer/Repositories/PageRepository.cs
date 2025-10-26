@@ -36,7 +36,9 @@ public class PageRepository
     public Page? Update(string id, Page updatedPage)
     {
         if (!_pages.ContainsKey(id))
+        {
             return null;
+        }
 
         updatedPage.Id = id;
         updatedPage.Updated = DateTime.UtcNow;
@@ -79,7 +81,9 @@ public class PageRepository
             {
                 var updated = Update(page.Id, page);
                 if (updated != null)
+                {
                     results.Add(updated);
+                }
             }
         }
         return results;
@@ -93,7 +97,9 @@ public class PageRepository
     private void AddRevision(string pageId, Page page)
     {
         if (!_revisions.ContainsKey(pageId))
-            _revisions[pageId] = new List<PageRevision>();
+        {
+            _revisions[pageId] = [];
+        }
 
         var revision = new PageRevision
         {
@@ -108,7 +114,7 @@ public class PageRepository
 
     public List<PageRevision> GetRevisions(string pageId)
     {
-        return _revisions.GetValueOrDefault(pageId) ?? new List<PageRevision>();
+        return _revisions.GetValueOrDefault(pageId) ?? [];
     }
 
     public PageRevision? GetRevisionById(string pageId, string revisionId)
@@ -121,7 +127,9 @@ public class PageRepository
     {
         var revision = GetRevisionById(pageId, revisionId);
         if (revision?.Content == null)
+        {
             return null;
+        }
 
         return Update(pageId, revision.Content);
     }
@@ -129,10 +137,14 @@ public class PageRepository
     public void AttachToLanguageGroup(string pageId, string languageGroupId)
     {
         if (!_languageGroups.ContainsKey(languageGroupId))
-            _languageGroups[languageGroupId] = new List<string>();
+        {
+            _languageGroups[languageGroupId] = [];
+        }
 
         if (!_languageGroups[languageGroupId].Contains(pageId))
+        {
             _languageGroups[languageGroupId].Add(pageId);
+        }
     }
 
     public void DetachFromLanguageGroup(string pageId)

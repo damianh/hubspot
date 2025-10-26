@@ -45,7 +45,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<UserProvisionRequest>();
                 if (body == null || string.IsNullOrEmpty(body.Email))
+                {
                     return Results.BadRequest(new { message = "Email is required" });
+                }
 
                 var user = new UserAccount
                 {
@@ -53,9 +55,9 @@ internal static partial class ApiRoutes
                     Email = body.Email,
                     FirstName = body.FirstName ?? string.Empty,
                     LastName = body.LastName ?? string.Empty,
-                    RoleIds = body.RoleIds ?? new List<string>(),
-                    PrimaryTeamId = body.PrimaryTeamId ?? new List<string>(),
-                    SecondaryTeamIds = body.SecondaryTeamIds ?? new List<string>()
+                    RoleIds = body.RoleIds ?? [],
+                    PrimaryTeamId = body.PrimaryTeamId ?? [],
+                    SecondaryTeamIds = body.SecondaryTeamIds ?? []
                 };
 
                 var created = repository.CreateUser(user);
@@ -69,7 +71,9 @@ internal static partial class ApiRoutes
             {
                 var user = repository.GetUser(userId, idProperty ?? "id");
                 if (user == null)
+                {
                     return Results.NotFound(new { message = "User not found" });
+                }
 
                 return Results.Ok(user);
             });
@@ -82,7 +86,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<UserUpdateRequest>();
                 if (body == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var updates = new UserAccount
                 {
@@ -90,14 +96,16 @@ internal static partial class ApiRoutes
                     Email = string.Empty,
                     FirstName = body.FirstName ?? string.Empty,
                     LastName = body.LastName ?? string.Empty,
-                    RoleIds = body.RoleIds ?? new List<string>(),
-                    PrimaryTeamId = body.PrimaryTeamId ?? new List<string>(),
-                    SecondaryTeamIds = body.SecondaryTeamIds ?? new List<string>()
+                    RoleIds = body.RoleIds ?? [],
+                    PrimaryTeamId = body.PrimaryTeamId ?? [],
+                    SecondaryTeamIds = body.SecondaryTeamIds ?? []
                 };
 
                 var updated = repository.UpdateUser(userId, updates, idProperty ?? "id");
                 if (updated == null)
+                {
                     return Results.NotFound(new { message = "User not found" });
+                }
 
                 return Results.Ok(updated);
             });
@@ -109,7 +117,9 @@ internal static partial class ApiRoutes
             {
                 var deleted = repository.DeleteUser(userId, idProperty ?? "id");
                 if (!deleted)
+                {
                     return Results.NotFound(new { message = "User not found" });
+                }
 
                 return Results.NoContent();
             });

@@ -41,7 +41,9 @@ public class SchemaRepository
     {
         // Try by name first
         if (_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
             return schema;
+        }
 
         // Try by ID
         return _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
@@ -67,19 +69,35 @@ public class SchemaRepository
             // Try by ID
             schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
             if (schema == null)
+            {
                 return null;
+            }
         }
 
         if (labels != null)
+        {
             schema.Labels = labels;
+        }
+
         if (primaryDisplayProperty != null)
+        {
             schema.PrimaryDisplayProperty = primaryDisplayProperty;
+        }
+
         if (requiredProperties != null)
+        {
             schema.RequiredProperties = requiredProperties;
+        }
+
         if (searchableProperties != null)
+        {
             schema.SearchableProperties = searchableProperties;
+        }
+
         if (secondaryDisplayProperties != null)
+        {
             schema.SecondaryDisplayProperties = secondaryDisplayProperties;
+        }
 
         schema.UpdatedAt = DateTimeOffset.UtcNow;
 
@@ -94,7 +112,9 @@ public class SchemaRepository
             // Try by ID
             schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
             if (schema == null)
+            {
                 return false;
+            }
         }
 
         schema.Archived = true;
@@ -107,7 +127,9 @@ public class SchemaRepository
         List<PropertyOption>? options = null, int? displayOrder = null)
     {
         if (!_properties.ContainsKey(objectType))
+        {
             _properties[objectType] = [];
+        }
 
         var property = new SchemaProperty
         {
@@ -140,7 +162,9 @@ public class SchemaRepository
         string toObjectType, string name, string? label = null)
     {
         if (!_associations.ContainsKey(fromObjectType))
+        {
             _associations[fromObjectType] = [];
+        }
 
         var associationId = GenerateAssociationId();
         var definition = new AssociationDefinition
@@ -166,11 +190,15 @@ public class SchemaRepository
     public bool DeleteAssociationDefinition(string objectType, string associationId)
     {
         if (!_associations.TryGetValue(objectType, out var defs))
+        {
             return false;
+        }
 
         var def = defs.FirstOrDefault(d => d.Id == associationId);
         if (def == null)
+        {
             return false;
+        }
 
         defs.Remove(def);
         return true;

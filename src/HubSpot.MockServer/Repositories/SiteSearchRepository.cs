@@ -2,7 +2,7 @@ namespace DamianH.HubSpot.MockServer.Repositories;
 
 public class SiteSearchRepository
 {
-    private readonly List<SearchableContent> _content = new();
+    private readonly List<SearchableContent> _content = [];
     private int _nextId = 1;
 
     public SearchableContent AddContent(SearchableContent content)
@@ -16,7 +16,9 @@ public class SiteSearchRepository
     public List<SearchableContent> Search(string query, int offset = 0, int limit = 20)
     {
         if (string.IsNullOrWhiteSpace(query))
+        {
             return _content.Skip(offset).Take(limit).ToList();
+        }
 
         var lowerQuery = query.ToLowerInvariant();
         return _content
@@ -38,8 +40,10 @@ public class SiteSearchRepository
     {
         var content = _content.FirstOrDefault(c => c.Id == id);
         if (content == null)
+        {
             return false;
-        
+        }
+
         _content.Remove(content);
         return true;
     }

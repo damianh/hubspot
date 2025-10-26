@@ -23,7 +23,9 @@ internal static partial class ApiRoutes
         {
             var schema = schemaRepo.GetSchema(objectType);
             if (schema == null)
+            {
                 return Results.NotFound(new { message = $"Schema not found for object type: {objectType}" });
+            }
 
             var properties = schemaRepo.GetProperties(objectType);
             var associations = schemaRepo.GetAssociationDefinitions(objectType);
@@ -109,7 +111,9 @@ internal static partial class ApiRoutes
             );
 
             if (schema == null)
+            {
                 return Results.NotFound(new { message = $"Schema not found for object type: {objectType}" });
+            }
 
             var properties = schemaRepo.GetProperties(objectType);
             var associations = schemaRepo.GetAssociationDefinitions(objectType);
@@ -136,7 +140,9 @@ internal static partial class ApiRoutes
         {
             var deleted = schemaRepo.DeleteSchema(objectType);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Schema not found for object type: {objectType}" });
+            }
 
             return Results.NoContent();
         });
@@ -162,7 +168,9 @@ internal static partial class ApiRoutes
         {
             var deleted = schemaRepo.DeleteAssociationDefinition(objectType, associationId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Association definition not found: {associationId}" });
+            }
 
             return Results.NoContent();
         });

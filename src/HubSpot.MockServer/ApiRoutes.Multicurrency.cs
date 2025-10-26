@@ -27,7 +27,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<CompanyCurrencyUpdate>();
                 if (body == null || string.IsNullOrEmpty(body.CurrencyCode))
+                {
                     return Results.BadRequest(new { message = "currencyCode is required" });
+                }
 
                 repository.UpdateCompanyCurrency(body.CurrencyCode);
                 var updated = repository.GetCompanyCurrency();
@@ -47,7 +49,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<CurrencyCreateRequest>();
                 if (body == null || string.IsNullOrEmpty(body.CurrencyCode))
+                {
                     return Results.BadRequest(new { message = "currencyCode is required" });
+                }
 
                 var currency = new Currency
                 {
@@ -67,7 +71,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<CurrencyVisibilityUpdate>();
                 if (body == null || string.IsNullOrEmpty(body.CurrencyCode))
+                {
                     return Results.BadRequest(new { message = "currencyCode is required" });
+                }
 
                 repository.UpdateCurrencyVisibility(body.CurrencyCode, body.IsVisible);
                 return Results.Ok(new { message = "Currency visibility updated" });
@@ -105,7 +111,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<ExchangeRateCreateRequest>();
                 if (body == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var rate = repository.CreateExchangeRate(
                     body.FromCurrencyCode,
@@ -121,7 +129,9 @@ internal static partial class ApiRoutes
             {
                 var rate = repository.GetExchangeRate(exchangeRateId);
                 if (rate == null)
+                {
                     return Results.NotFound(new { message = "Exchange rate not found" });
+                }
 
                 return Results.Ok(rate);
             });
@@ -133,11 +143,15 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<ExchangeRateUpdateRequest>();
                 if (body == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var existing = repository.GetExchangeRate(exchangeRateId);
                 if (existing == null)
+                {
                     return Results.NotFound(new { message = "Exchange rate not found" });
+                }
 
                 repository.UpdateExchangeRate(exchangeRateId, body.ExchangeRate);
                 var updated = repository.GetExchangeRate(exchangeRateId);
@@ -167,7 +181,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchExchangeRateCreateRequest>();
                 if (body == null || body.Inputs == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var results = new List<ExchangeRate>();
                 foreach (var input in body.Inputs)
@@ -194,7 +210,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchReadRequest>();
                 if (body == null || body.Inputs == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var ids = body.Inputs.Select(i => i.Id).ToList();
                 var results = repository.GetExchangeRatesByIds(ids);
@@ -214,7 +232,9 @@ internal static partial class ApiRoutes
             {
                 var body = await context.Request.ReadFromJsonAsync<BatchExchangeRateUpdateRequest>();
                 if (body == null || body.Inputs == null)
+                {
                     return Results.BadRequest(new { message = "Invalid request body" });
+                }
 
                 var results = new List<ExchangeRate>();
                 foreach (var input in body.Inputs)
@@ -222,7 +242,9 @@ internal static partial class ApiRoutes
                     repository.UpdateExchangeRate(input.Id, input.ExchangeRate);
                     var updated = repository.GetExchangeRate(input.Id);
                     if (updated != null)
+                    {
                         results.Add(updated);
+                    }
                 }
 
                 return Results.Ok(new

@@ -44,8 +44,11 @@ public class TagRepository
 
     public TagData? Update(string id, string name)
     {
-        if (!_tags.TryGetValue(id, out var tag)) return null;
-        
+        if (!_tags.TryGetValue(id, out var tag))
+        {
+            return null;
+        }
+
         tag.Name = name;
         tag.Updated = DateTimeOffset.UtcNow;
         return tag;
@@ -57,7 +60,7 @@ public class TagRepository
     {
         if (!_languageGroups.ContainsKey(primaryId))
         {
-            _languageGroups[primaryId] = new List<string>();
+            _languageGroups[primaryId] = [];
         }
         if (!_languageGroups[primaryId].Contains(variantId))
         {

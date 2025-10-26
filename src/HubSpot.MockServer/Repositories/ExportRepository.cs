@@ -48,7 +48,9 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         {
             var afterIndex = exports.FindIndex(e => e.Id == after);
             if (afterIndex >= 0)
+            {
                 startIndex = afterIndex + 1;
+            }
         }
 
         var results = exports.Skip(startIndex).Take(limit).ToList();
@@ -68,7 +70,9 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
     public ExportJob? CancelExport(string exportId)
     {
         if (!_exports.TryGetValue(exportId, out var job))
+        {
             return null;
+        }
 
         if (job.Status == ExportStatus.PROCESSING)
         {
@@ -87,7 +91,9 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
     private async Task ProcessExport(string exportId)
     {
         if (!_exports.TryGetValue(exportId, out var job))
+        {
             return;
+        }
 
         await Task.Delay(500); // Simulate processing delay
 
@@ -104,13 +110,13 @@ internal class ExportRepository(HubSpotObjectRepository? objectRepository = null
         // Generate header
         var columns = properties.Count > 0 
             ? properties 
-            : new List<string> { "id", "createdAt", "updatedAt", "name", "email" };
+            : ["id", "createdAt", "updatedAt", "name", "email"];
 
         var header = string.Join(",", columns);
         var rows = new List<string> { header };
 
         // Generate 10 mock rows
-        for (int i = 1; i <= 10; i++)
+        for (var i = 1; i <= 10; i++)
         {
             var values = columns.Select(col => col.ToLower() switch
             {

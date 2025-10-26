@@ -21,7 +21,7 @@ internal static partial class ApiRoutes
             var job = importRepo.CreateImport(
                 importName!,
                 objectType!,
-                new List<Dictionary<string, string>>(),
+                [],
                 null
             );
 
@@ -43,7 +43,9 @@ internal static partial class ApiRoutes
         {
             var job = importRepo.GetImport(importId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Import not found: {importId}" });
+            }
 
             return Results.Ok(new
             {
@@ -84,7 +86,9 @@ internal static partial class ApiRoutes
         {
             var job = importRepo.CancelImport(importId);
             if (job == null)
+            {
                 return Results.NotFound(new { message = $"Import not found: {importId}" });
+            }
 
             return Results.Ok(new
             {

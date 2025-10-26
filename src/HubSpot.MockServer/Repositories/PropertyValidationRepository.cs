@@ -15,7 +15,7 @@ public class PropertyValidationRepository
         return Task.FromResult(
             _validations.TryGetValue(key, out var validations) 
                 ? validations.ToList() 
-                : new List<JsonElement>()
+                : []
         );
     }
 
@@ -37,7 +37,7 @@ public class PropertyValidationRepository
             updatedAt = DateTimeOffset.UtcNow.ToString("o")
         });
 
-        var validations = _validations.GetOrAdd(key, _ => new List<JsonElement>());
+        var validations = _validations.GetOrAdd(key, _ => []);
         validations.Add(validationObject);
 
         return Task.FromResult(validationObject);

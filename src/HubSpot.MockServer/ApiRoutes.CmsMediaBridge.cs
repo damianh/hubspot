@@ -31,8 +31,10 @@ internal static partial class ApiRoutes
         {
             var asset = repository.GetById(assetId);
             if (asset == null)
+            {
                 return Results.NotFound(new { message = $"Media asset {assetId} not found" });
-                
+            }
+
             return Results.Ok(MapMediaAssetToResponse(asset));
         });
 
@@ -40,7 +42,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var asset = MapMediaAssetFromRequest(request);
             var created = repository.Create(asset);
@@ -52,14 +56,18 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var asset = MapMediaAssetFromRequest(request);
             var updated = repository.Update(assetId, asset);
             
             if (updated == null)
+            {
                 return Results.NotFound(new { message = $"Media asset {assetId} not found" });
-                
+            }
+
             return Results.Ok(MapMediaAssetToResponse(updated));
         });
 
@@ -67,8 +75,10 @@ internal static partial class ApiRoutes
         {
             var success = repository.Delete(assetId);
             if (!success)
+            {
                 return Results.NotFound(new { message = $"Media asset {assetId} not found" });
-                
+            }
+
             return Results.NoContent();
         });
     }
@@ -108,13 +118,19 @@ internal static partial class ApiRoutes
         };
 
         if (request.TryGetValue("size", out var sizeObj) && long.TryParse(sizeObj.ToString(), out var size))
+        {
             asset.Size = size;
+        }
 
         if (request.TryGetValue("width", out var widthObj) && int.TryParse(widthObj.ToString(), out var width))
+        {
             asset.Width = width;
+        }
 
         if (request.TryGetValue("height", out var heightObj) && int.TryParse(heightObj.ToString(), out var height))
+        {
             asset.Height = height;
+        }
 
         if (request.TryGetValue("metadata", out var metadataObj))
         {

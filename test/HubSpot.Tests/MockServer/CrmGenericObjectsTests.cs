@@ -1,12 +1,9 @@
 using DamianH.HubSpot.KiotaClient.CRM.Objects.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Objects.V3.Models;
-using DamianH.HubSpot.MockServer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class CrmGenericObjectsTests : IAsyncLifetime
 {
@@ -15,11 +12,7 @@ public class CrmGenericObjectsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()

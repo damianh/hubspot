@@ -11,7 +11,7 @@ public class TaxRatesTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _server = await HubSpotMockServer.StartAsync();
+        _server = await HubSpotMockServer.StartNew();
         var adapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.BaseUri.ToString()

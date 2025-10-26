@@ -1,9 +1,7 @@
-using DamianH.HubSpot.MockServer;
-using Shouldly;
 using System.Net.Http.Json;
 using System.Text;
 
-namespace DamianH.HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class ListsFilesEventsTests : IAsyncLifetime
 {
@@ -12,7 +10,7 @@ public class ListsFilesEventsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _mockServer = await HubSpotMockServer.StartAsync();
+        _mockServer = await HubSpotMockServer.StartNew();
         _httpClient = new HttpClient { BaseAddress = _mockServer.Uri };
     }
 

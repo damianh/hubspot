@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
@@ -19,17 +16,15 @@ public class AutomationRepository
         return Array.Empty<CustomAction>();
     }
 
-    public void AddAction(CustomAction action)
-    {
+    public void AddAction(CustomAction action) =>
         _actionsByApp.AddOrUpdate(
             action.AppId,
-            new List<CustomAction> { action },
+            [action],
             (_, list) =>
             {
                 list.Add(action);
                 return list;
             });
-    }
 
     public void CompleteCallback(CallbackCompletion completion)
     {
@@ -55,7 +50,7 @@ public record CustomAction
     public int AppId { get; init; }
     public string Label { get; init; } = string.Empty;
     public string ActionUrl { get; init; } = string.Empty;
-    public List<ActionInput> InputFields { get; init; } = new();
+    public List<ActionInput> InputFields { get; init; } = [];
 }
 
 public record ActionInput

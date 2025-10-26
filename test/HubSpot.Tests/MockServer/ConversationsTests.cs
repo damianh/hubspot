@@ -1,26 +1,14 @@
-using DamianH.HubSpot.KiotaClient.Extensions;
-using DamianH.HubSpot.MockServer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Http.HttpClientLibrary;
-
 namespace DamianH.HubSpot.MockServer;
 
 public class ConversationsTests : IAsyncLifetime
 {
     private HubSpotMockServer _server = null!;
 
-    public async ValueTask InitializeAsync()
-    {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
-    }
+    public async ValueTask InitializeAsync() 
+        => _server = await HubSpotMockServer.StartNew();
 
-    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
+    public async ValueTask DisposeAsync() 
+        => await _server.DisposeAsync();
 
     [Fact]
     public async Task ListConversations_ShouldReturnEmpty_Initially()

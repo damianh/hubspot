@@ -25,7 +25,9 @@ public class MarketingEventRepository
     public MarketingEvent Update(string id, MarketingEvent marketingEvent)
     {
         if (!_events.ContainsKey(id))
+        {
             throw new KeyNotFoundException($"Marketing event {id} not found");
+        }
 
         marketingEvent.Id = id;
         marketingEvent.UpdatedAt = DateTime.UtcNow;

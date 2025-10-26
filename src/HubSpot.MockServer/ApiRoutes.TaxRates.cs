@@ -43,7 +43,9 @@ internal static partial class ApiRoutes
             {
                 var group = repository.GetTaxRateGroup(taxRateGroupId);
                 if (group == null)
+                {
                     return Results.NotFound(new { message = "Tax rate group not found" });
+                }
 
                 return Results.Ok(group);
             });

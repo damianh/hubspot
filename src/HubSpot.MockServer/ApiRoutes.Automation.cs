@@ -2,8 +2,6 @@ using DamianH.HubSpot.MockServer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 
 namespace DamianH.HubSpot.MockServer;
 
@@ -62,7 +60,7 @@ internal static partial class ApiRoutes
                     {
                         Id = request.SequenceId,
                         Name = $"Sequence {request.SequenceId}",
-                        Steps = new List<SequenceStep>(),
+                        Steps = [],
                         CreatedAt = DateTimeOffset.UtcNow,
                         UpdatedAt = DateTimeOffset.UtcNow
                     };
@@ -112,7 +110,7 @@ internal static partial class ApiRoutes
                     {
                         Id = request.SequenceId,
                         Name = $"Sequence {request.SequenceId}",
-                        Steps = new List<SequenceStep>(),
+                        Steps = [],
                         CreatedAt = DateTimeOffset.UtcNow,
                         UpdatedAt = DateTimeOffset.UtcNow
                     };
@@ -155,7 +153,7 @@ internal static partial class ApiRoutes
 // Request/Response models that match the Kiota-generated types
 public record BatchInputCallbackCompletionRequest
 {
-    public List<CallbackCompletionInput> Inputs { get; init; } = new();
+    public List<CallbackCompletionInput> Inputs { get; init; } = [];
 }
 
 public record CallbackCompletionInput

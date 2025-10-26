@@ -61,7 +61,9 @@ internal static partial class ApiRoutes
         {
             var list = repo.GetList(listId);
             if (list == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {
@@ -88,7 +90,9 @@ internal static partial class ApiRoutes
 
             var updated = repo.UpdateList(listId, updates);
             if (updated == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {
@@ -115,7 +119,7 @@ internal static partial class ApiRoutes
             [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
-            List<string> recordIds = new();
+            List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
                 recordIds.Add(id.GetString()!);
 
@@ -128,7 +132,7 @@ internal static partial class ApiRoutes
             [FromBody] System.Text.Json.JsonElement request,
             [FromServices] ListRepository repo) =>
         {
-            List<string> recordIds = new();
+            List<string> recordIds = [];
             foreach (var id in request.GetProperty("recordIds").EnumerateArray())
                 recordIds.Add(id.GetString()!);
 

@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
@@ -46,7 +43,7 @@ public class SequenceRepository
         
         _enrollmentsByContact.AddOrUpdate(
             contactId,
-            new List<string> { enrollmentId },
+            [enrollmentId],
             (_, list) =>
             {
                 list.Add(enrollmentId);
@@ -55,7 +52,7 @@ public class SequenceRepository
 
         _enrollmentsBySequence.AddOrUpdate(
             sequenceId,
-            new List<string> { enrollmentId },
+            [enrollmentId],
             (_, list) =>
             {
                 list.Add(enrollmentId);
@@ -119,7 +116,7 @@ public record Sequence
 {
     public string Id { get; init; } = string.Empty;
     public string Name { get; init; } = string.Empty;
-    public List<SequenceStep> Steps { get; init; } = new();
+    public List<SequenceStep> Steps { get; init; } = [];
     public DateTimeOffset CreatedAt { get; init; }
     public DateTimeOffset UpdatedAt { get; init; }
 }

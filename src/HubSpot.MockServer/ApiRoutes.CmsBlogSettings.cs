@@ -54,8 +54,11 @@ internal static partial class ApiRoutes
             settings.MapGet("/{blogId}", (BlogSettingsRepository repo, string blogId) =>
             {
                 var blogSettings = repo.Get(blogId);
-                if (blogSettings == null) return Results.NotFound();
-                
+                if (blogSettings == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(new
                 {
                     blogId = blogSettings.BlogId,
@@ -74,13 +77,27 @@ internal static partial class ApiRoutes
             {
                 var blogSettings = repo.Update(blogId, s =>
                 {
-                    if (request.Name != null) s.Name = request.Name;
-                    if (request.HtmlTitle != null) s.HtmlTitle = request.HtmlTitle;
-                    if (request.Domain != null) s.Domain = request.Domain;
+                    if (request.Name != null)
+                    {
+                        s.Name = request.Name;
+                    }
+
+                    if (request.HtmlTitle != null)
+                    {
+                        s.HtmlTitle = request.HtmlTitle;
+                    }
+
+                    if (request.Domain != null)
+                    {
+                        s.Domain = request.Domain;
+                    }
                 });
                 
-                if (blogSettings == null) return Results.NotFound();
-                
+                if (blogSettings == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(new
                 {
                     blogId = blogSettings.BlogId,
@@ -124,8 +141,11 @@ internal static partial class ApiRoutes
             settings.MapGet("/{blogId}/revisions/{revisionId}", (BlogSettingsRepository repo, string blogId, string revisionId) =>
             {
                 var revision = repo.GetRevision(blogId, revisionId);
-                if (revision == null) return Results.NotFound();
-                
+                if (revision == null)
+                {
+                    return Results.NotFound();
+                }
+
                 return Results.Ok(new
                 {
                     id = revision.Id,

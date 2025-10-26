@@ -2,8 +2,6 @@ using DamianH.HubSpot.KiotaClient.CRM.Products.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Tickets.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Quotes.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Communications.V3;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using ProductsModels = DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models;
@@ -23,16 +21,11 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         };
-
         _productsClient = new HubSpotCRMProductsV3Client(requestAdapter);
         _ticketsClient = new HubSpotCRMTicketsV3Client(requestAdapter);
         _quotesClient = new HubSpotCRMQuotesV3Client(requestAdapter);

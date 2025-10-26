@@ -21,11 +21,11 @@ public class TaxRateRepository
             Id = _taxRateGroupIdCounter++.ToString(),
             Name = "US Sales Tax",
             Country = "US",
-            TaxRates = new List<TaxRate>
-            {
-                new TaxRate { Id = "1", Name = "Standard Rate", Rate = 0.07m, IsDefault = true },
-                new TaxRate { Id = "2", Name = "Reduced Rate", Rate = 0.05m, IsDefault = false }
-            },
+            TaxRates =
+            [
+                new() { Id = "1", Name = "Standard Rate", Rate = 0.07m, IsDefault = true },
+                new() { Id = "2", Name = "Reduced Rate", Rate = 0.05m, IsDefault = false }
+            ],
             CreatedAt = _timeProvider.GetUtcNow(),
             UpdatedAt = _timeProvider.GetUtcNow()
         });
@@ -35,11 +35,11 @@ public class TaxRateRepository
             Id = _taxRateGroupIdCounter++.ToString(),
             Name = "EU VAT",
             Country = "EU",
-            TaxRates = new List<TaxRate>
-            {
-                new TaxRate { Id = "3", Name = "Standard VAT", Rate = 0.20m, IsDefault = true },
-                new TaxRate { Id = "4", Name = "Reduced VAT", Rate = 0.10m, IsDefault = false }
-            },
+            TaxRates =
+            [
+                new() { Id = "3", Name = "Standard VAT", Rate = 0.20m, IsDefault = true },
+                new() { Id = "4", Name = "Reduced VAT", Rate = 0.10m, IsDefault = false }
+            ],
             CreatedAt = _timeProvider.GetUtcNow(),
             UpdatedAt = _timeProvider.GetUtcNow()
         });

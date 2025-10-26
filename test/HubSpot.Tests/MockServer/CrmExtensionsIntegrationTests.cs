@@ -1,15 +1,9 @@
-using DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3;
-using DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3;
-using DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3;
-using DamianH.HubSpot.MockServer;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Http.HttpClientLibrary;
-using Shouldly;
 using System.Net.Http.Json;
 using System.Text.Json;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace DamianH.HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class CrmExtensionsIntegrationTests : IAsyncLifetime
 {
@@ -19,7 +13,7 @@ public class CrmExtensionsIntegrationTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        _mockServer = await HubSpotMockServer.StartAsync();
+        _mockServer = await HubSpotMockServer.StartNew();
         _httpClient = new HttpClient { BaseAddress = _mockServer.Uri };
         _adapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider(), httpClient: _httpClient);
     }

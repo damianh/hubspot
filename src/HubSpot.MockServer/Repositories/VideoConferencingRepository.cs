@@ -58,11 +58,19 @@ public class VideoConferencingRepository
             ?? new Dictionary<string, object?>();
 
         if (updates.TryGetProperty("name", out var name))
+        {
             settings["name"] = name.GetString();
+        }
+
         if (updates.TryGetProperty("url", out var url))
+        {
             settings["url"] = url.GetString();
+        }
+
         if (updates.TryGetProperty("isReady", out var isReady))
+        {
             settings["isReady"] = isReady.GetBoolean();
+        }
 
         settings["updatedAt"] = DateTimeOffset.UtcNow;
 

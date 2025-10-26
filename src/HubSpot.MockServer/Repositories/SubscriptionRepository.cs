@@ -27,7 +27,9 @@ public class SubscriptionRepository
     public Subscription UpdateSubscription(string id, Subscription subscription)
     {
         if (!_subscriptions.ContainsKey(id))
+        {
             throw new KeyNotFoundException($"Subscription {id} not found");
+        }
 
         subscription.Id = id;
         subscription.UpdatedAt = DateTime.UtcNow;

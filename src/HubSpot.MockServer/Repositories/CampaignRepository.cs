@@ -25,7 +25,9 @@ public class CampaignRepository
     public Campaign Update(string id, Campaign campaign)
     {
         if (!_campaigns.ContainsKey(id))
+        {
             throw new KeyNotFoundException($"Campaign {id} not found");
+        }
 
         campaign.Id = id;
         campaign.UpdatedAt = DateTime.UtcNow;

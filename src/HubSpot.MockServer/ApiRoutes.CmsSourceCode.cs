@@ -16,8 +16,10 @@ internal static partial class ApiRoutes
         {
             var file = repository.GetByPath(path);
             if (file == null)
+            {
                 return Results.NotFound(new { message = $"File {path} not found" });
-                
+            }
+
             return Results.Ok(MapFileToResponse(file));
         });
 
@@ -36,7 +38,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var file = MapFileFromRequest(request);
             file.Path = path;
@@ -49,14 +53,18 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var file = MapFileFromRequest(request);
             var updated = repository.Update(path, file);
             
             if (updated == null)
+            {
                 return Results.NotFound(new { message = $"File {path} not found" });
-                
+            }
+
             return Results.Ok(MapFileToResponse(updated));
         });
 
@@ -64,8 +72,10 @@ internal static partial class ApiRoutes
         {
             var success = repository.Delete(path);
             if (!success)
+            {
                 return Results.NotFound(new { message = $"File {path} not found" });
-                
+            }
+
             return Results.NoContent();
         });
 
@@ -74,8 +84,10 @@ internal static partial class ApiRoutes
         {
             var file = repository.GetByPath(path);
             if (file == null)
+            {
                 return Results.NotFound(new { message = $"File {path} not found" });
-                
+            }
+
             return Results.Ok(new
             {
                 id = file.Id,

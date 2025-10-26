@@ -2,20 +2,14 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories;
 
-public class LimitsTrackingRepository
+public class LimitsTrackingRepository(TimeProvider timeProvider)
 {
     private readonly Dictionary<string, int> _apiCallCounts = new();
     private readonly Dictionary<string, DateTimeOffset> _resetTimes = new();
-    private readonly TimeProvider _timeProvider;
-
-    public LimitsTrackingRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
 
     public Task<JsonElement> GetRateLimitsAsync()
     {
-        var now = _timeProvider.GetUtcNow();
+        var now = timeProvider.GetUtcNow();
         var limits = JsonSerializer.SerializeToElement(new
         {
             rateLimits = new[]
@@ -36,10 +30,10 @@ public class LimitsTrackingRepository
 
     public Task<JsonElement> GetUsageAsync(int days = 7)
     {
-        var now = _timeProvider.GetUtcNow();
+        var now = timeProvider.GetUtcNow();
         var usage = new List<object>();
 
-        for (int i = 0; i < days; i++)
+        for (var i = 0; i < days; i++)
         {
             var date = now.AddDays(-i);
             usage.Add(new

@@ -32,10 +32,7 @@ public class PropertyDefinitionRepository
         DateTime CreatedAt = default,
         DateTime UpdatedAt = default);
 
-    public PropertyDefinitionRepository()
-    {
-        SeedDefaultProperties();
-    }
+    public PropertyDefinitionRepository() => SeedDefaultProperties();
 
     private void SeedDefaultProperties()
     {
@@ -49,7 +46,8 @@ public class PropertyDefinitionRepository
         AddProperty(new PropertyDefinition("company", "Company Name", "string", "text", "contacts", Description: "Associated company", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("website", "Website", "string", "text", "contacts", Description: "Website URL", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("lifecyclestage", "Lifecycle Stage", "enumeration", "select", "contacts", 
-            Options: new[] { "subscriber", "lead", "marketingqualifiedlead", "salesqualifiedlead", "opportunity", "customer", "evangelist", "other" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["subscriber", "lead", "marketingqualifiedlead", "salesqualifiedlead", "opportunity", "customer", "evangelist", "other"
+            ], CreatedAt: now, UpdatedAt: now));
 
         // Company properties
         AddProperty(new PropertyDefinition("name", "Name", "string", "text", "companies", Description: "Company name", CreatedAt: now, UpdatedAt: now));
@@ -63,20 +61,21 @@ public class PropertyDefinitionRepository
         AddProperty(new PropertyDefinition("dealname", "Deal Name", "string", "text", "deals", Description: "Deal name", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("amount", "Amount", "number", "number", "deals", Description: "Deal amount", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("dealstage", "Deal Stage", "enumeration", "select", "deals", 
-            Options: new[] { "appointmentscheduled", "qualifiedtobuy", "presentationscheduled", "decisionmakerboughtin", "contractsent", "closedwon", "closedlost" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["appointmentscheduled", "qualifiedtobuy", "presentationscheduled", "decisionmakerboughtin", "contractsent", "closedwon", "closedlost"
+            ], CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("pipeline", "Pipeline", "enumeration", "select", "deals", 
-            Options: new[] { "default" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["default"], CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("closedate", "Close Date", "datetime", "date", "deals", Description: "Expected close date", CreatedAt: now, UpdatedAt: now));
 
         // Ticket properties
         AddProperty(new PropertyDefinition("subject", "Subject", "string", "text", "tickets", Description: "Ticket subject", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("content", "Description", "string", "textarea", "tickets", Description: "Ticket description", CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("hs_pipeline", "Pipeline", "enumeration", "select", "tickets", 
-            Options: new[] { "0" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["0"], CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("hs_pipeline_stage", "Ticket Status", "enumeration", "select", "tickets", 
-            Options: new[] { "1", "2", "3", "4" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["1", "2", "3", "4"], CreatedAt: now, UpdatedAt: now));
         AddProperty(new PropertyDefinition("hs_ticket_priority", "Priority", "enumeration", "select", "tickets", 
-            Options: new[] { "LOW", "MEDIUM", "HIGH" }, CreatedAt: now, UpdatedAt: now));
+            Options: ["LOW", "MEDIUM", "HIGH"], CreatedAt: now, UpdatedAt: now));
 
         // Product properties
         AddProperty(new PropertyDefinition("name", "Name", "string", "text", "products", Description: "Product name", CreatedAt: now, UpdatedAt: now));
@@ -146,7 +145,10 @@ public class PropertyDefinitionRepository
         string? groupName = null)
     {
         var existing = GetProperty(objectType, propertyName);
-        if (existing == null) return null;
+        if (existing == null)
+        {
+            return null;
+        }
 
         var updated = existing with
         {

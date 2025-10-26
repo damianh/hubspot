@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace DamianH.HubSpot.MockServer;
 
@@ -22,20 +21,9 @@ public class HubSpotMockServer : IAsyncDisposable
     
     public Uri BaseUri => Uri;
 
-    public static Task<HubSpotMockServer> StartAsync()
+    public static async Task<HubSpotMockServer> StartNew()
     {
-        return StartNew(new LoggerFactoryAdapter());
-    }
-
-    public static async Task<HubSpotMockServer> StartNew(ILoggerFactory loggerFactory)
-    {
-        var provider = new LoggerFactoryLoggerProvider(loggerFactory);
         var builder = WebApplication.CreateBuilder([]);
-
-        // Configure logging
-        builder.Logging.ClearProviders();
-        builder.Logging.AddProvider(provider);
-        builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
         // Configure web host
         builder.WebHost.ConfigureKestrel(options => { options.Listen(System.Net.IPAddress.Loopback, 0); });
@@ -43,7 +31,6 @@ public class HubSpotMockServer : IAsyncDisposable
         // Configure services
         builder.Services
             .Configure<ConsoleLifetimeOptions>(options => options.SuppressStatusMessages = true)
-            .AddSingleton<LoggerFactoryLoggerProvider>()
             .AddSingleton<HubSpotObjectRepository>()
             .AddSingleton<HubSpotObjectIdGenerator>()
             .AddSingleton<TransactionalEmailRepository>()

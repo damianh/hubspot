@@ -31,8 +31,10 @@ internal static partial class ApiRoutes
         {
             var domain = repository.GetById(domainId);
             if (domain == null)
+            {
                 return Results.NotFound(new { message = $"Domain {domainId} not found" });
-                
+            }
+
             return Results.Ok(MapDomainToResponse(domain));
         });
 
@@ -42,7 +44,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var domain = MapDomainFromRequest(request);
             var created = repository.Create(domain);
@@ -54,11 +58,15 @@ internal static partial class ApiRoutes
         {
             var domain = repository.GetById(domainId);
             if (domain == null)
+            {
                 return Results.NotFound(new { message = $"Domain {domainId} not found" });
+            }
 
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var updated = MapDomainFromRequest(request, domain);
             updated = repository.Update(domainId, updated);
@@ -70,8 +78,10 @@ internal static partial class ApiRoutes
         {
             var deleted = repository.Delete(domainId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Domain {domainId} not found" });
-            
+            }
+
             return Results.NoContent();
         });
     }
@@ -101,28 +111,60 @@ internal static partial class ApiRoutes
         var domain = existing ?? new Domain();
         
         if (request.TryGetValue("id", out var id))
+        {
             domain.Id = id.ToString();
+        }
+
         if (request.TryGetValue("domain", out var dom))
+        {
             domain.Domain1 = dom.ToString();
+        }
+
         if (request.TryGetValue("isPrimary", out var isPrim))
+        {
             domain.IsPrimary = bool.Parse(isPrim.ToString()!);
+        }
+
         if (request.TryGetValue("isResolving", out var isRes))
+        {
             domain.IsResolving = bool.Parse(isRes.ToString()!);
+        }
+
         if (request.TryGetValue("isLegacyDomain", out var isLeg))
+        {
             domain.IsLegacyDomain = bool.Parse(isLeg.ToString()!);
+        }
+
         if (request.TryGetValue("isUsedForBlogPost", out var isBlog))
+        {
             domain.IsUsedForBlogPost = bool.Parse(isBlog.ToString()!);
+        }
+
         if (request.TryGetValue("isUsedForSitePage", out var isSite))
+        {
             domain.IsUsedForSitePage = bool.Parse(isSite.ToString()!);
+        }
+
         if (request.TryGetValue("isUsedForLandingPage", out var isLanding))
+        {
             domain.IsUsedForLandingPage = bool.Parse(isLanding.ToString()!);
+        }
+
         if (request.TryGetValue("isUsedForEmail", out var isEmail))
+        {
             domain.IsUsedForEmail = bool.Parse(isEmail.ToString()!);
+        }
+
         if (request.TryGetValue("isSetupComplete", out var isSetup))
+        {
             domain.IsSetupComplete = bool.Parse(isSetup.ToString()!);
+        }
+
         if (request.TryGetValue("correctCname", out var cname))
+        {
             domain.CorrectCname = cname.ToString();
-            
+        }
+
         return domain;
     }
 }

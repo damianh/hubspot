@@ -14,7 +14,7 @@ public class MarketingTransactionalTests : IAsyncLifetime
 
     private async Task InitializeAsyncCore()
     {
-        _server = await HubSpotMockServer.StartAsync();
+        _server = await HubSpotMockServer.StartNew();
         var adapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()

@@ -61,7 +61,7 @@ public class CallingExtensionRepository
             CreatedAt = DateTimeOffset.UtcNow
         };
 
-        var recordings = _recordings.GetOrAdd(engagementId, _ => new List<CallRecording>());
+        var recordings = _recordings.GetOrAdd(engagementId, _ => []);
         recordings.Add(recording);
 
         return Task.FromResult(recording);
@@ -69,7 +69,7 @@ public class CallingExtensionRepository
 
     public Task<List<CallRecording>> GetRecordingsAsync(string engagementId)
     {
-        var recordings = _recordings.GetValueOrDefault(engagementId) ?? new List<CallRecording>();
+        var recordings = _recordings.GetValueOrDefault(engagementId) ?? [];
         return Task.FromResult(recordings);
     }
 
@@ -97,17 +97,34 @@ public class CallingExtensionRepository
             ?? new Dictionary<string, object?>();
 
         if (updates.TryGetProperty("name", out var name))
+        {
             settings["name"] = name.GetString();
+        }
+
         if (updates.TryGetProperty("url", out var url))
+        {
             settings["url"] = url.GetString();
+        }
+
         if (updates.TryGetProperty("height", out var height))
+        {
             settings["height"] = height.GetInt32();
+        }
+
         if (updates.TryGetProperty("width", out var width))
+        {
             settings["width"] = width.GetInt32();
+        }
+
         if (updates.TryGetProperty("isReady", out var isReady))
+        {
             settings["isReady"] = isReady.GetBoolean();
+        }
+
         if (updates.TryGetProperty("supportsCustomObjects", out var supports))
+        {
             settings["supportsCustomObjects"] = supports.GetBoolean();
+        }
 
         settings["updatedAt"] = DateTimeOffset.UtcNow;
 

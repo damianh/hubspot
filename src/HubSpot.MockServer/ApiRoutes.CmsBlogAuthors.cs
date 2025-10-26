@@ -31,8 +31,10 @@ internal static partial class ApiRoutes
         {
             var author = repository.GetById(objectId);
             if (author == null)
+            {
                 return Results.NotFound(new { message = $"Author {objectId} not found" });
-                
+            }
+
             return Results.Ok(MapAuthorToResponse(author));
         });
 
@@ -40,7 +42,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var author = MapAuthorFromRequest(request);
             var created = repository.Create(author);
@@ -52,11 +56,15 @@ internal static partial class ApiRoutes
         {
             var author = repository.GetById(objectId);
             if (author == null)
+            {
                 return Results.NotFound(new { message = $"Author {objectId} not found" });
+            }
 
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var updated = MapAuthorFromRequest(request, author);
             updated = repository.Update(objectId, updated);
@@ -68,8 +76,10 @@ internal static partial class ApiRoutes
         {
             var deleted = repository.Delete(objectId);
             if (!deleted)
+            {
                 return Results.NotFound(new { message = $"Author {objectId} not found" });
-                
+            }
+
             return Results.NoContent();
         });
 
@@ -80,11 +90,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.ContainsKey("inputs"))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var authors = inputs.Select(i => MapAuthorFromRequest(i)).ToList();
             var created = repository.BatchCreate(authors);
@@ -100,11 +114,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.ContainsKey("inputs"))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             var authors = repository.BatchRead(ids);
@@ -120,11 +138,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.ContainsKey("inputs"))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var authors = inputs.Select(i => MapAuthorFromRequest(i)).ToList();
             var updated = repository.BatchUpdate(authors);
@@ -140,11 +162,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.ContainsKey("inputs"))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var ids = inputs.Select(i => i["id"].ToString()!).ToList();
             repository.BatchDelete(ids);
@@ -159,7 +185,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var authorId = request["id"].ToString()!;
             var langGroupId = request["language"]?.ToString() ?? "default";
@@ -173,7 +201,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var authorId = request["id"].ToString()!;
             repository.DetachFromLanguageGroup(authorId);
@@ -207,28 +237,60 @@ internal static partial class ApiRoutes
         var author = existing ?? new BlogAuthor();
         
         if (request.TryGetValue("id", out var id))
+        {
             author.Id = id.ToString();
+        }
+
         if (request.TryGetValue("fullName", out var fullName))
+        {
             author.FullName = fullName.ToString();
+        }
+
         if (request.TryGetValue("email", out var email))
+        {
             author.Email = email.ToString();
+        }
+
         if (request.TryGetValue("slug", out var slug))
+        {
             author.Slug = slug.ToString();
+        }
+
         if (request.TryGetValue("bio", out var bio))
+        {
             author.Bio = bio.ToString();
+        }
+
         if (request.TryGetValue("website", out var website))
+        {
             author.Website = website.ToString();
+        }
+
         if (request.TryGetValue("twitter", out var twitter))
+        {
             author.Twitter = twitter.ToString();
+        }
+
         if (request.TryGetValue("facebook", out var facebook))
+        {
             author.Facebook = facebook.ToString();
+        }
+
         if (request.TryGetValue("linkedin", out var linkedin))
+        {
             author.Linkedin = linkedin.ToString();
+        }
+
         if (request.TryGetValue("avatar", out var avatar))
+        {
             author.Avatar = avatar.ToString();
+        }
+
         if (request.TryGetValue("language", out var lang))
+        {
             author.Language = lang.ToString();
-            
+        }
+
         return author;
     }
 }

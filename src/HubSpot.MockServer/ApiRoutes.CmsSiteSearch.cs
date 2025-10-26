@@ -32,7 +32,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var content = MapSearchContentFromRequest(request);
             var indexed = repository.AddContent(content);
@@ -44,8 +46,10 @@ internal static partial class ApiRoutes
         {
             var success = repository.Delete(contentId);
             if (!success)
+            {
                 return Results.NotFound(new { message = $"Content {contentId} not found" });
-                
+            }
+
             return Results.NoContent();
         });
     }

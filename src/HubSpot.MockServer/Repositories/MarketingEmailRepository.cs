@@ -25,7 +25,9 @@ public class MarketingEmailRepository
     public MarketingEmail Update(string id, MarketingEmail email)
     {
         if (!_emails.ContainsKey(id))
+        {
             throw new KeyNotFoundException($"Marketing email {id} not found");
+        }
 
         email.Id = id;
         email.UpdatedAt = DateTime.UtcNow;

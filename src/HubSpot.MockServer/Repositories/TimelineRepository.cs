@@ -50,16 +50,29 @@ public class TimelineRepository
         string? detailTemplate = null)
     {
         if (!_templates.TryGetValue(templateId, out var template))
+        {
             return null;
+        }
 
         if (name != null)
+        {
             template.Name = name;
+        }
+
         if (tokens != null)
+        {
             template.Tokens = tokens;
+        }
+
         if (headerTemplate != null)
+        {
             template.HeaderTemplate = headerTemplate;
+        }
+
         if (detailTemplate != null)
+        {
             template.DetailTemplate = detailTemplate;
+        }
 
         template.UpdatedAt = DateTimeOffset.UtcNow;
 
@@ -95,7 +108,10 @@ public class TimelineRepository
         // Track event by object
         var key = $"{objectType}:{objectId}";
         if (!_objectEvents.ContainsKey(key))
+        {
             _objectEvents[key] = [];
+        }
+
         _objectEvents[key].Add(eventId);
 
         return timelineEvent;
@@ -110,7 +126,9 @@ public class TimelineRepository
     {
         var key = $"{objectType}:{objectId}";
         if (!_objectEvents.TryGetValue(key, out var eventIds))
+        {
             return [];
+        }
 
         return eventIds
             .Select(id => _events.TryGetValue(id, out var evt) ? evt : null)
@@ -123,7 +141,9 @@ public class TimelineRepository
     public bool DeleteEvent(string eventId)
     {
         if (!_events.TryRemove(eventId, out var evt))
+        {
             return false;
+        }
 
         // Remove from object events
         var key = $"{evt.ObjectType}:{evt.ObjectId}";

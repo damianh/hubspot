@@ -116,10 +116,14 @@ internal static partial class ApiRoutes
             var allEvents = repo.GetAllEvents();
             
             if (!string.IsNullOrEmpty(objectType))
+            {
                 allEvents = allEvents.Where(e => e.ObjectType == objectType).ToList();
-            
+            }
+
             if (!string.IsNullOrEmpty(objectId))
+            {
                 allEvents = allEvents.Where(e => e.ObjectId == objectId).ToList();
+            }
 
             return Results.Ok(new
             {
@@ -170,7 +174,7 @@ internal static partial class ApiRoutes
                 Label = request.label,
                 Description = request.description,
                 PropertyDefinitions = request.propertyDefinitions != null
-                    ? new List<EventPropertyDefinition>()
+                    ? []
                     : null
             };
 
@@ -210,7 +214,9 @@ internal static partial class ApiRoutes
         {
             var definition = repo.GetDefinition(definitionId);
             if (definition == null)
+            {
                 return Results.NotFound();
+            }
 
             return Results.Ok(new
             {

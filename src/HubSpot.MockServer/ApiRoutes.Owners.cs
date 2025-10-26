@@ -69,7 +69,9 @@ internal static partial class ApiRoutes
             {
                 var owner = repo.GetOwner(ownerId);
                 if (owner == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {

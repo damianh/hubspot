@@ -824,17 +824,23 @@ internal static partial class ApiRoutes
         var filtered = objectsOfType.Where(obj =>
         {
             if (request.FilterGroups == null || request.FilterGroups.Count == 0)
+            {
                 return true;
+            }
 
             return request.FilterGroups.Any(group =>
             {
                 if (group.Filters == null || group.Filters.Count == 0)
+                {
                     return true;
+                }
 
                 return group.Filters.All(filter =>
                 {
                     if (!obj.Properties.TryGetValue(filter.PropertyName, out var property))
+                    {
                         return false;
+                    }
 
                     var value = property.CurrentValue;
                     var filterValue = filter.Value;

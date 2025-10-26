@@ -119,7 +119,9 @@ internal static partial class ApiRoutes
             {
                 var property = repo.GetProperty(objectType, propertyName);
                 if (property == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {
@@ -154,7 +156,9 @@ internal static partial class ApiRoutes
                     request.GroupName);
 
                 if (property == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {
@@ -242,7 +246,9 @@ internal static partial class ApiRoutes
             {
                 var group = repo.GetGroup(objectType, groupName);
                 if (group == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {

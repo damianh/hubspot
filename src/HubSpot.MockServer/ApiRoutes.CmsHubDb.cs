@@ -32,8 +32,10 @@ internal static partial class ApiRoutes
         {
             var table = repository.GetTableById(tableIdOrName);
             if (table == null)
+            {
                 return Results.NotFound(new { message = $"Table {tableIdOrName} not found" });
-                
+            }
+
             return Results.Ok(MapTableToResponse(table));
         });
 
@@ -41,7 +43,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var table = MapTableFromRequest(request);
             var created = repository.CreateTable(table);
@@ -53,14 +57,18 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var table = MapTableFromRequest(request);
             var updated = repository.UpdateTable(tableIdOrName, table);
             
             if (updated == null)
+            {
                 return Results.NotFound(new { message = $"Table {tableIdOrName} not found" });
-                
+            }
+
             return Results.Ok(MapTableToResponse(updated));
         });
 
@@ -68,8 +76,10 @@ internal static partial class ApiRoutes
         {
             var success = repository.DeleteTable(tableIdOrName);
             if (!success)
+            {
                 return Results.NotFound(new { message = $"Table {tableIdOrName} not found" });
-                
+            }
+
             return Results.NoContent();
         });
 
@@ -95,8 +105,10 @@ internal static partial class ApiRoutes
         {
             var row = repository.GetRowById(tableIdOrName, rowId);
             if (row == null)
+            {
                 return Results.NotFound(new { message = $"Row {rowId} not found in table {tableIdOrName}" });
-                
+            }
+
             return Results.Ok(MapRowToResponse(row));
         });
 
@@ -104,7 +116,9 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var row = MapRowFromRequest(request);
             try
@@ -122,14 +136,18 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null)
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var row = MapRowFromRequest(request);
             var updated = repository.UpdateRow(tableIdOrName, rowId, row);
             
             if (updated == null)
+            {
                 return Results.NotFound(new { message = $"Row {rowId} not found in table {tableIdOrName}" });
-                
+            }
+
             return Results.Ok(MapRowToResponse(updated));
         });
 
@@ -137,8 +155,10 @@ internal static partial class ApiRoutes
         {
             var success = repository.DeleteRow(tableIdOrName, rowId);
             if (!success)
+            {
                 return Results.NotFound(new { message = $"Row {rowId} not found in table {tableIdOrName}" });
-                
+            }
+
             return Results.NoContent();
         });
 
@@ -147,11 +167,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(inputsObj.ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var results = new List<object>();
             foreach (var input in inputs)
@@ -175,11 +199,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(inputsObj.ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var results = new List<object>();
             foreach (var input in inputs)
@@ -188,7 +216,9 @@ internal static partial class ApiRoutes
                 {
                     var row = repository.GetRowById(tableIdOrName, idObj.ToString()!);
                     if (row != null)
+                    {
                         results.Add(MapRowToResponse(row));
+                    }
                 }
             }
 
@@ -199,11 +229,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(inputsObj.ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             var results = new List<object>();
             foreach (var input in inputs)
@@ -213,7 +247,9 @@ internal static partial class ApiRoutes
                     var row = MapRowFromRequest(input);
                     var updated = repository.UpdateRow(tableIdOrName, idObj.ToString()!, row);
                     if (updated != null)
+                    {
                         results.Add(MapRowToResponse(updated));
+                    }
                 }
             }
 
@@ -224,11 +260,15 @@ internal static partial class ApiRoutes
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
             if (request == null || !request.TryGetValue("inputs", out var inputsObj))
+            {
                 return Results.BadRequest(new { message = "Invalid request body" });
+            }
 
             var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(inputsObj.ToString()!);
             if (inputs == null)
+            {
                 return Results.BadRequest(new { message = "Invalid inputs" });
+            }
 
             foreach (var input in inputs)
             {

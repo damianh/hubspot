@@ -1,24 +1,14 @@
-using DamianH.HubSpot.MockServer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Shouldly;
-
-namespace DamianH.HubSpot.Tests.MockServer;
+namespace DamianH.HubSpot.MockServer;
 
 public class CmsAdvancedTests : IAsyncLifetime
 {
     private HubSpotMockServer _server = null!;
 
-    public async ValueTask InitializeAsync()
-    {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
-    }
+    public async ValueTask InitializeAsync() 
+        => _server = await HubSpotMockServer.StartNew();
 
-    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
+    public async ValueTask DisposeAsync() 
+        => await _server.DisposeAsync();
 
     #region HubDB Tests
 

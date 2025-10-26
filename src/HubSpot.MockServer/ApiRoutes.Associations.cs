@@ -455,7 +455,9 @@ internal static partial class ApiRoutes
             {
                 var type = repo.GetAssociationType(associationTypeId);
                 if (type == null)
+                {
                     return Results.NotFound();
+                }
 
                 var response = new
                 {

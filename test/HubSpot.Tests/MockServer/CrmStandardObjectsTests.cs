@@ -3,8 +3,6 @@ using DamianH.HubSpot.KiotaClient.CRM.Emails.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Meetings.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Notes.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Tasks.V3;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 using CallsModels = DamianH.HubSpot.KiotaClient.CRM.Calls.V3.Models;
@@ -26,11 +24,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
     public async ValueTask InitializeAsync()
     {
-        var services = new ServiceCollection()
-            .AddLogging()
-            .BuildServiceProvider();
-        var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-        _server = await HubSpotMockServer.StartNew(loggerFactory);
+        _server = await HubSpotMockServer.StartNew();
         var requestAdapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()

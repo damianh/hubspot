@@ -17,7 +17,7 @@ public class BlogSettingsRepository
             Language = language ?? "en",
             Created = DateTimeOffset.UtcNow,
             Updated = DateTimeOffset.UtcNow,
-            PublicAccessRules = new List<string>(),
+            PublicAccessRules = [],
             HtmlTitle = name,
             Domain = "example.com"
         };
@@ -35,8 +35,11 @@ public class BlogSettingsRepository
 
     public BlogSettingsData? Update(string blogId, Action<BlogSettingsData> updateAction)
     {
-        if (!_settings.TryGetValue(blogId, out var settings)) return null;
-        
+        if (!_settings.TryGetValue(blogId, out var settings))
+        {
+            return null;
+        }
+
         updateAction(settings);
         settings.Updated = DateTimeOffset.UtcNow;
         AddRevision(blogId, settings);
@@ -50,7 +53,11 @@ public class BlogSettingsRepository
 
     public BlogSettingsRevision? GetRevision(string blogId, string revisionId)
     {
-        if (!_revisions.TryGetValue(blogId, out var revs)) return null;
+        if (!_revisions.TryGetValue(blogId, out var revs))
+        {
+            return null;
+        }
+
         return revs.FirstOrDefault(r => r.Id == revisionId);
     }
 
@@ -58,7 +65,7 @@ public class BlogSettingsRepository
     {
         if (!_revisions.ContainsKey(blogId))
         {
-            _revisions[blogId] = new List<BlogSettingsRevision>();
+            _revisions[blogId] = [];
         }
         
         var revision = new BlogSettingsRevision
@@ -76,7 +83,7 @@ public class BlogSettingsRepository
     {
         if (!_languageGroups.ContainsKey(primaryId))
         {
-            _languageGroups[primaryId] = new List<string>();
+            _languageGroups[primaryId] = [];
         }
         if (!_languageGroups[primaryId].Contains(variantId))
         {
@@ -100,7 +107,7 @@ public class BlogSettingsData
     public string Language { get; set; } = "en";
     public DateTimeOffset Created { get; set; }
     public DateTimeOffset Updated { get; set; }
-    public List<string> PublicAccessRules { get; set; } = new();
+    public List<string> PublicAccessRules { get; set; } = [];
     public string? HtmlTitle { get; set; }
     public string? Domain { get; set; }
 }
