@@ -152,6 +152,7 @@ public class CrmDealsTests : IAsyncLifetime
 
         updated.ShouldNotBeNull();
         updated.Id.ShouldBe(DealId);
+        updated.Properties.ShouldNotBeNull();
         updated.Properties.AdditionalData.ShouldContainKeyAndValue("firstname", "Alicia");
         updated.Properties.AdditionalData.ShouldContainKeyAndValue("email", "alice@example.com");
         updated.UpdatedAt.ShouldNotBe(updated.CreatedAt);
@@ -172,7 +173,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var DealId = created!.Entity!.Id!;
+        var dealId = created!.Entity!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -185,10 +186,10 @@ public class CrmDealsTests : IAsyncLifetime
             }
         };
 
-        var updated = await _client.Crm.V3.Objects.ZeroThree[DealId].PatchAsync(updateInput);
+        var updated = await _client.Crm.V3.Objects.ZeroThree[dealId].PatchAsync(updateInput);
 
         updated.ShouldNotBeNull();
-        updated.Id.ShouldBe(DealId);
+        updated.Id.ShouldBe(dealId);
         updated.Properties.AdditionalData.ShouldContainKeyAndValue("email", "charlie@example.com");
         updated.Properties.AdditionalData.ShouldContainKeyAndValue("phone", "555-1234");
     }

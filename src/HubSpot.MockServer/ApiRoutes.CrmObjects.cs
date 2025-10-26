@@ -34,17 +34,17 @@ internal static partial class ApiRoutes
 
     internal static void RegisterCrmTickets(WebApplication app)
     {
-        RegisterStandardCrmObject(app, "0-5", "Tickets", "ticketId");
+        RegisterStandardCrmObject(app, "tickets", "Tickets", "ticketId");
     }
 
     internal static void RegisterCrmProducts(WebApplication app)
     {
-        RegisterStandardCrmObject(app, "0-7", "Products", "productId");
+        RegisterStandardCrmObject(app, "products", "Products", "productId");
     }
 
     internal static void RegisterCrmQuotes(WebApplication app)
     {
-        RegisterStandardCrmObject(app, "0-14", "Quotes", "quoteId");
+        RegisterStandardCrmObject(app, "quotes", "Quotes", "quoteId");
     }
 
     internal static void RegisterCrmCalls(WebApplication app)
