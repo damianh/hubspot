@@ -20,10 +20,7 @@ public class ConversationsTests : IAsyncLifetime
         _server = await HubSpotMockServer.StartNew(loggerFactory);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 
     [Fact]
     public async Task ListConversations_ShouldReturnEmpty_Initially()

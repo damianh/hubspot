@@ -8,15 +8,9 @@ public class MarketingAndCommunicationsTests : IAsyncLifetime
 {
     private HubSpotMockServer _mockServer = null!;
 
-    public async ValueTask InitializeAsync()
-    {
-        _mockServer = await HubSpotMockServer.StartAsync();
-    }
+    public async ValueTask InitializeAsync() => _mockServer = await HubSpotMockServer.StartAsync();
 
-    public async ValueTask DisposeAsync()
-    {
-        await _mockServer.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _mockServer.DisposeAsync();
 
     [Fact]
     public async Task MarketingEvents_CreateAndRetrieve_ShouldWork()

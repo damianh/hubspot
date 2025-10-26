@@ -27,10 +27,7 @@ public class AutomationActionsTests : IAsyncLifetime
         _client = new HubSpotAutomationActionsV4V4Client(requestAdapter);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 
     [Fact]
     public async Task CompleteCallbacks_ReturnsNoContent()

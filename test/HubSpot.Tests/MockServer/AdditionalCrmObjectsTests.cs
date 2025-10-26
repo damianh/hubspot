@@ -302,8 +302,5 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
             async () => await _ticketsClient.Crm.V3.Objects.Tickets[ticketId].GetAsync());
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 }

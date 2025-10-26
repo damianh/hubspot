@@ -188,8 +188,5 @@ public class CrmStandardObjectsTests : IAsyncLifetime
         retrieved.Properties!.AdditionalData.ShouldContainKeyAndValue("hs_task_subject", "Test Task");
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 }

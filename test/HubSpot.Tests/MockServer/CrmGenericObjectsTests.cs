@@ -27,10 +27,7 @@ public class CrmGenericObjectsTests : IAsyncLifetime
         _client = new HubSpotCRMObjectsV3Client(requestAdapter);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 
     [Fact]
     public async Task Can_create_custom_object()

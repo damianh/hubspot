@@ -10,10 +10,7 @@ public class MarketingTransactionalTests : IAsyncLifetime
     private HubSpotMockServer _server = null!;
     private HubSpotMarketingTransactionalSingleSendV3Client _client = null!;
 
-    public ValueTask InitializeAsync()
-    {
-        return new ValueTask(InitializeAsyncCore());
-    }
+    public ValueTask InitializeAsync() => new(InitializeAsyncCore());
 
     private async Task InitializeAsyncCore()
     {
@@ -25,10 +22,7 @@ public class MarketingTransactionalTests : IAsyncLifetime
         _client = new HubSpotMarketingTransactionalSingleSendV3Client(adapter);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 
     [Fact]
     public async Task CanSendTransactionalEmail()

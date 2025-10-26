@@ -27,10 +27,7 @@ public class SequencesTests : IAsyncLifetime
         _client = new HubSpotAutomationSequencesV4Client(requestAdapter);
     }
 
-    public async ValueTask DisposeAsync()
-    {
-        await _server.DisposeAsync();
-    }
+    public async ValueTask DisposeAsync() => await _server.DisposeAsync();
 
     [Fact]
     public async Task EnrollContactInSequence_ReturnsEnrollmentDetails()
