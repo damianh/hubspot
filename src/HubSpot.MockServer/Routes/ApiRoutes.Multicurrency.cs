@@ -1,5 +1,6 @@
 using DamianH.HubSpot.MockServer.Objects;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.Currency;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 

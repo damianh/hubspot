@@ -1,6 +1,8 @@
 using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.Conversation;
 using DamianH.HubSpot.MockServer.Repositories.CustomChannel;
+using DamianH.HubSpot.MockServer.Repositories.VisitorIdentification;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 

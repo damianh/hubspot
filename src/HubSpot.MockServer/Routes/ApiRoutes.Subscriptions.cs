@@ -1,5 +1,6 @@
 using DamianH.HubSpot.MockServer.Objects;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.Subscription;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 

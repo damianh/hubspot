@@ -1,5 +1,7 @@
 using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.PropertyDefinition;
+using DamianH.HubSpot.MockServer.Repositories.PropertyValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

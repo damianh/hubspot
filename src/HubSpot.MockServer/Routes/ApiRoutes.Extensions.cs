@@ -1,5 +1,12 @@
 using System.Text.Json;
 using DamianH.HubSpot.MockServer.Repositories;
+using DamianH.HubSpot.MockServer.Repositories.CallingExtension;
+using DamianH.HubSpot.MockServer.Repositories.CrmCard;
+using DamianH.HubSpot.MockServer.Repositories.FeatureFlag;
+using DamianH.HubSpot.MockServer.Repositories.LimitsTracking;
+using DamianH.HubSpot.MockServer.Repositories.ObjectLibrary;
+using DamianH.HubSpot.MockServer.Repositories.Transcription;
+using DamianH.HubSpot.MockServer.Repositories.VideoConferencing;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
