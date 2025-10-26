@@ -2,6 +2,7 @@ using DamianH.HubSpot.MockServer.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer;
 
@@ -9,6 +10,37 @@ internal static partial class ApiRoutes
 {
     internal static partial class Properties
     {
+        internal static void RegisterPropertyValidationsV3(WebApplication app)
+        {
+            var group = app.MapGroup("/crm/v3/properties/{objectType}/{propertyName}/validations")
+                .WithTags("Property Validations V3");
+
+            group.MapGet("", async (string objectType, string propertyName, PropertyValidationRepository repo) =>
+            {
+                var validations = await repo.GetValidationsAsync(objectType, propertyName);
+                return Results.Ok(new { results = validations });
+            });
+
+            group.MapPost("", async (string objectType, string propertyName, JsonElement body, PropertyValidationRepository repo) =>
+            {
+                var validation = await repo.CreateValidationAsync(objectType, propertyName, body);
+                var validationId = validation.TryGetProperty("id", out var id) ? id.GetString() : "";
+                return Results.Created($"/crm/v3/properties/{objectType}/{propertyName}/validations/{validationId}", validation);
+            });
+
+            group.MapPatch("/{validationId}", async (string objectType, string propertyName, string validationId, JsonElement body, PropertyValidationRepository repo) =>
+            {
+                var validation = await repo.UpdateValidationAsync(objectType, propertyName, validationId, body);
+                return validation.HasValue ? Results.Ok(validation.Value) : Results.NotFound();
+            });
+
+            group.MapDelete("/{validationId}", async (string objectType, string propertyName, string validationId, PropertyValidationRepository repo) =>
+            {
+                var deleted = await repo.DeleteValidationAsync(objectType, propertyName, validationId);
+                return deleted ? Results.NoContent() : Results.NotFound();
+            });
+        }
+
         /// <summary>
         /// Register CRM Properties V3 API routes
         /// </summary>

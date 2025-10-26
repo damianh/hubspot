@@ -7,7 +7,7 @@ namespace DamianH.HubSpot.MockServer;
 
 internal static partial class ApiRoutes
 {
-    internal static partial class Associations
+    internal static class Associations
     {
         /// <summary>
         /// Register CRM Associations V3 API routes

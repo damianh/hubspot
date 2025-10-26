@@ -13,6 +13,96 @@ internal static partial class ApiRoutes
         RegisterCrmCards(app);
         RegisterVideoConferencing(app);
         RegisterTranscriptions(app);
+        RegisterObjectLibraryV4(app);
+        RegisterFeatureFlagsV3(app);
+        RegisterLimitsTrackingV3(app);
+    }
+
+    private static void RegisterObjectLibraryV4(WebApplication app)
+    {
+        var group = app.MapGroup("/crm/v4/object-library")
+            .WithTags("CRM Object Library");
+
+        group.MapGet("", async (ObjectLibraryRepository repo) =>
+        {
+            var items = await repo.GetAllAsync();
+            return Results.Ok(new { results = items });
+        });
+
+        group.MapGet("/{objectType}", async (string objectType, ObjectLibraryRepository repo) =>
+        {
+            var item = await repo.GetByObjectTypeAsync(objectType);
+            return item.HasValue ? Results.Ok(item.Value) : Results.NotFound();
+        });
+
+        group.MapPost("", async (JsonElement body, ObjectLibraryRepository repo) =>
+        {
+            var objectType = body.TryGetProperty("objectType", out var ot) 
+                ? ot.GetString() ?? "custom_object" 
+                : "custom_object";
+            var item = await repo.CreateAsync(objectType, body);
+            return Results.Created($"/crm/v4/object-library/{objectType}", item);
+        });
+
+        group.MapPatch("/{objectType}", async (string objectType, JsonElement body, ObjectLibraryRepository repo) =>
+        {
+            var item = await repo.UpdateAsync(objectType, body);
+            return item.HasValue ? Results.Ok(item.Value) : Results.NotFound();
+        });
+
+        group.MapDelete("/{objectType}", async (string objectType, ObjectLibraryRepository repo) =>
+        {
+            await repo.DeleteAsync(objectType);
+            return Results.NoContent();
+        });
+    }
+
+    private static void RegisterFeatureFlagsV3(WebApplication app)
+    {
+        var group = app.MapGroup("/crm/v3/apps/features")
+            .WithTags("CRM Feature Flags");
+
+        group.MapGet("", async (FeatureFlagRepository repo) =>
+        {
+            var flags = await repo.GetAllAsync();
+            return Results.Ok(new { results = flags });
+        });
+
+        group.MapGet("/{featureKey}", async (string featureKey, FeatureFlagRepository repo) =>
+        {
+            var flag = await repo.GetAsync(featureKey);
+            return flag.HasValue ? Results.Ok(flag.Value) : Results.NotFound();
+        });
+
+        group.MapPost("/{featureKey}", async (string featureKey, JsonElement body, FeatureFlagRepository repo) =>
+        {
+            var flag = await repo.EnableAsync(featureKey, body);
+            return Results.Created($"/crm/v3/apps/features/{featureKey}", flag);
+        });
+
+        group.MapDelete("/{featureKey}", async (string featureKey, FeatureFlagRepository repo) =>
+        {
+            var deleted = await repo.DeleteAsync(featureKey);
+            return deleted ? Results.NoContent() : Results.NotFound();
+        });
+    }
+
+    private static void RegisterLimitsTrackingV3(WebApplication app)
+    {
+        var group = app.MapGroup("/crm/v3")
+            .WithTags("CRM Limits Tracking");
+
+        group.MapGet("/rate-limits", async (LimitsTrackingRepository repo) =>
+        {
+            var limits = await repo.GetRateLimitsAsync();
+            return Results.Ok(limits);
+        });
+
+        group.MapGet("/rate-limits/usage", async (LimitsTrackingRepository repo, int? days) =>
+        {
+            var usage = await repo.GetUsageAsync(days ?? 7);
+            return Results.Ok(usage);
+        });
     }
 
     private static void RegisterCallingExtensions(WebApplication app)
