@@ -1,0 +1,51 @@
+namespace DamianH.HubSpot.MockServer.Repositories.Campaign;
+
+internal class CampaignRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly Dictionary<string, Campaign> _campaigns = new();
+    private int _nextId = 1;
+
+    public CampaignRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public Campaign Create(Campaign campaign)
+    {
+        campaign.Id = _nextId++.ToString();
+        campaign.CreatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        campaign.UpdatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        _campaigns[campaign.Id] = campaign;
+        return campaign;
+    }
+
+    public Campaign? GetById(string id)
+    {
+        _campaigns.TryGetValue(id, out var campaign);
+        return campaign;
+    }
+
+    public Campaign Update(string id, Campaign campaign)
+    {
+        if (!_campaigns.ContainsKey(id))
+        {
+            throw new KeyNotFoundException($"Campaign {id} not found");
+        }
+
+        campaign.Id = id;
+        campaign.UpdatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        _campaigns[id] = campaign;
+        return campaign;
+    }
+
+    public void Delete(string id) => _campaigns.Remove(id);
+
+    public IEnumerable<Campaign> GetAll() => _campaigns.Values;
+
+    public void Clear()
+    {
+        _campaigns.Clear();
+        _nextId = 1;
+    }
+}

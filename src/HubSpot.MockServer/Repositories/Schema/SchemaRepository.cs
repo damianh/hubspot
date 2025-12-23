@@ -1,0 +1,211 @@
+using System.Collections.Concurrent;
+
+namespace DamianH.HubSpot.MockServer.Repositories.Schema;
+
+internal class SchemaRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly ConcurrentDictionary<string, ObjectSchema> _schemas = new();
+    private readonly ConcurrentDictionary<string, List<SchemaProperty>> _properties = new();
+    private readonly ConcurrentDictionary<string, List<AssociationDefinition>> _associations = new();
+
+
+
+    public SchemaRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public ObjectSchema CreateSchema(
+        string name,
+        Dictionary<string, string> labels,
+        string primaryDisplayProperty,
+        List<string>? requiredProperties = null,
+        List<string>? searchableProperties = null,
+        List<string>? secondaryDisplayProperties = null)
+    {
+        var schema = new ObjectSchema
+        {
+            Id = $"0-{GenerateSchemaId()}",
+            Name = name,
+            Labels = labels,
+            PrimaryDisplayProperty = primaryDisplayProperty,
+            RequiredProperties = requiredProperties ?? [],
+            SearchableProperties = searchableProperties ?? [],
+            SecondaryDisplayProperties = secondaryDisplayProperties ?? [],
+            CreatedAt = _timeProvider.GetUtcNow(),
+            UpdatedAt = _timeProvider.GetUtcNow(),
+            Archived = false
+        };
+
+        _schemas[name] = schema;
+        _properties[name] = [];
+        _associations[name] = [];
+
+        return schema;
+    }
+
+    public ObjectSchema? GetSchema(string objectTypeOrId)
+    {
+        // Try by name first
+        if (_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
+            return schema;
+        }
+
+        // Try by ID
+        return _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
+    }
+
+    public List<ObjectSchema> ListSchemas(bool archived = false) => _schemas.Values
+            .Where(s => s.Archived == archived)
+            .OrderBy(s => s.Name)
+            .ToList();
+
+    public ObjectSchema? UpdateSchema(string objectTypeOrId, Dictionary<string, string>? labels = null,
+        string? primaryDisplayProperty = null,
+        List<string>? requiredProperties = null,
+        List<string>? searchableProperties = null,
+        List<string>? secondaryDisplayProperties = null)
+    {
+        // Try by name first
+        if (!_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
+            // Try by ID
+            schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
+            if (schema == null)
+            {
+                return null;
+            }
+        }
+
+        if (labels != null)
+        {
+            schema.Labels = labels;
+        }
+
+        if (primaryDisplayProperty != null)
+        {
+            schema.PrimaryDisplayProperty = primaryDisplayProperty;
+        }
+
+        if (requiredProperties != null)
+        {
+            schema.RequiredProperties = requiredProperties;
+        }
+
+        if (searchableProperties != null)
+        {
+            schema.SearchableProperties = searchableProperties;
+        }
+
+        if (secondaryDisplayProperties != null)
+        {
+            schema.SecondaryDisplayProperties = secondaryDisplayProperties;
+        }
+
+        schema.UpdatedAt = _timeProvider.GetUtcNow();
+
+        return schema;
+    }
+
+    public bool DeleteSchema(string objectTypeOrId)
+    {
+        // Try by name first
+        if (!_schemas.TryGetValue(objectTypeOrId, out var schema))
+        {
+            // Try by ID
+            schema = _schemas.Values.FirstOrDefault(s => s.Id == objectTypeOrId);
+            if (schema == null)
+            {
+                return false;
+            }
+        }
+
+        schema.Archived = true;
+        schema.UpdatedAt = _timeProvider.GetUtcNow();
+        return true;
+    }
+
+    public SchemaProperty AddProperty(string objectType, string name, string label, string type,
+        string fieldType, string? groupName = null, string? description = null,
+        List<PropertyOption>? options = null, int? displayOrder = null)
+    {
+        if (!_properties.ContainsKey(objectType))
+        {
+            _properties[objectType] = [];
+        }
+
+        var property = new SchemaProperty
+        {
+            Name = name,
+            Label = label,
+            Type = type,
+            FieldType = fieldType,
+            GroupName = groupName ?? "default",
+            Description = description,
+            Options = options ?? [],
+            DisplayOrder = displayOrder ?? _properties[objectType].Count,
+            CreatedAt = _timeProvider.GetUtcNow(),
+            UpdatedAt = _timeProvider.GetUtcNow(),
+            Archived = false
+        };
+
+        _properties[objectType].Add(property);
+
+        return property;
+    }
+
+    public List<SchemaProperty> GetProperties(string objectType) => _properties.TryGetValue(objectType, out var props)
+            ? props.Where(p => !p.Archived).ToList()
+            : [];
+
+    public AssociationDefinition CreateAssociationDefinition(string fromObjectType,
+        string toObjectType, string name, string? label = null)
+    {
+        if (!_associations.ContainsKey(fromObjectType))
+        {
+            _associations[fromObjectType] = [];
+        }
+
+        var associationId = GenerateAssociationId();
+        var definition = new AssociationDefinition
+        {
+            Id = associationId.ToString(),
+            FromObjectType = fromObjectType,
+            ToObjectType = toObjectType,
+            Name = name,
+            Label = label ?? name,
+            CreatedAt = _timeProvider.GetUtcNow()
+        };
+
+        _associations[fromObjectType].Add(definition);
+
+        return definition;
+    }
+
+    public List<AssociationDefinition> GetAssociationDefinitions(string objectType) => _associations.TryGetValue(objectType, out var defs) ? defs : [];
+
+    public bool DeleteAssociationDefinition(string objectType, string associationId)
+    {
+        if (!_associations.TryGetValue(objectType, out var defs))
+        {
+            return false;
+        }
+
+        var def = defs.FirstOrDefault(d => d.Id == associationId);
+        if (def == null)
+        {
+            return false;
+        }
+
+        defs.Remove(def);
+        return true;
+    }
+
+    private static int _schemaIdCounter;
+    private static int GenerateSchemaId() => Interlocked.Increment(ref _schemaIdCounter);
+
+    private static int _associationIdCounter = 1000;
+    private static int GenerateAssociationId() => Interlocked.Increment(ref _associationIdCounter);
+}

@@ -1,0 +1,68 @@
+using System.Collections.Concurrent;
+
+namespace DamianH.HubSpot.MockServer.Repositories.CustomChannel;
+
+internal class CustomChannelRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly ConcurrentDictionary<string, CustomChannelData> _channels = new();
+    private long _nextChannelId = 1;
+
+
+
+    public CustomChannelRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public CustomChannelData CreateChannel(string name, string? accountId = null)
+    {
+        var id = Interlocked.Increment(ref _nextChannelId).ToString();
+        var now = _timeProvider.GetUtcNow();
+
+        var channel = new CustomChannelData
+        {
+            Id = id,
+            AccountId = accountId ?? "default-account",
+            Name = name,
+            CreatedAt = now,
+            Active = true
+        };
+
+        _channels[id] = channel;
+
+        return channel;
+    }
+
+    public CustomChannelData? GetChannel(string channelId) => _channels.GetValueOrDefault(channelId);
+
+    public List<CustomChannelData> ListChannels() => _channels.Values.OrderBy(c => c.CreatedAt).ToList();
+
+    public CustomChannelData? UpdateChannel(string channelId, string? name = null, bool? active = null)
+    {
+        if (!_channels.TryGetValue(channelId, out var channel))
+        {
+            return null;
+        }
+
+        if (name != null)
+        {
+            channel.Name = name;
+        }
+
+        if (active.HasValue)
+        {
+            channel.Active = active.Value;
+        }
+
+        return channel;
+    }
+
+    public bool DeleteChannel(string channelId) => _channels.TryRemove(channelId, out _);
+
+    public void Clear()
+    {
+        _channels.Clear();
+        _nextChannelId = 1;
+    }
+}

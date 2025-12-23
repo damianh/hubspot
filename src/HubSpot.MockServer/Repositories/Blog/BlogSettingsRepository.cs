@@ -1,0 +1,101 @@
+using System.Collections.Concurrent;
+
+namespace DamianH.HubSpot.MockServer.Repositories.Blog;
+
+internal class BlogSettingsRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly ConcurrentDictionary<string, BlogSettingsData> _settings = new();
+    private readonly ConcurrentDictionary<string, List<BlogSettingsRevision>> _revisions = new();
+    private readonly ConcurrentDictionary<string, List<string>> _languageGroups = new();
+
+    public BlogSettingsRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public BlogSettingsData Create(string blogId, string name, string? language = null)
+    {
+        var settings = new BlogSettingsData
+        {
+            BlogId = blogId,
+            Name = name,
+            Language = language ?? "en",
+            Created = _timeProvider.GetUtcNow(),
+            Updated = _timeProvider.GetUtcNow(),
+            PublicAccessRules = [],
+            HtmlTitle = name,
+            Domain = "example.com"
+        };
+        _settings[blogId] = settings;
+        AddRevision(blogId, settings);
+        return settings;
+    }
+
+    public BlogSettingsData? Get(string blogId) => _settings.GetValueOrDefault(blogId);
+
+    public IEnumerable<BlogSettingsData> List() => _settings.Values.OrderBy(s => s.BlogId).ToList();
+
+    public BlogSettingsData? Update(string blogId, Action<BlogSettingsData> updateAction)
+    {
+        if (!_settings.TryGetValue(blogId, out var settings))
+        {
+            return null;
+        }
+
+        updateAction(settings);
+        settings.Updated = _timeProvider.GetUtcNow();
+        AddRevision(blogId, settings);
+        return settings;
+    }
+
+    public IEnumerable<BlogSettingsRevision> GetRevisions(string blogId) => _revisions.TryGetValue(blogId, out var revs) ? revs : Enumerable.Empty<BlogSettingsRevision>();
+
+    public BlogSettingsRevision? GetRevision(string blogId, string revisionId)
+    {
+        if (!_revisions.TryGetValue(blogId, out var revs))
+        {
+            return null;
+        }
+
+        return revs.FirstOrDefault(r => r.Id == revisionId);
+    }
+
+    private void AddRevision(string blogId, BlogSettingsData settings)
+    {
+        if (!_revisions.ContainsKey(blogId))
+        {
+            _revisions[blogId] = [];
+        }
+
+        var revision = new BlogSettingsRevision
+        {
+            Id = Guid.NewGuid().ToString(),
+            BlogId = blogId,
+            Timestamp = _timeProvider.GetUtcNow(),
+            Name = settings.Name,
+            Language = settings.Language
+        };
+        _revisions[blogId].Add(revision);
+    }
+
+    public void AttachToLanguageGroup(string primaryId, string variantId)
+    {
+        if (!_languageGroups.ContainsKey(primaryId))
+        {
+            _languageGroups[primaryId] = [];
+        }
+        if (!_languageGroups[primaryId].Contains(variantId))
+        {
+            _languageGroups[primaryId].Add(variantId);
+        }
+    }
+
+    public void DetachFromLanguageGroup(string id)
+    {
+        foreach (var group in _languageGroups.Values)
+        {
+            group.Remove(id);
+        }
+    }
+}

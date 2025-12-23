@@ -1,0 +1,106 @@
+namespace DamianH.HubSpot.MockServer.Repositories.Blog;
+
+internal class BlogAuthorRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly Dictionary<string, BlogAuthor> _authors = new();
+    private readonly Dictionary<string, List<string>> _languageGroups = new();
+    private int _nextId = 1;
+
+    public BlogAuthorRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public BlogAuthor Create(BlogAuthor author)
+    {
+        author.Id = _nextId++.ToString();
+        author.Created = _timeProvider.GetUtcNow().UtcDateTime;
+        author.Updated = _timeProvider.GetUtcNow().UtcDateTime;
+        _authors[author.Id] = author;
+        return author;
+    }
+
+    public BlogAuthor? GetById(string id) => _authors.GetValueOrDefault(id);
+
+    public List<BlogAuthor> GetAll(int offset = 0, int limit = 100) =>
+        _authors.Values
+            .OrderBy(a => a.FullName)
+            .Skip(offset)
+            .Take(limit)
+            .ToList();
+
+    public BlogAuthor? Update(string id, BlogAuthor updatedAuthor)
+    {
+        if (!_authors.ContainsKey(id))
+        {
+            return null;
+        }
+
+        updatedAuthor.Id = id;
+        updatedAuthor.Updated = _timeProvider.GetUtcNow().UtcDateTime;
+        _authors[id] = updatedAuthor;
+        return updatedAuthor;
+    }
+
+    public bool Delete(string id) =>
+        _authors.Remove(id);
+
+    public List<BlogAuthor> BatchCreate(List<BlogAuthor> authors) =>
+        authors.Select(Create).ToList();
+
+    public List<BlogAuthor> BatchRead(List<string> ids) =>
+        ids.Select(id => _authors.GetValueOrDefault(id))
+            .Where(a => a != null)
+            .Cast<BlogAuthor>()
+            .ToList();
+
+    public List<BlogAuthor> BatchUpdate(List<BlogAuthor> authors)
+    {
+        var results = new List<BlogAuthor>();
+        foreach (var author in authors)
+        {
+            if (author.Id != null)
+            {
+                var updated = Update(author.Id, author);
+                if (updated != null)
+                {
+                    results.Add(updated);
+                }
+            }
+        }
+        return results;
+    }
+
+    public int BatchDelete(List<string> ids) => ids.Count(Delete);
+
+    public void AttachToLanguageGroup(string authorId, string languageGroupId)
+    {
+        if (!_languageGroups.ContainsKey(languageGroupId))
+        {
+            _languageGroups[languageGroupId] = [];
+        }
+
+        if (!_languageGroups[languageGroupId].Contains(authorId))
+        {
+            _languageGroups[languageGroupId].Add(authorId);
+        }
+    }
+
+    public void DetachFromLanguageGroup(string authorId)
+    {
+        foreach (var group in _languageGroups.Values)
+        {
+            group.Remove(authorId);
+        }
+    }
+
+    public int Count() => _authors.Count;
+
+    public void Clear()
+    {
+        _authors.Clear();
+        _languageGroups.Clear();
+        _nextId = 1;
+    }
+}

@@ -2,23 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>DamianH.HubSpot.MockServer</RootNamespace>
+    <IsTrimmable>false</IsTrimmable>
+    <NoWarn>$(NoWarn);CA2007</NoWarn>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
-    <PackageReference Include="ValueOf" Version="2.0.31" />
-    <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
-  </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ValueOf" Version="2.0.31" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="HubSpot.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
   </ItemGroup>
 
 </Project>

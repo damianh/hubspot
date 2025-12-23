@@ -1,0 +1,63 @@
+namespace DamianH.HubSpot.MockServer.Repositories.SiteSearch;
+
+internal class SiteSearchRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly List<SearchableContent> _content = [];
+    private int _nextId = 1;
+
+
+
+    public SiteSearchRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public SearchableContent AddContent(SearchableContent content)
+    {
+        content.Id = _nextId++.ToString();
+        content.IndexedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        _content.Add(content);
+        return content;
+    }
+
+    public List<SearchableContent> Search(string query, int offset = 0, int limit = 20)
+    {
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            return _content.Skip(offset).Take(limit).ToList();
+        }
+
+        var lowerQuery = query.ToLowerInvariant();
+        return _content
+            .Where(c =>
+                (c.Title?.ToLowerInvariant().Contains(lowerQuery) ?? false) ||
+                (c.Description?.ToLowerInvariant().Contains(lowerQuery) ?? false) ||
+                (c.Content?.ToLowerInvariant().Contains(lowerQuery) ?? false))
+            .Skip(offset)
+            .Take(limit)
+            .ToList();
+    }
+
+    public SearchableContent? GetById(string id) => _content.FirstOrDefault(c => c.Id == id);
+
+    public bool Delete(string id)
+    {
+        var content = _content.FirstOrDefault(c => c.Id == id);
+        if (content == null)
+        {
+            return false;
+        }
+
+        _content.Remove(content);
+        return true;
+    }
+
+    public int Count() => _content.Count;
+
+    public void Clear()
+    {
+        _content.Clear();
+        _nextId = 1;
+    }
+}

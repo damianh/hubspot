@@ -6,7 +6,7 @@ internal class HubSpotObjectIdGenerator
 
     public HubSpotObjectId Generate()
     {
-        var id              = _idCounter++;
+        var id = _idCounter++;
         var hubSpotObjectId = HubSpotObjectId.From(id);
         return hubSpotObjectId;
     }

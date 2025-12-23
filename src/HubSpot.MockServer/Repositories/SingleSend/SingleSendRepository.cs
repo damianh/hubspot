@@ -1,0 +1,55 @@
+using DamianH.HubSpot.MockServer.Objects;
+
+namespace DamianH.HubSpot.MockServer.Repositories.SingleSend;
+
+internal class SingleSendRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly Dictionary<string, SingleSendEmail> _emails = new();
+    private int _nextId = 1;
+
+
+
+    public SingleSendRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public SingleSendEmail Create(SingleSendEmail email)
+    {
+        email.Id = _nextId++.ToString();
+        email.CreatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        email.UpdatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        _emails[email.Id] = email;
+        return email;
+    }
+
+    public SingleSendEmail? GetById(string id)
+    {
+        _emails.TryGetValue(id, out var email);
+        return email;
+    }
+
+    public SingleSendEmail Update(string id, SingleSendEmail email)
+    {
+        if (!_emails.ContainsKey(id))
+        {
+            throw new KeyNotFoundException($"Single send email {id} not found");
+        }
+
+        email.Id = id;
+        email.UpdatedAt = _timeProvider.GetUtcNow().UtcDateTime;
+        _emails[id] = email;
+        return email;
+    }
+
+    public void Delete(string id) => _emails.Remove(id);
+
+    public IEnumerable<SingleSendEmail> GetAll() => _emails.Values;
+
+    public void Clear()
+    {
+        _emails.Clear();
+        _nextId = 1;
+    }
+}

@@ -1,0 +1,75 @@
+using System.Collections.Concurrent;
+using System.Security.Cryptography;
+
+namespace DamianH.HubSpot.MockServer.Repositories.VisitorIdentification;
+
+internal class VisitorIdentificationRepository
+{
+    private readonly TimeProvider _timeProvider;
+    private readonly ConcurrentDictionary<string, VisitorTokenData> _tokens = new();
+    private readonly ConcurrentDictionary<string, string> _visitorToContact = new();
+    private long _nextVisitorId = 1;
+
+
+
+    public VisitorIdentificationRepository(TimeProvider timeProvider)
+    {
+        _timeProvider = timeProvider;
+    }
+
+    public VisitorTokenData GenerateToken(string? email = null)
+    {
+        var visitorId = Interlocked.Increment(ref _nextVisitorId).ToString();
+        var token = GenerateRandomToken();
+        var now = _timeProvider.GetUtcNow();
+        var expiresAt = now.AddHours(24);
+
+        var tokenData = new VisitorTokenData
+        {
+            Token = token,
+            VisitorId = visitorId,
+            Email = email,
+            CreatedAt = now,
+            ExpiresAt = expiresAt
+        };
+
+        _tokens[token] = tokenData;
+
+        return tokenData;
+    }
+
+    public VisitorTokenData? ValidateToken(string token)
+    {
+        if (!_tokens.TryGetValue(token, out var tokenData))
+        {
+            return null;
+        }
+
+        if (tokenData.ExpiresAt < _timeProvider.GetUtcNow())
+        {
+            return null; // Expired
+        }
+
+        return tokenData;
+    }
+
+    public VisitorTokenData? GetTokenByVisitorId(string visitorId) => _tokens.Values.FirstOrDefault(t => t.VisitorId == visitorId);
+
+    public void IdentifyVisitor(string visitorId, string contactId) => _visitorToContact[visitorId] = contactId;
+
+    public string? GetContactForVisitor(string visitorId) => _visitorToContact.GetValueOrDefault(visitorId);
+
+    public void Clear()
+    {
+        _tokens.Clear();
+        _visitorToContact.Clear();
+        _nextVisitorId = 1;
+    }
+
+    private static string GenerateRandomToken()
+    {
+        var bytes = new byte[32];
+        RandomNumberGenerator.Fill(bytes);
+        return Convert.ToBase64String(bytes).TrimEnd('=').Replace('+', '-').Replace('/', '_');
+    }
+}
