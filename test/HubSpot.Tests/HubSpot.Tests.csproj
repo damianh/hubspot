@@ -8,7 +8,6 @@
     <RootNamespace>DamianH.HubSpot</RootNamespace>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
     <!-- Replace call ToLowerInvariant with ToUpperInvariant -->
     <NoWarn>$(NoWarn);CA1308</NoWarn>
   </PropertyGroup>
@@ -21,7 +20,7 @@
     <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.3.0" />
     <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.21.3" />
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="xunit.v3.core" Version="3.2.2" />
+    <PackageReference Include="xunit.v3.core.mtp-v2" Version="3.2.2" />
   </ItemGroup>
 
   <ItemGroup>
