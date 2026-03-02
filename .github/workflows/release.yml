@@ -40,7 +40,7 @@ jobs:
     
     - name: Remove existing tag if present
       run: |
-        TAG="hs-${{ inputs.version }}"
+        TAG="v${{ inputs.version }}"
         if git rev-parse "$TAG" >/dev/null 2>&1; then
           echo "Tag $TAG exists, removing it"
           git tag -d "$TAG"
@@ -49,7 +49,7 @@ jobs:
     
     - name: Create and push tag
       run: |
-        TAG="hs-${{ inputs.version }}"
+        TAG="v${{ inputs.version }}"
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git tag -a "$TAG" -m "Release ${{ inputs.version }}"
@@ -88,7 +88,7 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: hs-${{ inputs.version }}
+        tag_name: v${{ inputs.version }}
         name: Release ${{ inputs.version }}
         draft: false
         prerelease: ${{ contains(inputs.version, '-') }}

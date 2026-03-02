@@ -14,7 +14,7 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <!--MinVer-->
-    <MinVerTagPrefix>hs-</MinVerTagPrefix>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
     <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
     <MinVerBuildMetadata>build.$(BUILD_NUMBER)</MinVerBuildMetadata>
     <MinVerAutoIncrement>patch</MinVerAutoIncrement>
