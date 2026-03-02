@@ -22,12 +22,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.CommandLine" Version="2.0.0-beta5.25306.1" />
-    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.20.1" />
+    <PackageReference Include="System.CommandLine" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.21.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="MinVer" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
