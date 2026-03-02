@@ -42,6 +42,8 @@ public class AssociationSamples : IAsyncLifetime
     [Fact]
     public async Task AssociateContactWithCompany_ThenRetrieve()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // Create a contact
         var contact = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
             new ContactModels.SimplePublicObjectInputForCreate
@@ -55,7 +57,7 @@ public class AssociationSamples : IAsyncLifetime
                         { "lastname", "Doe" }
                     }
                 }
-            });
+            }, cancellationToken: ct);
         var contactId = contact!.Entity!.Id!;
 
         // Create a company
@@ -70,21 +72,21 @@ public class AssociationSamples : IAsyncLifetime
                         { "domain", "example.com" }
                     }
                 }
-            });
+            }, cancellationToken: ct);
         var companyId = company!.Entity!.Id!;
 
         // Associate the contact with the company (V3 association)
         var associateResponse = await _httpClient.PutAsync(
             $"/crm/v3/objects/contacts/{contactId}/associations/companies/{companyId}/1",
-            null);
+            null, ct);
         associateResponse.EnsureSuccessStatusCode();
 
         // Retrieve associations for the contact
         var listResponse = await _httpClient.GetAsync(
-            $"/crm/v3/objects/contacts/{contactId}/associations/companies");
+            $"/crm/v3/objects/contacts/{contactId}/associations/companies", ct);
         listResponse.EnsureSuccessStatusCode();
 
-        var associations = await listResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        var associations = await listResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>(ct);
         associations.ShouldNotBeNull();
         associations.ShouldContainKey("results");
     }
@@ -92,6 +94,8 @@ public class AssociationSamples : IAsyncLifetime
     [Fact]
     public async Task BatchAssociateContacts_ThenRemove()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // Create two contacts and one company
         var contact1 = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
             new ContactModels.SimplePublicObjectInputForCreate
@@ -100,7 +104,7 @@ public class AssociationSamples : IAsyncLifetime
                 {
                     AdditionalData = new Dictionary<string, object> { { "email", "alice@example.com" } }
                 }
-            });
+            }, cancellationToken: ct);
 
         var contact2 = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
             new ContactModels.SimplePublicObjectInputForCreate
@@ -109,7 +113,7 @@ public class AssociationSamples : IAsyncLifetime
                 {
                     AdditionalData = new Dictionary<string, object> { { "email", "bob@example.com" } }
                 }
-            });
+            }, cancellationToken: ct);
 
         var company = await _companiesClient.Crm.V3.Objects.Companies.PostAsync(
             new CompanyModels.SimplePublicObjectInputForCreate
@@ -118,7 +122,7 @@ public class AssociationSamples : IAsyncLifetime
                 {
                     AdditionalData = new Dictionary<string, object> { { "name", "Batch Corp" } }
                 }
-            });
+            }, cancellationToken: ct);
 
         // Batch associate both contacts with the company
         var batchRequest = new
@@ -141,12 +145,12 @@ public class AssociationSamples : IAsyncLifetime
         };
 
         var batchResponse = await _httpClient.PostAsJsonAsync(
-            "/crm/v3/associations/contacts/companies/batch/create", batchRequest);
+            "/crm/v3/associations/contacts/companies/batch/create", batchRequest, ct);
         batchResponse.EnsureSuccessStatusCode();
 
         // Remove the first association
         var removeResponse = await _httpClient.DeleteAsync(
-            $"/crm/v3/objects/contacts/{contact1.Entity.Id}/associations/companies/{company.Entity.Id}/1");
+            $"/crm/v3/objects/contacts/{contact1.Entity.Id}/associations/companies/{company.Entity.Id}/1", ct);
         removeResponse.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 }

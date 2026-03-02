@@ -37,6 +37,8 @@ public class GettingStartedSamples : IAsyncLifetime
     [Fact]
     public async Task CreateCompany_ReturnsCreatedCompanyWithId()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         var input = new SimplePublicObjectInputForCreate
         {
             Properties = new SimplePublicObjectInputForCreate_properties
@@ -51,7 +53,7 @@ public class GettingStartedSamples : IAsyncLifetime
             }
         };
 
-        var result = await _client.Crm.V3.Objects.Companies.PostAsync(input);
+        var result = await _client.Crm.V3.Objects.Companies.PostAsync(input, cancellationToken: ct);
         var company = result!.Entity!;
 
         company.ShouldNotBeNull();
@@ -63,6 +65,8 @@ public class GettingStartedSamples : IAsyncLifetime
     [Fact]
     public async Task ReadCompany_ById_ReturnsCompany()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // Create first, then read back by ID
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(new SimplePublicObjectInputForCreate
         {
@@ -70,10 +74,10 @@ public class GettingStartedSamples : IAsyncLifetime
             {
                 AdditionalData = new Dictionary<string, object> { { "name", "Read Me Inc" } }
             }
-        });
+        }, cancellationToken: ct);
         var companyId = created!.Entity!.Id!;
 
-        var retrieved = await _client.Crm.V3.Objects.Companies[companyId].GetAsync();
+        var retrieved = await _client.Crm.V3.Objects.Companies[companyId].GetAsync(cancellationToken: ct);
 
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(companyId);
@@ -82,13 +86,15 @@ public class GettingStartedSamples : IAsyncLifetime
     [Fact]
     public async Task UpdateCompany_PatchesProperties()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(new SimplePublicObjectInputForCreate
         {
             Properties = new SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object> { { "name", "Old Name" }, { "city", "Seattle" } }
             }
-        });
+        }, cancellationToken: ct);
         var companyId = created!.Entity!.Id!;
 
         var updated = await _client.Crm.V3.Objects.Companies[companyId].PatchAsync(new SimplePublicObjectInput
@@ -97,7 +103,7 @@ public class GettingStartedSamples : IAsyncLifetime
             {
                 AdditionalData = new Dictionary<string, object> { { "city", "Austin" }, { "state", "TX" } }
             }
-        });
+        }, cancellationToken: ct);
 
         updated.ShouldNotBeNull();
         updated.Properties!.AdditionalData.ShouldContainKeyAndValue("city", "Austin");
@@ -107,26 +113,30 @@ public class GettingStartedSamples : IAsyncLifetime
     [Fact]
     public async Task DeleteCompany_RemovesFromList()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(new SimplePublicObjectInputForCreate
         {
             Properties = new SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object> { { "name", "To Be Deleted" } }
             }
-        });
+        }, cancellationToken: ct);
         var companyId = created!.Entity!.Id!;
 
         // Delete — returns 204 No Content on success
-        await _client.Crm.V3.Objects.Companies[companyId].DeleteAsync();
+        await _client.Crm.V3.Objects.Companies[companyId].DeleteAsync(cancellationToken: ct);
 
         // Subsequent read should throw (404)
         await Should.ThrowAsync<Exception>(async () =>
-            await _client.Crm.V3.Objects.Companies[companyId].GetAsync());
+            await _client.Crm.V3.Objects.Companies[companyId].GetAsync(cancellationToken: ct));
     }
 
     [Fact]
     public async Task ListCompanies_ReturnsPaginatedResults()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // Create several companies
         for (var i = 1; i <= 3; i++)
         {
@@ -136,13 +146,13 @@ public class GettingStartedSamples : IAsyncLifetime
                 {
                     AdditionalData = new Dictionary<string, object> { { "name", $"Pagination Co {i}" } }
                 }
-            });
+            }, cancellationToken: ct);
         }
 
         var results = await _client.Crm.V3.Objects.Companies.GetAsync(q =>
         {
             q.QueryParameters.Limit = 2;
-        });
+        }, cancellationToken: ct);
 
         results.ShouldNotBeNull();
         results.Results.ShouldNotBeNull();

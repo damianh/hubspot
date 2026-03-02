@@ -26,11 +26,13 @@ public class OwnerAndPipelineSamples : IAsyncLifetime
     [Fact]
     public async Task ListOwners_ReturnsPreSeededOwners()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // The mock server pre-seeds a set of owners out of the box
-        var response = await _httpClient.GetAsync("/crm/v3/owners");
+        var response = await _httpClient.GetAsync("/crm/v3/owners", ct);
         response.EnsureSuccessStatusCode();
 
-        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(ct);
         result.ShouldNotBeNull();
         result.ShouldContainKey("results");
     }
@@ -38,10 +40,12 @@ public class OwnerAndPipelineSamples : IAsyncLifetime
     [Fact]
     public async Task GetOwnerById_ReturnsSingleOwner()
     {
-        var response = await _httpClient.GetAsync("/crm/v3/owners/1");
+        var ct = TestContext.Current.CancellationToken;
+
+        var response = await _httpClient.GetAsync("/crm/v3/owners/1", ct);
         response.EnsureSuccessStatusCode();
 
-        var owner = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        var owner = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(ct);
         owner.ShouldNotBeNull();
         owner.ShouldContainKey("id");
         owner.ShouldContainKey("email");
@@ -50,6 +54,8 @@ public class OwnerAndPipelineSamples : IAsyncLifetime
     [Fact]
     public async Task CreatePipeline_WithStages_ReturnsNewPipeline()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         var pipeline = new
         {
             label = "Custom Sales Pipeline",
@@ -63,10 +69,10 @@ public class OwnerAndPipelineSamples : IAsyncLifetime
             }
         };
 
-        var response = await _httpClient.PostAsJsonAsync("/crm/v3/pipelines/deals", pipeline);
+        var response = await _httpClient.PostAsJsonAsync("/crm/v3/pipelines/deals", pipeline, ct);
         response.EnsureSuccessStatusCode();
 
-        var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        var created = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(ct);
         created.ShouldNotBeNull();
         created.ShouldContainKey("id");
         created["label"].ToString().ShouldBe("Custom Sales Pipeline");
@@ -75,11 +81,13 @@ public class OwnerAndPipelineSamples : IAsyncLifetime
     [Fact]
     public async Task GetDefaultDealsPipeline_HasPreSeededStages()
     {
+        var ct = TestContext.Current.CancellationToken;
+
         // The mock server comes with a pre-seeded default deals pipeline
-        var response = await _httpClient.GetAsync("/crm/v3/pipelines/deals/default");
+        var response = await _httpClient.GetAsync("/crm/v3/pipelines/deals/default", ct);
         response.EnsureSuccessStatusCode();
 
-        var pipeline = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        var pipeline = await response.Content.ReadFromJsonAsync<Dictionary<string, object>>(ct);
         pipeline.ShouldNotBeNull();
         pipeline.ShouldContainKey("id");
         pipeline.ShouldContainKey("stages");
