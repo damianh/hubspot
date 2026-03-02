@@ -1,8 +1,19 @@
 # HubSpot .NET Client & Mock Server
 
-A comprehensive .NET library for interacting with HubSpot APIs, featuring:
-- HubSpot.KiotaClient: Auto-generated HubSpot API client using Microsoft Kiota
-- HubSpot.MockServer: In-memory mock HubSpot server for testing without external dependencies
+[![CI](https://github.com/damianh/hubspot/actions/workflows/ci.yml/badge.svg)](https://github.com/damianh/hubspot/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/damianh/hubspot)
+[![.NET](https://img.shields.io/badge/.NET-10.0-purple.svg)](https://dotnet.microsoft.com/)
+[![GitHub Stars](https://img.shields.io/github/stars/damianh/hubspot.svg)](https://github.com/damianh/hubspot/stargazers)
+
+A comprehensive .NET library for interacting with HubSpot APIs.
+
+## Packages
+
+| Package | Description | NuGet | Downloads |
+|---------|-------------|-------|-----------|
+| **DamianH.HubSpot.KiotaClient** | Auto-generated HubSpot API client using Microsoft Kiota | [![NuGet](https://img.shields.io/nuget/v/DamianH.HubSpot.KiotaClient.svg)](https://www.nuget.org/packages/DamianH.HubSpot.KiotaClient/) | [![Downloads](https://img.shields.io/nuget/dt/DamianH.HubSpot.KiotaClient.svg)](https://www.nuget.org/packages/DamianH.HubSpot.KiotaClient/) |
+| **DamianH.HubSpot.MockServer** | In-memory mock HubSpot server for testing without external dependencies | [![NuGet](https://img.shields.io/nuget/v/DamianH.HubSpot.MockServer.svg)](https://www.nuget.org/packages/DamianH.HubSpot.MockServer/) | [![Downloads](https://img.shields.io/nuget/dt/DamianH.HubSpot.MockServer.svg)](https://www.nuget.org/packages/DamianH.HubSpot.MockServer/) |
+| **DamianH.HubSpot.Cli** | CLI tool for interacting with the HubSpot API | [![NuGet](https://img.shields.io/nuget/v/DamianH.HubSpot.Cli.svg)](https://www.nuget.org/packages/DamianH.HubSpot.Cli/) | [![Downloads](https://img.shields.io/nuget/dt/DamianH.HubSpot.Cli.svg)](https://www.nuget.org/packages/DamianH.HubSpot.Cli/) |
 
 ## Quick Start
 
