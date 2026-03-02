@@ -1,0 +1,152 @@
+using System.Net.Http.Json;
+using DamianH.HubSpot.KiotaClient.CRM.Companies.V3;
+using DamianH.HubSpot.KiotaClient.CRM.Contacts.V3;
+using DamianH.HubSpot.MockServer;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+using ContactModels = DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models;
+using CompanyModels = DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models;
+
+namespace DamianH.HubSpot.Sample;
+
+/// <summary>
+/// Demonstrates creating contacts and companies, then associating them using the V3 associations API.
+/// </summary>
+public class AssociationSamples : IAsyncLifetime
+{
+    private HubSpotMockServer _server = null!;
+    private HubSpotCRMContactsV3Client _contactsClient = null!;
+    private HubSpotCRMCompaniesV3Client _companiesClient = null!;
+    private HttpClient _httpClient = null!;
+
+    public async ValueTask InitializeAsync()
+    {
+        _server = await HubSpotMockServer.StartNew();
+
+        var adapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        {
+            BaseUrl = _server.Uri.ToString()
+        };
+
+        _contactsClient = new HubSpotCRMContactsV3Client(adapter);
+        _companiesClient = new HubSpotCRMCompaniesV3Client(adapter);
+        _httpClient = new HttpClient { BaseAddress = _server.Uri };
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _httpClient?.Dispose();
+        if (_server != null) await _server.DisposeAsync();
+    }
+
+    [Fact]
+    public async Task AssociateContactWithCompany_ThenRetrieve()
+    {
+        // Create a contact
+        var contact = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
+            new ContactModels.SimplePublicObjectInputForCreate
+            {
+                Properties = new ContactModels.SimplePublicObjectInputForCreate_properties
+                {
+                    AdditionalData = new Dictionary<string, object>
+                    {
+                        { "email", "jane.doe@example.com" },
+                        { "firstname", "Jane" },
+                        { "lastname", "Doe" }
+                    }
+                }
+            });
+        var contactId = contact!.Entity!.Id!;
+
+        // Create a company
+        var company = await _companiesClient.Crm.V3.Objects.Companies.PostAsync(
+            new CompanyModels.SimplePublicObjectInputForCreate
+            {
+                Properties = new CompanyModels.SimplePublicObjectInputForCreate_properties
+                {
+                    AdditionalData = new Dictionary<string, object>
+                    {
+                        { "name", "Example Corp" },
+                        { "domain", "example.com" }
+                    }
+                }
+            });
+        var companyId = company!.Entity!.Id!;
+
+        // Associate the contact with the company (V3 association)
+        var associateResponse = await _httpClient.PutAsync(
+            $"/crm/v3/objects/contacts/{contactId}/associations/companies/{companyId}/1",
+            null);
+        associateResponse.EnsureSuccessStatusCode();
+
+        // Retrieve associations for the contact
+        var listResponse = await _httpClient.GetAsync(
+            $"/crm/v3/objects/contacts/{contactId}/associations/companies");
+        listResponse.EnsureSuccessStatusCode();
+
+        var associations = await listResponse.Content.ReadFromJsonAsync<Dictionary<string, object>>();
+        associations.ShouldNotBeNull();
+        associations.ShouldContainKey("results");
+    }
+
+    [Fact]
+    public async Task BatchAssociateContacts_ThenRemove()
+    {
+        // Create two contacts and one company
+        var contact1 = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
+            new ContactModels.SimplePublicObjectInputForCreate
+            {
+                Properties = new ContactModels.SimplePublicObjectInputForCreate_properties
+                {
+                    AdditionalData = new Dictionary<string, object> { { "email", "alice@example.com" } }
+                }
+            });
+
+        var contact2 = await _contactsClient.Crm.V3.Objects.Contacts.PostAsync(
+            new ContactModels.SimplePublicObjectInputForCreate
+            {
+                Properties = new ContactModels.SimplePublicObjectInputForCreate_properties
+                {
+                    AdditionalData = new Dictionary<string, object> { { "email", "bob@example.com" } }
+                }
+            });
+
+        var company = await _companiesClient.Crm.V3.Objects.Companies.PostAsync(
+            new CompanyModels.SimplePublicObjectInputForCreate
+            {
+                Properties = new CompanyModels.SimplePublicObjectInputForCreate_properties
+                {
+                    AdditionalData = new Dictionary<string, object> { { "name", "Batch Corp" } }
+                }
+            });
+
+        // Batch associate both contacts with the company
+        var batchRequest = new
+        {
+            inputs = new[]
+            {
+                new
+                {
+                    from = new { id = contact1!.Entity!.Id },
+                    to = new { id = company!.Entity!.Id },
+                    types = new[] { new { associationCategory = "HUBSPOT_DEFINED", associationTypeId = 1 } }
+                },
+                new
+                {
+                    from = new { id = contact2!.Entity!.Id },
+                    to = new { id = company.Entity.Id },
+                    types = new[] { new { associationCategory = "HUBSPOT_DEFINED", associationTypeId = 1 } }
+                }
+            }
+        };
+
+        var batchResponse = await _httpClient.PostAsJsonAsync(
+            "/crm/v3/associations/contacts/companies/batch/create", batchRequest);
+        batchResponse.EnsureSuccessStatusCode();
+
+        // Remove the first association
+        var removeResponse = await _httpClient.DeleteAsync(
+            $"/crm/v3/objects/contacts/{contact1.Entity.Id}/associations/companies/{company.Entity.Id}/1");
+        removeResponse.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
+    }
+}

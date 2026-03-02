@@ -3,8 +3,31 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>DamianH.HubSpot.MockServer</RootNamespace>
+    <PackageId>DamianH.HubSpot.MockServer</PackageId>
+    <Description>In-memory mock HubSpot server for testing without external dependencies</Description>
     <IsTrimmable>false</IsTrimmable>
     <NoWarn>$(NoWarn);CA2007</NoWarn>
+    <!-- Mock/test server suppressions: these rules are not meaningful for in-memory test infrastructure -->
+    <!-- CA1305: IFormatProvider — not needed for test data formatting -->
+    <!-- CA5394: Insecure randomness — not a security concern for mock test data -->
+    <!-- CA1308: Normalize to uppercase — HubSpot API uses lowercase, matching their convention -->
+    <!-- CA1002: Generic list exposure — internal mock DTOs, not public API surface -->
+    <!-- CA1307/CA1309/CA1310: StringComparison — ordinal comparisons not critical for test data -->
+    <!-- CA1862: StringComparison overload — same rationale as CA1307 -->
+    <!-- CA1304: CultureInfo — test data only -->
+    <!-- CA1311: ToUpper/ToLower — test data only -->
+    <!-- CA1805: Explicit default values — readability preference in model classes -->
+    <!-- CA1822: Static member — route handler lambdas captured by DI, can't be static -->
+    <!-- CA2227: Read-only collection — request DTOs need settable collections for JSON deserialization -->
+    <!-- CA1056: Uri instead of string — request DTOs use string for JSON binding -->
+    <!-- CA1860: Prefer IsEmpty — minor perf, not critical for test infrastructure -->
+    <!-- CA1826: Use property instead of LINQ — minor perf, not critical -->
+    <!-- CA1816: GC.SuppressFinalize — mock server disposal pattern -->
+    <!-- CA1001: Disposable fields — mock server lifecycle managed externally -->
+    <!-- CA1508: Dead code — some branches are defensive null checks -->
+    <!-- IDE0011: Add braces — style preference handled by editorconfig -->
+    <!-- AD0001: Analyzer crash — not our fault -->
+    <NoWarn>$(NoWarn);CA1305;CA5394;CA1308;CA1002;CA1307;CA1309;CA1310;CA1862;CA1304;CA1311;CA1805;CA1822;CA2227;CA1056;CA1860;CA1826;CA1816;CA1001;CA1508;IDE0011;AD0001</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

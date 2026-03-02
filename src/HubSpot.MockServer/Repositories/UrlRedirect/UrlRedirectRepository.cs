@@ -8,10 +8,7 @@ internal class UrlRedirectRepository
 
 
 
-    public UrlRedirectRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public UrlRedirectRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public UrlRedirect Create(UrlRedirect redirect)
     {

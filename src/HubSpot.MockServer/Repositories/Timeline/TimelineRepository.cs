@@ -11,10 +11,7 @@ internal class TimelineRepository
 
 
 
-    public TimelineRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public TimelineRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public TimelineEventTemplate CreateEventTemplate(
         string name,
@@ -106,12 +103,13 @@ internal class TimelineRepository
 
         // Track event by object
         var key = $"{objectType}:{objectId}";
-        if (!_objectEvents.ContainsKey(key))
+        if (!_objectEvents.TryGetValue(key, out var eventList))
         {
-            _objectEvents[key] = [];
+            eventList = [];
+            _objectEvents[key] = eventList;
         }
 
-        _objectEvents[key].Add(eventId);
+        eventList.Add(eventId);
 
         return timelineEvent;
     }

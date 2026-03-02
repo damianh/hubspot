@@ -8,10 +8,7 @@ internal class SiteSearchRepository
 
 
 
-    public SiteSearchRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SiteSearchRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public SearchableContent AddContent(SearchableContent content)
     {

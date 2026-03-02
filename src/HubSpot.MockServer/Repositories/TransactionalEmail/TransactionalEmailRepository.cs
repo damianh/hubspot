@@ -13,10 +13,7 @@ internal class TransactionalEmailRepository
 
 
 
-    public TransactionalEmailRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public TransactionalEmailRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public EmailSendStatusView SendEmail(PublicSingleSendRequestEgg request)
     {

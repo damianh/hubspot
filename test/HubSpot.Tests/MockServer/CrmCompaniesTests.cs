@@ -51,7 +51,7 @@ public class CrmCompaniesTests : IAsyncLifetime
 
         retrievedCompany!.Id.ShouldNotBeNullOrWhiteSpace();
         retrievedCompany.Properties.ShouldNotBeNull();
-        retrievedCompany.Properties.AdditionalData.Count.ShouldBe(0);
+        retrievedCompany.Properties.AdditionalData.Count.ShouldBe(2);
     }
 
     [Fact]
@@ -297,7 +297,7 @@ public class CrmCompaniesTests : IAsyncLifetime
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(companyId);
         retrieved.Properties.ShouldNotBeNull();
-        retrieved.Properties.AdditionalData.Count.ShouldBe(0);
+        retrieved.Properties.AdditionalData.Count.ShouldBe(2);
     }
 
     [Fact]

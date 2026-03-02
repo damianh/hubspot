@@ -1,5 +1,4 @@
 using System.Text.Json;
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Conversation;
 using DamianH.HubSpot.MockServer.Repositories.CustomChannel;
 using DamianH.HubSpot.MockServer.Repositories.VisitorIdentification;
@@ -25,9 +24,12 @@ internal static partial class ApiRoutes
             return Results.Ok(new
             {
                 results = results.Select(ToConversationResponse),
-                paging = new { next = results.Count >= (limit ?? 100)
+                paging = new
+                {
+                    next = results.Count >= (limit ?? 100)
                     ? new { after = results.Last().Id }
-                    : null }
+                    : null
+                }
             });
         });
 
@@ -124,7 +126,7 @@ internal static partial class ApiRoutes
         // Custom Channels API
         var channels = app.MapGroup("/conversations/v3/custom-channels");
 
-        channels.MapPost("/", async(CustomChannelRepository channelRepo, HttpRequest request) =>
+        channels.MapPost("/", async (CustomChannelRepository channelRepo, HttpRequest request) =>
         {
             using var reader = new StreamReader(request.Body);
             var body = await reader.ReadToEndAsync();
@@ -160,7 +162,7 @@ internal static partial class ApiRoutes
             return Results.Ok(ToChannelResponse(channel));
         });
 
-        channels.MapPatch("/{channelId}", async(
+        channels.MapPatch("/{channelId}", async (
             CustomChannelRepository channelRepo,
             string channelId,
             HttpRequest request) =>
@@ -204,7 +206,7 @@ internal static partial class ApiRoutes
         // Visitor Identification API
         var visitors = app.MapGroup("/conversations/v3/visitor-identification");
 
-        visitors.MapPost("/tokens/create", async(
+        visitors.MapPost("/tokens/create", async (
             VisitorIdentificationRepository visitorRepo,
             HttpRequest request) =>
         {

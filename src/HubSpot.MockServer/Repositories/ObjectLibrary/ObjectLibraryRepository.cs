@@ -7,10 +7,7 @@ public class ObjectLibraryRepository
 {
     private readonly TimeProvider _timeProvider;
 
-    public ObjectLibraryRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public ObjectLibraryRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     private readonly ConcurrentDictionary<string, JsonElement> _objectLibraryItems = new();
 

@@ -13,10 +13,7 @@ internal class SequenceRepository
 
 
 
-    public SequenceRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SequenceRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Sequence? GetSequence(string sequenceId)
     {

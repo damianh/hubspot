@@ -3,6 +3,7 @@
     <Project Path="sample/Sample/Sample.csproj" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/HubSpot.Cli/HubSpot.Cli.csproj" />
     <Project Path="src/HubSpot.KiotaClient/HubSpot.KiotaClient.csproj" />
     <Project Path="src/HubSpot.MockServer/HubSpot.MockServer.csproj" />
   </Folder>

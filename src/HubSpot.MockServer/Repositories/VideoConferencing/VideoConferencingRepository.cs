@@ -10,10 +10,7 @@ internal class VideoConferencingRepository
 
 
 
-    public VideoConferencingRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public VideoConferencingRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<JsonElement?> GetSettingsAsync(string appId)
     {

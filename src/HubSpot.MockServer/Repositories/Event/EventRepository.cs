@@ -12,10 +12,7 @@ internal class EventRepository
 
 
 
-    public EventRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public EventRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public void SendEvent(CustomEvent customEvent)
     {

@@ -11,10 +11,7 @@ internal class ListRepository
 
 
 
-    public ListRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public ListRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public ListDefinition CreateList(ListDefinition list)
     {

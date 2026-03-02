@@ -8,10 +8,7 @@ internal class DomainRepository
 
 
 
-    public DomainRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public DomainRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Domain Create(Domain domain)
     {

@@ -7,10 +7,7 @@ public class SchedulerMeetingRepository
 {
     private readonly TimeProvider _timeProvider;
 
-    public SchedulerMeetingRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SchedulerMeetingRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     private readonly ConcurrentDictionary<string, JsonElement> _meetingLinks = new();
     private int _nextId = 1;

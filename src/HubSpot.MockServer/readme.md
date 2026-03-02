@@ -1,6 +1,16 @@
-# HubSpot Mock Server
+# DamianH.HubSpot.MockServer
 
 A comprehensive in-memory mock server that implements HubSpot APIs for testing without external dependencies.
+
+## Quick Install
+
+```bash
+dotnet add package DamianH.HubSpot.MockServer
+```
+
+## Requirements
+
+- .NET 10.0 or later
 
 ## Architecture
 
@@ -17,16 +27,27 @@ API route groups are registered via partial `ApiRoutes` classes (e.g., `ApiRoute
 ## Usage
 
 ```csharp
-// Start the mock server
+using DamianH.HubSpot.KiotaClient.CRM.Companies.V3;
+using DamianH.HubSpot.MockServer;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+
+// Start the mock server — binds to a random port, no external dependencies
 await using var server = await HubSpotMockServer.StartNew();
 
-// Create a client pointing to the mock server
-var client = new HubSpotClient("any-token", server.BaseUri);
-
-// Use the client as normal
-var contact = await client.Crm.V3.Objects.Contacts.PostAsync(new() 
+// Create a Kiota adapter pointed at the mock server
+var adapter = new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
 {
-    Properties = new Dictionary<string, string> { ["email"] = "test@example.com" }
+    BaseUrl = server.Uri.ToString()
+};
+
+// Instantiate the typed client for the API area you need
+var client = new HubSpotCRMCompaniesV3Client(adapter);
+
+// Use the client as you would against the real HubSpot API
+var company = await client.Crm.V3.Objects.Companies.PostAsync(new()
+{
+    Properties = new() { AdditionalData = new() { ["name"] = "Acme Corp" } }
 });
 ```
 

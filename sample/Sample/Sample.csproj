@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
     <RootNamespace>DamianH.HubSpot.Sample</RootNamespace>
+    <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
   </PropertyGroup>
@@ -16,10 +17,18 @@
 
   <ItemGroup>
     <Using Include="Xunit" />
+    <Using Include="Shouldly" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.20.1" />
+    <PackageReference Include="Shouldly" Version="4.3.0" />
     <PackageReference Include="xunit.v3" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
+    <ProjectReference Include="..\..\src\HubSpot.MockServer\HubSpot.MockServer.csproj" />
   </ItemGroup>
 
 </Project>

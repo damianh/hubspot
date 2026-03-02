@@ -10,10 +10,7 @@ internal class TranscriptionRepository
 
 
 
-    public TranscriptionRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public TranscriptionRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<Transcription> CreateTranscriptionAsync(string engagementId, JsonElement body)
     {

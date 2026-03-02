@@ -1,5 +1,4 @@
 using System.Text.Json;
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Blog;
 using DamianH.HubSpot.MockServer.Repositories.ContentAudit;
 using Microsoft.AspNetCore.Builder;
@@ -207,12 +206,12 @@ internal static partial class ApiRoutes
         batchGroup.MapPost("/archive", async (BlogPostRepository repository, HttpContext context) =>
         {
             var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
-            if (request == null || !request.ContainsKey("inputs"))
+            if (request == null || !request.TryGetValue("inputs", out var inputsValue))
             {
                 return Results.BadRequest(new { message = "Invalid request body" });
             }
 
-            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(request["inputs"].ToString()!);
+            var inputs = JsonSerializer.Deserialize<List<Dictionary<string, object>>>(inputsValue.ToString()!);
             if (inputs == null)
             {
                 return Results.BadRequest(new { message = "Invalid inputs" });

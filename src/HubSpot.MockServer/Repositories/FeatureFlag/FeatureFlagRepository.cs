@@ -8,10 +8,7 @@ public class FeatureFlagRepository
     private readonly TimeProvider _timeProvider;
     private readonly ConcurrentDictionary<string, JsonElement> _featureFlags = new();
 
-    public FeatureFlagRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public FeatureFlagRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<List<JsonElement>> GetAllAsync()
     {

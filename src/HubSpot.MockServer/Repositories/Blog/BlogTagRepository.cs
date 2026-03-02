@@ -7,10 +7,7 @@ internal class BlogTagRepository
     private readonly Dictionary<string, List<string>> _languageGroups = new();
     private int _nextId = 1;
 
-    public BlogTagRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public BlogTagRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public BlogTag Create(BlogTag tag)
     {
@@ -72,14 +69,15 @@ internal class BlogTagRepository
 
     public void AttachToLanguageGroup(string tagId, string languageGroupId)
     {
-        if (!_languageGroups.ContainsKey(languageGroupId))
+        if (!_languageGroups.TryGetValue(languageGroupId, out var group))
         {
-            _languageGroups[languageGroupId] = [];
+            group = [];
+            _languageGroups[languageGroupId] = group;
         }
 
-        if (!_languageGroups[languageGroupId].Contains(tagId))
+        if (!group.Contains(tagId))
         {
-            _languageGroups[languageGroupId].Add(tagId);
+            group.Add(tagId);
         }
     }
 

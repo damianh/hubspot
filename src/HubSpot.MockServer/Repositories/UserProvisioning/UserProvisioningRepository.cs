@@ -1,5 +1,3 @@
-using DamianH.HubSpot.MockServer.Objects;
-
 namespace DamianH.HubSpot.MockServer.Repositories.UserProvisioning;
 
 internal class UserProvisioningRepository

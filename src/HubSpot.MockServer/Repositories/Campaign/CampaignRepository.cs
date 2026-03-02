@@ -6,10 +6,7 @@ internal class CampaignRepository
     private readonly Dictionary<string, Campaign> _campaigns = new();
     private int _nextId = 1;
 
-    public CampaignRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public CampaignRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Campaign Create(Campaign campaign)
     {

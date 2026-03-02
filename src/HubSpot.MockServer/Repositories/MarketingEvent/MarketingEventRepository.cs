@@ -8,10 +8,7 @@ internal class MarketingEventRepository
 
 
 
-    public MarketingEventRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public MarketingEventRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public MarketingEvent Create(MarketingEvent marketingEvent)
     {

@@ -12,10 +12,7 @@ internal class VisitorIdentificationRepository
 
 
 
-    public VisitorIdentificationRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public VisitorIdentificationRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public VisitorTokenData GenerateToken(string? email = null)
     {

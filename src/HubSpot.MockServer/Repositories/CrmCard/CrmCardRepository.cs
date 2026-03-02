@@ -11,10 +11,7 @@ internal class CrmCardRepository
 
 
 
-    public CrmCardRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public CrmCardRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<List<JsonElement>> GetCardsAsync(string appId)
     {

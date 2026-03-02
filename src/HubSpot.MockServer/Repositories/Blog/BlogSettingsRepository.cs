@@ -9,10 +9,7 @@ internal class BlogSettingsRepository
     private readonly ConcurrentDictionary<string, List<BlogSettingsRevision>> _revisions = new();
     private readonly ConcurrentDictionary<string, List<string>> _languageGroups = new();
 
-    public BlogSettingsRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public BlogSettingsRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public BlogSettingsData Create(string blogId, string name, string? language = null)
     {
@@ -63,9 +60,10 @@ internal class BlogSettingsRepository
 
     private void AddRevision(string blogId, BlogSettingsData settings)
     {
-        if (!_revisions.ContainsKey(blogId))
+        if (!_revisions.TryGetValue(blogId, out var blogRevisions))
         {
-            _revisions[blogId] = [];
+            blogRevisions = [];
+            _revisions[blogId] = blogRevisions;
         }
 
         var revision = new BlogSettingsRevision
@@ -76,18 +74,19 @@ internal class BlogSettingsRepository
             Name = settings.Name,
             Language = settings.Language
         };
-        _revisions[blogId].Add(revision);
+        blogRevisions.Add(revision);
     }
 
     public void AttachToLanguageGroup(string primaryId, string variantId)
     {
-        if (!_languageGroups.ContainsKey(primaryId))
+        if (!_languageGroups.TryGetValue(primaryId, out var group))
         {
-            _languageGroups[primaryId] = [];
+            group = [];
+            _languageGroups[primaryId] = group;
         }
-        if (!_languageGroups[primaryId].Contains(variantId))
+        if (!group.Contains(variantId))
         {
-            _languageGroups[primaryId].Add(variantId);
+            group.Add(variantId);
         }
     }
 

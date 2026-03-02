@@ -11,10 +11,7 @@ internal class TagRepository
 
 
 
-    public TagRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public TagRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public TagData Create(string name, string? language = null)
     {
@@ -66,13 +63,14 @@ internal class TagRepository
 
     public void AttachToLanguageGroup(string primaryId, string variantId)
     {
-        if (!_languageGroups.ContainsKey(primaryId))
+        if (!_languageGroups.TryGetValue(primaryId, out var group))
         {
-            _languageGroups[primaryId] = [];
+            group = [];
+            _languageGroups[primaryId] = group;
         }
-        if (!_languageGroups[primaryId].Contains(variantId))
+        if (!group.Contains(variantId))
         {
-            _languageGroups[primaryId].Add(variantId);
+            group.Add(variantId);
         }
     }
 

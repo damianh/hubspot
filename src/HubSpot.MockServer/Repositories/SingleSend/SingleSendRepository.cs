@@ -1,5 +1,3 @@
-using DamianH.HubSpot.MockServer.Objects;
-
 namespace DamianH.HubSpot.MockServer.Repositories.SingleSend;
 
 internal class SingleSendRepository
@@ -10,10 +8,7 @@ internal class SingleSendRepository
 
 
 
-    public SingleSendRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SingleSendRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public SingleSendEmail Create(SingleSendEmail email)
     {

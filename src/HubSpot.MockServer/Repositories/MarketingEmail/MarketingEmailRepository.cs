@@ -8,10 +8,7 @@ internal class MarketingEmailRepository
 
 
 
-    public MarketingEmailRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public MarketingEmailRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public MarketingEmail Create(MarketingEmail email)
     {

@@ -26,11 +26,16 @@
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
 
     <!--NuGet-->
-    <PackageLicenseExpression>mit</PackageLicenseExpression>
-    <PackageIcon>icon.png</PackageIcon>
+    <Authors>Damian Hickey</Authors>
+    <Description>HubSpot .NET client and mock server for testing</Description>
+    <PackageTags>hubspot;api;crm;mock;testing;kiota</PackageTags>
+    <RepositoryUrl>https://github.com/damianh/hubspot</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/damianh/hubspot</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/damianh/hubspot/releases</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmePath>README.md</PackageReadmePath>
 
   </PropertyGroup>
 
@@ -43,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="../icon.png" Pack="true" Visible="false" PackagePath="" />
     <None Include="$(PackageReadmePath)" Pack="true" PackagePath="" />
   </ItemGroup>
 

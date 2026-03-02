@@ -10,10 +10,7 @@ internal class HubDbRepository
 
 
 
-    public HubDbRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public HubDbRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public HubDbTable CreateTable(HubDbTable table)
     {
@@ -81,12 +78,12 @@ internal class HubDbRepository
 
     public List<HubDbRow> GetAllRows(string tableId, int offset = 0, int limit = 100)
     {
-        if (!_rows.ContainsKey(tableId))
+        if (!_rows.TryGetValue(tableId, out var tableRows))
         {
             return [];
         }
 
-        return _rows[tableId].Values
+        return tableRows.Values
             .OrderBy(r => r.Id)
             .Skip(offset)
             .Take(limit)
@@ -95,14 +92,14 @@ internal class HubDbRepository
 
     public HubDbRow? UpdateRow(string tableId, string rowId, HubDbRow updatedRow)
     {
-        if (!_rows.ContainsKey(tableId) || !_rows[tableId].ContainsKey(rowId))
+        if (!_rows.TryGetValue(tableId, out var tableRowsForUpdate) || !tableRowsForUpdate.ContainsKey(rowId))
         {
             return null;
         }
 
         updatedRow.Id = rowId;
         updatedRow.UpdatedAt = _timeProvider.GetUtcNow().UtcDateTime;
-        _rows[tableId][rowId] = updatedRow;
+        tableRowsForUpdate[rowId] = updatedRow;
         return updatedRow;
     }
 

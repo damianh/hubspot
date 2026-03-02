@@ -76,7 +76,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(LineItemId);
         retrieved.Properties.ShouldNotBeNull();
-        retrieved.Properties.AdditionalData.Count.ShouldBe(0);
+        retrieved.Properties.AdditionalData.Count.ShouldBe(2);
     }
 
     [Fact]

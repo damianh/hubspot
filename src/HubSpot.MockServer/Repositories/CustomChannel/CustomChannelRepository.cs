@@ -10,10 +10,7 @@ internal class CustomChannelRepository
 
 
 
-    public CustomChannelRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public CustomChannelRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public CustomChannelData CreateChannel(string name, string? accountId = null)
     {

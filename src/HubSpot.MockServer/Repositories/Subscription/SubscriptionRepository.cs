@@ -10,10 +10,7 @@ internal class SubscriptionRepository
 
 
 
-    public SubscriptionRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SubscriptionRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Subscription CreateSubscription(Subscription subscription)
     {

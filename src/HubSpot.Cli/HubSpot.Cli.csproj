@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>DamianH.HubSpot.Cli</RootNamespace>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>hubspot</ToolCommandName>
+    <PackageId>DamianH.HubSpot.Cli</PackageId>
+    <Description>CLI tool for interacting with the HubSpot API</Description>
+    <IsTrimmable>false</IsTrimmable>
+    <PackageReadmeFile />
+    <PackageReadmePath />
+    <!-- CLI-specific suppressions:
+         CA1031: Catch-all exception handling is intentional for CLI error reporting
+         CA1849: Sync TextWriter.WriteLine is appropriate for console CLI output
+         CA1307: StringComparison overloads unnecessary for simple char operations
+         CA1859: Return type variance is fine for CLI mapping methods
+         CA1869: JsonSerializerOptions caching unnecessary for short-lived CLI process
+         IL2026: Trimming warnings irrelevant — CLI tool is not trimmed -->
+    <NoWarn>$(NoWarn);CA1031;CA1849;CA1307;CA1859;CA1869;IL2026</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta5.25306.1" />
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.20.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
+  </ItemGroup>
+
+</Project>

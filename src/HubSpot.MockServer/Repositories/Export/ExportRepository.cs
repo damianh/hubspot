@@ -12,10 +12,7 @@ internal class ExportRepository
 
 
 
-    public ExportRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public ExportRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public ExportJob CreateExport(string exportName, string exportType, string objectType,
         List<string>? properties = null, string? format = null, DateTimeOffset? startDate = null, DateTimeOffset? endDate = null)

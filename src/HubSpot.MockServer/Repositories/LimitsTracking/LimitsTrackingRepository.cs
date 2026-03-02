@@ -56,9 +56,9 @@ internal class LimitsTrackingRepository(TimeProvider timeProvider)
 
     public Task TrackApiCallAsync(string endpoint)
     {
-        if (_apiCallCounts.ContainsKey(endpoint))
+        if (_apiCallCounts.TryGetValue(endpoint, out var count))
         {
-            _apiCallCounts[endpoint]++;
+            _apiCallCounts[endpoint] = count + 1;
         }
         else
         {

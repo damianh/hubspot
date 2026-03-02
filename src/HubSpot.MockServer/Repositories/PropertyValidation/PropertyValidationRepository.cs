@@ -3,9 +3,9 @@ using System.Text.Json;
 
 namespace DamianH.HubSpot.MockServer.Repositories.PropertyValidation;
 
-internal class PropertyValidationRepository
+internal class PropertyValidationRepository(TimeProvider timeProvider)
 {
-    private readonly TimeProvider _timeProvider;
+    private readonly TimeProvider _timeProvider = timeProvider;
     private readonly ConcurrentDictionary<string, List<JsonElement>> _validations = new();
 
     private static string GetKey(string objectType, string propertyName) => $"{objectType}:{propertyName}";

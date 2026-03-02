@@ -10,10 +10,7 @@ internal class PageRepository
 
 
 
-    public PageRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public PageRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Page Create(Page page)
     {
@@ -89,20 +86,21 @@ internal class PageRepository
 
     private void AddRevision(string pageId, Page page)
     {
-        if (!_revisions.ContainsKey(pageId))
+        if (!_revisions.TryGetValue(pageId, out var pageRevisions))
         {
-            _revisions[pageId] = [];
+            pageRevisions = [];
+            _revisions[pageId] = pageRevisions;
         }
 
         var revision = new PageRevision
         {
-            Id = (_revisions[pageId].Count + 1).ToString(),
+            Id = (pageRevisions.Count + 1).ToString(),
             PageId = pageId,
             CreatedAt = _timeProvider.GetUtcNow().UtcDateTime,
             Content = page
         };
 
-        _revisions[pageId].Add(revision);
+        pageRevisions.Add(revision);
     }
 
     public List<PageRevision> GetRevisions(string pageId) => _revisions.GetValueOrDefault(pageId) ?? [];
@@ -123,14 +121,15 @@ internal class PageRepository
 
     public void AttachToLanguageGroup(string pageId, string languageGroupId)
     {
-        if (!_languageGroups.ContainsKey(languageGroupId))
+        if (!_languageGroups.TryGetValue(languageGroupId, out var group))
         {
-            _languageGroups[languageGroupId] = [];
+            group = [];
+            _languageGroups[languageGroupId] = group;
         }
 
-        if (!_languageGroups[languageGroupId].Contains(pageId))
+        if (!group.Contains(pageId))
         {
-            _languageGroups[languageGroupId].Add(pageId);
+            group.Add(pageId);
         }
     }
 

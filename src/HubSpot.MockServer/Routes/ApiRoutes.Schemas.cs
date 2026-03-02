@@ -1,4 +1,3 @@
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Schema;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -21,7 +20,7 @@ internal static partial class ApiRoutes
         var v3 = app.MapGroup(basePath);
 
         // GET /crm/v3/schemas
-        v3.MapGet("", ([FromServices]SchemaRepository schemaRepo, bool ? archived) =>
+        v3.MapGet("", ([FromServices] SchemaRepository schemaRepo, bool? archived) =>
         {
             var schemas = schemaRepo.ListSchemas(archived ?? false);
             return Results.Ok(new { results = schemas });

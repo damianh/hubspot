@@ -1,6 +1,4 @@
 using DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models;
-using DamianH.HubSpot.MockServer.Objects;
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Campaign;
 using DamianH.HubSpot.MockServer.Repositories.MarketingEmail;
 using DamianH.HubSpot.MockServer.Repositories.MarketingEvent;

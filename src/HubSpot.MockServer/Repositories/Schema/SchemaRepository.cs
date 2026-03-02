@@ -11,10 +11,7 @@ internal class SchemaRepository
 
 
 
-    public SchemaRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SchemaRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public ObjectSchema CreateSchema(
         string name,
@@ -131,9 +128,10 @@ internal class SchemaRepository
         string fieldType, string? groupName = null, string? description = null,
         List<PropertyOption>? options = null, int? displayOrder = null)
     {
-        if (!_properties.ContainsKey(objectType))
+        if (!_properties.TryGetValue(objectType, out var propList))
         {
-            _properties[objectType] = [];
+            propList = [];
+            _properties[objectType] = propList;
         }
 
         var property = new SchemaProperty
@@ -145,13 +143,13 @@ internal class SchemaRepository
             GroupName = groupName ?? "default",
             Description = description,
             Options = options ?? [],
-            DisplayOrder = displayOrder ?? _properties[objectType].Count,
+            DisplayOrder = displayOrder ?? propList.Count,
             CreatedAt = _timeProvider.GetUtcNow(),
             UpdatedAt = _timeProvider.GetUtcNow(),
             Archived = false
         };
 
-        _properties[objectType].Add(property);
+        propList.Add(property);
 
         return property;
     }
@@ -163,9 +161,10 @@ internal class SchemaRepository
     public AssociationDefinition CreateAssociationDefinition(string fromObjectType,
         string toObjectType, string name, string? label = null)
     {
-        if (!_associations.ContainsKey(fromObjectType))
+        if (!_associations.TryGetValue(fromObjectType, out var assocList))
         {
-            _associations[fromObjectType] = [];
+            assocList = [];
+            _associations[fromObjectType] = assocList;
         }
 
         var associationId = GenerateAssociationId();
@@ -179,7 +178,7 @@ internal class SchemaRepository
             CreatedAt = _timeProvider.GetUtcNow()
         };
 
-        _associations[fromObjectType].Add(definition);
+        assocList.Add(definition);
 
         return definition;
     }

@@ -438,7 +438,7 @@ internal static partial class ApiRoutes
                 [FromBody] CreateAssociationTypeRequest request,
                 AssociationRepository repo) =>
             {
-                var definition = repo.CreateAssociationType(request.Label ?? request.Name, "USER_DEFINED");
+                var definition = repo.CreateAssociationType(request.Label ?? request.Name!, "USER_DEFINED");
 
                 var response = new
                 {

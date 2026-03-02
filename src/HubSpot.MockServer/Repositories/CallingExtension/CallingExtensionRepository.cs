@@ -11,10 +11,7 @@ internal class CallingExtensionRepository
 
 
 
-    public CallingExtensionRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public CallingExtensionRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<JsonElement?> GetSettingsAsync(string appId)
     {

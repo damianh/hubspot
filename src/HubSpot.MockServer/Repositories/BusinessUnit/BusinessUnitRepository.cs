@@ -9,10 +9,7 @@ internal class BusinessUnitRepository
     private readonly ConcurrentDictionary<string, JsonElement> _businessUnits = new();
     private int _nextId = 1;
 
-    public BusinessUnitRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public BusinessUnitRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public Task<List<JsonElement>> GetAllAsync()
     {

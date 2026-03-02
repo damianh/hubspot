@@ -6,10 +6,7 @@ internal class ContentAuditRepository
     private readonly List<ContentAuditEntry> _entries = [];
     private int _nextId = 1;
 
-    public ContentAuditRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public ContentAuditRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public ContentAuditEntry AddEntry(ContentAuditEntry entry)
     {

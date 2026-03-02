@@ -8,10 +8,7 @@ internal class BlogPostRepository
     private readonly Dictionary<string, List<string>> _languageGroups = new();
     private int _nextId = 1;
 
-    public BlogPostRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public BlogPostRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public BlogPost Create(BlogPost post)
     {
@@ -87,20 +84,21 @@ internal class BlogPostRepository
 
     private void AddRevision(string postId, BlogPost post)
     {
-        if (!_revisions.ContainsKey(postId))
+        if (!_revisions.TryGetValue(postId, out var postRevisions))
         {
-            _revisions[postId] = [];
+            postRevisions = [];
+            _revisions[postId] = postRevisions;
         }
 
         var revision = new BlogPostRevision
         {
-            Id = (_revisions[postId].Count + 1).ToString(),
+            Id = (postRevisions.Count + 1).ToString(),
             PostId = postId,
             CreatedAt = _timeProvider.GetUtcNow().UtcDateTime,
             Content = post
         };
 
-        _revisions[postId].Add(revision);
+        postRevisions.Add(revision);
     }
 
     public List<BlogPostRevision> GetRevisions(string postId) => _revisions.GetValueOrDefault(postId) ?? [];
@@ -121,14 +119,15 @@ internal class BlogPostRepository
 
     public void AttachToLanguageGroup(string postId, string languageGroupId)
     {
-        if (!_languageGroups.ContainsKey(languageGroupId))
+        if (!_languageGroups.TryGetValue(languageGroupId, out var group))
         {
-            _languageGroups[languageGroupId] = [];
+            group = [];
+            _languageGroups[languageGroupId] = group;
         }
 
-        if (!_languageGroups[languageGroupId].Contains(postId))
+        if (!group.Contains(postId))
         {
-            _languageGroups[languageGroupId].Add(postId);
+            group.Add(postId);
         }
     }
 

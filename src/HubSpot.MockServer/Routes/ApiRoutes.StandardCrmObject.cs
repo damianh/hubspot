@@ -106,7 +106,7 @@ internal static partial class ApiRoutes
             }
 
             var filteredProperties = properties is null || properties.Length == 0
-                ? new Dictionary<string, string>()
+                ? hubSpotObject!.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue)
                 : hubSpotObject!.Properties
                     .Where(p => properties.Contains(p.Key))
                     .ToDictionary(p => p.Key, p => p.Value.CurrentValue);
@@ -162,7 +162,7 @@ internal static partial class ApiRoutes
                     To = to,
                     AssociationTypes = to.Association
                         .Types
-                        .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory))
+                        .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory ?? string.Empty))
                         .ToArray()
                 })
                 .Select(t => new HubSpotAssociation(t.To.To, t.AssociationTypes))

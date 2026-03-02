@@ -10,10 +10,7 @@ internal class FileRepository
 
 
 
-    public FileRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public FileRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public FileMetadata UploadFile(string fileName, string contentType, byte[] content)
     {

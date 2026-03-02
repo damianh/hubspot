@@ -1,9 +1,8 @@
 using System.Collections.Concurrent;
-using DamianH.HubSpot.MockServer.Objects;
 
 namespace DamianH.HubSpot.MockServer.Repositories.Import;
 
-internal class ImportRepository(TimeProvider timeProvider, HubSpotObjectRepository? objectRepository = null)
+internal class ImportRepository(TimeProvider timeProvider)
 {
     private readonly TimeProvider _timeProvider = timeProvider;
     private readonly ConcurrentDictionary<string, ImportJob> _imports = new();

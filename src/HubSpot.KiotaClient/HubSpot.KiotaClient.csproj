@@ -2,8 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>HubSpot</RootNamespace>
     <RootNamespace>DamianH.HubSpot.KiotaClient</RootNamespace>
+    <PackageId>DamianH.HubSpot.KiotaClient</PackageId>
+    <Description>Auto-generated HubSpot API client using Microsoft Kiota</Description>
+    <!-- Suppress CA1034 (nested public types) — this is generated/tool-managed code -->
+    <NoWarn>$(NoWarn);CA1034</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

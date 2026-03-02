@@ -207,7 +207,7 @@ internal static partial class ApiRoutes
                 To = to,
                 AssociationTypes = to.Association
                     .Types
-                    .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory))
+                    .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory ?? string.Empty))
                     .ToArray()
             })
             .Select(t => new HubSpotAssociation(t.To.To, t.AssociationTypes))
@@ -269,7 +269,7 @@ internal static partial class ApiRoutes
             }
         }
 
-        if (hubSpotObject.Archived != archived)
+        if (hubSpotObject!.Archived != archived)
         {
             return Results.NotFound();
         }
@@ -406,7 +406,7 @@ internal static partial class ApiRoutes
                     To = to,
                     AssociationTypes = to.Association
                         .Types
-                        .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory))
+                        .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory ?? string.Empty))
                         .ToArray()
                 })
                 .Select(t => new HubSpotAssociation(t.To.To, t.AssociationTypes))
@@ -464,7 +464,7 @@ internal static partial class ApiRoutes
                         {
                             results.Add(new SimplePublicObject
                             {
-                                Id = hubSpotObject.Id.Value.ToString(),
+                                Id = hubSpotObject!.Id.Value.ToString(),
                                 CreatedAt = hubSpotObject.CreatedAt,
                                 UpdatedAt = hubSpotObject.UpdatedAt,
                                 Archived = hubSpotObject.Archived,
@@ -513,7 +513,7 @@ internal static partial class ApiRoutes
                     {
                         foreach (var (key, value) in item.Properties)
                         {
-                            if (hubSpotObject.Properties.TryGetValue(key, out var existingProperty))
+                            if (hubSpotObject!.Properties.TryGetValue(key, out var existingProperty))
                             {
                                 existingProperty.NewValue = value;
                             }
@@ -523,7 +523,7 @@ internal static partial class ApiRoutes
                             }
                         }
 
-                        var updated = repo.Update(hubSpotObject);
+                        var updated = repo.Update(hubSpotObject!);
 
                         results.Add(new SimplePublicObject
                         {

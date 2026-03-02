@@ -8,10 +8,7 @@ internal class SourceCodeRepository
 
 
 
-    public SourceCodeRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public SourceCodeRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public SourceCodeFile Create(SourceCodeFile file)
     {

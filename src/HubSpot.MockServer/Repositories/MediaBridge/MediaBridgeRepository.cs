@@ -8,10 +8,7 @@ internal class MediaBridgeRepository
 
 
 
-    public MediaBridgeRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public MediaBridgeRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public MediaAsset Create(MediaAsset asset)
     {

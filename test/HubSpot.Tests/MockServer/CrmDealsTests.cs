@@ -76,7 +76,7 @@ public class CrmDealsTests : IAsyncLifetime
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(DealId);
         retrieved.Properties.ShouldNotBeNull();
-        retrieved.Properties.AdditionalData.Count.ShouldBe(0);
+        retrieved.Properties.AdditionalData.Count.ShouldBe(2);
     }
 
     [Fact]

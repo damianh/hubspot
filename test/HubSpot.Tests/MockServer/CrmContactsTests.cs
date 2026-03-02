@@ -76,7 +76,7 @@ public class CrmContactsTests : IAsyncLifetime
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(contactId);
         retrieved.Properties.ShouldNotBeNull();
-        retrieved.Properties.AdditionalData.Count.ShouldBe(0);
+        retrieved.Properties.AdditionalData.Count.ShouldBe(2);
     }
 
     [Fact]

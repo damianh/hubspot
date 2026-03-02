@@ -45,7 +45,7 @@ internal static partial class ApiRoutes
                         To = to,
                         AssociationTypes = to.Association
                             .Types
-                            .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory))
+                            .Select(t => new HubSpotAssociationType(t.AssociationTypeId, t.AssociationCategory ?? string.Empty))
                             .ToArray()
                     })
                     .Select(t => new HubSpotAssociation(t.To.To, t.AssociationTypes))
@@ -148,8 +148,8 @@ internal static partial class ApiRoutes
                         }
                     }
 
-                    repo.Update(hubSpotObject);
-                    repo.TryRead(hubSpotObject.Id, out var updatedHubSpotObject);
+                    repo.Update(hubSpotObject!);
+                    repo.TryRead(hubSpotObject!.Id, out var updatedHubSpotObject);
 
                     results.Add(new SimplePublicObject
                     {

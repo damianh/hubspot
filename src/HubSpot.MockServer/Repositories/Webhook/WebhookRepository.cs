@@ -13,10 +13,7 @@ internal class WebhookRepository
 
 
 
-    public WebhookRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public WebhookRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public SubscriptionResponse CreateSubscription(string appId, WebhookSubscriptionCreateRequest request)
     {

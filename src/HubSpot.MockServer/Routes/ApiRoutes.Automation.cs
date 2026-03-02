@@ -1,4 +1,3 @@
-using DamianH.HubSpot.MockServer.Repositories;
 using DamianH.HubSpot.MockServer.Repositories.Automation;
 using DamianH.HubSpot.MockServer.Repositories.Sequence;
 using Microsoft.AspNetCore.Builder;
@@ -26,8 +25,8 @@ internal static partial class ApiRoutes
                     var completion = new CallbackCompletion
                     {
                         CallbackId = input.CallbackId,
-                        Status = input.OutputFields.ContainsKey("hs_execution_state") &&
-                                 input.OutputFields["hs_execution_state"].ToString() == "SUCCESS"
+                        Status = input.OutputFields.TryGetValue("hs_execution_state", out var execState) &&
+                                 execState.ToString() == "SUCCESS"
                             ? "SUCCESS"
                             : "FAILURE",
                         OutputFields = input.OutputFields,
@@ -157,18 +156,18 @@ internal static partial class ApiRoutes
 }
 
 // Request/Response models that match the Kiota-generated types
-public record BatchInputCallbackCompletionRequest
+internal sealed record BatchInputCallbackCompletionRequest
 {
     public List<CallbackCompletionInput> Inputs { get; init; } = [];
 }
 
-public record CallbackCompletionInput
+internal sealed record CallbackCompletionInput
 {
     public string CallbackId { get; init; } = string.Empty;
     public Dictionary<string, object> OutputFields { get; init; } = new();
 }
 
-public record PublicSequenceEnrollmentRequest
+internal sealed record PublicSequenceEnrollmentRequest
 {
     public string ContactId { get; init; } = string.Empty;
     public string SequenceId { get; init; } = string.Empty;
@@ -176,7 +175,7 @@ public record PublicSequenceEnrollmentRequest
     public string? SenderAliasAddress { get; init; }
 }
 
-public record PublicSequenceEnrollmentLiteResponse
+internal sealed record PublicSequenceEnrollmentLiteResponse
 {
     public string Id { get; init; } = string.Empty; //  Enrollment ID
     public string? ToEmail { get; init; }

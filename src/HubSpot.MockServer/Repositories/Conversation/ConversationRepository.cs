@@ -12,10 +12,7 @@ internal class ConversationRepository
 
 
 
-    public ConversationRepository(TimeProvider timeProvider)
-    {
-        _timeProvider = timeProvider;
-    }
+    public ConversationRepository(TimeProvider timeProvider) => _timeProvider = timeProvider;
 
     public ConversationData CreateConversation(string? channelId = null, string? inboxId = null, string? status = null)
     {
@@ -113,12 +110,13 @@ internal class ConversationRepository
             SenderType = senderType
         };
 
-        if (!_conversationMessages.ContainsKey(conversationId))
+        if (!_conversationMessages.TryGetValue(conversationId, out var messages))
         {
-            _conversationMessages[conversationId] = [];
+            messages = [];
+            _conversationMessages[conversationId] = messages;
         }
 
-        _conversationMessages[conversationId].Add(message);
+        messages.Add(message);
 
         // Update conversation
         conversation.LatestMessageTimestamp = now;
