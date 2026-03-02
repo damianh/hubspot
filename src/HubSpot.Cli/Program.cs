@@ -17,5 +17,5 @@ rootCommand.Add(FilesCommand.Create());
 rootCommand.Add(WebhooksCommand.Create());
 rootCommand.Add(ConfigCommand.Create());
 
-var config = new CommandLineConfiguration(rootCommand);
-return await config.InvokeAsync(args);
+var parseResult = rootCommand.Parse(args);
+return await parseResult.InvokeAsync();
