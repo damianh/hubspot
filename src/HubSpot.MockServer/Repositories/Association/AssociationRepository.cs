@@ -177,9 +177,7 @@ internal class AssociationRepository
     /// <summary>
     /// Get all association type definitions for a pair of object types
     /// </summary>
-    public IReadOnlyList<AssociationTypeDefinition> GetAssociationTypes(
-        string fromObjectType,
-        string toObjectType) =>
+    public IReadOnlyList<AssociationTypeDefinition> GetAssociationTypes(string fromObjectType, string toObjectType) =>
         // Return all standard + custom types (simplified - real HubSpot filters by object types)
         _standardTypes.Values
             .Concat(_customTypes.Values)
