@@ -198,6 +198,9 @@ public class HubSpotMockServer : IAsyncDisposable
         // Register V202509 CRM Objects API (before generic to ensure proper route matching)
         ApiRoutes.RegisterCrmObjectsV202509(app);
 
+        // Register V202603 CRM Objects API (same as V202509 but without gdpr-delete)
+        ApiRoutes.RegisterCrmObjectsV202603(app);
+
         // Register generic CRM Objects API for dynamic/custom object types
         // Note: This must be registered AFTER specific object routes and associations
         // as it uses catch-all pattern /crm/v3/objects/{objectType}
