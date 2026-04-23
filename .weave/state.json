@@ -1,0 +1,11 @@
+{
+  "active_plan": "D:\\repos\\damianh\\hubspot-worktrees\\update-kiota\\.weave\\plans\\mockserver-coverage-expansion.md",
+  "started_at": "2026-04-23T12:01:55.317Z",
+  "session_ids": [
+    "ses_26b134a9bffeLy6QmuJO9jh1Uo"
+  ],
+  "plan_name": "mockserver-coverage-expansion",
+  "agent": "tapestry",
+  "start_sha": "f50f229ecbca0d2425255ada82948a64a2820d97",
+  "paused": true
+}

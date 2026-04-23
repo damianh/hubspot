@@ -344,6 +344,72 @@ internal static partial class ApiRoutes
             });
         }
 
+        internal static void RegisterPropertiesV202509AtKiotaPath(WebApplication app)
+        {
+            var group = app.MapGroup("/crm/properties/2025-09/{objectType}")
+                .WithTags("Properties V202509 (Kiota Path)");
+
+            group.MapGet("", (
+                [FromRoute] string objectType,
+                PropertyDefinitionRepository repo) =>
+            {
+                var properties = repo.GetProperties(objectType);
+
+                var response = new
+                {
+                    results = properties.Select(p => new
+                    {
+                        name = p.Name,
+                        label = p.Label,
+                        type = p.Type,
+                        fieldType = p.FieldType,
+                        groupName = p.GroupName,
+                        description = p.Description,
+                        options = p.Options?.Select(o => new { label = o, value = o }).ToArray(),
+                        hidden = p.Hidden,
+                        displayOrder = p.DisplayOrder,
+                        createdAt = p.CreatedAt,
+                        updatedAt = p.UpdatedAt
+                    }).ToArray()
+                };
+
+                return Results.Ok(response);
+            });
+
+            group.MapPost("", (
+                [FromRoute] string objectType,
+                [FromBody] CreatePropertyRequest request,
+                PropertyDefinitionRepository repo) =>
+            {
+                var property = repo.CreateProperty(
+                    objectType,
+                    request.Name,
+                    request.Label,
+                    request.Type,
+                    request.FieldType,
+                    request.GroupName,
+                    request.Description,
+                    request.Options);
+
+                var response = new
+                {
+                    name = property.Name,
+                    label = property.Label,
+                    type = property.Type,
+                    fieldType = property.FieldType,
+                    groupName = property.GroupName,
+                    description = property.Description,
+                    options = property.Options?.Select(o => new { label = o, value = o }).ToArray(),
+                    hidden = property.Hidden,
+                    displayOrder = property.DisplayOrder,
+                    createdAt = property.CreatedAt,
+                    updatedAt = property.UpdatedAt
+                };
+
+                return Results.Created($"/crm/properties/2025-09/{objectType}/{property.Name}", response);
+            });
+        }
+
         // Request models
         private record CreatePropertyRequest(
             string Name,

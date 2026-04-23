@@ -1,4 +1,5 @@
 using DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models;
+using V202603Models = DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V202603.Models;
 using DamianH.HubSpot.MockServer.Repositories.Campaign;
 using DamianH.HubSpot.MockServer.Repositories.MarketingEmail;
 using DamianH.HubSpot.MockServer.Repositories.MarketingEvent;
@@ -55,6 +56,12 @@ internal static partial class ApiRoutes
             group.MapGet("/{emailId}", GetSingleSend);
             group.MapPatch("/{emailId}", UpdateSingleSend);
             group.MapDelete("/{emailId}", DeleteSingleSend);
+        }
+
+        public static void RegisterSingleSendV202603Api(WebApplication app)
+        {
+            var group = app.MapGroup("/marketing/email-campaigns/2026-03/single-send");
+            group.MapPost("", SendSingleEmailV202603);
         }
 
         public static void RegisterMarketingTransactionalApi(WebApplication app)
@@ -286,6 +293,17 @@ internal static partial class ApiRoutes
         {
             repository.Delete(emailId);
             return Results.NoContent();
+        }
+
+        private static IResult SendSingleEmailV202603(V202603Models.PublicSingleSendRequestEgg request)
+        {
+            var statusView = new V202603Models.EmailSendStatusView
+            {
+                StatusId = Guid.NewGuid().ToString(),
+                Status = V202603Models.EmailSendStatusView_status.PENDING,
+                RequestedAt = DateTimeOffset.UtcNow,
+            };
+            return Results.Ok(statusView);
         }
     }
 }

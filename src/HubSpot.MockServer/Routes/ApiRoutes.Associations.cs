@@ -578,6 +578,94 @@ internal static partial class ApiRoutes
             });
         }
 
+        internal static void RegisterAssociationsV202509AtKiotaPath(WebApplication app)
+        {
+            var group = app.MapGroup("/crm/associations/2025-09")
+                .WithTags("Associations V202509 (Kiota Path)");
+
+            group.MapPost("/{fromObjectType}/{toObjectType}/batch/read", (
+                [FromRoute] string fromObjectType,
+                [FromRoute] string toObjectType,
+                [FromBody] BatchReadRequest request,
+                AssociationRepository repo,
+                TimeProvider timeProvider) =>
+            {
+                var results = repo.GetAssociationsBatch(request.Inputs.Select(i => i.Id), fromObjectType, toObjectType);
+
+                var response = new
+                {
+                    status = "COMPLETE",
+                    results = results.Select(kvp => new
+                    {
+                        from = new { id = kvp.Key },
+                        to = kvp.Value.Select(a => new
+                        {
+                            toObjectId = a.ToObjectId,
+                            associationTypes = new[]
+                            {
+                                new
+                                {
+                                    category = "HUBSPOT_DEFINED",
+                                    typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                    label = a.AssociationLabel ?? a.AssociationTypeId
+                                }
+                            }
+                        }).ToArray()
+                    }).ToArray(),
+                    startedAt = timeProvider.GetUtcNow().UtcDateTime,
+                    completedAt = timeProvider.GetUtcNow().UtcDateTime
+                };
+
+                return Results.Ok(response);
+            });
+
+            group.MapPost("/{fromObjectType}/{toObjectType}/batch/create", (
+                [FromRoute] string fromObjectType,
+                [FromRoute] string toObjectType,
+                [FromBody] BatchCreateRequest request,
+                AssociationRepository repo,
+                TimeProvider timeProvider) =>
+            {
+                var inputs = request.Inputs.Select(i => (
+                    i.From.Id,
+                    i.To.Id,
+                    i.Types[0].AssociationTypeId.ToString(),
+                    i.Types[0].AssociationCategory == "USER_DEFINED" ? i.Types[0].AssociationTypeId.ToString() : (string?)null
+                ));
+
+                var created = repo.CreateBatch(inputs, fromObjectType, toObjectType);
+
+                var response = new
+                {
+                    status = "COMPLETE",
+                    results = created.Select(a => new
+                    {
+                        from = new { id = a.FromObjectId },
+                        to = new[]
+                        {
+                            new
+                            {
+                                toObjectId = a.ToObjectId,
+                                associationTypes = new[]
+                                {
+                                    new
+                                    {
+                                        category = "HUBSPOT_DEFINED",
+                                        typeId = int.TryParse(a.AssociationTypeId, out var typeIdInt) ? typeIdInt : 0,
+                                        label = a.AssociationLabel ?? a.AssociationTypeId
+                                    }
+                                }
+                            }
+                        }
+                    }).ToArray(),
+                    startedAt = timeProvider.GetUtcNow().UtcDateTime,
+                    completedAt = timeProvider.GetUtcNow().UtcDateTime
+                };
+
+                return Results.Ok(response);
+            });
+        }
+
         // Request/Response models
         private record BatchReadRequest
         {
