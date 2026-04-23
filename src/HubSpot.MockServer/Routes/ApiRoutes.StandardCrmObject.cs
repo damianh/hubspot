@@ -1,5 +1,6 @@
 using DamianH.HubSpot.MockServer.Apis.Models;
 using DamianH.HubSpot.MockServer.Objects;
+using DamianH.HubSpot.MockServer.Webhooks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -149,7 +150,9 @@ internal static partial class ApiRoutes
         // POST /crm/v3/objects/{objectType} - Create object
         group.MapPost("", (
             [FromBody] SimplePublicObjectInputForCreate inputForCreate,
-            HubSpotObjectRepository repo) =>
+            HubSpotObjectRepository repo,
+            WebhookEventChannel webhookChannel,
+            TimeProvider timeProvider) =>
         {
             var hubSpotAssociations = inputForCreate.Associations
                 .Select(association => new
@@ -171,9 +174,13 @@ internal static partial class ApiRoutes
             var newHubSpotObject = new NewHubSpotObject(inputForCreate.Properties, hubSpotAssociations);
             var hubSpotObject = repo.Create(newHubSpotObject);
 
+            var objectIdStr = hubSpotObject.Id.Value.ToString();
+            var properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => (string?)p.Value.CurrentValue);
+            webhookChannel.Writer.TryWrite(new ObjectCreatedEvent(route, objectIdStr, timeProvider.GetUtcNow(), properties));
+
             var simplePublicObject = new SimplePublicObject
             {
-                Id = hubSpotObject.Id.Value.ToString(),
+                Id = objectIdStr,
                 CreatedAt = hubSpotObject.CreatedAt,
                 UpdatedAt = hubSpotObject.UpdatedAt,
                 Properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue),
@@ -195,6 +202,8 @@ internal static partial class ApiRoutes
         group.MapPatch($"/{{{idParameterName}}}", (
             HttpContext context,
             HubSpotObjectRepository repo,
+            WebhookEventChannel webhookChannel,
+            TimeProvider timeProvider,
             [FromBody] SimplePublicObjectInput inputForUpdate) =>
         {
             var objectId = context.Request.RouteValues[idParameterName]?.ToString();
@@ -227,8 +236,21 @@ internal static partial class ApiRoutes
                 }
             }
 
+            // Capture dirty properties before update commits them
+            var changedProperties = hubSpotObject!.Properties.Values
+                .Where(p => p.IsDirty)
+                .Select(p => (p.Name, OldValue: p.CurrentValue, NewValue: p.NewValue))
+                .ToList();
+
             repo.Update(hubSpotObject!);
             repo.TryRead(hubSpotObject!.Id, out var updatedHubSpotObject);
+
+            var now = timeProvider.GetUtcNow();
+            foreach (var (propName, oldValue, newValue) in changedProperties)
+            {
+                webhookChannel.Writer.TryWrite(new ObjectPropertyChangedEvent(
+                    route, objectId, now, propName, oldValue, newValue));
+            }
 
             var simplePublicObject = new SimplePublicObject
             {
@@ -245,7 +267,9 @@ internal static partial class ApiRoutes
         // DELETE /crm/v3/objects/{objectType}/{objectId} - Archive object
         group.MapDelete($"/{{{idParameterName}}}", (
             HttpContext context,
-            HubSpotObjectRepository repo) =>
+            HubSpotObjectRepository repo,
+            WebhookEventChannel webhookChannel,
+            TimeProvider timeProvider) =>
         {
             var objectId = context.Request.RouteValues[idParameterName]?.ToString();
             if (string.IsNullOrEmpty(objectId))
@@ -260,6 +284,8 @@ internal static partial class ApiRoutes
             {
                 return Results.NotFound();
             }
+
+            webhookChannel.Writer.TryWrite(new ObjectDeletedEvent(route, objectId, timeProvider.GetUtcNow()));
 
             return Results.NoContent();
         });

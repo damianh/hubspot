@@ -195,4 +195,6 @@ internal class WebhookRepository
     }
 
     public bool ClearSettings(string appId) => _settings.TryRemove(appId, out _);
+
+    public IEnumerable<string> GetAppIds() => _subscriptions.Keys;
 }

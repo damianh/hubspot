@@ -34,3 +34,24 @@ public class WebhookThrottling
 {
     public int? MaxConcurrentRequests { get; set; }
 }
+
+/// <summary>
+/// Matches HubSpot's outbound webhook event payload shape.
+/// HubSpot POSTs a JSON array of these to the configured TargetUrl.
+/// See: https://developers.hubspot.com/docs/api/webhooks
+/// </summary>
+internal sealed record WebhookEventPayload
+{
+    public long EventId { get; init; }
+    public string? SubscriptionId { get; init; }
+    public int PortalId { get; init; }
+    public int AppId { get; init; }
+    public long OccurredAt { get; init; }
+    public string? SubscriptionType { get; init; }
+    public int AttemptNumber { get; init; }
+    public string? ObjectId { get; init; }
+    public string? PropertyName { get; init; }
+    public string? PropertyValue { get; init; }
+    public string ChangeSource { get; init; } = "API";
+}
+

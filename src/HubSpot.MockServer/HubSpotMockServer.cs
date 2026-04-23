@@ -47,6 +47,7 @@ using DamianH.HubSpot.MockServer.Repositories.VideoConferencing;
 using DamianH.HubSpot.MockServer.Repositories.VisitorIdentification;
 using DamianH.HubSpot.MockServer.Repositories.Webhook;
 using DamianH.HubSpot.MockServer.Routes;
+using DamianH.HubSpot.MockServer.Webhooks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -78,6 +79,9 @@ public class HubSpotMockServer : IAsyncDisposable
         // Configure services
         builder.Services
             .Configure<ConsoleLifetimeOptions>(options => options.SuppressStatusMessages = true)
+            .AddHttpClient()
+            .AddSingleton<WebhookEventChannel>()
+            .AddHostedService<WebhookDeliveryService>()
             .AddSingleton<HubSpotObjectRepository>()
             .AddSingleton<HubSpotObjectIdGenerator>()
             .AddSingleton<TransactionalEmailRepository>()
