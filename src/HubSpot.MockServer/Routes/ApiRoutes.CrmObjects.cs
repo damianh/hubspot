@@ -222,21 +222,16 @@ internal static partial class ApiRoutes
             _objectTypeMap[hubSpotObject.Id.Value] = objectType;
         }
 
-        var response = new CreatedResponseSimplePublicObject
+        var simplePublicObject = new SimplePublicObject
         {
-            CreatedResourceId = hubSpotObject.Id.Value.ToString(),
-            Entity = new SimplePublicObject
-            {
-                Id = hubSpotObject.Id.Value.ToString(),
-                CreatedAt = hubSpotObject.CreatedAt,
-                UpdatedAt = hubSpotObject.UpdatedAt,
-                Archived = false,
-                Properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue)
-            },
-            Location = $"/crm/v3/objects/{objectType}/{hubSpotObject.Id.Value}"
+            Id = hubSpotObject.Id.Value.ToString(),
+            CreatedAt = hubSpotObject.CreatedAt,
+            UpdatedAt = hubSpotObject.UpdatedAt,
+            Archived = false,
+            Properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue)
         };
 
-        return Results.Ok(response);
+        return Results.Created($"/crm/v3/objects/{objectType}/{hubSpotObject.Id.Value}", simplePublicObject);
     }
 
     private static IResult GetGenericObjectById(
