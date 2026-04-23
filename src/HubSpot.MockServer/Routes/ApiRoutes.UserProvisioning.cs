@@ -12,6 +12,33 @@ internal static partial class ApiRoutes
         {
             var group = app.MapGroup("/settings/v3/users");
 
+            // Also register at /settings/users/v3 — newer Kiota clients use this path
+            var altGroup = app.MapGroup("/settings/users/v3");
+            altGroup.MapGet("", (
+                UserProvisioningRepository repository,
+                int? limit,
+                string? after,
+                string? email) =>
+            {
+                var users = repository.GetUsers(limit, after, email);
+                var hasMore = limit.HasValue && users.Count >= limit.Value;
+
+                var response = new
+                {
+                    results = users,
+                    paging = hasMore && users.Count > 0 ? new
+                    {
+                        next = new
+                        {
+                            after = users.Last().Id,
+                            link = $"/settings/users/v3?limit={limit}&after={users.Last().Id}"
+                        }
+                    } : null
+                };
+
+                return Results.Ok(response);
+            });
+
             group.MapGet("", (
                 UserProvisioningRepository repository,
                 int? limit,
