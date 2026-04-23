@@ -175,12 +175,10 @@ internal class AssociationRepository
             : _customTypes.GetValueOrDefault(associationTypeId);
 
     /// <summary>
-    /// Get all association type definitions for a pair of object types
+    /// Get all association type definitions for a pair of object types.
+    /// Returns all standard + custom types (simplified - real HubSpot filters by object types).
     /// </summary>
-    public IReadOnlyList<AssociationTypeDefinition> GetAssociationTypes(
-        string fromObjectType,
-        string toObjectType) =>
-        // Return all standard + custom types (simplified - real HubSpot filters by object types)
+    public IReadOnlyList<AssociationTypeDefinition> GetAssociationTypes(string fromObjectType, string toObjectType) =>
         _standardTypes.Values
             .Concat(_customTypes.Values)
             .ToList();
