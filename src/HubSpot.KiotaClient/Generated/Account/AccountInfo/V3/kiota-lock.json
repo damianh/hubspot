@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "5B67FD21224D63589E482FCCE87D700CDDA2D5BD1792F67B2FD5A47D1326034D251A9D620B25BB40DD97A6FE9F0C0D6EAD537B3BF636DA44221CB7BA9D0CA357",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Account/Account%20Info/versions/144923",
+  "descriptionHash": "A98C5CE8FE5BC7FF16531732AC797137B0AF5F62FB5BFC8C7EA9B36934A1067475C825B48CE17F96505FF745ABB7F892960A97D7D106420C9647E5E4C1F4FBB2",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/25201/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotAccountAccountInfoV3Client",

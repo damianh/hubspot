@@ -58,7 +58,7 @@ public class AssociationSamples : IAsyncLifetime
                     }
                 }
             }, cancellationToken: ct);
-        var contactId = contact!.Entity!.Id!;
+        var contactId = contact!.Id!;
 
         // Create a company
         var company = await _companiesClient.Crm.V3.Objects.Companies.PostAsync(
@@ -73,7 +73,7 @@ public class AssociationSamples : IAsyncLifetime
                     }
                 }
             }, cancellationToken: ct);
-        var companyId = company!.Entity!.Id!;
+        var companyId = company!.Id!;
 
         // Associate the contact with the company (V3 association)
         var associateResponse = await _httpClient.PutAsync(
@@ -131,14 +131,14 @@ public class AssociationSamples : IAsyncLifetime
             {
                 new
                 {
-                    from = new { id = contact1!.Entity!.Id },
-                    to = new { id = company!.Entity!.Id },
+                    from = new { id = contact1!.Id },
+                    to = new { id = company!.Id },
                     types = new[] { new { associationCategory = "HUBSPOT_DEFINED", associationTypeId = 1 } }
                 },
                 new
                 {
-                    from = new { id = contact2!.Entity!.Id },
-                    to = new { id = company.Entity.Id },
+                    from = new { id = contact2!.Id },
+                    to = new { id = company.Id },
                     types = new[] { new { associationCategory = "HUBSPOT_DEFINED", associationTypeId = 1 } }
                 }
             }
@@ -150,7 +150,7 @@ public class AssociationSamples : IAsyncLifetime
 
         // Remove the first association
         var removeResponse = await _httpClient.DeleteAsync(
-            $"/crm/v3/objects/contacts/{contact1.Entity.Id}/associations/companies/{company.Entity.Id}/1", ct);
+            $"/crm/v3/objects/contacts/{contact1.Id}/associations/companies/{company.Id}/1", ct);
         removeResponse.StatusCode.ShouldBe(System.Net.HttpStatusCode.NoContent);
     }
 }

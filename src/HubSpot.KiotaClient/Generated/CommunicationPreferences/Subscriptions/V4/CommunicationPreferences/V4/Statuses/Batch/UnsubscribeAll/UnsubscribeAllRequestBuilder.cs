@@ -96,10 +96,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnsubscribeAllRequestBuilderPostQueryParameters 
         {
-            /// <summary>If you have the [business unit add-on](https://developers.hubspot.com/beta-docs/guides/api/settings/business-units-api), include this parameter to filter results by business unit ID. The default Account business unit will always use `0`.</summary>
+            /// <summary>The ID of the business unit to which the operation applies. It is an optional parameter.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel to unsubscribe from. This parameter is required and must be &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,10 +110,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel to unsubscribe from. This parameter is required and must be &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.UnsubscribeAll.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
-            /// <summary>Set to `true` to include the details of the updated subscription statuses in the response. Not including this parameter will result in an empty response.</summary>
+            /// <summary>A boolean indicating whether to include detailed processing information in the response. Defaults to false.</summary>
             [QueryParameter("verbose")]
             public bool? Verbose { get; set; }
         }

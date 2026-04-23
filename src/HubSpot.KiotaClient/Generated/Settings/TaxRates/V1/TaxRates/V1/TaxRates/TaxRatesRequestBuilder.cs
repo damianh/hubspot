@@ -35,7 +35,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaxRatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tax-rates/v1/tax-rates", pathParameters)
+        public TaxRatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tax-rates/v1/tax-rates{?active*,after*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaxRatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tax-rates/v1/tax-rates", rawUrl)
+        public TaxRatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tax-rates/v1/tax-rates{?active*,after*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -54,11 +54,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models.CollectionResponsePublicTaxRateGroupForwardPaging?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models.CollectionResponsePublicTaxRateGroupForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder.TaxRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models.CollectionResponsePublicTaxRateGroupForwardPaging> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models.CollectionResponsePublicTaxRateGroupForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder.TaxRatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,11 +71,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder.TaxRatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder.TaxRatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -93,11 +93,33 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
             return new global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieve a paginated list of all tax rates set up in the account tax rate library
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TaxRatesRequestBuilderGetQueryParameters 
+        {
+            [QueryParameter("active")]
+            public bool? Active { get; set; }
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("after")]
+            public string? After { get; set; }
+#nullable restore
+#else
+            [QueryParameter("after")]
+            public string After { get; set; }
+#endif
+            /// <summary>The maximum number of results to display per page.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TaxRatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TaxRatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates.TaxRatesRequestBuilder.TaxRatesRequestBuilderGetQueryParameters>
         {
         }
     }

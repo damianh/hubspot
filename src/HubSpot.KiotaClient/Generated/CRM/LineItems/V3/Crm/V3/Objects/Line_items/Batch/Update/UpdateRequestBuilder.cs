@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
         {
         }
         /// <summary>
-        /// Update a batch of line items by internal ID, or unique property values
+        /// Update multiple line items using their internal IDs or unique property values. This endpoint allows for batch processing of updates, ensuring efficient modification of line item records in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of line items by internal ID, or unique property values
+        /// Update multiple line items using their internal IDs or unique property values. This endpoint allows for batch processing of updates, ensuring efficient modification of line item records in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

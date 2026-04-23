@@ -7,13 +7,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Page_abStatus
     {
-        [EnumMember(Value = "master")]
+        [EnumMember(Value = "automated_loser_variant")]
         #pragma warning disable CS1591
-        Master,
+        Automated_loser_variant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "variant")]
+        [EnumMember(Value = "automated_master")]
         #pragma warning disable CS1591
-        Variant,
+        Automated_master,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_variant")]
+        #pragma warning disable CS1591
+        Automated_variant,
         #pragma warning restore CS1591
         [EnumMember(Value = "loser_variant")]
         #pragma warning disable CS1591
@@ -27,17 +31,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         #pragma warning disable CS1591
         Mab_variant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "automated_master")]
+        [EnumMember(Value = "master")]
         #pragma warning disable CS1591
-        Automated_master,
+        Master,
         #pragma warning restore CS1591
-        [EnumMember(Value = "automated_variant")]
+        [EnumMember(Value = "variant")]
         #pragma warning disable CS1591
-        Automated_variant,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_loser_variant")]
-        #pragma warning disable CS1591
-        Automated_loser_variant,
+        Variant,
         #pragma warning restore CS1591
     }
 }

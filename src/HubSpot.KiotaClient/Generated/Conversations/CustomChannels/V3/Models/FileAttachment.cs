@@ -23,13 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public string FileId { get; set; }
 #endif
         /// <summary>The fileUsageType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FileUsageType { get; set; }
-#nullable restore
-#else
-        public string FileUsageType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_fileUsageType? FileUsageType { get; set; }
         /// <summary>The type property</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_type? Type { get; set; }
         /// <summary>
@@ -59,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fileId", n => { FileId = n.GetStringValue(); } },
-                { "fileUsageType", n => { FileUsageType = n.GetStringValue(); } },
+                { "fileUsageType", n => { FileUsageType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_fileUsageType>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_type>(); } },
             };
         }
@@ -71,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fileId", FileId);
-            writer.WriteStringValue("fileUsageType", FileUsageType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_fileUsageType>("fileUsageType", FileUsageType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.FileAttachment_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

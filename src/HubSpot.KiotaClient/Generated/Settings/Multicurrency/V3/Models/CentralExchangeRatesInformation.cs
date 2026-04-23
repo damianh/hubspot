@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The centralExchangeRatesEnabled property</summary>
+        /// <summary>Indicates if central exchange rates is enabled for the portal or not.</summary>
         public bool? CentralExchangeRatesEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CentralExchangeRatesInformation"/> and sets the default values.

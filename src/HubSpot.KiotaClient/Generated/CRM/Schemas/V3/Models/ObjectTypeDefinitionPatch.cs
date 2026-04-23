@@ -15,9 +15,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The clearDescription property</summary>
+        /// <summary>Determines if the object type can include properties that are marked as sensitive.</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
+        /// <summary>Indicates whether the description of the object type should be cleared.</summary>
         public bool? ClearDescription { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A brief explanation of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -49,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #else
         public List<string> RequiredProperties { get; set; }
 #endif
-        /// <summary>The restorable property</summary>
+        /// <summary>Specifies if the object type can be restored after being deleted.</summary>
         public bool? Restorable { get; set; }
         /// <summary>Names of properties that will be indexed for this object type in by HubSpot&apos;s product search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,6 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "clearDescription", n => { ClearDescription = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinitionLabels>(global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinitionLabels.CreateFromDiscriminatorValue); } },
@@ -109,6 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
             writer.WriteBoolValue("clearDescription", ClearDescription);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinitionLabels>("labels", Labels);

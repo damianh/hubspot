@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalReminder> Reminders { get; set; }
 #endif
-        /// <summary>The shouldIncludeInviteDescription property</summary>
+        /// <summary>Whether the invite description should be included in the reminder.</summary>
         public bool? ShouldIncludeInviteDescription { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalEmailReminderSchedule"/> and sets the default values.

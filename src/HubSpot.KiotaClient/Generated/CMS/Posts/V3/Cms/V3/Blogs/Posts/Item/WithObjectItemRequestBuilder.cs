@@ -174,7 +174,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Whether to return only results that have been deleted.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }
@@ -192,10 +192,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies whether to return deleted blog posts. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Specific properties to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -220,7 +219,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Specifies whether to update deleted blog posts. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

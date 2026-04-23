@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 {
+    /// <summary>The classification of what type of template this represents, and what is its origin or purpose.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ImportTemplate_templateType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "admin_defined")]
         #pragma warning disable CS1591

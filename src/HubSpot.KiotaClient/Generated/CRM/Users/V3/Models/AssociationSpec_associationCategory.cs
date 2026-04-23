@@ -11,13 +11,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models
         #pragma warning disable CS1591
         HUBSPOT_DEFINED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INTEGRATOR_DEFINED")]
+        #pragma warning disable CS1591
+        INTEGRATOR_DEFINED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "USER_DEFINED")]
         #pragma warning disable CS1591
         USER_DEFINED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "INTEGRATOR_DEFINED")]
+        [EnumMember(Value = "WORK")]
         #pragma warning disable CS1591
-        INTEGRATOR_DEFINED,
+        WORK,
         #pragma warning restore CS1591
     }
 }

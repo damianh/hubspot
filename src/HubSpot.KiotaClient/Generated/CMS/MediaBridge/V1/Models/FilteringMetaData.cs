@@ -14,8 +14,18 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The includeHelpdeskRoutableTeamsOnly property</summary>
+        public bool? IncludeHelpdeskRoutableTeamsOnly { get; set; }
         /// <summary>The includeUnconfirmedUsers property</summary>
         public bool? IncludeUnconfirmedUsers { get; set; }
+        /// <summary>The listProcessingTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ListProcessingTypes { get; set; }
+#nullable restore
+#else
+        public List<string> ListProcessingTypes { get; set; }
+#endif
         /// <summary>The pipelineIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +59,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "includeHelpdeskRoutableTeamsOnly", n => { IncludeHelpdeskRoutableTeamsOnly = n.GetBoolValue(); } },
                 { "includeUnconfirmedUsers", n => { IncludeUnconfirmedUsers = n.GetBoolValue(); } },
+                { "listProcessingTypes", n => { ListProcessingTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pipelineIds", n => { PipelineIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -60,7 +72,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("includeHelpdeskRoutableTeamsOnly", IncludeHelpdeskRoutableTeamsOnly);
             writer.WriteBoolValue("includeUnconfirmedUsers", IncludeUnconfirmedUsers);
+            writer.WriteCollectionOfPrimitiveValues<string>("listProcessingTypes", ListProcessingTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("pipelineIds", PipelineIds);
             writer.WriteAdditionalData(AdditionalData);
         }

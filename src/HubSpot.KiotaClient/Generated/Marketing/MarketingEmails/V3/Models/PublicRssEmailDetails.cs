@@ -26,13 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         /// <summary>The blogImageMaxWidth property</summary>
         public int? BlogImageMaxWidth { get; set; }
         /// <summary>The blogLayout property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BlogLayout { get; set; }
-#nullable restore
-#else
-        public string BlogLayout { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails_blogLayout? BlogLayout { get; set; }
         /// <summary>The hubspotBlogId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             {
                 { "blogEmailType", n => { BlogEmailType = n.GetStringValue(); } },
                 { "blogImageMaxWidth", n => { BlogImageMaxWidth = n.GetIntValue(); } },
-                { "blogLayout", n => { BlogLayout = n.GetStringValue(); } },
+                { "blogLayout", n => { BlogLayout = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails_blogLayout>(); } },
                 { "hubspotBlogId", n => { HubspotBlogId = n.GetStringValue(); } },
                 { "maxEntries", n => { MaxEntries = n.GetIntValue(); } },
                 { "rssEntryTemplate", n => { RssEntryTemplate = n.GetStringValue(); } },
@@ -114,7 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("blogEmailType", BlogEmailType);
             writer.WriteIntValue("blogImageMaxWidth", BlogImageMaxWidth);
-            writer.WriteStringValue("blogLayout", BlogLayout);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicRssEmailDetails_blogLayout>("blogLayout", BlogLayout);
             writer.WriteStringValue("hubspotBlogId", HubspotBlogId);
             writer.WriteIntValue("maxEntries", MaxEntries);
             writer.WriteStringValue("rssEntryTemplate", RssEntryTemplate);

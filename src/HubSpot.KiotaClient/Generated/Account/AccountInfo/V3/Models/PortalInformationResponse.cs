@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
     public partial class PortalInformationResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountType property</summary>
+        /// <summary>The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or STANDARD.</summary>
         public global::DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models.PortalInformationResponse_accountType? AccountType { get; set; }
         /// <summary>The additionalCurrencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The companyCurrency property</summary>
+        /// <summary>The primary currency used by the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyCurrency { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #else
         public string CompanyCurrency { get; set; }
 #endif
-        /// <summary>The dataHostingLocation property</summary>
+        /// <summary>The location where the account&apos;s data is hosted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataHostingLocation { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #else
         public string DataHostingLocation { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>The unique identifier for the HubSpot account.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The timeZone property</summary>
+        /// <summary>The time zone in which the account operates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #else
         public string TimeZone { get; set; }
 #endif
-        /// <summary>The uiDomain property</summary>
+        /// <summary>The domain used for accessing the HubSpot user interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UiDomain { get; set; }
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #else
         public string UiDomain { get; set; }
 #endif
-        /// <summary>The utcOffset property</summary>
+        /// <summary>The time zone offset from UTC in hours and minutes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UtcOffset { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models
 #else
         public string UtcOffset { get; set; }
 #endif
-        /// <summary>The utcOffsetMilliseconds property</summary>
+        /// <summary>The time zone offset from UTC in milliseconds.</summary>
         public long? UtcOffsetMilliseconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Account.AccountInfo.V3.Models.PortalInformationResponse"/> and sets the default values.

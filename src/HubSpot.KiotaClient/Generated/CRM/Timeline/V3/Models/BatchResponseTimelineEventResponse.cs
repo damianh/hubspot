@@ -7,17 +7,16 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
 {
-    /// <summary>
-    /// The state of the batch event request.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class BatchResponseTimelineEventResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time the request was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Any links to documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models.BatchResponseTimelineEventResponse_links? Links { get; set; }

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The businessUnitId property</summary>
+        /// <summary>The ID of the business unit associated with the subscription filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessUnitId { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string BusinessUnitId { get; set; }
 #endif
-        /// <summary>The channel property</summary>
+        /// <summary>Specifies the communication channel associated with the subscription filter (EMAIL, WHATSAPP, SMS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Channel { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Channel { get; set; }
 #endif
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter, which is (COMMUNICATION_SUBSCRIPTION)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicCommunicationSubscriptionFilter_filterType? FilterType { get; set; }
         /// <summary>The subscriptionIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<string> SubscriptionIds { get; set; }
 #endif
-        /// <summary>The subscriptionType property</summary>
+        /// <summary>Defines the type of subscription related to the filter (PORTAL_WIDE, BUSINESS_UNIT_WIDE, INDIVIDUAL_SUBSCRIPTION)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionType { get; set; }

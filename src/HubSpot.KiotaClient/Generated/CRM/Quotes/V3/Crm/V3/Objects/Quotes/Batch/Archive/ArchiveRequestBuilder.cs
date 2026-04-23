@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Crm.V3.Objects.Quotes.Batch.
         {
         }
         /// <summary>
-        /// Archive a batch of quotes by ID
+        /// Archive multiple quotes by their IDs in a single request, effectively moving them to the recycling bin.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Crm.V3.Objects.Quotes.Batch.
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of quotes by ID
+        /// Archive multiple quotes by their IDs in a single request, effectively moving them to the recycling bin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

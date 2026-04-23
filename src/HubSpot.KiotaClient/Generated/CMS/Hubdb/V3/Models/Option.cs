@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>The order in which the option appears, represented as an integer.</summary>
         public int? Order { get; set; }
         /// <summary>Indicates the category or data type of the option (e.g., string, number).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

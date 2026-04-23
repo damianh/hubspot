@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Cr
         {
         }
         /// <summary>
-        /// Create a batch of taxes
+        /// Create multiple tax records in a single request, each with specified properties and optional associations, and receive a response with details of the created objects.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Cr
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of taxes
+        /// Create multiple tax records in a single request, each with specified properties and optional associations, and receive a response with details of the created objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

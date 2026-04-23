@@ -61,7 +61,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task GetAllOwners_ReturnsSeededOwners()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync();
+        var result = await _client.Crm.V3.Owners.GetAsync();
 
         result.ShouldNotBeNull();
         result.Results.ShouldNotBeNull();
@@ -71,7 +71,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task GetAllOwners_WithPagination_ReturnsLimitedResults()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Limit = 2;
         });
@@ -89,7 +89,7 @@ public class OwnerTests : IAsyncLifetime
     public async Task GetAllOwners_WithAfterCursor_ReturnsNextPage()
     {
         // Get first page
-        var firstPage = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var firstPage = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Limit = 2;
         });
@@ -98,7 +98,7 @@ public class OwnerTests : IAsyncLifetime
         firstPage.Paging?.Next?.After.ShouldNotBeNull();
 
         // Get second page using cursor
-        var secondPage = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var secondPage = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.After = firstPage.Paging!.Next!.After;
             config.QueryParameters.Limit = 2;
@@ -115,7 +115,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task GetAllOwners_FilterByEmail_ReturnsMatchingOwners()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Email = "sales";
         });
@@ -128,7 +128,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task GetAllOwners_FilterByArchived_ReturnsOnlyActiveOwners()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Archived = false;
         });
@@ -185,7 +185,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task ForwardPaging_WithNextPage_IsDeserialized()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Limit = 2;
         });
@@ -198,7 +198,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task NextPage_AllProperties_AreDeserialized()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Limit = 2;
         });
@@ -215,7 +215,7 @@ public class OwnerTests : IAsyncLifetime
     [Fact]
     public async Task GetAllOwners_LastPage_HasNoPaging()
     {
-        var result = await _client.Crm.V3.Owners.EmptyPathSegment.GetAsync(config =>
+        var result = await _client.Crm.V3.Owners.GetAsync(config =>
         {
             config.QueryParameters.Limit = 100;
         });

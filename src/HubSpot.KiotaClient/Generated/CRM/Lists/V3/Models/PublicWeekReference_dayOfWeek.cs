@@ -3,30 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>The day of the week (SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicWeekReference_dayOfWeek
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "MONDAY")]
-        #pragma warning disable CS1591
-        MONDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "TUESDAY")]
-        #pragma warning disable CS1591
-        TUESDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "WEDNESDAY")]
-        #pragma warning disable CS1591
-        WEDNESDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "THURSDAY")]
-        #pragma warning disable CS1591
-        THURSDAY,
-        #pragma warning restore CS1591
         [EnumMember(Value = "FRIDAY")]
         #pragma warning disable CS1591
         FRIDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MONDAY")]
+        #pragma warning disable CS1591
+        MONDAY,
         #pragma warning restore CS1591
         [EnumMember(Value = "SATURDAY")]
         #pragma warning disable CS1591
@@ -35,6 +22,18 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         [EnumMember(Value = "SUNDAY")]
         #pragma warning disable CS1591
         SUNDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "THURSDAY")]
+        #pragma warning disable CS1591
+        THURSDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TUESDAY")]
+        #pragma warning disable CS1591
+        TUESDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEDNESDAY")]
+        #pragma warning disable CS1591
+        WEDNESDAY,
         #pragma warning restore CS1591
     }
 }

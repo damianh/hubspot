@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
         {
         }
         /// <summary>
-        /// Retrieve the Blog object identified by the id in the path.
+        /// Retrieve a specific blog by its ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the Blog object identified by the id in the path.
+        /// Retrieve a specific blog by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

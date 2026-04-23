@@ -133,10 +133,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSubscriberIdStringItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>If you have the [business unit add-on](https://developers.hubspot.com/beta-docs/guides/api/settings/business-units-api), include this parameter to filter results by business unit ID. The default Account business unit will always use `0`.</summary>
+            /// <summary>An optional integer representing the ID of the business unit to filter the subscription status.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel for which the subscription status is being retrieved. This parameter is required and currently supports &apos;EMAIL&apos; as a valid value.</summary>
             [Obsolete("This property is deprecated, use ChannelAsGetChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel for which the subscription status is being retrieved. This parameter is required and currently supports &apos;EMAIL&apos; as a valid value.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Item.GetChannelQueryParameterType? ChannelAsGetChannelQueryParameterType { get; set; }
         }

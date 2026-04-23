@@ -41,7 +41,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contact = created!.Entity!;
+        var contact = created!;
 
         contact.ShouldNotBeNull();
         contact.Id.ShouldNotBeNullOrEmpty();
@@ -69,7 +69,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Contacts[contactId].GetAsync();
 
@@ -96,7 +96,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Contacts[contactId].GetAsync(config =>
         {
@@ -128,7 +128,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -165,7 +165,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -280,7 +280,7 @@ public class CrmContactsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         await _client.Crm.V3.Objects.Contacts[contactId].DeleteAsync();
 
@@ -317,8 +317,8 @@ public class CrmContactsTests : IAsyncLifetime
         var created1 = await _client.Crm.V3.Objects.Contacts.PostAsync(input1);
         var created2 = await _client.Crm.V3.Objects.Contacts.PostAsync(input2);
 
-        await _client.Crm.V3.Objects.Contacts[created1!.Entity!.Id!].DeleteAsync();
-        await _client.Crm.V3.Objects.Contacts[created2!.Entity!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.Contacts[created1!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.Contacts[created2!.Id!].DeleteAsync();
 
         var archivedList = await _client.Crm.V3.Objects.Contacts.GetAsync(config =>
         {

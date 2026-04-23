@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the object was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for this import.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The importName property</summary>
+        /// <summary>The user-provided name for this import.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImportName { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string ImportName { get; set; }
 #endif
-        /// <summary>The importRequestJson property</summary>
+        /// <summary>The complete import request configuration as a JSON object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse_importRequestJson? ImportRequestJson { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse_importRequestJson ImportRequestJson { get; set; }
 #endif
-        /// <summary>The importSource property</summary>
+        /// <summary>Indicates where/how the import was initiated.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse_importSource? ImportSource { get; set; }
         /// <summary>The importTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         public bool? OptOutImport { get; set; }
         /// <summary>The status of the import.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse_state? State { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the import record was last updated, formatted as an ISO 8601 instant.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse"/> and sets the default values.

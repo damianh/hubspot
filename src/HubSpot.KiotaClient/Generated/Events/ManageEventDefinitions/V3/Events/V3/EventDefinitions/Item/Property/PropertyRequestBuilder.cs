@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
     public partial class PropertyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.events.v3.eventDefinitions.item.property.item collection</summary>
-        /// <param name="position">The internal name of the property to delete.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.Item.Property.Item.WithPropertyNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.Item.Property.Item.WithPropertyNameItemRequestBuilder this[string position]
         {

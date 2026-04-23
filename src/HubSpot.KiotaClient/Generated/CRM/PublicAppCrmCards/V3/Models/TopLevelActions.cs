@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The primary property</summary>
+        /// <summary>Defines the primary action for a card, which can be either an action hook or an iframe.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.TopLevelActions.TopLevelActions_primary? Primary { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.TopLevelActions.TopLevelActions_primary Primary { get; set; }
 #endif
-        /// <summary>The secondary property</summary>
+        /// <summary>Specifies a list of secondary actions for a card, each of which can be an action hook or an iframe.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.TopLevelActions.TopLevelActions_secondary>? Secondary { get; set; }

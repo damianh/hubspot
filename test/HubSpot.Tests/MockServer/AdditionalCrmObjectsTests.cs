@@ -51,7 +51,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
 
         var created = await _productsClient.Crm.V3.Objects.Products.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var productId = created!.Entity!.Id;
+        var productId = created!.Id;
         productId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _productsClient.Crm.V3.Objects.Products[productId].GetAsync(rc =>
@@ -79,7 +79,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
         };
 
         var created = await _productsClient.Crm.V3.Objects.Products.PostAsync(createRequest);
-        var productId = created!.Entity!.Id;
+        var productId = created!.Id;
 
         var updateRequest = new ProductsModels.SimplePublicObjectInput
         {
@@ -143,7 +143,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
 
         var created = await _ticketsClient.Crm.V3.Objects.Tickets.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var ticketId = created!.Entity!.Id;
+        var ticketId = created!.Id;
         ticketId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _ticketsClient.Crm.V3.Objects.Tickets[ticketId].GetAsync(rc =>
@@ -171,7 +171,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
         };
 
         var created = await _ticketsClient.Crm.V3.Objects.Tickets.PostAsync(createRequest);
-        var ticketId = created!.Entity!.Id;
+        var ticketId = created!.Id;
 
         var updateRequest = new TicketsModels.SimplePublicObjectInput
         {
@@ -207,7 +207,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
 
         var created = await _quotesClient.Crm.V3.Objects.Quotes.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var quoteId = created!.Entity!.Id;
+        var quoteId = created!.Id;
         quoteId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _quotesClient.Crm.V3.Objects.Quotes[quoteId].GetAsync(rc =>
@@ -237,7 +237,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
 
         var created = await _communicationsClient.Crm.V3.Objects.Communications.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var commId = created!.Entity!.Id;
+        var commId = created!.Id;
         commId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _communicationsClient.Crm.V3.Objects.Communications[commId].GetAsync(rc =>
@@ -261,7 +261,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
         };
 
         var created = await _productsClient.Crm.V3.Objects.Products.PostAsync(createRequest);
-        var productId = created!.Entity!.Id;
+        var productId = created!.Id;
 
         await _productsClient.Crm.V3.Objects.Products[productId].DeleteAsync();
 
@@ -286,7 +286,7 @@ public class AdditionalCrmObjectsTests : IAsyncLifetime
         };
 
         var created = await _ticketsClient.Crm.V3.Objects.Tickets.PostAsync(createRequest);
-        var ticketId = created!.Entity!.Id;
+        var ticketId = created!.Id;
 
         await _ticketsClient.Crm.V3.Objects.Tickets[ticketId].DeleteAsync();
 

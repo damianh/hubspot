@@ -3,22 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 {
+    /// <summary>The category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINED, or USER_DEFINED.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicAssociationDefinitionConfigurationUpdateResult_category
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HUBSPOT_DEFINED")]
         #pragma warning disable CS1591
         HUBSPOT_DEFINED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INTEGRATOR_DEFINED")]
+        #pragma warning disable CS1591
+        INTEGRATOR_DEFINED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "USER_DEFINED")]
         #pragma warning disable CS1591
         USER_DEFINED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "INTEGRATOR_DEFINED")]
+        [EnumMember(Value = "WORK")]
         #pragma warning disable CS1591
-        INTEGRATOR_DEFINED,
+        WORK,
         #pragma warning restore CS1591
     }
 }

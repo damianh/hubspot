@@ -14,17 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp of when the sequence settings were created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The eligibleFollowUpDays property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EligibleFollowUpDays { get; set; }
-#nullable restore
-#else
-        public string EligibleFollowUpDays { get; set; }
-#endif
-        /// <summary>The id property</summary>
+        /// <summary>Specifies the days on which follow-up actions are allowed.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_eligibleFollowUpDays? EligibleFollowUpDays { get; set; }
+        /// <summary>The unique identifier for the sequence settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,31 +26,17 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The individualTaskRemindersEnabled property</summary>
+        /// <summary>Indicates whether individual task reminders are enabled.</summary>
         public bool? IndividualTaskRemindersEnabled { get; set; }
-        /// <summary>The sellingStrategy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SellingStrategy { get; set; }
-#nullable restore
-#else
-        public string SellingStrategy { get; set; }
-#endif
-        /// <summary>The sendWindowEndMinute property</summary>
+        /// <summary>(deprecated) Defines the unenrollment strategy, with accepted values being ACCOUNT_BASED or LEAD_BASED. If ACCOUNT_BASED is used, all contacts associated with the same company will be unenrolled if one contact meets any of the unenrollment criteria.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_sellingStrategy? SellingStrategy { get; set; }
+        /// <summary>Indicates the end minute of the time window during which automated emails can be sent.</summary>
         public int? SendWindowEndMinute { get; set; }
-        /// <summary>The sendWindowStartMinute property</summary>
+        /// <summary>Indicates the start minute of the time window during which automated emails can be sent.</summary>
         public int? SendWindowStartMinute { get; set; }
-        /// <summary>The taskReminderMinute property</summary>
+        /// <summary>Specifies the minute of day at which task reminders are triggered.</summary>
         public int? TaskReminderMinute { get; set; }
-        /// <summary>The unenrollmentSettings property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse? UnenrollmentSettings { get; set; }
-#nullable restore
-#else
-        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse UnenrollmentSettings { get; set; }
-#endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp of when the sequence settings were last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse"/> and sets the default values.
@@ -84,14 +64,13 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "eligibleFollowUpDays", n => { EligibleFollowUpDays = n.GetStringValue(); } },
+                { "eligibleFollowUpDays", n => { EligibleFollowUpDays = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_eligibleFollowUpDays>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "individualTaskRemindersEnabled", n => { IndividualTaskRemindersEnabled = n.GetBoolValue(); } },
-                { "sellingStrategy", n => { SellingStrategy = n.GetStringValue(); } },
+                { "sellingStrategy", n => { SellingStrategy = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_sellingStrategy>(); } },
                 { "sendWindowEndMinute", n => { SendWindowEndMinute = n.GetIntValue(); } },
                 { "sendWindowStartMinute", n => { SendWindowStartMinute = n.GetIntValue(); } },
                 { "taskReminderMinute", n => { TaskReminderMinute = n.GetIntValue(); } },
-                { "unenrollmentSettings", n => { UnenrollmentSettings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse>(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -103,14 +82,13 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("eligibleFollowUpDays", EligibleFollowUpDays);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_eligibleFollowUpDays>("eligibleFollowUpDays", EligibleFollowUpDays);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("individualTaskRemindersEnabled", IndividualTaskRemindersEnabled);
-            writer.WriteStringValue("sellingStrategy", SellingStrategy);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceSettingsResponse_sellingStrategy>("sellingStrategy", SellingStrategy);
             writer.WriteIntValue("sendWindowEndMinute", SendWindowEndMinute);
             writer.WriteIntValue("sendWindowStartMinute", SendWindowStartMinute);
             writer.WriteIntValue("taskReminderMinute", TaskReminderMinute);
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.UnenrollmentSettingsResponse>("unenrollmentSettings", UnenrollmentSettings);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

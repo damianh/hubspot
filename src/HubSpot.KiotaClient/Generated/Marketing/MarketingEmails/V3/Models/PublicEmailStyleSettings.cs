@@ -31,13 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public string BackgroundImage { get; set; }
 #endif
         /// <summary>The backgroundImageType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BackgroundImageType { get; set; }
-#nullable restore
-#else
-        public string BackgroundImageType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings_backgroundImageType? BackgroundImageType { get; set; }
         /// <summary>The bodyBorderColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -263,7 +257,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             {
                 { "backgroundColor", n => { BackgroundColor = n.GetStringValue(); } },
                 { "backgroundImage", n => { BackgroundImage = n.GetStringValue(); } },
-                { "backgroundImageType", n => { BackgroundImageType = n.GetStringValue(); } },
+                { "backgroundImageType", n => { BackgroundImageType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings_backgroundImageType>(); } },
                 { "bodyBorderColor", n => { BodyBorderColor = n.GetStringValue(); } },
                 { "bodyBorderColorChoice", n => { BodyBorderColorChoice = n.GetStringValue(); } },
                 { "bodyBorderWidth", n => { BodyBorderWidth = n.GetDoubleValue(); } },
@@ -302,7 +296,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backgroundColor", BackgroundColor);
             writer.WriteStringValue("backgroundImage", BackgroundImage);
-            writer.WriteStringValue("backgroundImageType", BackgroundImageType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailStyleSettings_backgroundImageType>("backgroundImageType", BackgroundImageType);
             writer.WriteStringValue("bodyBorderColor", BodyBorderColor);
             writer.WriteStringValue("bodyBorderColorChoice", BodyBorderColorChoice);
             writer.WriteDoubleValue("bodyBorderWidth", BodyBorderWidth);

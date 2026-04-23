@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 {
-    /// <summary>
-    /// A user to update
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class PublicUserUpdate : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The firstName property</summary>
+        /// <summary>The first name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -23,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>The last name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -31,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The user&apos;s primary team</summary>
+        /// <summary>The user&apos;s primary team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryTeamId { get; set; }
@@ -39,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string PrimaryTeamId { get; set; }
 #endif
-        /// <summary>The user&apos;s role</summary>
+        /// <summary>The user&apos;s role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleId { get; set; }
@@ -47,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string RoleId { get; set; }
 #endif
-        /// <summary>The user&apos;s additional teams</summary>
+        /// <summary>The user&apos;s additional teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecondaryTeamIds { get; set; }

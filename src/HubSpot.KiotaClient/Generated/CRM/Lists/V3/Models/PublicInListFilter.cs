@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter being applied (IN_LIST).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicInListFilter_filterType? FilterType { get; set; }
-        /// <summary>The listId property</summary>
+        /// <summary>The ID of the list used in the association filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListId { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicInListFilterMetadata Metadata { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Specifies the operation to be performed by the filter (IN_LIST, NOT_IN_LIST).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }

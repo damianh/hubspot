@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp indicating when the subscription translation was created.</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>A text description of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,9 +41,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public string Name { get; set; }
 #endif
         /// <summary>The unique identifier for the subscription associated with the translation.</summary>
-        public int? SubscriptionId { get; set; }
+        public long? SubscriptionId { get; set; }
         /// <summary>The timestamp indicating when the subscription translation was last updated.</summary>
-        public int? UpdatedAt { get; set; }
+        public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicSubscriptionTranslation"/> and sets the default values.
         /// </summary>
@@ -69,12 +69,12 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "languageCode", n => { LanguageCode = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetIntValue(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetIntValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetLongValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -84,12 +84,12 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("languageCode", LanguageCode);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("subscriptionId", SubscriptionId);
-            writer.WriteIntValue("updatedAt", UpdatedAt);
+            writer.WriteLongValue("subscriptionId", SubscriptionId);
+            writer.WriteLongValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

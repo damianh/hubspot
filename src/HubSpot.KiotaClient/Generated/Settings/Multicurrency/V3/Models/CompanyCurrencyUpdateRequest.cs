@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currencyCode property</summary>
+        /// <summary>The three-letter code representing a specific currency (ex. USD).</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CompanyCurrencyUpdateRequest_currencyCode? CurrencyCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CompanyCurrencyUpdateRequest"/> and sets the default values.

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Batch.
         {
         }
         /// <summary>
-        /// Update the Site Page objects identified in the request body.
+        /// Update a batch of website pages as specified in the request body.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage"/></returns>
         /// <param name="body">Wrapper for providing an array of JSON nodes as inputs.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Batch.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the Site Page objects identified in the request body.
+        /// Update a batch of website pages as specified in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Wrapper for providing an array of JSON nodes as inputs.</param>
@@ -85,12 +85,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Batch.
             return new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Batch.Update.UpdateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Update the Site Page objects identified in the request body.
+        /// Update a batch of website pages as specified in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UpdateRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specifies whether to update deleted Site Pages. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

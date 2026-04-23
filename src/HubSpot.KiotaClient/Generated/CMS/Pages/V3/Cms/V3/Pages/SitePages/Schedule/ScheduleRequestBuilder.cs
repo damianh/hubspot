@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Schedu
         {
         }
         /// <summary>
-        /// Schedule a Site Page to be Published
+        /// Schedule a website page to published at a future time.
         /// </summary>
         /// <param name="body">Request body object for scheduling the publish of content</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Schedu
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Schedule a Site Page to be Published
+        /// Schedule a website page to published at a future time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body object for scheduling the publish of content</param>

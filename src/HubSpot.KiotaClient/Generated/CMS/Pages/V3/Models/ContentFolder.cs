@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type of object this folder applies to. Should always be LANDING_PAGE.</summary>
         public int? Category { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp indicating when the content folder was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The timestamp (ISO8601 format) when this content folder was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #endif
         /// <summary>The ID of the content folder this folder is nested under</summary>
         public long? ParentFolderId { get; set; }
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp indicating when the content folder was last updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder"/> and sets the default values.

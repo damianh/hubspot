@@ -55,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Pages.V3.cms.v3.pages.landingPages.item collection</summary>
-        /// <param name="position">The Landing Page id.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.WithObjectItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.WithObjectItemRequestBuilder this[string position]
         {
@@ -101,7 +101,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new Landing Page
+        /// Create a new landing page.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page"/></returns>
         /// <param name="body">Model definition for a landing page or site page.</param>
@@ -140,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             return requestInfo;
         }
         /// <summary>
-        /// Create a new Landing Page
+        /// Create a new landing page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Model definition for a landing page or site page.</param>
@@ -176,7 +176,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LandingPagesRequestBuilderGetQueryParameters 
         {
-            /// <summary>The cursor token value to get the next set of results. You can get this from the `paging.next.after` JSON property of a paged response containing more results.</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -186,19 +186,16 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Specifies whether to return deleted Landing Pages. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Only return Landing Pages created after the specified time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
-            /// <summary>Only return Landing Pages created at exactly the specified time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
-            /// <summary>Only return Landing Pages created before the specified time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>The maximum number of results to return. Default is 100.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -210,7 +207,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
-            /// <summary>Specifies which fields to use for sorting results. Valid fields are `name`, `createdAt`, `updatedAt`, `createdBy`, `updatedBy`. `createdAt` will be used by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -220,13 +216,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-            /// <summary>Only return Landing Pages last updated after the specified time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
-            /// <summary>Only return Landing Pages last updated at exactly the specified time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
-            /// <summary>Only return Landing Pages last updated before the specified time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

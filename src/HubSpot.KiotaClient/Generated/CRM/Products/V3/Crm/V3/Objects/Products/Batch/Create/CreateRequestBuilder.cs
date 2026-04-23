@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
         {
         }
         /// <summary>
-        /// Create a batch of products
+        /// Create multiple products in a single request by specifying their properties, and receive a response containing the details of the created products.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of products
+        /// Create multiple products in a single request by specifying their properties, and receive a response containing the details of the created products.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

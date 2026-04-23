@@ -8,33 +8,45 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum ExternalBehavioralEventTypeDefinition_trackingType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "VISITED_URL")]
+        [EnumMember(Value = "APP_EVENT")]
         #pragma warning disable CS1591
-        VISITED_URL,
+        APP_EVENT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOCAPTURE_EVENT")]
+        #pragma warning disable CS1591
+        AUTOCAPTURE_EVENT,
         #pragma warning restore CS1591
         [EnumMember(Value = "CLICKED_ELEMENT")]
         #pragma warning disable CS1591
         CLICKED_ELEMENT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "COMBO_EVENT")]
+        #pragma warning disable CS1591
+        COMBO_EVENT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CUSTOM_SCRIPT")]
         #pragma warning disable CS1591
         CUSTOM_SCRIPT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MANUAL")]
+        [EnumMember(Value = "CUSTOM_SIGNAL")]
         #pragma warning disable CS1591
-        MANUAL,
+        CUSTOM_SIGNAL,
         #pragma warning restore CS1591
         [EnumMember(Value = "IMPORT")]
         #pragma warning disable CS1591
         IMPORT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MANUAL")]
+        #pragma warning disable CS1591
+        MANUAL,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PROPERTY_CHANGE")]
         #pragma warning disable CS1591
         PROPERTY_CHANGE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "COMBO_EVENT")]
+        [EnumMember(Value = "VISITED_URL")]
         #pragma warning disable CS1591
-        COMBO_EVENT,
+        VISITED_URL,
         #pragma warning restore CS1591
         [EnumMember(Value = "WEBHOOK")]
         #pragma warning disable CS1591

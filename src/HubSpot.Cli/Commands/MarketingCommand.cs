@@ -63,7 +63,7 @@ internal static class MarketingCommand
             try
             {
                 var client = new HubSpotMarketingCampaignsPublicApiV3Client(cli.Adapter);
-                var result = await client.Marketing.V3.Campaigns.EmptyPathSegment.GetAsync(q =>
+                var result = await client.Marketing.V3.Campaigns.GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
                     if (after is not null)
@@ -235,7 +235,7 @@ internal static class MarketingCommand
             try
             {
                 var client = new HubSpotMarketingMarketingEmailsV3Client(cli.Adapter);
-                var result = await client.Marketing.V3.Emails.EmptyPathSegment.GetAsync(q =>
+                var result = await client.Marketing.V3.Emails.GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
                     q.QueryParameters.Archived = archived;

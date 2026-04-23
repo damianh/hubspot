@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Records.Item
     public partial class WithObjectTypeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V3.crm.v3.lists.records.item.item collection</summary>
-        /// <param name="position">Id of the record</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Records.Item.Item.WithRecordItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Records.Item.Item.WithRecordItemRequestBuilder this[string position]
         {

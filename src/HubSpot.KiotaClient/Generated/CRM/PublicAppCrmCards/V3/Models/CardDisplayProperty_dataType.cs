@@ -35,13 +35,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         #pragma warning disable CS1591
         NUMERIC,
         #pragma warning restore CS1591
-        [EnumMember(Value = "STRING")]
-        #pragma warning disable CS1591
-        STRING,
-        #pragma warning restore CS1591
         [EnumMember(Value = "STATUS")]
         #pragma warning disable CS1591
         STATUS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STRING")]
+        #pragma warning disable CS1591
+        STRING,
         #pragma warning restore CS1591
     }
 }

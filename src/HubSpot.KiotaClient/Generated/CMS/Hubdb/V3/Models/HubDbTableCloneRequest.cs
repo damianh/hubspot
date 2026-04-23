@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies whether to copy the rows during clone</summary>
         public bool? CopyRows { get; set; }
-        /// <summary>The isHubspotDefined property</summary>
+        /// <summary>Indicates whether the table is defined by HubSpot.</summary>
         public bool? IsHubspotDefined { get; set; }
         /// <summary>The new label for the cloned table</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -41,7 +41,7 @@ public class CrmMeetingsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Meetings.PostAsync(input);
-        var meeting = created!.Entity!;
+        var meeting = created!;
 
         meeting.ShouldNotBeNull();
         meeting.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmMeetingsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Meetings.PostAsync(input);
-        var meetingId = created!.Entity!.Id!;
+        var meetingId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Meetings[meetingId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmMeetingsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Meetings.PostAsync(input);
-        var meetingId = created!.Entity!.Id!;
+        var meetingId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -125,7 +125,7 @@ public class CrmMeetingsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Meetings.PostAsync(input);
-        var meetingId = created!.Entity!.Id!;
+        var meetingId = created!.Id!;
 
         await _client.Crm.V3.Objects.Meetings[meetingId].DeleteAsync();
 

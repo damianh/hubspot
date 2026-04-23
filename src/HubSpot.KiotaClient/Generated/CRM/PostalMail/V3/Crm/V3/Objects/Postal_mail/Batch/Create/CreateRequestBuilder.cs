@@ -33,9 +33,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
         public CreateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/postal_mail/batch/create", rawUrl)
         {
         }
-        /// <summary>
-        /// Create a batch of postal mail
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,9 +50,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Create a batch of postal mail
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

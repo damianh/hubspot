@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Crm.V3.Objects.Com
         {
         }
         /// <summary>
-        /// Archive a batch of commerce payments by ID
+        /// Archive a batch of commerce payments by their IDs. This operation moves the specified payments to the archive, making them inactive in the system.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Crm.V3.Objects.Com
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of commerce payments by ID
+        /// Archive a batch of commerce payments by their IDs. This operation moves the specified payments to the archive, making them inactive in the system.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

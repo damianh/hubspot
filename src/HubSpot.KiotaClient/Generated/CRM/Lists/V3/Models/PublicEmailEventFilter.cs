@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the application associated with the email event filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string AppId { get; set; }
 #endif
-        /// <summary>The clickUrl property</summary>
+        /// <summary>The URL that was clicked in the email event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClickUrl { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ClickUrl { get; set; }
 #endif
-        /// <summary>The emailId property</summary>
+        /// <summary>The ID of the email associated with the event filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailId { get; set; }
@@ -38,9 +38,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string EmailId { get; set; }
 #endif
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter (EMAIL_EVENT).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEmailEventFilter_filterType? FilterType { get; set; }
-        /// <summary>The level property</summary>
+        /// <summary>Specifies the level of the email event, such as EMAIL_API_CAMPAIGN_GROUP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Level { get; set; }
@@ -48,9 +48,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Level { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the filter (BOUNCED, LINK_CLICKED, MARKED_SPAM, OPENED, OPENED_BUT_LINK_NOT_CLICKED, OPENED_BUT_NOT_REPLIED, RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED, SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEmailEventFilter_operator? Operator { get; set; }
-        /// <summary>The pruningRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the filter by pruning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEmailEventFilter.PublicEmailEventFilter_pruningRefineBy? PruningRefineBy { get; set; }

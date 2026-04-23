@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the email pattern was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier of the email pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The templateId property</summary>
+        /// <summary>The unique identifier of the email template associated with the pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TemplateId { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string TemplateId { get; set; }
 #endif
-        /// <summary>The threadEmailToStepOrder property</summary>
+        /// <summary>The order identifying the previous step to which the email thread is linked.</summary>
         public int? ThreadEmailToStepOrder { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the email pattern was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicEmailPatternResponse"/> and sets the default values.

@@ -98,7 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
             /// <summary>The maximum number of results to display per page. Max value of limit is 200.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The ID of a user, for retrieving user-specific logs.</summary>
+            /// <summary>Identifier of user to retrieve activities for</summary>
             [QueryParameter("userId")]
             public int? UserId { get; set; }
         }

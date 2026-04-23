@@ -88,7 +88,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Specifies whether to use &apos;id&apos; or &apos;userId&apos; as the identifier for the owner.</summary>
             [Obsolete("This property is deprecated, use IdPropertyAsGetIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +98,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
 #endif
-            /// <summary>Specifies whether to use &apos;id&apos; or &apos;userId&apos; as the identifier for the owner.</summary>
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners.Item.GetIdPropertyQueryParameterType? IdPropertyAsGetIdPropertyQueryParameterType { get; set; }
         }

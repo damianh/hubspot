@@ -15,11 +15,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>Indicates whether the object type allows properties that contain sensitive data.</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
+        /// <summary>Indicates whether the object type is archived.</summary>
         public bool? Archived { get; set; }
         /// <summary>When the object type was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -27,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The fullyQualifiedName property</summary>
+        /// <summary>An assigned unique ID for the object, including portal ID and object name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullyQualifiedName { get; set; }
@@ -59,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>A unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -128,6 +130,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -151,6 +154,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("description", Description);

@@ -17,14 +17,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the batch process was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.StandardError>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.StandardError> Errors { get; set; }
-#endif
         /// <summary>An object containing relevant links related to the batch request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,8 +25,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.BatchResponseSimplePublicUpsertObject_links Links { get; set; }
 #endif
-        /// <summary>The numErrors property</summary>
-        public int? NumErrors { get; set; }
         /// <summary>The timestamp when the batch process was initiated, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
@@ -75,9 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.StandardError>(global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.StandardError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "links", n => { Links = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.BatchResponseSimplePublicUpsertObject_links>(global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.BatchResponseSimplePublicUpsertObject_links.CreateFromDiscriminatorValue); } },
-                { "numErrors", n => { NumErrors = n.GetIntValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.SimplePublicUpsertObject>(global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.SimplePublicUpsertObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -92,9 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.StandardError>("errors", Errors);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.BatchResponseSimplePublicUpsertObject_links>("links", Links);
-            writer.WriteIntValue("numErrors", NumErrors);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.SimplePublicUpsertObject>("results", Results);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

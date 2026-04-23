@@ -41,7 +41,7 @@ public class CrmOrdersKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Orders.PostAsync(input);
-        var order = created!.Entity!;
+        var order = created!;
 
         order.ShouldNotBeNull();
         order.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmOrdersKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Orders.PostAsync(input);
-        var orderId = created!.Entity!.Id!;
+        var orderId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Orders[orderId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmOrdersKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Orders.PostAsync(input);
-        var orderId = created!.Entity!.Id!;
+        var orderId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

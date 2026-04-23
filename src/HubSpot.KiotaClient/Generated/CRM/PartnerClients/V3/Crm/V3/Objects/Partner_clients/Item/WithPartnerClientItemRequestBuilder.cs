@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
         {
         }
         /// <summary>
-        /// Read an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve detailed information about a specific partner client, including selected properties and associations. This endpoint is useful for accessing comprehensive client data for analysis or integration purposes.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Update the specified properties of an existing partner client.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObject"/></returns>
         /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
@@ -78,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve detailed information about a specific partner client, including selected properties and associations. This endpoint is useful for accessing comprehensive client data for analysis or integration purposes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Update the specified properties of an existing partner client.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
@@ -128,7 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return new global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.WithPartnerClientItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve detailed information about a specific partner client, including selected properties and associations. This endpoint is useful for accessing comprehensive client data for analysis or integration purposes.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPartnerClientItemRequestBuilderGetQueryParameters 
@@ -146,7 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]
@@ -186,12 +186,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
         {
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{objectId}`. `{objectId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.
+        /// Update the specified properties of an existing partner client.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPartnerClientItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]

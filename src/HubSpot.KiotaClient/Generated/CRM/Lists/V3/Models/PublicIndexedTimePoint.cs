@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The indexReference property</summary>
+        /// <summary>Specifies the reference point in time for the indexed time point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIndexedTimePoint.PublicIndexedTimePoint_indexReference? IndexReference { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIndexOffset Offset { get; set; }
 #endif
-        /// <summary>The timeType property</summary>
+        /// <summary>Defines the type of time (INDEXED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIndexedTimePoint_timeType? TimeType { get; set; }
-        /// <summary>The timezoneSource property</summary>
+        /// <summary>Specifies the source of the time zone information for the indexed time point (CUSTOM, USER, PORTAL).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimezoneSource { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string TimezoneSource { get; set; }
 #endif
-        /// <summary>The zoneId property</summary>
+        /// <summary>Indicates the identifier for the time zone associated with the indexed time point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Specifies the type of the filter branch (RESTRICTED).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicRestrictedFilterBranch_filterBranchType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "RESTRICTED")]
         #pragma warning disable CS1591

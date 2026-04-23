@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Budget.Totals.TotalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.budget.item collection</summary>
-        /// <param name="position">Unique identifier for the budget item.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Budget.Item.WithBudgetItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Budget.Item.WithBudgetItemRequestBuilder this[long position]
         {
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.budget.item collection</summary>
-        /// <param name="position">Unique identifier for the budget item.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Budget.Item.WithBudgetItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Budget.Item.WithBudgetItemRequestBuilder this[string position]

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>The category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINED, or USER_DEFINED.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionUserConfiguration_category? Category { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>A descriptor providing context about the relationship between associated records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The typeId property</summary>
+        /// <summary>A unique integer identifier for the association type within its category.</summary>
         public int? TypeId { get; set; }
-        /// <summary>The userEnforcedMaxToObjectIds property</summary>
+        /// <summary>The maximum number of target object IDs that a user can enforce in an association.</summary>
         public int? UserEnforcedMaxToObjectIds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionUserConfiguration"/> and sets the default values.

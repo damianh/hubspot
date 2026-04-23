@@ -31,13 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public string Value { get; set; }
 #endif
         /// <summary>The valueType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ValueType { get; set; }
-#nullable restore
-#else
-        public string ValueType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.QuickReply_valueType? ValueType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.QuickReply"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
-                { "valueType", n => { ValueType = n.GetStringValue(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.QuickReply_valueType>(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("value", Value);
-            writer.WriteStringValue("valueType", ValueType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.QuickReply_valueType>("valueType", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

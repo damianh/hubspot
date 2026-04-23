@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the value for the column child table id</summary>
         public long? ChildTableId { get; set; }
-        /// <summary>The displayIndex property</summary>
+        /// <summary>The index position for displaying the row within the table.</summary>
         public int? DisplayIndex { get; set; }
         /// <summary>Specifies the value for `hs_name` column, which will be used as title in the dynamic pages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

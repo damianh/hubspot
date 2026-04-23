@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmail Object { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time of the last update to the email, in ISO8601 representation.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Model definition for a version user. Contains addition information about the user who created a version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

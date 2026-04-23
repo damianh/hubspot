@@ -15,8 +15,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the value for the column child table id</summary>
-        public int? ChildTableId { get; set; }
-        /// <summary>The displayIndex property</summary>
+        public long? ChildTableId { get; set; }
+        /// <summary>The index position for displaying the row within the table.</summary>
         public int? DisplayIndex { get; set; }
         /// <summary>The id of the table row</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "childTableId", n => { ChildTableId = n.GetIntValue(); } },
+                { "childTableId", n => { ChildTableId = n.GetLongValue(); } },
                 { "displayIndex", n => { DisplayIndex = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -90,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("childTableId", ChildTableId);
+            writer.WriteLongValue("childTableId", ChildTableId);
             writer.WriteIntValue("displayIndex", DisplayIndex);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

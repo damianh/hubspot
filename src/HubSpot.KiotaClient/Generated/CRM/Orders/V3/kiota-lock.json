@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "57DF8B65B319C83E8EAA7214EA3603F60DCB30D98F888C5C44ECDA2E89CC217F3CCD846D89A8F7DA98DEA294E3B593B224C0635EC2C9DB00DBD81FF0EE19E0C0",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Orders/versions/424",
+  "descriptionHash": "7A0456AE958D12E4DF3E08C8A4D6489DF0C2E7C15AD9AD077EAC05C4950AA09D5D22DE32AB09CC7563609B8C867399B2C4F0919A0D8AD5A5EB4F1296CBC592E3",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22174/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMOrdersV3Client",

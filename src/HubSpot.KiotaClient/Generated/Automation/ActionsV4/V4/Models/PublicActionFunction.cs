@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The functionSource property</summary>
+        /// <summary>The source code or script that defines the function&apos;s behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FunctionSource { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public string FunctionSource { get; set; }
 #endif
-        /// <summary>The functionType property</summary>
+        /// <summary>The type of function, with accepted values: POST_ACTION_EXECUTION, POST_FETCH_OPTIONS, PRE_ACTION_EXECUTION, PRE_FETCH_OPTIONS.</summary>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunction_functionType? FunctionType { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the action function.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -14,15 +14,15 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactsNumber property</summary>
+        /// <summary>The number of contacts attributed to the campaign.</summary>
         public int? ContactsNumber { get; set; }
-        /// <summary>The currencyCode property</summary>
+        /// <summary>The currency code used for the revenue attribution, with accepted values including AED, AFN, ALL, and others.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models.RevenueAttributionAggregate_currencyCode? CurrencyCode { get; set; }
-        /// <summary>The dealAmount property</summary>
+        /// <summary>The total amount of deals attributed to the campaign.</summary>
         public double? DealAmount { get; set; }
-        /// <summary>The dealsNumber property</summary>
+        /// <summary>The number of deals attributed to the campaign.</summary>
         public int? DealsNumber { get; set; }
-        /// <summary>The revenueAmount property</summary>
+        /// <summary>The total revenue amount attributed to the campaign.</summary>
         public double? RevenueAmount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models.RevenueAttributionAggregate"/> and sets the default values.

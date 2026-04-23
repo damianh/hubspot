@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name of a property whose values are unique for this object</summary>
+        /// <summary>The name of a unique identifier property, which can be used for identifying objects instead of the object ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdProperty { get; set; }

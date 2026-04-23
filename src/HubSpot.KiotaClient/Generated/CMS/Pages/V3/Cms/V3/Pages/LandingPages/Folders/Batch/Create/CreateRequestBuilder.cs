@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Create the Folder objects detailed in the request body.
+        /// Create a batch of folders as detailed in the request body.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder"/></returns>
         /// <param name="body">Wrapper for providing an array of content folders as inputs.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create the Folder objects detailed in the request body.
+        /// Create a batch of folders as detailed in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Wrapper for providing an array of content folders as inputs.</param>

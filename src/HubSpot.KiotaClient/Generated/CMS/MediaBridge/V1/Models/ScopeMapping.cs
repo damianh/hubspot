@@ -13,23 +13,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     #pragma warning restore CS1591
     {
         /// <summary>The accessLevel property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccessLevel { get; set; }
-#nullable restore
-#else
-        public string AccessLevel { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_accessLevel? AccessLevel { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The requestAction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RequestAction { get; set; }
-#nullable restore
-#else
-        public string RequestAction { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_requestAction? RequestAction { get; set; }
         /// <summary>The scopeName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +51,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessLevel", n => { AccessLevel = n.GetStringValue(); } },
-                { "requestAction", n => { RequestAction = n.GetStringValue(); } },
+                { "accessLevel", n => { AccessLevel = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_accessLevel>(); } },
+                { "requestAction", n => { RequestAction = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_requestAction>(); } },
                 { "scopeName", n => { ScopeName = n.GetStringValue(); } },
             };
         }
@@ -75,8 +63,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("accessLevel", AccessLevel);
-            writer.WriteStringValue("requestAction", RequestAction);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_accessLevel>("accessLevel", AccessLevel);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping_requestAction>("requestAction", RequestAction);
             writer.WriteStringValue("scopeName", ScopeName);
             writer.WriteAdditionalData(AdditionalData);
         }

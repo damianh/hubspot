@@ -13,15 +13,23 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Determines if the subscription is active or paused.</summary>
+        /// <summary>Whether the subscription is active or paused. If true, the subscription will send webhook notifications. If false, the subscription is paused and will not send notifications.</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When this subscription was created. Formatted as milliseconds from the [Unix epoch](#).</summary>
+        /// <summary>The timestamp when the webhook subscription was created, in ISO 8601 format (e.g., 2020-02-29T12:30:00Z).</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Type of event to listen for. Can be one of `create`, `delete`, `deletedForPrivacy`, or `propertyChange`.</summary>
+        /// <summary>The type of event to listen for. Accepted values include contact.creation, contact.deletion, contact.propertyChange, and similar event types for other CRM objects and custom objects.</summary>
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse_eventType? EventType { get; set; }
-        /// <summary>The unique ID of the subscription.</summary>
+        /// <summary>The name of the event to listen for. This is used with custom objects to specify custom event types beyond the standard eventType enum values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventTypeName { get; set; }
+#nullable restore
+#else
+        public string EventTypeName { get; set; }
+#endif
+        /// <summary>The unique ID of the webhook subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The identifier of the object type associated with the subscription.</summary>
+        /// <summary>The ID of the object type for the subscription. This can be a standard CRM object (e.g., &apos;contact&apos;, &apos;company&apos;, &apos;deal&apos;) or a custom object ID for custom object subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -37,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The internal name of the property being monitored for changes. Only applies when `eventType` is `propertyChange`.</summary>
+        /// <summary>The internal name of the property to monitor for changes. Only applies when eventType is propertyChange.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyName { get; set; }
@@ -45,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public string PropertyName { get; set; }
 #endif
-        /// <summary>When this subscription was last updated. Formatted as milliseconds from the [Unix epoch](#).</summary>
+        /// <summary>The timestamp when the webhook subscription was last updated, in ISO 8601 format (e.g., 2020-02-29T12:30:00Z).</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse"/> and sets the default values.
@@ -75,6 +83,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "eventType", n => { EventType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse_eventType>(); } },
+                { "eventTypeName", n => { EventTypeName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "propertyName", n => { PropertyName = n.GetStringValue(); } },
@@ -91,6 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse_eventType>("eventType", EventType);
+            writer.WriteStringValue("eventTypeName", EventTypeName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteStringValue("propertyName", PropertyName);

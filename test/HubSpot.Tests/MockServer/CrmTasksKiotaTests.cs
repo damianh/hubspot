@@ -42,7 +42,7 @@ public class CrmTasksKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tasks.PostAsync(input);
-        var task = created!.Entity!;
+        var task = created!;
 
         task.ShouldNotBeNull();
         task.Id.ShouldNotBeNullOrEmpty();
@@ -67,7 +67,7 @@ public class CrmTasksKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tasks.PostAsync(input);
-        var taskId = created!.Entity!.Id!;
+        var taskId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Tasks[taskId].GetAsync();
 
@@ -92,7 +92,7 @@ public class CrmTasksKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tasks.PostAsync(input);
-        var taskId = created!.Entity!.Id!;
+        var taskId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

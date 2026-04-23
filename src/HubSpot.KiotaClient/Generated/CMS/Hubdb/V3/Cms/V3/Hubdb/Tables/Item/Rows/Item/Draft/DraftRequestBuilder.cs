@@ -75,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sparse updates a single row in the table&apos;s draft version.All the column values need not be specified. Only the columns or fields that needs to be modified can be specified.See the &quot;Create a row&quot; endpoint for instructions on how to format the JSON row definitions.
+        /// Partially update a single row in the table&apos;s draft version.All the column values need not be specified. Only the columns or fields that needs to be modified can be specified.See the &quot;Create a row&quot; endpoint for instructions on how to format the JSON row definitions.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.HubDbTableRowV3"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows
             return requestInfo;
         }
         /// <summary>
-        /// Sparse updates a single row in the table&apos;s draft version.All the column values need not be specified. Only the columns or fields that needs to be modified can be specified.See the &quot;Create a row&quot; endpoint for instructions on how to format the JSON row definitions.
+        /// Partially update a single row in the table&apos;s draft version.All the column values need not be specified. Only the columns or fields that needs to be modified can be specified.See the &quot;Create a row&quot; endpoint for instructions on how to format the JSON row definitions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -218,6 +218,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DraftRequestBuilderGetQueryParameters 
         {
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

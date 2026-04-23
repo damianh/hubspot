@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 {
+    /// <summary>Indicates how date values should be displayed, with options such as &apos;absolute&apos;, &apos;absolute_with_relative&apos;, &apos;time_since&apos;, or &apos;time_until&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Property_dateDisplayHint
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "absolute")]
         #pragma warning disable CS1591

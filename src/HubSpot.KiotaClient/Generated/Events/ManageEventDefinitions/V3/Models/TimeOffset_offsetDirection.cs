@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum TimeOffset_offsetDirection
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "PAST")]
-        #pragma warning disable CS1591
-        PAST,
-        #pragma warning restore CS1591
         [EnumMember(Value = "FUTURE")]
         #pragma warning disable CS1591
         FUTURE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PAST")]
+        #pragma warning disable CS1591
+        PAST,
         #pragma warning restore CS1591
     }
 }

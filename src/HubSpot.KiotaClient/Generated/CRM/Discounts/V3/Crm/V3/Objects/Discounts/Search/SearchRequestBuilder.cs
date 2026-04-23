@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Crm.V3.Objects.Discounts.
         public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/discounts/search", rawUrl)
         {
         }
+        /// <summary>
+        /// Search for discounts by filtering on properties, searching through associations, and sorting results. Learn more about [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.CollectionResponseWithTotalSimplePublicObject"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Crm.V3.Objects.Discounts.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.CollectionResponseWithTotalSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.CollectionResponseWithTotalSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Search for discounts by filtering on properties, searching through associations, and sorting results. Learn more about [CRM search](https://developers.hubspot.com/docs/guides/api/crm/search#make-a-search-request).
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

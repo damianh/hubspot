@@ -35,11 +35,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         {
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The EmptyPathSegment property</summary>
-        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.EmptyPathSegmentRequestBuilder EmptyPathSegment
-        {
-            get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The events property</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.EventsRequestBuilder Events
         {
@@ -51,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Participations.ParticipationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.marketing.v3.marketingEvents.item collection</summary>
-        /// <param name="position">The internal ID of the marketing event in HubSpot</param>
+        /// <param name="position">The internal id of the marketing event in HubSpot.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Item.AppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Item.AppItemRequestBuilder this[string position]
         {

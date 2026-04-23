@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Tag was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The timestamp (ISO8601 format) when this Blog Tag was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -37,9 +37,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
         /// <summary>ID of the primary tag this object was translated from.</summary>
         public long? TranslatedFromId { get; set; }
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Tag was updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag"/> and sets the default values.
@@ -71,6 +79,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag_language>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "translatedFromId", n => { TranslatedFromId = n.GetLongValue(); } },
                 { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
@@ -87,6 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.Tag_language>("language", Language);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteLongValue("translatedFromId", TranslatedFromId);
             writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);

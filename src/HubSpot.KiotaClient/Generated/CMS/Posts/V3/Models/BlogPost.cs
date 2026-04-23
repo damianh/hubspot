@@ -13,9 +13,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlogPost : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The abStatus property</summary>
+        /// <summary>The status of the AB test associated with this blog post, if applicableAvailable options: automated_loser_variant, automated_master, automated_variant, loser_variant, mab_master, mab_variant, master, variant</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_abStatus? AbStatus { get; set; }
-        /// <summary>The abTestId property</summary>
+        /// <summary>The ID of the AB test associated with this page, if applicable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AbTestId { get; set; }
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_attachedStylesheets> AttachedStylesheets { get; set; }
 #endif
-        /// <summary>The name of the blog author associated with the post.</summary>
+        /// <summary>The name of the user that updated this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorName { get; set; }
@@ -45,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string AuthorName { get; set; }
 #endif
-        /// <summary>The ID of the blog author associated with this post.</summary>
+        /// <summary>The ID of the Blog Author associated with this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BlogAuthorId { get; set; }
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string BlogAuthorId { get; set; }
 #endif
-        /// <summary>The GUID of the marketing campaign the post is associated with.</summary>
+        /// <summary>The GUID of the marketing campaign this Blog Post is a part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Campaign { get; set; }
@@ -61,9 +61,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Campaign { get; set; }
 #endif
-        /// <summary>ID of the object type.</summary>
+        /// <summary>ID of the type of object this is. Should always .</summary>
         public int? CategoryId { get; set; }
-        /// <summary>The ID of the post&apos;s parent blog.</summary>
+        /// <summary>The ID of the parent Blog this Blog Post is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentGroupId { get; set; }
@@ -73,9 +73,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #endif
         /// <summary>An ENUM descibing the type of this object. Should always be BLOG_POST.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_contentTypeCategory? ContentTypeCategory { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Post was created.</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The ID of the user that created the post.</summary>
+        /// <summary>The ID of the user that created this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedById { get; set; }
@@ -83,11 +83,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string CreatedById { get; set; }
 #endif
-        /// <summary>The currentlyPublished property</summary>
+        /// <summary>Whether the post is published (true or false)</summary>
         public bool? CurrentlyPublished { get; set; }
         /// <summary>A generated ENUM descibing the current state of this Blog Post. Should always match state.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_currentState? CurrentState { get; set; }
-        /// <summary>The domain that the post lives on. If null, the post will default to the domain of the parent blog.</summary>
+        /// <summary>The domain this Blog Post will resolve to. If null, the Blog Post will default to the domain of the ParentBlog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The dynamicPageDataSourceId property</summary>
+        /// <summary>The identifier for the data source used by the dynamic page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DynamicPageDataSourceId { get; set; }
@@ -103,9 +103,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string DynamicPageDataSourceId { get; set; }
 #endif
-        /// <summary>The dynamicPageDataSourceType property</summary>
+        /// <summary>The type of data source used by the dynamic page.</summary>
         public int? DynamicPageDataSourceType { get; set; }
-        /// <summary>For dynamic HubDB pages, the ID of the HubDB table this post references.</summary>
+        /// <summary>The ID of the HubDB table this Blog Post references, if applicable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DynamicPageHubDbTableId { get; set; }
@@ -135,7 +135,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string FeaturedImageAltText { get; set; }
 #endif
-        /// <summary>The folderId property</summary>
+        /// <summary>Unique identifier of associated folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FolderId { get; set; }
@@ -159,7 +159,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string HeadHtml { get; set; }
 #endif
-        /// <summary>The HTML title of the post.</summary>
+        /// <summary>The html title of this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HtmlTitle { get; set; }
@@ -167,7 +167,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string HtmlTitle { get; set; }
 #endif
-        /// <summary>The unique ID of the blog post.</summary>
+        /// <summary>The unique ID of the Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -177,9 +177,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #endif
         /// <summary>Boolean to determine whether or not the Primary CSS Files should be applied.</summary>
         public bool? IncludeDefaultCustomCss { get; set; }
-        /// <summary>The explicitly defined ISO 639 language code of the post. If null, the post will default to the language of the parent blog.</summary>
+        /// <summary>The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog Post will default to the language of the ParentBlog.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_language? Language { get; set; }
-        /// <summary>The layoutSections property</summary>
+        /// <summary>A structure detailing the layout sections of the blog post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_layoutSections? LayoutSections { get; set; }
@@ -195,7 +195,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string LinkRelCanonicalUrl { get; set; }
 #endif
-        /// <summary>The mabExperimentId property</summary>
+        /// <summary>Unique identifier of the MAB Experiment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MabExperimentId { get; set; }
@@ -211,7 +211,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string MetaDescription { get; set; }
 #endif
-        /// <summary>The internal name of the post.</summary>
+        /// <summary>The internal name of the Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -219,13 +219,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The pageExpiryDate property</summary>
+        /// <summary>The date at which this blog post should expire and begin redirecting to another url or page.</summary>
         public long? PageExpiryDate { get; set; }
-        /// <summary>The pageExpiryEnabled property</summary>
+        /// <summary>Boolean describing if the page expiration feature is enabled for this blog post.</summary>
         public bool? PageExpiryEnabled { get; set; }
-        /// <summary>The pageExpiryRedirectId property</summary>
+        /// <summary>The ID of another page this blog post&apos;s url should redirect to once this blog post expires. Should only set this or pageExpiryRedirectUrl.</summary>
         public long? PageExpiryRedirectId { get; set; }
-        /// <summary>The pageExpiryRedirectUrl property</summary>
+        /// <summary>The URL this blog post&apos;s url should redirect to once it expires. Should only set this or pageExpiryRedirectId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageExpiryRedirectUrl { get; set; }
@@ -287,7 +287,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string RssSummary { get; set; }
 #endif
-        /// <summary>The URL slug of the blog post. This field is appended to the domain to construct the url of this post.</summary>
+        /// <summary>The path of the this blog post. This field is appended to the domain to construct the url of this post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -295,7 +295,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>An enumeration describing the current publish state of the post.</summary>
+        /// <summary>An ENUM descibing the current state of this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -303,7 +303,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>The IDs of the tags associated with this post.</summary>
+        /// <summary>List of IDs for the tags associated with this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<long?>? TagIds { get; set; }
@@ -311,7 +311,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public List<long?> TagIds { get; set; }
 #endif
-        /// <summary>The themeSettingsValues property</summary>
+        /// <summary>A collection of settings specific to the theme applied to the blog post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_themeSettingsValues? ThemeSettingsValues { get; set; }
@@ -319,7 +319,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_themeSettingsValues ThemeSettingsValues { get; set; }
 #endif
-        /// <summary>ID of the primary blog post that this post was translated from.</summary>
+        /// <summary>ID of the primary blog post this object was translated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TranslatedFromId { get; set; }
@@ -327,7 +327,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string TranslatedFromId { get; set; }
 #endif
-        /// <summary>The translations property</summary>
+        /// <summary>A map of translations for the blog post, each associated with a specific language variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_translations? Translations { get; set; }
@@ -335,9 +335,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost_translations Translations { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Post was updated.</summary>
         public DateTimeOffset? Updated { get; set; }
-        /// <summary>The ID of the user that updated the post.</summary>
+        /// <summary>The ID of the user that updated this Blog Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedById { get; set; }
@@ -353,7 +353,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>Boolean to determine if this post should use a featured image.</summary>
+        /// <summary>Boolean to determine if this post should use a featuredImage.</summary>
         public bool? UseFeaturedImage { get; set; }
         /// <summary>A data structure containing the data for all the modules inside the containers for this post. This will only be populated if the page has widget containers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

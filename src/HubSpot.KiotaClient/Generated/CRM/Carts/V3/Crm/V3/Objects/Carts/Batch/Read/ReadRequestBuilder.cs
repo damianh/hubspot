@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Re
         {
         }
         /// <summary>
-        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
+        /// Retrieve carts by ID, or include the `idProperty` parameter to retrieve carts by a custom unique value property. 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Re
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
+        /// Retrieve carts by ID, or include the `idProperty` parameter to retrieve carts by a custom unique value property. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Re
             return new global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve records by record ID or include the `idProperty` parameter to retrieve records by a custom unique value property. 
+        /// Retrieve carts by ID, or include the `idProperty` parameter to retrieve carts by a custom unique value property. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 

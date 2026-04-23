@@ -40,6 +40,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ExternalId { get; set; }
 #endif
+        /// <summary>The externalPlayContext property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEventRequest_externalPlayContext? ExternalPlayContext { get; set; }
         /// <summary>The _hsenc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,6 +143,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "contactUtk", n => { ContactUtk = n.GetStringValue(); } },
                 { "derivedValues", n => { DerivedValues = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanCalculatedValues>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanCalculatedValues.CreateFromDiscriminatorValue); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "externalPlayContext", n => { ExternalPlayContext = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEventRequest_externalPlayContext>(); } },
                 { "_hsenc", n => { Hsenc = n.GetStringValue(); } },
                 { "mediaBridgeId", n => { MediaBridgeId = n.GetLongValue(); } },
                 { "mediaName", n => { MediaName = n.GetStringValue(); } },
@@ -166,6 +169,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteStringValue("contactUtk", ContactUtk);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanCalculatedValues>("derivedValues", DerivedValues);
             writer.WriteStringValue("externalId", ExternalId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEventRequest_externalPlayContext>("externalPlayContext", ExternalPlayContext);
             writer.WriteStringValue("_hsenc", Hsenc);
             writer.WriteLongValue("mediaBridgeId", MediaBridgeId);
             writer.WriteStringValue("mediaName", MediaName);

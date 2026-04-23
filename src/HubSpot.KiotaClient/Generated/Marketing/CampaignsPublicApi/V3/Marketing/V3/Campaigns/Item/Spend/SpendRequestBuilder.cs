@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
     public partial class SpendRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.spend.item collection</summary>
-        /// <param name="position">Unique identifier for the spend item.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Spend.Item.WithSpendItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Spend.Item.WithSpendItemRequestBuilder this[long position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.spend.item collection</summary>
-        /// <param name="position">Unique identifier for the spend item.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Spend.Item.WithSpendItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Spend.Item.WithSpendItemRequestBuilder this[string position]

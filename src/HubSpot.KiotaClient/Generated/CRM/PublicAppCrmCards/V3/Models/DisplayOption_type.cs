@@ -7,9 +7,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DisplayOption_type
     {
+        [EnumMember(Value = "DANGER")]
+        #pragma warning disable CS1591
+        DANGER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DEFAULT")]
         #pragma warning disable CS1591
         DEFAULT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INFO")]
+        #pragma warning disable CS1591
+        INFO,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUCCESS")]
         #pragma warning disable CS1591
@@ -18,14 +26,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         [EnumMember(Value = "WARNING")]
         #pragma warning disable CS1591
         WARNING,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DANGER")]
-        #pragma warning disable CS1591
-        DANGER,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "INFO")]
-        #pragma warning disable CS1591
-        INFO,
         #pragma warning restore CS1591
     }
 }

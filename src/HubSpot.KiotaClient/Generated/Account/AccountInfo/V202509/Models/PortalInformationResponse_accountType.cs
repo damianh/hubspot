@@ -8,9 +8,9 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models
     public enum PortalInformationResponse_accountType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "STANDARD")]
+        [EnumMember(Value = "APP_DEVELOPER")]
         #pragma warning disable CS1591
-        STANDARD,
+        APP_DEVELOPER,
         #pragma warning restore CS1591
         [EnumMember(Value = "DEVELOPER_TEST")]
         #pragma warning disable CS1591
@@ -20,9 +20,9 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models
         #pragma warning disable CS1591
         SANDBOX,
         #pragma warning restore CS1591
-        [EnumMember(Value = "APP_DEVELOPER")]
+        [EnumMember(Value = "STANDARD")]
         #pragma warning disable CS1591
-        APP_DEVELOPER,
+        STANDARD,
         #pragma warning restore CS1591
     }
 }

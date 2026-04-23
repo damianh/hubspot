@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactProperties property</summary>
+        /// <summary>The key-value set that contains properties of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventEmailSubscriber_contactProperties? ContactProperties { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #endif
         /// <summary>Timestamp in milliseconds at which the contact subscribed to the event.</summary>
         public long? InteractionDateTime { get; set; }
-        /// <summary>The properties property</summary>
+        /// <summary>The key-value set that contains properties of the marketing event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventEmailSubscriber_properties? Properties { get; set; }

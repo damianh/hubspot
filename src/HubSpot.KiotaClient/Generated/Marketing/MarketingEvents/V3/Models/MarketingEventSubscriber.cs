@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp in milliseconds at which the contact subscribed to the event.</summary>
         public long? InteractionDateTime { get; set; }
-        /// <summary>The properties property</summary>
+        /// <summary>The key-value set of the properties of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber_properties? Properties { get; set; }
@@ -24,8 +24,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber_properties Properties { get; set; }
 #endif
-        /// <summary>The vid property</summary>
-        public int? Vid { get; set; }
+        /// <summary>The ID of the contact in HubSpot</summary>
+        public long? Vid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
             {
                 { "interactionDateTime", n => { InteractionDateTime = n.GetLongValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber_properties>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber_properties.CreateFromDiscriminatorValue); } },
-                { "vid", n => { Vid = n.GetIntValue(); } },
+                { "vid", n => { Vid = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("interactionDateTime", InteractionDateTime);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventSubscriber_properties>("properties", Properties);
-            writer.WriteIntValue("vid", Vid);
+            writer.WriteLongValue("vid", Vid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 {
+    /// <summary>The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PHONE.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ExternalCalendarMeetingEventResponseProperties_hs_meeting_location_type
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "PHONE")]
-        #pragma warning disable CS1591
-        PHONE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ADDRESS")]
         #pragma warning disable CS1591
         ADDRESS,
@@ -19,6 +14,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
         [EnumMember(Value = "CUSTOM")]
         #pragma warning disable CS1591
         CUSTOM,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PHONE")]
+        #pragma warning disable CS1591
+        PHONE,
         #pragma warning restore CS1591
     }
 }

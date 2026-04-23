@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The height property</summary>
+        /// <summary>The height of the iframe in pixels.</summary>
         public int? Height { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The label for this property as you&apos;d like it displayed to users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The propertyNamesIncluded property</summary>
+        /// <summary>A list of property names that will be included on the url of the iframe.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PropertyNamesIncluded { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public List<string> PropertyNamesIncluded { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of status.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IFrameActionBody_type? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The URL endpoint that will be loaded in the iframe when triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The width property</summary>
+        /// <summary>The width of the iframe in pixels.</summary>
         public int? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IFrameActionBody"/> and sets the default values.

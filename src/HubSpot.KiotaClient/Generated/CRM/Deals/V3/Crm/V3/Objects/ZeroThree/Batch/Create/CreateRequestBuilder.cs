@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Crm.V3.Objects.ZeroThree.Batc
         {
         }
         /// <summary>
-        /// Create a batch of deals
+        /// Create multiple deals in a single request.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -53,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Crm.V3.Objects.ZeroThree.Batc
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create multiple deals in a single request.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

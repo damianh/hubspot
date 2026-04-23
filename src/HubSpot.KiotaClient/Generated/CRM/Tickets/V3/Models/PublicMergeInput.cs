@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models
 {
+    /// <summary>
+    /// Input data for merging two records.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PublicMergeInput : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectIdToMerge property</summary>
+        /// <summary>The ID of the object that will be merged into the primary object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectIdToMerge { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tickets.V3.Models
 #else
         public string ObjectIdToMerge { get; set; }
 #endif
-        /// <summary>The primaryObjectId property</summary>
+        /// <summary>The ID of the primary object into which another object will be merged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryObjectId { get; set; }

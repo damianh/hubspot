@@ -24,13 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
         public string Id { get; set; }
 #endif
         /// <summary>Designated language of the object to add to a multi-language group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Language { get; set; }
-#nullable restore
-#else
-        public string Language { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_language? Language { get; set; }
         /// <summary>ID of primary language object in multi-language group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,13 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
         public string PrimaryId { get; set; }
 #endif
         /// <summary>Primary language of the multi-language group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrimaryLanguage { get; set; }
-#nullable restore
-#else
-        public string PrimaryLanguage { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage? PrimaryLanguage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext"/> and sets the default values.
         /// </summary>
@@ -73,9 +61,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "language", n => { Language = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_language>(); } },
                 { "primaryId", n => { PrimaryId = n.GetStringValue(); } },
-                { "primaryLanguage", n => { PrimaryLanguage = n.GetStringValue(); } },
+                { "primaryLanguage", n => { PrimaryLanguage = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage>(); } },
             };
         }
         /// <summary>
@@ -86,9 +74,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("language", Language);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_language>("language", Language);
             writer.WriteStringValue("primaryId", PrimaryId);
-            writer.WriteStringValue("primaryLanguage", PrimaryLanguage);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage>("primaryLanguage", PrimaryLanguage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

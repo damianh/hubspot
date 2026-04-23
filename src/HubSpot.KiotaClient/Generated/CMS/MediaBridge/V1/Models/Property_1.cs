@@ -38,6 +38,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string CreatedUserId { get; set; }
 #endif
+        /// <summary>The currencyPropertyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyPropertyName { get; set; }
+#nullable restore
+#else
+        public string CurrencyPropertyName { get; set; }
+#endif
         /// <summary>The dataSensitivity property</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity? DataSensitivity { get; set; }
         /// <summary>The dateDisplayHint property</summary>
@@ -102,6 +110,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The numberDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_numberDisplayHint? NumberDisplayHint { get; set; }
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +187,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetStringValue(); } },
+                { "currencyPropertyName", n => { CurrencyPropertyName = n.GetStringValue(); } },
                 { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity>(); } },
                 { "dateDisplayHint", n => { DateDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dateDisplayHint>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -191,6 +202,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "modificationMetadata", n => { ModificationMetadata = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyModificationMetadata>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyModificationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "numberDisplayHint", n => { NumberDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_numberDisplayHint>(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
                 { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -213,6 +225,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteStringValue("calculationFormula", CalculationFormula);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdUserId", CreatedUserId);
+            writer.WriteStringValue("currencyPropertyName", CurrencyPropertyName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_dateDisplayHint>("dateDisplayHint", DateDisplayHint);
             writer.WriteStringValue("description", Description);
@@ -227,6 +240,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PropertyModificationMetadata>("modificationMetadata", ModificationMetadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Property_1_numberDisplayHint>("numberDisplayHint", NumberDisplayHint);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Option_1>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);

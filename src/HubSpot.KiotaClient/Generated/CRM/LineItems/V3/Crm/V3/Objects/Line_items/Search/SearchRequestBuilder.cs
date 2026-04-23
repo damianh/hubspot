@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
         public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/line_items/search", rawUrl)
         {
         }
+        /// <summary>
+        /// Execute a search for line items based on filters, properties, and sorting options provided in the request body. This endpoint allows you to retrieve line items that match specific conditions, facilitating targeted data retrieval in CRM operations.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.CollectionResponseWithTotalSimplePublicObject"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.CollectionResponseWithTotalSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.CollectionResponseWithTotalSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Execute a search for line items based on filters, properties, and sorting options provided in the request body. This endpoint allows you to retrieve line items that match specific conditions, facilitating targeted data retrieval in CRM operations.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

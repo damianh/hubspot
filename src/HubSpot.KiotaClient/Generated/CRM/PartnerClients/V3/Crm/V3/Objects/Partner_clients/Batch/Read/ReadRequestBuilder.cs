@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
         {
         }
         /// <summary>
-        /// Read a batch of objects by internal ID, or unique property values
+        /// Retrieve multiple partner client objects in a single request by specifying their IDs. This endpoint is useful for efficiently accessing data for multiple clients at once, particularly when integrating with third-party systems.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read a batch of objects by internal ID, or unique property values
+        /// Retrieve multiple partner client objects in a single request by specifying their IDs. This endpoint is useful for efficiently accessing data for multiple clients at once, particularly when integrating with third-party systems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return new global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read a batch of objects by internal ID, or unique property values
+        /// Retrieve multiple partner client objects in a single request by specifying their IDs. This endpoint is useful for efficiently accessing data for multiple clients at once, particularly when integrating with third-party systems.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 

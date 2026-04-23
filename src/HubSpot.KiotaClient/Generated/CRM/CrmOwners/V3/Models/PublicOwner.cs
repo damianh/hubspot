@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>Indicates whether the owner is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the owner was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>The first name of the owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier of the owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>The last name of the owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -58,13 +58,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicTeam> Teams { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of the owner, which can be either PERSON or QUEUE.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicOwner_type? Type { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the owner was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The userId property</summary>
+        /// <summary>The user ID of the owner.</summary>
         public int? UserId { get; set; }
-        /// <summary>The userIdIncludingInactive property</summary>
+        /// <summary>The user ID of the owner, including inactive users.</summary>
         public int? UserIdIncludingInactive { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Models.PublicOwner"/> and sets the default values.

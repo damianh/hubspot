@@ -8,22 +8,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
     public enum GetIntervalQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "YEAR")]
-        #pragma warning disable CS1591
-        YEAR,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "QUARTER")]
-        #pragma warning disable CS1591
-        QUARTER,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MONTH")]
-        #pragma warning disable CS1591
-        MONTH,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "WEEK")]
-        #pragma warning disable CS1591
-        WEEK,
-        #pragma warning restore CS1591
         [EnumMember(Value = "DAY")]
         #pragma warning disable CS1591
         DAY,
@@ -32,17 +16,33 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         #pragma warning disable CS1591
         HOUR,
         #pragma warning restore CS1591
-        [EnumMember(Value = "QUARTER_HOUR")]
-        #pragma warning disable CS1591
-        QUARTER_HOUR,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MINUTE")]
         #pragma warning disable CS1591
         MINUTE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MONTH")]
+        #pragma warning disable CS1591
+        MONTH,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "QUARTER")]
+        #pragma warning disable CS1591
+        QUARTER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "QUARTER_HOUR")]
+        #pragma warning disable CS1591
+        QUARTER_HOUR,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SECOND")]
         #pragma warning disable CS1591
         SECOND,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEEK")]
+        #pragma warning disable CS1591
+        WEEK,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "YEAR")]
+        #pragma warning disable CS1591
+        YEAR,
         #pragma warning restore CS1591
     }
 }

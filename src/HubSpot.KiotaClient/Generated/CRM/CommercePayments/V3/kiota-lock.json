@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "05CC4920956F8824AC95951F407E7354E2867EF3859AAA11CCCB4FAF9F0221308D54DE9BCF14708167C582A65F93C24122C805B4E8AA8D050F8B9A9E88112512",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Commerce%20Payments/versions/424",
+  "descriptionHash": "E7DE70250958207A6FB3AEF5F677BD14D865E7EF9CC03281B01286501E12655EFE6C35F7F9D41521D6666300D9D6E11C044609E016E5D33068D457790BF8A7EE",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22146/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCommercePaymentsV3Client",

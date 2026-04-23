@@ -1,7 +1,7 @@
 using DamianH.HubSpot.KiotaClient;
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3;
 using DamianH.HubSpot.KiotaClient.CRM.Companies.V3.Models;
-using DamianH.HubSpot.KiotaClient.CRM.Companies.V202509;
+using DamianH.HubSpot.KiotaClient.CRM.Companies.V202603;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -30,7 +30,7 @@ public class CrmCompaniesTests : IAsyncLifetime
         var request = CreateV3CompanyRequest();
 
         var response = await _v3Client.Crm.V3.Objects.Companies.PostAsync(request);
-        var simplePublicObject = response!.Entity!;
+        var simplePublicObject = response!;
 
         simplePublicObject.ShouldNotBeNull();
         simplePublicObject.Id.ShouldNotBeNullOrWhiteSpace();
@@ -45,7 +45,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_get_company_with_no_properties()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].GetAsync();
 
@@ -58,7 +58,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_get_company_with_specified_properties()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         var retrievedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id]
             .GetAsync(requestConfiguration =>
@@ -80,7 +80,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_update_company_with_changed_property()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         var updatedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
             new SimplePublicObjectInput
@@ -114,7 +114,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_update_company_with_new_property()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
         var newPropertyName = "NewProperty";
         var updatedCompany = await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].PatchAsync(
             new SimplePublicObjectInput
@@ -206,7 +206,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_archive_company()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].DeleteAsync();
 
@@ -221,7 +221,7 @@ public class CrmCompaniesTests : IAsyncLifetime
     public async Task V3_Can_list_archived_companies()
     {
         var request = CreateV3CompanyRequest();
-        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!.Entity!;
+        var createdCompany = (await _v3Client.Crm.V3.Objects.Companies.PostAsync(request))!;
 
         await _v3Client.Crm.V3.Objects.Companies[createdCompany.Id].DeleteAsync();
 
@@ -237,49 +237,49 @@ public class CrmCompaniesTests : IAsyncLifetime
 
     #endregion
 
-    #region V202509 Client Tests
+    #region V202603 Client Tests
 
     [Fact]
-    public async Task V202509_Can_create_company()
+    public async Task V202603_Can_create_company()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
-                    { PropertyNames.CrmCompany.Name, "V202509 Company" },
+                    { PropertyNames.CrmCompany.Name, "V202603 Company" },
                     { PropertyNames.CrmCompany.Domain, "v202509.com" }
                 }
             }
         };
 
-        var created = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
-        var company = created!.Entity!;
+        var created = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
+        var company = created!;
 
         company.ShouldNotBeNull();
         company.Id.ShouldNotBeNullOrEmpty();
         company.Properties.ShouldNotBeNull();
-        company.Properties.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "V202509 Company");
+        company.Properties.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "V202603 Company");
         company.Properties.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Domain, "v202509.com");
     }
 
     [Fact]
-    public async Task V202509_Can_get_company_with_no_properties()
+    public async Task V202603_Can_get_company_with_no_properties()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
@@ -289,10 +289,10 @@ public class CrmCompaniesTests : IAsyncLifetime
             }
         };
 
-        var created = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var created = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
+        var companyId = created!.Id!;
 
-        var retrieved = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId].GetAsync();
+        var retrieved = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[companyId].GetAsync();
 
         retrieved.ShouldNotBeNull();
         retrieved.Id.ShouldBe(companyId);
@@ -301,16 +301,16 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_get_company_with_specified_properties()
+    public async Task V202603_Can_get_company_with_specified_properties()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
@@ -320,10 +320,10 @@ public class CrmCompaniesTests : IAsyncLifetime
             }
         };
 
-        var created = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var created = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
+        var companyId = created!.Id!;
 
-        var retrieved = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId]
+        var retrieved = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[companyId]
             .GetAsync(requestConfiguration =>
             {
                 requestConfiguration.QueryParameters.Properties = [PropertyNames.CrmCompany.Domain];
@@ -337,16 +337,16 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_update_company()
+    public async Task V202603_Can_update_company()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
@@ -355,12 +355,12 @@ public class CrmCompaniesTests : IAsyncLifetime
             }
         };
 
-        var created = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var created = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
+        var companyId = created!.Id!;
 
-        var updateInput = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInput
+        var updateInput = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInput
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInput_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInput_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
@@ -369,23 +369,23 @@ public class CrmCompaniesTests : IAsyncLifetime
             }
         };
 
-        var updated = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId].PatchAsync(updateInput);
+        var updated = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[companyId].PatchAsync(updateInput);
 
         updated.ShouldNotBeNull();
         updated.Properties!.AdditionalData.ShouldContainKeyAndValue(PropertyNames.CrmCompany.Name, "Updated Name");
     }
 
     [Fact]
-    public async Task V202509_Can_delete_company()
+    public async Task V202603_Can_delete_company()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
         {
-            Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+            Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
             {
                 AdditionalData = new Dictionary<string, object>
                 {
@@ -394,30 +394,30 @@ public class CrmCompaniesTests : IAsyncLifetime
             }
         };
 
-        var created = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var created = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
+        var companyId = created!.Id!;
 
-        await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId].DeleteAsync();
+        await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[companyId].DeleteAsync();
 
         await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
         {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId].GetAsync();
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[companyId].GetAsync();
         });
     }
 
     [Fact]
-    public async Task V202509_Can_list_companies()
+    public async Task V202603_Can_list_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
         for (var i = 0; i < 15; i++)
         {
-            var input = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+            var input = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -425,10 +425,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                     }
                 }
             };
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(input);
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(input);
         }
 
-        var page = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].GetAsync(config =>
+        var page = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.GetAsync(config =>
         {
             config.QueryParameters.Limit = 10;
             config.QueryParameters.Properties = [PropertyNames.CrmCompany.Name];
@@ -442,20 +442,20 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_batch_create_companies()
+    public async Task V202603_Can_batch_create_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var batchInput = new KiotaClient.CRM.Companies.V202509.Models.BatchInputSimplePublicObjectBatchInputForCreate
+        var batchInput = new KiotaClient.CRM.Companies.V202603.Models.BatchInputSimplePublicObjectBatchInputForCreate
         {
             Inputs =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputForCreate
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputForCreate
                 {
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputForCreate_properties
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputForCreate_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -463,9 +463,9 @@ public class CrmCompaniesTests : IAsyncLifetime
                         }
                     }
                 },
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputForCreate
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputForCreate
                 {
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputForCreate_properties
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputForCreate_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -476,7 +476,7 @@ public class CrmCompaniesTests : IAsyncLifetime
             ]
         };
 
-        var response = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Batch.Create.PostAsync(batchInput);
+        var response = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Batch.Create.PostAsync(batchInput);
 
         response.ShouldNotBeNull();
         response.Results.ShouldNotBeNull();
@@ -486,17 +486,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_batch_read_companies()
+    public async Task V202603_Can_batch_read_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -505,10 +505,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -517,17 +517,17 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var batchReadInput = new KiotaClient.CRM.Companies.V202509.Models.BatchReadInputSimplePublicObjectId
+        var batchReadInput = new KiotaClient.CRM.Companies.V202603.Models.BatchReadInputSimplePublicObjectId
         {
             Inputs =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectId { Id = company1!.Entity!.Id! },
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectId { Id = company2!.Entity!.Id! }
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectId { Id = company1!.Id! },
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectId { Id = company2!.Id! }
             ],
             Properties = [PropertyNames.CrmCompany.Name]
         };
 
-        var response = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Batch.Read.PostAsync(batchReadInput);
+        var response = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Batch.Read.PostAsync(batchReadInput);
 
         response.ShouldNotBeNull();
         response.Results.ShouldNotBeNull();
@@ -537,17 +537,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_batch_update_companies()
+    public async Task V202603_Can_batch_update_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -556,10 +556,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -568,14 +568,14 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var batchUpdateInput = new KiotaClient.CRM.Companies.V202509.Models.BatchInputSimplePublicObjectBatchInput
+        var batchUpdateInput = new KiotaClient.CRM.Companies.V202603.Models.BatchInputSimplePublicObjectBatchInput
         {
             Inputs =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInput
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInput
                 {
-                    Id = company1!.Entity!.Id!,
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInput_properties
+                    Id = company1!.Id!,
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -583,10 +583,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                         }
                     }
                 },
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInput
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInput
                 {
-                    Id = company2!.Entity!.Id!,
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInput_properties
+                    Id = company2!.Id!,
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -597,7 +597,7 @@ public class CrmCompaniesTests : IAsyncLifetime
             ]
         };
 
-        var response = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Batch.Update.PostAsync(batchUpdateInput);
+        var response = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Batch.Update.PostAsync(batchUpdateInput);
 
         response.ShouldNotBeNull();
         response.Results.ShouldNotBeNull();
@@ -607,17 +607,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_batch_upsert_companies()
+    public async Task V202603_Can_batch_upsert_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var existing = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var existing = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -626,14 +626,14 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var batchUpsertInput = new KiotaClient.CRM.Companies.V202509.Models.BatchInputSimplePublicObjectBatchInputUpsert
+        var batchUpsertInput = new KiotaClient.CRM.Companies.V202603.Models.BatchInputSimplePublicObjectBatchInputUpsert
         {
             Inputs =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputUpsert
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputUpsert
                 {
-                    Id = existing!.Entity!.Id!,
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputUpsert_properties
+                    Id = existing!.Id!,
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputUpsert_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -641,9 +641,9 @@ public class CrmCompaniesTests : IAsyncLifetime
                         }
                     }
                 },
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputUpsert
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputUpsert
                 {
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectBatchInputUpsert_properties
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectBatchInputUpsert_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -654,7 +654,7 @@ public class CrmCompaniesTests : IAsyncLifetime
             ]
         };
 
-        var response = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Batch.Upsert.PostAsync(batchUpsertInput);
+        var response = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Batch.Upsert.PostAsync(batchUpsertInput);
 
         response.ShouldNotBeNull();
         response.Results.ShouldNotBeNull();
@@ -662,17 +662,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_batch_archive_companies()
+    public async Task V202603_Can_batch_archive_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -681,10 +681,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -693,42 +693,42 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var batchArchiveInput = new KiotaClient.CRM.Companies.V202509.Models.BatchInputSimplePublicObjectId
+        var batchArchiveInput = new KiotaClient.CRM.Companies.V202603.Models.BatchInputSimplePublicObjectId
         {
             Inputs =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectId { Id = company1!.Entity!.Id! },
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectId { Id = company2!.Entity!.Id! }
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectId { Id = company1!.Id! },
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectId { Id = company2!.Id! }
             ]
         };
 
-        await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Batch.Archive.PostAsync(batchArchiveInput);
+        await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Batch.Archive.PostAsync(batchArchiveInput);
 
         await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
         {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][company1.Entity.Id].GetAsync();
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[company1.Id].GetAsync();
         });
 
         await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
         {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][company2!.Entity!.Id!].GetAsync();
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[company2!.Id!].GetAsync();
         });
     }
 
     [Fact]
-    public async Task V202509_Can_paginate_companies()
+    public async Task V202603_Can_paginate_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
         for (var i = 0; i < 25; i++)
         {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-                new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+                new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
                 {
-                    Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                    Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                     {
                         AdditionalData = new Dictionary<string, object>
                         {
@@ -738,7 +738,7 @@ public class CrmCompaniesTests : IAsyncLifetime
                 });
         }
 
-        var firstPage = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].GetAsync(config =>
+        var firstPage = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.GetAsync(config =>
         {
             config.QueryParameters.Limit = 10;
             config.QueryParameters.Properties = [PropertyNames.CrmCompany.Name];
@@ -753,7 +753,7 @@ public class CrmCompaniesTests : IAsyncLifetime
         var after = firstPage.Paging.Next.After;
         after.ShouldNotBeNullOrWhiteSpace();
 
-        var secondPage = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].GetAsync(config =>
+        var secondPage = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.GetAsync(config =>
         {
             config.QueryParameters.Limit = 10;
             config.QueryParameters.After = after;
@@ -766,17 +766,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_search_companies()
+    public async Task V202603_Can_search_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -786,10 +786,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -799,18 +799,18 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var searchRequest = new KiotaClient.CRM.Companies.V202509.Models.PublicObjectSearchRequest
+        var searchRequest = new KiotaClient.CRM.Companies.V202603.Models.PublicObjectSearchRequest
         {
             FilterGroups =
             [
-                new KiotaClient.CRM.Companies.V202509.Models.FilterGroup
+                new KiotaClient.CRM.Companies.V202603.Models.FilterGroup
                 {
                     Filters =
                     [
-                        new KiotaClient.CRM.Companies.V202509.Models.Filter
+                        new KiotaClient.CRM.Companies.V202603.Models.Filter
                         {
                             PropertyName = PropertyNames.CrmCompany.Name,
-                            Operator = KiotaClient.CRM.Companies.V202509.Models.Filter_operator.EQ,
+                            Operator = KiotaClient.CRM.Companies.V202603.Models.Filter_operator.EQ,
                             Value = "Search Target Company"
                         }
                     ]
@@ -819,7 +819,7 @@ public class CrmCompaniesTests : IAsyncLifetime
             Properties = [PropertyNames.CrmCompany.Name, PropertyNames.CrmCompany.Domain]
         };
 
-        var searchResults = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Search.PostAsync(searchRequest);
+        var searchResults = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Search.PostAsync(searchRequest);
 
         searchResults.ShouldNotBeNull();
         searchResults.Results.ShouldNotBeNull();
@@ -828,17 +828,17 @@ public class CrmCompaniesTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task V202509_Can_merge_companies()
+    public async Task V202603_Can_merge_companies()
     {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
+        var v202509Client = new HubSpotCRMCompaniesV202603Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
         {
             BaseUrl = _server.Uri.ToString()
         });
 
-        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company1 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -848,10 +848,10 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
+        var company2 = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.PostAsync(
+            new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate
             {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
+                Properties = new KiotaClient.CRM.Companies.V202603.Models.SimplePublicObjectInputForCreate_properties
                 {
                     AdditionalData = new Dictionary<string, object>
                     {
@@ -860,55 +860,24 @@ public class CrmCompaniesTests : IAsyncLifetime
                 }
             });
 
-        var mergeRequest = new KiotaClient.CRM.Companies.V202509.Models.PublicMergeInput
+        var mergeRequest = new KiotaClient.CRM.Companies.V202603.Models.PublicMergeInput
         {
-            ObjectIdToMerge = company1!.Entity!.Id!,
-            PrimaryObjectId = company2!.Entity!.Id!
+            ObjectIdToMerge = company1!.Id!,
+            PrimaryObjectId = company2!.Id!
         };
 
-        var mergedCompany = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].Merge.PostAsync(mergeRequest);
+        var mergedCompany = await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies.Merge.PostAsync(mergeRequest);
 
         mergedCompany.ShouldNotBeNull();
-        mergedCompany.Id.ShouldBe(company2.Entity.Id);
+        mergedCompany.Id.ShouldBe(company2.Id);
 
         await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
         {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][company1.Entity.Id].GetAsync();
+            await v202509Client.Crm.Objects.TwoZeroTwoSixZeroThree.Companies[company1.Id].GetAsync();
         });
     }
 
-    [Fact]
-    public async Task V202509_Can_gdpr_delete_company()
-    {
-        var v202509Client = new HubSpotCRMCompaniesV202509Client(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider())
-        {
-            BaseUrl = _server.Uri.ToString()
-        });
-
-        var company = await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].PostAsync(
-            new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate
-            {
-                Properties = new KiotaClient.CRM.Companies.V202509.Models.SimplePublicObjectInputForCreate_properties
-                {
-                    AdditionalData = new Dictionary<string, object>
-                    {
-                        { PropertyNames.CrmCompany.Name, "GDPR Delete Target" }
-                    }
-                }
-            });
-
-        var companyId = company!.Entity!.Id!;
-
-        await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"].GdprDelete.PostAsync(new KiotaClient.CRM.Companies.V202509.Models.PublicGdprDeleteInput
-        {
-            ObjectId = companyId
-        });
-
-        await Should.ThrowAsync<Microsoft.Kiota.Abstractions.ApiException>(async () =>
-        {
-            await v202509Client.Crm.Objects.TwoZeroTwoFiveZeroNine["companies"][companyId].GetAsync();
-        });
-    }
+    // GdprDelete API was removed in V202603
 
     #endregion
 

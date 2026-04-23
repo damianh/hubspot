@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models
 #else
         public string HighValue { get; set; }
 #endif
-        /// <summary>null</summary>
+        /// <summary>The comparison operator used in the filter, such as &quot;EQ&quot; or &quot;GT&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models.Filter_operator? Operator { get; set; }
         /// <summary>The name of the property to apply the filter to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

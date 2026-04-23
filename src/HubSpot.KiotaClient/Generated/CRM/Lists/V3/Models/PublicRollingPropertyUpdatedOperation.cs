@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Indicates whether objects with no value set for the property should be included in the operation.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The numberOfDays property</summary>
+        /// <summary>The number of days to be considered in the rolling property updated operation.</summary>
         public int? NumberOfDays { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>Specifies the type of operation (ROLLING_PROPERTY_UPDATED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRollingPropertyUpdatedOperation_operationType? OperationType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the rolling property updated operation (UPDATED_IN_LAST_X_DAYS, NOT_UPDATED_IN_LAST_X_DAYS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }

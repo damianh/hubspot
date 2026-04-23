@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "AA5F50512FB6AFF5FC5FB30C52C5F4B26FCC260A004E6EA079AFAE75C4FEB1259AFD14A46141DBEC2DBAB3DE31F7494A620DAF057EB60F9E31E18D2B4039DC28",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Discounts/versions/424",
+  "descriptionHash": "A75699B0490CDEB30C3132C91FFD26601EF5098F36B07B1DC922B3F76BE59231C7E59A81FA2FD6686A312204D72E8BC7B04928AB08DD43C33A8421268EC35C85",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22157/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMDiscountsV3Client",

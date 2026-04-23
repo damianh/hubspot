@@ -41,7 +41,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
-        var contract = created!.Entity!;
+        var contract = created!;
 
         contract.ShouldNotBeNull();
         contract.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
-        var contractId = created!.Entity!.Id!;
+        var contractId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Contracts[contractId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
-        var contractId = created!.Entity!.Id!;
+        var contractId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coalescingRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the filter by coalescing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPageViewAnalyticsFilter.PublicPageViewAnalyticsFilter_coalescingRefineBy? CoalescingRefineBy { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPageViewAnalyticsFilter.PublicPageViewAnalyticsFilter_coalescingRefineBy CoalescingRefineBy { get; set; }
 #endif
-        /// <summary>The enableTracking property</summary>
+        /// <summary>Indicates whether tracking is enabled for the page view.</summary>
         public bool? EnableTracking { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter being applied (PAGE_VIEW).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPageViewAnalyticsFilter_filterType? FilterType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the filter (HAS_PAGEVIEW_EQ, HAS_PAGEVIEW_CONTAINS, HAS_PAGEVIEW_MATCHES_REGEX, NOT_HAS_PAGEVIEW_EQ, NOT_HAS_PAGEVIEW_CONTAINS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the page to be used in the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The pruningRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the filter by pruning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPageViewAnalyticsFilter.PublicPageViewAnalyticsFilter_pruningRefineBy? PruningRefineBy { get; set; }

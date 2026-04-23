@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
 #else
         public string Bio { get; set; }
 #endif
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Author was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The timestamp (ISO8601 format) when this Blog Author was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
 #else
         public string Facebook { get; set; }
 #endif
-        /// <summary>The fullName property</summary>
+        /// <summary>The full, unabbreviated name of the blog author, typically their first and last name combined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullName { get; set; }
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
 #else
         public string Linkedin { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name field for the blog author. (This appears to be a shorter or alternative name field compared to fullName.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>A URL-friendly identifier for the blog author that can be used to reference the author in URLs. Typically generated from the author&apos;s name and contains lowercase letters, hyphens, and underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -111,7 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Authors.V3.Models
 #else
         public string Twitter { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this Blog Author was updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>URL to the website of the Blog Author.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

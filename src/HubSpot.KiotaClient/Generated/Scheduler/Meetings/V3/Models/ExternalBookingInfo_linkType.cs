@@ -3,18 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 {
+    /// <summary>The type of the meeting link. Accepted values are: GROUP_CALENDAR, PERSONAL_LINK, ROUND_ROBIN_CALENDAR.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ExternalBookingInfo_linkType
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "PERSONAL_LINK")]
-        #pragma warning disable CS1591
-        PERSONAL_LINK,
-        #pragma warning restore CS1591
         [EnumMember(Value = "GROUP_CALENDAR")]
         #pragma warning disable CS1591
         GROUP_CALENDAR,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PERSONAL_LINK")]
+        #pragma warning disable CS1591
+        PERSONAL_LINK,
         #pragma warning restore CS1591
         [EnumMember(Value = "ROUND_ROBIN_CALENDAR")]
         #pragma warning disable CS1591

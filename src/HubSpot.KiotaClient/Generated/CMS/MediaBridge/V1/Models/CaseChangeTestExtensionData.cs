@@ -15,13 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The mood property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Mood { get; set; }
-#nullable restore
-#else
-        public string Mood { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.CaseChangeTestExtensionData_mood? Mood { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.CaseChangeTestExtensionData"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mood", n => { Mood = n.GetStringValue(); } },
+                { "mood", n => { Mood = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.CaseChangeTestExtensionData_mood>(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("mood", Mood);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.CaseChangeTestExtensionData_mood>("mood", Mood);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

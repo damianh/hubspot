@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A description of the option.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Options are shown in order starting with the lowest positive integer value. Values of -1 will cause the option to be displayed after any positive values.</summary>
+        /// <summary>The displayOrder property</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
+        /// <summary>The hidden property</summary>
         public bool? Hidden { get; set; }
-        /// <summary>A human-readable option label that will be shown in HubSpot.</summary>
+        /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The internal value of the option, which must be used when setting the property value through the API.</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

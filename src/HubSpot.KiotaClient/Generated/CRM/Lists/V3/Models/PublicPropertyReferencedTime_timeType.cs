@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Defines the type of time (PROPERTY_REFERENCED).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicPropertyReferencedTime_timeType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PROPERTY_REFERENCED")]
         #pragma warning disable CS1591

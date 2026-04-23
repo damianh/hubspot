@@ -15,13 +15,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The firstAddedTimestamp property</summary>
+        /// <summary>The timestamp when the record was first added to the list.</summary>
         public DateTimeOffset? FirstAddedTimestamp { get; set; }
-        /// <summary>The isPublicList property</summary>
+        /// <summary>Indicates whether the list is public.</summary>
         public bool? IsPublicList { get; set; }
-        /// <summary>The lastAddedTimestamp property</summary>
+        /// <summary>The timestamp when the record was last added to the list.</summary>
         public DateTimeOffset? LastAddedTimestamp { get; set; }
-        /// <summary>The listId property</summary>
+        /// <summary>The unique identifier of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListId { get; set; }
@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ListId { get; set; }
 #endif
-        /// <summary>The listVersion property</summary>
+        /// <summary>The version number of the list.</summary>
         public int? ListVersion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.RecordListMembership"/> and sets the default values.

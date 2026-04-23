@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.AppInfo AppInfo { get; set; }
 #endif
-        /// <summary>The attendees property</summary>
+        /// <summary>Number of attended contact records of a marketing event</summary>
         public int? Attendees { get; set; }
-        /// <summary>The cancellations property</summary>
+        /// <summary>Number of cancelled contact records of a marketing event</summary>
         public int? Cancellations { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The creation date and time of the marketing event</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The customProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,13 +36,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CrmPropertyWrapper> CustomProperties { get; set; }
 #endif
-        /// <summary>The endDateTime property</summary>
+        /// <summary>The end date and time of the marketing event</summary>
         public DateTimeOffset? EndDateTime { get; set; }
-        /// <summary>The eventCancelled property</summary>
+        /// <summary>Indicates if the marketing event has been cancelled</summary>
         public bool? EventCancelled { get; set; }
-        /// <summary>The eventCompleted property</summary>
+        /// <summary>Indicates if the marketing event has been completed</summary>
         public bool? EventCompleted { get; set; }
-        /// <summary>The eventDescription property</summary>
+        /// <summary>The description of the marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventDescription { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventDescription { get; set; }
 #endif
-        /// <summary>The eventName property</summary>
+        /// <summary>The name of the marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventName { get; set; }
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventName { get; set; }
 #endif
-        /// <summary>The eventOrganizer property</summary>
+        /// <summary>The name of the organizer of the marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventOrganizer { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventOrganizer { get; set; }
 #endif
-        /// <summary>The eventStatus property</summary>
+        /// <summary>The status of the marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventStatus { get; set; }
@@ -74,7 +74,15 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventStatus { get; set; }
 #endif
-        /// <summary>The eventType property</summary>
+        /// <summary>The eventStatusV2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventStatusV2 { get; set; }
+#nullable restore
+#else
+        public string EventStatusV2 { get; set; }
+#endif
+        /// <summary>The type of the marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType { get; set; }
@@ -82,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The eventUrl property</summary>
+        /// <summary>A URL in the external event application where the marketing event can be managed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventUrl { get; set; }
@@ -90,7 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventUrl { get; set; }
 #endif
-        /// <summary>The externalEventId property</summary>
+        /// <summary>The ID that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalEventId { get; set; }
@@ -98,9 +106,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ExternalEventId { get; set; }
 #endif
-        /// <summary>The noShows property</summary>
+        /// <summary>Number of no-show contact records of a marketing event</summary>
         public int? NoShows { get; set; }
-        /// <summary>The objectId property</summary>
+        /// <summary>The internal ID of the marketing event in HubSpot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -108,11 +116,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The registrants property</summary>
+        /// <summary>Number of registered contact records of a marketing event</summary>
         public int? Registrants { get; set; }
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The start date and time of the marketing event</summary>
         public DateTimeOffset? StartDateTime { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The update date and time of the marketing event</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicReadResponseV2"/> and sets the default values.
@@ -151,6 +159,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
                 { "eventName", n => { EventName = n.GetStringValue(); } },
                 { "eventOrganizer", n => { EventOrganizer = n.GetStringValue(); } },
                 { "eventStatus", n => { EventStatus = n.GetStringValue(); } },
+                { "eventStatusV2", n => { EventStatusV2 = n.GetStringValue(); } },
                 { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "eventUrl", n => { EventUrl = n.GetStringValue(); } },
                 { "externalEventId", n => { ExternalEventId = n.GetStringValue(); } },
@@ -180,6 +189,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
             writer.WriteStringValue("eventName", EventName);
             writer.WriteStringValue("eventOrganizer", EventOrganizer);
             writer.WriteStringValue("eventStatus", EventStatus);
+            writer.WriteStringValue("eventStatusV2", EventStatusV2);
             writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("eventUrl", EventUrl);
             writer.WriteStringValue("externalEventId", ExternalEventId);

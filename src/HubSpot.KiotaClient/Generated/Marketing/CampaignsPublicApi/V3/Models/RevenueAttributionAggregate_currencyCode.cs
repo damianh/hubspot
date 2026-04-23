@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
 {
+    /// <summary>The currency code used for the revenue attribution, with accepted values including AED, AFN, ALL, and others.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RevenueAttributionAggregate_currencyCode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AED")]
         #pragma warning disable CS1591

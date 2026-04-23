@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ObjectTypePropertyCreate_optionSortStrategy
     {
-        [EnumMember(Value = "DISPLAY_ORDER")]
-        #pragma warning disable CS1591
-        DISPLAY_ORDER,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ALPHABETICAL")]
         #pragma warning disable CS1591
         ALPHABETICAL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DISPLAY_ORDER")]
+        #pragma warning disable CS1591
+        DISPLAY_ORDER,
         #pragma warning restore CS1591
     }
 }

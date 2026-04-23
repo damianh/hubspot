@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The datetime the response was completed</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>The link to the next page with exchange rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.BatchResponseExchangeRate_links? Links { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.BatchResponseExchangeRate_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The datetime the of the request.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The datetime the of the request.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the response (e.g. COMPLETED)</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.BatchResponseExchangeRate_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.BatchResponseExchangeRate"/> and sets the default values.

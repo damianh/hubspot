@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "48F083E841936A494441AC1651AE490943E38A9FBEBF3E08ADD2CF15D530C231C59CAF198E7B4258ACBF10346F086177FE49F0C96D84974998C3ECF9C7FEADDF",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Pipelines/versions/145896",
+  "descriptionHash": "A59EA0DB9E30C18506423B48E5C686ED04EE847F933ECA50771CEF6D889C8F6CA5CA22FBA4B86D277CD3F801F81E4DC5A777C0E429FCAF35B6B0D4BA2063A0D1",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22177/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMPipelinesV3Client",

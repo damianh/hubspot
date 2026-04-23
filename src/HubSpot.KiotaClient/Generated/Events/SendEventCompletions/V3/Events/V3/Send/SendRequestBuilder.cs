@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Events.V3.S
         {
         }
         /// <summary>
-        /// Send data for a single event completion.
+        /// Send data for a single custom event occurrence.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Events.V3.S
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send data for a single event completion.
+        /// Send data for a single custom event occurrence.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

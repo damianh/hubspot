@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The internal name of the event (`pe&lt;portalID&gt;_eventName`). Can be retrieved through the [event definitions API](https://developers.hubspot.com/docs/reference/api/analytics-and-events/custom-events/custom-event-definitions#get-%2Fevents%2Fv3%2Fevent-definitions) or in [HubSpot&apos;s UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name). </summary>
+        /// <summary>The event&apos;s fully qualified name. This value (formatted as `pe{HubID}_{name}`) can be retrieved through the [event definitions API](https://developers.hubspot.com/docs/reference/api/analytics-and-events/custom-events/custom-event-definitions#get-%2Fevents%2Fv3%2Fevent-definitions) or in [HubSpot&apos;s UI](https://knowledge.hubspot.com/reports/create-custom-behavioral-events-with-the-code-wizard#find-internal-name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventName { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string EventName { get; set; }
 #endif
-        /// <summary>The ID of the object that completed the event (e.g., contact ID or visitor ID).</summary>
+        /// <summary>The ID of the record for which the event occurred (e.g., contact ID or visitor ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V3.Models
 #else
         public string Utk { get; set; }
 #endif
-        /// <summary>Include a universally unique identifier to assign a unique ID to the event completion. Can be useful for matching data between HubSpot and other external systems.</summary>
+        /// <summary>Include a universally unique identifier to assign a unique ID to the event occurrence. Can be useful for matching data between HubSpot and other external systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uuid { get; set; }

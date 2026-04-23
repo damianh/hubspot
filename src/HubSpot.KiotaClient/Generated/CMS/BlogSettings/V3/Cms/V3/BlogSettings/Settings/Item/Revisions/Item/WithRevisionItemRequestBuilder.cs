@@ -34,25 +34,25 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
         {
         }
         /// <summary>
-        /// Retrieves a previous version of a Blog
+        /// Get a specific blog revision.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.VersionBlog"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.BlogVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.VersionBlog?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.BlogVersion?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.VersionBlog> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.BlogVersion> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.VersionBlog>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.VersionBlog.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.BlogVersion>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.BlogVersion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a previous version of a Blog
+        /// Get a specific blog revision.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -41,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public string BusinessUnitId { get; set; }
 #endif
-        /// <summary>The campaign GUID on the email.</summary>
+        /// <summary>The ID of the campaign this email is associated to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Campaign { get; set; }
@@ -267,7 +267,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public DateTimeOffset? UnpublishedAt { get; set; }
         /// <summary>The date and time of the last update to the email, in ISO8601 representation.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The ID of the user who last updated the email.</summary>
+        /// <summary>The id of the user who last updated the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedById { get; set; }

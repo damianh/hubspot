@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.featureFlags.v3.item collection</summary>
-        /// <param name="position">The ID of the app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.featureFlags.v3.item collection</summary>
-        /// <param name="position">The ID of the app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.WithAppItemRequestBuilder this[string position]

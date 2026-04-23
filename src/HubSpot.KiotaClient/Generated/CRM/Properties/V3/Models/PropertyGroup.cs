@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>Indicates whether the property group is archived.</summary>
         public bool? Archived { get; set; }
         /// <summary>Property groups are displayed in order starting with the lowest positive integer value. Values of -1 will cause the property group to be displayed after any positive values.</summary>
         public int? DisplayOrder { get; set; }

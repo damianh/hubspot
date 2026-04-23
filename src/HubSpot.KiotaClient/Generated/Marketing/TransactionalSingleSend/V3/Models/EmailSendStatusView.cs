@@ -25,6 +25,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EventIdView EventId { get; set; }
 #endif
+        /// <summary>A human readable message describing the error along with remediation steps where appropriate</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
         /// <summary>Time when the send was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>Result of the send.</summary>
@@ -68,6 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "eventId", n => { EventId = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EventIdView>(global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EventIdView.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "sendResult", n => { SendResult = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EmailSendStatusView_sendResult>(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -84,6 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EventIdView>("eventId", EventId);
+            writer.WriteStringValue("message", Message);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EmailSendStatusView_sendResult>("sendResult", SendResult);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

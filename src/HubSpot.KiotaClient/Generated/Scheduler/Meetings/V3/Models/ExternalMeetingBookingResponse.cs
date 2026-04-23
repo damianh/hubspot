@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bookingTimezone property</summary>
+        /// <summary>The timezone the meeting was booked from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BookingTimezone { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string BookingTimezone { get; set; }
 #endif
-        /// <summary>The calendarEventId property</summary>
+        /// <summary>The unique identifier for the meeting&apos;s calendar event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalendarEventId { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string CalendarEventId { get; set; }
 #endif
-        /// <summary>The contactId property</summary>
+        /// <summary>The ID of the contact associated to the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -38,9 +38,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The duration property</summary>
+        /// <summary>The duration of the meeting in milliseconds.</summary>
         public long? Duration { get; set; }
-        /// <summary>The end property</summary>
+        /// <summary>The date and time when the meeting is scheduled to end, in ISO 8601 format.</summary>
         public DateTimeOffset? End { get; set; }
         /// <summary>The formFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<string> GuestEmails { get; set; }
 #endif
-        /// <summary>The isOffline property</summary>
+        /// <summary>Whether the meeting was booked offline and no associated calendar event was created.</summary>
         public bool? IsOffline { get; set; }
         /// <summary>The legalConsentResponses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentResponse> LegalConsentResponses { get; set; }
 #endif
-        /// <summary>The locale property</summary>
+        /// <summary>The locale the meeting was booked with, used to determine date formatting in calendar event description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale { get; set; }
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Locale { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The physical or virtual location where the meeting will take place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -84,9 +84,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>The start property</summary>
+        /// <summary>The date and time when the meeting is scheduled to start, in ISO 8601 format.</summary>
         public DateTimeOffset? Start { get; set; }
-        /// <summary>The subject property</summary>
+        /// <summary>The title of the meeting and calendar event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -94,7 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The webConferenceMeetingId property</summary>
+        /// <summary>The unique identifier for the web conference meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebConferenceMeetingId { get; set; }
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string WebConferenceMeetingId { get; set; }
 #endif
-        /// <summary>The webConferenceUrl property</summary>
+        /// <summary>The URL for accessing the meeting&apos;s web conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebConferenceUrl { get; set; }

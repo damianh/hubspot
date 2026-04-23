@@ -85,7 +85,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by email IDs. Only include statistics of emails with these IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailIds")]
@@ -95,7 +94,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("emailIds")]
             public long?[] EmailIds { get; set; }
 #endif
-            /// <summary>The end timestamp of the time span, in ISO8601 representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endTimestamp")]
@@ -105,7 +103,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("endTimestamp")]
             public string EndTimestamp { get; set; }
 #endif
-            /// <summary>Specifies which email properties should be returned. All properties will be returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -115,7 +112,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
-            /// <summary>The start timestamp of the time span, in ISO8601 representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startTimestamp")]

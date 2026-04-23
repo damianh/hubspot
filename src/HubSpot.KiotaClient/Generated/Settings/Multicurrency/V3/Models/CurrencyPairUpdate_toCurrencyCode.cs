@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
 {
+    /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you want to convert to.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CurrencyPairUpdate_toCurrencyCode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AED")]
         #pragma warning disable CS1591

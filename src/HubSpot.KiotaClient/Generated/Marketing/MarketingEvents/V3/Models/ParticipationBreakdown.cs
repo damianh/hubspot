@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.ParticipationAssociations Associations { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The creation time and date of the target marketing event</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The internal ID of the target marketing event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

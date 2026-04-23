@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.marketing.v3.emails.item.revisions.item collection</summary>
-        /// <param name="position">The ID of a revision.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -49,20 +49,20 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         /// <summary>
         /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. To view the most recent version, sort by the updatedAt parameter. 
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalPublicEmailVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalPublicEmailVersion?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalPublicEmailVersion> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalVersionPublicEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalPublicEmailVersion>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalPublicEmailVersion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of all versions of a marketing email, with each entry including the full state of that particular version. To view the most recent version, sort by the updatedAt parameter. 
@@ -98,7 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RevisionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The cursor token value to get the next set of results. You can get this from the `paging.next.after` JSON property of a paged response containing more results.</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -108,7 +108,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>The cursor token value to get the previous set of results. You can get this from the `paging.prev.before` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -118,7 +117,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The maximum number of results to return. Default is 10.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

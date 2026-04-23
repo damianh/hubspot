@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "E0856ABA3484CF01549B589F60038E7CF102273D892CC6E5322B0B39F78B1172AF1738A1244C4BA38A30D85FFB6E1A42D7E6833FE67B6AA34CA307EBF6376282",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/App%20Uninstalls/versions/209039",
+  "descriptionHash": "8102C9EB79B65CD4DC9FDBF7BD23B96E97E08A2A6337D458448B3BF0E46C1C50B2689E3759D3B59C20DA4F7BC198CD995565F19013B6DABB45362C89C2A2F1C8",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22137/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMAppUninstallsV3Client",

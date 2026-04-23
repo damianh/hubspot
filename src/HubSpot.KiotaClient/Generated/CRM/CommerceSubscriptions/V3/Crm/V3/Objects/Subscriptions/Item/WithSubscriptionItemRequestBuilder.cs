@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
         {
         }
         /// <summary>
-        /// Move an Object identified by `{subscriptionId}` to the recycling bin.
+        /// Delete a specific subscription by its ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read an Object identified by `{subscriptionId}`. `{subscriptionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a specific subscription by its ID, including its properties and associations.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{subscriptionId}`or optionally a unique property value as specified by the `idProperty` query param. `{subscriptionId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
+        /// Update a specific subscription by its ID with new property values.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject"/></returns>
         /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
@@ -89,7 +89,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Move an Object identified by `{subscriptionId}` to the recycling bin.
+        /// Delete a specific subscription by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return requestInfo;
         }
         /// <summary>
-        /// Read an Object identified by `{subscriptionId}`. `{subscriptionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a specific subscription by its ID, including its properties and associations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{subscriptionId}`or optionally a unique property value as specified by the `idProperty` query param. `{subscriptionId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
+        /// Update a specific subscription by its ID with new property values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
@@ -165,7 +165,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
         {
         }
         /// <summary>
-        /// Read an Object identified by `{subscriptionId}`. `{subscriptionId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a specific subscription by its ID, including its properties and associations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSubscriptionItemRequestBuilderGetQueryParameters 
@@ -183,7 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]
@@ -223,12 +223,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
         {
         }
         /// <summary>
-        /// Perform a partial update of an Object identified by `{subscriptionId}`or optionally a unique property value as specified by the `idProperty` query param. `{subscriptionId}` refers to the internal object ID by default, and the `idProperty` query param refers to a property whose values are unique for the object. Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
+        /// Update a specific subscription by its ID with new property values.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSubscriptionItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]

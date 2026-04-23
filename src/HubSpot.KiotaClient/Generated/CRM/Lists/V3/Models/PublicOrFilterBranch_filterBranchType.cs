@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>The type of the filter branch (OR).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicOrFilterBranch_filterBranchType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "OR")]
         #pragma warning disable CS1591

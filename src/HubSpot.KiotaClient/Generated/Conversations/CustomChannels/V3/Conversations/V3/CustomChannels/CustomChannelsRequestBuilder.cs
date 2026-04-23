@@ -15,20 +15,28 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomChannelsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The EmptyPathSegment property</summary>
-        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.EmptyPathSegmentRequestBuilder EmptyPathSegment
-        {
-            get => new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.conversations.v3.customChannels.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder"/></returns>
-        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder this[string position]
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("channelId", position);
+                return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.conversations.v3.customChannels.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("channelId", position);
                 return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.WithChannelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

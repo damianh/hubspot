@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
 {
-    /// <summary>
-    /// An individual search result.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class ContentSearchResult : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
 #else
         public string AuthorFullName { get; set; }
 #endif
-        /// <summary>For knowledge articles, the category of the article.</summary>
+        /// <summary>The error category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -38,6 +37,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
 #nullable restore
 #else
         public string CombinedId { get; set; }
+#endif
+        /// <summary>The contentType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentType { get; set; }
+#nullable restore
+#else
+        public string ContentType { get; set; }
 #endif
         /// <summary>The result&apos;s description. The content will be determined by the value of `length` in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +71,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
         public string FeaturedImageUrl { get; set; }
 #endif
         /// <summary>The ID of the content.</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
+        /// <summary>The inBeta property</summary>
+        public bool? InBeta { get; set; }
+        /// <summary>The isPrivate property</summary>
+        public bool? IsPrivate { get; set; }
         /// <summary>The document&apos;s language.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult_language? Language { get; set; }
         /// <summary>The date the content was published.</summary>
@@ -137,10 +148,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
                 { "authorFullName", n => { AuthorFullName = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "combinedId", n => { CombinedId = n.GetStringValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "featuredImageUrl", n => { FeaturedImageUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "inBeta", n => { InBeta = n.GetBoolValue(); } },
+                { "isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult_language>(); } },
                 { "publishedDate", n => { PublishedDate = n.GetLongValue(); } },
                 { "rowId", n => { RowId = n.GetLongValue(); } },
@@ -163,10 +177,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
             writer.WriteStringValue("authorFullName", AuthorFullName);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("combinedId", CombinedId);
+            writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("featuredImageUrl", FeaturedImageUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
+            writer.WriteBoolValue("inBeta", InBeta);
+            writer.WriteBoolValue("isPrivate", IsPrivate);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult_language>("language", Language);
             writer.WriteLongValue("publishedDate", PublishedDate);
             writer.WriteLongValue("rowId", RowId);

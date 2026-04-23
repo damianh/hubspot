@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The availability property</summary>
+        /// <summary>An array containing the closed range availability for a meeting link. Closed range times are provided as minute offsets from midnight (e.g., 540 corresponds to 9am).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings_availability? Availability { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings_availability Availability { get; set; }
 #endif
-        /// <summary>The customAvailabilityEndDate property</summary>
+        /// <summary>The end date for a meeting link&apos;s custom availability window, represented as Unix time in milliseconds.</summary>
         public long? CustomAvailabilityEndDate { get; set; }
-        /// <summary>The customAvailabilityStartDate property</summary>
+        /// <summary>The start date for a meeting link&apos;s custom availability window, represented as Unix time in milliseconds.</summary>
         public long? CustomAvailabilityStartDate { get; set; }
         /// <summary>The displayInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalGuestSettings GuestSettings { get; set; }
 #endif
-        /// <summary>The language property</summary>
+        /// <summary>The language setting used for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Language { get; set; }
 #endif
-        /// <summary>The legalConsentEnabled property</summary>
+        /// <summary>Whether the legal consent checkbox is displayed during meeting booking.</summary>
         public bool? LegalConsentEnabled { get; set; }
         /// <summary>The legalConsentOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions LegalConsentOptions { get; set; }
 #endif
-        /// <summary>The locale property</summary>
+        /// <summary>The locale setting used for formatting dates and times in the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale { get; set; }
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Locale { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The physical or virtual location where the meeting will take place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -92,11 +92,11 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>The meetingBufferTime property</summary>
-        public int? MeetingBufferTime { get; set; }
-        /// <summary>The ownerPrioritized property</summary>
+        /// <summary>The minimum buffer time in milliseconds between consecutive meetings.</summary>
+        public long? MeetingBufferTime { get; set; }
+        /// <summary>Indicates whether the meeting owner is prioritized during booking. Only applies to link types of ROUND_ROBIN.</summary>
         public bool? OwnerPrioritized { get; set; }
-        /// <summary>The redirectUrl property</summary>
+        /// <summary>The URL to redirect to after a meeting is booked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RedirectUrl { get; set; }
@@ -104,15 +104,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string RedirectUrl { get; set; }
 #endif
-        /// <summary>The startTimeIncrementMinutes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StartTimeIncrementMinutes { get; set; }
-#nullable restore
-#else
-        public string StartTimeIncrementMinutes { get; set; }
-#endif
-        /// <summary>The weeksToAdvertise property</summary>
+        /// <summary>The increment for available start times of meetings, spelt out as a word (e.g. 15 minute increment corresponds to `FIFTEEN`). `MEETING_DURATION` is also a valid value.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings_startTimeIncrementMinutes? StartTimeIncrementMinutes { get; set; }
+        /// <summary>Legacy property that indicates the number of weeks in advance that availability is advertised. May be outdated or superseded by other properties.</summary>
         public int? WeeksToAdvertise { get; set; }
         /// <summary>The welcomeScreenInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,10 +153,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
                 { "legalConsentOptions", n => { LegalConsentOptions = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions>(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
-                { "meetingBufferTime", n => { MeetingBufferTime = n.GetIntValue(); } },
+                { "meetingBufferTime", n => { MeetingBufferTime = n.GetLongValue(); } },
                 { "ownerPrioritized", n => { OwnerPrioritized = n.GetBoolValue(); } },
                 { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
-                { "startTimeIncrementMinutes", n => { StartTimeIncrementMinutes = n.GetStringValue(); } },
+                { "startTimeIncrementMinutes", n => { StartTimeIncrementMinutes = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings_startTimeIncrementMinutes>(); } },
                 { "weeksToAdvertise", n => { WeeksToAdvertise = n.GetIntValue(); } },
                 { "welcomeScreenInfo", n => { WelcomeScreenInfo = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsWelcomeScreenInfo>(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsWelcomeScreenInfo.CreateFromDiscriminatorValue); } },
             };
@@ -186,10 +180,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions>("legalConsentOptions", LegalConsentOptions);
             writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("location", Location);
-            writer.WriteIntValue("meetingBufferTime", MeetingBufferTime);
+            writer.WriteLongValue("meetingBufferTime", MeetingBufferTime);
             writer.WriteBoolValue("ownerPrioritized", OwnerPrioritized);
             writer.WriteStringValue("redirectUrl", RedirectUrl);
-            writer.WriteStringValue("startTimeIncrementMinutes", StartTimeIncrementMinutes);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings_startTimeIncrementMinutes>("startTimeIncrementMinutes", StartTimeIncrementMinutes);
             writer.WriteIntValue("weeksToAdvertise", WeeksToAdvertise);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsWelcomeScreenInfo>("welcomeScreenInfo", WelcomeScreenInfo);
             writer.WriteAdditionalData(AdditionalData);

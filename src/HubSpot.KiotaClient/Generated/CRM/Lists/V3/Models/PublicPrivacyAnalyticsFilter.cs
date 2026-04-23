@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>Specifies the type of filter (PRIVACY).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPrivacyAnalyticsFilter_filterType? FilterType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the filter (PRIVACY_CONSENT_GRANTED, PRIVACY_CONSENT_NOT_GRANTED).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The privacyName property</summary>
+        /// <summary>The name of the privacy setting used in the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyName { get; set; }

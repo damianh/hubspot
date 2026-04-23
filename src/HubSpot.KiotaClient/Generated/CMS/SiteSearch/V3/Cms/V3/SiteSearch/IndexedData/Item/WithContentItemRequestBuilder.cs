@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Indexe
         {
         }
         /// <summary>
-        /// For a given account and document ID (page ID, blog post ID, HubDB row ID, etc.), return all indexed data for that document. This is useful when debugging why a particular document is not returned from a custom search.
+        /// Return all indexed data for an asset (e.g., page, blog post, HubDB table), specified by ID. This is useful when debugging why a particular asset is not returned from a custom search.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.IndexedData"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Indexe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.IndexedData>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.IndexedData.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For a given account and document ID (page ID, blog post ID, HubDB row ID, etc.), return all indexed data for that document. This is useful when debugging why a particular document is not returned from a custom search.
+        /// Return all indexed data for an asset (e.g., page, blog post, HubDB table), specified by ID. This is useful when debugging why a particular asset is not returned from a custom search.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,13 +80,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Indexe
             return new global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.IndexedData.Item.WithContentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For a given account and document ID (page ID, blog post ID, HubDB row ID, etc.), return all indexed data for that document. This is useful when debugging why a particular document is not returned from a custom search.
+        /// Return all indexed data for an asset (e.g., page, blog post, HubDB table), specified by ID. This is useful when debugging why a particular asset is not returned from a custom search.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithContentItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The type of document. Can be one of `SITE_PAGE`, `BLOG_POST`, or `KNOWLEDGE_ARTICLE`.</summary>
-            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
@@ -96,9 +94,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Indexe
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
-            /// <summary>The type of document. Can be one of `SITE_PAGE`, `BLOG_POST`, or `KNOWLEDGE_ARTICLE`.</summary>
-            [QueryParameter("type")]
-            public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.IndexedData.Item.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

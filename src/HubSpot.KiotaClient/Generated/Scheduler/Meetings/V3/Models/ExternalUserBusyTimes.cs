@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalTimeRange> BusyTimes { get; set; }
 #endif
-        /// <summary>The isOffline property</summary>
+        /// <summary>Whether the user is offline.</summary>
         public bool? IsOffline { get; set; }
         /// <summary>The meetingsUser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

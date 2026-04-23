@@ -8,10 +8,6 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum TimeOffset_timeUnit
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "WEEKS")]
-        #pragma warning disable CS1591
-        WEEKS,
-        #pragma warning restore CS1591
         [EnumMember(Value = "DAYS")]
         #pragma warning disable CS1591
         DAYS,
@@ -23,6 +19,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         [EnumMember(Value = "MINUTES")]
         #pragma warning disable CS1591
         MINUTES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEEKS")]
+        #pragma warning disable CS1591
+        WEEKS,
         #pragma warning restore CS1591
     }
 }

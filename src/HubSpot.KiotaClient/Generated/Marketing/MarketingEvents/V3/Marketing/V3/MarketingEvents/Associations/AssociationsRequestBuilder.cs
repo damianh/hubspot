@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
     public partial class AssociationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.marketing.v3.marketingEvents.associations.item collection</summary>
-        /// <param name="position">The accountId that is associated with this marketing event in the external event application</param>
+        /// <param name="position">The accountId that is associated with this marketing event in the external event application.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Associations.Item.ExternalAccountItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Associations.Item.ExternalAccountItemRequestBuilder this[string position]
         {

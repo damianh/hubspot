@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.ActionConfirmationBody Confirmation { get; set; }
 #endif
-        /// <summary>The httpMethod property</summary>
+        /// <summary>The HTTP method to be used when making the call, which can be set to GET, POST, PUT, DELETE, or PATCH. If using GET or DELETE</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.ActionHookActionBody_httpMethod? HttpMethod { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The label for this property as you&apos;d like it displayed to users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The propertyNamesIncluded property</summary>
+        /// <summary>A list of property names that will be included on the action. See the documentation for more information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PropertyNamesIncluded { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public List<string> PropertyNamesIncluded { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of status.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.ActionHookActionBody_type? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The URL endpoint that will be called when the action is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

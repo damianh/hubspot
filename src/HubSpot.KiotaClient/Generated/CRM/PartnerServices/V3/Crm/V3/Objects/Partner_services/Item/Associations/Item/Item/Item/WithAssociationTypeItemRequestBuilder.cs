@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
         {
         }
         /// <summary>
-        /// Remove an association between two partner services
+        /// Remove an existing association between a partner service and another specified object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Associate a partner service with another object
+        /// Create an association between a partner service and another specified object.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.SimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.SimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.SimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an association between two partner services
+        /// Remove an existing association between a partner service and another specified object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
             return requestInfo;
         }
         /// <summary>
-        /// Associate a partner service with another object
+        /// Create an association between a partner service and another specified object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

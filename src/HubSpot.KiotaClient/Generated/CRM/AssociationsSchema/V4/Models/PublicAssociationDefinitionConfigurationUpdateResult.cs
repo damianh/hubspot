@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>The category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINED, or USER_DEFINED.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionConfigurationUpdateResult_category? Category { get; set; }
-        /// <summary>The typeId property</summary>
+        /// <summary>An integer value used to uniquely identify a specific association type within its Association Category.</summary>
         public int? TypeId { get; set; }
-        /// <summary>The userEnforcedMaxToObjectIds property</summary>
+        /// <summary>The maximum number of object IDs that a user can enforce for associations.</summary>
         public int? UserEnforcedMaxToObjectIds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionConfigurationUpdateResult"/> and sets the default values.

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 {
+    /// <summary>The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicConditionalSingleFieldDependency_dependencyType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONDITIONAL_SINGLE_FIELD")]
         #pragma warning disable CS1591

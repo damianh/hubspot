@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Pages.V3.cms.v3.pages.landingPages.item.revisions.item collection</summary>
-        /// <param name="position">The Landing Page version id.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -47,25 +47,25 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
         {
         }
         /// <summary>
-        /// Retrieves all the previous versions of a Landing Page.
+        /// Retrieve all the previous versions of a landing page, specified by page ID.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalVersionPage"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalVersionPage?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageVersion?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalVersionPage> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageVersion> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.RevisionsRequestBuilder.RevisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalVersionPage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalVersionPage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageVersion>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.CollectionResponseWithTotalPageVersion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves all the previous versions of a Landing Page.
+        /// Retrieve all the previous versions of a landing page, specified by page ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,12 +93,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             return new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Item.Revisions.RevisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves all the previous versions of a Landing Page.
+        /// Retrieve all the previous versions of a landing page, specified by page ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RevisionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The cursor token value to get the next set of results. You can get this from the `paging.next.after` JSON property of a paged response containing more results.</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -117,7 +117,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The maximum number of results to return. Default is 100.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

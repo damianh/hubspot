@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         {
         }
         /// <summary>
-        /// Checks whether a set of contacts have opted out of all communications.
+        /// Retrieve the unsubscribe-all status for a batch of subscribers across specified channels. This endpoint is useful for checking the unsubscribe status of multiple subscribers in bulk, particularly for email channels.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicWideStatusBulkResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicWideStatusBulkResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicWideStatusBulkResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Checks whether a set of contacts have opted out of all communications.
+        /// Retrieve the unsubscribe-all status for a batch of subscribers across specified channels. This endpoint is useful for checking the unsubscribe status of multiple subscribers in bulk, particularly for email channels.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,15 +85,15 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.UnsubscribeAll.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Checks whether a set of contacts have opted out of all communications.
+        /// Retrieve the unsubscribe-all status for a batch of subscribers across specified channels. This endpoint is useful for checking the unsubscribe status of multiple subscribers in bulk, particularly for email channels.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
-            /// <summary>If you have the [business unit add-on](https://developers.hubspot.com/beta-docs/guides/api/settings/business-units-api), include this parameter to filter results by business unit ID. The default Account business unit will always use `0`.</summary>
+            /// <summary>The ID of the business unit. This is an optional parameter.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel to check the unsubscribe status for. This parameter is required and currently only supports &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>The communication channel to check the unsubscribe status for. This parameter is required and currently only supports &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.UnsubscribeAll.Read.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
         }

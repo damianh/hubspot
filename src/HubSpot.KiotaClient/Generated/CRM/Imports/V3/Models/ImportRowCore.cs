@@ -14,13 +14,21 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The containsEncryptedProperties property</summary>
+        /// <summary>The additionalRowData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AdditionalRowData { get; set; }
+#nullable restore
+#else
+        public List<string> AdditionalRowData { get; set; }
+#endif
+        /// <summary>Indicates whether this row contains values that were encrypted.</summary>
         public bool? ContainsEncryptedProperties { get; set; }
-        /// <summary>The fileId property</summary>
-        public int? FileId { get; set; }
-        /// <summary>The lineNumber property</summary>
+        /// <summary>The unique identifier of the uploaded file containing this row.</summary>
+        public long? FileId { get; set; }
+        /// <summary>The 1-indexed line number of this row in the source file. Line number 0 is reserved for file-wide errors that don&apos;t correspond to a specific row.</summary>
         public int? LineNumber { get; set; }
-        /// <summary>The pageName property</summary>
+        /// <summary>The name of the spreadsheet sheet/page containing this row.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -61,8 +69,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "additionalRowData", n => { AdditionalRowData = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "containsEncryptedProperties", n => { ContainsEncryptedProperties = n.GetBoolValue(); } },
-                { "fileId", n => { FileId = n.GetIntValue(); } },
+                { "fileId", n => { FileId = n.GetLongValue(); } },
                 { "lineNumber", n => { LineNumber = n.GetIntValue(); } },
                 { "pageName", n => { PageName = n.GetStringValue(); } },
                 { "rowData", n => { RowData = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -75,8 +84,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("additionalRowData", AdditionalRowData);
             writer.WriteBoolValue("containsEncryptedProperties", ContainsEncryptedProperties);
-            writer.WriteIntValue("fileId", FileId);
+            writer.WriteLongValue("fileId", FileId);
             writer.WriteIntValue("lineNumber", LineNumber);
             writer.WriteStringValue("pageName", PageName);
             writer.WriteCollectionOfPrimitiveValues<string>("rowData", RowData);

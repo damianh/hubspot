@@ -41,7 +41,7 @@ public class CrmFeesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Fees.PostAsync(input);
-        var fee = created!.Entity!;
+        var fee = created!;
 
         fee.ShouldNotBeNull();
         fee.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmFeesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Fees.PostAsync(input);
-        var feeId = created!.Entity!.Id!;
+        var feeId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Fees[feeId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmFeesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Fees.PostAsync(input);
-        var feeId = created!.Entity!.Id!;
+        var feeId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
