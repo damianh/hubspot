@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "98FC52DE83E775B6996DEC79B6A1CAE22AB120A809E35D1D71F83CF69793C642B14035456029DEBF1DD49EB80F32327E721F59BD37DB36396E1005459B714D92",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Settings/Tax%20Rates/versions/207908",
+  "descriptionHash": "27EAA7B14A95CFC584FF52D0D6769071D4D4A77FA0BE43F2A4FBD1BAF0A47FFCB7F72BEADD9990788EF767132BEA288C8134078B158BA329040C1D5DD0E589B1",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22212/version/1",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotSettingsTaxRatesV1Client",

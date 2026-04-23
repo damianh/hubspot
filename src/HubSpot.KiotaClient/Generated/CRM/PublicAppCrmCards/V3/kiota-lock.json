@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "6241A6B1D4FBE49CA605C8E93FB9BD6FC205D5A35FC719BA8155271AE2E724DEEA0752F00EB5E8D271EC8FE4086526A3F95DD628A3FAD8D5543129CB4C964EB9",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Public%20App%20Crm%20Cards/versions/147892",
+  "descriptionHash": "DEE8C458B0022CC5DEB7D980A627BDD0E548791D16B0A784A31C295AAA5D9ED4BCA49AE53E38077CA704A4B9994FF0FC790DCDF0FFA812B6A011DFF794E7ED64",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22182/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMPublicAppCrmCardsV3Client",

@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When this subscription was created. Formatted as milliseconds from the [Unix epoch](#).</summary>
+        /// <summary>When this subscription was created, formatted as a date-time string.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>A publicly available URL for HubSpot to call where event payloads will be delivered. See [link-so-some-doc](#) for details about the format of these event payloads.</summary>
+        /// <summary>A publicly available URL for HubSpot to call where event payloads will be delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl { get; set; }
@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.ThrottlingSettings Throttling { get; set; }
 #endif
-        /// <summary>When this subscription was last updated. Formatted as milliseconds from the [Unix epoch](#).</summary>
+        /// <summary>When this subscription was last updated, formatted as a date-time string.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SettingsResponse"/> and sets the default values.

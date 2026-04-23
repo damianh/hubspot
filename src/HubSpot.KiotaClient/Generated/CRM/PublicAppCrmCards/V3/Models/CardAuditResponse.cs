@@ -12,20 +12,20 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     public partial class CardAuditResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionType property</summary>
+        /// <summary>The type of action performed, with possible values: CREATE, DELETE, UPDATE.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse_actionType? ActionType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The applicationId property</summary>
+        /// <summary>The ID of the application associated with the card.</summary>
         public int? ApplicationId { get; set; }
-        /// <summary>The authSource property</summary>
+        /// <summary>The source of authentication for the action, with possible values: APP, EXTERNAL, INTERNAL.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse_authSource? AuthSource { get; set; }
-        /// <summary>The changedAt property</summary>
+        /// <summary>The timestamp indicating when the change occurred.</summary>
         public long? ChangedAt { get; set; }
-        /// <summary>The initiatingUserId property</summary>
+        /// <summary>The ID of the user who initiated the action.</summary>
         public int? InitiatingUserId { get; set; }
-        /// <summary>The objectTypeId property</summary>
-        public int? ObjectTypeId { get; set; }
+        /// <summary>The ID of the card.</summary>
+        public long? ObjectTypeId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse"/> and sets the default values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
                 { "authSource", n => { AuthSource = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse_authSource>(); } },
                 { "changedAt", n => { ChangedAt = n.GetLongValue(); } },
                 { "initiatingUserId", n => { InitiatingUserId = n.GetIntValue(); } },
-                { "objectTypeId", n => { ObjectTypeId = n.GetIntValue(); } },
+                { "objectTypeId", n => { ObjectTypeId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse_authSource>("authSource", AuthSource);
             writer.WriteLongValue("changedAt", ChangedAt);
             writer.WriteIntValue("initiatingUserId", InitiatingUserId);
-            writer.WriteIntValue("objectTypeId", ObjectTypeId);
+            writer.WriteLongValue("objectTypeId", ObjectTypeId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

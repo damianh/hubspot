@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUni
         {
         }
         /// <summary>
-        /// Get Business Units identified by `userId`. The `userId` refers to the user’s ID.
+        /// Retrieve the brands that a specific user can access.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models.CollectionResponsePublicBusinessUnitNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUni
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models.CollectionResponsePublicBusinessUnitNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models.CollectionResponsePublicBusinessUnitNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Business Units identified by `userId`. The `userId` refers to the user’s ID.
+        /// Retrieve the brands that a specific user can access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,12 +80,11 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUni
             return new global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUnits.V3.BusinessUnits.User.Item.WithUserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Business Units identified by `userId`. The `userId` refers to the user’s ID.
+        /// Retrieve the brands that a specific user can access.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The names of Business Units to retrieve. If empty or not provided, then all associated Business Units will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -95,7 +94,6 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUni
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-            /// <summary>The names of properties to optionally include in the response body. The only valid value is `logoMetadata`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

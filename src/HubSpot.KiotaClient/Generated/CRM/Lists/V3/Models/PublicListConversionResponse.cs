@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The convertedAt property</summary>
+        /// <summary>The date and time when the list was converted.</summary>
         public DateTimeOffset? ConvertedAt { get; set; }
-        /// <summary>The listId property</summary>
+        /// <summary>The unique identifier of the list for which the conversion details are provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListId { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ListId { get; set; }
 #endif
-        /// <summary>The requestedConversionTime property</summary>
+        /// <summary>The scheduled time for the list conversion, which can be based on a specific date or inactivity period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionResponse.PublicListConversionResponse_requestedConversionTime? RequestedConversionTime { get; set; }

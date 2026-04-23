@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models
 {
+    /// <summary>
+    /// An input object that contains a collection of objects to be created together in a batch.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SimplePublicObjectBatchInputForCreate : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.PublicAssociationsForObject> Associations { get; set; }
 #endif
-        /// <summary>The objectWriteTraceId property</summary>
+        /// <summary>An identifier used for tracing the creation or update request of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectWriteTraceId { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models
 #else
         public string ObjectWriteTraceId { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>Key value pairs representing the properties of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.SimplePublicObjectBatchInputForCreate_properties? Properties { get; set; }

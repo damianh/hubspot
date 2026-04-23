@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <summary>The includeObjectsWithNoValueSet property</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
         /// <summary>The lowerBound property</summary>
-        public int? LowerBound { get; set; }
+        public double? LowerBound { get; set; }
         /// <summary>The operationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,8 +46,16 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The upperBound property</summary>
-        public int? UpperBound { get; set; }
+        public double? UpperBound { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation"/> and sets the default values.
         /// </summary>
@@ -76,12 +84,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             {
                 { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 { "includeObjectsWithNoValueSet", n => { IncludeObjectsWithNoValueSet = n.GetBoolValue(); } },
-                { "lowerBound", n => { LowerBound = n.GetIntValue(); } },
+                { "lowerBound", n => { LowerBound = n.GetDoubleValue(); } },
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation_propertyType>(); } },
-                { "upperBound", n => { UpperBound = n.GetIntValue(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
+                { "upperBound", n => { UpperBound = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -93,12 +102,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultValue", DefaultValue);
             writer.WriteBoolValue("includeObjectsWithNoValueSet", IncludeObjectsWithNoValueSet);
-            writer.WriteIntValue("lowerBound", LowerBound);
+            writer.WriteDoubleValue("lowerBound", LowerBound);
             writer.WriteStringValue("operationType", OperationType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation_propertyType>("propertyType", PropertyType);
-            writer.WriteIntValue("upperBound", UpperBound);
+            writer.WriteStringValue("renderSpec", RenderSpec);
+            writer.WriteDoubleValue("upperBound", UpperBound);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

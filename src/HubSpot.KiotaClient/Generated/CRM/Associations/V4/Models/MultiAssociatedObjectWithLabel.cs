@@ -7,22 +7,23 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
 {
+    /// <summary>
+    /// Represents an object that is associated with multiple other objects, with optional context.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MultiAssociatedObjectWithLabel : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The associationTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel_1>? AssociationTypes { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel>? AssociationTypes { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel_1> AssociationTypes { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel> AssociationTypes { get; set; }
 #endif
-        /// <summary>The toObjectId property</summary>
+        /// <summary>The unique identifier for the target object in the association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectId { get; set; }
@@ -55,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "associationTypes", n => { AssociationTypes = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel_1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "associationTypes", n => { AssociationTypes = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "toObjectId", n => { ToObjectId = n.GetStringValue(); } },
             };
         }
@@ -66,7 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel_1>("associationTypes", AssociationTypes);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.AssociationSpecWithLabel>("associationTypes", AssociationTypes);
             writer.WriteStringValue("toObjectId", ToObjectId);
             writer.WriteAdditionalData(AdditionalData);
         }

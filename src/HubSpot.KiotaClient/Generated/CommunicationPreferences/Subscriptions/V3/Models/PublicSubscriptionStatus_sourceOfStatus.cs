@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicSubscriptionStatus_sourceOfStatus
     {
-        [EnumMember(Value = "PORTAL_WIDE_STATUS")]
-        #pragma warning disable CS1591
-        PORTAL_WIDE_STATUS,
-        #pragma warning restore CS1591
         [EnumMember(Value = "BRAND_WIDE_STATUS")]
         #pragma warning disable CS1591
         BRAND_WIDE_STATUS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PORTAL_WIDE_STATUS")]
+        #pragma warning disable CS1591
+        PORTAL_WIDE_STATUS,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUBSCRIPTION_STATUS")]
         #pragma warning disable CS1591

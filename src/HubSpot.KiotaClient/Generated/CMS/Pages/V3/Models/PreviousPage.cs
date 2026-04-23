@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 {
     /// <summary>
-    /// Model definition for a previous page
+    /// specifies the paging information needed to retrieve the previous set of results in a paginated API response
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreviousPage : IAdditionalDataHolder, IParsable

@@ -22,12 +22,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType> ByObjectType { get; set; }
 #endif
-        /// <summary>The overallLimit property</summary>
-        public int? OverallLimit { get; set; }
-        /// <summary>The overallPercentage property</summary>
+        /// <summary>The maximum number of custom object records allowed.</summary>
+        public long? OverallLimit { get; set; }
+        /// <summary>The percentage of the overall custom object record limit that has been used.</summary>
         public double? OverallPercentage { get; set; }
-        /// <summary>The overallUsage property</summary>
-        public int? OverallUsage { get; set; }
+        /// <summary>The total number of custom object records currently in use.</summary>
+        public long? OverallUsage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.CustomObjectRecordLimitResponse"/> and sets the default values.
         /// </summary>
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "byObjectType", n => { ByObjectType = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType>(global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "overallLimit", n => { OverallLimit = n.GetIntValue(); } },
+                { "overallLimit", n => { OverallLimit = n.GetLongValue(); } },
                 { "overallPercentage", n => { OverallPercentage = n.GetDoubleValue(); } },
-                { "overallUsage", n => { OverallUsage = n.GetIntValue(); } },
+                { "overallUsage", n => { OverallUsage = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType>("byObjectType", ByObjectType);
-            writer.WriteIntValue("overallLimit", OverallLimit);
+            writer.WriteLongValue("overallLimit", OverallLimit);
             writer.WriteDoubleValue("overallPercentage", OverallPercentage);
-            writer.WriteIntValue("overallUsage", OverallUsage);
+            writer.WriteLongValue("overallUsage", OverallUsage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

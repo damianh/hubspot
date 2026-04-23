@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Up
         {
         }
         /// <summary>
-        /// Update a batch of taxes by internal ID, or unique property values
+        /// Update multiple tax records using their internal IDs or unique property values. This operation allows for batch processing of updates to tax objects, ensuring efficient management of tax data in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Up
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of taxes by internal ID, or unique property values
+        /// Update multiple tax records using their internal IDs or unique property values. This operation allows for batch processing of updates to tax objects, ensuring efficient management of tax data in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -46,9 +46,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3.Crm.V3.ObjectLibrary.
         public EnablementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/object-library/enablement", rawUrl)
         {
         }
-        /// <summary>
-        /// Returns all objects in the object library and their enablement status
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3.Models.PortalObjectTypeEnablementPublicResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,9 +61,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3.Crm.V3.ObjectLibrary.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3.Models.PortalObjectTypeEnablementPublicResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.ObjectLibrary.V3.Models.PortalObjectTypeEnablementPublicResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Returns all objects in the object library and their enablement status
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

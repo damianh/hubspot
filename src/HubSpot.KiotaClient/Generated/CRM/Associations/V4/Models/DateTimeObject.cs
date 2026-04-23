@@ -14,12 +14,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateOnly property</summary>
+        /// <summary>Indicates whether the DateTime value represents only a date without a time component.</summary>
         public bool? DateOnly { get; set; }
-        /// <summary>The timeZoneShift property</summary>
+        /// <summary>The integer value representing the shift in minutes from UTC for the DateTime value.</summary>
         public int? TimeZoneShift { get; set; }
-        /// <summary>The value property</summary>
-        public int? Value { get; set; }
+        /// <summary>The integer value representing a specific point in time.</summary>
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.DateTimeObject"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
             {
                 { "dateOnly", n => { DateOnly = n.GetBoolValue(); } },
                 { "timeZoneShift", n => { TimeZoneShift = n.GetIntValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("dateOnly", DateOnly);
             writer.WriteIntValue("timeZoneShift", TimeZoneShift);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

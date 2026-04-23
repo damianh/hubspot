@@ -85,7 +85,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Draf
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublishRequestBuilderPostQueryParameters 
         {
-            /// <summary>Set this to `true` to populate foreign ID values in the response.</summary>
             [QueryParameter("includeForeignIds")]
             public bool? IncludeForeignIds { get; set; }
         }

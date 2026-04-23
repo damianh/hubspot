@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The from property</summary>
+        /// <summary>Contains the Id of a Public Object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicObjectId? From { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicObjectId From { get; set; }
 #endif
-        /// <summary>The to property</summary>
+        /// <summary>Contains the Id of a Public Object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicObjectId? To { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicObjectId To { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of association between the &apos;from&apos; and &apos;to&apos; objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

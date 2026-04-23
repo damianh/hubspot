@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When this calling extension was created.</summary>
+        /// <summary>The date and time when the calling extension settings were created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The target height of the iframe that will contain your phone/calling UI.</summary>
+        /// <summary>The height of the calling extension interface.</summary>
         public int? Height { get; set; }
-        /// <summary>When true, this indicates that your calling app is ready for production. Users will be able to select your calling app as their provider and can then click to dial within HubSpot.</summary>
+        /// <summary>Specifies whether the calling extension settings are ready for use.</summary>
         public bool? IsReady { get; set; }
-        /// <summary>The name of your calling service to display to users.</summary>
+        /// <summary>The name of the calling extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -28,13 +28,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>When true, users will be able to click to dial from custom objects.</summary>
+        /// <summary>Indicates if the calling extension supports custom objects.</summary>
         public bool? SupportsCustomObjects { get; set; }
-        /// <summary>When true, this indicates that your calling app supports inbound calling within HubSpot. </summary>
+        /// <summary>Indicates if the calling extension supports inbound calling.</summary>
         public bool? SupportsInboundCalling { get; set; }
-        /// <summary>The last time the settings for this calling extension were modified.</summary>
+        /// <summary>The date and time when the calling extension settings were last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The URL to your phone/calling UI, built with the [Calling SDK](#).</summary>
+        /// <summary>The URL associated with the calling extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -42,11 +42,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>When false, this indicates that your calling app does not require the use of the separate calling window to hold the call connection. </summary>
+        /// <summary>Specifies if the calling extension uses a dedicated calling window.</summary>
         public bool? UsesCallingWindow { get; set; }
-        /// <summary>When false, this indicates that your calling app does not use the anchored calling remote within the HubSpot app. </summary>
+        /// <summary>Indicates if the calling extension uses a remote service.</summary>
         public bool? UsesRemote { get; set; }
-        /// <summary>The target width of the iframe that will contain your phone/calling UI.</summary>
+        /// <summary>The width of the calling extension interface.</summary>
         public int? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.SettingsResponse"/> and sets the default values.

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         {
         }
         /// <summary>
-        /// Batch retrieve subscription statuses for a set of contacts.
+        /// Retrieve the communication preferences statuses for a batch of subscribers. This endpoint allows you to check the subscription status across a specified channel for multiple subscribers at once. It is useful for managing and auditing subscriber preferences in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.BatchResponsePublicStatusBulkResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Batch retrieve subscription statuses for a set of contacts.
+        /// Retrieve the communication preferences statuses for a batch of subscribers. This endpoint allows you to check the subscription status across a specified channel for multiple subscribers at once. It is useful for managing and auditing subscriber preferences in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,15 +85,15 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Batch retrieve subscription statuses for a set of contacts.
+        /// Retrieve the communication preferences statuses for a batch of subscribers. This endpoint allows you to check the subscription status across a specified channel for multiple subscribers at once. It is useful for managing and auditing subscriber preferences in bulk.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
-            /// <summary>If you have the [business unit add-on](https://developers.hubspot.com/beta-docs/guides/api/settings/business-units-api), include this parameter to filter results by business unit ID. The default Account business unit will always use `0`.</summary>
+            /// <summary>The ID of the business unit to filter the statuses. It is an integer.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>A required string indicating the communication channel to filter by. Valid value is &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The channel type for the subscription type. Currently, the only supported channel type is `EMAIL`.</summary>
+            /// <summary>A required string indicating the communication channel to filter by. Valid value is &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.Read.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
         }

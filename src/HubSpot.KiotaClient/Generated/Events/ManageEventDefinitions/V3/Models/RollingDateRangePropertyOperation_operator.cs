@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         IS_LESS_THAN_X_DAYS_AGO,
         #pragma warning restore CS1591
-        [EnumMember(Value = "IS_MORE_THAN_X_DAYS_AGO")]
-        #pragma warning disable CS1591
-        IS_MORE_THAN_X_DAYS_AGO,
-        #pragma warning restore CS1591
         [EnumMember(Value = "IS_LESS_THAN_X_DAYS_FROM_NOW")]
         #pragma warning disable CS1591
         IS_LESS_THAN_X_DAYS_FROM_NOW,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IS_MORE_THAN_X_DAYS_AGO")]
+        #pragma warning disable CS1591
+        IS_MORE_THAN_X_DAYS_AGO,
         #pragma warning restore CS1591
         [EnumMember(Value = "IS_MORE_THAN_X_DAYS_FROM_NOW")]
         #pragma warning disable CS1591

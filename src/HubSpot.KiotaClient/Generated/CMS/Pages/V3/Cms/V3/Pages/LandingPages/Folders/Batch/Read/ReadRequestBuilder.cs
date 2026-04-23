@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Update the Folder objects identified in the request body.
+        /// Retrieve a batch of landing page folders as identified in the request body.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder"/></returns>
         /// <param name="body">Wrapper for providing an array of strings as inputs.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponseContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the Folder objects identified in the request body.
+        /// Retrieve a batch of landing page folders as identified in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Wrapper for providing an array of strings as inputs.</param>
@@ -85,12 +85,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Update the Folder objects identified in the request body.
+        /// Retrieve a batch of landing page folders as identified in the request body.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specifies whether to return deleted Folders. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

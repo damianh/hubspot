@@ -88,10 +88,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Set to True to receive a message explaining the error.</summary>
             [QueryParameter("includeErrorMessage")]
             public bool? IncludeErrorMessage { get; set; }
-            /// <summary>Set to True to receive the data values for the errored row.</summary>
             [QueryParameter("includeRowData")]
             public bool? IncludeRowData { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>

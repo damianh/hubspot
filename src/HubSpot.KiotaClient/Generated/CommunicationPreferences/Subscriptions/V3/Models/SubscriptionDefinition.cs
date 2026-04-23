@@ -64,6 +64,14 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Purpose { get; set; }
 #endif
+        /// <summary>An array of translations for the subscription, each represented by a PublicSubscriptionTranslation object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation>? SubscriptionTranslations { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation> SubscriptionTranslations { get; set; }
+#endif
         /// <summary>Time at which the definition was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -101,6 +109,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
                 { "isInternal", n => { IsInternal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetStringValue(); } },
+                { "subscriptionTranslations", n => { SubscriptionTranslations = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation>(global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -121,6 +130,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
             writer.WriteBoolValue("isInternal", IsInternal);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("purpose", Purpose);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation>("subscriptionTranslations", SubscriptionTranslations);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

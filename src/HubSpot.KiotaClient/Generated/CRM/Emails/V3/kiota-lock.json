@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "58B7EE427B6955C4973C9E4E7921D4448C4B62F8B4CD1B3537DA285DCDE379E73DA763E0813510665A9DD64D72F8C95DF2287744308CCA95BDCD4260D377470E",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Emails/versions/424",
+  "descriptionHash": "73240891234DD89BD28594D515E2C3DEEBD0005709C8A7CEEB506882858E4C87D663A83C2B5032480E34D49AA34A2B6795C1318C5B088B93AC2D62D750053543",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22158/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMEmailsV3Client",

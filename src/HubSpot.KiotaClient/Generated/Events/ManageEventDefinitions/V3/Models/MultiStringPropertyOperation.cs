@@ -60,6 +60,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation.MultiStringPropertyOperation_pruningRefineBy PruningRefineBy { get; set; }
 #endif
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation_propertyType>(); } },
                 { "pruningRefineBy", n => { PruningRefineBy = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation.MultiStringPropertyOperation_pruningRefineBy>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation.MultiStringPropertyOperation_pruningRefineBy.CreateFromDiscriminatorValue); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -120,6 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation_propertyType>("propertyType", PropertyType);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation.MultiStringPropertyOperation_pruningRefineBy>("pruningRefineBy", PruningRefineBy);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }

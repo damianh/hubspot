@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tasks.V3.Crm.V3.Objects.Tasks.Batch.Cr
         {
         }
         /// <summary>
-        /// Create a batch of tasks
+        /// Create multiple tasks in a single request by providing a batch of task properties and associations. This endpoint allows for efficient task creation by processing multiple tasks together.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Tasks.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Tasks.V3.Crm.V3.Objects.Tasks.Batch.Cr
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Tasks.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Tasks.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of tasks
+        /// Create multiple tasks in a single request by providing a batch of task properties and associations. This endpoint allows for efficient task creation by processing multiple tasks together.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

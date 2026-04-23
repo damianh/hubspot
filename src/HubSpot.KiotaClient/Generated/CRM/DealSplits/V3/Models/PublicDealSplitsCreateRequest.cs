@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The splits property</summary>
+        /// <summary>The unique identifier for the deal.</summary>
+        public long? Id { get; set; }
+        /// <summary>An array of deal split inputs, each containing an owner ID and a percentage of the deal split.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.PublicDealSplitInput>? Splits { get; set; }
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "splits", n => { Splits = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.PublicDealSplitInput>(global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.PublicDealSplitInput.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.PublicDealSplitInput>("splits", Splits);
             writer.WriteAdditionalData(AdditionalData);
         }

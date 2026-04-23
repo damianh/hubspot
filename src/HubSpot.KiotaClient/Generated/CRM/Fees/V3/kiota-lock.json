@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "0573B2D07F6F86D30BB9262896ECF09F7B09BD46DCE5408D432F1A7EFB478BB604452F4808A218503A9B8BBECC77CC04D610F0CA355D24FE3FFA9E621794B8E2",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Fees/versions/424",
+  "descriptionHash": "7C8CE13FE82638B3D8627C947ADB1C8E7649EAAFDA4845916DDA83AD44B9B967BEFF64D5A31525A918418A35ECA181249832B585AEF43D526559C10688D87EBE",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22161/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMFeesV3Client",

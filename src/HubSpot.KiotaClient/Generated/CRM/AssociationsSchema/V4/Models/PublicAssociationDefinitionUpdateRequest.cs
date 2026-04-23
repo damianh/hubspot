@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associationTypeId property</summary>
+        /// <summary>The unique identifier for the association type.</summary>
         public int? AssociationTypeId { get; set; }
-        /// <summary>The inverseLabel property</summary>
+        /// <summary>An optional descriptor for the inverse relationship between associated records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InverseLabel { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 #else
         public string InverseLabel { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>A descriptor that provides context about the relationship between associated records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }

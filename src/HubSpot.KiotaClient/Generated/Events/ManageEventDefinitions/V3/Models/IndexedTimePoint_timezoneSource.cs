@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         CUSTOM,
         #pragma warning restore CS1591
-        [EnumMember(Value = "USER")]
-        #pragma warning disable CS1591
-        USER,
-        #pragma warning restore CS1591
         [EnumMember(Value = "PORTAL")]
         #pragma warning disable CS1591
         PORTAL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER")]
+        #pragma warning disable CS1591
+        USER,
         #pragma warning restore CS1591
     }
 }

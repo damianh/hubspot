@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V3.Models
 {
-    /// <summary>
-    /// The identification token to be passed to the Conversations JS API to identify the visitor
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class IdentificationTokenResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The token property</summary>
+        /// <summary>An identification token that allows the visitor to be treated as a known contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Token { get; set; }

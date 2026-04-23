@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Crm.V3.Objects.Fees.Batch.Crea
         {
         }
         /// <summary>
-        /// Create a batch of fees
+        /// Create multiple fees in a single request by providing a batch of fee objects with their properties and associations. This operation returns a list of the created fee objects, including their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Crm.V3.Objects.Fees.Batch.Crea
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of fees
+        /// Create multiple fees in a single request by providing a batch of fee objects with their properties and associations. This operation returns a list of the created fee objects, including their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

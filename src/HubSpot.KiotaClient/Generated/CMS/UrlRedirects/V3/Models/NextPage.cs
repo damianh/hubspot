@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A paging cursor token for retrieving subsequent pages.</summary>
+        /// <summary>The cursor value indicating where to begin fetching the next page of results in a paginated collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? After { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models
 #else
         public string After { get; set; }
 #endif
-        /// <summary>A URL that can be used to retrieve the next page results.</summary>
+        /// <summary>An optional URL for directly accessing the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }

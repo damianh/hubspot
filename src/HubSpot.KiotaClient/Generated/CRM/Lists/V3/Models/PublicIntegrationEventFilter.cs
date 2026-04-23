@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventTypeId property</summary>
+        /// <summary>The ID representing the type of event for the integration event filter.</summary>
         public int? EventTypeId { get; set; }
         /// <summary>The filterLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEventFilterMetadata> FilterLines { get; set; }
 #endif
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter (INTEGRATION_EVENT).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIntegrationEventFilter_filterType? FilterType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIntegrationEventFilter"/> and sets the default values.

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the action revision was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition Definition { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the action revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The revisionId property</summary>
+        /// <summary>The unique identifier for the specific revision of the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RevisionId { get; set; }

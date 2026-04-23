@@ -183,7 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.I
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]
@@ -228,7 +228,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.I
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]

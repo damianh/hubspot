@@ -47,25 +47,25 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
         {
         }
         /// <summary>
-        /// List associations of a partner client by type
+        /// Retrieve a list of associations for a specific partner client based on the specified object type.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedId"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedIdForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedId?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedIdForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedId> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedIdForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.Associations.Item.WithToObjectTypeItemRequestBuilder.WithToObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedId>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedId.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedIdForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Models.CollectionResponseAssociatedIdForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List associations of a partner client by type
+        /// Retrieve a list of associations for a specific partner client based on the specified object type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partn
             return new global::DamianH.HubSpot.KiotaClient.CRM.PartnerClients.V3.Crm.V3.Objects.Partner_clients.Item.Associations.Item.WithToObjectTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List associations of a partner client by type
+        /// Retrieve a list of associations for a specific partner client based on the specified object type.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithToObjectTypeItemRequestBuilderGetQueryParameters 

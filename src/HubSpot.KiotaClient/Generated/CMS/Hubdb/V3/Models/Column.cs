@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the column was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,11 +24,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser CreatedBy { get; set; }
 #endif
-        /// <summary>The createdByUserId property</summary>
+        /// <summary>The ID of the user who created the column.</summary>
         public int? CreatedByUserId { get; set; }
-        /// <summary>The deleted property</summary>
+        /// <summary>Indicates whether the column has been deleted.</summary>
         public bool? Deleted { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -100,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #endif
         /// <summary>Type of the column</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Column_type? Type { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the column was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The updatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser UpdatedBy { get; set; }
 #endif
-        /// <summary>The updatedByUserId property</summary>
+        /// <summary>The ID of the user who last updated the column.</summary>
         public int? UpdatedByUserId { get; set; }
         /// <summary>Column width for HubDB UI</summary>
         public int? Width { get; set; }

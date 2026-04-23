@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 {
+    /// <summary>Indicates the sensitivity level of the property, with options: highly_sensitive, non_sensitive, or sensitive.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyCreate_dataSensitivity
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "highly_sensitive")]
+        #pragma warning disable CS1591
+        Highly_sensitive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "non_sensitive")]
         #pragma warning disable CS1591
         Non_sensitive,
@@ -15,10 +18,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
         [EnumMember(Value = "sensitive")]
         #pragma warning disable CS1591
         Sensitive,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "highly_sensitive")]
-        #pragma warning disable CS1591
-        Highly_sensitive,
         #pragma warning restore CS1591
     }
 }

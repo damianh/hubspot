@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Cr
         {
         }
         /// <summary>
-        /// Create a batch of notes
+        /// Create multiple notes in a single request by providing the necessary properties for each note. This operation returns the created notes with their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Cr
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of notes
+        /// Create multiple notes in a single request by providing the necessary properties for each note. This operation returns the created notes with their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

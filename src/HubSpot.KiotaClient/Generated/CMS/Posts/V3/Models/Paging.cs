@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Model definition for a next page.</summary>
+        /// <summary>Specifies the paging information needed to retrieve the next set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.NextPage? Next { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.NextPage Next { get; set; }
 #endif
-        /// <summary>Model definition for a previous page</summary>
+        /// <summary>specifies the paging information needed to retrieve the previous set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.PreviousPage? Prev { get; set; }

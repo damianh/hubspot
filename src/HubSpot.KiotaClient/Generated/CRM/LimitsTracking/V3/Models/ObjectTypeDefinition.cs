@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The pluralLabel property</summary>
+        /// <summary>The plural form label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>The singularLabel property</summary>
+        /// <summary>The singular form label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SingularLabel { get; set; }

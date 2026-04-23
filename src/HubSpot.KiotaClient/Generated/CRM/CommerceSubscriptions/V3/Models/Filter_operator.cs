@@ -7,21 +7,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Filter_operator
     {
+        [EnumMember(Value = "BETWEEN")]
+        #pragma warning disable CS1591
+        BETWEEN,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONTAINS_TOKEN")]
+        #pragma warning disable CS1591
+        CONTAINS_TOKEN,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EQ")]
         #pragma warning disable CS1591
         EQ,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NEQ")]
-        #pragma warning disable CS1591
-        NEQ,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "LT")]
-        #pragma warning disable CS1591
-        LT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "LTE")]
-        #pragma warning disable CS1591
-        LTE,
         #pragma warning restore CS1591
         [EnumMember(Value = "GT")]
         #pragma warning disable CS1591
@@ -31,33 +27,37 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models
         #pragma warning disable CS1591
         GTE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "BETWEEN")]
+        [EnumMember(Value = "HAS_PROPERTY")]
         #pragma warning disable CS1591
-        BETWEEN,
+        HAS_PROPERTY,
         #pragma warning restore CS1591
         [EnumMember(Value = "IN")]
         #pragma warning disable CS1591
         IN,
         #pragma warning restore CS1591
-        [EnumMember(Value = "NOT_IN")]
+        [EnumMember(Value = "LT")]
         #pragma warning disable CS1591
-        NOT_IN,
+        LT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "HAS_PROPERTY")]
+        [EnumMember(Value = "LTE")]
         #pragma warning disable CS1591
-        HAS_PROPERTY,
+        LTE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NEQ")]
+        #pragma warning disable CS1591
+        NEQ,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NOT_CONTAINS_TOKEN")]
+        #pragma warning disable CS1591
+        NOT_CONTAINS_TOKEN,
         #pragma warning restore CS1591
         [EnumMember(Value = "NOT_HAS_PROPERTY")]
         #pragma warning disable CS1591
         NOT_HAS_PROPERTY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CONTAINS_TOKEN")]
+        [EnumMember(Value = "NOT_IN")]
         #pragma warning disable CS1591
-        CONTAINS_TOKEN,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NOT_CONTAINS_TOKEN")]
-        #pragma warning disable CS1591
-        NOT_CONTAINS_TOKEN,
+        NOT_IN,
         #pragma warning restore CS1591
     }
 }

@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithContactTypeItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A cursor for pagination. If provided, the results will start after the given cursor.Example: NTI1Cg%3D%3D</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -95,7 +95,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>End date for the report data, formatted as YYYY-MM-DD.Default value: Current date</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endDate")]
@@ -105,10 +104,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             [QueryParameter("endDate")]
             public string EndDate { get; set; }
 #endif
-            /// <summary>Limit for the number of contacts to fetchDefault: 100</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The start date for the report data, formatted as YYYY-MM-DD.Default value: 2006-01-01</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startDate")]

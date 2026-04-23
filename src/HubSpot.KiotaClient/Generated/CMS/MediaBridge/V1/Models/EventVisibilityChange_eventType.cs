@@ -12,6 +12,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         ALL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ATTENTION_SPAN")]
+        #pragma warning disable CS1591
+        ATTENTION_SPAN,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MEDIA_PLAYS")]
         #pragma warning disable CS1591
         MEDIA_PLAYS,
@@ -19,10 +23,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         [EnumMember(Value = "MEDIA_PLAYS_PERCENT")]
         #pragma warning disable CS1591
         MEDIA_PLAYS_PERCENT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ATTENTION_SPAN")]
-        #pragma warning disable CS1591
-        ATTENTION_SPAN,
         #pragma warning restore CS1591
     }
 }

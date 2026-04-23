@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the deal associated with the deal splits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The splits property</summary>
+        /// <summary>An array of deal split objects, each representing a portion of the deal assigned to an owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject>? Splits { get; set; }

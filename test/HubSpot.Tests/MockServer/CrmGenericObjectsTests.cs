@@ -42,11 +42,10 @@ public class CrmGenericObjectsTests : IAsyncLifetime
         var result = await _client.Crm.V3.Objects[customObjectType].PostAsync(input);
 
         result.ShouldNotBeNull();
-        result.Entity.ShouldNotBeNull();
-        result.Entity!.Id.ShouldNotBeNullOrWhiteSpace();
-        result.Entity.Properties.AdditionalData["name"].ShouldBe("Fluffy");
-        result.Entity.Properties.AdditionalData["species"].ShouldBe("Cat");
-        result.Entity.Properties.AdditionalData["age"].ShouldBe("3");
+        result.Id.ShouldNotBeNullOrWhiteSpace();
+        result.Properties.AdditionalData["name"].ShouldBe("Fluffy");
+        result.Properties.AdditionalData["species"].ShouldBe("Cat");
+        result.Properties.AdditionalData["age"].ShouldBe("3");
     }
 
     [Fact]

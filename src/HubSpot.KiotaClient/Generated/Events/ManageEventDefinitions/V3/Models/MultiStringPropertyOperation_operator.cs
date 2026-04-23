@@ -8,6 +8,26 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum MultiStringPropertyOperation_operator
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "CONTAINS")]
+        #pragma warning disable CS1591
+        CONTAINS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONTAINS_EXACTLY")]
+        #pragma warning disable CS1591
+        CONTAINS_EXACTLY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOES_NOT_CONTAIN")]
+        #pragma warning disable CS1591
+        DOES_NOT_CONTAIN,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DOES_NOT_CONTAIN_EXACTLY")]
+        #pragma warning disable CS1591
+        DOES_NOT_CONTAIN_EXACTLY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ENDS_WITH")]
+        #pragma warning disable CS1591
+        ENDS_WITH,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IS_EQUAL_TO")]
         #pragma warning disable CS1591
         IS_EQUAL_TO,
@@ -16,21 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         IS_NOT_EQUAL_TO,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CONTAINS")]
-        #pragma warning disable CS1591
-        CONTAINS,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DOES_NOT_CONTAIN")]
-        #pragma warning disable CS1591
-        DOES_NOT_CONTAIN,
-        #pragma warning restore CS1591
         [EnumMember(Value = "STARTS_WITH")]
         #pragma warning disable CS1591
         STARTS_WITH,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ENDS_WITH")]
-        #pragma warning disable CS1591
-        ENDS_WITH,
         #pragma warning restore CS1591
     }
 }

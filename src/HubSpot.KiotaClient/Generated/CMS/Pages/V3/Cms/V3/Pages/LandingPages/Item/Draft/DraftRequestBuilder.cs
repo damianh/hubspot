@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
         {
         }
         /// <summary>
-        /// Retrieve the full draft version of the Landing Page.
+        /// Retrieve the full draft version of a landing page, specified by page ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sparse updates the draft version of a single Landing Page object identified by the id in the path.You only need to specify the column values that you are modifying.
+        /// Partially updates the draft version of a single landing page, specified by its ID. You only need to specify the column values that you are modifying.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page"/></returns>
         /// <param name="body">Model definition for a landing page or site page.</param>
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the full draft version of the Landing Page.
+        /// Retrieve the full draft version of a landing page, specified by page ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +103,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Sparse updates the draft version of a single Landing Page object identified by the id in the path.You only need to specify the column values that you are modifying.
+        /// Partially updates the draft version of a single landing page, specified by its ID. You only need to specify the column values that you are modifying.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Model definition for a landing page or site page.</param>

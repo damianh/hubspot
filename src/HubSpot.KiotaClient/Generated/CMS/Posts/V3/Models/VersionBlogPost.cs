@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPost Object { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this version of the Blog Post was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Model definition for a version user. Contains addition information about the user who created a version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

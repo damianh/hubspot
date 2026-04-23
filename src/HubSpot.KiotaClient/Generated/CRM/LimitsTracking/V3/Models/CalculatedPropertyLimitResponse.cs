@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType> ByObjectType { get; set; }
 #endif
-        /// <summary>The overallLimit property</summary>
+        /// <summary>The maximum number of calculated properties allowed.</summary>
         public long? OverallLimit { get; set; }
-        /// <summary>The overallPercentage property</summary>
+        /// <summary>The percentage of the overall limit that is currently being used for calculated properties.</summary>
         public double? OverallPercentage { get; set; }
-        /// <summary>The overallUsage property</summary>
+        /// <summary>The total number of calculated properties currently in use.</summary>
         public long? OverallUsage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.CalculatedPropertyLimitResponse"/> and sets the default values.

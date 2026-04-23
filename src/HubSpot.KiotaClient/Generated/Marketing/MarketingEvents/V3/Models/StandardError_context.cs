@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
     /// <summary>
-    /// Additional context-specific information related to the error.
+    /// The object that contains details of the errors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardError_context : IAdditionalDataHolder, IParsable

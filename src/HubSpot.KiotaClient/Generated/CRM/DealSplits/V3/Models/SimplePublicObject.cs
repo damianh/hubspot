@@ -29,6 +29,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>An identifier used for tracing the write request for the object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ObjectWriteTraceId { get; set; }
+#nullable restore
+#else
+        public string ObjectWriteTraceId { get; set; }
+#endif
         /// <summary>Key-value pairs representing the properties of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 #endif
         /// <summary>The timestamp when the object was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The URL associated with the object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject"/> and sets the default values.
         /// </summary>
@@ -76,9 +92,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
                 { "archivedAt", n => { ArchivedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "objectWriteTraceId", n => { ObjectWriteTraceId = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_properties>(global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_properties.CreateFromDiscriminatorValue); } },
                 { "propertiesWithHistory", n => { PropertiesWithHistory = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_propertiesWithHistory>(global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_propertiesWithHistory.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -92,9 +110,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
             writer.WriteDateTimeOffsetValue("archivedAt", ArchivedAt);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("objectWriteTraceId", ObjectWriteTraceId);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_properties>("properties", Properties);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_propertiesWithHistory>("propertiesWithHistory", PropertiesWithHistory);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

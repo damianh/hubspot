@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode
             get => new global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extract.ExtractRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.cms.v3.sourceCode.item collection</summary>
-        /// <param name="position">The environment of the file (&quot;draft&quot; or &quot;published&quot;).</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Item.WithEnvironmentItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Item.WithEnvironmentItemRequestBuilder this[string position]
         {

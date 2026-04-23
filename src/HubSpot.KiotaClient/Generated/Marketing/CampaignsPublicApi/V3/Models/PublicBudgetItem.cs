@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>The monetary amount allocated for the budget item.</summary>
         public double? Amount { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The timestamp when the budget item was created.</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the budget item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the budget item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the budget item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The order property</summary>
+        /// <summary>The order of the budget item, indicating its sequence based on creation date.</summary>
         public int? Order { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The timestamp when the budget item was last updated.</summary>
         public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models.PublicBudgetItem"/> and sets the default values.

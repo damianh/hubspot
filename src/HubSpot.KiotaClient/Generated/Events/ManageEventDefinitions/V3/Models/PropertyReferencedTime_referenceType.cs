@@ -8,25 +8,25 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum PropertyReferencedTime_referenceType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "VALUE")]
+        [EnumMember(Value = "ANNIVERSARY")]
         #pragma warning disable CS1591
-        VALUE,
+        ANNIVERSARY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION")]
+        #pragma warning disable CS1591
+        ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
         #pragma warning restore CS1591
         [EnumMember(Value = "UPDATED_AT")]
         #pragma warning disable CS1591
         UPDATED_AT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ANNIVERSARY")]
+        [EnumMember(Value = "VALUE")]
         #pragma warning disable CS1591
-        ANNIVERSARY,
+        VALUE,
         #pragma warning restore CS1591
         [EnumMember(Value = "VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION")]
         #pragma warning disable CS1591
         VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION")]
-        #pragma warning disable CS1591
-        ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
         #pragma warning restore CS1591
     }
 }

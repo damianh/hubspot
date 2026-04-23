@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>Offset search results by this value. The default offset is 0 and the maximum offset of items for a given search is 10,000. Narrow your search down if you are reaching this limit.</summary>
+            /// <summary>Offset search results by this value. The default offset is 0 and the maximum offset of items for a given search is 10,000.  Narrow your search down if you are reaching this limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -95,9 +95,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Search files by access. If `true`, will show only public files. If `false`, will show only private files.</summary>
+            /// <summary>Search files by access. If &apos;true&apos; will show only public files; if &apos;false&apos; will show only private files</summary>
             [QueryParameter("allowsAnonymousAccess")]
             public bool? AllowsAnonymousAccess { get; set; }
+            /// <summary>Search files updated before this timestamp. Time must be epoch time in milliseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -107,13 +108,13 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>Search files by time of creation.</summary>
+            /// <summary>Search files by exact time of creation. Time must be epoch time in milliseconds.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
-            /// <summary>Search files by greater than or equal to time of creation. Can be used with `createdAtLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to time of creation. Can be used with createdAtLte to create a range.</summary>
             [QueryParameter("createdAtGte")]
             public DateTimeOffset? CreatedAtGte { get; set; }
-            /// <summary>Search files by less than or equal to time of creation. Can be used with `createdAtGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to time of creation. Can be used with createdAtGte to create a range.</summary>
             [QueryParameter("createdAtLte")]
             public DateTimeOffset? CreatedAtLte { get; set; }
             /// <summary>Search files by specified encoding.</summary>
@@ -129,10 +130,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             /// <summary>Search files by exact expires time. Time must be epoch time in milliseconds.</summary>
             [QueryParameter("expiresAt")]
             public DateTimeOffset? ExpiresAt { get; set; }
-            /// <summary>Search files by greater than or equal to expires time. Can be used with `expiresAtLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to expires time. Can be used with expiresAtLte to create a range.</summary>
             [QueryParameter("expiresAtGte")]
             public DateTimeOffset? ExpiresAtGte { get; set; }
-            /// <summary>Search files by less than or equal to expires time. Can be used with `expiresAtGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to expires time. Can be used with expiresAtGte to create a range.</summary>
             [QueryParameter("expiresAtLte")]
             public DateTimeOffset? ExpiresAtLte { get; set; }
             /// <summary>Search files by given extension.</summary>
@@ -145,7 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("extension")]
             public string Extension { get; set; }
 #endif
-            /// <summary>Search files by a specific md5 hash.</summary>
+            /// <summary>Search files by specific md5 hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fileMd5")]
@@ -158,17 +159,18 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             /// <summary>Search files by height of image or video.</summary>
             [QueryParameter("height")]
             public int? Height { get; set; }
-            /// <summary>Search files by greater than or equal to height of image or video. Can be used with `heightLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to height of image or video. Can be used with heightLte to create a range.</summary>
             [QueryParameter("heightGte")]
             public int? HeightGte { get; set; }
-            /// <summary>Search files by less than or equal to height of image or video. Can be used with `heightGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to height of image or video. Can be used with heightGte to create a range.</summary>
             [QueryParameter("heightLte")]
             public int? HeightLte { get; set; }
+            /// <summary>Search files by greater than or equal to ID. Can be used with idLte to create a range.</summary>
             [QueryParameter("idGte")]
             public long? IdGte { get; set; }
+            /// <summary>Search files by less than or equal to ID. Can be used with idGte to create a range.</summary>
             [QueryParameter("idLte")]
             public long? IdLte { get; set; }
-            /// <summary>Search by a list of file IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -178,7 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("ids")]
             public long?[] Ids { get; set; }
 #endif
-            /// <summary>If `true`, shows files that have been marked to be used in new content. If `false`, shows files that should not be used in new content.</summary>
+            /// <summary>If true shows files that have been marked to be used in new content. It false shows files that should not be used in new content.</summary>
             [QueryParameter("isUsableInContent")]
             public bool? IsUsableInContent { get; set; }
             /// <summary>Number of items to return. Default limit is 10, maximum limit is 100.</summary>
@@ -194,7 +196,6 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>Search files within given `folderId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("parentFolderIds")]
@@ -214,7 +215,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("path")]
             public string Path { get; set; }
 #endif
-            /// <summary>A list of file properties to return.</summary>
+            /// <summary>Desired file properties in the return object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]
@@ -227,10 +228,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             /// <summary>Search files by exact file size in bytes.</summary>
             [QueryParameter("size")]
             public long? Size { get; set; }
-            /// <summary>Search files by greater than or equal to file size. Can be used with `sizeLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to file size. Can be used with sizeLte to create a range.</summary>
             [QueryParameter("sizeGte")]
             public long? SizeGte { get; set; }
-            /// <summary>Search files by less than or equal to file size. Can be used with `sizeGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to file size. Can be used with sizeGte to create a range.</summary>
             [QueryParameter("sizeLte")]
             public long? SizeLte { get; set; }
             /// <summary>Sort files by a given field.</summary>
@@ -243,7 +244,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
-            /// <summary>Filter by provided file type.</summary>
+            /// <summary>Search files by file type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
@@ -253,16 +254,16 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
-            /// <summary>Search files by time of latest updated.</summary>
+            /// <summary>Search files by exact time of latest updated. Time must be epoch time in milliseconds.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
-            /// <summary>Search files by greater than or equal to time of latest update. Can be used with `updatedAtLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to time of latest update. Can be used with updatedAtLte to create a range.</summary>
             [QueryParameter("updatedAtGte")]
             public DateTimeOffset? UpdatedAtGte { get; set; }
-            /// <summary>Search files by less than or equal to time of latest update. Can be used with `updatedAtGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to time of latest update. Can be used with updatedAtGte to create a range.</summary>
             [QueryParameter("updatedAtLte")]
             public DateTimeOffset? UpdatedAtLte { get; set; }
-            /// <summary>Search by file URL.</summary>
+            /// <summary>Search for given URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("url")]
@@ -275,10 +276,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             /// <summary>Search files by width of image or video.</summary>
             [QueryParameter("width")]
             public int? Width { get; set; }
-            /// <summary>Search files by greater than or equal to width of image or video. Can be used with `widthLte` to create a range.</summary>
+            /// <summary>Search files by greater than or equal to width of image or video. Can be used with widthLte to create a range.</summary>
             [QueryParameter("widthGte")]
             public int? WidthGte { get; set; }
-            /// <summary>Search files by less than or equal to width of image or video. Can be used with `widthGte` to create a range.</summary>
+            /// <summary>Search files by less than or equal to width of image or video. Can be used with widthGte to create a range.</summary>
             [QueryParameter("widthLte")]
             public int? WidthLte { get; set; }
         }

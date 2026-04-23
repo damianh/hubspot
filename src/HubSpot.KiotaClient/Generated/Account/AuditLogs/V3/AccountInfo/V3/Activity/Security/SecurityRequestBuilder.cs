@@ -95,16 +95,16 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>The start time, for retrieving logs within a specific timeframe.</summary>
+            /// <summary>Limit to activities created after this epoch timestamp.</summary>
             [QueryParameter("fromTimestamp")]
             public long? FromTimestamp { get; set; }
             /// <summary>The maximum number of results to display per page. Max value of limit is 200.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The end time, for retrieving logs within a specific timeframe.</summary>
+            /// <summary>Limit to activities created before this epoch timestamp.</summary>
             [QueryParameter("toTimestamp")]
             public long? ToTimestamp { get; set; }
-            /// <summary>The ID of a user, for retrieving user-specific logs.</summary>
+            /// <summary>Identifier of user to retrieve activities for</summary>
             [QueryParameter("userId")]
             public int? UserId { get; set; }
         }

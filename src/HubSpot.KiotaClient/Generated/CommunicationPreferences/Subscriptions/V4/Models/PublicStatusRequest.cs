@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public string SubscriberIdString { get; set; }
 #endif
         /// <summary>The ID of the subscription to update.</summary>
-        public int? SubscriptionId { get; set; }
+        public long? SubscriptionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatusRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
                 { "legalBasisExplanation", n => { LegalBasisExplanation = n.GetStringValue(); } },
                 { "statusState", n => { StatusState = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatusRequest_statusState>(); } },
                 { "subscriberIdString", n => { SubscriberIdString = n.GetStringValue(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetIntValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             writer.WriteStringValue("legalBasisExplanation", LegalBasisExplanation);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatusRequest_statusState>("statusState", StatusState);
             writer.WriteStringValue("subscriberIdString", SubscriberIdString);
-            writer.WriteIntValue("subscriptionId", SubscriptionId);
+            writer.WriteLongValue("subscriptionId", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

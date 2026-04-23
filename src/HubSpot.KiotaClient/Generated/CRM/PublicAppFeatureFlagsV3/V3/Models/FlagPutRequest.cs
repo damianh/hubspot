@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The defaultState property</summary>
+        /// <summary>The state that the flag should have if there are no overrides for a particular portal</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagPutRequest_defaultState? DefaultState { get; set; }
-        /// <summary>The overrideState property</summary>
+        /// <summary>A flag value that supercedes all other overrides, including portal-level values. Mostly used for things like emergency overrides</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagPutRequest_overrideState? OverrideState { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.FlagPutRequest"/> and sets the default values.

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
-        /// <summary>The errorMessage property</summary>
+        /// <summary>The epoch millisecond timestamp when this error was recorded.</summary>
+        public long? CreatedAt { get; set; }
+        /// <summary>A human-readable error message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string ErrorMessage { get; set; }
 #endif
-        /// <summary>The errorType property</summary>
+        /// <summary>The classification of what went wrong during import processing.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError_errorType? ErrorType { get; set; }
-        /// <summary>The extraContext property</summary>
+        /// <summary>Additional human-readable context about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtraContext { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string ExtraContext { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>A unique, stable identifier for this specific error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue InvalidPropertyValue { get; set; }
 #endif
-        /// <summary>The invalidValue property</summary>
+        /// <summary>The raw string value from the import file that caused the validation failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvalidValue { get; set; }
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string InvalidValue { get; set; }
 #endif
-        /// <summary>The invalidValueToDisplay property</summary>
+        /// <summary>A convenience accessor that returns either the value from `invalidPropertyValue` or `invalidValue`, whichever is present (preferring the property value).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InvalidValueToDisplay { get; set; }
@@ -66,11 +66,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string InvalidValueToDisplay { get; set; }
 #endif
-        /// <summary>The knownColumnNumber property</summary>
+        /// <summary>The zero-based column index in the import file where the error occurred</summary>
         public int? KnownColumnNumber { get; set; }
-        /// <summary>The objectType property</summary>
+        /// <summary>The CRM object type affected by this error.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError_objectType? ObjectType { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The modern object type identifier for the CRM object affected by this error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -111,7 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "errorType", n => { ErrorType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError_errorType>(); } },
                 { "extraContext", n => { ExtraContext = n.GetStringValue(); } },
@@ -132,7 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportError_errorType>("errorType", ErrorType);
             writer.WriteStringValue("extraContext", ExtraContext);

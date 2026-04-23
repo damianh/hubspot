@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Bat
         {
         }
         /// <summary>
-        /// Create the Landing Page objects detailed in the request body.
+        /// Create a batch of landing pages as detailed in the request body.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage"/></returns>
         /// <param name="body">Wrapper for providing an array of pages as inputs.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Bat
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create the Landing Page objects detailed in the request body.
+        /// Create a batch of landing pages as detailed in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Wrapper for providing an array of pages as inputs.</param>

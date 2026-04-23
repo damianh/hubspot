@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>Offset search results by this value. The default offset is 0 and the maximum offset of items for a given search is 10,000. Narrow your search down if you are reaching this limit.</summary>
+            /// <summary>Offset search results by this value. The default offset is 0 and the maximum offset of items for a given search is 10,000.  Narrow your search down if you are reaching this limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -95,6 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>Search folders updated before this timestamp. Time must be epoch time in milliseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -113,10 +114,13 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             /// <summary>Search folders by less than or equal to time of creation. Can be used with createdAtGte to create a range.</summary>
             [QueryParameter("createdAtLte")]
             public DateTimeOffset? CreatedAtLte { get; set; }
+            /// <summary>Search folders by greater than or equal to ID. Can be used with idLte to create a range.</summary>
             [QueryParameter("idGte")]
             public long? IdGte { get; set; }
+            /// <summary>Search folders by less than or equal to ID. Can be used with idGte to create a range.</summary>
             [QueryParameter("idLte")]
             public long? IdLte { get; set; }
+            /// <summary>Search folders by multiple IDs. Comma-separated list of folder IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -139,7 +143,6 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            /// <summary>Search folders with the given parent folderId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("parentFolderIds")]

@@ -25,6 +25,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>The pipelineId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PipelineId { get; set; }
+#nullable restore
+#else
+        public string PipelineId { get; set; }
+#endif
         /// <summary>Pipeline stage inputs used to create the new or replacement pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
             {
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "pipelineId", n => { PipelineId = n.GetStringValue(); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput>(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -72,6 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("pipelineId", PipelineId);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput>("stages", Stages);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The email of the contact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -22,8 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The vid property</summary>
-        public int? Vid { get; set; }
+        /// <summary>The internal ID of the contact</summary>
+        public long? Vid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.SubscriberEmailResponse"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "vid", n => { Vid = n.GetIntValue(); } },
+                { "vid", n => { Vid = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteIntValue("vid", Vid);
+            writer.WriteLongValue("vid", Vid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

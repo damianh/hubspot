@@ -30,6 +30,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexOffset Offset { get; set; }
 #endif
+        /// <summary>The shouldGenerateRefreshTime property</summary>
+        public bool? ShouldGenerateRefreshTime { get; set; }
         /// <summary>The timeType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timeType? TimeType { get; set; }
         /// <summary>The timezoneSource property</summary>
@@ -70,6 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             {
                 { "indexReference", n => { IndexReference = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference.CreateFromDiscriminatorValue); } },
                 { "offset", n => { Offset = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexOffset>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexOffset.CreateFromDiscriminatorValue); } },
+                { "shouldGenerateRefreshTime", n => { ShouldGenerateRefreshTime = n.GetBoolValue(); } },
                 { "timeType", n => { TimeType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timeType>(); } },
                 { "timezoneSource", n => { TimezoneSource = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timezoneSource>(); } },
                 { "zoneId", n => { ZoneId = n.GetStringValue(); } },
@@ -84,6 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint.IndexedTimePoint_indexReference>("indexReference", IndexReference);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexOffset>("offset", Offset);
+            writer.WriteBoolValue("shouldGenerateRefreshTime", ShouldGenerateRefreshTime);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timeType>("timeType", TimeType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.IndexedTimePoint_timezoneSource>("timezoneSource", TimezoneSource);
             writer.WriteStringValue("zoneId", ZoneId);

@@ -55,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #endif
         /// <summary>ID of the type of object this is. Should always .</summary>
         public int? CategoryId { get; set; }
-        /// <summary>The contentGroupId property</summary>
+        /// <summary>The unique identifier for the content group associated with the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentGroupId { get; set; }
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #endif
         /// <summary>An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE_PAGE.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_contentTypeCategory? ContentTypeCategory { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp indicating when the page was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The ID of the user that created this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string CreatedById { get; set; }
 #endif
-        /// <summary>The currentlyPublished property</summary>
+        /// <summary>Indicates whether the page is currently published.</summary>
         public bool? CurrentlyPublished { get; set; }
         /// <summary>A generated ENUM descibing the current state of this page.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_currentState? CurrentState { get; set; }
@@ -87,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The dynamicPageDataSourceId property</summary>
+        /// <summary>The identifier for the data source used by the dynamic page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DynamicPageDataSourceId { get; set; }
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string DynamicPageDataSourceId { get; set; }
 #endif
-        /// <summary>The dynamicPageDataSourceType property</summary>
+        /// <summary>The type of data source used by the dynamic page.</summary>
         public int? DynamicPageDataSourceType { get; set; }
         /// <summary>The ID of the HubDB table this page references, if applicable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +169,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         public bool? IncludeDefaultCustomCss { get; set; }
         /// <summary>The explicitly defined ISO 639 language code of the page. If null, the page will default to the language of the Domain.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_language? Language { get; set; }
-        /// <summary>The layoutSections property</summary>
+        /// <summary>A structure detailing the layout sections of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_layoutSections? LayoutSections { get; set; }
@@ -279,7 +279,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string TemplatePath { get; set; }
 #endif
-        /// <summary>The themeSettingsValues property</summary>
+        /// <summary>A collection of settings specific to the theme applied to the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_themeSettingsValues? ThemeSettingsValues { get; set; }
@@ -295,7 +295,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string TranslatedFromId { get; set; }
 #endif
-        /// <summary>The translations property</summary>
+        /// <summary>A map of translations for the page, each associated with a specific language variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_translations? Translations { get; set; }
@@ -303,7 +303,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page_translations Translations { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp indicating when the page was last updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>The ID of the user that updated this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

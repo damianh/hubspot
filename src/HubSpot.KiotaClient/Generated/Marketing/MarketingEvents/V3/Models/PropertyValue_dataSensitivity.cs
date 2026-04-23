@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
-    /// <summary>The sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, and &quot;highly_sensitive&quot;.</summary>
+    /// <summary>Level of data sensitivity</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PropertyValue_dataSensitivity
     {
+        [EnumMember(Value = "high")]
+        #pragma warning disable CS1591
+        High,
+        #pragma warning restore CS1591
         [EnumMember(Value = "none")]
         #pragma warning disable CS1591
         None,
@@ -14,10 +18,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         [EnumMember(Value = "standard")]
         #pragma warning disable CS1591
         Standard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "high")]
-        #pragma warning disable CS1591
-        High,
         #pragma warning restore CS1591
     }
 }

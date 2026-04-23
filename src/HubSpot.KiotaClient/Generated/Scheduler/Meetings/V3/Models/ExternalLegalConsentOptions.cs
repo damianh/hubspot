@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCommunicationConsentCheckbox> CommunicationConsentCheckboxes { get; set; }
 #endif
-        /// <summary>The communicationConsentText property</summary>
+        /// <summary>The text that describes the consent for communication preferences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommunicationConsentText { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string CommunicationConsentText { get; set; }
 #endif
-        /// <summary>The isLegitimateInterest property</summary>
+        /// <summary>Whether the legal basis for processing is legitimate interest.</summary>
         public bool? IsLegitimateInterest { get; set; }
-        /// <summary>The legitimateInterestLegalBasis property</summary>
+        /// <summary>The legal basis for processing under legitimate interest. Accepted values are: LEGITIMATE_INTEREST_PQL, LEGITIMATE_INTEREST_CLIENT, PERFORMANCE_OF_CONTRACT, CONSENT_WITH_NOTICE, NON_GDPR, PROCESS_AND_STORE, LEGITIMATE_INTEREST_OTHER.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions_legitimateInterestLegalBasis? LegitimateInterestLegalBasis { get; set; }
         /// <summary>The legitimateInterestSubscriptionTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<long?> LegitimateInterestSubscriptionTypes { get; set; }
 #endif
-        /// <summary>The privacyPolicyText property</summary>
+        /// <summary>The text that describes the data processing privacy policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyPolicyText { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string PrivacyPolicyText { get; set; }
 #endif
-        /// <summary>The processingConsentCheckboxLabel property</summary>
+        /// <summary>The label for the checkbox used to obtain consent for data processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingConsentCheckboxLabel { get; set; }
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string ProcessingConsentCheckboxLabel { get; set; }
 #endif
-        /// <summary>The processingConsentFooterText property</summary>
+        /// <summary>The footer text accompanying the consent for data processing. This field is not used by the meeting platform and will always be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingConsentFooterText { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string ProcessingConsentFooterText { get; set; }
 #endif
-        /// <summary>The processingConsentText property</summary>
+        /// <summary>The text that describes the consent for processing personal data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingConsentText { get; set; }
@@ -74,14 +74,8 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string ProcessingConsentText { get; set; }
 #endif
-        /// <summary>The processingConsentType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProcessingConsentType { get; set; }
-#nullable restore
-#else
-        public string ProcessingConsentType { get; set; }
-#endif
+        /// <summary>The type of consent required for processing. Accepted values are: IMPLICIT, REQUIRED_CHECKBOX.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions_processingConsentType? ProcessingConsentType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions"/> and sets the default values.
         /// </summary>
@@ -116,7 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
                 { "processingConsentCheckboxLabel", n => { ProcessingConsentCheckboxLabel = n.GetStringValue(); } },
                 { "processingConsentFooterText", n => { ProcessingConsentFooterText = n.GetStringValue(); } },
                 { "processingConsentText", n => { ProcessingConsentText = n.GetStringValue(); } },
-                { "processingConsentType", n => { ProcessingConsentType = n.GetStringValue(); } },
+                { "processingConsentType", n => { ProcessingConsentType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions_processingConsentType>(); } },
             };
         }
         /// <summary>
@@ -135,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             writer.WriteStringValue("processingConsentCheckboxLabel", ProcessingConsentCheckboxLabel);
             writer.WriteStringValue("processingConsentFooterText", ProcessingConsentFooterText);
             writer.WriteStringValue("processingConsentText", ProcessingConsentText);
-            writer.WriteStringValue("processingConsentType", ProcessingConsentType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLegalConsentOptions_processingConsentType>("processingConsentType", ProcessingConsentType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

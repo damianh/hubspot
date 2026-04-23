@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models
 {
-    /// <summary>
-    /// A Business Unit
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class PublicBusinessUnit : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A Business Unit&apos;s logo metadata</summary>
+        /// <summary>The logoMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.Models.PublicBusinessUnitLogoMetadata? LogoMetadata { get; set; }

@@ -16,8 +16,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Ev
     public partial class WithEventTemplateItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.integrators.timeline.v3.events.item.item collection</summary>
-        /// <param name="position">The event ID.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Item.Item.WithEventItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Item.Item.WithEventItemRequestBuilder this[string position]
         {
             get

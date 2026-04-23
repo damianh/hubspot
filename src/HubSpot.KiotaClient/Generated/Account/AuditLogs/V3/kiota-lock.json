@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "6D2813DE21F10E083ED78A729E33394DF017595F6C7B54D0ED8DA4B9E17D380554045621AC9FC5657B83C4C40FE321EE2EB435417A8DD01DCBFC333AC383A882",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Account/Audit%20Logs/versions/144923",
+  "descriptionHash": "F3ED6640E95E322BD25A626C58DD9635632A2D75D86DA4F24CA614514969A403BB89746CBB6A45F067B3BC65BB8848D6410C8642D0743A45FD6214C4729D76FC",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22116/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotAccountAuditLogsV3Client",

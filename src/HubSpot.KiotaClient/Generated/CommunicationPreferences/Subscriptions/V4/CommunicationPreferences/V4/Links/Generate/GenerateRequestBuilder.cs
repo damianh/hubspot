@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public GenerateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communication-preferences/v4/links/generate?channel={channel}{&businessUnitId*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Generate communication preference links for a subscriber. This endpoint allows you to create URLs for managing preferences and unsubscribing, which are useful for integrating communication preferences into your applications. Learn more about [generating preference page URLs and troubleshooting potential issues](https://developers.hubspot.com/docs/api-reference/legacy/communication-preferences/generate-url-guide).
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.LinkGenerationResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.LinkGenerationResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.LinkGenerationResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Generate communication preference links for a subscriber. This endpoint allows you to create URLs for managing preferences and unsubscribing, which are useful for integrating communication preferences into your applications. Learn more about [generating preference page URLs and troubleshooting potential issues](https://developers.hubspot.com/docs/api-reference/legacy/communication-preferences/generate-url-guide).
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,13 +84,16 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         {
             return new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Links.Generate.GenerateRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Generate communication preference links for a subscriber. This endpoint allows you to create URLs for managing preferences and unsubscribing, which are useful for integrating communication preferences into your applications. Learn more about [generating preference page URLs and troubleshooting potential issues](https://developers.hubspot.com/docs/api-reference/legacy/communication-preferences/generate-url-guide).
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class GenerateRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
+            /// <summary>The ID of the business unit for which the links are being generated. Defaults to 0.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
+            /// <summary>The communication channel for which to generate links. Must be &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
+            /// <summary>The communication channel for which to generate links. Must be &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Links.Generate.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
         }

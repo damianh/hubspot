@@ -15,9 +15,61 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         #pragma warning disable CS1591
         One,
         #pragma warning restore CS1591
+        [EnumMember(Value = "10")]
+        #pragma warning disable CS1591
+        OneZero,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "11")]
+        #pragma warning disable CS1591
+        OneOne,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "12")]
+        #pragma warning disable CS1591
+        OneTwo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "13")]
+        #pragma warning disable CS1591
+        OneThree,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "14")]
+        #pragma warning disable CS1591
+        OneFour,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "15")]
+        #pragma warning disable CS1591
+        OneFive,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "16")]
+        #pragma warning disable CS1591
+        OneSix,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "17")]
+        #pragma warning disable CS1591
+        OneSeven,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "18")]
+        #pragma warning disable CS1591
+        OneEight,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "19")]
+        #pragma warning disable CS1591
+        OneNine,
+        #pragma warning restore CS1591
         [EnumMember(Value = "2")]
         #pragma warning disable CS1591
         Two,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "20")]
+        #pragma warning disable CS1591
+        TwoZero,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "21")]
+        #pragma warning disable CS1591
+        TwoOne,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "22")]
+        #pragma warning disable CS1591
+        TwoTwo,
         #pragma warning restore CS1591
         [EnumMember(Value = "3")]
         #pragma warning disable CS1591
@@ -46,18 +98,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         [EnumMember(Value = "9")]
         #pragma warning disable CS1591
         Nine,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "10")]
-        #pragma warning disable CS1591
-        OneZero,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "11")]
-        #pragma warning disable CS1591
-        OneOne,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "12")]
-        #pragma warning disable CS1591
-        OneTwo,
         #pragma warning restore CS1591
     }
 }

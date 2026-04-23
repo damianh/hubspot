@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Crm.V3.Objects.Discounts.
         {
         }
         /// <summary>
-        /// Create a batch of discounts
+        /// Create multiple discounts in a single request by providing the necessary properties and associations for each discount. This operation returns a list of the created discounts, including their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Crm.V3.Objects.Discounts.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of discounts
+        /// Create multiple discounts in a single request by providing the necessary properties and associations for each discount. This operation returns a list of the created discounts, including their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

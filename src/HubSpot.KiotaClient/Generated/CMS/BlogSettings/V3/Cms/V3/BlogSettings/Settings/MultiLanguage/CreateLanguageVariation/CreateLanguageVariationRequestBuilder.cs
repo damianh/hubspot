@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
         {
         }
         /// <summary>
-        /// Create a new language variation from an existing blog
+        /// Create a new language variation from an existing blog.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog"/></returns>
         /// <param name="body">Request body object for creating new language variant blog.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new language variation from an existing blog
+        /// Create a new language variation from an existing blog.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body object for creating new language variant blog.</param>

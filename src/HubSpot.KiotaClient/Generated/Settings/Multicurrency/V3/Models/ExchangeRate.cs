@@ -14,15 +14,15 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversionRate property</summary>
+        /// <summary>The conversion rate between the to and from currency code of this exchange rate.</summary>
         public double? ConversionRate { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date the exchange rate was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The effectiveAt property</summary>
+        /// <summary>The date the exchange rate is in effect.</summary>
         public DateTimeOffset? EffectiveAt { get; set; }
-        /// <summary>The fromCurrencyCode property</summary>
+        /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you are converting from.</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate_fromCurrencyCode? FromCurrencyCode { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>A unique identifier for the exchange rate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -30,11 +30,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The toCurrencyCode property</summary>
+        /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you are converting to.</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate_toCurrencyCode? ToCurrencyCode { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date the exchange rate was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The visibleInUI property</summary>
+        /// <summary>This indicates if the exchange rate is shown in the MultiCurrency settings page.</summary>
         public bool? VisibleInUI { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate"/> and sets the default values.

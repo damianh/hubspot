@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Ite
     public partial class NameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V3.crm.v3.lists.objectTypeId.item.name.item collection</summary>
-        /// <param name="position">The name of the list to fetch. This is **not** case sensitive.</param>
+        /// <param name="position">The name of the list to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Item.Name.Item.WithListNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Item.Name.Item.WithListNameItemRequestBuilder this[string position]
         {

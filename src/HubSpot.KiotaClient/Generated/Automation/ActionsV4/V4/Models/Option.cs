@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #endif
         /// <summary>The position of the item relative to others in the list.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The doubleData property</summary>
+        /// <summary>A numerical value associated with the option.</summary>
         public double? DoubleData { get; set; }
         /// <summary>Whether the option is displayed in HubSpot&apos;s UI.</summary>
         public bool? Hidden { get; set; }

@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
     public partial class PublicAuditInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>The action performed that triggered the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromUserId property</summary>
+        /// <summary>The ID of the user who initiated the audit event.</summary>
         public int? FromUserId { get; set; }
-        /// <summary>The identifier property</summary>
+        /// <summary>A unique string identifier for the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #else
         public string Identifier { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>A descriptive message related to the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>The unique identifier for the HubSpot portal where the audit event occurred.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The rawObject property</summary>
+        /// <summary>An object containing the raw data associated with the audit event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PublicAuditInfo_rawObject? RawObject { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PublicAuditInfo_rawObject RawObject { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>The date and time when the audit event took place.</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PublicAuditInfo"/> and sets the default values.

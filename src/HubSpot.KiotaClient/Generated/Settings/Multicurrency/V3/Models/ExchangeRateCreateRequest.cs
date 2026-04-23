@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversionRate property</summary>
+        /// <summary>The conversion rate between the to and from currency code of this exchange rate.</summary>
         public double? ConversionRate { get; set; }
-        /// <summary>The effectiveAt property</summary>
+        /// <summary>The date the exchange rate is in effect.</summary>
         public DateTimeOffset? EffectiveAt { get; set; }
-        /// <summary>The fromCurrencyCode property</summary>
+        /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you want to convert from.</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRateCreateRequest_fromCurrencyCode? FromCurrencyCode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRateCreateRequest"/> and sets the default values.

@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
     public partial class Blog : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The absoluteUrl property</summary>
+        /// <summary>Blog&apos;s root URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AbsoluteUrl { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Boolean determining whether or not this blog allows public comments.</summary>
         public bool? AllowComments { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this blog was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The timestamp (ISO8601 format) when this Blog was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
@@ -54,6 +54,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
 #endif
         /// <summary>The explicitly defined language of the Blog. If null, the Blog will default to the language of the Domain.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog_language? Language { get; set; }
+        /// <summary>The listingPageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ListingPageId { get; set; }
+#nullable restore
+#else
+        public string ListingPageId { get; set; }
+#endif
         /// <summary>The internal name of the blog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
 #else
         public string TranslatedFromId { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The timestamp (ISO8601 format) when this blog was updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog"/> and sets the default values.
@@ -131,6 +139,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
                 { "htmlTitle", n => { HtmlTitle = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog_language>(); } },
+                { "listingPageId", n => { ListingPageId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publicAccessRules", n => { PublicAccessRules = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.PublicAccessRule>(global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.PublicAccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publicAccessRulesEnabled", n => { PublicAccessRulesEnabled = n.GetBoolValue(); } },
@@ -155,6 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models
             writer.WriteStringValue("htmlTitle", HtmlTitle);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.Blog_language>("language", Language);
+            writer.WriteStringValue("listingPageId", ListingPageId);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Models.PublicAccessRule>("publicAccessRules", PublicAccessRules);
             writer.WriteBoolValue("publicAccessRulesEnabled", PublicAccessRulesEnabled);

@@ -7,16 +7,17 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 {
+    /// <summary>
+    /// Updated settings for a webhook subscription in a batch update operation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SubscriptionBatchUpdateRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
-        /// <summary>The active property</summary>
+        /// <summary>Whether to activate or pause the webhook subscription. If true, the subscription will send webhook notifications. If false, the subscription is paused and will not send notifications. It is a boolean.</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the webhook subscription to update. It is an integer.</summary>
         public int? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionBatchUpdateRequest"/> and sets the default values.

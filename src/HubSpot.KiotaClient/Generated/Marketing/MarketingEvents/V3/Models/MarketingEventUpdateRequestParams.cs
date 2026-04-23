@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         public DateTimeOffset? EndDateTime { get; set; }
         /// <summary>Indicates if the marketing event has been cancelled. Defaults to `false`</summary>
         public bool? EventCancelled { get; set; }
-        /// <summary>The eventCompleted property</summary>
+        /// <summary>Indicates if the marketing event has been completed. Defaults to `false`</summary>
         public bool? EventCompleted { get; set; }
         /// <summary>The description of the marketing event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -96,13 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         /// <summary>Size of the file in bytes.</summary>
         public long? Size { get; set; }
         /// <summary>The sourceGroup property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SourceGroup { get; set; }
-#nullable restore
-#else
-        public string SourceGroup { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.File_sourceGroup? SourceGroup { get; set; }
         /// <summary>Type of the file. Can be IMG, DOCUMENT, AUDIO, MOVIE, or OTHER.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,7 +158,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
-                { "sourceGroup", n => { SourceGroup = n.GetStringValue(); } },
+                { "sourceGroup", n => { SourceGroup = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.File_sourceGroup>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -194,7 +188,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteStringValue("path", Path);
             writer.WriteLongValue("size", Size);
-            writer.WriteStringValue("sourceGroup", SourceGroup);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.File_sourceGroup>("sourceGroup", SourceGroup);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);

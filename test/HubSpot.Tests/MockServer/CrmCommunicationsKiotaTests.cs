@@ -41,7 +41,7 @@ public class CrmCommunicationsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Communications.PostAsync(input);
-        var communication = created!.Entity!;
+        var communication = created!;
 
         communication.ShouldNotBeNull();
         communication.Id.ShouldNotBeNullOrEmpty();
@@ -67,7 +67,7 @@ public class CrmCommunicationsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Communications.PostAsync(input);
-        var communicationId = created!.Entity!.Id!;
+        var communicationId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Communications[communicationId].GetAsync();
 
@@ -92,7 +92,7 @@ public class CrmCommunicationsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Communications.PostAsync(input);
-        var communicationId = created!.Entity!.Id!;
+        var communicationId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -128,7 +128,7 @@ public class CrmCommunicationsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Communications.PostAsync(input);
-        var communicationId = created!.Entity!.Id!;
+        var communicationId = created!.Id!;
 
         await _client.Crm.V3.Objects.Communications[communicationId].DeleteAsync();
 

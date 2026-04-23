@@ -36,6 +36,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The createdUserId property</summary>
         public int? CreatedUserId { get; set; }
+        /// <summary>The customMatchingId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingResponse? CustomMatchingId { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingResponse CustomMatchingId { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +52,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The detailTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetailTemplate { get; set; }
+#nullable restore
+#else
+        public string DetailTemplate { get; set; }
+#endif
         /// <summary>The fullyQualifiedName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +67,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #nullable restore
 #else
         public string FullyQualifiedName { get; set; }
+#endif
+        /// <summary>The headerTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HeaderTemplate { get; set; }
+#nullable restore
+#else
+        public string HeaderTemplate { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,6 +134,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>The trackingType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition_trackingType? TrackingType { get; set; }
+        /// <summary>The updatedAt property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The updatedUserId property</summary>
+        public int? UpdatedUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition"/> and sets the default values.
         /// </summary>
@@ -140,8 +168,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "comboEventRules", n => { ComboEventRules = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComboEventRuleBranch>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComboEventRuleBranch.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetIntValue(); } },
+                { "customMatchingId", n => { CustomMatchingId = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingResponse>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingResponse.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "detailTemplate", n => { DetailTemplate = n.GetStringValue(); } },
                 { "fullyQualifiedName", n => { FullyQualifiedName = n.GetStringValue(); } },
+                { "headerTemplate", n => { HeaderTemplate = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.BehavioralEventTypeDefinitionLabels>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.BehavioralEventTypeDefinitionLabels.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -150,6 +181,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "primaryObjectId", n => { PrimaryObjectId = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "trackingType", n => { TrackingType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition_trackingType>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updatedUserId", n => { UpdatedUserId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -164,8 +197,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComboEventRuleBranch>("comboEventRules", ComboEventRules);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteIntValue("createdUserId", CreatedUserId);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingResponse>("customMatchingId", CustomMatchingId);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("detailTemplate", DetailTemplate);
             writer.WriteStringValue("fullyQualifiedName", FullyQualifiedName);
+            writer.WriteStringValue("headerTemplate", HeaderTemplate);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.BehavioralEventTypeDefinitionLabels>("labels", Labels);
             writer.WriteStringValue("name", Name);
@@ -174,6 +210,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("primaryObjectId", PrimaryObjectId);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property>("properties", Properties);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinition_trackingType>("trackingType", TrackingType);
+            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
+            writer.WriteIntValue("updatedUserId", UpdatedUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

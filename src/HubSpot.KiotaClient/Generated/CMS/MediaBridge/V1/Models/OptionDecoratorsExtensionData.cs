@@ -23,13 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecorators OptionDecorators { get; set; }
 #endif
         /// <summary>The optionDecoratorStyle property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OptionDecoratorStyle { get; set; }
-#nullable restore
-#else
-        public string OptionDecoratorStyle { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecoratorStyle? OptionDecoratorStyle { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData"/> and sets the default values.
         /// </summary>
@@ -55,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "optionDecoratorStyle", n => { OptionDecoratorStyle = n.GetStringValue(); } },
+                { "optionDecoratorStyle", n => { OptionDecoratorStyle = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecoratorStyle>(); } },
                 { "optionDecorators", n => { OptionDecorators = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecorators>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecorators.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecorators>("optionDecorators", OptionDecorators);
-            writer.WriteStringValue("optionDecoratorStyle", OptionDecoratorStyle);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.OptionDecoratorsExtensionData_optionDecoratorStyle>("optionDecoratorStyle", OptionDecoratorStyle);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

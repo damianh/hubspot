@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coalescingRefineBy property</summary>
+        /// <summary>Defines the criteria for refining the filter by coalescing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionOnPageFilter.PublicFormSubmissionOnPageFilter_coalescingRefineBy? CoalescingRefineBy { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionOnPageFilter.PublicFormSubmissionOnPageFilter_coalescingRefineBy CoalescingRefineBy { get; set; }
 #endif
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter (FORM_SUBMISSION_ON_PAGE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionOnPageFilter_filterType? FilterType { get; set; }
-        /// <summary>The formId property</summary>
+        /// <summary>The ID of the form associated with the submission filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FormId { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string FormId { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Specifies the operation to be applied (FILLED_OUT, NOT_FILLED_OUT).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionOnPageFilter_operator? Operator { get; set; }
-        /// <summary>The pageId property</summary>
+        /// <summary>The ID of the page where the form submission occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageId { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string PageId { get; set; }
 #endif
-        /// <summary>The pruningRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the filter by pruning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicFormSubmissionOnPageFilter.PublicFormSubmissionOnPageFilter_pruningRefineBy? PruningRefineBy { get; set; }

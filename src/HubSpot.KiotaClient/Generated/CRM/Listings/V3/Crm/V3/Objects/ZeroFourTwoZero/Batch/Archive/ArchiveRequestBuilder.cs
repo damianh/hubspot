@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Crm.V3.Objects.ZeroFourTwo
         {
         }
         /// <summary>
-        /// Archive a batch of listings by ID
+        /// Archive multiple listings by their IDs.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Crm.V3.Objects.ZeroFourTwo
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of listings by ID
+        /// Archive multiple listings by their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

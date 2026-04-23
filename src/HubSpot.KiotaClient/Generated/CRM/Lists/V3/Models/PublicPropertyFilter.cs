@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates that the filter (PROPERTY).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPropertyFilter_filterType? FilterType { get; set; }
-        /// <summary>The operation property</summary>
+        /// <summary>Defines the operation to be performed on the property, such as comparison or value matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPropertyFilter.PublicPropertyFilter_operation? Operation { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicPropertyFilter.PublicPropertyFilter_operation Operation { get; set; }
 #endif
-        /// <summary>The property property</summary>
+        /// <summary>Specifies the name of the property that the filter is applied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Property { get; set; }

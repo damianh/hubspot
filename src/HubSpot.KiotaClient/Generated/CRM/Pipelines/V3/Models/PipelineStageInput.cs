@@ -33,6 +33,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput_metadata Metadata { get; set; }
 #endif
+        /// <summary>The stageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StageId { get; set; }
+#nullable restore
+#else
+        public string StageId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput"/> and sets the default values.
         /// </summary>
@@ -61,6 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput_metadata>(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput_metadata.CreateFromDiscriminatorValue); } },
+                { "stageId", n => { StageId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,6 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput_metadata>("metadata", Metadata);
+            writer.WriteStringValue("stageId", StageId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

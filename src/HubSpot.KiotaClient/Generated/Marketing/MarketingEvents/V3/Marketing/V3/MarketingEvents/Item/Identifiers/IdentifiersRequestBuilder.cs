@@ -36,20 +36,20 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         /// <summary>
         /// This endpoint searches the portal for all Marketing Events whose externalEventId matches the value provided in the request.It retrieves the objectId and additional event details for each matching Marketing Event.Since multiple Marketing Events can have the same externalEventId, the endpoint returns all matching results.Note: Marketing Events become searchable by externalEventId a few minutes after creation.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponseNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.CollectionResponseWithTotalMarketingEventIdentifiersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint searches the portal for all Marketing Events whose externalEventId matches the value provided in the request.It retrieves the objectId and additional event details for each matching Marketing Event.Since multiple Marketing Events can have the same externalEventId, the endpoint returns all matching results.Note: Marketing Events become searchable by externalEventId a few minutes after creation.

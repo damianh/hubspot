@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "F03C8958B46CB71EA2CD85D7729FBD10204AC9E378096BE21E21844C868BCA8FB26E411D2A0A54DAF56A3A41639E63CEB25ACDC8CA0D4E35B401D2D19886C00A",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Scheduler/Meetings/versions/177892",
+  "descriptionHash": "2F1BA8BC9799AF967CC7FDE7E728846CE2489D279715E186B8183A77DD4D806E0A68303EF47CD98AC1A9778CC6880A673BDE277D19926985A8108B404DC4D44A",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22210/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotSchedulerMeetingsV3Client",

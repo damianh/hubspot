@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNotAllFilterBranch.PublicNotAllFilterBranch_filterBranches> FilterBranches { get; set; }
 #endif
-        /// <summary>The filterBranchOperator property</summary>
+        /// <summary>The operator used to combine filters within the branch (NOT_ALL).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilterBranchOperator { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string FilterBranchOperator { get; set; }
 #endif
-        /// <summary>The filterBranchType property</summary>
+        /// <summary>The type of the filter branch (NOT_ALL).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNotAllFilterBranch_filterBranchType? FilterBranchType { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

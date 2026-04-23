@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_customProperties CustomProperties { get; set; }
 #endif
         /// <summary>The content ID for the transactional email, which can be found in email tool UI.</summary>
-        public int? EmailId { get; set; }
+        public long? EmailId { get; set; }
         /// <summary>A JSON object containing anything you want to override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
             {
                 { "contactProperties", n => { ContactProperties = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_contactProperties>(global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_contactProperties.CreateFromDiscriminatorValue); } },
                 { "customProperties", n => { CustomProperties = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_customProperties>(global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_customProperties.CreateFromDiscriminatorValue); } },
-                { "emailId", n => { EmailId = n.GetIntValue(); } },
+                { "emailId", n => { EmailId = n.GetLongValue(); } },
                 { "message", n => { Message = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendEmail>(global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendEmail.CreateFromDiscriminatorValue); } },
             };
         }
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_contactProperties>("contactProperties", ContactProperties);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendRequestEgg_customProperties>("customProperties", CustomProperties);
-            writer.WriteIntValue("emailId", EmailId);
+            writer.WriteLongValue("emailId", EmailId);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.PublicSingleSendEmail>("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

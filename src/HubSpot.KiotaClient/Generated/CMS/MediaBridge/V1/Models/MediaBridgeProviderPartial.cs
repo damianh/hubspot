@@ -14,6 +14,16 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowImportOnDisconnect property</summary>
+        public bool? AllowImportOnDisconnect { get; set; }
+        /// <summary>The moduleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModuleName { get; set; }
+#nullable restore
+#else
+        public string ModuleName { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +59,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowImportOnDisconnect", n => { AllowImportOnDisconnect = n.GetBoolValue(); } },
+                { "moduleName", n => { ModuleName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetLongValue(); } },
             };
@@ -60,6 +72,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowImportOnDisconnect", AllowImportOnDisconnect);
+            writer.WriteStringValue("moduleName", ModuleName);
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("updatedAt", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

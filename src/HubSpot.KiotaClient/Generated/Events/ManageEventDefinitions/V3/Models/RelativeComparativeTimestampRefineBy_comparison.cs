@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum RelativeComparativeTimestampRefineBy_comparison
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "BEFORE")]
-        #pragma warning disable CS1591
-        BEFORE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "AFTER")]
         #pragma warning disable CS1591
         AFTER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BEFORE")]
+        #pragma warning disable CS1591
+        BEFORE,
         #pragma warning restore CS1591
     }
 }

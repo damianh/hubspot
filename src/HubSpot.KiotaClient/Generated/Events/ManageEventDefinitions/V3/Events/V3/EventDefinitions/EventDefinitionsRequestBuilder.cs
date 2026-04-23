@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
     public partial class EventDefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.events.v3.eventDefinitions.item collection</summary>
-        /// <param name="position">The internal name of the custom event.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.Item.WithEventNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.Item.WithEventNameItemRequestBuilder this[string position]
         {
@@ -49,20 +49,20 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
         /// <summary>
         /// Retrieve existing custom event definitions.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.EventDefinitionsRequestBuilder.EventDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinition?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.EventDefinitionsRequestBuilder.EventDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.EventDefinitionsRequestBuilder.EventDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinition> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3.EventDefinitions.EventDefinitionsRequestBuilder.EventDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinitionForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CollectionResponseWithTotalExternalBehavioralEventTypeDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a custom event definition.
@@ -155,7 +155,6 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Events.V3
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Characters in the event name that the user is searching for. This search is a naive “contains” search, no fuzzy matching is done.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("searchString")]

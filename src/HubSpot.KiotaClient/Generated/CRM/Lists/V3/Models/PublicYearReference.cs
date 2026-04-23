@@ -14,19 +14,19 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The day property</summary>
+        /// <summary>The day component of the year reference.</summary>
         public int? Day { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>The hour component of the year reference.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>The millisecond component of the year reference.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>The minute component of the year reference.</summary>
         public int? Minute { get; set; }
-        /// <summary>The month property</summary>
+        /// <summary>The month component of the year reference.</summary>
         public int? Month { get; set; }
-        /// <summary>The referenceType property</summary>
+        /// <summary>Indicates the type of reference (YEAR).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicYearReference_referenceType? ReferenceType { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>The second component of the year reference.</summary>
         public int? Second { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicYearReference"/> and sets the default values.

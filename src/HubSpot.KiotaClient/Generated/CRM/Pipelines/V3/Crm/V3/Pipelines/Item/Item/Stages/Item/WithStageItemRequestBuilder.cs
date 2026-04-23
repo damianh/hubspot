@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         {
         }
         /// <summary>
-        /// Delete the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.
+        /// Delete a pipeline stage
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return the stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.
+        /// Return a pipeline stage by ID
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,9 +74,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Perform a partial update of the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`. Any properties not included in this update will keep their existing values. The updated stage will be returned in the response.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage"/></returns>
         /// <param name="body">An input used to update some properties on a pipeline definition.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,16 +95,16 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         /// Replace all the properties of an existing pipeline stage with the values provided. The updated stage will be returned in the response.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage"/></returns>
-        /// <param name="body">An input used to create or replace a pipeline stage&apos;s definition.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage?> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage?> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageReplaceInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage> PutAsync(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageReplaceInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -115,7 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.
+        /// Delete a pipeline stage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +130,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Return the stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`.
+        /// Return a pipeline stage by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,9 +148,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
-        /// <summary>
-        /// Perform a partial update of the pipeline stage identified by `{stageId}` associated with the pipeline identified by `{pipelineId}`. Any properties not included in this update will keep their existing values. The updated stage will be returned in the response.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">An input used to update some properties on a pipeline definition.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -177,15 +171,15 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         /// Replace all the properties of an existing pipeline stage with the values provided. The updated stage will be returned in the response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">An input used to create or replace a pipeline stage&apos;s definition.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageReplaceInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStageReplaceInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

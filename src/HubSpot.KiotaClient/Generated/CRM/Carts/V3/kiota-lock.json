@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "DB51BD8A2DB6557A254D2E04F5D4F28130BA63249622F93903FE513FEDEE0289358CCCE7AEA87F85BDC005626611376B19B1911015EED8FB0AA1DAE07A516887",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Carts/versions/424",
+  "descriptionHash": "D5C0D53F2BE3B0EA98892916DAF8CC96B58B3FCA5D207AC3613C083ABA6F2031AB1C1C388F276FD8C689F39895ACD0FAD01770A89C74BE53B053E8B8CB1729A0",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22145/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCartsV3Client",

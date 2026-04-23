@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The limit property</summary>
+        /// <summary>The maximum number of custom objects allowed.</summary>
         public long? Limit { get; set; }
-        /// <summary>The percentage property</summary>
+        /// <summary>The percentage of the custom object limit that is currently used.</summary>
         public double? Percentage { get; set; }
-        /// <summary>The usage property</summary>
+        /// <summary>The current number of custom objects used.</summary>
         public long? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.CustomObjectLimitResponse"/> and sets the default values.

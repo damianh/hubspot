@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conditions property</summary>
+        /// <summary>Defines the conditions that must be met for the execution rule to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicExecutionTranslationRule_conditions? Conditions { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicExecutionTranslationRule_conditions Conditions { get; set; }
 #endif
-        /// <summary>The labelName property</summary>
+        /// <summary>Specifies the name of the label associated with the execution rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LabelName { get; set; }

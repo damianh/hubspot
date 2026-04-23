@@ -8,13 +8,17 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum NumberPropertyOperation_operator
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "HAS_EVER_BEEN_EQUAL_TO")]
+        #pragma warning disable CS1591
+        HAS_EVER_BEEN_EQUAL_TO,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "HAS_NEVER_BEEN_EQUAL_TO")]
+        #pragma warning disable CS1591
+        HAS_NEVER_BEEN_EQUAL_TO,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IS_EQUAL_TO")]
         #pragma warning disable CS1591
         IS_EQUAL_TO,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "IS_NOT_EQUAL_TO")]
-        #pragma warning disable CS1591
-        IS_NOT_EQUAL_TO,
         #pragma warning restore CS1591
         [EnumMember(Value = "IS_GREATER_THAN")]
         #pragma warning disable CS1591
@@ -32,13 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         IS_LESS_THAN_OR_EQUAL_TO,
         #pragma warning restore CS1591
-        [EnumMember(Value = "HAS_EVER_BEEN_EQUAL_TO")]
+        [EnumMember(Value = "IS_NOT_EQUAL_TO")]
         #pragma warning disable CS1591
-        HAS_EVER_BEEN_EQUAL_TO,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "HAS_NEVER_BEEN_EQUAL_TO")]
-        #pragma warning disable CS1591
-        HAS_NEVER_BEEN_EQUAL_TO,
+        IS_NOT_EQUAL_TO,
         #pragma warning restore CS1591
     }
 }

@@ -7,14 +7,21 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
 {
-    /// <summary>
-    /// The state of the timeline event.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class TimelineEvent : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customObjectTypeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomObjectTypeId { get; set; }
+#nullable restore
+#else
+        public string CustomObjectTypeId { get; set; }
+#endif
         /// <summary>The event domain (often paired with utk).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customObjectTypeId", n => { CustomObjectTypeId = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "eventTemplateId", n => { EventTemplateId = n.GetStringValue(); } },
@@ -133,6 +141,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("customObjectTypeId", CustomObjectTypeId);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("eventTemplateId", EventTemplateId);

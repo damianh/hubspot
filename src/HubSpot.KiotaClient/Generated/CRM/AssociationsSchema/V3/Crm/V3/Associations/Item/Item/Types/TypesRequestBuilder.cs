@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V3.Crm.V3.Associati
         {
         }
         /// <summary>
-        /// List all the valid association types available between two object types
+        /// Retrieve the types of associations between specified object types in HubSpot.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V3.Models.CollectionResponsePublicAssociationDefinitionNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V3.Crm.V3.Associati
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V3.Models.CollectionResponsePublicAssociationDefinitionNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V3.Models.CollectionResponsePublicAssociationDefinitionNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the valid association types available between two object types
+        /// Retrieve the types of associations between specified object types in HubSpot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

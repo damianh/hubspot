@@ -7,225 +7,33 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailUpdateRequest_subcategory
     {
-        [EnumMember(Value = "ab_master")]
-        #pragma warning disable CS1591
-        Ab_master,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ab_variant")]
-        #pragma warning disable CS1591
-        Ab_variant,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ab_loser_variant")]
         #pragma warning disable CS1591
         Ab_loser_variant,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "page_stub")]
-        #pragma warning disable CS1591
-        Page_stub,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "landing_page")]
-        #pragma warning disable CS1591
-        Landing_page,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "site_page")]
-        #pragma warning disable CS1591
-        Site_page,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "legacy_page")]
-        #pragma warning disable CS1591
-        Legacy_page,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ab_master_site_page")]
-        #pragma warning disable CS1591
-        Ab_master_site_page,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ab_variant_site_page")]
-        #pragma warning disable CS1591
-        Ab_variant_site_page,
         #pragma warning restore CS1591
         [EnumMember(Value = "ab_loser_variant_site_page")]
         #pragma warning disable CS1591
         Ab_loser_variant_site_page,
         #pragma warning restore CS1591
-        [EnumMember(Value = "performable_landing_page")]
+        [EnumMember(Value = "ab_master")]
         #pragma warning disable CS1591
-        Performable_landing_page,
+        Ab_master,
         #pragma warning restore CS1591
-        [EnumMember(Value = "performable_landing_page_cutover")]
+        [EnumMember(Value = "ab_master_site_page")]
         #pragma warning disable CS1591
-        Performable_landing_page_cutover,
+        Ab_master_site_page,
         #pragma warning restore CS1591
-        [EnumMember(Value = "staged_page")]
+        [EnumMember(Value = "ab_variant")]
         #pragma warning disable CS1591
-        Staged_page,
+        Ab_variant,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ab_variant_site_page")]
+        #pragma warning disable CS1591
+        Ab_variant_site_page,
         #pragma warning restore CS1591
         [EnumMember(Value = "automated")]
         #pragma warning disable CS1591
         Automated,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_deal")]
-        #pragma warning disable CS1591
-        Automated_for_deal,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_form")]
-        #pragma warning disable CS1591
-        Automated_for_form,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_form_legacy")]
-        #pragma warning disable CS1591
-        Automated_for_form_legacy,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_form_buffer")]
-        #pragma warning disable CS1591
-        Automated_for_form_buffer,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_form_draft")]
-        #pragma warning disable CS1591
-        Automated_for_form_draft,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_crm")]
-        #pragma warning disable CS1591
-        Automated_for_crm,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "rss_to_email")]
-        #pragma warning disable CS1591
-        Rss_to_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "rss_to_email_child")]
-        #pragma warning disable CS1591
-        Rss_to_email_child,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "blog_email")]
-        #pragma warning disable CS1591
-        Blog_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "blog_email_child")]
-        #pragma warning disable CS1591
-        Blog_email_child,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "optin_email")]
-        #pragma warning disable CS1591
-        Optin_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "optin_followup_email")]
-        #pragma warning disable CS1591
-        Optin_followup_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "batch")]
-        #pragma warning disable CS1591
-        Batch,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "resubscribe_email")]
-        #pragma warning disable CS1591
-        Resubscribe_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "unsubscribe_confirmation_email")]
-        #pragma warning disable CS1591
-        Unsubscribe_confirmation_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "resubscribe_confirmation_email")]
-        #pragma warning disable CS1591
-        Resubscribe_confirmation_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "single_send_api")]
-        #pragma warning disable CS1591
-        Single_send_api,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "marketing_single_send_api")]
-        #pragma warning disable CS1591
-        Marketing_single_send_api,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "smtp_token")]
-        #pragma warning disable CS1591
-        Smtp_token,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "localtime")]
-        #pragma warning disable CS1591
-        Localtime,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_ticket")]
-        #pragma warning disable CS1591
-        Automated_for_ticket,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_leadflow")]
-        #pragma warning disable CS1591
-        Automated_for_leadflow,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_feedback_ces")]
-        #pragma warning disable CS1591
-        Automated_for_feedback_ces,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_feedback_nps")]
-        #pragma warning disable CS1591
-        Automated_for_feedback_nps,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_feedback_custom")]
-        #pragma warning disable CS1591
-        Automated_for_feedback_custom,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_registration")]
-        #pragma warning disable CS1591
-        Membership_registration,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_password_saved")]
-        #pragma warning disable CS1591
-        Membership_password_saved,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_password_reset")]
-        #pragma warning disable CS1591
-        Membership_password_reset,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_otp_login")]
-        #pragma warning disable CS1591
-        Membership_otp_login,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_passwordless_auth")]
-        #pragma warning disable CS1591
-        Membership_passwordless_auth,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_email_verification")]
-        #pragma warning disable CS1591
-        Membership_email_verification,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_registration_follow_up")]
-        #pragma warning disable CS1591
-        Membership_registration_follow_up,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_verification")]
-        #pragma warning disable CS1591
-        Membership_verification,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "membership_follow_up")]
-        #pragma warning disable CS1591
-        Membership_follow_up,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ticket_closed_kickback_email")]
-        #pragma warning disable CS1591
-        Ticket_closed_kickback_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ticket_opened_kickback_email")]
-        #pragma warning disable CS1591
-        Ticket_opened_kickback_email,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_for_custom_survey")]
-        #pragma warning disable CS1591
-        Automated_for_custom_survey,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "discardable_stub")]
-        #pragma warning disable CS1591
-        Discardable_stub,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "normal_blog_post")]
-        #pragma warning disable CS1591
-        Normal_blog_post,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "legacy_blog_post")]
-        #pragma warning disable CS1591
-        Legacy_blog_post,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "imported_blog_post")]
-        #pragma warning disable CS1591
-        Imported_blog_post,
         #pragma warning restore CS1591
         [EnumMember(Value = "automated_ab_master")]
         #pragma warning disable CS1591
@@ -235,17 +43,101 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Automated_ab_variant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "web_interactive")]
+        [EnumMember(Value = "automated_for_crm")]
         #pragma warning disable CS1591
-        Web_interactive,
+        Automated_for_crm,
         #pragma warning restore CS1591
-        [EnumMember(Value = "portal_content")]
+        [EnumMember(Value = "automated_for_custom_survey")]
         #pragma warning disable CS1591
-        Portal_content,
+        Automated_for_custom_survey,
         #pragma warning restore CS1591
-        [EnumMember(Value = "page_instance_layout")]
+        [EnumMember(Value = "automated_for_deal")]
         #pragma warning disable CS1591
-        Page_instance_layout,
+        Automated_for_deal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_feedback_ces")]
+        #pragma warning disable CS1591
+        Automated_for_feedback_ces,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_feedback_custom")]
+        #pragma warning disable CS1591
+        Automated_for_feedback_custom,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_feedback_nps")]
+        #pragma warning disable CS1591
+        Automated_for_feedback_nps,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_form")]
+        #pragma warning disable CS1591
+        Automated_for_form,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_form_buffer")]
+        #pragma warning disable CS1591
+        Automated_for_form_buffer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_form_draft")]
+        #pragma warning disable CS1591
+        Automated_for_form_draft,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_form_legacy")]
+        #pragma warning disable CS1591
+        Automated_for_form_legacy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_leadflow")]
+        #pragma warning disable CS1591
+        Automated_for_leadflow,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_for_ticket")]
+        #pragma warning disable CS1591
+        Automated_for_ticket,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "batch")]
+        #pragma warning disable CS1591
+        Batch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_article_instance_layout")]
+        #pragma warning disable CS1591
+        Blog_article_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_article_listing")]
+        #pragma warning disable CS1591
+        Blog_article_listing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_author_detail")]
+        #pragma warning disable CS1591
+        Blog_author_detail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_email")]
+        #pragma warning disable CS1591
+        Blog_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blog_email_child")]
+        #pragma warning disable CS1591
+        Blog_email_child,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "case_study")]
+        #pragma warning disable CS1591
+        Case_study,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "case_study_instance_layout")]
+        #pragma warning disable CS1591
+        Case_study_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "case_study_listing")]
+        #pragma warning disable CS1591
+        Case_study_listing,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "discardable_stub")]
+        #pragma warning disable CS1591
+        Discardable_stub,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "imported_blog_post")]
+        #pragma warning disable CS1591
+        Imported_blog_post,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kb_404_page")]
+        #pragma warning disable CS1591
+        Kb_404_page,
         #pragma warning restore CS1591
         [EnumMember(Value = "kb_article_instance_layout")]
         #pragma warning disable CS1591
@@ -263,29 +155,93 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Kb_support_form,
         #pragma warning restore CS1591
-        [EnumMember(Value = "kb_404_page")]
+        [EnumMember(Value = "landing_page")]
         #pragma warning disable CS1591
-        Kb_404_page,
+        Landing_page,
         #pragma warning restore CS1591
-        [EnumMember(Value = "case_study")]
+        [EnumMember(Value = "legacy_blog_post")]
         #pragma warning disable CS1591
-        Case_study,
+        Legacy_blog_post,
         #pragma warning restore CS1591
-        [EnumMember(Value = "case_study_listing")]
+        [EnumMember(Value = "legacy_page")]
         #pragma warning disable CS1591
-        Case_study_listing,
+        Legacy_page,
         #pragma warning restore CS1591
-        [EnumMember(Value = "case_study_instance_layout")]
+        [EnumMember(Value = "localtime")]
         #pragma warning disable CS1591
-        Case_study_instance_layout,
+        Localtime,
         #pragma warning restore CS1591
-        [EnumMember(Value = "scp_static_page")]
+        [EnumMember(Value = "manage_preferences_email")]
         #pragma warning disable CS1591
-        Scp_static_page,
+        Manage_preferences_email,
         #pragma warning restore CS1591
-        [EnumMember(Value = "scp_instance_layout_page")]
+        [EnumMember(Value = "marketing_single_send_api")]
         #pragma warning disable CS1591
-        Scp_instance_layout_page,
+        Marketing_single_send_api,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_email_verification")]
+        #pragma warning disable CS1591
+        Membership_email_verification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_follow_up")]
+        #pragma warning disable CS1591
+        Membership_follow_up,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_otp_login")]
+        #pragma warning disable CS1591
+        Membership_otp_login,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_password_reset")]
+        #pragma warning disable CS1591
+        Membership_password_reset,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_password_saved")]
+        #pragma warning disable CS1591
+        Membership_password_saved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_passwordless_auth")]
+        #pragma warning disable CS1591
+        Membership_passwordless_auth,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_registration")]
+        #pragma warning disable CS1591
+        Membership_registration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_registration_follow_up")]
+        #pragma warning disable CS1591
+        Membership_registration_follow_up,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "membership_verification")]
+        #pragma warning disable CS1591
+        Membership_verification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "normal_blog_post")]
+        #pragma warning disable CS1591
+        Normal_blog_post,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "optin_email")]
+        #pragma warning disable CS1591
+        Optin_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "optin_followup_email")]
+        #pragma warning disable CS1591
+        Optin_followup_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page_instance_layout")]
+        #pragma warning disable CS1591
+        Page_instance_layout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page_stub")]
+        #pragma warning disable CS1591
+        Page_stub,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performable_landing_page")]
+        #pragma warning disable CS1591
+        Performable_landing_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "performable_landing_page_cutover")]
+        #pragma warning disable CS1591
+        Performable_landing_page_cutover,
         #pragma warning restore CS1591
         [EnumMember(Value = "podcast_instance_layout")]
         #pragma warning disable CS1591
@@ -295,21 +251,73 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Podcast_listing,
         #pragma warning restore CS1591
-        [EnumMember(Value = "blog_article_instance_layout")]
+        [EnumMember(Value = "portal_content")]
         #pragma warning disable CS1591
-        Blog_article_instance_layout,
+        Portal_content,
         #pragma warning restore CS1591
-        [EnumMember(Value = "blog_article_listing")]
+        [EnumMember(Value = "resubscribe_confirmation_email")]
         #pragma warning disable CS1591
-        Blog_article_listing,
+        Resubscribe_confirmation_email,
         #pragma warning restore CS1591
-        [EnumMember(Value = "blog_author_detail")]
+        [EnumMember(Value = "resubscribe_email")]
         #pragma warning disable CS1591
-        Blog_author_detail,
+        Resubscribe_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rss_to_email")]
+        #pragma warning disable CS1591
+        Rss_to_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rss_to_email_child")]
+        #pragma warning disable CS1591
+        Rss_to_email_child,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "scp_instance_layout_page")]
+        #pragma warning disable CS1591
+        Scp_instance_layout_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "scp_static_page")]
+        #pragma warning disable CS1591
+        Scp_static_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "single_send_api")]
+        #pragma warning disable CS1591
+        Single_send_api,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "site_page")]
+        #pragma warning disable CS1591
+        Site_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "smtp_token")]
+        #pragma warning disable CS1591
+        Smtp_token,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "staged_page")]
+        #pragma warning disable CS1591
+        Staged_page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ticket_closed_kickback_email")]
+        #pragma warning disable CS1591
+        Ticket_closed_kickback_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ticket_opened_kickback_email")]
+        #pragma warning disable CS1591
+        Ticket_opened_kickback_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ticket_pipeline_automated")]
+        #pragma warning disable CS1591
+        Ticket_pipeline_automated,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
         UNKNOWN,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unsubscribe_confirmation_email")]
+        #pragma warning disable CS1591
+        Unsubscribe_confirmation_email,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "web_interactive")]
+        #pragma warning disable CS1591
+        Web_interactive,
         #pragma warning restore CS1591
     }
 }

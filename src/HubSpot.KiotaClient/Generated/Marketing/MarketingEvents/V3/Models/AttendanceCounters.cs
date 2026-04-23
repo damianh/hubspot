@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attended property</summary>
+        /// <summary>Number of attended contact records of a marketing event</summary>
         public int? Attended { get; set; }
-        /// <summary>The cancelled property</summary>
+        /// <summary>Number of cancelled contact records of a marketing event</summary>
         public int? Cancelled { get; set; }
-        /// <summary>The noShows property</summary>
+        /// <summary>Number of no-show contact records of a marketing event</summary>
         public int? NoShows { get; set; }
-        /// <summary>The registered property</summary>
+        /// <summary>Number of registered contact records of a marketing event</summary>
         public int? Registered { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.AttendanceCounters"/> and sets the default values.

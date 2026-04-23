@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
     public partial class AssetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.assets.item collection</summary>
-        /// <param name="position">The type of asset to fetch.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Assets.Item.WithAssetTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Assets.Item.WithAssetTypeItemRequestBuilder this[string position]
         {

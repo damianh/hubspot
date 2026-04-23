@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.CollectionResponsePipelineStageNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.CollectionResponsePipelineStageNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new stage associated with the pipeline identified by `{pipelineId}`. The entire stage object, including its unique ID, will be returned in the response.
+        /// Create a pipeline stage
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage"/></returns>
         /// <param name="body">An input used to create or replace a pipeline stage&apos;s definition.</param>
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Create a new stage associated with the pipeline identified by `{pipelineId}`. The entire stage object, including its unique ID, will be returned in the response.
+        /// Create a pipeline stage
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">An input used to create or replace a pipeline stage&apos;s definition.</param>

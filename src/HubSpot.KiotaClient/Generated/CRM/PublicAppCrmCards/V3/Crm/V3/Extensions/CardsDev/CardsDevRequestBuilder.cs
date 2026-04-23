@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions.CardsDev.SampleResponse.SampleResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.crm.v3.extensions.cardsDev.item collection</summary>
-        /// <param name="position">The ID of the target app.</param>
+        /// <param name="position">The id of the app containing the Legacy CRM Card(s)</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions.CardsDev.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions.CardsDev.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.crm.v3.extensions.cardsDev.item collection</summary>
-        /// <param name="position">The ID of the target app.</param>
+        /// <param name="position">The id of the app containing the Legacy CRM Card(s)</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions.CardsDev.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Crm.V3.Extensions.CardsDev.Item.WithAppItemRequestBuilder this[string position]

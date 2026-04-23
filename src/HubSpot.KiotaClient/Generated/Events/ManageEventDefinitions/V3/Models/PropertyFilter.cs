@@ -14,6 +14,16 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The context property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilterContext? Context { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilterContext Context { get; set; }
+#endif
+        /// <summary>The filterInsightsId property</summary>
+        public int? FilterInsightsId { get; set; }
         /// <summary>The filterType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter_filterType? FilterType { get; set; }
         /// <summary>The frameworkFilterId property</summary>
@@ -60,6 +70,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "context", n => { Context = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilterContext>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilterContext.CreateFromDiscriminatorValue); } },
+                { "filterInsightsId", n => { FilterInsightsId = n.GetIntValue(); } },
                 { "filterType", n => { FilterType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter_filterType>(); } },
                 { "frameworkFilterId", n => { FrameworkFilterId = n.GetLongValue(); } },
                 { "operation", n => { Operation = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter.PropertyFilter_operation>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter.PropertyFilter_operation.CreateFromDiscriminatorValue); } },
@@ -73,6 +85,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilterContext>("context", Context);
+            writer.WriteIntValue("filterInsightsId", FilterInsightsId);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter_filterType>("filterType", FilterType);
             writer.WriteLongValue("frameworkFilterId", FrameworkFilterId);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyFilter.PropertyFilter_operation>("operation", Operation);
@@ -80,7 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AllPropertyTypesOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.BoolPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.EnumerationPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.NumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingPropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.StringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AllPropertyTypesOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.BoolPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.EnumerationPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.MultiStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.NumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingPropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.StringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PropertyFilter_operation : IComposedTypeWrapper, IParsable
@@ -109,6 +123,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation CalendarDatePropertyOperation { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation? ComparativeBoolPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation ComparativeBoolPropertyOperation { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,6 +139,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation ComparativeDatePropertyOperation { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation? ComparativeNumberPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation ComparativeNumberPropertyOperation { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +154,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation ComparativePropertyUpdatedOperation { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation? ComparativeStringPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation ComparativeStringPropertyOperation { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DatePropertyOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,6 +227,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation RangedTimeOperation { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation? RegexPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation RegexPropertyOperation { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,13 +289,25 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 {
                     result.CalendarDatePropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation();
                 }
+                else if("ComparativeBoolPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ComparativeBoolPropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation();
+                }
                 else if("ComparativeDatePropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ComparativeDatePropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation();
                 }
+                else if("ComparativeNumberPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ComparativeNumberPropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation();
+                }
                 else if("ComparativePropertyUpdatedOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ComparativePropertyUpdatedOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation();
+                }
+                else if("ComparativeStringPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.ComparativeStringPropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation();
                 }
                 else if("DatePropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -282,6 +340,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 else if("RangedTimeOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.RangedTimeOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation();
+                }
+                else if("RegexPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RegexPropertyOperation = new global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation();
                 }
                 else if("RollingDateRangePropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -319,13 +381,25 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 {
                     return CalendarDatePropertyOperation.GetFieldDeserializers();
                 }
+                else if(ComparativeBoolPropertyOperation != null)
+                {
+                    return ComparativeBoolPropertyOperation.GetFieldDeserializers();
+                }
                 else if(ComparativeDatePropertyOperation != null)
                 {
                     return ComparativeDatePropertyOperation.GetFieldDeserializers();
                 }
+                else if(ComparativeNumberPropertyOperation != null)
+                {
+                    return ComparativeNumberPropertyOperation.GetFieldDeserializers();
+                }
                 else if(ComparativePropertyUpdatedOperation != null)
                 {
                     return ComparativePropertyUpdatedOperation.GetFieldDeserializers();
+                }
+                else if(ComparativeStringPropertyOperation != null)
+                {
+                    return ComparativeStringPropertyOperation.GetFieldDeserializers();
                 }
                 else if(DatePropertyOperation != null)
                 {
@@ -358,6 +432,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 else if(RangedTimeOperation != null)
                 {
                     return RangedTimeOperation.GetFieldDeserializers();
+                }
+                else if(RegexPropertyOperation != null)
+                {
+                    return RegexPropertyOperation.GetFieldDeserializers();
                 }
                 else if(RollingDateRangePropertyOperation != null)
                 {
@@ -396,13 +474,25 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation>(null, CalendarDatePropertyOperation);
                 }
+                else if(ComparativeBoolPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeBoolPropertyOperation>(null, ComparativeBoolPropertyOperation);
+                }
                 else if(ComparativeDatePropertyOperation != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeDatePropertyOperation>(null, ComparativeDatePropertyOperation);
                 }
+                else if(ComparativeNumberPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeNumberPropertyOperation>(null, ComparativeNumberPropertyOperation);
+                }
                 else if(ComparativePropertyUpdatedOperation != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativePropertyUpdatedOperation>(null, ComparativePropertyUpdatedOperation);
+                }
+                else if(ComparativeStringPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ComparativeStringPropertyOperation>(null, ComparativeStringPropertyOperation);
                 }
                 else if(DatePropertyOperation != null)
                 {
@@ -435,6 +525,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 else if(RangedTimeOperation != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation>(null, RangedTimeOperation);
+                }
+                else if(RegexPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RegexPropertyOperation>(null, RegexPropertyOperation);
                 }
                 else if(RollingDateRangePropertyOperation != null)
                 {

@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
     public enum GetIdPropertyQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "USER_ID")]
-        #pragma warning disable CS1591
-        USER_ID,
-        #pragma warning restore CS1591
         [EnumMember(Value = "EMAIL")]
         #pragma warning disable CS1591
         EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "USER_ID")]
+        #pragma warning disable CS1591
+        USER_ID,
         #pragma warning restore CS1591
     }
 }

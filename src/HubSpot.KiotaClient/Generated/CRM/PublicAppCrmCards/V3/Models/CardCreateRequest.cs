@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardFetchBody Fetch { get; set; }
 #endif
-        /// <summary>The top-level title for this card. Displayed to users in the CRM UI.</summary>
+        /// <summary>The top-level title for this card, displayed to users in the CRM UI. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }

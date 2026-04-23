@@ -41,7 +41,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItem = created!.Entity!;
+        var LineItem = created!;
 
         LineItem.ShouldNotBeNull();
         LineItem.Id.ShouldNotBeNullOrEmpty();
@@ -69,7 +69,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItemId = created!.Entity!.Id!;
+        var LineItemId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Line_items[LineItemId].GetAsync();
 
@@ -96,7 +96,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItemId = created!.Entity!.Id!;
+        var LineItemId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Line_items[LineItemId].GetAsync(config =>
         {
@@ -128,7 +128,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItemId = created!.Entity!.Id!;
+        var LineItemId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -165,7 +165,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItemId = created!.Entity!.Id!;
+        var LineItemId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -280,7 +280,7 @@ public class CrmLineItemsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Line_items.PostAsync(input);
-        var LineItemId = created!.Entity!.Id!;
+        var LineItemId = created!.Id!;
 
         await _client.Crm.V3.Objects.Line_items[LineItemId].DeleteAsync();
 
@@ -317,8 +317,8 @@ public class CrmLineItemsTests : IAsyncLifetime
         var created1 = await _client.Crm.V3.Objects.Line_items.PostAsync(input1);
         var created2 = await _client.Crm.V3.Objects.Line_items.PostAsync(input2);
 
-        await _client.Crm.V3.Objects.Line_items[created1!.Entity!.Id!].DeleteAsync();
-        await _client.Crm.V3.Objects.Line_items[created2!.Entity!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.Line_items[created1!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.Line_items[created2!.Id!].DeleteAsync();
 
         var archivedList = await _client.Crm.V3.Objects.Line_items.GetAsync(config =>
         {

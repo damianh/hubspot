@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         #pragma warning disable CS1591
         NOT_TRUNCATED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "TRUNCATED_TO_MOST_RECENT_REPLY")]
-        #pragma warning disable CS1591
-        TRUNCATED_TO_MOST_RECENT_REPLY,
-        #pragma warning restore CS1591
         [EnumMember(Value = "TRUNCATED")]
         #pragma warning disable CS1591
         TRUNCATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRUNCATED_TO_MOST_RECENT_REPLY")]
+        #pragma warning disable CS1591
+        TRUNCATED_TO_MOST_RECENT_REPLY,
         #pragma warning restore CS1591
     }
 }

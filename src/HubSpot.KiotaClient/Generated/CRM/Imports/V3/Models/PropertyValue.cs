@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PropertyValue_dataSensitivity? DataSensitivity { get; set; }
         /// <summary>Whether the property value is encrypted.</summary>
         public bool? IsEncrypted { get; set; }
-        /// <summary>The isLargeValue property</summary>
+        /// <summary>Indicates if the value exceeds normal size limits.</summary>
         public bool? IsLargeValue { get; set; }
         /// <summary>The unique property name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The persistenceTimestamp property</summary>
+        /// <summary>When the value was persisted to database, in epoch milliseconds.</summary>
         public long? PersistenceTimestamp { get; set; }
         /// <summary>A unique ID associated with this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,6 +69,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #else
         public string SourceMetadata { get; set; }
 #endif
+        /// <summary>The sourceUpstreamDeployable property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceUpstreamDeployable { get; set; }
+#nullable restore
+#else
+        public string SourceUpstreamDeployable { get; set; }
+#endif
         /// <summary>The unique identifier associated with the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +97,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
 #endif
         /// <summary>The ID of the user who updated the property.</summary>
         public int? UpdatedByUserId { get; set; }
-        /// <summary>The useTimestampAsPersistenceTimestamp property</summary>
+        /// <summary>Flag indicating whether to use the timestamp field as the persistence timestamp.</summary>
         public bool? UseTimestampAsPersistenceTimestamp { get; set; }
         /// <summary>The property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,6 +144,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
                 { "sourceId", n => { SourceId = n.GetStringValue(); } },
                 { "sourceLabel", n => { SourceLabel = n.GetStringValue(); } },
                 { "sourceMetadata", n => { SourceMetadata = n.GetStringValue(); } },
+                { "sourceUpstreamDeployable", n => { SourceUpstreamDeployable = n.GetStringValue(); } },
                 { "sourceVid", n => { SourceVid = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "timestamp", n => { Timestamp = n.GetLongValue(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
@@ -163,6 +172,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteStringValue("sourceLabel", SourceLabel);
             writer.WriteStringValue("sourceMetadata", SourceMetadata);
+            writer.WriteStringValue("sourceUpstreamDeployable", SourceUpstreamDeployable);
             writer.WriteCollectionOfPrimitiveValues<long?>("sourceVid", SourceVid);
             writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteStringValue("unit", Unit);

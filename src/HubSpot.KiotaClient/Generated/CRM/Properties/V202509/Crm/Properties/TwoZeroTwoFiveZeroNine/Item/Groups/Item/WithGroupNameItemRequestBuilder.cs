@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithGroupNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/groups/{groupName}", pathParameters)
+        public WithGroupNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/groups/{groupName}{?locale*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithGroupNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/groups/{groupName}", rawUrl)
+        public WithGroupNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/groups/{groupName}{?locale*}", rawUrl)
         {
         }
         /// <summary>
@@ -58,11 +58,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyGroup?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyGroup?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Groups.Item.WithGroupNameItemRequestBuilder.WithGroupNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyGroup> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyGroup> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Groups.Item.WithGroupNameItemRequestBuilder.WithGroupNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -113,11 +113,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Groups.Item.WithGroupNameItemRequestBuilder.WithGroupNameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Groups.Item.WithGroupNameItemRequestBuilder.WithGroupNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -165,11 +165,27 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         {
         }
         /// <summary>
+        /// Read a property group identified by {groupName}.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithGroupNameItemRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("locale")]
+            public string? Locale { get; set; }
+#nullable restore
+#else
+            [QueryParameter("locale")]
+            public string Locale { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithGroupNameItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithGroupNameItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Groups.Item.WithGroupNameItemRequestBuilder.WithGroupNameItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversionType property</summary>
+        /// <summary>Specifies the type of conversion (CONVERSION_DATE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionDate_conversionType? ConversionType { get; set; }
-        /// <summary>The day property</summary>
+        /// <summary>The day component of the conversion date.</summary>
         public int? Day { get; set; }
-        /// <summary>The month property</summary>
+        /// <summary>The month component of the conversion date.</summary>
         public int? Month { get; set; }
-        /// <summary>The year property</summary>
+        /// <summary>The year component of the conversion date.</summary>
         public int? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionDate"/> and sets the default values.

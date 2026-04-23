@@ -34,10 +34,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.M
         {
         }
         /// <summary>
-        /// Merge two objects with same type
+        /// Merge two CRM objects of the same type by specifying one as the primary object and the other as the object to be merged into it.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.SimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Input data for merging two records.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,10 +54,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.M
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Merge two objects with same type
+        /// Merge two CRM objects of the same type by specifying one as the primary object and the other as the object to be merged into it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Input data for merging two records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

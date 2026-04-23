@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the sequence was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The folderId property</summary>
+        /// <summary>The ID of the folder containing the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FolderId { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string FolderId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier of the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the sequence was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The userId property</summary>
+        /// <summary>The ID of the user associated with the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

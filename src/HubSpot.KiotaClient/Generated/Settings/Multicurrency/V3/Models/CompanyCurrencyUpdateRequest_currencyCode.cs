@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
 {
+    /// <summary>The three-letter code representing a specific currency (ex. USD).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CompanyCurrencyUpdateRequest_currencyCode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AED")]
         #pragma warning disable CS1591

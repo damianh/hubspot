@@ -7,41 +7,25 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Column_type
     {
-        [EnumMember(Value = "NULL")]
-        #pragma warning disable CS1591
-        NULL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "TEXT")]
-        #pragma warning disable CS1591
-        TEXT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NUMBER")]
-        #pragma warning disable CS1591
-        NUMBER,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "URL")]
-        #pragma warning disable CS1591
-        URL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "IMAGE")]
-        #pragma warning disable CS1591
-        IMAGE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SELECT")]
-        #pragma warning disable CS1591
-        SELECT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MULTISELECT")]
-        #pragma warning disable CS1591
-        MULTISELECT,
-        #pragma warning restore CS1591
         [EnumMember(Value = "BOOLEAN")]
         #pragma warning disable CS1591
         BOOLEAN,
         #pragma warning restore CS1591
-        [EnumMember(Value = "LOCATION")]
+        [EnumMember(Value = "CODE")]
         #pragma warning disable CS1591
-        LOCATION,
+        CODE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COMPOSITE")]
+        #pragma warning disable CS1591
+        COMPOSITE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CTA")]
+        #pragma warning disable CS1591
+        CTA,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CURRENCY")]
+        #pragma warning disable CS1591
+        CURRENCY,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATE")]
         #pragma warning disable CS1591
@@ -51,49 +35,65 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         #pragma warning disable CS1591
         DATETIME,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CURRENCY")]
+        [EnumMember(Value = "EMBED")]
         #pragma warning disable CS1591
-        CURRENCY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "RICHTEXT")]
-        #pragma warning disable CS1591
-        RICHTEXT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "FOREIGN_ID")]
-        #pragma warning disable CS1591
-        FOREIGN_ID,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "VIDEO")]
-        #pragma warning disable CS1591
-        VIDEO,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CTA")]
-        #pragma warning disable CS1591
-        CTA,
+        EMBED,
         #pragma warning restore CS1591
         [EnumMember(Value = "FILE")]
         #pragma warning disable CS1591
         FILE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "JSON")]
+        [EnumMember(Value = "FOREIGN_ID")]
         #pragma warning disable CS1591
-        JSON,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "COMPOSITE")]
-        #pragma warning disable CS1591
-        COMPOSITE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CODE")]
-        #pragma warning disable CS1591
-        CODE,
+        FOREIGN_ID,
         #pragma warning restore CS1591
         [EnumMember(Value = "HUBSPOT_VIDEO")]
         #pragma warning disable CS1591
         HUBSPOT_VIDEO,
         #pragma warning restore CS1591
-        [EnumMember(Value = "EMBED")]
+        [EnumMember(Value = "IMAGE")]
         #pragma warning disable CS1591
-        EMBED,
+        IMAGE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "JSON")]
+        #pragma warning disable CS1591
+        JSON,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LOCATION")]
+        #pragma warning disable CS1591
+        LOCATION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MULTISELECT")]
+        #pragma warning disable CS1591
+        MULTISELECT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NULL")]
+        #pragma warning disable CS1591
+        NULL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NUMBER")]
+        #pragma warning disable CS1591
+        NUMBER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RICHTEXT")]
+        #pragma warning disable CS1591
+        RICHTEXT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SELECT")]
+        #pragma warning disable CS1591
+        SELECT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TEXT")]
+        #pragma warning disable CS1591
+        TEXT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "URL")]
+        #pragma warning disable CS1591
+        URL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIDEO")]
+        #pragma warning disable CS1591
+        VIDEO,
         #pragma warning restore CS1591
     }
 }

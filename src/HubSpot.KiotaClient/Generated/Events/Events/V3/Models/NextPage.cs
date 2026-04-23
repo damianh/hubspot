@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A paging cursor token for retrieving subsequent pages.</summary>
+        /// <summary>The cursor token to pass as the after query parameter to retrieve the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? After { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
 #else
         public string After { get; set; }
 #endif
-        /// <summary>A URL that can be used to retrieve the next page results.</summary>
+        /// <summary>The full URL of the next page of results, with the after cursor token included as a query parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }

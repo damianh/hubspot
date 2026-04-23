@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
         /// <summary>Specifies whether the table can be read by public without authorization</summary>
         public bool? AllowPublicApiAccess { get; set; }
         /// <summary>Number of columns including deleted</summary>
-        public int? ColumnCount { get; set; }
+        public long? ColumnCount { get; set; }
         /// <summary>List of columns in the table</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,9 +38,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser CreatedBy { get; set; }
 #endif
-        /// <summary>The deleted property</summary>
+        /// <summary>Specifies whether the table is marked as deleted.</summary>
         public bool? Deleted { get; set; }
-        /// <summary>The deletedAt property</summary>
+        /// <summary>The timestamp indicating when the table was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>Specifies the key value pairs of the [metadata fields](https://developers.hubspot.com/docs/cms/guides/dynamic-pages/hubdb#dynamic-pages) with the associated column IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isOrderedManually property</summary>
+        /// <summary>Indicates whether the table rows are ordered manually.</summary>
         public bool? IsOrderedManually { get; set; }
         /// <summary>Label of the table</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The published property</summary>
+        /// <summary>Indicates whether the table is currently published.</summary>
         public bool? Published { get; set; }
         /// <summary>Timestamp at which the table is published recently</summary>
         public DateTimeOffset? PublishedAt { get; set; }
@@ -123,7 +123,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             {
                 { "allowChildTables", n => { AllowChildTables = n.GetBoolValue(); } },
                 { "allowPublicApiAccess", n => { AllowPublicApiAccess = n.GetBoolValue(); } },
-                { "columnCount", n => { ColumnCount = n.GetIntValue(); } },
+                { "columnCount", n => { ColumnCount = n.GetLongValue(); } },
                 { "columns", n => { Columns = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Column>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Column.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser>(global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser.CreateFromDiscriminatorValue); } },
@@ -152,7 +152,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowChildTables", AllowChildTables);
             writer.WriteBoolValue("allowPublicApiAccess", AllowPublicApiAccess);
-            writer.WriteIntValue("columnCount", ColumnCount);
+            writer.WriteLongValue("columnCount", ColumnCount);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.Column>("columns", Columns);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.SimpleUser>("createdBy", CreatedBy);

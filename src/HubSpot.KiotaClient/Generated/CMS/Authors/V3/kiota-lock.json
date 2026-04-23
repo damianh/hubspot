@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "2DCA07B47C7A10C5BAB7315C538BC9EA046370EF7CD77E7E3DED6CDED4B87A294EF06ED95845935F6037D929C93F09BBDB8A0F94704B93AD2FC14F41AB133F27",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Authors/versions/635",
+  "descriptionHash": "A269E4F8C20A350ED43389C74F08B66E9BE716ACBFCB3B40303D50DD4B3151BDBCAD41528494AE62A91804B16EBEE180B72480F3A40C93E3F8283716B64F2B71",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22124/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSAuthorsV3Client",

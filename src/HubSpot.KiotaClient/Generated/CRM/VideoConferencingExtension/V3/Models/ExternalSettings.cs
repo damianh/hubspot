@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models
 {
-    /// <summary>
-    /// The URLs of the various actions provided by the video conferencing application. All URLs must use the `https` protocol.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class ExternalSettings : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The URL that HubSpot will send requests to create a new video conference.</summary>
+        /// <summary>The createMeetingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreateMeetingUrl { get; set; }
@@ -23,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models
 #else
         public string CreateMeetingUrl { get; set; }
 #endif
-        /// <summary>The URL that HubSpot will send notifications of meetings that have been deleted in HubSpot.</summary>
+        /// <summary>The deleteMeetingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeleteMeetingUrl { get; set; }
@@ -39,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models
 #else
         public string FetchAccountsUri { get; set; }
 #endif
-        /// <summary>The URL that HubSpot will send updates to existing meetings. Typically called when the user changes the topic or times of a meeting.</summary>
+        /// <summary>The updateMeetingUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdateMeetingUrl { get; set; }
@@ -47,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models
 #else
         public string UpdateMeetingUrl { get; set; }
 #endif
-        /// <summary>The URL that HubSpot will use to verify that a user exists in the video conference application.</summary>
+        /// <summary>The userVerifyUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserVerifyUrl { get; set; }

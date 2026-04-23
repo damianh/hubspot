@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicWideStatus_wideStatusType
     {
-        [EnumMember(Value = "PORTAL_WIDE")]
-        #pragma warning disable CS1591
-        PORTAL_WIDE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "BUSINESS_UNIT_WIDE")]
         #pragma warning disable CS1591
         BUSINESS_UNIT_WIDE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PORTAL_WIDE")]
+        #pragma warning disable CS1591
+        PORTAL_WIDE,
         #pragma warning restore CS1591
     }
 }

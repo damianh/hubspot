@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "D4D9CFF6EEA60BB7105349F25104A8E93D56AA23118B7F00EB5470D5C8D53914E4065B5945E7C2A074173E8C9CDDD8E6AE5AA39E31EB061142CDEA891FFFE46C",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Deals/versions/424",
+  "descriptionHash": "AC04358DF61F4D011FD14B2BF4967A14F291064D0D5F405760D46ED6610D9A7F0145E89ACCC8F471DFE6D7E98E8B8D0E3401A595748E3C4BCBBA61DFCBA50038",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/25196/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMDealsV3Client",

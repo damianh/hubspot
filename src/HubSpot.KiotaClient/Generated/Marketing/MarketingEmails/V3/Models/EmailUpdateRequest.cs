@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines if the email is archived or not.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The businessUnitId property</summary>
+        /// <summary>The ID of the business unit associated with the email.</summary>
         public long? BusinessUnitId { get; set; }
         /// <summary>The ID of the campaign this email is associated to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,7 +43,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailContent Content { get; set; }
 #endif
-        /// <summary>The folderIdV2 property</summary>
+        /// <summary>The ID of the folder where the email will be stored.</summary>
         public long? FolderIdV2 { get; set; }
         /// <summary>Data structure representing the from fields on the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,9 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.PublicEmailFromDetails From { get; set; }
 #endif
-        /// <summary>The jitterSendTime property</summary>
+        /// <summary>Determines whether the email send time should be randomized to avoid sending all emails at the exact same time.</summary>
         public bool? JitterSendTime { get; set; }
-        /// <summary>The language property</summary>
+        /// <summary>The language code for the email, such as &apos;en&apos; for English.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.EmailUpdateRequest_language? Language { get; set; }
         /// <summary>The name of the email, as displayed on the email dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
         {
         }
         /// <summary>
-        /// Update a batch of contracts by internal ID, or unique property values
+        /// Update multiple contracts by their internal IDs or unique property values. This endpoint allows you to modify the properties of several contracts in a single request, streamlining the update process for batch operations.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of contracts by internal ID, or unique property values
+        /// Update multiple contracts by their internal IDs or unique property values. This endpoint allows you to modify the properties of several contracts in a single request, streamlining the update process for batch operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPropertyNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/{propertyName}{?archived*,properties*}", pathParameters)
+        public WithPropertyNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/{propertyName}{?archived*,dataSensitivity*,locale*,properties*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPropertyNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/{propertyName}{?archived*,properties*}", rawUrl)
+        public WithPropertyNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/properties/2025-09/{objectType}/{propertyName}{?archived*,dataSensitivity*,locale*,properties*}", rawUrl)
         {
         }
         /// <summary>
@@ -173,6 +173,27 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            [Obsolete("This property is deprecated, use DataSensitivityAsGetDataSensitivityQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dataSensitivity")]
+            public string? DataSensitivity { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dataSensitivity")]
+            public string DataSensitivity { get; set; }
+#endif
+            [QueryParameter("dataSensitivity")]
+            public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Item.GetDataSensitivityQueryParameterType? DataSensitivityAsGetDataSensitivityQueryParameterType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("locale")]
+            public string? Locale { get; set; }
+#nullable restore
+#else
+            [QueryParameter("locale")]
+            public string Locale { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

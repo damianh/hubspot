@@ -41,7 +41,7 @@ public class CrmEmailsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Emails.PostAsync(input);
-        var email = created!.Entity!;
+        var email = created!;
 
         email.ShouldNotBeNull();
         email.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmEmailsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Emails.PostAsync(input);
-        var emailId = created!.Entity!.Id!;
+        var emailId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Emails[emailId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmEmailsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Emails.PostAsync(input);
-        var emailId = created!.Entity!.Id!;
+        var emailId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

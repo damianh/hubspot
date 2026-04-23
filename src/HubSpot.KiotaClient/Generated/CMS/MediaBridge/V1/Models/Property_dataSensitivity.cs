@@ -7,6 +7,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_dataSensitivity
     {
+        [EnumMember(Value = "high")]
+        #pragma warning disable CS1591
+        High,
+        #pragma warning restore CS1591
         [EnumMember(Value = "none")]
         #pragma warning disable CS1591
         None,
@@ -14,10 +18,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         [EnumMember(Value = "standard")]
         #pragma warning disable CS1591
         Standard,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "high")]
-        #pragma warning disable CS1591
-        High,
         #pragma warning restore CS1591
     }
 }

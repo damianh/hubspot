@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             get => new global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.communicationPreferences.v4.statuses.item collection</summary>
-        /// <param name="position">The contact&apos;s email address.</param>
+        /// <param name="position">The unique identifier of the subscriber whose communication preferences status is being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Item.WithSubscriberIdStringItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.CommunicationPreferences.V4.Statuses.Item.WithSubscriberIdStringItemRequestBuilder this[string position]
         {

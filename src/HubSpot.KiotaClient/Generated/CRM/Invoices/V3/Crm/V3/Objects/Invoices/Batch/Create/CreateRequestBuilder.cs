@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.Ba
         {
         }
         /// <summary>
-        /// Create a batch of invoices
+        /// Create multiple invoices at once by providing a batch of invoice data, and receive a response with details of the created invoices, including their IDs.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.Ba
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of invoices
+        /// Create multiple invoices at once by providing a batch of invoice data, and receive a response with details of the created invoices, including their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

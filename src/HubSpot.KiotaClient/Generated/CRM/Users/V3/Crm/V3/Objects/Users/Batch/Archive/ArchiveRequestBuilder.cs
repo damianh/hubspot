@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Ar
         {
         }
         /// <summary>
-        /// Archive a batch of users by ID
+        /// Archive multiple users by their IDs in a single request. This operation moves the specified users to the recycling bin, effectively deactivating them from active use.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Ar
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of users by ID
+        /// Archive multiple users by their IDs in a single request. This operation moves the specified users to the recycling bin, effectively deactivating them from active use.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -11,25 +11,25 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
         #pragma warning disable CS1591
         CREATED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "UPDATED")]
+        [EnumMember(Value = "DELETED")]
         #pragma warning disable CS1591
-        UPDATED,
+        DELETED,
         #pragma warning restore CS1591
         [EnumMember(Value = "PUBLISHED")]
         #pragma warning disable CS1591
         PUBLISHED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DELETED")]
+        [EnumMember(Value = "RESTORE")]
         #pragma warning disable CS1591
-        DELETED,
+        RESTORE,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNPUBLISHED")]
         #pragma warning disable CS1591
         UNPUBLISHED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "RESTORE")]
+        [EnumMember(Value = "UPDATED")]
         #pragma warning disable CS1591
-        RESTORE,
+        UPDATED,
         #pragma warning restore CS1591
     }
 }

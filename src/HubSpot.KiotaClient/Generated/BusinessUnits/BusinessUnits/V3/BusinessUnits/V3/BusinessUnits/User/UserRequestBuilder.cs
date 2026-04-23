@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUni
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.businessUnits.v3.businessUnits.user.item collection</summary>
-        /// <param name="position">Identifier of user to retrieve.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUnits.V3.BusinessUnits.User.Item.WithUserItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V3.BusinessUnits.V3.BusinessUnits.User.Item.WithUserItemRequestBuilder this[string position]
         {

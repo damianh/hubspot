@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Defines the operation to be applied within the filter (BOUNCED, LINK_CLICKED, MARKED_SPAM, OPENED, OPENED_BUT_LINK_NOT_CLICKED, OPENED_BUT_NOT_REPLIED, RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED, SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicEmailEventFilter_operator
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "BOUNCED")]
+        #pragma warning disable CS1591
+        BOUNCED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LINK_CLICKED")]
         #pragma warning disable CS1591
         LINK_CLICKED,
@@ -28,18 +31,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         #pragma warning disable CS1591
         OPENED_BUT_NOT_REPLIED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "REPLIED")]
-        #pragma warning disable CS1591
-        REPLIED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "UNSUBSCRIBED")]
-        #pragma warning disable CS1591
-        UNSUBSCRIBED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "BOUNCED")]
-        #pragma warning disable CS1591
-        BOUNCED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "RECEIVED")]
         #pragma warning disable CS1591
         RECEIVED,
@@ -47,6 +38,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         [EnumMember(Value = "RECEIVED_BUT_NOT_OPENED")]
         #pragma warning disable CS1591
         RECEIVED_BUT_NOT_OPENED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "REPLIED")]
+        #pragma warning disable CS1591
+        REPLIED,
         #pragma warning restore CS1591
         [EnumMember(Value = "SENT")]
         #pragma warning disable CS1591
@@ -59,6 +54,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         [EnumMember(Value = "SENT_BUT_NOT_RECEIVED")]
         #pragma warning disable CS1591
         SENT_BUT_NOT_RECEIVED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UNSUBSCRIBED")]
+        #pragma warning disable CS1591
+        UNSUBSCRIBED,
         #pragma warning restore CS1591
     }
 }

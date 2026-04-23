@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the task pattern was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the task pattern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The notes property</summary>
+        /// <summary>Additional notes or comments associated with the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Notes { get; set; }
 #endif
-        /// <summary>The queueId property</summary>
+        /// <summary>The identifier for the queue associated with the task.</summary>
         public int? QueueId { get; set; }
-        /// <summary>The subject property</summary>
+        /// <summary>The subject line of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -42,27 +42,15 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The taskPriority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TaskPriority { get; set; }
-#nullable restore
-#else
-        public string TaskPriority { get; set; }
-#endif
-        /// <summary>The taskType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TaskType { get; set; }
-#nullable restore
-#else
-        public string TaskType { get; set; }
-#endif
-        /// <summary>The templateId property</summary>
+        /// <summary>The priority level assigned to the task.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskPriority? TaskPriority { get; set; }
+        /// <summary>The type of task, such as an email or call.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskType? TaskType { get; set; }
+        /// <summary>The identifier for the template used in the task.</summary>
         public long? TemplateId { get; set; }
-        /// <summary>The threadEmailToStepOrder property</summary>
+        /// <summary>The order of the step to which the email thread is related.</summary>
         public int? ThreadEmailToStepOrder { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the task pattern was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse"/> and sets the default values.
@@ -94,8 +82,8 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "queueId", n => { QueueId = n.GetIntValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
-                { "taskPriority", n => { TaskPriority = n.GetStringValue(); } },
-                { "taskType", n => { TaskType = n.GetStringValue(); } },
+                { "taskPriority", n => { TaskPriority = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskPriority>(); } },
+                { "taskType", n => { TaskType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskType>(); } },
                 { "templateId", n => { TemplateId = n.GetLongValue(); } },
                 { "threadEmailToStepOrder", n => { ThreadEmailToStepOrder = n.GetIntValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -113,8 +101,8 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
             writer.WriteStringValue("notes", Notes);
             writer.WriteIntValue("queueId", QueueId);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteStringValue("taskPriority", TaskPriority);
-            writer.WriteStringValue("taskType", TaskType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskPriority>("taskPriority", TaskPriority);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse_taskType>("taskType", TaskType);
             writer.WriteLongValue("templateId", TemplateId);
             writer.WriteIntValue("threadEmailToStepOrder", ThreadEmailToStepOrder);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

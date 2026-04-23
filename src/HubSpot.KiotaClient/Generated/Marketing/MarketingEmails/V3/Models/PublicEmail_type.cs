@@ -11,17 +11,17 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         AB_EMAIL,
         #pragma warning restore CS1591
-        [EnumMember(Value = "BATCH_EMAIL")]
-        #pragma warning disable CS1591
-        BATCH_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "LOCALTIME_EMAIL")]
-        #pragma warning disable CS1591
-        LOCALTIME_EMAIL,
-        #pragma warning restore CS1591
         [EnumMember(Value = "AUTOMATED_AB_EMAIL")]
         #pragma warning disable CS1591
         AUTOMATED_AB_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_EMAIL")]
+        #pragma warning disable CS1591
+        AUTOMATED_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BATCH_EMAIL")]
+        #pragma warning disable CS1591
+        BATCH_EMAIL,
         #pragma warning restore CS1591
         [EnumMember(Value = "BLOG_EMAIL")]
         #pragma warning disable CS1591
@@ -30,30 +30,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "BLOG_EMAIL_CHILD")]
         #pragma warning disable CS1591
         BLOG_EMAIL_CHILD,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "RSS_EMAIL")]
-        #pragma warning disable CS1591
-        RSS_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "RSS_EMAIL_CHILD")]
-        #pragma warning disable CS1591
-        RSS_EMAIL_CHILD,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "RESUBSCRIBE_EMAIL")]
-        #pragma warning disable CS1591
-        RESUBSCRIBE_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OPTIN_EMAIL")]
-        #pragma warning disable CS1591
-        OPTIN_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "OPTIN_FOLLOWUP_EMAIL")]
-        #pragma warning disable CS1591
-        OPTIN_FOLLOWUP_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_EMAIL")]
-        #pragma warning disable CS1591
-        AUTOMATED_EMAIL,
         #pragma warning restore CS1591
         [EnumMember(Value = "FEEDBACK_CES_EMAIL")]
         #pragma warning disable CS1591
@@ -79,13 +55,77 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         LEADFLOW_EMAIL,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SINGLE_SEND_API")]
+        [EnumMember(Value = "LOCALTIME_EMAIL")]
         #pragma warning disable CS1591
-        SINGLE_SEND_API,
+        LOCALTIME_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MANAGE_PREFERENCES_EMAIL")]
+        #pragma warning disable CS1591
+        MANAGE_PREFERENCES_EMAIL,
         #pragma warning restore CS1591
         [EnumMember(Value = "MARKETING_SINGLE_SEND_API")]
         #pragma warning disable CS1591
         MARKETING_SINGLE_SEND_API,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_EMAIL_VERIFICATION_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_EMAIL_VERIFICATION_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_FOLLOW_UP_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_FOLLOW_UP_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_OTP_LOGIN_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_OTP_LOGIN_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_PASSWORD_RESET_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_PASSWORD_RESET_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_PASSWORD_SAVED_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_PASSWORD_SAVED_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_REGISTRATION_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_REGISTRATION_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MEMBERSHIP_VERIFICATION_EMAIL")]
+        #pragma warning disable CS1591
+        MEMBERSHIP_VERIFICATION_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPTIN_EMAIL")]
+        #pragma warning disable CS1591
+        OPTIN_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPTIN_FOLLOWUP_EMAIL")]
+        #pragma warning disable CS1591
+        OPTIN_FOLLOWUP_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RESUBSCRIBE_EMAIL")]
+        #pragma warning disable CS1591
+        RESUBSCRIBE_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RSS_EMAIL")]
+        #pragma warning disable CS1591
+        RSS_EMAIL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RSS_EMAIL_CHILD")]
+        #pragma warning disable CS1591
+        RSS_EMAIL_CHILD,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SINGLE_SEND_API")]
+        #pragma warning disable CS1591
+        SINGLE_SEND_API,
         #pragma warning restore CS1591
         [EnumMember(Value = "SMTP_TOKEN")]
         #pragma warning disable CS1591
@@ -94,42 +134,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "TICKET_EMAIL")]
         #pragma warning disable CS1591
         TICKET_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_REGISTRATION_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_REGISTRATION_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_PASSWORD_SAVED_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_PASSWORD_SAVED_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_PASSWORD_RESET_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_PASSWORD_RESET_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_EMAIL_VERIFICATION_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_EMAIL_VERIFICATION_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_PASSWORDLESS_AUTH_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_REGISTRATION_FOLLOW_UP_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_OTP_LOGIN_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_OTP_LOGIN_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_FOLLOW_UP_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_FOLLOW_UP_EMAIL,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MEMBERSHIP_VERIFICATION_EMAIL")]
-        #pragma warning disable CS1591
-        MEMBERSHIP_VERIFICATION_EMAIL,
         #pragma warning restore CS1591
     }
 }

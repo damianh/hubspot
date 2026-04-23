@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time when the batch operation was completed.</summary>
+        /// <summary>The timestamp when the batch operation completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>A collection of related links associated with the batch operation.</summary>
+        /// <summary>An object containing URLs for related resources or operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.BatchResponseSubscriptionResponse_links? Links { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.BatchResponseSubscriptionResponse_links Links { get; set; }
 #endif
-        /// <summary>The date and time when the batch operation was requested.</summary>
+        /// <summary>The timestamp when the batch operation was requested, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The list of results from the batch operation.</summary>
+        /// <summary>An array containing the successfully processed webhook subscriptions from the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse>? Results { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse> Results { get; set; }
 #endif
-        /// <summary>The date and time when the batch operation started.</summary>
+        /// <summary>The timestamp when the batch operation started processing, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The current status of the batch operation, which can be PENDING, PROCESSING, CANCELED, or COMPLETE.</summary>
+        /// <summary>The status of the batch operation. Accepted values are &apos;PENDING&apos;, &apos;PROCESSING&apos;, &apos;CANCELED&apos;, or &apos;COMPLETE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.BatchResponseSubscriptionResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.BatchResponseSubscriptionResponse"/> and sets the default values.

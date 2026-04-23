@@ -46,6 +46,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The requiresTimeZoneConversion property</summary>
         public bool? RequiresTimeZoneConversion { get; set; }
         /// <summary>
@@ -81,6 +89,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation_propertyType>(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "requiresTimeZoneConversion", n => { RequiresTimeZoneConversion = n.GetBoolValue(); } },
             };
         }
@@ -98,6 +107,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RollingDateRangePropertyOperation_propertyType>("propertyType", PropertyType);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteBoolValue("requiresTimeZoneConversion", RequiresTimeZoneConversion);
             writer.WriteAdditionalData(AdditionalData);
         }

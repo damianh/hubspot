@@ -14,17 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the step dependency was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The dependencyType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DependencyType { get; set; }
-#nullable restore
-#else
-        public string DependencyType { get; set; }
-#endif
-        /// <summary>The id property</summary>
+        /// <summary>The type of dependency between sequence steps with accepted values being TASK_COMPLETION or MANUAL_PAUSE.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepDependencyResponse_dependencyType? DependencyType { get; set; }
+        /// <summary>The unique identifier of the step dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The reliesOnSequenceStepId property</summary>
+        /// <summary>The unique identifier of the sequence step that is responsible for creating and resolving this dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReliesOnSequenceStepId { get; set; }
@@ -40,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string ReliesOnSequenceStepId { get; set; }
 #endif
-        /// <summary>The reliesOnStepOrder property</summary>
+        /// <summary>The order number of the step that is responsible for creating and resolving this dependency.</summary>
         public int? ReliesOnStepOrder { get; set; }
-        /// <summary>The requiredBySequenceStepId property</summary>
+        /// <summary>The unique identifier of the sequence step that requires this dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequiredBySequenceStepId { get; set; }
@@ -50,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string RequiredBySequenceStepId { get; set; }
 #endif
-        /// <summary>The requiredByStepOrder property</summary>
+        /// <summary>The order number of the step that requires this dependency.</summary>
         public int? RequiredByStepOrder { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the step dependency was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepDependencyResponse"/> and sets the default values.
@@ -80,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "dependencyType", n => { DependencyType = n.GetStringValue(); } },
+                { "dependencyType", n => { DependencyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepDependencyResponse_dependencyType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "reliesOnSequenceStepId", n => { ReliesOnSequenceStepId = n.GetStringValue(); } },
                 { "reliesOnStepOrder", n => { ReliesOnStepOrder = n.GetIntValue(); } },
@@ -97,7 +91,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("dependencyType", DependencyType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepDependencyResponse_dependencyType>("dependencyType", DependencyType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("reliesOnSequenceStepId", ReliesOnSequenceStepId);
             writer.WriteIntValue("reliesOnStepOrder", ReliesOnStepOrder);

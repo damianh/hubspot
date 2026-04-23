@@ -48,6 +48,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyParser? PropertyParser { get; set; }
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The timePoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyParser", n => { PropertyParser = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyParser>(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyType>(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "timePoint", n => { TimePoint = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation.TimePointOperation_timePoint>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation.TimePointOperation_timePoint.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -117,6 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyParser>("propertyParser", PropertyParser);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation_propertyType>("propertyType", PropertyType);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimePointOperation.TimePointOperation_timePoint>("timePoint", TimePoint);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
