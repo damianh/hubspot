@@ -164,7 +164,6 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmCommunications(app);
         ApiRoutes.RegisterCrmPostalMail(app);
         ApiRoutes.RegisterCrmFeedbackSubmissions(app);
-        ApiRoutes.RegisterCrmGoals(app);
 
         // Batch 1: Additional standard objects
         ApiRoutes.RegisterCrmAppointments(app);
