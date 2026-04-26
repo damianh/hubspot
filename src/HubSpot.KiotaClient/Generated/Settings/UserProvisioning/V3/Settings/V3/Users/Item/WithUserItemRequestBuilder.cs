@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         /// Modifies a user identified by `userId`. `userId` refers to the user&apos;s ID by default, or optionally email as specified by the `IdProperty` query param.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUser"/></returns>
-        /// <param name="body">A user to update</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         /// Modifies a user identified by `userId`. `userId` refers to the user&apos;s ID by default, or optionally email as specified by the `IdProperty` query param.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A user to update</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,7 +162,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [Obsolete("This property is deprecated, use IdPropertyAsDeleteIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,7 +172,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
 #endif
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.DeleteIdPropertyQueryParameterType? IdPropertyAsDeleteIdPropertyQueryParameterType { get; set; }
         }
@@ -191,7 +189,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [Obsolete("This property is deprecated, use IdPropertyAsGetIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,7 +199,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
 #endif
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.GetIdPropertyQueryParameterType? IdPropertyAsGetIdPropertyQueryParameterType { get; set; }
         }
@@ -220,7 +216,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderPutQueryParameters 
         {
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [Obsolete("This property is deprecated, use IdPropertyAsPutIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -231,7 +226,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
 #endif
-            /// <summary>The name of a property with unique user values. Valid values are `USER_ID`(default) or `EMAIL`</summary>
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.PutIdPropertyQueryParameterType? IdPropertyAsPutIdPropertyQueryParameterType { get; set; }
         }

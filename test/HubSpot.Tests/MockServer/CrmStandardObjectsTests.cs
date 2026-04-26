@@ -54,7 +54,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
         var created = await _callsClient.Crm.V3.Objects.Calls.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var callId = created!.Entity!.Id;
+        var callId = created!.Id;
         callId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _callsClient.Crm.V3.Objects.Calls[callId].GetAsync(rc =>
@@ -84,7 +84,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
         var created = await _emailsClient.Crm.V3.Objects.Emails.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var emailId = created!.Entity!.Id;
+        var emailId = created!.Id;
         emailId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _emailsClient.Crm.V3.Objects.Emails[emailId].GetAsync(rc =>
@@ -113,7 +113,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
         var created = await _meetingsClient.Crm.V3.Objects.Meetings.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var meetingId = created!.Entity!.Id;
+        var meetingId = created!.Id;
         meetingId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _meetingsClient.Crm.V3.Objects.Meetings[meetingId].GetAsync(rc =>
@@ -141,7 +141,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
         var created = await _notesClient.Crm.V3.Objects.Notes.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var noteId = created!.Entity!.Id;
+        var noteId = created!.Id;
         noteId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _notesClient.Crm.V3.Objects.Notes[noteId].GetAsync(rc =>
@@ -170,7 +170,7 @@ public class CrmStandardObjectsTests : IAsyncLifetime
 
         var created = await _tasksClient.Crm.V3.Objects.Tasks.PostAsync(createRequest);
         created.ShouldNotBeNull();
-        var taskId = created!.Entity!.Id;
+        var taskId = created!.Id;
         taskId.ShouldNotBeNullOrWhiteSpace();
 
         var retrieved = await _tasksClient.Crm.V3.Objects.Tasks[taskId].GetAsync(rc =>

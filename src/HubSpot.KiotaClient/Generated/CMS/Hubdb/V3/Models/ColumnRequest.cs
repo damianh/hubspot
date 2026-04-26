@@ -28,9 +28,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The maxNumberOfCharacters property</summary>
+        /// <summary>Defines the maximum number of characters allowed in the column.</summary>
         public int? MaxNumberOfCharacters { get; set; }
-        /// <summary>The maxNumberOfOptions property</summary>
+        /// <summary>Specifies the maximum number of options that can be set for select and multi-select columns.</summary>
         public int? MaxNumberOfOptions { get; set; }
         /// <summary>Name of the column</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

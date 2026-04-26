@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "C4C17E789513B27BC78FAF375288DBAD0F32C90CABC42FFC07E7F60B19503170589154CADB1CADF5EE31E8A58783C0C311932924E04883251CB4B36B1BC1E077",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Settings/Multicurrency/versions/145897",
+  "descriptionHash": "F56A7F01E9685DC02CC59C8FE30239F9A8C7213A4761BA0CA89936E3FC52608028E1788AD1BA355A595F1D23F91E93B181E9FA86979C9CAC69BB9C51D3B17D2A",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22211/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotSettingsMulticurrencyV3Client",

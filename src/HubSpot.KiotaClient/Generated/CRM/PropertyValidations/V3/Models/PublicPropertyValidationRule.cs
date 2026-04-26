@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ruleArguments property</summary>
+        /// <summary>A list of arguments that define the specific conditions or parameters for the validation rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RuleArguments { get; set; }
@@ -22,14 +22,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
 #else
         public List<string> RuleArguments { get; set; }
 #endif
-        /// <summary>The ruleType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RuleType { get; set; }
-#nullable restore
-#else
-        public string RuleType { get; set; }
-#endif
+        /// <summary>The category of validation applied to the property, such as FORMAT, ALPHANUMERIC, or MAX_LENGTH.</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models.PublicPropertyValidationRule_ruleType? RuleType { get; set; }
+        /// <summary>The shouldApplyNormalization property</summary>
+        public bool? ShouldApplyNormalization { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models.PublicPropertyValidationRule"/> and sets the default values.
         /// </summary>
@@ -56,7 +52,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ruleArguments", n => { RuleArguments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ruleType", n => { RuleType = n.GetStringValue(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models.PublicPropertyValidationRule_ruleType>(); } },
+                { "shouldApplyNormalization", n => { ShouldApplyNormalization = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +64,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ruleArguments", RuleArguments);
-            writer.WriteStringValue("ruleType", RuleType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models.PublicPropertyValidationRule_ruleType>("ruleType", RuleType);
+            writer.WriteBoolValue("shouldApplyNormalization", ShouldApplyNormalization);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

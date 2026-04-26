@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extrac
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.cms.v3.sourceCode.extract.async.tasks.item collection</summary>
-        /// <param name="position">The extraction task ID returned by the initial `extract/async` request.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extract.Async.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extract.Async.Tasks.Item.WithTaskItemRequestBuilder this[int position]
         {
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extrac
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.cms.v3.sourceCode.extract.async.tasks.item collection</summary>
-        /// <param name="position">The extraction task ID returned by the initial `extract/async` request.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extract.Async.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Extract.Async.Tasks.Item.WithTaskItemRequestBuilder this[string position]

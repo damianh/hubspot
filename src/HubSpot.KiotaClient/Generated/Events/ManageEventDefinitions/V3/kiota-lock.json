@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "EB4260349EA0DE73C36149EE7E136D9E97FF4571E782017BCD75C23AEED3195157EF20BF35F9A6F7624EA1F95EF5D8D1B2DAD472077947FEEC3512972DF64145",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Events/Manage%20Event%20Definitions/versions/138888",
+  "descriptionHash": "8BE809EB9EA88D4FDC38FC66AB0BDFEE041458F4D1AEA11EB52FC193DADFB198C3AAF67563D1599289CAC06C999A0AA3A08710B7C68DC5EEBFF6A63787780F84",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22200/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotEventsManageEventDefinitionsV3Client",

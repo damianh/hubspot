@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A brief description of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayOrder property</summary>
+        /// <summary>The order in which the option should be displayed.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The doubleData property</summary>
+        /// <summary>Deprecated property. Will always be 0.</summary>
         public double? DoubleData { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>Whether the option should be hidden from the user.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The text label for the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The readOnly property</summary>
+        /// <summary>Whether the option is read-only.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The value associated with the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a formula that is used to compute a calculated property.</summary>
+        /// <summary>The calculationFormula property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalculationFormula { get; set; }
@@ -22,9 +22,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
+        /// <summary>The currencyPropertyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyPropertyName { get; set; }
+#nullable restore
+#else
+        public string CurrencyPropertyName { get; set; }
+#endif
         /// <summary>The dataSensitivity property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>A description of the property that will be shown as help text in HubSpot.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -32,15 +40,15 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Properties are displayed in order starting with the lowest positive integer value. Values of -1 will cause the property to be displayed after any positive values.</summary>
+        /// <summary>The displayOrder property</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>Applicable only for &apos;enumeration&apos; type properties.  Should be set to true in conjunction with a &apos;referencedObjectType&apos; of &apos;OWNER&apos;.  Otherwise false.</summary>
+        /// <summary>The externalOptions property</summary>
         public bool? ExternalOptions { get; set; }
-        /// <summary>Controls how the property appears in HubSpot.</summary>
+        /// <summary>The fieldType property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_fieldType? FieldType { get; set; }
-        /// <summary>Whether or not the property can be used in a HubSpot form.</summary>
+        /// <summary>The formField property</summary>
         public bool? FormField { get; set; }
-        /// <summary>The name of the property group the property belongs to.</summary>
+        /// <summary>The groupName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName { get; set; }
@@ -48,11 +56,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>Whether or not the property&apos;s value must be unique. Once set, this can&apos;t be changed.</summary>
+        /// <summary>The hasUniqueValue property</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
+        /// <summary>The hidden property</summary>
         public bool? Hidden { get; set; }
-        /// <summary>A human-readable property label that will be shown in HubSpot.</summary>
+        /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -60,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The internal property name, which must be used when referencing the property via the API.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -68,7 +76,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A list of valid options for the property. This field is required for enumerated properties.</summary>
+        /// <summary>The numberDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_numberDisplayHint? NumberDisplayHint { get; set; }
+        /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.OptionInput>? Options { get; set; }
@@ -76,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.OptionInput> Options { get; set; }
 #endif
-        /// <summary>Should be set to &apos;OWNER&apos; when &apos;externalOptions&apos; is true, which causes the property to dynamically pull option values from the current HubSpot users.</summary>
+        /// <summary>The referencedObjectType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferencedObjectType { get; set; }
@@ -84,7 +94,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string ReferencedObjectType { get; set; }
 #endif
-        /// <summary>The data type of the property.</summary>
+        /// <summary>The showCurrencySymbol property</summary>
+        public bool? ShowCurrencySymbol { get; set; }
+        /// <summary>The type property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate"/> and sets the default values.
@@ -112,6 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
+                { "currencyPropertyName", n => { CurrencyPropertyName = n.GetStringValue(); } },
                 { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_dataSensitivity>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
@@ -123,8 +136,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
                 { "hidden", n => { Hidden = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "numberDisplayHint", n => { NumberDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_numberDisplayHint>(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.OptionInput>(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.OptionInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
+                { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_type>(); } },
             };
         }
@@ -136,6 +151,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calculationFormula", CalculationFormula);
+            writer.WriteStringValue("currencyPropertyName", CurrencyPropertyName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
@@ -147,8 +163,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
             writer.WriteBoolValue("hidden", Hidden);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_numberDisplayHint>("numberDisplayHint", NumberDisplayHint);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.OptionInput>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
+            writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyCreate_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

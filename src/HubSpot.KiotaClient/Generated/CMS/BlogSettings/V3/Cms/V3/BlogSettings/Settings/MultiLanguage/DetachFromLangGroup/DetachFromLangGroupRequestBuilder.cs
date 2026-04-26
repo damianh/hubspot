@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
         {
         }
         /// <summary>
-        /// Detach a blog from a multi-language group.
+        /// Detaches a blog from a multi-language group.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Request body object for detaching objects from multi-language groups.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Detach a blog from a multi-language group.
+        /// Detaches a blog from a multi-language group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body object for detaching objects from multi-language groups.</param>

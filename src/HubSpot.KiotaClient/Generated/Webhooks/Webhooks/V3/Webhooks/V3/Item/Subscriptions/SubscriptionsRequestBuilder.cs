@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subs
             get => new global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subscriptions.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.webhooks.v3.item.subscriptions.item collection</summary>
-        /// <param name="position">The ID of the event subscription.</param>
+        /// <param name="position">The ID of the target subscription.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[int position]
         {
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subs
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.webhooks.v3.item.subscriptions.item collection</summary>
-        /// <param name="position">The ID of the event subscription.</param>
+        /// <param name="position">The ID of the target subscription.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[string position]
@@ -87,7 +87,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subs
         /// Create new event subscription for the specified app.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.SubscriptionResponse"/></returns>
-        /// <param name="body">New webhook settings for an app.</param>
+        /// <param name="body">Request to create a new webhook subscription for monitoring specific events. Each subscription defines which event type to listen for and whether to monitor all events of that type or specific property changes.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Webhooks.V3.Item.Subs
         /// Create new event subscription for the specified app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">New webhook settings for an app.</param>
+        /// <param name="body">Request to create a new webhook subscription for monitoring specific events. Each subscription defines which event type to listen for and whether to monitor all events of that type or specific property changes.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

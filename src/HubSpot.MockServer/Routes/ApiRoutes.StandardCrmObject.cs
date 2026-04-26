@@ -188,14 +188,7 @@ internal static partial class ApiRoutes
                 ArchivedAt = hubSpotObject.ArchivedAt
             };
 
-            var createdResponse = new CreatedResponseSimplePublicObject
-            {
-                CreatedResourceId = simplePublicObject.Id,
-                Entity = simplePublicObject,
-                Location = $"/crm/v3/objects/{route}/{simplePublicObject.Id}"
-            };
-
-            return Results.Created($"/crm/v3/objects/{route}/{simplePublicObject.Id}", createdResponse);
+            return Results.Created($"/crm/v3/objects/{route}/{simplePublicObject.Id}", simplePublicObject);
         });
 
         // PATCH /crm/v3/objects/{objectType}/{objectId} - Update object

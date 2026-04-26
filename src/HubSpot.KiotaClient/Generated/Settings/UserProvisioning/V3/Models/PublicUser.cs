@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 {
-    /// <summary>
-    /// A user
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class PublicUser : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The user&apos;s email</summary>
+        /// <summary>The user&apos;s email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -23,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>The user&apos;s first name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -31,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The user&apos;s unique ID</summary>
+        /// <summary>The user&apos;s unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -39,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>The user&apos;s last name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -55,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string PrimaryTeamId { get; set; }
 #endif
-        /// <summary>The user&apos;s role</summary>
+        /// <summary>The user&apos;s role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleId { get; set; }
@@ -63,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string RoleId { get; set; }
 #endif
-        /// <summary>The roleIds property</summary>
+        /// <summary>A list of role IDs assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RoleIds { get; set; }
@@ -71,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public List<string> RoleIds { get; set; }
 #endif
-        /// <summary>The user&apos;s additional teams</summary>
+        /// <summary>The user&apos;s additional teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecondaryTeamIds { get; set; }
@@ -79,9 +78,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public List<string> SecondaryTeamIds { get; set; }
 #endif
-        /// <summary>The sendWelcomeEmail property</summary>
+        /// <summary>Whether a welcome email was sent to the user. This value will only be populated in response to a provisioning request. Subsequent queries will be false.</summary>
         public bool? SendWelcomeEmail { get; set; }
-        /// <summary>The superAdmin property</summary>
+        /// <summary>Whether the user has super admin privileges.</summary>
         public bool? SuperAdmin { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models.PublicUser"/> and sets the default values.

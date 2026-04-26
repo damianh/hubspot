@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maximum number of concurrent HTTP requests HubSpot will attempt to make to your app.</summary>
+        /// <summary>The maximum number of HTTP requests HubSpot will attempt to make to your app in a given time frame determined by `period`. This is an integer value.</summary>
         public int? MaxConcurrentRequests { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Webhooks.Webhooks.V3.Models.ThrottlingSettings"/> and sets the default values.

@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsLinkSettings CustomParams { get; set; }
 #endif
-        /// <summary>The isOffline property</summary>
+        /// <summary>Whether the meeting was booked offline, meaning no associated calendar event was created.</summary>
         public bool? IsOffline { get; set; }
         /// <summary>The linkAvailability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkAvailability LinkAvailability { get; set; }
 #endif
-        /// <summary>The linkId property</summary>
+        /// <summary>The unique identifier for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkId { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string LinkId { get; set; }
 #endif
-        /// <summary>The linkType property</summary>
+        /// <summary>The type of the meeting link. Accepted values are: GROUP_CALENDAR, PERSONAL_LINK, ROUND_ROBIN_CALENDAR.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalBookingInfo_linkType? LinkType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalBookingInfo"/> and sets the default values.

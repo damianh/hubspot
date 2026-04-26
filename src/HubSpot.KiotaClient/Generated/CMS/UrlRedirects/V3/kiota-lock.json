@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "7543CC9E6CBFEC64C975B6F935A1F4A94A54BC70A39122AF0F694D6353B43EA692F2F46EDD6CD8631D4256BF8ED8781A414A632F328A462D8562ACCBBB65B1B9",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Url%20Redirects/versions/149916",
+  "descriptionHash": "9C9CBA40F6313100730CBDAE961CA525B589FABB67ED8F1454234BB2A76EAD5D15E11A6AFDADA499E549635C5C4F83629A412A14578F4FD4CB44B72074C6C512",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22136/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSUrlRedirectsV3Client",

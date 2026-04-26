@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The creation date and time of the marketing event.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A list of PropertyValues. These can be whatever kind of property names and values you want. However, they must already exist on the HubSpot account&apos;s definition of the MarketingEvent Object. If they don&apos;t they will be filtered out and not set.In order to do this you&apos;ll need to create a new PropertyGroup on the HubSpot account&apos;s MarketingEvent object for your specific app and create the Custom Property you want to track on that HubSpot account. Do not create any new default properties on the MarketingEvent object as that will apply to all HubSpot accounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         public DateTimeOffset? EndDateTime { get; set; }
         /// <summary>Indicates if the marketing event has been cancelled.</summary>
         public bool? EventCancelled { get; set; }
-        /// <summary>The eventCompleted property</summary>
+        /// <summary>Indicates if the marketing event has been completed.</summary>
         public bool? EventCompleted { get; set; }
         /// <summary>The description of the marketing event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string EventUrl { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the marketing event CRM object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -78,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The objectId property</summary>
+        /// <summary>The ID of the marketing event CRM object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -88,7 +88,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #endif
         /// <summary>The start date and time of the marketing event.</summary>
         public DateTimeOffset? StartDateTime { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The update date and time of the marketing event.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponse"/> and sets the default values.

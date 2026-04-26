@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "D9D5BDCDBA29231A95B1E141A2B90C1C13F4B6BEA4B08B976D80FC6E163C7155DE421362DBFAF5CF88BDB91A279B573D21859C983C530BB14AF9F8D9B2236204",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Video%20Conferencing%20Extension/versions/148903",
+  "descriptionHash": "4AFEF805A676989830BC2ABDB312A60DBB218F7DAB0492830F548338A57B7C2776994A2E1019693530E983D683680BE14A9CDBDE6DCB897A792BAB57FE609200",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22193/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMVideoConferencingExtensionV3Client",

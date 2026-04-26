@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEmailItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/v3/emails/{emailId}{?archived*,includeStats*,includedProperties*,marketingCampaignNames*,workflowNames*}", pathParameters)
+        public WithEmailItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/v3/emails/{emailId}{?archived*,includeStats*,includedProperties*,marketingCampaignNames*,variantStats*,workflowNames*}", pathParameters)
         {
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEmailItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/v3/emails/{emailId}{?archived*,includeStats*,includedProperties*,marketingCampaignNames*,workflowNames*}", rawUrl)
+        public WithEmailItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/v3/emails/{emailId}{?archived*,includeStats*,includedProperties*,marketingCampaignNames*,variantStats*,workflowNames*}", rawUrl)
         {
         }
         /// <summary>
@@ -213,7 +213,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Limit the response to only include the specified properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includedProperties")]
@@ -223,13 +222,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("includedProperties")]
             public string[] IncludedProperties { get; set; }
 #endif
-            /// <summary>Include statistics with email.</summary>
             [QueryParameter("includeStats")]
             public bool? IncludeStats { get; set; }
-            /// <summary>If set to true, loads `campaignName` and `campaignUtm`.</summary>
             [QueryParameter("marketingCampaignNames")]
             public bool? MarketingCampaignNames { get; set; }
-            /// <summary>If set to true, loads workflows in which the email is used within a &quot;send email&quot; action. </summary>
+            [QueryParameter("variantStats")]
+            public bool? VariantStats { get; set; }
             [QueryParameter("workflowNames")]
             public bool? WorkflowNames { get; set; }
         }

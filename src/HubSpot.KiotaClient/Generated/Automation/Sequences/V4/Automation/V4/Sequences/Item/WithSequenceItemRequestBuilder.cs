@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSequenceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/{sequenceId}", pathParameters)
+        public WithSequenceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/{sequenceId}?userId={userId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSequenceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/{sequenceId}", rawUrl)
+        public WithSequenceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/{sequenceId}?userId={userId}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceResponse?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder.WithSequenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceResponse> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder.WithSequenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder.WithSequenceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder.WithSequenceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -80,11 +80,27 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
             return new global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieve details of a specific sequence by its ID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithSequenceItemRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("userId")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("userId")]
+            public string UserId { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithSequenceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithSequenceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Item.WithSequenceItemRequestBuilder.WithSequenceItemRequestBuilderGetQueryParameters>
         {
         }
     }

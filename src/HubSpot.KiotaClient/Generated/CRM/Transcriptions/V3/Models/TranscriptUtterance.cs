@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endTimeMillis property</summary>
-        public int? EndTimeMillis { get; set; }
+        public long? EndTimeMillis { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models.Speaker Speaker { get; set; }
 #endif
         /// <summary>The startTimeMillis property</summary>
-        public int? StartTimeMillis { get; set; }
+        public long? StartTimeMillis { get; set; }
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,11 +75,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endTimeMillis", n => { EndTimeMillis = n.GetIntValue(); } },
+                { "endTimeMillis", n => { EndTimeMillis = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "languageCode", n => { LanguageCode = n.GetStringValue(); } },
                 { "speaker", n => { Speaker = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models.Speaker>(global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models.Speaker.CreateFromDiscriminatorValue); } },
-                { "startTimeMillis", n => { StartTimeMillis = n.GetIntValue(); } },
+                { "startTimeMillis", n => { StartTimeMillis = n.GetLongValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -90,11 +90,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("endTimeMillis", EndTimeMillis);
+            writer.WriteLongValue("endTimeMillis", EndTimeMillis);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("languageCode", LanguageCode);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V3.Models.Speaker>("speaker", Speaker);
-            writer.WriteIntValue("startTimeMillis", StartTimeMillis);
+            writer.WriteLongValue("startTimeMillis", StartTimeMillis);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

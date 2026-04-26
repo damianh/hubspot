@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>Time of batch operation completion.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Links associated with batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage_links? Links { get; set; }
@@ -25,9 +25,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>Time of batch operation request.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>Results of batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page>? Results { get; set; }
@@ -35,9 +35,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>Time of batch operation start.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>Status of batch operation.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.BatchResponsePage"/> and sets the default values.

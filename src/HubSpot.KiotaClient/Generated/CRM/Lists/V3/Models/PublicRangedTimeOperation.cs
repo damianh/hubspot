@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Indicates whether objects with no value set for the property should be included in the operation.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The lowerBoundEndpointBehavior property</summary>
+        /// <summary>Describes the behavior at the lower bound endpoint of the time range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LowerBoundEndpointBehavior { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string LowerBoundEndpointBehavior { get; set; }
 #endif
-        /// <summary>The lowerBoundTimePoint property</summary>
+        /// <summary>Defines the lower bound time point for the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation.PublicRangedTimeOperation_lowerBoundTimePoint? LowerBoundTimePoint { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation.PublicRangedTimeOperation_lowerBoundTimePoint LowerBoundTimePoint { get; set; }
 #endif
-        /// <summary>The operationType property</summary>
+        /// <summary>Specifies the type of operation (TIME_RANGED).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperationType { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string OperationType { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the time range (IS_BETWEEN, IS_NOT_BETWEEN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The propertyParser property</summary>
+        /// <summary>Specifies the parser used for the property in the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyParser { get; set; }
@@ -56,9 +56,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string PropertyParser { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Specifies the type of operation (TIME_RANGED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation_type? Type { get; set; }
-        /// <summary>The upperBoundEndpointBehavior property</summary>
+        /// <summary>Describes the behavior at the upper bound endpoint of the time range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpperBoundEndpointBehavior { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string UpperBoundEndpointBehavior { get; set; }
 #endif
-        /// <summary>The upperBoundTimePoint property</summary>
+        /// <summary>Defines the upper bound time point for the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation.PublicRangedTimeOperation_upperBoundTimePoint? UpperBoundTimePoint { get; set; }

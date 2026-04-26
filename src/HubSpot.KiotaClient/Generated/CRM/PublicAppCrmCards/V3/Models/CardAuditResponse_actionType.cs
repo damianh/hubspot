@@ -3,22 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 {
+    /// <summary>The type of action performed, with possible values: CREATE, DELETE, UPDATE.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CardAuditResponse_actionType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CREATE")]
         #pragma warning disable CS1591
         CREATE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "UPDATE")]
-        #pragma warning disable CS1591
-        UPDATE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "DELETE")]
         #pragma warning disable CS1591
         DELETE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UPDATE")]
+        #pragma warning disable CS1591
+        UPDATE,
         #pragma warning restore CS1591
     }
 }

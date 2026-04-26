@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows
         {
         }
         /// <summary>
-        /// Permanently deletes rows from the draft version of the table, given a set of row IDs. Maximum of 100 row IDs per call.
+        /// Permanently delete rows from the draft version of a table, given a set of row IDs. Maximum of 100 row IDs per call.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Rows
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently deletes rows from the draft version of the table, given a set of row IDs. Maximum of 100 row IDs per call.
+        /// Permanently delete rows from the draft version of a table, given a set of row IDs. Maximum of 100 row IDs per call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

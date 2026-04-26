@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>Specifies the type of filter, which is (CONSTANT).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicConstantFilter_filterType? FilterType { get; set; }
-        /// <summary>The shouldAccept property</summary>
+        /// <summary>Indicates whether the filter should accept the condition.</summary>
         public bool? ShouldAccept { get; set; }
-        /// <summary>The source property</summary>
+        /// <summary>Defines the source of the constant filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source { get; set; }

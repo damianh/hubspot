@@ -17,11 +17,6 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The EmptyPathSegment property</summary>
-        public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.EmptyPathSegmentRequestBuilder EmptyPathSegment
-        {
-            get => new global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The roles property</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Roles.RolesRequestBuilder Roles
         {
@@ -33,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             get => new global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.settings.v3.users.item collection</summary>
-        /// <param name="position">Identifier of user to retrieve</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.WithUserItemRequestBuilder this[string position]
         {

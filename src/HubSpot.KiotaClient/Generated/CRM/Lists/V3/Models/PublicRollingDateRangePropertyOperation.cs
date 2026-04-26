@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Indicates whether objects with no value set for the property should be included in the operation.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The numberOfDays property</summary>
+        /// <summary>The number of days to be considered in the rolling date range operation.</summary>
         public int? NumberOfDays { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>Specifies the type of operation (ROLLING_DATE_RANGE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRollingDateRangePropertyOperation_operationType? OperationType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the rolling date range property operation (IS_LESS_THAN_X_DAYS_AGO, IS_MORE_THAN_X_DAYS_AGO, IS_LESS_THAN_X_DAYS_FROM_NOW, IS_MORE_THAN_X_DAYS_FROM_NOW).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The requiresTimeZoneConversion property</summary>
+        /// <summary>Specifies whether the operation requires conversion to a different time zone.</summary>
         public bool? RequiresTimeZoneConversion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRollingDateRangePropertyOperation"/> and sets the default values.

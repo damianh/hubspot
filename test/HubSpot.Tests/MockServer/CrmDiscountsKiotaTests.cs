@@ -41,7 +41,7 @@ public class CrmDiscountsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Discounts.PostAsync(input);
-        var discount = created!.Entity!;
+        var discount = created!;
 
         discount.ShouldNotBeNull();
         discount.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmDiscountsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Discounts.PostAsync(input);
-        var discountId = created!.Entity!.Id!;
+        var discountId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Discounts[discountId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmDiscountsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Discounts.PostAsync(input);
-        var discountId = created!.Entity!.Id!;
+        var discountId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
         {
         }
         /// <summary>
-        /// Deletes the settings for a video conference application with the specified ID.
+        /// Delete video conference extension settings for your app
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return the settings for a video conference application with the specified ID.
+        /// Fetch video conference extension settings for your app
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,10 +69,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the settings for a video conference application with the specified ID.
+        /// Create or update video conference extension settings for your app
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings"/></returns>
-        /// <param name="body">The URLs of the various actions provided by the video conferencing application. All URLs must use the `https` protocol.</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Models.ExternalSettings.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the settings for a video conference application with the specified ID.
+        /// Delete video conference extension settings for your app
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             return requestInfo;
         }
         /// <summary>
-        /// Return the settings for a video conference application with the specified ID.
+        /// Fetch video conference extension settings for your app
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,10 +126,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             return requestInfo;
         }
         /// <summary>
-        /// Updates the settings for a video conference application with the specified ID.
+        /// Create or update video conference extension settings for your app
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The URLs of the various actions provided by the video conferencing application. All URLs must use the `https` protocol.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -56,6 +56,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyParser? PropertyParser { get; set; }
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyParser", n => { PropertyParser = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyParser>(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyType>(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "upperBoundEndpointBehavior", n => { UpperBoundEndpointBehavior = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_upperBoundEndpointBehavior>(); } },
                 { "upperBoundTimePoint", n => { UpperBoundTimePoint = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation.RangedTimeOperation_upperBoundTimePoint>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation.RangedTimeOperation_upperBoundTimePoint.CreateFromDiscriminatorValue); } },
@@ -130,6 +139,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyParser>("propertyParser", PropertyParser);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_propertyType>("propertyType", PropertyType);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteStringValue("type", Type);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation_upperBoundEndpointBehavior>("upperBoundEndpointBehavior", UpperBoundEndpointBehavior);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.RangedTimeOperation.RangedTimeOperation_upperBoundTimePoint>("upperBoundTimePoint", UpperBoundTimePoint);

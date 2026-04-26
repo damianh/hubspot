@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Item.M
     public partial class MetadataRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.cms.v3.sourceCode.item.metadata.item collection</summary>
-        /// <param name="position">The file system location of the file.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Item.Metadata.Item.WithPathItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Cms.V3.SourceCode.Item.Metadata.Item.WithPathItemRequestBuilder this[string position]
         {

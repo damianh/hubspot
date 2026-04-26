@@ -14,6 +14,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The associateWithContactId property</summary>
+        public long? AssociateWithContactId { get; set; }
         /// <summary>The attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "associateWithContactId", n => { AssociateWithContactId = n.GetLongValue(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.ChannelIntegrationMessageEgg.ChannelIntegrationMessageEgg_attachments>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.ChannelIntegrationMessageEgg.ChannelIntegrationMessageEgg_attachments.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "channelAccountId", n => { ChannelAccountId = n.GetStringValue(); } },
                 { "inReplyToId", n => { InReplyToId = n.GetStringValue(); } },
@@ -144,6 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("associateWithContactId", AssociateWithContactId);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.ChannelIntegrationMessageEgg.ChannelIntegrationMessageEgg_attachments>("attachments", Attachments);
             writer.WriteStringValue("channelAccountId", ChannelAccountId);
             writer.WriteStringValue("inReplyToId", InReplyToId);

@@ -33,9 +33,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
         public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/postal_mail/batch/archive", rawUrl)
         {
         }
-        /// <summary>
-        /// Archive a batch of postal mail by ID
-        /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,9 +49,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Archive a batch of postal mail by ID
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

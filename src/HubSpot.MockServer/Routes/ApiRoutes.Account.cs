@@ -64,6 +64,27 @@ internal static partial class ApiRoutes
             });
         }
 
+        public static void RegisterAccountInfoKiotaV202509Api(WebApplication app)
+        {
+            var group = app.MapGroup("/account-info/2025-09/api-usage");
+
+            group.MapGet("/daily/private-apps", (
+                AccountInfoRepository repository) =>
+            {
+                var usage = repository.GetPrivateAppsDailyUsage(30);
+                return Results.Ok(new { results = usage });
+            });
+
+            var detailsGroup = app.MapGroup("/account-info/2025-09");
+
+            detailsGroup.MapGet("/details", (
+                AccountInfoRepository repository) =>
+            {
+                var details = repository.GetAccountDetails();
+                return Results.Ok(details);
+            });
+        }
+
         public static void RegisterAuditLogsV3Api(WebApplication app)
         {
             var group = app.MapGroup("/account-info/v3/activity");

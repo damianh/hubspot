@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public List<UntypedNode> Results { get; set; }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>The total number of rows available in the collection.</summary>
         public int? Total { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Indicates the type of response, which is &apos;STREAMING&apos; by default.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.StreamingCollectionResponseWithTotalHubDbTableRowV3"/> and sets the default values.

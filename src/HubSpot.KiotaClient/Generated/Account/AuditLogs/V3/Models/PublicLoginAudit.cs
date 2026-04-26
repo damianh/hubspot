@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The approximate country code of the login.</summary>
+        /// <summary>The approximate country code of the login</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #else
         public string IpAddress { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The approximate location where the login activity originated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         public DateTimeOffset? LoginAt { get; set; }
         /// <summary>Whether the login was successful or not.</summary>
         public bool? LoginSucceeded { get; set; }
-        /// <summary>The approximate region code of the login.</summary>
+        /// <summary>The approximate region code of the login</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionCode { get; set; }

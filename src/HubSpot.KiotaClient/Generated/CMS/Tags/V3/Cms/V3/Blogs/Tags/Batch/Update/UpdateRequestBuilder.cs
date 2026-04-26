@@ -90,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Batch.Update
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UpdateRequestBuilderPostQueryParameters 
         {
-            /// <summary>Specifies whether to update deleted Blog Tags. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

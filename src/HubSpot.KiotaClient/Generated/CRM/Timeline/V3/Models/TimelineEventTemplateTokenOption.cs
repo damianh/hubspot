@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The label of the option that is displayed in the front end.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The value of the option that is provided on the occurrence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

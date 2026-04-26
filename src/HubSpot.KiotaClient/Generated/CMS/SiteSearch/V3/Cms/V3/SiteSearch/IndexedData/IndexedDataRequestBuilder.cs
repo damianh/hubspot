@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Indexe
     public partial class IndexedDataRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.cms.v3.siteSearch.indexedData.item collection</summary>
-        /// <param name="position">ID of the target document when searching for indexed properties.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.IndexedData.Item.WithContentItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.IndexedData.Item.WithContentItemRequestBuilder this[string position]
         {

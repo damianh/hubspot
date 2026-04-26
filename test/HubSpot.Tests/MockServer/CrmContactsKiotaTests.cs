@@ -42,7 +42,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contact = created!.Entity!;
+        var contact = created!;
 
         contact.ShouldNotBeNull();
         contact.Id.ShouldNotBeNullOrEmpty();
@@ -68,7 +68,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Contacts[contactId].GetAsync();
 
@@ -93,7 +93,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -131,7 +131,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Contacts.PostAsync(input);
-        var contactId = created!.Entity!.Id!;
+        var contactId = created!.Id!;
 
         await _client.Crm.V3.Objects.Contacts[contactId].DeleteAsync();
 
@@ -249,8 +249,8 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         {
             Inputs =
             [
-                new SimplePublicObjectId { Id = contact1!.Entity!.Id! },
-                new SimplePublicObjectId { Id = contact2!.Entity!.Id! }
+                new SimplePublicObjectId { Id = contact1!.Id! },
+                new SimplePublicObjectId { Id = contact2!.Id! }
             ]
         };
 
@@ -300,7 +300,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
             [
                 new SimplePublicObjectBatchInput
                 {
-                    Id = contact1!.Entity!.Id!,
+                    Id = contact1!.Id!,
                     Properties = new SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -311,7 +311,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
                 },
                 new SimplePublicObjectBatchInput
                 {
-                    Id = contact2!.Entity!.Id!,
+                    Id = contact2!.Id!,
                     Properties = new SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -367,8 +367,8 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         {
             Inputs =
             [
-                new SimplePublicObjectId { Id = contact1!.Entity!.Id! },
-                new SimplePublicObjectId { Id = contact2!.Entity!.Id! }
+                new SimplePublicObjectId { Id = contact1!.Id! },
+                new SimplePublicObjectId { Id = contact2!.Id! }
             ]
         };
 
@@ -377,12 +377,12 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         // Verify contacts are archived (should throw exception or return not found)
         await Should.ThrowAsync<Exception>(async () =>
         {
-            await _client.Crm.V3.Objects.Contacts[contact1.Entity!.Id!].GetAsync();
+            await _client.Crm.V3.Objects.Contacts[contact1.Id!].GetAsync();
         });
 
         await Should.ThrowAsync<Exception>(async () =>
         {
-            await _client.Crm.V3.Objects.Contacts[contact2.Entity!.Id!].GetAsync();
+            await _client.Crm.V3.Objects.Contacts[contact2.Id!].GetAsync();
         });
     }
 
@@ -410,7 +410,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
             [
                 new SimplePublicObjectBatchInputUpsert
                 {
-                    Id = existingContact!.Entity!.Id!,
+                    Id = existingContact!.Id!,
                     Properties = new SimplePublicObjectBatchInputUpsert_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -439,7 +439,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         response.ShouldNotBeNull();
         response.Results.ShouldNotBeNull();
         response.Results.Count.ShouldBe(2);
-        response.Results[0].Id.ShouldBe(existingContact.Entity!.Id);
+        response.Results[0].Id.ShouldBe(existingContact.Id);
         response.Results[0].Properties!.AdditionalData.ShouldContainKeyAndValue("phone", "555-3333");
         response.Results[1].Properties!.AdditionalData.ShouldContainKeyAndValue("email", "batchupsert2@example.com");
     }
@@ -532,14 +532,14 @@ public class CrmContactsKiotaTests : IAsyncLifetime
 
         var mergeRequest = new PublicMergeInput
         {
-            PrimaryObjectId = contact1!.Entity!.Id!,
-            ObjectIdToMerge = contact2!.Entity!.Id!
+            PrimaryObjectId = contact1!.Id!,
+            ObjectIdToMerge = contact2!.Id!
         };
 
         var merged = await _client.Crm.V3.Objects.Contacts.Merge.PostAsync(mergeRequest);
 
         merged.ShouldNotBeNull();
-        merged.Id.ShouldBe(contact1.Entity!.Id);
+        merged.Id.ShouldBe(contact1.Id);
     }
 
     [Fact]
@@ -559,12 +559,12 @@ public class CrmContactsKiotaTests : IAsyncLifetime
 
         await _client.Crm.V3.Objects.Contacts.GdprDelete.PostAsync(new PublicGdprDeleteInput
         {
-            ObjectId = contact!.Entity!.Id!
+            ObjectId = contact!.Id!
         });
 
         await Should.ThrowAsync<Exception>(async () =>
         {
-            await _client.Crm.V3.Objects.Contacts[contact.Entity!.Id!].GetAsync();
+            await _client.Crm.V3.Objects.Contacts[contact.Id!].GetAsync();
         });
     }
 
@@ -583,13 +583,13 @@ public class CrmContactsKiotaTests : IAsyncLifetime
             }
         });
 
-        var retrieved = await _client.Crm.V3.Objects.Contacts[contact!.Entity!.Id!].GetAsync(config =>
+        var retrieved = await _client.Crm.V3.Objects.Contacts[contact!.Id!].GetAsync(config =>
         {
             config.QueryParameters.Associations = ["companies", "deals"];
         });
 
         retrieved.ShouldNotBeNull();
-        retrieved.Id.ShouldBe(contact.Entity!.Id);
+        retrieved.Id.ShouldBe(contact.Id);
     }
 
     [Fact]
@@ -608,7 +608,7 @@ public class CrmContactsKiotaTests : IAsyncLifetime
         });
 
         // Update to create history
-        await _client.Crm.V3.Objects.Contacts[contact!.Entity!.Id!].PatchAsync(new SimplePublicObjectInput
+        await _client.Crm.V3.Objects.Contacts[contact!.Id!].PatchAsync(new SimplePublicObjectInput
         {
             Properties = new SimplePublicObjectInput_properties
             {
@@ -619,13 +619,13 @@ public class CrmContactsKiotaTests : IAsyncLifetime
             }
         });
 
-        var retrieved = await _client.Crm.V3.Objects.Contacts[contact.Entity!.Id!].GetAsync(config =>
+        var retrieved = await _client.Crm.V3.Objects.Contacts[contact.Id!].GetAsync(config =>
         {
             config.QueryParameters.PropertiesWithHistory = ["firstname"];
         });
 
         retrieved.ShouldNotBeNull();
-        retrieved.Id.ShouldBe(contact.Entity!.Id);
+        retrieved.Id.ShouldBe(contact.Id);
         retrieved.PropertiesWithHistory.ShouldNotBeNull();
     }
 

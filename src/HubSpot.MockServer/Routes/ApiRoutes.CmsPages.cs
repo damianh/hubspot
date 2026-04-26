@@ -208,6 +208,42 @@ internal static partial class ApiRoutes
         });
     }
 
+    public static void RegisterCmsPagesKiotaApi(WebApplication app)
+    {
+        var group = app.MapGroup("/cms/pages/v3/site-pages");
+
+        group.MapGet("", (PageRepository repository, HttpContext context) =>
+        {
+            var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
+            var offset = int.TryParse(context.Request.Query["offset"], out var o) ? o : 0;
+            var pages = repository.GetAll(offset, limit);
+            var total = repository.Count();
+            return Results.Ok(new { total, results = pages.Select(MapPageToResponse) });
+        });
+
+        group.MapGet("/{objectId}", (PageRepository repository, string objectId) =>
+        {
+            var page = repository.GetById(objectId);
+            return page == null ? Results.NotFound() : Results.Ok(MapPageToResponse(page));
+        });
+
+        group.MapGet("/cursor", (PageRepository repository, HttpContext context) =>
+        {
+            var limit = int.TryParse(context.Request.Query["limit"], out var l) ? l : 100;
+            var pages = repository.GetAll(0, limit);
+            return Results.Ok(new { results = pages.Select(MapPageToResponse), paging = (object?)null });
+        });
+
+        group.MapPost("", async (PageRepository repository, HttpContext context) =>
+        {
+            var request = await JsonSerializer.DeserializeAsync<Dictionary<string, object>>(context.Request.Body);
+            if (request == null) return Results.BadRequest();
+            var page = MapPageFromRequest(request);
+            var created = repository.Create(page);
+            return Results.Created(new Uri($"/cms/pages/v3/site-pages/{created.Id}", UriKind.Relative), MapPageToResponse(created));
+        });
+    }
+
     private static object MapPageToResponse(Page page) => new
     {
         id = page.Id,

@@ -12,20 +12,14 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     public partial class PublicSequenceStepResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActionType { get; set; }
-#nullable restore
-#else
-        public string ActionType { get; set; }
-#endif
+        /// <summary>The type of action to be performed in the sequence step.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepResponse_actionType? ActionType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the sequence step was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The delayMillis property</summary>
-        public int? DelayMillis { get; set; }
+        /// <summary>The delay in milliseconds before the sequence step is executed.</summary>
+        public long? DelayMillis { get; set; }
         /// <summary>The emailPattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicEmailPatternResponse EmailPattern { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier of the sequence step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -42,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The stepOrder property</summary>
+        /// <summary>The order of the step within the sequence.</summary>
         public int? StepOrder { get; set; }
         /// <summary>The taskPattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicTaskPatternResponse TaskPattern { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the sequence step was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepResponse"/> and sets the default values.
@@ -79,9 +73,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionType", n => { ActionType = n.GetStringValue(); } },
+                { "actionType", n => { ActionType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepResponse_actionType>(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "delayMillis", n => { DelayMillis = n.GetIntValue(); } },
+                { "delayMillis", n => { DelayMillis = n.GetLongValue(); } },
                 { "emailPattern", n => { EmailPattern = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicEmailPatternResponse>(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicEmailPatternResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "stepOrder", n => { StepOrder = n.GetIntValue(); } },
@@ -96,9 +90,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("actionType", ActionType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceStepResponse_actionType>("actionType", ActionType);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteIntValue("delayMillis", DelayMillis);
+            writer.WriteLongValue("delayMillis", DelayMillis);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicEmailPatternResponse>("emailPattern", EmailPattern);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("stepOrder", StepOrder);

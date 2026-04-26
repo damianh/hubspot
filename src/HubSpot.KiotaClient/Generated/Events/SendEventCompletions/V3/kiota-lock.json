@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "A51F44C5904C63214DD853D53B72B76AE69FCC25354CA328211E79249605478AD67C21B20DF99B3687B0E26C119D253B23E0547DADCB6BF8C3C4AF5B9A7EC07A",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Events/Send%20Event%20Completions/versions/669",
+  "descriptionHash": "C4AADDDDB0FA86607702B12AF78AC9696E17041E70938E17E5EFE66F0CDA3149BD569F8873A6AB3E75F4C922325A8359383B7FC976931E1B96066B07B7AC5AE3",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22201/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotEventsSendEventCompletionsV3Client",

@@ -45,9 +45,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item
         public WithImportItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/imports/{importId}", rawUrl)
         {
         }
-        /// <summary>
-        /// A complete summary of an import record, including any updates.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,9 +60,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.PublicImportResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// A complete summary of an import record, including any updates.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

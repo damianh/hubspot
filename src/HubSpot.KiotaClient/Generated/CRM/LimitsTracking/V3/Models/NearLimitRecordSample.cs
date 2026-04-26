@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The primary identifier of the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -22,12 +22,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The objectId property</summary>
-        public int? ObjectId { get; set; }
-        /// <summary>The percentage property</summary>
+        /// <summary>The unique identifier for the object.</summary>
+        public long? ObjectId { get; set; }
+        /// <summary>The percentage of the limit that has been used.</summary>
         public double? Percentage { get; set; }
-        /// <summary>The usage property</summary>
-        public int? Usage { get; set; }
+        /// <summary>The number of records currently in use.</summary>
+        public long? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.NearLimitRecordSample"/> and sets the default values.
         /// </summary>
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "objectId", n => { ObjectId = n.GetIntValue(); } },
+                { "objectId", n => { ObjectId = n.GetLongValue(); } },
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
-            writer.WriteIntValue("objectId", ObjectId);
+            writer.WriteLongValue("objectId", ObjectId);
             writer.WriteDoubleValue("percentage", Percentage);
-            writer.WriteIntValue("usage", Usage);
+            writer.WriteLongValue("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

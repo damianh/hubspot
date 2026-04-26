@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.Ba
         {
         }
         /// <summary>
-        /// Update a batch of invoices by internal ID, or unique property values
+        /// Update multiple invoices in a single request using either their internal IDs or unique property values. This endpoint allows for efficient batch processing of invoice updates, ensuring that changes are applied consistently across multiple records.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Crm.V3.Objects.Invoices.Ba
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of invoices by internal ID, or unique property values
+        /// Update multiple invoices in a single request using either their internal IDs or unique property values. This endpoint allows for efficient batch processing of invoice updates, ensuring that changes are applied consistently across multiple records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

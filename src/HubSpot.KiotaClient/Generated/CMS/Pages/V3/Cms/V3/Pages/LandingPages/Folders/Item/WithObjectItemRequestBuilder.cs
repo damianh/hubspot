@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Delete the Folder object identified by the id in the path.
+        /// Delete a landing page folder, specified by its ID.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the Folder object identified by the id in the path.
+        /// Retrieve a landing page folder, specified by its ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sparse updates a single Folder object identified by the id in the path.You only need to specify the column values that you are modifying.
+        /// Partially update a landing page folder, specified by the folder ID. You only need to specify the details values that you are modifying.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder"/></returns>
         /// <param name="body">Model definition for a content folder.</param>
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the Folder object identified by the id in the path.
+        /// Delete a landing page folder, specified by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the Folder object identified by the id in the path.
+        /// Retrieve a landing page folder, specified by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return requestInfo;
         }
         /// <summary>
-        /// Sparse updates a single Folder object identified by the id in the path.You only need to specify the column values that you are modifying.
+        /// Partially update a landing page folder, specified by the folder ID. You only need to specify the details values that you are modifying.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Model definition for a content folder.</param>
@@ -163,7 +163,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Item.WithObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete the Folder object identified by the id in the path.
+        /// Delete a landing page folder, specified by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderDeleteQueryParameters 
@@ -181,12 +181,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Retrieve the Folder object identified by the id in the path.
+        /// Retrieve a landing page folder, specified by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies whether to return deleted Folders. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,12 +208,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Sparse updates a single Folder object identified by the id in the path.You only need to specify the column values that you are modifying.
+        /// Partially update a landing page folder, specified by the folder ID. You only need to specify the details values that you are modifying.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Specifies whether to update deleted Folders. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

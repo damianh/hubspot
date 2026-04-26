@@ -25,6 +25,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #endif
         /// <summary>The order that this property should be displayed in the HubSpot UI relative to other properties for this object type. Properties are displayed in order starting with the lowest positive integer value. A value of -1 will cause the property to be displayed **after** any positive values.</summary>
         public int? DisplayOrder { get; set; }
+        /// <summary>Specifies the reference type for external options associated with the property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalOptionsReferenceType { get; set; }
+#nullable restore
+#else
+        public string ExternalOptionsReferenceType { get; set; }
+#endif
         /// <summary>Controls how the property appears in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #endif
         /// <summary>Whether or not the property&apos;s value must be unique. Once set, this can&apos;t be changed.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>Hidden options won&apos;t be shown in HubSpot.</summary>
         public bool? Hidden { get; set; }
         /// <summary>A human-readable property label that will be shown in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,6 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
+                { "externalOptionsReferenceType", n => { ExternalOptionsReferenceType = n.GetStringValue(); } },
                 { "fieldType", n => { FieldType = n.GetStringValue(); } },
                 { "formField", n => { FormField = n.GetBoolValue(); } },
                 { "groupName", n => { GroupName = n.GetStringValue(); } },
@@ -144,6 +153,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
+            writer.WriteStringValue("externalOptionsReferenceType", ExternalOptionsReferenceType);
             writer.WriteStringValue("fieldType", FieldType);
             writer.WriteBoolValue("formField", FormField);
             writer.WriteStringValue("groupName", GroupName);

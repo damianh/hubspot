@@ -3,11 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 {
+    /// <summary>The type of function, with accepted values: POST_ACTION_EXECUTION, POST_FETCH_OPTIONS, PRE_ACTION_EXECUTION, PRE_FETCH_OPTIONS.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicActionFunctionIdentifier_functionType
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "POST_ACTION_EXECUTION")]
+        #pragma warning disable CS1591
+        POST_ACTION_EXECUTION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POST_FETCH_OPTIONS")]
+        #pragma warning disable CS1591
+        POST_FETCH_OPTIONS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PRE_ACTION_EXECUTION")]
         #pragma warning disable CS1591
         PRE_ACTION_EXECUTION,
@@ -15,14 +22,6 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         [EnumMember(Value = "PRE_FETCH_OPTIONS")]
         #pragma warning disable CS1591
         PRE_FETCH_OPTIONS,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "POST_FETCH_OPTIONS")]
-        #pragma warning disable CS1591
-        POST_FETCH_OPTIONS,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "POST_ACTION_EXECUTION")]
-        #pragma warning disable CS1591
-        POST_ACTION_EXECUTION,
         #pragma warning restore CS1591
     }
 }

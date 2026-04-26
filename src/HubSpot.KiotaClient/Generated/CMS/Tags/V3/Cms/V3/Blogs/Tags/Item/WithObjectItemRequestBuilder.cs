@@ -180,7 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specifies whether to return deleted Blog Tags. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Cms.V3.Blogs.Tags.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Specifies whether to update deleted Blog Tags. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

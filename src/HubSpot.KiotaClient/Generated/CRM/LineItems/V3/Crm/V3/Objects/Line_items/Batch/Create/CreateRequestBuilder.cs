@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
         {
         }
         /// <summary>
-        /// Create a batch of line items
+        /// Create multiple line items in a single request by providing the necessary properties and associations for each item. This endpoint allows for efficient batch processing of line items, returning the created objects with their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Crm.V3.Objects.Line_items
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of line items
+        /// Create multiple line items in a single request by providing the necessary properties and associations for each item. This endpoint allows for efficient batch processing of line items, returning the created objects with their unique identifiers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

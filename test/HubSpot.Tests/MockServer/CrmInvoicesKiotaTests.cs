@@ -42,7 +42,7 @@ public class CrmInvoicesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Invoices.PostAsync(input);
-        var invoice = created!.Entity!;
+        var invoice = created!;
 
         invoice.ShouldNotBeNull();
         invoice.Id.ShouldNotBeNullOrEmpty();
@@ -67,7 +67,7 @@ public class CrmInvoicesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Invoices.PostAsync(input);
-        var invoiceId = created!.Entity!.Id!;
+        var invoiceId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Invoices[invoiceId].GetAsync();
 
@@ -91,7 +91,7 @@ public class CrmInvoicesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Invoices.PostAsync(input);
-        var invoiceId = created!.Entity!.Id!;
+        var invoiceId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimeOffset LowerBoundOffset { get; set; }
 #endif
-        /// <summary>The rangeType property</summary>
+        /// <summary>Specifies the type of range for the refinement criteria (BETWEEN, NOT_BETWEEN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RangeType { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string RangeType { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Indicates the type of refinement (RELATIVE_RANGED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy_type? Type { get; set; }
         /// <summary>The upperBoundOffset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

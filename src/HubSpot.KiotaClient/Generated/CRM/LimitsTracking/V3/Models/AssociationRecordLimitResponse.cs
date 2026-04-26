@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.AtLimitRecordSample> AtLimitFromRecordSamples { get; set; }
 #endif
-        /// <summary>The limit property</summary>
+        /// <summary>The maximum number of associations allowed for records.</summary>
         public long? Limit { get; set; }
         /// <summary>The nearLimitFromRecordSamples property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.NearLimitRecordSample> NearLimitFromRecordSamples { get; set; }
 #endif
-        /// <summary>The totalRecordsAtLimit property</summary>
+        /// <summary>The total number of records that have reached their association limit.</summary>
         public int? TotalRecordsAtLimit { get; set; }
-        /// <summary>The totalRecordsNearLimit property</summary>
+        /// <summary>The total number of records that are approaching their association limit.</summary>
         public int? TotalRecordsNearLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.AssociationRecordLimitResponse"/> and sets the default values.

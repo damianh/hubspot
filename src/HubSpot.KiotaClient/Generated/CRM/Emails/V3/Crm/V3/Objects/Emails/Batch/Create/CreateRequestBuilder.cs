@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Emails.V3.Crm.V3.Objects.Emails.Batch.
         {
         }
         /// <summary>
-        /// Create a batch of emails
+        /// Create a batch of emails with specified properties and return the created objects.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Emails.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Emails.V3.Crm.V3.Objects.Emails.Batch.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Emails.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Emails.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of emails
+        /// Create a batch of emails with specified properties and return the created objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
     public partial class ContactsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.marketing.v3.campaigns.item.reports.contacts.item collection</summary>
-        /// <param name="position">The type of metric to filter the influenced contacts. Allowed values: contactFirstTouch, contactLastTouch, influencedContacts</param>
+        /// <param name="position">The type of contact to filter the list</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Reports.Contacts.Item.WithContactTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.V3.Campaigns.Item.Reports.Contacts.Item.WithContactTypeItemRequestBuilder this[string position]
         {

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enrolledAt property</summary>
+        /// <summary>The date and time when the contact was enrolled in the sequence.</summary>
         public DateTimeOffset? EnrolledAt { get; set; }
-        /// <summary>The enrolledBy property</summary>
+        /// <summary>The identifier of the user who enrolled the contact in the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrolledBy { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string EnrolledBy { get; set; }
 #endif
-        /// <summary>The enrolledByEmail property</summary>
+        /// <summary>The email address of the user who enrolled the contact in the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnrolledByEmail { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string EnrolledByEmail { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the sequence enrollment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The sequenceId property</summary>
+        /// <summary>The unique identifier of the sequence in which the contact is enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SequenceId { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string SequenceId { get; set; }
 #endif
-        /// <summary>The sequenceName property</summary>
+        /// <summary>The name of the sequence in which the contact is enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SequenceName { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string SequenceName { get; set; }
 #endif
-        /// <summary>The toEmail property</summary>
+        /// <summary>The email address of the contact enrolled in the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToEmail { get; set; }
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string ToEmail { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the sequence enrollment was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentResponse"/> and sets the default values.

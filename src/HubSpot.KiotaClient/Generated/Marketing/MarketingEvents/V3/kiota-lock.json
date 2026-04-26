@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "E616BB0C03F7E4E12FFB2C9C71A460955C2D12F752D07919F91BFDBC4BAF8348E26628FFDA7643A9FD2B83315947004855D7B1EB8578C92A1A04D385AECB6B88",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Marketing%20Events/versions/129888",
+  "descriptionHash": "6C4FBBEC1DCB8C6DD0B8EF3D4D65B7F8184BCD40D6FFB10C045A0C6B89ECE058EA4A65EB69166B2C049EA85B1CD6CF594C3EB655732B525F4978E6A44021C72C",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22207/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingMarketingEventsV3Client",

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The hasMore property</summary>
+        /// <summary>Whether there are more available meeting times beyond the returned set.</summary>
         public bool? HasMore { get; set; }
-        /// <summary>The linkAvailabilityByDuration property</summary>
+        /// <summary>Available booking slots for the meeting, grouped by the duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkAvailability_linkAvailabilityByDuration? LinkAvailabilityByDuration { get; set; }

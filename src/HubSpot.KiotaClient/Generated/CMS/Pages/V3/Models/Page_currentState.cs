@@ -7,17 +7,33 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Page_currentState
     {
+        [EnumMember(Value = "AGENT_GENERATED")]
+        #pragma warning disable CS1591
+        AGENT_GENERATED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "AUTOMATED")]
         #pragma warning disable CS1591
         AUTOMATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_AB")]
+        #pragma warning disable CS1591
+        AUTOMATED_AB,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_AB_VARIANT")]
+        #pragma warning disable CS1591
+        AUTOMATED_AB_VARIANT,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTOMATED_DRAFT")]
         #pragma warning disable CS1591
         AUTOMATED_DRAFT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_SENDING")]
+        [EnumMember(Value = "AUTOMATED_DRAFT_AB")]
         #pragma warning disable CS1591
-        AUTOMATED_SENDING,
+        AUTOMATED_DRAFT_AB,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_DRAFT_ABVARIANT")]
+        #pragma warning disable CS1591
+        AUTOMATED_DRAFT_ABVARIANT,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTOMATED_FOR_FORM")]
         #pragma warning disable CS1591
@@ -34,6 +50,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         [EnumMember(Value = "AUTOMATED_FOR_FORM_LEGACY")]
         #pragma warning disable CS1591
         AUTOMATED_FOR_FORM_LEGACY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_LOSER_ABVARIANT")]
+        #pragma warning disable CS1591
+        AUTOMATED_LOSER_ABVARIANT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AUTOMATED_SENDING")]
+        #pragma warning disable CS1591
+        AUTOMATED_SENDING,
         #pragma warning restore CS1591
         [EnumMember(Value = "BLOG_EMAIL_DRAFT")]
         #pragma warning disable CS1591
@@ -110,26 +134,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
         [EnumMember(Value = "SCHEDULED_OR_PUBLISHED")]
         #pragma warning disable CS1591
         SCHEDULED_OR_PUBLISHED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_AB")]
-        #pragma warning disable CS1591
-        AUTOMATED_AB,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_AB_VARIANT")]
-        #pragma warning disable CS1591
-        AUTOMATED_AB_VARIANT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_DRAFT_AB")]
-        #pragma warning disable CS1591
-        AUTOMATED_DRAFT_AB,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_DRAFT_ABVARIANT")]
-        #pragma warning disable CS1591
-        AUTOMATED_DRAFT_ABVARIANT,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "AUTOMATED_LOSER_ABVARIANT")]
-        #pragma warning disable CS1591
-        AUTOMATED_LOSER_ABVARIANT,
         #pragma warning restore CS1591
     }
 }

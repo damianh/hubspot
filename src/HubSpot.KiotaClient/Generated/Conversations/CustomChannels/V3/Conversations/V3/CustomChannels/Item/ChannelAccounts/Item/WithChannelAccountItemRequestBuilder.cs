@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelAccountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/v3/custom-channels/{channelId}/channel-accounts/{channelAccountId}", pathParameters)
+        public WithChannelAccountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/v3/custom-channels/{channelId}/channel-accounts/{channelAccountId}{?archived*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithChannelAccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/v3/custom-channels/{channelId}/channel-accounts/{channelAccountId}", rawUrl)
+        public WithChannelAccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/v3/custom-channels/{channelId}/channel-accounts/{channelAccountId}{?archived*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccount?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccount?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder.WithChannelAccountItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccount> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicChannelAccount> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder.WithChannelAccountItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -78,11 +78,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder.WithChannelAccountItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder.WithChannelAccountItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -122,11 +122,21 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieve the details for a specific channel account. This contains all the metadata about your channel account, including its channel, associated inbox id, and delivery identifier information.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithChannelAccountItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Whether to return only results that have been archived.</summary>
+            [QueryParameter("archived")]
+            public bool? Archived { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithChannelAccountItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithChannelAccountItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder.WithChannelAccountItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

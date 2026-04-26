@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum RollingPropertyUpdatedOperation_operator
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "UPDATED_IN_LAST_X_DAYS")]
-        #pragma warning disable CS1591
-        UPDATED_IN_LAST_X_DAYS,
-        #pragma warning restore CS1591
         [EnumMember(Value = "NOT_UPDATED_IN_LAST_X_DAYS")]
         #pragma warning disable CS1591
         NOT_UPDATED_IN_LAST_X_DAYS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UPDATED_IN_LAST_X_DAYS")]
+        #pragma warning disable CS1591
+        UPDATED_IN_LAST_X_DAYS,
         #pragma warning restore CS1591
     }
 }

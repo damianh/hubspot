@@ -27,7 +27,7 @@ public class DomainTests : IAsyncLifetime
     [Fact]
     public async Task GetAllDomains_ReturnsEmptyList()
     {
-        var result = await _client.Cms.V3.Domains.EmptyPathSegment.GetAsync();
+        var result = await _client.Cms.V3.Domains.GetAsync();
 
         result.ShouldNotBeNull();
         result.Results.ShouldNotBeNull();

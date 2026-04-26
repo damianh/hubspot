@@ -34,13 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
         public string PrimaryId { get; set; }
 #endif
         /// <summary>Primary language of the multi-language group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrimaryLanguage { get; set; }
-#nullable restore
-#else
-        public string PrimaryLanguage { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage? PrimaryLanguage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext_language>(); } },
                 { "primaryId", n => { PrimaryId = n.GetStringValue(); } },
-                { "primaryLanguage", n => { PrimaryLanguage = n.GetStringValue(); } },
+                { "primaryLanguage", n => { PrimaryLanguage = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage>(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext_language>("language", Language);
             writer.WriteStringValue("primaryId", PrimaryId);
-            writer.WriteStringValue("primaryLanguage", PrimaryLanguage);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.AttachToLangPrimaryRequestVNext_primaryLanguage>("primaryLanguage", PrimaryLanguage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

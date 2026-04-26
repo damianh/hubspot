@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CalendarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scheduler/v3/meetings/calendar", pathParameters)
+        public CalendarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scheduler/v3/meetings/calendar?organizerUserId={organizerUserId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,36 +30,42 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CalendarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scheduler/v3/meetings/calendar", rawUrl)
+        public CalendarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/scheduler/v3/meetings/calendar?organizerUserId={organizerUserId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -79,11 +85,27 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CalendarRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("organizerUserId")]
+            public string? OrganizerUserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("organizerUserId")]
+            public string OrganizerUserId { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CalendarRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class CalendarRequestBuilderPostRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>
         {
         }
     }

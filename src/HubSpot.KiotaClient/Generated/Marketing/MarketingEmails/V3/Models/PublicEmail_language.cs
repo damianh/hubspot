@@ -8,6 +8,18 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
     public enum PublicEmail_language
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "aa")]
+        #pragma warning disable CS1591
+        Aa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ab")]
+        #pragma warning disable CS1591
+        Ab,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ae")]
+        #pragma warning disable CS1591
+        Ae,
+        #pragma warning restore CS1591
         [EnumMember(Value = "af")]
         #pragma warning disable CS1591
         Af,
@@ -43,6 +55,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "am-et")]
         #pragma warning disable CS1591
         AmEt,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "an")]
+        #pragma warning disable CS1591
+        An,
         #pragma warning restore CS1591
         [EnumMember(Value = "ann")]
         #pragma warning disable CS1591
@@ -172,6 +188,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         As,
         #pragma warning restore CS1591
+        [EnumMember(Value = "as-in")]
+        #pragma warning disable CS1591
+        AsIn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "asa")]
         #pragma warning disable CS1591
         Asa,
@@ -188,9 +208,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         AstEs,
         #pragma warning restore CS1591
-        [EnumMember(Value = "as-in")]
+        [EnumMember(Value = "av")]
         #pragma warning disable CS1591
-        AsIn,
+        Av,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ay")]
+        #pragma warning disable CS1591
+        Ay,
         #pragma warning restore CS1591
         [EnumMember(Value = "az")]
         #pragma warning disable CS1591
@@ -199,6 +223,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "az-az")]
         #pragma warning disable CS1591
         AzAz,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ba")]
+        #pragma warning disable CS1591
+        Ba,
         #pragma warning restore CS1591
         [EnumMember(Value = "bas")]
         #pragma warning disable CS1591
@@ -211,6 +239,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "be")]
         #pragma warning disable CS1591
         Be,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "be-by")]
+        #pragma warning disable CS1591
+        BeBy,
         #pragma warning restore CS1591
         [EnumMember(Value = "bem")]
         #pragma warning disable CS1591
@@ -228,13 +260,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         BezTz,
         #pragma warning restore CS1591
-        [EnumMember(Value = "be-by")]
-        #pragma warning disable CS1591
-        BeBy,
-        #pragma warning restore CS1591
         [EnumMember(Value = "bg")]
         #pragma warning disable CS1591
         Bg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bg-bg")]
+        #pragma warning disable CS1591
+        BgBg,
         #pragma warning restore CS1591
         [EnumMember(Value = "bgc")]
         #pragma warning disable CS1591
@@ -244,10 +276,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         BgcIn,
         #pragma warning restore CS1591
-        [EnumMember(Value = "bg-bg")]
-        #pragma warning disable CS1591
-        BgBg,
-        #pragma warning restore CS1591
         [EnumMember(Value = "bho")]
         #pragma warning disable CS1591
         Bho,
@@ -255,6 +283,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "bho-in")]
         #pragma warning disable CS1591
         BhoIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bi")]
+        #pragma warning disable CS1591
+        Bi,
         #pragma warning restore CS1591
         [EnumMember(Value = "bm")]
         #pragma warning disable CS1591
@@ -292,6 +324,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Br,
         #pragma warning restore CS1591
+        [EnumMember(Value = "br-fr")]
+        #pragma warning disable CS1591
+        BrFr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "brx")]
         #pragma warning disable CS1591
         Brx,
@@ -299,10 +335,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "brx-in")]
         #pragma warning disable CS1591
         BrxIn,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "br-fr")]
-        #pragma warning disable CS1591
-        BrFr,
         #pragma warning restore CS1591
         [EnumMember(Value = "bs")]
         #pragma warning disable CS1591
@@ -348,6 +380,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Ce,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ce-ru")]
+        #pragma warning disable CS1591
+        CeRu,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ceb")]
         #pragma warning disable CS1591
         Ceb,
@@ -356,10 +392,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         CebPh,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ce-ru")]
-        #pragma warning disable CS1591
-        CeRu,
-        #pragma warning restore CS1591
         [EnumMember(Value = "cgg")]
         #pragma warning disable CS1591
         Cgg,
@@ -367,6 +399,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "cgg-ug")]
         #pragma warning disable CS1591
         CggUg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ch")]
+        #pragma warning disable CS1591
+        Ch,
         #pragma warning restore CS1591
         [EnumMember(Value = "chr")]
         #pragma warning disable CS1591
@@ -387,6 +423,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ckb-ir")]
         #pragma warning disable CS1591
         CkbIr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "co")]
+        #pragma warning disable CS1591
+        Co,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cr")]
+        #pragma warning disable CS1591
+        Cr,
         #pragma warning restore CS1591
         [EnumMember(Value = "cs")]
         #pragma warning disable CS1591
@@ -424,14 +468,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Da,
         #pragma warning restore CS1591
-        [EnumMember(Value = "dav")]
-        #pragma warning disable CS1591
-        Dav,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "dav-ke")]
-        #pragma warning disable CS1591
-        DavKe,
-        #pragma warning restore CS1591
         [EnumMember(Value = "da-dk")]
         #pragma warning disable CS1591
         DaDk,
@@ -439,6 +475,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "da-gl")]
         #pragma warning disable CS1591
         DaGl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dav")]
+        #pragma warning disable CS1591
+        Dav,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dav-ke")]
+        #pragma warning disable CS1591
+        DavKe,
         #pragma warning restore CS1591
         [EnumMember(Value = "de")]
         #pragma warning disable CS1591
@@ -507,6 +551,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "dua-cm")]
         #pragma warning disable CS1591
         DuaCm,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dv")]
+        #pragma warning disable CS1591
+        Dv,
         #pragma warning restore CS1591
         [EnumMember(Value = "dyo")]
         #pragma warning disable CS1591
@@ -740,6 +788,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         EnHk,
         #pragma warning restore CS1591
+        [EnumMember(Value = "en-id")]
+        #pragma warning disable CS1591
+        EnId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "en-ie")]
         #pragma warning disable CS1591
         EnIe,
@@ -892,6 +944,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         EnPr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "en-pt")]
+        #pragma warning disable CS1591
+        EnPt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "en-pw")]
         #pragma warning disable CS1591
         EnPw,
@@ -948,6 +1004,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         EnTc,
         #pragma warning restore CS1591
+        [EnumMember(Value = "en-th")]
+        #pragma warning disable CS1591
+        EnTh,
+        #pragma warning restore CS1591
         [EnumMember(Value = "en-tk")]
         #pragma warning disable CS1591
         EnTk,
@@ -995,6 +1055,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "en-vi")]
         #pragma warning disable CS1591
         EnVi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "en-vn")]
+        #pragma warning disable CS1591
+        EnVn,
         #pragma warning restore CS1591
         [EnumMember(Value = "en-vu")]
         #pragma warning disable CS1591
@@ -1232,6 +1296,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Fi,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fi-fi")]
+        #pragma warning disable CS1591
+        FiFi,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fil")]
         #pragma warning disable CS1591
         Fil,
@@ -1240,9 +1308,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         FilPh,
         #pragma warning restore CS1591
-        [EnumMember(Value = "fi-fi")]
+        [EnumMember(Value = "fj")]
         #pragma warning disable CS1591
-        FiFi,
+        Fj,
         #pragma warning restore CS1591
         [EnumMember(Value = "fo")]
         #pragma warning disable CS1591
@@ -1259,14 +1327,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "fr")]
         #pragma warning disable CS1591
         Fr,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "frr")]
-        #pragma warning disable CS1591
-        Frr,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "frr-de")]
-        #pragma warning disable CS1591
-        FrrDe,
         #pragma warning restore CS1591
         [EnumMember(Value = "fr-be")]
         #pragma warning disable CS1591
@@ -1452,6 +1512,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         FrYt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "frr")]
+        #pragma warning disable CS1591
+        Frr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "frr-de")]
+        #pragma warning disable CS1591
+        FrrDe,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fur")]
         #pragma warning disable CS1591
         Fur,
@@ -1496,6 +1564,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         GlEs,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gn")]
+        #pragma warning disable CS1591
+        Gn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gsw")]
         #pragma warning disable CS1591
         Gsw,
@@ -1516,6 +1588,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Gu,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gu-in")]
+        #pragma warning disable CS1591
+        GuIn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "guz")]
         #pragma warning disable CS1591
         Guz,
@@ -1523,10 +1599,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "guz-ke")]
         #pragma warning disable CS1591
         GuzKe,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "gu-in")]
-        #pragma warning disable CS1591
-        GuIn,
         #pragma warning restore CS1591
         [EnumMember(Value = "gv")]
         #pragma warning disable CS1591
@@ -1540,14 +1612,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Ha,
         #pragma warning restore CS1591
-        [EnumMember(Value = "haw")]
-        #pragma warning disable CS1591
-        Haw,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "haw-us")]
-        #pragma warning disable CS1591
-        HawUs,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ha-gh")]
         #pragma warning disable CS1591
         HaGh,
@@ -1559,6 +1623,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ha-ng")]
         #pragma warning disable CS1591
         HaNg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "haw")]
+        #pragma warning disable CS1591
+        Haw,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "haw-us")]
+        #pragma warning disable CS1591
+        HawUs,
         #pragma warning restore CS1591
         [EnumMember(Value = "he")]
         #pragma warning disable CS1591
@@ -1575,6 +1647,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "hi-in")]
         #pragma warning disable CS1591
         HiIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hmn")]
+        #pragma warning disable CS1591
+        Hmn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ho")]
+        #pragma warning disable CS1591
+        Ho,
         #pragma warning restore CS1591
         [EnumMember(Value = "hr")]
         #pragma warning disable CS1591
@@ -1596,6 +1676,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         HsbDe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ht")]
+        #pragma warning disable CS1591
+        Ht,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hu")]
         #pragma warning disable CS1591
         Hu,
@@ -1612,6 +1696,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         HyAm,
         #pragma warning restore CS1591
+        [EnumMember(Value = "hz")]
+        #pragma warning disable CS1591
+        Hz,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ia")]
         #pragma warning disable CS1591
         Ia,
@@ -1623,6 +1711,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "id-id")]
+        #pragma warning disable CS1591
+        IdId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ie")]
+        #pragma warning disable CS1591
+        Ie,
         #pragma warning restore CS1591
         [EnumMember(Value = "ig")]
         #pragma warning disable CS1591
@@ -1640,9 +1736,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         IiCn,
         #pragma warning restore CS1591
-        [EnumMember(Value = "id-id")]
+        [EnumMember(Value = "ik")]
         #pragma warning disable CS1591
-        IdId,
+        Ik,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "io")]
+        #pragma warning disable CS1591
+        Io,
         #pragma warning restore CS1591
         [EnumMember(Value = "is")]
         #pragma warning disable CS1591
@@ -1672,6 +1772,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         ItVa,
         #pragma warning restore CS1591
+        [EnumMember(Value = "iu")]
+        #pragma warning disable CS1591
+        Iu,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ja")]
         #pragma warning disable CS1591
         Ja,
@@ -1687,14 +1791,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "jgo-cm")]
         #pragma warning disable CS1591
         JgoCm,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "yi")]
-        #pragma warning disable CS1591
-        Yi,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "yi-001")]
-        #pragma warning disable CS1591
-        Yi001,
         #pragma warning restore CS1591
         [EnumMember(Value = "jmc")]
         #pragma warning disable CS1591
@@ -1716,6 +1812,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Ka,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ka-ge")]
+        #pragma warning disable CS1591
+        KaGe,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kab")]
         #pragma warning disable CS1591
         Kab,
@@ -1732,9 +1832,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KamKe,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ka-ge")]
+        [EnumMember(Value = "kar")]
         #pragma warning disable CS1591
-        KaGe,
+        Kar,
         #pragma warning restore CS1591
         [EnumMember(Value = "kde")]
         #pragma warning disable CS1591
@@ -1752,6 +1852,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KeaCv,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kg")]
+        #pragma warning disable CS1591
+        Kg,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kgp")]
         #pragma warning disable CS1591
         Kgp,
@@ -1759,6 +1863,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "kgp-br")]
         #pragma warning disable CS1591
         KgpBr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kh")]
+        #pragma warning disable CS1591
+        Kh,
         #pragma warning restore CS1591
         [EnumMember(Value = "khq")]
         #pragma warning disable CS1591
@@ -1776,9 +1884,17 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KiKe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kj")]
+        #pragma warning disable CS1591
+        Kj,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kk")]
         #pragma warning disable CS1591
         Kk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kk-kz")]
+        #pragma warning disable CS1591
+        KkKz,
         #pragma warning restore CS1591
         [EnumMember(Value = "kkj")]
         #pragma warning disable CS1591
@@ -1788,13 +1904,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KkjCm,
         #pragma warning restore CS1591
-        [EnumMember(Value = "kk-kz")]
-        #pragma warning disable CS1591
-        KkKz,
-        #pragma warning restore CS1591
         [EnumMember(Value = "kl")]
         #pragma warning disable CS1591
         Kl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kl-gl")]
+        #pragma warning disable CS1591
+        KlGl,
         #pragma warning restore CS1591
         [EnumMember(Value = "kln")]
         #pragma warning disable CS1591
@@ -1803,10 +1919,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "kln-ke")]
         #pragma warning disable CS1591
         KlnKe,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "kl-gl")]
-        #pragma warning disable CS1591
-        KlGl,
         #pragma warning restore CS1591
         [EnumMember(Value = "km")]
         #pragma warning disable CS1591
@@ -1828,14 +1940,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Ko,
         #pragma warning restore CS1591
-        [EnumMember(Value = "kok")]
-        #pragma warning disable CS1591
-        Kok,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "kok-in")]
-        #pragma warning disable CS1591
-        KokIn,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ko-kp")]
         #pragma warning disable CS1591
         KoKp,
@@ -1844,9 +1948,25 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KoKr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "kok")]
+        #pragma warning disable CS1591
+        Kok,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kok-in")]
+        #pragma warning disable CS1591
+        KokIn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kr")]
+        #pragma warning disable CS1591
+        Kr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ks")]
         #pragma warning disable CS1591
         Ks,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ks-in")]
+        #pragma warning disable CS1591
+        KsIn,
         #pragma warning restore CS1591
         [EnumMember(Value = "ksb")]
         #pragma warning disable CS1591
@@ -1872,10 +1992,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         KshDe,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ks-in")]
-        #pragma warning disable CS1591
-        KsIn,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ku")]
         #pragma warning disable CS1591
         Ku,
@@ -1883,6 +1999,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ku-tr")]
         #pragma warning disable CS1591
         KuTr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "kv")]
+        #pragma warning disable CS1591
+        Kv,
         #pragma warning restore CS1591
         [EnumMember(Value = "kw")]
         #pragma warning disable CS1591
@@ -1899,6 +2019,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ky-kg")]
         #pragma warning disable CS1591
         KyKg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "la")]
+        #pragma warning disable CS1591
+        La,
         #pragma warning restore CS1591
         [EnumMember(Value = "lag")]
         #pragma warning disable CS1591
@@ -1923,6 +2047,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "lg-ug")]
         #pragma warning disable CS1591
         LgUg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "li")]
+        #pragma warning disable CS1591
+        Li,
         #pragma warning restore CS1591
         [EnumMember(Value = "lkt")]
         #pragma warning disable CS1591
@@ -1984,6 +2112,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Lu,
         #pragma warning restore CS1591
+        [EnumMember(Value = "lu-cd")]
+        #pragma warning disable CS1591
+        LuCd,
+        #pragma warning restore CS1591
         [EnumMember(Value = "luo")]
         #pragma warning disable CS1591
         Luo,
@@ -1999,10 +2131,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "luy-ke")]
         #pragma warning disable CS1591
         LuyKe,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "lu-cd")]
-        #pragma warning disable CS1591
-        LuCd,
         #pragma warning restore CS1591
         [EnumMember(Value = "lv")]
         #pragma warning disable CS1591
@@ -2060,6 +2188,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Mg,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mg-mg")]
+        #pragma warning disable CS1591
+        MgMg,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mgh")]
         #pragma warning disable CS1591
         Mgh,
@@ -2076,9 +2208,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         MgoCm,
         #pragma warning restore CS1591
-        [EnumMember(Value = "mg-mg")]
+        [EnumMember(Value = "mh")]
         #pragma warning disable CS1591
-        MgMg,
+        Mh,
         #pragma warning restore CS1591
         [EnumMember(Value = "mi")]
         #pragma warning disable CS1591
@@ -2108,6 +2240,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Mn,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mn-mn")]
+        #pragma warning disable CS1591
+        MnMn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mni")]
         #pragma warning disable CS1591
         Mni,
@@ -2115,10 +2251,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "mni-in")]
         #pragma warning disable CS1591
         MniIn,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "mn-mn")]
-        #pragma warning disable CS1591
-        MnMn,
         #pragma warning restore CS1591
         [EnumMember(Value = "mr")]
         #pragma warning disable CS1591
@@ -2180,6 +2312,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         MznIr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "na")]
+        #pragma warning disable CS1591
+        Na,
+        #pragma warning restore CS1591
         [EnumMember(Value = "naq")]
         #pragma warning disable CS1591
         Naq,
@@ -2204,6 +2340,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Nd,
         #pragma warning restore CS1591
+        [EnumMember(Value = "nd-zw")]
+        #pragma warning disable CS1591
+        NdZw,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nds")]
         #pragma warning disable CS1591
         Nds,
@@ -2216,10 +2356,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         NdsNl,
         #pragma warning restore CS1591
-        [EnumMember(Value = "nd-zw")]
-        #pragma warning disable CS1591
-        NdZw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ne")]
         #pragma warning disable CS1591
         Ne,
@@ -2231,6 +2367,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ne-np")]
         #pragma warning disable CS1591
         NeNp,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ng")]
+        #pragma warning disable CS1591
+        Ng,
         #pragma warning restore CS1591
         [EnumMember(Value = "nl")]
         #pragma warning disable CS1591
@@ -2284,6 +2424,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Nn,
         #pragma warning restore CS1591
+        [EnumMember(Value = "nn-no")]
+        #pragma warning disable CS1591
+        NnNo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nnh")]
         #pragma warning disable CS1591
         Nnh,
@@ -2291,10 +2435,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "nnh-cm")]
         #pragma warning disable CS1591
         NnhCm,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "nn-no")]
-        #pragma warning disable CS1591
-        NnNo,
         #pragma warning restore CS1591
         [EnumMember(Value = "no")]
         #pragma warning disable CS1591
@@ -2304,6 +2444,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         NoNo,
         #pragma warning restore CS1591
+        [EnumMember(Value = "nr")]
+        #pragma warning disable CS1591
+        Nr,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nus")]
         #pragma warning disable CS1591
         Nus,
@@ -2311,6 +2455,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "nus-ss")]
         #pragma warning disable CS1591
         NusSs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "nv")]
+        #pragma warning disable CS1591
+        Nv,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ny")]
+        #pragma warning disable CS1591
+        Ny,
         #pragma warning restore CS1591
         [EnumMember(Value = "nyn")]
         #pragma warning disable CS1591
@@ -2331,6 +2483,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "oc-fr")]
         #pragma warning disable CS1591
         OcFr,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oj")]
+        #pragma warning disable CS1591
+        Oj,
         #pragma warning restore CS1591
         [EnumMember(Value = "om")]
         #pragma warning disable CS1591
@@ -2383,6 +2539,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "pcm-ng")]
         #pragma warning disable CS1591
         PcmNg,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pi")]
+        #pragma warning disable CS1591
+        Pi,
         #pragma warning restore CS1591
         [EnumMember(Value = "pis")]
         #pragma warning disable CS1591
@@ -2516,14 +2676,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Ro,
         #pragma warning restore CS1591
-        [EnumMember(Value = "rof")]
-        #pragma warning disable CS1591
-        Rof,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "rof-tz")]
-        #pragma warning disable CS1591
-        RofTz,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ro-md")]
         #pragma warning disable CS1591
         RoMd,
@@ -2531,6 +2683,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ro-ro")]
         #pragma warning disable CS1591
         RoRo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rof")]
+        #pragma warning disable CS1591
+        Rof,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rof-tz")]
+        #pragma warning disable CS1591
+        RofTz,
         #pragma warning restore CS1591
         [EnumMember(Value = "ru")]
         #pragma warning disable CS1591
@@ -2564,6 +2724,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Rw,
         #pragma warning restore CS1591
+        [EnumMember(Value = "rw-rw")]
+        #pragma warning disable CS1591
+        RwRw,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rwk")]
         #pragma warning disable CS1591
         Rwk,
@@ -2572,13 +2736,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         RwkTz,
         #pragma warning restore CS1591
-        [EnumMember(Value = "rw-rw")]
-        #pragma warning disable CS1591
-        RwRw,
-        #pragma warning restore CS1591
         [EnumMember(Value = "sa")]
         #pragma warning disable CS1591
         Sa,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sa-in")]
+        #pragma warning disable CS1591
+        SaIn,
         #pragma warning restore CS1591
         [EnumMember(Value = "sah")]
         #pragma warning disable CS1591
@@ -2603,10 +2767,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "sat-in")]
         #pragma warning disable CS1591
         SatIn,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "sa-in")]
-        #pragma warning disable CS1591
-        SaIn,
         #pragma warning restore CS1591
         [EnumMember(Value = "sbp")]
         #pragma warning disable CS1591
@@ -2640,6 +2800,18 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Se,
         #pragma warning restore CS1591
+        [EnumMember(Value = "se-fi")]
+        #pragma warning disable CS1591
+        SeFi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "se-no")]
+        #pragma warning disable CS1591
+        SeNo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "se-se")]
+        #pragma warning disable CS1591
+        SeSe,
+        #pragma warning restore CS1591
         [EnumMember(Value = "seh")]
         #pragma warning disable CS1591
         Seh,
@@ -2655,18 +2827,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "ses-ml")]
         #pragma warning disable CS1591
         SesMl,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "se-fi")]
-        #pragma warning disable CS1591
-        SeFi,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "se-no")]
-        #pragma warning disable CS1591
-        SeNo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "se-se")]
-        #pragma warning disable CS1591
-        SeSe,
         #pragma warning restore CS1591
         [EnumMember(Value = "sg")]
         #pragma warning disable CS1591
@@ -2707,6 +2867,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "sl-si")]
         #pragma warning disable CS1591
         SlSi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sm")]
+        #pragma warning disable CS1591
+        Sm,
         #pragma warning restore CS1591
         [EnumMember(Value = "smn")]
         #pragma warning disable CS1591
@@ -2792,6 +2956,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         SrXk,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ss")]
+        #pragma warning disable CS1591
+        Ss,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "st")]
+        #pragma warning disable CS1591
+        St,
+        #pragma warning restore CS1591
         [EnumMember(Value = "su")]
         #pragma warning disable CS1591
         Su,
@@ -2864,6 +3036,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Te,
         #pragma warning restore CS1591
+        [EnumMember(Value = "te-in")]
+        #pragma warning disable CS1591
+        TeIn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "teo")]
         #pragma warning disable CS1591
         Teo,
@@ -2875,10 +3051,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "teo-ug")]
         #pragma warning disable CS1591
         TeoUg,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "te-in")]
-        #pragma warning disable CS1591
-        TeIn,
         #pragma warning restore CS1591
         [EnumMember(Value = "tg")]
         #pragma warning disable CS1591
@@ -2920,9 +3092,17 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         Tl,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tn")]
+        #pragma warning disable CS1591
+        Tn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "to")]
         #pragma warning disable CS1591
         To,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "to-to")]
+        #pragma warning disable CS1591
+        ToTo,
         #pragma warning restore CS1591
         [EnumMember(Value = "tok")]
         #pragma warning disable CS1591
@@ -2931,10 +3111,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "tok-001")]
         #pragma warning disable CS1591
         Tok001,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "to-to")]
-        #pragma warning disable CS1591
-        ToTo,
         #pragma warning restore CS1591
         [EnumMember(Value = "tr")]
         #pragma warning disable CS1591
@@ -2948,6 +3124,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         TrTr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ts")]
+        #pragma warning disable CS1591
+        Ts,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tt")]
         #pragma warning disable CS1591
         Tt,
@@ -2956,6 +3136,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         TtRu,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tw")]
+        #pragma warning disable CS1591
+        Tw,
+        #pragma warning restore CS1591
         [EnumMember(Value = "twq")]
         #pragma warning disable CS1591
         Twq,
@@ -2963,6 +3147,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "twq-ne")]
         #pragma warning disable CS1591
         TwqNe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ty")]
+        #pragma warning disable CS1591
+        Ty,
         #pragma warning restore CS1591
         [EnumMember(Value = "tzm")]
         #pragma warning disable CS1591
@@ -3020,6 +3208,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         VaiLr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ve")]
+        #pragma warning disable CS1591
+        Ve,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vi")]
         #pragma warning disable CS1591
         Vi,
@@ -3043,6 +3235,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "vun-tz")]
         #pragma warning disable CS1591
         VunTz,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "wa")]
+        #pragma warning disable CS1591
+        Wa,
         #pragma warning restore CS1591
         [EnumMember(Value = "wae")]
         #pragma warning disable CS1591
@@ -3084,6 +3280,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         #pragma warning disable CS1591
         YavCm,
         #pragma warning restore CS1591
+        [EnumMember(Value = "yi")]
+        #pragma warning disable CS1591
+        Yi,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "yi-001")]
+        #pragma warning disable CS1591
+        Yi001,
+        #pragma warning restore CS1591
         [EnumMember(Value = "yo")]
         #pragma warning disable CS1591
         Yo,
@@ -3123,6 +3327,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
         [EnumMember(Value = "yue-hk")]
         #pragma warning disable CS1591
         YueHk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "za")]
+        #pragma warning disable CS1591
+        Za,
         #pragma warning restore CS1591
         [EnumMember(Value = "zgh")]
         #pragma warning disable CS1591

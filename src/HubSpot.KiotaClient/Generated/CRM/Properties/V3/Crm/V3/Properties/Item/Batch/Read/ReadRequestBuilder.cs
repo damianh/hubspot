@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.B
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/properties/{objectType}/batch/read", pathParameters)
+        public ReadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/properties/{objectType}/batch/read{?locale*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.B
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/properties/{objectType}/batch/read", rawUrl)
+        public ReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/properties/{objectType}/batch/read{?locale*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.B
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchResponseProperty?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchResponseProperty?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchResponseProperty> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchResponseProperty> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,11 +61,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.B
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.BatchReadInputPropertyName body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,11 +85,27 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.B
             return new global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Read a provided list of properties.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ReadRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("locale")]
+            public string? Locale { get; set; }
+#nullable restore
+#else
+            [QueryParameter("locale")]
+            public string Locale { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ReadRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ReadRequestBuilderPostRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Batch.Read.ReadRequestBuilder.ReadRequestBuilderPostQueryParameters>
         {
         }
     }

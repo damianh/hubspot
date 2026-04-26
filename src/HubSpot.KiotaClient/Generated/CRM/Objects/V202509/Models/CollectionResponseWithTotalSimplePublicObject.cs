@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models
 {
+    /// <summary>
+    /// Represents a list of simple objects returned from an API request, along with the total count of objects available.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CollectionResponseWithTotalSimplePublicObject : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -30,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models.SimplePublicObject> Results { get; set; }
 #endif
-        /// <summary>The number of available results</summary>
+        /// <summary>The total number of objects included into response.</summary>
         public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models.CollectionResponseWithTotalSimplePublicObject"/> and sets the default values.

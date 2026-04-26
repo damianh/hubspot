@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the app</summary>
         public int? AppId { get; set; }
-        /// <summary>The flagName property</summary>
+        /// <summary>The name of the flag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FlagName { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
 #else
         public string FlagName { get; set; }
 #endif
-        /// <summary>The flagState property</summary>
+        /// <summary>The state of the flag for this portal</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse_flagState? FlagState { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>The ID of the portal</summary>
         public int? PortalId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.PortalFlagStateResponse"/> and sets the default values.

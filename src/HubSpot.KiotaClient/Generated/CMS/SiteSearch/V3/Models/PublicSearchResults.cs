@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The limit property</summary>
+        /// <summary>The number of results returned in a single response.</summary>
         public int? Limit { get; set; }
-        /// <summary>The offset property</summary>
+        /// <summary>The starting point for the next set of results in pagination.</summary>
         public int? Offset { get; set; }
-        /// <summary>The page property</summary>
+        /// <summary>The current page number in the paginated results.</summary>
         public int? Page { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult> Results { get; set; }
 #endif
-        /// <summary>The searchTerm property</summary>
+        /// <summary>The term used in the search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SearchTerm { get; set; }
@@ -36,8 +36,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
 #else
         public string SearchTerm { get; set; }
 #endif
-        /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        /// <summary>The total number of results found for the search term.</summary>
+        public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.PublicSearchResults"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult>(global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "searchTerm", n => { SearchTerm = n.GetStringValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models
             writer.WriteIntValue("page", Page);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Models.ContentSearchResult>("results", Results);
             writer.WriteStringValue("searchTerm", SearchTerm);
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Indicates the type of filter being applied (EVENT).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicEventAnalyticsFilter_filterType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "EVENT")]
         #pragma warning disable CS1591

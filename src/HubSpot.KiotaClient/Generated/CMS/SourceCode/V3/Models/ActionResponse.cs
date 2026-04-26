@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The timestamp indicating when the action was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>A map of link names to associated URIs containing documentation about the error or recommended remediation steps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models.ActionResponse_links? Links { get; set; }
@@ -24,11 +24,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models.ActionResponse_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The timestamp indicating when the action was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The startedAt property</summary>
+        /// <summary>The timestamp indicating when the action was started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the action, with possible values: CANCELED, COMPLETE, PENDING, PROCESSING.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models.ActionResponse_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models.ActionResponse"/> and sets the default values.

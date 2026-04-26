@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The new name for the folder, which will also update the fullPath and all children of the folder.</summary>
+        /// <summary>New name. If specified the folder&apos;s name and fullPath will change. All children of the folder will be updated accordingly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ID of the new parent folder, which will move the folder and its children into the specified folder.</summary>
+        /// <summary>New parent folderId. If changed, the folder and all it&apos;s children will be moved into the specified folder. parentFolderId and parentFolderPath cannot be specified at the same time.</summary>
         public long? ParentFolderId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Files.Files.V3.Models.FolderUpdateInputWithId"/> and sets the default values.

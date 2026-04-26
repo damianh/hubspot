@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "638EC5AB7AF3AB7BBEA66D2490C7A755F1D4E67ACB85B012E9E73EE6E7A9F98968577E7106F3C10180E72A058DB6D366AA1EB213523FF76CC98B9377F5FAFDAE",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Conversations/Custom%20Channels/versions/160898",
+  "descriptionHash": "C70A49183A59215B2A2FC3C92E88A2E600A38F3E7EFC89C7300C05A61699B5BF24E995D26B43E14301583E861324F1330D6D9EC0CC7263224FC2CFAE54398F81",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22197/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotConversationsCustomChannelsV3Client",

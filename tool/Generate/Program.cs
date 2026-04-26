@@ -15,14 +15,15 @@ if (Directory.Exists(generatedPath))
 var succeeded = new List<string>();
 var failed = new List<string>();
 
-void RunKiota(string group, string name, int version, string openApiUrl)
+void RunKiota(string group, string name, string version, string openApiUrl)
 {
     name = name.Replace(" ", "");
     name = name.Replace("-", "");
     group = group.Replace(" ", "");
-    var namespaceName = $"DamianH.HubSpot.KiotaClient.{group}.{name}.V{version}";
-    var output = Path.Join(generatedPath, group, name, $"V{version}");
-    var className = $"HubSpot{group}{name}V{version}Client";
+    var sanitizedVersion = version.Replace("-", "").Replace(".", "");
+    var namespaceName = $"DamianH.HubSpot.KiotaClient.{group}.{name}.V{sanitizedVersion}";
+    var output = Path.Join(generatedPath, group, name, $"V{sanitizedVersion}");
+    var className = $"HubSpot{group}{name}V{sanitizedVersion}Client";
 
     var args = $"kiota generate --openapi {openApiUrl} --language csharp --output {output} --class-name {className} --namespace-name {namespaceName}";
 
@@ -89,7 +90,7 @@ internal class Result
 internal class ApiVersion
 {
     [JsonPropertyName("version")]
-    public int Version { get; set; }
+    public required string Version { get; set; }
 
     [JsonPropertyName("stage")]
     public required string Stage { get; set; }

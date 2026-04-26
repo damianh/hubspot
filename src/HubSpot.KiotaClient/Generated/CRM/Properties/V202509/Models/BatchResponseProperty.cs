@@ -16,14 +16,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The completedAt property</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.StandardError>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.StandardError> Errors { get; set; }
-#endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,8 +24,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links Links { get; set; }
 #endif
-        /// <summary>The numErrors property</summary>
-        public int? NumErrors { get; set; }
         /// <summary>The requestedAt property</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
@@ -74,9 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completedAt", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.StandardError>(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.StandardError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "links", n => { Links = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links>(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links.CreateFromDiscriminatorValue); } },
-                { "numErrors", n => { NumErrors = n.GetIntValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property>(global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
@@ -91,9 +79,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completedAt", CompletedAt);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.StandardError>("errors", Errors);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links>("links", Links);
-            writer.WriteIntValue("numErrors", NumErrors);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property>("results", Results);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);

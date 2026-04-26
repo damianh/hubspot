@@ -85,10 +85,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefinitionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>If you have the [business unit add-on](https://developers.hubspot.com/beta-docs/guides/api/settings/business-units-api), include this parameter to filter results by business unit ID. The default Account business unit will always use `0`.</summary>
+            /// <summary>An integer representing the ID of the business unit to filter the subscription definitions.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>Set to `true` to return subscription translations associated with each definition.</summary>
+            /// <summary>A boolean indicating whether to include translations of the subscription definitions in the response.</summary>
             [QueryParameter("includeTranslations")]
             public bool? IncludeTranslations { get; set; }
         }

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public bool? AllowsCustomLabels { get; set; }
         /// <summary>The cardinality from the source object&apos;s perspective, either &quot;ONE_TO_ONE&quot; or &quot;ONE_TO_MANY&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_cardinality? Cardinality { get; set; }
-        /// <summary>The category of the association. Can be: &quot;HUBSPOT_DEFINED&quot;, &quot;USER_DEFINED&quot;, or &quot;INTEGRATOR_DEFINED&quot;</summary>
+        /// <summary>The error category</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_category? Category { get; set; }
         /// <summary>The name of the source object type (e.g,. &quot;DEAL&quot; or &quot;QUOTE&quot;).</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_fromObjectType? FromObjectType { get; set; }
@@ -41,6 +41,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public bool? HasUserEnforcedMaxToObjectIds { get; set; }
         /// <summary>Whether the association is hidden or not.</summary>
         public bool? Hidden { get; set; }
+        /// <summary>The hiddenReason property</summary>
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_hiddenReason? HiddenReason { get; set; }
         /// <summary>The unique ID of the associated object (e.g., a contact ID).</summary>
         public int? Id { get; set; }
         /// <summary>Whether the reverse association can also support custom labels.</summary>
@@ -67,6 +69,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string InverseName { get; set; }
 #endif
+        /// <summary>The isDefault property</summary>
+        public bool? IsDefault { get; set; }
         /// <summary>Whether the inverse association is considered primary.</summary>
         public bool? IsInversePrimary { get; set; }
         /// <summary>Whether the association is the primary link between the entities involved.</summary>
@@ -99,6 +103,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string PortalUniqueIdentifier { get; set; }
 #endif
+        /// <summary>The readOnly property</summary>
+        public bool? ReadOnly { get; set; }
         /// <summary>The name of the destination object type (e.g,. &quot;DEAL&quot; or &quot;QUOTE&quot;).</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_toObjectType? ToObjectType { get; set; }
         /// <summary>The ID of the destination object type (e.g., 0-3 for deals).</summary>
@@ -144,6 +150,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "hasUserEnforcedMaxFromObjectIds", n => { HasUserEnforcedMaxFromObjectIds = n.GetBoolValue(); } },
                 { "hasUserEnforcedMaxToObjectIds", n => { HasUserEnforcedMaxToObjectIds = n.GetBoolValue(); } },
                 { "hidden", n => { Hidden = n.GetBoolValue(); } },
+                { "hiddenReason", n => { HiddenReason = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_hiddenReason>(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "inverseAllowsCustomLabels", n => { InverseAllowsCustomLabels = n.GetBoolValue(); } },
                 { "inverseCardinality", n => { InverseCardinality = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_inverseCardinality>(); } },
@@ -151,6 +158,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "inverseId", n => { InverseId = n.GetIntValue(); } },
                 { "inverseLabel", n => { InverseLabel = n.GetStringValue(); } },
                 { "inverseName", n => { InverseName = n.GetStringValue(); } },
+                { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isInversePrimary", n => { IsInversePrimary = n.GetBoolValue(); } },
                 { "isPrimary", n => { IsPrimary = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
@@ -158,6 +166,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "maxToObjectIds", n => { MaxToObjectIds = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "portalUniqueIdentifier", n => { PortalUniqueIdentifier = n.GetStringValue(); } },
+                { "readOnly", n => { ReadOnly = n.GetBoolValue(); } },
                 { "toObjectType", n => { ToObjectType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_toObjectType>(); } },
                 { "toObjectTypeId", n => { ToObjectTypeId = n.GetStringValue(); } },
             };
@@ -179,6 +188,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteBoolValue("hasUserEnforcedMaxFromObjectIds", HasUserEnforcedMaxFromObjectIds);
             writer.WriteBoolValue("hasUserEnforcedMaxToObjectIds", HasUserEnforcedMaxToObjectIds);
             writer.WriteBoolValue("hidden", Hidden);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_hiddenReason>("hiddenReason", HiddenReason);
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("inverseAllowsCustomLabels", InverseAllowsCustomLabels);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_inverseCardinality>("inverseCardinality", InverseCardinality);
@@ -186,6 +196,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteIntValue("inverseId", InverseId);
             writer.WriteStringValue("inverseLabel", InverseLabel);
             writer.WriteStringValue("inverseName", InverseName);
+            writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isInversePrimary", IsInversePrimary);
             writer.WriteBoolValue("isPrimary", IsPrimary);
             writer.WriteStringValue("label", Label);
@@ -193,6 +204,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteIntValue("maxToObjectIds", MaxToObjectIds);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("portalUniqueIdentifier", PortalUniqueIdentifier);
+            writer.WriteBoolValue("readOnly", ReadOnly);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AssociationDefinition_toObjectType>("toObjectType", ToObjectType);
             writer.WriteStringValue("toObjectTypeId", ToObjectTypeId);
             writer.WriteAdditionalData(AdditionalData);

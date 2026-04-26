@@ -40,7 +40,7 @@ public class CrmNotesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Notes.PostAsync(input);
-        var note = created!.Entity!;
+        var note = created!;
 
         note.ShouldNotBeNull();
         note.Id.ShouldNotBeNullOrEmpty();
@@ -65,7 +65,7 @@ public class CrmNotesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Notes.PostAsync(input);
-        var noteId = created!.Entity!.Id!;
+        var noteId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Notes[noteId].GetAsync();
 
@@ -89,7 +89,7 @@ public class CrmNotesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Notes.PostAsync(input);
-        var noteId = created!.Entity!.Id!;
+        var noteId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -124,7 +124,7 @@ public class CrmNotesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Notes.PostAsync(input);
-        var noteId = created!.Entity!.Id!;
+        var noteId = created!.Id!;
 
         await _client.Crm.V3.Objects.Notes[noteId].DeleteAsync();
 

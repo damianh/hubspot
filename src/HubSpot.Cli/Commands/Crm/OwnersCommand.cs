@@ -46,7 +46,7 @@ internal static class OwnersCommand
             try
             {
                 var client = new HubSpotCRMCrmOwnersV3Client(cli.Adapter);
-                var result = await client.Crm.V3.Owners.EmptyPathSegment.GetAsync(q =>
+                var result = await client.Crm.V3.Owners.GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
                     q.QueryParameters.Archived = archived;

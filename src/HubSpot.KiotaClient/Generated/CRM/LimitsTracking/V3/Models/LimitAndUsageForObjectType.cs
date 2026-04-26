@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The maximum allowed count for the object type.</summary>
+        public long? Limit { get; set; }
+        /// <summary>The unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The percentage property</summary>
+        /// <summary>The percentage of the limit that has been used.</summary>
         public double? Percentage { get; set; }
-        /// <summary>The pluralLabel property</summary>
+        /// <summary>The plural label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>The singularLabel property</summary>
+        /// <summary>The singular label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SingularLabel { get; set; }
@@ -42,8 +42,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string SingularLabel { get; set; }
 #endif
-        /// <summary>The usage property</summary>
-        public int? Usage { get; set; }
+        /// <summary>The current usage count for the object type.</summary>
+        public long? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.LimitAndUsageForObjectType"/> and sets the default values.
         /// </summary>
@@ -69,12 +69,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
                 { "pluralLabel", n => { PluralLabel = n.GetStringValue(); } },
                 { "singularLabel", n => { SingularLabel = n.GetStringValue(); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -84,12 +84,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteDoubleValue("percentage", Percentage);
             writer.WriteStringValue("pluralLabel", PluralLabel);
             writer.WriteStringValue("singularLabel", SingularLabel);
-            writer.WriteIntValue("usage", Usage);
+            writer.WriteLongValue("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

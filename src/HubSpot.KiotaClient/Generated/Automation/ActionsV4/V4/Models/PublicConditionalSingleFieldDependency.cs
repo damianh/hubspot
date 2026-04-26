@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The controllingFieldName property</summary>
+        /// <summary>The name of the field that determines the dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ControllingFieldName { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public string ControllingFieldName { get; set; }
 #endif
-        /// <summary>The controllingFieldValue property</summary>
+        /// <summary>The value of the controlling field that triggers the dependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ControllingFieldValue { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public string ControllingFieldValue { get; set; }
 #endif
-        /// <summary>The dependencyType property</summary>
+        /// <summary>The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.</summary>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicConditionalSingleFieldDependency_dependencyType? DependencyType { get; set; }
         /// <summary>The dependentFieldNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

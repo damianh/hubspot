@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
         public string SubscriberIdString { get; set; }
 #endif
         /// <summary>The unique identifier of the subscription.</summary>
-        public int? SubscriptionId { get; set; }
+        public long? SubscriptionId { get; set; }
         /// <summary>The name of the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatus_status>(); } },
                 { "subscriberIdString", n => { SubscriberIdString = n.GetStringValue(); } },
-                { "subscriptionId", n => { SubscriptionId = n.GetIntValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetLongValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
@@ -113,7 +113,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
             writer.WriteStringValue("source", Source);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.PublicStatus_status>("status", Status);
             writer.WriteStringValue("subscriberIdString", SubscriberIdString);
-            writer.WriteIntValue("subscriptionId", SubscriptionId);
+            writer.WriteLongValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);

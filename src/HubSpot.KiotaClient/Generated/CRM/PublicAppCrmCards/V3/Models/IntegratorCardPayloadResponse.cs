@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string CardLabel { get; set; }
 #endif
-        /// <summary>The responseVersion property</summary>
+        /// <summary>The number version of the response.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorCardPayloadResponse_responseVersion? ResponseVersion { get; set; }
         /// <summary>A list of up to five valid card sub categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "3E3D496104F8526D8DB2BA73FD62F9CC850D075EB281777530335A8D1222B2A3AB22BAA5A83BA9B3227C807FE63C231A435EBD2901380F924C4929B17932F12C",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Site%20Search/versions/144890",
+  "descriptionHash": "EB73699CEB470D5296F0BD023645B9A88AE1C56DE4D0F52F2CBD5413B4E8FB0CCFF9A025F5654B3F5BDF4221D573D6AD63E02C0E26F207F3B86368698C37490C",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22132/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSSiteSearchV3Client",

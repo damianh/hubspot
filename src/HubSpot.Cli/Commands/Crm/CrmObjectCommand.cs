@@ -185,14 +185,11 @@ internal static class CrmObjectCommand
                 var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType].PostAsync(input, cancellationToken: cancellationToken);
 
-                if (result?.Entity is not null)
+                if (result is not null)
                 {
-                    var mapped = ResponseMapper.MapObject(result.Entity);
+                    var mapped = ResponseMapper.MapObject(result);
                     cli.Formatter.WriteObject(mapped, cli.Out);
-                }
-                else
-                {
-                    cli.Formatter.WriteMessage($"Created (ID: {result?.CreatedResourceId})", cli.Out);
+                    cli.Formatter.WriteMessage($"Created (ID: {result.Id})", cli.Out);
                 }
             }
             catch (Exception ex)

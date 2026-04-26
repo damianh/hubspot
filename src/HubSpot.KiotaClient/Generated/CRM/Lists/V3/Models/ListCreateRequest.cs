@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest_customProperties CustomProperties { get; set; }
 #endif
-        /// <summary>The filterBranch property</summary>
+        /// <summary>Filter branch object containing filtering criteria for the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListCreateRequest.ListCreateRequest_filterBranch? FilterBranch { get; set; }

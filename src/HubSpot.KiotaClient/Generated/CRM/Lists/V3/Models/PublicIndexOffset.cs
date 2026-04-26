@@ -14,23 +14,23 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The days property</summary>
+        /// <summary>The number of days to offset.</summary>
         public int? Days { get; set; }
-        /// <summary>The hours property</summary>
+        /// <summary>The number of hours to offset.</summary>
         public int? Hours { get; set; }
-        /// <summary>The milliseconds property</summary>
+        /// <summary>The number of milliseconds to offset.</summary>
         public int? Milliseconds { get; set; }
-        /// <summary>The minutes property</summary>
+        /// <summary>The number of minutes to offset.</summary>
         public int? Minutes { get; set; }
-        /// <summary>The months property</summary>
+        /// <summary>The number of months to offset.</summary>
         public int? Months { get; set; }
-        /// <summary>The quarters property</summary>
+        /// <summary>The number of quarters to offset.</summary>
         public int? Quarters { get; set; }
-        /// <summary>The seconds property</summary>
+        /// <summary>The number of seconds to offset.</summary>
         public int? Seconds { get; set; }
-        /// <summary>The weeks property</summary>
+        /// <summary>The number of weeks to offset.</summary>
         public int? Weeks { get; set; }
-        /// <summary>The years property</summary>
+        /// <summary>The number of years to offset.</summary>
         public int? Years { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicIndexOffset"/> and sets the default values.

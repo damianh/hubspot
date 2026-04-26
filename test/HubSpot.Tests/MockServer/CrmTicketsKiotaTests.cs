@@ -42,7 +42,7 @@ public class CrmTicketsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tickets.PostAsync(input);
-        var ticket = created!.Entity!;
+        var ticket = created!;
 
         ticket.ShouldNotBeNull();
         ticket.Id.ShouldNotBeNullOrEmpty();
@@ -67,7 +67,7 @@ public class CrmTicketsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tickets.PostAsync(input);
-        var ticketId = created!.Entity!.Id!;
+        var ticketId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Tickets[ticketId].GetAsync();
 
@@ -92,7 +92,7 @@ public class CrmTicketsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tickets.PostAsync(input);
-        var ticketId = created!.Entity!.Id!;
+        var ticketId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -129,7 +129,7 @@ public class CrmTicketsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Tickets.PostAsync(input);
-        var ticketId = created!.Entity!.Id!;
+        var ticketId = created!.Id!;
 
         await _client.Crm.V3.Objects.Tickets[ticketId].DeleteAsync();
 

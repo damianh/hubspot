@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.Paging Paging { get; set; }
 #endif
-        /// <summary>The results property</summary>
+        /// <summary>An array of ExternalUnifiedEvent objects, each representing an individual event with its associated details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.Events.V3.Models.ExternalUnifiedEvent>? Results { get; set; }

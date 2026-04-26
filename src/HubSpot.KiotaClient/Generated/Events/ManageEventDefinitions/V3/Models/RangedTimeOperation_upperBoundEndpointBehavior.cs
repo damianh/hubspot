@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum RangedTimeOperation_upperBoundEndpointBehavior
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "INCLUSIVE")]
-        #pragma warning disable CS1591
-        INCLUSIVE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "EXCLUSIVE")]
         #pragma warning disable CS1591
         EXCLUSIVE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INCLUSIVE")]
+        #pragma warning disable CS1591
+        INCLUSIVE,
         #pragma warning restore CS1591
     }
 }

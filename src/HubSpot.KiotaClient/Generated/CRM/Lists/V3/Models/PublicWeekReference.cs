@@ -14,17 +14,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dayOfWeek property</summary>
+        /// <summary>The day of the week (SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicWeekReference_dayOfWeek? DayOfWeek { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>The hour component of the week reference.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>The millisecond component of the week reference.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>The minute component of the week reference.</summary>
         public int? Minute { get; set; }
-        /// <summary>The referenceType property</summary>
+        /// <summary>Indicates the type of reference (WEEK).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicWeekReference_referenceType? ReferenceType { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>The second component of the week reference.</summary>
         public int? Second { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicWeekReference"/> and sets the default values.

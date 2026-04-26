@@ -59,10 +59,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         /// <summary>The inputFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.InputFieldDefinition>? InputFields { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicInputFieldDefinition>? InputFields { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.InputFieldDefinition> InputFields { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicInputFieldDefinition> InputFields { get; set; }
 #endif
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
                 { "functions", n => { Functions = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunctionIdentifier>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunctionIdentifier.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "inputFieldDependencies", n => { InputFieldDependencies = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition.PublicActionDefinition_inputFieldDependencies>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition.PublicActionDefinition_inputFieldDependencies.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "inputFields", n => { InputFields = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.InputFieldDefinition>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.InputFieldDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inputFields", n => { InputFields = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicInputFieldDefinition>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicInputFieldDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition_labels>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition_labels.CreateFromDiscriminatorValue); } },
                 { "objectRequestOptions", n => { ObjectRequestOptions = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicObjectRequestOptions>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicObjectRequestOptions.CreateFromDiscriminatorValue); } },
                 { "objectTypes", n => { ObjectTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -159,7 +159,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionFunctionIdentifier>("functions", Functions);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition.PublicActionDefinition_inputFieldDependencies>("inputFieldDependencies", InputFieldDependencies);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.InputFieldDefinition>("inputFields", InputFields);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicInputFieldDefinition>("inputFields", InputFields);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicActionDefinition_labels>("labels", Labels);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.PublicObjectRequestOptions>("objectRequestOptions", ObjectRequestOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("objectTypes", ObjectTypes);

@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "353C9FF18DFD95BEE6E3029256F098AA90D3BD15F96CD7DA61AD9D55F01FAA66E5788D8649D477C044E0E46BFC77A36D589631AF4E45DC65B10231691B3AAABF",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Public%20App%20Feature%20Flags%20V3/versions/195919",
+  "descriptionHash": "70185ADAE0D5BD128BF704F84C72C62B3119D518CE20ADA128ED5B86D62028B1A9D81A05892C8A3B8F776446A8BE8A21C423D55661AD0F458CFC7237B1CCF0C1",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22183/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMPublicAppFeatureFlagsV3V3Client",

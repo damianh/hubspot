@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Specifies the type of operation (ROLLING_PROPERTY_UPDATED).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicRollingPropertyUpdatedOperation_operationType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ROLLING_PROPERTY_UPDATED")]
         #pragma warning disable CS1591

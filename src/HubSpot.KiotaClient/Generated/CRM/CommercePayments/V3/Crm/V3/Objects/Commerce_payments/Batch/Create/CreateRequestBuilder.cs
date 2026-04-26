@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Crm.V3.Objects.Com
         {
         }
         /// <summary>
-        /// Create a batch of commerce payments
+        /// Create multiple commerce payment records in a single request, returning the details of each created payment, including their unique IDs.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Crm.V3.Objects.Com
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of commerce payments
+        /// Create multiple commerce payment records in a single request, returning the details of each created payment, including their unique IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

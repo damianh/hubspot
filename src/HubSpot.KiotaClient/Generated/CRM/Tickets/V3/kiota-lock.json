@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "5254C9577FFAA2CB11C757C561622450BD68A3335DD04A35F8F104CAAC473B480394B4C1349568A7F732AF63346423D382E47FB420C2179307A5C5C50A3AC9C1",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Tickets/versions/424",
+  "descriptionHash": "B18222F027394A0C375C6A64C63FCE873F08BA4E93FE53CEFC35DF22382E3D47F2E889BDB1D9FBC52ECF96AFE95D6590A280678953128CF23292B4554E98A5E9",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22189/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMTicketsV3Client",

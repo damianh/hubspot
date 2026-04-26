@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeUnassigned property</summary>
+        /// <summary>Indicates whether unassigned memberships should be included.</summary>
         public bool? IncludeUnassigned { get; set; }
-        /// <summary>The membershipTeamId property</summary>
+        /// <summary>The ID of the team associated with the membership.</summary>
         public int? MembershipTeamId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMembershipSettings"/> and sets the default values.

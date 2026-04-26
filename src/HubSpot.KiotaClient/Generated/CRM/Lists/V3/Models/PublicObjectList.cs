@@ -27,7 +27,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #endif
         /// <summary>The time when the list was deleted.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
-        /// <summary>The filterBranch property</summary>
+        /// <summary>Defines the filter criteria for the list, allowing for complex logical operations and nested filter branches to determine list membership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicObjectList.PublicObjectList_filterBranch? FilterBranch { get; set; }

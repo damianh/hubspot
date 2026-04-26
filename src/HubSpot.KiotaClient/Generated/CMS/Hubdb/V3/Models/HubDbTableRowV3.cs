@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>The publishedAt property</summary>
+        /// <summary>The timestamp indicating when the row was last published, in date-time format.</summary>
         public DateTimeOffset? PublishedAt { get; set; }
         /// <summary>Timestamp at which the row is updated last time</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

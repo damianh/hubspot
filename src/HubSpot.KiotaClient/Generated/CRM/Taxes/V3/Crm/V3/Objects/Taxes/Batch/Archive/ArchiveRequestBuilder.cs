@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Ar
         {
         }
         /// <summary>
-        /// Archive a batch of taxes by ID
+        /// Archive multiple taxes by their IDs in a single request.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Taxes.V3.Crm.V3.Objects.Taxes.Batch.Ar
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of taxes by ID
+        /// Archive multiple taxes by their IDs in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

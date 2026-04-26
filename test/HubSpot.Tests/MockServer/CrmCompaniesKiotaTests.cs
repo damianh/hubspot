@@ -42,7 +42,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(input);
-        var company = created!.Entity!;
+        var company = created!;
 
         company.ShouldNotBeNull();
         company.Id.ShouldNotBeNullOrEmpty();
@@ -67,7 +67,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Companies[companyId].GetAsync();
 
@@ -91,7 +91,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -127,7 +127,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Companies.PostAsync(input);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         await _client.Crm.V3.Objects.Companies[companyId].DeleteAsync();
 
@@ -240,8 +240,8 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         {
             Inputs =
             [
-                new SimplePublicObjectId { Id = company1!.Entity!.Id! },
-                new SimplePublicObjectId { Id = company2!.Entity!.Id! }
+                new SimplePublicObjectId { Id = company1!.Id! },
+                new SimplePublicObjectId { Id = company2!.Id! }
             ],
             Properties = ["name", "domain"]
         };
@@ -286,7 +286,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
             [
                 new SimplePublicObjectBatchInput
                 {
-                    Id = company1!.Entity!.Id!,
+                    Id = company1!.Id!,
                     Properties = new SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -298,7 +298,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
                 },
                 new SimplePublicObjectBatchInput
                 {
-                    Id = company2!.Entity!.Id!,
+                    Id = company2!.Id!,
                     Properties = new SimplePublicObjectBatchInput_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -340,7 +340,7 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
             [
                 new SimplePublicObjectBatchInputUpsert
                 {
-                    Id = existingCompany!.Entity!.Id!,
+                    Id = existingCompany!.Id!,
                     Properties = new SimplePublicObjectBatchInputUpsert_properties
                     {
                         AdditionalData = new Dictionary<string, object>
@@ -399,8 +399,8 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
         {
             Inputs =
             [
-                new SimplePublicObjectId { Id = company1!.Entity!.Id! },
-                new SimplePublicObjectId { Id = company2!.Entity!.Id! }
+                new SimplePublicObjectId { Id = company1!.Id! },
+                new SimplePublicObjectId { Id = company2!.Id! }
             ]
         };
 
@@ -408,12 +408,12 @@ public class CrmCompaniesKiotaTests : IAsyncLifetime
 
         await Should.ThrowAsync<Exception>(async () =>
         {
-            await _client.Crm.V3.Objects.Companies[company1.Entity.Id].GetAsync();
+            await _client.Crm.V3.Objects.Companies[company1.Id].GetAsync();
         });
 
         await Should.ThrowAsync<Exception>(async () =>
         {
-            await _client.Crm.V3.Objects.Companies[company2!.Entity!.Id!].GetAsync();
+            await _client.Crm.V3.Objects.Companies[company2!.Id!].GetAsync();
         });
     }
 

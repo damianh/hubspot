@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
         /// <summary>The timeZoneShift property</summary>
         public int? TimeZoneShift { get; set; }
         /// <summary>The value property</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.DateTimeObject"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
             {
                 { "dateOnly", n => { DateOnly = n.GetBoolValue(); } },
                 { "timeZoneShift", n => { TimeZoneShift = n.GetIntValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("dateOnly", DateOnly);
             writer.WriteIntValue("timeZoneShift", TimeZoneShift);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

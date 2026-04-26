@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fieldType property</summary>
+        /// <summary>The specific field type of the form field. Corresponds to property types (e.g., `select`, `radio`, `date`, etc)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldType { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string FieldType { get; set; }
 #endif
-        /// <summary>The isCustom property</summary>
+        /// <summary>Whether the form field is a custom field.</summary>
         public bool? IsCustom { get; set; }
-        /// <summary>The isRequired property</summary>
+        /// <summary>Whether the form field is mandatory.</summary>
         public bool? IsRequired { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The text label for the form field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name identifier for the form field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalOption> Options { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The data type of the form field accepts (e.g. `date`, `enumeration`,  etc)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

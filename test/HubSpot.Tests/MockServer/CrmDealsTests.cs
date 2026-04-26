@@ -41,7 +41,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var deal = created!.Entity!;
+        var deal = created!;
 
         deal.ShouldNotBeNull();
         deal.Id.ShouldNotBeNullOrEmpty();
@@ -69,7 +69,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var DealId = created!.Entity!.Id!;
+        var DealId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.ZeroThree[DealId].GetAsync();
 
@@ -96,7 +96,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var DealId = created!.Entity!.Id!;
+        var DealId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.ZeroThree[DealId].GetAsync(config =>
         {
@@ -128,7 +128,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var DealId = created!.Entity!.Id!;
+        var DealId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -166,7 +166,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var dealId = created!.Entity!.Id!;
+        var dealId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {
@@ -281,7 +281,7 @@ public class CrmDealsTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input);
-        var DealId = created!.Entity!.Id!;
+        var DealId = created!.Id!;
 
         await _client.Crm.V3.Objects.ZeroThree[DealId].DeleteAsync();
 
@@ -318,8 +318,8 @@ public class CrmDealsTests : IAsyncLifetime
         var created1 = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input1);
         var created2 = await _client.Crm.V3.Objects.ZeroThree.PostAsync(input2);
 
-        await _client.Crm.V3.Objects.ZeroThree[created1!.Entity!.Id!].DeleteAsync();
-        await _client.Crm.V3.Objects.ZeroThree[created2!.Entity!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.ZeroThree[created1!.Id!].DeleteAsync();
+        await _client.Crm.V3.Objects.ZeroThree[created2!.Id!].DeleteAsync();
 
         var archivedList = await _client.Crm.V3.Objects.ZeroThree.GetAsync(config =>
         {

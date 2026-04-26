@@ -7,29 +7,29 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ObjectTypePropertyCreate_numberDisplayHint
     {
-        [EnumMember(Value = "unformatted")]
-        #pragma warning disable CS1591
-        Unformatted,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "formatted")]
-        #pragma warning disable CS1591
-        Formatted,
-        #pragma warning restore CS1591
         [EnumMember(Value = "currency")]
         #pragma warning disable CS1591
         Currency,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "percentage")]
-        #pragma warning disable CS1591
-        Percentage,
         #pragma warning restore CS1591
         [EnumMember(Value = "duration")]
         #pragma warning disable CS1591
         Duration,
         #pragma warning restore CS1591
+        [EnumMember(Value = "formatted")]
+        #pragma warning disable CS1591
+        Formatted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "percentage")]
+        #pragma warning disable CS1591
+        Percentage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "probability")]
         #pragma warning disable CS1591
         Probability,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unformatted")]
+        #pragma warning disable CS1591
+        Unformatted,
         #pragma warning restore CS1591
     }
 }

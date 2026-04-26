@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparison property</summary>
+        /// <summary>Timestamp comparison options (BEFORE, AFTER)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comparison { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Comparison { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>Timestamp to be used in refine by criteria</summary>
         public long? Timestamp { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>type of refine by criteria (ABSOLUTE_COMPARATIVE)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy"/> and sets the default values.

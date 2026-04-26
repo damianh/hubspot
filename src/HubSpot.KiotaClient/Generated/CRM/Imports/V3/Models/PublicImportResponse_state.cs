@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicImportResponse_state
     {
-        [EnumMember(Value = "STARTED")]
+        [EnumMember(Value = "CANCELED")]
         #pragma warning disable CS1591
-        STARTED,
+        CANCELED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "PROCESSING")]
+        [EnumMember(Value = "DEFERRED")]
         #pragma warning disable CS1591
-        PROCESSING,
+        DEFERRED,
         #pragma warning restore CS1591
         [EnumMember(Value = "DONE")]
         #pragma warning disable CS1591
@@ -23,17 +23,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         #pragma warning disable CS1591
         FAILED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CANCELED")]
+        [EnumMember(Value = "PROCESSING")]
         #pragma warning disable CS1591
-        CANCELED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DEFERRED")]
-        #pragma warning disable CS1591
-        DEFERRED,
+        PROCESSING,
         #pragma warning restore CS1591
         [EnumMember(Value = "REVERTED")]
         #pragma warning disable CS1591
         REVERTED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STARTED")]
+        #pragma warning disable CS1591
+        STARTED,
         #pragma warning restore CS1591
     }
 }

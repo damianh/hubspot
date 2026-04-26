@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models
 #endif
         /// <summary>The date the pipeline stage was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The writePermissions property</summary>
+        /// <summary>Defines the level of write access for the pipeline stage, with possible values being CRM_PERMISSIONS_ENFORCEMENT, READ_ONLY, or INTERNAL_ONLY.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage_writePermissions? WritePermissions { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Models.PipelineStage"/> and sets the default values.

@@ -17,13 +17,13 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         /// <summary>The contactPropertiesLeadingToMatch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ContactPropertiesLeadingToMatch { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PreResolvedContact_contactPropertiesLeadingToMatch?>? ContactPropertiesLeadingToMatch { get; set; }
 #nullable restore
 #else
-        public List<string> ContactPropertiesLeadingToMatch { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PreResolvedContact_contactPropertiesLeadingToMatch?> ContactPropertiesLeadingToMatch { get; set; }
 #endif
         /// <summary>The contactVid property</summary>
-        public int? ContactVid { get; set; }
+        public long? ContactVid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PreResolvedContact"/> and sets the default values.
         /// </summary>
@@ -49,8 +49,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contactPropertiesLeadingToMatch", n => { ContactPropertiesLeadingToMatch = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "contactVid", n => { ContactVid = n.GetIntValue(); } },
+                { "contactPropertiesLeadingToMatch", n => { ContactPropertiesLeadingToMatch = n.GetCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PreResolvedContact_contactPropertiesLeadingToMatch>()?.AsList(); } },
+                { "contactVid", n => { ContactVid = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("contactPropertiesLeadingToMatch", ContactPropertiesLeadingToMatch);
-            writer.WriteIntValue("contactVid", ContactVid);
+            writer.WriteCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PreResolvedContact_contactPropertiesLeadingToMatch>("contactPropertiesLeadingToMatch", ContactPropertiesLeadingToMatch);
+            writer.WriteLongValue("contactVid", ContactVid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

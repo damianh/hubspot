@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #else
         public string UserEmail { get; set; }
 #endif
-        /// <summary>The ID of the user who performed the action.</summary>
+        /// <summary>The user&apos;s unique ID.</summary>
         public int? UserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models.ActingUser"/> and sets the default values.

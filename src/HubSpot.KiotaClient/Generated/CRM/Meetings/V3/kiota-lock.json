@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "BD7DA08E2B02EE751EDB6431B3D0F610EA3E6DD593F0A86A2974ED9EDC8AC10BB44F9B875BF9EABA29E5080A3B128416D8EE4D4AE80D1CE54FA45FAA3C8BF1DF",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Meetings/versions/424",
+  "descriptionHash": "F213C9133D9F9FA255F6A16541251972E39805298C50EC4FA265D703441AA8AF8F3C490E65C46C2BB2AB7A0050FDA943AD2CF87660480FA51E147C1ECDE9C005",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22170/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMMeetingsV3Client",

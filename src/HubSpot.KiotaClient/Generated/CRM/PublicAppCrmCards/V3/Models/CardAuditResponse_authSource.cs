@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 {
+    /// <summary>The source of authentication for the action, with possible values: APP, EXTERNAL, INTERNAL.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CardAuditResponse_authSource
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "INTERNAL")]
-        #pragma warning disable CS1591
-        INTERNAL,
-        #pragma warning restore CS1591
         [EnumMember(Value = "APP")]
         #pragma warning disable CS1591
         APP,
@@ -19,6 +14,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         [EnumMember(Value = "EXTERNAL")]
         #pragma warning disable CS1591
         EXTERNAL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INTERNAL")]
+        #pragma warning disable CS1591
+        INTERNAL,
         #pragma warning restore CS1591
     }
 }

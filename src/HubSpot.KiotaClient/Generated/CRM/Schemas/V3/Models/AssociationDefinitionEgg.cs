@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>ID of the target object type to link to.</summary>
+        /// <summary>ID of the target object type ID to link to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectTypeId { get; set; }

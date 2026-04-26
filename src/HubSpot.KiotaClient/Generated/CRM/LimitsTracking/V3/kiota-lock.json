@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "D43B0CD6C7EE070786C0D88D90522AFB33B03349B599AA5665F726C642FFB623737134408842994BBE6AC4C7637AF8A5948F2F970980BBD23F0F6DCD5EA3F43A",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Limits%20Tracking/versions/199890",
+  "descriptionHash": "B06A3E4001F2CB9607CB86A814795C58BD9725CB5C256B335FEFE9E73899C5B3655C0F457F4DAEA627914905D3A9F910AF0B21B60185A92F8DBBAC128B390508",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22166/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMLimitsTrackingV3Client",

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The templateId property</summary>
-        public int? TemplateId { get; set; }
-        /// <summary>The templateType property</summary>
+        /// <summary>The unique identifier for the specific saved template or previous import being referenced.</summary>
+        public long? TemplateId { get; set; }
+        /// <summary>The classification of what type of template this represents, and what is its origin or purpose.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.ImportTemplate_templateType? TemplateType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.ImportTemplate"/> and sets the default values.
@@ -43,7 +43,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "templateId", n => { TemplateId = n.GetIntValue(); } },
+                { "templateId", n => { TemplateId = n.GetLongValue(); } },
                 { "templateType", n => { TemplateType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.ImportTemplate_templateType>(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("templateId", TemplateId);
+            writer.WriteLongValue("templateId", TemplateId);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.ImportTemplate_templateType>("templateType", TemplateType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -3,22 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicListConversionInactivity_timeUnit
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DAY")]
         #pragma warning disable CS1591
         DAY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WEEK")]
-        #pragma warning disable CS1591
-        WEEK,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MONTH")]
         #pragma warning disable CS1591
         MONTH,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEEK")]
+        #pragma warning disable CS1591
+        WEEK,
         #pragma warning restore CS1591
     }
 }

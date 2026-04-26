@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The label associated with a record that is at its limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -22,8 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The objectId property</summary>
-        public int? ObjectId { get; set; }
+        /// <summary>The objectId of the object that is at its limit.</summary>
+        public long? ObjectId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.AtLimitRecordSample"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "objectId", n => { ObjectId = n.GetIntValue(); } },
+                { "objectId", n => { ObjectId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
-            writer.WriteIntValue("objectId", ObjectId);
+            writer.WriteLongValue("objectId", ObjectId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

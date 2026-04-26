@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversionType property</summary>
+        /// <summary>Specifies the type of conversion (INACTIVITY).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionInactivity_conversionType? ConversionType { get; set; }
-        /// <summary>The offset property</summary>
+        /// <summary>Value used to paginate through lists. The `offset` provided in the response can be used in the next request to fetch the next page of results. Defaults to `0` if no offset is provided.</summary>
         public int? Offset { get; set; }
-        /// <summary>The timeUnit property</summary>
+        /// <summary>The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionInactivity_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicListConversionInactivity"/> and sets the default values.

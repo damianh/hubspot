@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>type of refine by criteria (ABSOLUTE_RANGED)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicAbsoluteRangedTimestampRefineBy_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ABSOLUTE_RANGED")]
         #pragma warning disable CS1591

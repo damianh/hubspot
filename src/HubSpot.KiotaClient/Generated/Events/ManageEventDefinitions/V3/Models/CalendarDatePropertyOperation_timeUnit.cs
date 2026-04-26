@@ -12,10 +12,6 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         DAY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WEEK")]
-        #pragma warning disable CS1591
-        WEEK,
-        #pragma warning restore CS1591
         [EnumMember(Value = "MONTH")]
         #pragma warning disable CS1591
         MONTH,
@@ -23,6 +19,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         [EnumMember(Value = "QUARTER")]
         #pragma warning disable CS1591
         QUARTER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEEK")]
+        #pragma warning disable CS1591
+        WEEK,
         #pragma warning restore CS1591
         [EnumMember(Value = "YEAR")]
         #pragma warning disable CS1591

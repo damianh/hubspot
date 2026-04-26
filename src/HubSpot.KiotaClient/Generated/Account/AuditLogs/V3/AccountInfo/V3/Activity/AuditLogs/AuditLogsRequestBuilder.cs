@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/account-info/v3/activity/audit-logs{?actingUserId*,after*,limit*,occurredAfter*,occurredBefore*,sort*}", pathParameters)
+        public AuditLogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/account-info/v3/activity/audit-logs{?actingUserId*,after*,fillFinalTimestamp*,limit*,occurredAfter*,occurredBefore*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/account-info/v3/activity/audit-logs{?actingUserId*,after*,limit*,occurredAfter*,occurredBefore*,sort*}", rawUrl)
+        public AuditLogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/account-info/v3/activity/audit-logs{?actingUserId*,after*,fillFinalTimestamp*,limit*,occurredAfter*,occurredBefore*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,6 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of a user, for retrieving user-specific logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actingUserId")]
@@ -105,16 +104,15 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            [QueryParameter("fillFinalTimestamp")]
+            public bool? FillFinalTimestamp { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>A timestamp, as a starting point for retrieving activity logs. </summary>
             [QueryParameter("occurredAfter")]
             public DateTimeOffset? OccurredAfter { get; set; }
-            /// <summary>A timestamp, as an end point for retrieving activity logs. </summary>
             [QueryParameter("occurredBefore")]
             public DateTimeOffset? OccurredBefore { get; set; }
-            /// <summary>Set to `occurredAt` to order results by the time of the event. By default, events are ordered from oldest to newest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

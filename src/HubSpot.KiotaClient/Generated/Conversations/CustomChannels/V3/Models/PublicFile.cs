@@ -23,13 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public string FileId { get; set; }
 #endif
         /// <summary>The fileUsageType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FileUsageType { get; set; }
-#nullable restore
-#else
-        public string FileUsageType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile_fileUsageType? FileUsageType { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fileId", n => { FileId = n.GetStringValue(); } },
-                { "fileUsageType", n => { FileUsageType = n.GetStringValue(); } },
+                { "fileUsageType", n => { FileUsageType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile_fileUsageType>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile_type>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -89,7 +83,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fileId", FileId);
-            writer.WriteStringValue("fileUsageType", FileUsageType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile_fileUsageType>("fileUsageType", FileUsageType);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicFile_type>("type", Type);
             writer.WriteStringValue("url", Url);

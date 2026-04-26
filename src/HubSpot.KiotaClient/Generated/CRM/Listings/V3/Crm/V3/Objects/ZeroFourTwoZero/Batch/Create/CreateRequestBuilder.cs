@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Crm.V3.Objects.ZeroFourTwo
         {
         }
         /// <summary>
-        /// Create a batch of listings
+        /// Create multiple listings in a single request.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Crm.V3.Objects.ZeroFourTwo
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Listings.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of listings
+        /// Create multiple listings in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

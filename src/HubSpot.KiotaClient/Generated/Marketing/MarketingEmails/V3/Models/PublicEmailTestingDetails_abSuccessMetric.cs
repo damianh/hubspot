@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicEmailTestingDetails_abSuccessMetric
     {
-        [EnumMember(Value = "CLICKS_BY_OPENS")]
-        #pragma warning disable CS1591
-        CLICKS_BY_OPENS,
-        #pragma warning restore CS1591
         [EnumMember(Value = "CLICKS_BY_DELIVERED")]
         #pragma warning disable CS1591
         CLICKS_BY_DELIVERED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CLICKS_BY_OPENS")]
+        #pragma warning disable CS1591
+        CLICKS_BY_OPENS,
         #pragma warning restore CS1591
         [EnumMember(Value = "OPENS_BY_DELIVERED")]
         #pragma warning disable CS1591

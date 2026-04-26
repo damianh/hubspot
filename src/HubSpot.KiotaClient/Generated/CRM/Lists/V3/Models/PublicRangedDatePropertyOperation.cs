@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Specifies whether objects without a set value should be included in the operation.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The lowerBound property</summary>
-        public int? LowerBound { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>The lower limit of the date range for the operation.</summary>
+        public long? LowerBound { get; set; }
+        /// <summary>Specifies the type of operation (RANGED_DATE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedDatePropertyOperation_operationType? OperationType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied in the ranged date property operation (IS_BETWEEN, IS_NOT_BETWEEN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -28,10 +28,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The requiresTimeZoneConversion property</summary>
+        /// <summary>Indicates whether the operation requires conversion to a different time zone.</summary>
         public bool? RequiresTimeZoneConversion { get; set; }
-        /// <summary>The upperBound property</summary>
-        public int? UpperBound { get; set; }
+        /// <summary>The upper limit of the date range for the operation.</summary>
+        public long? UpperBound { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedDatePropertyOperation"/> and sets the default values.
         /// </summary>
@@ -59,11 +59,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "includeObjectsWithNoValueSet", n => { IncludeObjectsWithNoValueSet = n.GetBoolValue(); } },
-                { "lowerBound", n => { LowerBound = n.GetIntValue(); } },
+                { "lowerBound", n => { LowerBound = n.GetLongValue(); } },
                 { "operationType", n => { OperationType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedDatePropertyOperation_operationType>(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "requiresTimeZoneConversion", n => { RequiresTimeZoneConversion = n.GetBoolValue(); } },
-                { "upperBound", n => { UpperBound = n.GetIntValue(); } },
+                { "upperBound", n => { UpperBound = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -74,11 +74,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("includeObjectsWithNoValueSet", IncludeObjectsWithNoValueSet);
-            writer.WriteIntValue("lowerBound", LowerBound);
+            writer.WriteLongValue("lowerBound", LowerBound);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedDatePropertyOperation_operationType>("operationType", OperationType);
             writer.WriteStringValue("operator", Operator);
             writer.WriteBoolValue("requiresTimeZoneConversion", RequiresTimeZoneConversion);
-            writer.WriteIntValue("upperBound", UpperBound);
+            writer.WriteLongValue("upperBound", UpperBound);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
