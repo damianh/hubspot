@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensio
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.Views.ViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.crm.extensions.cardsDev.TwoZeroTwoSixZeroThree.item.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The id of the Legacy CRM Card</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.Item.WithCardItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.Item.WithCardItemRequestBuilder this[string position]
         {

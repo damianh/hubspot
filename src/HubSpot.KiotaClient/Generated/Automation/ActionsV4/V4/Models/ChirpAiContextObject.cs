@@ -62,6 +62,8 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
         public string InferenceId { get; set; }
 #endif
+        /// <summary>The isPrivate property</summary>
+        public bool? IsPrivate { get; set; }
         /// <summary>Additional metadata related to the context, represented as key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "featureId", n => { FeatureId = n.GetStringValue(); } },
                 { "inferenceId", n => { InferenceId = n.GetStringValue(); } },
+                { "isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_metadata>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_metadata.CreateFromDiscriminatorValue); } },
                 { "otelContextHolder", n => { OtelContextHolder = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_otelContextHolder>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_otelContextHolder.CreateFromDiscriminatorValue); } },
                 { "trajectoryId", n => { TrajectoryId = n.GetGuidValue(); } },
@@ -138,6 +141,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteStringValue("featureId", FeatureId);
             writer.WriteStringValue("inferenceId", InferenceId);
+            writer.WriteBoolValue("isPrivate", IsPrivate);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_metadata>("metadata", Metadata);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ChirpAiContextObject_otelContextHolder>("otelContextHolder", OtelContextHolder);
             writer.WriteGuidValue("trajectoryId", TrajectoryId);

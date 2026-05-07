@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
     public partial class SpendRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item.spend.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the spend item, required. Example: 491    </param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Spend.Item.WithSpendItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Spend.Item.WithSpendItemRequestBuilder this[long position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item.spend.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the spend item, required. Example: 491    </param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Spend.Item.WithSpendItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Spend.Item.WithSpendItemRequestBuilder this[string position]

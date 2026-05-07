@@ -43,6 +43,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
         #pragma warning disable CS1591
         CANCELLED_ABUSE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CONTACT_VIEW_PERMISSION")]
+        #pragma warning disable CS1591
+        CONTACT_VIEW_PERMISSION,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CORRUPT_INPUT")]
         #pragma warning disable CS1591
         CORRUPT_INPUT,

@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The UUID of the campaign, requiredExample: 9dbec438-53e2-4b28-8c0f-38f56574a6e8</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.WithCampaignGuItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.WithCampaignGuItemRequestBuilder this[string position]
         {
@@ -159,6 +159,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Filter campaigns by name. Optional.            </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -168,6 +169,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
+            /// <summary>A comma-separated list of properties to include in the response.    Unrecognized properties are ignored. Optional. Example:                         hs_name, hs_budget,hs_notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]
@@ -177,6 +179,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
+            /// <summary>The property to sort results by. Optional.    </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

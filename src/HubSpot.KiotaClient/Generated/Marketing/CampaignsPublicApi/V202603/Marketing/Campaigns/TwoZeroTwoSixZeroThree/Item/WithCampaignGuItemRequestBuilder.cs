@@ -194,6 +194,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCampaignGuItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>The end date for fetching asset metrics, in YYYY-MM-DD format.Optional. Example: 2000-01-27</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endDate")]
@@ -203,6 +204,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("endDate")]
             public string EndDate { get; set; }
 #endif
+            /// <summary>A comma-separated list of properties to include in the response.    Unrecognized properties are ignored. Optional. Example: hs_name,hs_budget, hs_notes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]
@@ -212,6 +214,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
+            /// <summary>The start date for fetching asset metrics, in YYYY-MM-DD format.   Optional. Example: 2000-01-20         </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startDate")]

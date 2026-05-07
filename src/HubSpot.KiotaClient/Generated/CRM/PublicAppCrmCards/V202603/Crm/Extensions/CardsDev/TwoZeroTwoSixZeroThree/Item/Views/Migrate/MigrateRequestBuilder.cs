@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensio
         public MigrateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/extensions/cards-dev/2026-03/{appId}/views/migrate", rawUrl)
         {
         }
+        /// <summary>
+        /// Swaps a Legacy CRM Card with an App Card in views. Reference the &quot;Migrate a legacy CRM card to an app card&quot; docs for more information
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models.CardMigrateViewsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensio
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models.CardMigrateViewsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models.CardMigrateViewsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Swaps a Legacy CRM Card with an App Card in views. Reference the &quot;Migrate a legacy CRM card to an app card&quot; docs for more information
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

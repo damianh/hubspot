@@ -58,14 +58,6 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #endif
         /// <summary>The messageDirection property</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection? MessageDirection { get; set; }
-        /// <summary>The preResolvedContacts property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts? PreResolvedContacts { get; set; }
-#nullable restore
-#else
-        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts PreResolvedContacts { get; set; }
-#endif
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,7 +124,6 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
                 { "integrationIdempotencyId", n => { IntegrationIdempotencyId = n.GetStringValue(); } },
                 { "integrationThreadId", n => { IntegrationThreadId = n.GetStringValue(); } },
                 { "messageDirection", n => { MessageDirection = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection>(); } },
-                { "preResolvedContacts", n => { PreResolvedContacts = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts.CreateFromDiscriminatorValue); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "richText", n => { RichText = n.GetStringValue(); } },
                 { "senders", n => { Senders = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -154,7 +145,6 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
             writer.WriteStringValue("integrationIdempotencyId", IntegrationIdempotencyId);
             writer.WriteStringValue("integrationThreadId", IntegrationThreadId);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection>("messageDirection", MessageDirection);
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts>("preResolvedContacts", PreResolvedContacts);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>("recipients", Recipients);
             writer.WriteStringValue("richText", RichText);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>("senders", Senders);

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
     public partial class WithAssetTypeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item.assets.item.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The id of asset to disassociate, requiredExample: 154543</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Assets.Item.Item.WithAssetItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Assets.Item.Item.WithAssetItemRequestBuilder this[string position]
         {
@@ -108,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>End date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to fetch the metrics associated with the assets for a specified period.  If not provided, no asset metrics will be fetched.Example: 2024-01-27</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endDate")]
@@ -127,6 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             [QueryParameter("limit")]
             public string Limit { get; set; }
 #endif
+            /// <summary>Start date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to fetch the metrics associated with the assets for a specified period.  If not provided, no asset metrics will be fetched.Example: 2023-01-20</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startDate")]

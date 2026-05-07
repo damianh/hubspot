@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Budget.Totals.TotalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item.budget.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the budget item, required. Example: 352                   </param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Budget.Item.WithBudgetItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Budget.Item.WithBudgetItemRequestBuilder this[long position]
         {
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marke
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.marketing.campaigns.TwoZeroTwoSixZeroThree.item.budget.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the budget item, required. Example: 352                   </param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Budget.Item.WithBudgetItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V202603.Marketing.Campaigns.TwoZeroTwoSixZeroThree.Item.Budget.Item.WithBudgetItemRequestBuilder this[string position]

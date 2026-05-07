@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models.PublicCampaignWithAssets_assets Assets { get; set; }
 #endif
-        /// <summary>The businessUnits property</summary>
+        /// <summary>An array of business units associated with the campaign, each represented by a PublicBusinessUnit object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Models.PublicBusinessUnit>? BusinessUnits { get; set; }
