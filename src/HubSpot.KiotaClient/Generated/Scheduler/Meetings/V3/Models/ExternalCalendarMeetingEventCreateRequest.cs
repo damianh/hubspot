@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateProperties Properties { get; set; }
 #endif
-        /// <summary>The timezone property</summary>
+        /// <summary>The timezone property that will be set on the meeting event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }

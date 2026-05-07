@@ -39,8 +39,18 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string CreatedUserId { get; set; }
 #endif
+        /// <summary>The name of the related currency property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CurrencyPropertyName { get; set; }
+#nullable restore
+#else
+        public string CurrencyPropertyName { get; set; }
+#endif
         /// <summary>Indicates the sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, or &quot;highly_sensitive&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dataSensitivity? DataSensitivity { get; set; }
+        /// <summary>The dateDisplayHint property</summary>
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dateDisplayHint? DateDisplayHint { get; set; }
         /// <summary>A summary of the property&apos;s purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +111,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Hint for how a number property is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted&quot;, &quot;formatted&quot;, &quot;currency&quot;, &quot;percentage&quot;, &quot;duration&quot;, or &quot;probability&quot;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_numberDisplayHint? NumberDisplayHint { get; set; }
         /// <summary>A list of valid options for the property. This field is required for enumerated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,7 +188,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "calculationFormula", n => { CalculationFormula = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdUserId", n => { CreatedUserId = n.GetStringValue(); } },
+                { "currencyPropertyName", n => { CurrencyPropertyName = n.GetStringValue(); } },
                 { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dataSensitivity>(); } },
+                { "dateDisplayHint", n => { DateDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dateDisplayHint>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayOrder", n => { DisplayOrder = n.GetIntValue(); } },
                 { "externalOptions", n => { ExternalOptions = n.GetBoolValue(); } },
@@ -189,6 +203,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "modificationMetadata", n => { ModificationMetadata = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "numberDisplayHint", n => { NumberDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_numberDisplayHint>(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
                 { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -211,7 +226,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("calculationFormula", CalculationFormula);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdUserId", CreatedUserId);
+            writer.WriteStringValue("currencyPropertyName", CurrencyPropertyName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dataSensitivity>("dataSensitivity", DataSensitivity);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_dateDisplayHint>("dateDisplayHint", DateDisplayHint);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("displayOrder", DisplayOrder);
             writer.WriteBoolValue("externalOptions", ExternalOptions);
@@ -224,6 +241,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteStringValue("label", Label);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata>("modificationMetadata", ModificationMetadata);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_numberDisplayHint>("numberDisplayHint", NumberDisplayHint);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);

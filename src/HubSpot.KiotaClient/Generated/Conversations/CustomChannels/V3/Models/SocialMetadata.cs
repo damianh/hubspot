@@ -39,13 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public string MediaTitle { get; set; }
 #endif
         /// <summary>The mediaType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaType { get; set; }
-#nullable restore
-#else
-        public string MediaType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.SocialMetadata_mediaType? MediaType { get; set; }
         /// <summary>The mediaUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mediaTitle", n => { MediaTitle = n.GetStringValue(); } },
-                { "mediaType", n => { MediaType = n.GetStringValue(); } },
+                { "mediaType", n => { MediaType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.SocialMetadata_mediaType>(); } },
                 { "mediaUrl", n => { MediaUrl = n.GetStringValue(); } },
                 { "mediaUrlString", n => { MediaUrlString = n.GetStringValue(); } },
                 { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
@@ -114,7 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("mediaTitle", MediaTitle);
-            writer.WriteStringValue("mediaType", MediaType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.SocialMetadata_mediaType>("mediaType", MediaType);
             writer.WriteStringValue("mediaUrl", MediaUrl);
             writer.WriteStringValue("mediaUrlString", MediaUrlString);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);

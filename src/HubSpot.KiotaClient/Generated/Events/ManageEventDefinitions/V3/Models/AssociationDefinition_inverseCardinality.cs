@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationDefinition_inverseCardinality
     {
-        [EnumMember(Value = "ONE_TO_ONE")]
-        #pragma warning disable CS1591
-        ONE_TO_ONE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ONE_TO_MANY")]
         #pragma warning disable CS1591
         ONE_TO_MANY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ONE_TO_ONE")]
+        #pragma warning disable CS1591
+        ONE_TO_ONE,
         #pragma warning restore CS1591
     }
 }

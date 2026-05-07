@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Up
         {
         }
         /// <summary>
-        /// Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.
+        /// Create or update records identified by a unique property value as specified by the `idProperty` query parameter.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicUpsertObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Crm.V3.Objects.Carts.Batch.Up
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicUpsertObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Carts.V3.Models.BatchResponseSimplePublicUpsertObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update records identified by a unique property value as specified by the `idProperty` query param. `idProperty` query param refers to a property whose values are unique for the object.
+        /// Create or update records identified by a unique property value as specified by the `idProperty` query parameter.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

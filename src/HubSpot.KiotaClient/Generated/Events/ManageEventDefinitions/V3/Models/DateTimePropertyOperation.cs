@@ -44,10 +44,18 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The requiresTimeZoneConversion property</summary>
         public bool? RequiresTimeZoneConversion { get; set; }
         /// <summary>The timestamp property</summary>
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation"/> and sets the default values.
         /// </summary>
@@ -80,8 +88,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation_propertyType>(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "requiresTimeZoneConversion", n => { RequiresTimeZoneConversion = n.GetBoolValue(); } },
-                { "timestamp", n => { Timestamp = n.GetIntValue(); } },
+                { "timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -97,8 +106,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.DateTimePropertyOperation_propertyType>("propertyType", PropertyType);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteBoolValue("requiresTimeZoneConversion", RequiresTimeZoneConversion);
-            writer.WriteIntValue("timestamp", Timestamp);
+            writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

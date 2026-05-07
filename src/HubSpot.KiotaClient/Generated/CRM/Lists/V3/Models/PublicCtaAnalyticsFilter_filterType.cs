@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>Indicates the type of filter being applied, which is (CTA).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicCtaAnalyticsFilter_filterType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CTA")]
         #pragma warning disable CS1591

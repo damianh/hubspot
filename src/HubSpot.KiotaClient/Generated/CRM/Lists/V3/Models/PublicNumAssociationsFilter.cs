@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associationCategory property</summary>
+        /// <summary>Defines the category of the association (HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED, WORK).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociationCategory { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string AssociationCategory { get; set; }
 #endif
-        /// <summary>The associationTypeId property</summary>
+        /// <summary>The ID representing the type of association being filtered.</summary>
         public int? AssociationTypeId { get; set; }
-        /// <summary>The coalescingRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the association filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumAssociationsFilter.PublicNumAssociationsFilter_coalescingRefineBy? CoalescingRefineBy { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumAssociationsFilter.PublicNumAssociationsFilter_coalescingRefineBy CoalescingRefineBy { get; set; }
 #endif
-        /// <summary>The filterType property</summary>
+        /// <summary>Indicates the type of filter being applied (NUM_ASSOCIATIONS).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumAssociationsFilter_filterType? FilterType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumAssociationsFilter"/> and sets the default values.

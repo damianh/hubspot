@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "48C04C3362F1E6E1314D30C7DA432DD9AD824C76F42A2005064E280ACE4BC57E7A9F7F0C5377F7EA58DDB855BAACC5ADA86A6EF2A10E1270AF81FEFA60D0DC3E",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Courses/versions/424",
+  "descriptionHash": "FB8D179AE7A2F4C4C0D5532B579DD497DE0BEBBB71AC75A17413418815B6591EF74ACDFE652A4D59C81AAF8DD4A59896797BBB5B5EC7B507F754CCA24A87FF72",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22152/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMCoursesV3Client",

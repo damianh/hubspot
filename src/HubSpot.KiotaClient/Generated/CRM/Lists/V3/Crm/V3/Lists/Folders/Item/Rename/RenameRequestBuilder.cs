@@ -33,9 +33,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.Ren
         public RenameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists/folders/{folderId}/rename{?newFolderName*}", rawUrl)
         {
         }
-        /// <summary>
-        /// Renames the given folderId with a new name.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderFetchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,9 +48,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.Ren
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderFetchResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFolderFetchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Renames the given folderId with a new name.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,13 +73,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.Ren
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Folders.Item.Rename.RenameRequestBuilder(rawUrl, RequestAdapter);
         }
-        /// <summary>
-        /// Renames the given folderId with a new name.
-        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        #pragma warning disable CS1591
         public partial class RenameRequestBuilderPutQueryParameters 
+        #pragma warning restore CS1591
         {
-            /// <summary>The new name of the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("newFolderName")]

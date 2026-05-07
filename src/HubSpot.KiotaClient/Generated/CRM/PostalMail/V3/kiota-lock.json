@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "77415E3803647CA925A7D7A9F2EB7781C56A3E784BE238089A0A6BDDDEF44E37B8F6C09CD4E76D9E034E184CCB3B7F038E9F311FACFB146D9623465280EF5766",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Postal%20Mail/versions/424",
+  "descriptionHash": "1C5C785F8D4227F9B89F6D695A6253A715E2CDFB4EB783763CD71B17D47F1012DF0A5C93DFAC5FBB62865516E9D60FCECF469DF6BF05A51222794ED5E203B6D1",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22178/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMPostalMailV3Client",

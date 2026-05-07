@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 {
+    /// <summary>
+    /// Defines the conditions that must be met for the execution rule to apply.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PublicExecutionTranslationRule_conditions : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

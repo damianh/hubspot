@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>Timestamp of when the request was processed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>Result object of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.BatchResponseMarketingEventPublicDefaultResponseV2_links? Links { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.BatchResponseMarketingEventPublicDefaultResponseV2_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>Timestamp of when the request was sent.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventPublicDefaultResponseV2> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>Timestamp of when the request started processing.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the response.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.BatchResponseMarketingEventPublicDefaultResponseV2_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.BatchResponseMarketingEventPublicDefaultResponseV2"/> and sets the default values.

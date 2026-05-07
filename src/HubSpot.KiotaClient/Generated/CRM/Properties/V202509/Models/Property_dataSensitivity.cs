@@ -7,6 +7,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_dataSensitivity
     {
+        [EnumMember(Value = "highly_sensitive")]
+        #pragma warning disable CS1591
+        Highly_sensitive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "non_sensitive")]
         #pragma warning disable CS1591
         Non_sensitive,
@@ -14,10 +18,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
         [EnumMember(Value = "sensitive")]
         #pragma warning disable CS1591
         Sensitive,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "highly_sensitive")]
-        #pragma warning disable CS1591
-        Highly_sensitive,
         #pragma warning restore CS1591
     }
 }

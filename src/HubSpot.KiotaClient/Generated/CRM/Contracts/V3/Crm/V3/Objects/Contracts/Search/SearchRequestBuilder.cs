@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
         public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/contracts/search", rawUrl)
         {
         }
+        /// <summary>
+        /// Execute a search query to find contracts based on defined filters, properties, and sorting options. This allows for retrieving specific contract records that match the search criteria.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.CollectionResponseWithTotalSimplePublicObject"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.CollectionResponseWithTotalSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.CollectionResponseWithTotalSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Execute a search query to find contracts based on defined filters, properties, and sorting options. This allows for retrieving specific contract records that match the search criteria.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

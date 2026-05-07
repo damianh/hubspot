@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnrollmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/enrollments", pathParameters)
+        public EnrollmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/enrollments?userId={userId}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnrollmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/enrollments", rawUrl)
+        public EnrollmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/automation/v4/sequences/enrollments?userId={userId}", rawUrl)
         {
         }
         /// <summary>
@@ -48,11 +48,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentLiteResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentLiteResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder.EnrollmentsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentLiteResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentLiteResponse> PostAsync(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder.EnrollmentsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -67,11 +67,11 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder.EnrollmentsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models.PublicSequenceEnrollmentRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder.EnrollmentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -91,11 +91,27 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequ
             return new global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Enroll a contact into a sequence using the specified user ID and sequence details.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class EnrollmentsRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("userId")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("userId")]
+            public string UserId { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnrollmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class EnrollmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Automation.V4.Sequences.Enrollments.EnrollmentsRequestBuilder.EnrollmentsRequestBuilderPostQueryParameters>
         {
         }
     }

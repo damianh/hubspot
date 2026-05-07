@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The operation property</summary>
+        /// <summary>Defines the operation to be performed on the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEventFilterMetadata.PublicEventFilterMetadata_operation? Operation { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicEventFilterMetadata.PublicEventFilterMetadata_operation Operation { get; set; }
 #endif
-        /// <summary>The property property</summary>
+        /// <summary>Specifies the property on which the operation is to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Property { get; set; }

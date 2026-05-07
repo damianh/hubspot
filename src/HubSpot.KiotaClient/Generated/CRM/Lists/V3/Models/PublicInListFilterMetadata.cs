@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The identifier for the filter metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The inListType property</summary>
+        /// <summary>Specifies the type of list for the filter (WORKFLOWS_ENROLLMENT, WORKFLOWS_ACTIVE, WORKFLOWS_GOAL, WORKFLOWS_COMPLETED, IMPORT, DATASET, DATASETS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InListType { get; set; }

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coalescingRefineBy property</summary>
+        /// <summary>Specifies the criteria for refining the filter by coalescing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_coalescingRefineBy? CoalescingRefineBy { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_coalescingRefineBy CoalescingRefineBy { get; set; }
 #endif
-        /// <summary>The eventTypeId property</summary>
+        /// <summary>The identifier for the type of event associated with the filter branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventTypeId { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filterBranches> FilterBranches { get; set; }
 #endif
-        /// <summary>The filterBranchOperator property</summary>
+        /// <summary>The logical operator used to combine filters within the branch (AND).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilterBranchOperator { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string FilterBranchOperator { get; set; }
 #endif
-        /// <summary>The filterBranchType property</summary>
+        /// <summary>The type of the filter branch (UNIFIED_EVENTS).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch_filterBranchType? FilterBranchType { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,8 +56,16 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filters> Filters { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the filter branch (HAS_COMPLETED, HAS_NOT_COMPLETED).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch_operator? Operator { get; set; }
+        /// <summary>The pruningRefineBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy? PruningRefineBy { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy PruningRefineBy { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch"/> and sets the default values.
         /// </summary>
@@ -91,6 +99,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 { "filterBranches", n => { FilterBranches = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filterBranches>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filterBranches.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filters>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filters.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch_operator>(); } },
+                { "pruningRefineBy", n => { PruningRefineBy = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy>(global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,6 +116,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch_filterBranchType>("filterBranchType", FilterBranchType);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_filters>("filters", Filters);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch_operator>("operator", Operator);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy>("pruningRefineBy", PruningRefineBy);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -1011,6 +1021,221 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 else if(PublicWebinarFilter != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicWebinarFilter>(null, PublicWebinarFilter);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PublicUnifiedEventsFilterBranch_pruningRefineBy : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy? PublicAbsoluteComparativeTimestampRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy PublicAbsoluteComparativeTimestampRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy? PublicAbsoluteRangedTimestampRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy PublicAbsoluteRangedTimestampRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy? PublicAllHistoryRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy PublicAllHistoryRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy? PublicNumOccurrencesRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy PublicNumOccurrencesRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation? PublicRangedTimeOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation PublicRangedTimeOperation { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy? PublicRelativeComparativeTimestampRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy PublicRelativeComparativeTimestampRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy? PublicRelativeRangedTimestampRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy PublicRelativeRangedTimestampRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy? PublicSetOccurrencesRefineBy { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy PublicSetOccurrencesRefineBy { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation? PublicTimePointOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation PublicTimePointOperation { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicUnifiedEventsFilterBranch.PublicUnifiedEventsFilterBranch_pruningRefineBy();
+                if("PublicAbsoluteComparativeTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicAbsoluteComparativeTimestampRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy();
+                }
+                else if("PublicAbsoluteRangedTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicAbsoluteRangedTimestampRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy();
+                }
+                else if("PublicAllHistoryRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicAllHistoryRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy();
+                }
+                else if("PublicNumOccurrencesRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicNumOccurrencesRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy();
+                }
+                else if("PublicRangedTimeOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicRangedTimeOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation();
+                }
+                else if("PublicRelativeComparativeTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicRelativeComparativeTimestampRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy();
+                }
+                else if("PublicRelativeRangedTimestampRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicRelativeRangedTimestampRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy();
+                }
+                else if("PublicSetOccurrencesRefineBy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicSetOccurrencesRefineBy = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy();
+                }
+                else if("PublicTimePointOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicTimePointOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PublicAbsoluteComparativeTimestampRefineBy != null)
+                {
+                    return PublicAbsoluteComparativeTimestampRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicAbsoluteRangedTimestampRefineBy != null)
+                {
+                    return PublicAbsoluteRangedTimestampRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicAllHistoryRefineBy != null)
+                {
+                    return PublicAllHistoryRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicNumOccurrencesRefineBy != null)
+                {
+                    return PublicNumOccurrencesRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicRangedTimeOperation != null)
+                {
+                    return PublicRangedTimeOperation.GetFieldDeserializers();
+                }
+                else if(PublicRelativeComparativeTimestampRefineBy != null)
+                {
+                    return PublicRelativeComparativeTimestampRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicRelativeRangedTimestampRefineBy != null)
+                {
+                    return PublicRelativeRangedTimestampRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicSetOccurrencesRefineBy != null)
+                {
+                    return PublicSetOccurrencesRefineBy.GetFieldDeserializers();
+                }
+                else if(PublicTimePointOperation != null)
+                {
+                    return PublicTimePointOperation.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(PublicAbsoluteComparativeTimestampRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteComparativeTimestampRefineBy>(null, PublicAbsoluteComparativeTimestampRefineBy);
+                }
+                else if(PublicAbsoluteRangedTimestampRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAbsoluteRangedTimestampRefineBy>(null, PublicAbsoluteRangedTimestampRefineBy);
+                }
+                else if(PublicAllHistoryRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy>(null, PublicAllHistoryRefineBy);
+                }
+                else if(PublicNumOccurrencesRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicNumOccurrencesRefineBy>(null, PublicNumOccurrencesRefineBy);
+                }
+                else if(PublicRangedTimeOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRangedTimeOperation>(null, PublicRangedTimeOperation);
+                }
+                else if(PublicRelativeComparativeTimestampRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeComparativeTimestampRefineBy>(null, PublicRelativeComparativeTimestampRefineBy);
+                }
+                else if(PublicRelativeRangedTimestampRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicRelativeRangedTimestampRefineBy>(null, PublicRelativeRangedTimestampRefineBy);
+                }
+                else if(PublicSetOccurrencesRefineBy != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicSetOccurrencesRefineBy>(null, PublicSetOccurrencesRefineBy);
+                }
+                else if(PublicTimePointOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicTimePointOperation>(null, PublicTimePointOperation);
                 }
             }
         }

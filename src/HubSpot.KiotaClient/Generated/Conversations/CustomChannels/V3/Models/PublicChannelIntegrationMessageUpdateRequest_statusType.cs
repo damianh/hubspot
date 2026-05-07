@@ -7,10 +7,6 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicChannelIntegrationMessageUpdateRequest_statusType
     {
-        [EnumMember(Value = "SENT")]
-        #pragma warning disable CS1591
-        SENT,
-        #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
         FAILED,
@@ -18,6 +14,10 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         [EnumMember(Value = "READ")]
         #pragma warning disable CS1591
         READ,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SENT")]
+        #pragma warning disable CS1591
+        SENT,
         #pragma warning restore CS1591
     }
 }

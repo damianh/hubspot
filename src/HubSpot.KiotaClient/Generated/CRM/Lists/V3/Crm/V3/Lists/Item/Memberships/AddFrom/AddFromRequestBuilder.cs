@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
     public partial class AddFromRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V3.crm.v3.lists.item.memberships.addFrom.item collection</summary>
-        /// <param name="position">The **ILS ID** of the *source list* to grab the records from, which are then added to the *destination list*.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships.AddFrom.Item.WithSourceListItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships.AddFrom.Item.WithSourceListItemRequestBuilder this[string position]
         {

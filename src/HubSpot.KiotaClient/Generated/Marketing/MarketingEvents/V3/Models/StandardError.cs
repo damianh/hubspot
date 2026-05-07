@@ -8,14 +8,14 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
     /// <summary>
-    /// Ye olde error
+    /// Represents a standard error response in the HubSpot API, providing detailed information about an error that occurred during an API request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardError : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The main category of the error.</summary>
+        /// <summary>The category of the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>Additional context-specific information related to the error.</summary>
+        /// <summary>The object that contains details of the errors</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.StandardError_context? Context { get; set; }
@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.ErrorDetail> Errors { get; set; }
 #endif
-        /// <summary>A unique ID for the error instance.</summary>
+        /// <summary>The ID of the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>URLs linking to documentation or resources associated with the error.</summary>
+        /// <summary>Results of the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.StandardError_links? Links { get; set; }
@@ -55,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.StandardError_links Links { get; set; }
 #endif
-        /// <summary>A human-readable string describing the error and possible remediation steps.</summary>
+        /// <summary>A human readable message describing the error along with remediation steps where appropriate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The HTTP status code associated with the error.</summary>
+        /// <summary>Status of the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -71,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>A more specific error category within each main category.</summary>
+        /// <summary>The Sub-category of the error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.StandardError_subCategory? SubCategory { get; set; }

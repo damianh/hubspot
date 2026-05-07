@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.Item.Complete.CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.marketing.v3.marketingEvents.events.item.item collection</summary>
-        /// <param name="position">The new subscriber state for the HubSpot contacts and the specified marketing event. For example: &apos;register&apos;, &apos;attend&apos; or &apos;cancel&apos;.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.Item.Item.WithSubscriberStateItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.MarketingEvents.Events.Item.Item.WithSubscriberStateItemRequestBuilder this[string position]
         {
@@ -229,7 +229,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithExternalEventItemRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>The accountId that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("externalAccountId")]
@@ -254,7 +253,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithExternalEventItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The accountId that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("externalAccountId")]
@@ -279,7 +277,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithExternalEventItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The accountId that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("externalAccountId")]

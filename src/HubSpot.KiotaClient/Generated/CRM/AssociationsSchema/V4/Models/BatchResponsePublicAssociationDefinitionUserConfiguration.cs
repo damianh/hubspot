@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The date and time when the batch operation was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>A collection of URLs linking to related documentation or resources associated with the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.BatchResponsePublicAssociationDefinitionUserConfiguration_links? Links { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.BatchResponsePublicAssociationDefinitionUserConfiguration_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The date and time when the batch operation was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationDefinitionUserConfiguration> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The date and time when the batch operation started.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the batch operation, which can be CANCELED, COMPLETE, PENDING, or PROCESSING.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.BatchResponsePublicAssociationDefinitionUserConfiguration_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.BatchResponsePublicAssociationDefinitionUserConfiguration"/> and sets the default values.

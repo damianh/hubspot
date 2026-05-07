@@ -3,18 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 {
+    /// <summary>The status of the AB test associated with this blog post, if applicableAvailable options: automated_loser_variant, automated_master, automated_variant, loser_variant, mab_master, mab_variant, master, variant</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum BlogPost_abStatus
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "master")]
+        [EnumMember(Value = "automated_loser_variant")]
         #pragma warning disable CS1591
-        Master,
+        Automated_loser_variant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "variant")]
+        [EnumMember(Value = "automated_master")]
         #pragma warning disable CS1591
-        Variant,
+        Automated_master,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "automated_variant")]
+        #pragma warning disable CS1591
+        Automated_variant,
         #pragma warning restore CS1591
         [EnumMember(Value = "loser_variant")]
         #pragma warning disable CS1591
@@ -28,17 +31,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
         #pragma warning disable CS1591
         Mab_variant,
         #pragma warning restore CS1591
-        [EnumMember(Value = "automated_master")]
+        [EnumMember(Value = "master")]
         #pragma warning disable CS1591
-        Automated_master,
+        Master,
         #pragma warning restore CS1591
-        [EnumMember(Value = "automated_variant")]
+        [EnumMember(Value = "variant")]
         #pragma warning disable CS1591
-        Automated_variant,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "automated_loser_variant")]
-        #pragma warning disable CS1591
-        Automated_loser_variant,
+        Variant,
         #pragma warning restore CS1591
     }
 }

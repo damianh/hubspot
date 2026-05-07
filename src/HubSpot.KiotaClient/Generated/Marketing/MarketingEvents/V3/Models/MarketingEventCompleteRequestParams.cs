@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The endDateTime property</summary>
+        /// <summary>The end date and time of the marketing event in ISO 8601 format</summary>
         public DateTimeOffset? EndDateTime { get; set; }
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The start date and time of the marketing event in ISO 8601 format</summary>
         public DateTimeOffset? StartDateTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.MarketingEventCompleteRequestParams"/> and sets the default values.

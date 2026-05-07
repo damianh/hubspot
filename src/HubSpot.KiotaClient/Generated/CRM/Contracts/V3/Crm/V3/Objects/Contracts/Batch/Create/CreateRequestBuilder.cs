@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
         {
         }
         /// <summary>
-        /// Create a batch of contracts
+        /// Create multiple contracts in a single request by providing the necessary properties and associations for each contract. This endpoint returns a batch response containing the details of each created contract.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Crm.V3.Objects.Contracts.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of contracts
+        /// Create multiple contracts in a single request by providing the necessary properties and associations for each contract. This endpoint returns a batch response containing the details of each created contract.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

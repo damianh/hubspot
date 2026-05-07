@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "35EE8BBF63A8CC454703C9EC0407C55304DE83F2FCDE05401A0BC79C6BEA218C029FAFF37D5DE129C076C1D390DB749036B55975DBDC8D7E20A40DB35B3591F3",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Business%20Units/Business%20Units/versions/140946",
+  "descriptionHash": "CB42E804568368178544C2044B849A4E53FF614B1BFA7300C66AF8C28AA977ADD222EB1E4ACB49DAC63CDB91F345417FC62C765F743A93B5611BA8B2CAB69614",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22122/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotBusinessUnitsBusinessUnitsV3Client",

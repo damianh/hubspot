@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         #pragma warning disable CS1591
         CELL,
         #pragma warning restore CS1591
-        [EnumMember(Value = "MAIN")]
-        #pragma warning disable CS1591
-        MAIN,
-        #pragma warning restore CS1591
         [EnumMember(Value = "HOME")]
         #pragma warning disable CS1591
         HOME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MAIN")]
+        #pragma warning disable CS1591
+        MAIN,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORK")]
         #pragma warning disable CS1591

@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V3.Models
         public long? CreatedAt { get; set; }
         /// <summary>Determines whether or not this path points to a folder.</summary>
         public bool? Folder { get; set; }
-        /// <summary>The hash property</summary>
+        /// <summary>A unique identifier for the file&apos;s content, used to verify data integrity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hash { get; set; }

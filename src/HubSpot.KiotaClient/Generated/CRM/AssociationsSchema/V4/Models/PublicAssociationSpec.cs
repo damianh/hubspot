@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category property</summary>
+        /// <summary>Specifies the category of the association, which can be HUBSPOT_DEFINED, INTEGRATOR_DEFINED, or USER_DEFINED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The typeId property</summary>
+        /// <summary>A unique integer identifier for the specific association type within its category.</summary>
         public int? TypeId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V4.Models.PublicAssociationSpec"/> and sets the default values.

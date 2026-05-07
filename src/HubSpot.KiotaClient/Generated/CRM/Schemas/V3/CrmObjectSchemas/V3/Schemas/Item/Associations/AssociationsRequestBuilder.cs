@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         {
         }
         /// <summary>
-        /// Defines a new association between the primary schema&apos;s object type and other object types.
+        /// Create a new association between the specified object type and another object type. This operation requires the definition of the association attributes, such as the primary and target object type IDs.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition"/></returns>
         /// <param name="body">Defines an association between two object types.</param>
@@ -67,7 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines a new association between the primary schema&apos;s object type and other object types.
+        /// Create a new association between the specified object type and another object type. This operation requires the definition of the association attributes, such as the primary and target object type IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines an association between two object types.</param>

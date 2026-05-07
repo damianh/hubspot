@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
     public partial class SmtpTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.marketing.v3.transactional.smtpTokens.item collection</summary>
-        /// <param name="position">Identifier generated when a token is created.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marketing.V3.Transactional.SmtpTokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marketing.V3.Transactional.SmtpTokens.Item.WithTokenItemRequestBuilder this[string position]
         {
@@ -140,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SmtpTokensRequestBuilderGetQueryParameters 
         {
-            /// <summary>Starting point to get the next set of results.</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -150,7 +150,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>A name for the campaign tied to the SMTP API token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("campaignName")]
@@ -160,7 +159,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
             [QueryParameter("campaignName")]
             public string CampaignName { get; set; }
 #endif
-            /// <summary>Identifier assigned to the campaign provided during the token creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailCampaignId")]
@@ -170,7 +168,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
             [QueryParameter("emailCampaignId")]
             public string EmailCampaignId { get; set; }
 #endif
-            /// <summary>Maximum number of tokens to return.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

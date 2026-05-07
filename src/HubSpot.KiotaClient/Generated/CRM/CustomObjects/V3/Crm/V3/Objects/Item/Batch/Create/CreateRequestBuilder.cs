@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
         {
         }
         /// <summary>
-        /// Create a batch of objects
+        /// Create multiple CRM objects in a single request by specifying the object type and providing the necessary properties and associations for each object.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of objects
+        /// Create multiple CRM objects in a single request by specifying the object type and providing the necessary properties and associations for each object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -46,6 +46,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>The propertyType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_propertyType? PropertyType { get; set; }
+        /// <summary>The renderSpec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RenderSpec { get; set; }
+#nullable restore
+#else
+        public string RenderSpec { get; set; }
+#endif
         /// <summary>The timeUnit property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_timeUnit? TimeUnit { get; set; }
         /// <summary>The timeUnitCount property</summary>
@@ -85,6 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_propertyType>(); } },
+                { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_timeUnit>(); } },
                 { "timeUnitCount", n => { TimeUnitCount = n.GetIntValue(); } },
                 { "useFiscalYear", n => { UseFiscalYear = n.GetBoolValue(); } },
@@ -104,6 +113,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_propertyType>("propertyType", PropertyType);
+            writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.CalendarDatePropertyOperation_timeUnit>("timeUnit", TimeUnit);
             writer.WriteIntValue("timeUnitCount", TimeUnitCount);
             writer.WriteBoolValue("useFiscalYear", UseFiscalYear);

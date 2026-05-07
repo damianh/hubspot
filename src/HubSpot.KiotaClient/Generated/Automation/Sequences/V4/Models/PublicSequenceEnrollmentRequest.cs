@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactId property</summary>
+        /// <summary>The unique identifier of the contact to be enrolled in the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string ContactId { get; set; }
 #endif
-        /// <summary>The senderAliasAddress property</summary>
+        /// <summary>The alias email address used by the sender when enrolling the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderAliasAddress { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string SenderAliasAddress { get; set; }
 #endif
-        /// <summary>The senderEmail property</summary>
+        /// <summary>The email address of the sender enrolling the contact in the sequence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderEmail { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V4.Models
 #else
         public string SenderEmail { get; set; }
 #endif
-        /// <summary>The sequenceId property</summary>
+        /// <summary>The unique identifier of the sequence in which the contact will be enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SequenceId { get; set; }

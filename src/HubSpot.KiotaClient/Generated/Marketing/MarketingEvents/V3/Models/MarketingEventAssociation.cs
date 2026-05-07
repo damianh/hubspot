@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The externalAccountId property</summary>
+        /// <summary>The account ID that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalAccountId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ExternalAccountId { get; set; }
 #endif
-        /// <summary>The externalEventId property</summary>
+        /// <summary>The event ID that is associated with this marketing event in the external event application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalEventId { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ExternalEventId { get; set; }
 #endif
-        /// <summary>The marketingEventId property</summary>
+        /// <summary>The internal ID of the marketing event in HubSpot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MarketingEventId { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string MarketingEventId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the marketing event in HubSpot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

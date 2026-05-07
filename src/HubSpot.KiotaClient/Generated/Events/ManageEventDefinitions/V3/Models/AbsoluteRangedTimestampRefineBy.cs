@@ -15,13 +15,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lowerTimestamp property</summary>
-        public int? LowerTimestamp { get; set; }
+        public long? LowerTimestamp { get; set; }
         /// <summary>The rangeType property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_rangeType? RangeType { get; set; }
         /// <summary>The type property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_type? Type { get; set; }
         /// <summary>The upperTimestamp property</summary>
-        public int? UpperTimestamp { get; set; }
+        public long? UpperTimestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy"/> and sets the default values.
         /// </summary>
@@ -48,10 +48,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lowerTimestamp", n => { LowerTimestamp = n.GetIntValue(); } },
+                { "lowerTimestamp", n => { LowerTimestamp = n.GetLongValue(); } },
                 { "rangeType", n => { RangeType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_rangeType>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_type>(); } },
-                { "upperTimestamp", n => { UpperTimestamp = n.GetIntValue(); } },
+                { "upperTimestamp", n => { UpperTimestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,10 +61,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("lowerTimestamp", LowerTimestamp);
+            writer.WriteLongValue("lowerTimestamp", LowerTimestamp);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_rangeType>("rangeType", RangeType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.AbsoluteRangedTimestampRefineBy_type>("type", Type);
-            writer.WriteIntValue("upperTimestamp", UpperTimestamp);
+            writer.WriteLongValue("upperTimestamp", UpperTimestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

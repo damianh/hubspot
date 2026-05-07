@@ -14,10 +14,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end property</summary>
-        public int? End { get; set; }
-        /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        /// <summary>The end time of the time range, represented as Unix time in milliseconds.</summary>
+        public long? End { get; set; }
+        /// <summary>The start time of the time range, represented as Unix time in milliseconds.</summary>
+        public long? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalTimeRange"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetIntValue(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "end", n => { End = n.GetLongValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("end", End);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("end", End);
+            writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Cr
         {
         }
         /// <summary>
-        /// Create a batch of users
+        /// Create multiple users in a single request by providing a batch of user properties and associations. This endpoint returns the created users along with their IDs.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Cr
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a batch of users
+        /// Create multiple users in a single request by providing a batch of user properties and associations. This endpoint returns the created users along with their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

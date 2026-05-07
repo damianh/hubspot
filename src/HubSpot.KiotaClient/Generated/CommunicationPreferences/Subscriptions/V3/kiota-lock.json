@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "F15C459777AB48C21FB2735843403BE692472A7E6A63E7C490D7CDC68CC37B9260C5F778AB51547B9194383A40DD063BC2E6B844A4206C6F87538E86D10EB4C6",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Communication%20Preferences/Subscriptions/versions/147906",
+  "descriptionHash": "951B0DA1F0A20E14EF3B52AAFAD6F48E3C037DDD262B46A47F1A6BFE88A63751732D14E55C694993670337131D985776148EFF2975311144639AD3AE3C594048",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22194/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCommunicationPreferencesSubscriptionsV3Client",

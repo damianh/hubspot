@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The communicationTypeId property</summary>
+        /// <summary>The ID of the communication consent form being recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommunicationTypeId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string CommunicationTypeId { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>The text label describing the consent being given.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The required property</summary>
+        /// <summary>Whether the consent checkbox is required.</summary>
         public bool? Required { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCommunicationConsentCheckbox"/> and sets the default values.

@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         {
         }
         /// <summary>
-        /// Retrieve the URL that is registered for [call recording](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Retrieve the current recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Update the recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Register an external URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Create new recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.RecordingSettingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the URL that is registered for [call recording](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Retrieve the current recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Update the URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Update the recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +133,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             return requestInfo;
         }
         /// <summary>
-        /// Register an external URL that HubSpot will use to retrieve [call recordings](https://developers.hubspot.com/docs/guides/apps/extensions/calling-extensions/recordings-and-transcriptions#register-your-app-s-endpoint-with-hubspot-using-the-calling-settings-api).
+        /// Create new recording settings for a specific app using the provided app ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

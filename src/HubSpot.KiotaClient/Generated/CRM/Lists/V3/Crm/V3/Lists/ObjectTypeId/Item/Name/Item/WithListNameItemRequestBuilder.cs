@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Ite
         {
         }
         /// <summary>
-        /// Fetch a single list by list name and object type.
+        /// Retrieve a specific list by its name and object type ID. This endpoint allows you to fetch details about a list, including its properties and optionally its filters. It is useful for accessing list information based on specific criteria.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFetchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFetchResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ListFetchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch a single list by list name and object type.
+        /// Retrieve a specific list by its name and object type ID. This endpoint allows you to fetch details about a list, including its properties and optionally its filters. It is useful for accessing list information based on specific criteria.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,12 +80,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Ite
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.ObjectTypeId.Item.Name.Item.WithListNameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetch a single list by list name and object type.
+        /// Retrieve a specific list by its name and object type ID. This endpoint allows you to fetch details about a list, including its properties and optionally its filters. It is useful for accessing list information based on specific criteria.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithListNameItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A flag indicating whether or not the response object list definition should include a filter branch definition. By default, object list definitions will not have their filter branch definitions included in the response.</summary>
+            /// <summary>A boolean indicating whether to include filter details in the response. Defaults to false.</summary>
             [QueryParameter("includeFilters")]
             public bool? IncludeFilters { get; set; }
         }

@@ -4,6 +4,7 @@ using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Setting
 using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.ObjectDefinitions;
 using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.OembedDomains;
 using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.Register;
+using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.VideoAssociationDefinition;
 using DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -40,6 +41,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Set
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.Register.RegisterRequestBuilder Register
         {
             get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.Register.RegisterRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The videoAssociationDefinition property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.VideoAssociationDefinition.VideoAssociationDefinitionRequestBuilder VideoAssociationDefinition
+        {
+            get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.VideoAssociationDefinition.VideoAssociationDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.SettingsRequestBuilder"/> and sets the default values.

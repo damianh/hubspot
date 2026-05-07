@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #endif
         /// <summary>The number of lists to include in the response. Defaults to `20` if no value is provided. The max `count` is `500`.</summary>
         public int? Count { get; set; }
-        /// <summary>The `listIds` that will be used to filter results by `listId`. If values are provided, then the response will only include results that have a `listId` in this array.If no value is provided, or if an empty list is provided, then the results will not be filtered by `listId`.</summary>
+        /// <summary>ILS list ids to be included in search results. If not specified, all lists matching other criteria will be included</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ListIds { get; set; }
@@ -33,9 +33,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<string> ListIds { get; set; }
 #endif
+        /// <summary>The objectTypeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ObjectTypeId { get; set; }
+#nullable restore
+#else
+        public string ObjectTypeId { get; set; }
+#endif
         /// <summary>Value used to paginate through lists. The `offset` provided in the response can be used in the next request to fetch the next page of results. Defaults to `0` if no offset is provided.</summary>
         public int? Offset { get; set; }
-        /// <summary>The `processingTypes` that will be used to filter results by `processingType`. If values are provided, then the response will only include results that have a `processingType` in this array.If no value is provided, or if an empty list is provided, then results will not be filtered by `processingType`.Valid `processingTypes` are: `MANUAL`, `SNAPSHOT`, or `DYNAMIC`.</summary>
+        /// <summary>List processing types to be included in search results. If not specified, all lists with all processing types will be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProcessingTypes { get; set; }
@@ -51,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Query { get; set; }
 #endif
-        /// <summary>The sort property</summary>
+        /// <summary>Sort field and order</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sort { get; set; }
@@ -87,6 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
                 { "additionalProperties", n => { AdditionalProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "listIds", n => { ListIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "offset", n => { Offset = n.GetIntValue(); } },
                 { "processingTypes", n => { ProcessingTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
@@ -103,6 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
             writer.WriteCollectionOfPrimitiveValues<string>("additionalProperties", AdditionalProperties);
             writer.WriteIntValue("count", Count);
             writer.WriteCollectionOfPrimitiveValues<string>("listIds", ListIds);
+            writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteIntValue("offset", Offset);
             writer.WriteCollectionOfPrimitiveValues<string>("processingTypes", ProcessingTypes);
             writer.WriteStringValue("query", Query);

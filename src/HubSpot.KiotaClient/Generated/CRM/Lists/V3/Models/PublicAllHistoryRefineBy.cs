@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>Type of refine by (ALL_HISTORY)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllHistoryRefineBy"/> and sets the default values.

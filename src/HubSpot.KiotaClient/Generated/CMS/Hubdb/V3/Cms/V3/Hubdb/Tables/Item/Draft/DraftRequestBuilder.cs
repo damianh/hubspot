@@ -157,10 +157,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Draf
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DraftRequestBuilderGetQueryParameters 
         {
-            /// <summary>Set this to `true` to return an archived table. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Set this to `true` to populate foreign ID values in the result.</summary>
             [QueryParameter("includeForeignIds")]
             public bool? IncludeForeignIds { get; set; }
             [QueryParameter("isGetLocalizedSchema")]
@@ -180,10 +179,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Cms.V3.Hubdb.Tables.Item.Draf
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DraftRequestBuilderPatchQueryParameters 
         {
-            /// <summary>Specifies whether to return archived tables. Defaults to `false`.</summary>
+            /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Set this to `true` to populate foreign ID values in the result.</summary>
             [QueryParameter("includeForeignIds")]
             public bool? IncludeForeignIds { get; set; }
             [QueryParameter("isGetLocalizedSchema")]

@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Search
         public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/users/search", rawUrl)
         {
         }
+        /// <summary>
+        /// Execute a search for users using defined filters, properties, and sorting options. The request must include a search query and can return up to 200 results per request.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.CollectionResponseWithTotalSimplePublicObject"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Search
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.CollectionResponseWithTotalSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.CollectionResponseWithTotalSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Execute a search for users using defined filters, properties, and sorting options. The request must include a search query and can return up to 200 results per request.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Describes a search request</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

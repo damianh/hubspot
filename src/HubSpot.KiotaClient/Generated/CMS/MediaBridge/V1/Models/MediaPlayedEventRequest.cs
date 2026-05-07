@@ -32,6 +32,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ExternalId { get; set; }
 #endif
+        /// <summary>The externalPlayContext property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedEventRequest_externalPlayContext? ExternalPlayContext { get; set; }
         /// <summary>The _hsenc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "contactId", n => { ContactId = n.GetLongValue(); } },
                 { "contactUtk", n => { ContactUtk = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "externalPlayContext", n => { ExternalPlayContext = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedEventRequest_externalPlayContext>(); } },
                 { "_hsenc", n => { Hsenc = n.GetStringValue(); } },
                 { "iframeUrl", n => { IframeUrl = n.GetStringValue(); } },
                 { "mediaBridgeId", n => { MediaBridgeId = n.GetLongValue(); } },
@@ -150,6 +153,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteLongValue("contactId", ContactId);
             writer.WriteStringValue("contactUtk", ContactUtk);
             writer.WriteStringValue("externalId", ExternalId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedEventRequest_externalPlayContext>("externalPlayContext", ExternalPlayContext);
             writer.WriteStringValue("_hsenc", Hsenc);
             writer.WriteStringValue("iframeUrl", IframeUrl);
             writer.WriteLongValue("mediaBridgeId", MediaBridgeId);

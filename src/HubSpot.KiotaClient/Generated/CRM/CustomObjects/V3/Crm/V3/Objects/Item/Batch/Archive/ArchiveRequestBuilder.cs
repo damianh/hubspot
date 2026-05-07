@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
         {
         }
         /// <summary>
-        /// Archive a batch of objects by ID
+        /// Archive a batch of objects by their unique IDs. This operation moves the specified objects to the recycling bin, effectively marking them as archived.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of objects by ID
+        /// Archive a batch of objects by their unique IDs. This operation moves the specified objects to the recycling bin, effectively marking them as archived.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

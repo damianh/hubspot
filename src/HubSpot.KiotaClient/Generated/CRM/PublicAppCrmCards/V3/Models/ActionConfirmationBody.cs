@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cancelButtonLabel property</summary>
+        /// <summary>The label for the button that cancels the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CancelButtonLabel { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string CancelButtonLabel { get; set; }
 #endif
-        /// <summary>The confirmButtonLabel property</summary>
+        /// <summary>The label for the button that confirms the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfirmButtonLabel { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string ConfirmButtonLabel { get; set; }
 #endif
-        /// <summary>The prompt property</summary>
+        /// <summary>The message displayed to the user to confirm the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prompt { get; set; }

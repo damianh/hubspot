@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attendanceDurationSeconds property</summary>
+        /// <summary>The number of seconds the participation lasted</summary>
         public int? AttendanceDurationSeconds { get; set; }
-        /// <summary>The attendancePercentage property</summary>
+        /// <summary>Percentage of the participation duration relative to the event duration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttendancePercentage { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string AttendancePercentage { get; set; }
 #endif
-        /// <summary>The attendanceState property</summary>
+        /// <summary>The state of the participation</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.ParticipationProperties_attendanceState? AttendanceState { get; set; }
-        /// <summary>The occurredAt property</summary>
+        /// <summary>Timestamp of when the participation occurred</summary>
         public long? OccurredAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.ParticipationProperties"/> and sets the default values.

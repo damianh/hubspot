@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Crm.V3.Objects.Fees.Batch.Upda
         {
         }
         /// <summary>
-        /// Update a batch of fees by internal ID, or unique property values
+        /// Update multiple fee records in a single request using their internal IDs or unique property values. This operation allows you to modify the properties of several fees simultaneously, streamlining the process of managing fee data in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Crm.V3.Objects.Fees.Batch.Upda
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Fees.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of fees by internal ID, or unique property values
+        /// Update multiple fee records in a single request using their internal IDs or unique property values. This operation allows you to modify the properties of several fees simultaneously, streamlining the process of managing fee data in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>Timestamp of the creation of the list</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdById property</summary>
+        /// <summary>The ID of the user who created the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedById { get; set; }
@@ -24,11 +24,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string CreatedById { get; set; }
 #endif
-        /// <summary>The deletedAt property</summary>
+        /// <summary>Timestamp of the deletion of the list</summary>
         public DateTimeOffset? DeletedAt { get; set; }
-        /// <summary>The filtersUpdatedAt property</summary>
+        /// <summary>Timestamp of the last update of the list filters</summary>
         public DateTimeOffset? FiltersUpdatedAt { get; set; }
-        /// <summary>The listId property</summary>
+        /// <summary>An internal ID of the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListId { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ListId { get; set; }
 #endif
-        /// <summary>The listVersion property</summary>
+        /// <summary>A number that represents a version of the list</summary>
         public int? ListVersion { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The internal ID of the object type of the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The processingStatus property</summary>
+        /// <summary>Represents the current processing status of the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingStatus { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ProcessingStatus { get; set; }
 #endif
-        /// <summary>The processingType property</summary>
+        /// <summary>Processing type of the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingType { get; set; }
@@ -70,11 +70,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string ProcessingType { get; set; }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>The size of the result list</summary>
         public long? Size { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>Timestamp of the last update of the list</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedById property</summary>
+        /// <summary>The ID of the user who last updated the list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedById { get; set; }

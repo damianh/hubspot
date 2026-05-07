@@ -20,6 +20,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         ANY,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ANY_INCLUDE_EMPTY")]
+        #pragma warning disable CS1591
+        ANY_INCLUDE_EMPTY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NONE")]
         #pragma warning disable CS1591
         NONE,
@@ -27,10 +31,6 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         [EnumMember(Value = "NONE_EXCLUDE_EMPTY")]
         #pragma warning disable CS1591
         NONE_EXCLUDE_EMPTY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ANY_INCLUDE_EMPTY")]
-        #pragma warning disable CS1591
-        ANY_INCLUDE_EMPTY,
         #pragma warning restore CS1591
     }
 }

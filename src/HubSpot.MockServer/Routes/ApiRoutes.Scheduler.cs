@@ -62,5 +62,24 @@ internal static partial class ApiRoutes
                 return Results.Ok(availability);
             });
         }
+
+        public static void RegisterSchedulerMeetingsV3KiotaApi(WebApplication app)
+        {
+            var linksGroup = app.MapGroup("/scheduler/v3/meetings/meeting-links")
+                .WithTags("Scheduler Meetings V3 (Kiota Path)");
+
+            linksGroup.MapGet("", async (SchedulerMeetingRepository repository) =>
+            {
+                var links = await repository.GetAllLinksAsync();
+                return Results.Ok(new { results = links });
+            });
+
+            linksGroup.MapPost("", async (JsonElement body, SchedulerMeetingRepository repository) =>
+            {
+                var link = await repository.CreateLinkAsync(body);
+                var id = link.TryGetProperty("id", out var idProp) ? idProp.GetString() : "";
+                return Results.Created($"/scheduler/v3/meetings/meeting-links/{id}", link);
+            });
+        }
     }
 }

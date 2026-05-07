@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ownerId property</summary>
+        /// <summary>The unique identifier of the owner receiving the deal split.</summary>
         public int? OwnerId { get; set; }
-        /// <summary>The percentage property</summary>
+        /// <summary>The portion of the deal assigned to the owner, expressed as a percentage. The total percentage for all splits in a deal must sum up to 1.0 (100%) and can have up to 8 decimal places.</summary>
         public double? Percentage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.PublicDealSplitInput"/> and sets the default values.

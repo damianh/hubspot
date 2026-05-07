@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Ar
         {
         }
         /// <summary>
-        /// Archive a batch of notes by ID
+        /// Archive multiple notes by their IDs in a single request. This operation moves the specified notes to the recycling bin, making them inaccessible from regular queries.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Ar
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of notes by ID
+        /// Archive multiple notes by their IDs in a single request. This operation moves the specified notes to the recycling bin, making them inaccessible from regular queries.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

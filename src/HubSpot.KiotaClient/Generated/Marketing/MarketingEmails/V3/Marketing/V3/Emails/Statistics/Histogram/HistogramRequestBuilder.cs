@@ -36,20 +36,20 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         /// <summary>
         /// Get aggregated statistics in intervals for a specified time span. Each interval contains aggregated statistics of the emails that were sent in that time.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticIntervalNoPaging"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticInterval"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticIntervalNoPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.HistogramRequestBuilder.HistogramRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticInterval?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.HistogramRequestBuilder.HistogramRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticIntervalNoPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.HistogramRequestBuilder.HistogramRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticInterval> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.HistogramRequestBuilder.HistogramRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticIntervalNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticIntervalNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticInterval>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.CollectionResponseWithTotalEmailStatisticInterval.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get aggregated statistics in intervals for a specified time span. Each interval contains aggregated statistics of the emails that were sent in that time.
@@ -85,7 +85,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistogramRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by email IDs. Only include statistics of emails with these IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailIds")]
@@ -95,7 +94,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("emailIds")]
             public long?[] EmailIds { get; set; }
 #endif
-            /// <summary>The end timestamp of the time span, in ISO8601 representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endTimestamp")]
@@ -105,7 +103,6 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("endTimestamp")]
             public string EndTimestamp { get; set; }
 #endif
-            /// <summary>The interval to aggregate statistics for.</summary>
             [Obsolete("This property is deprecated, use IntervalAsGetIntervalQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,10 +113,8 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("interval")]
             public string Interval { get; set; }
 #endif
-            /// <summary>The interval to aggregate statistics for.</summary>
             [QueryParameter("interval")]
             public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.GetIntervalQueryParameterType? IntervalAsGetIntervalQueryParameterType { get; set; }
-            /// <summary>The start timestamp of the time span, in ISO8601 representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startTimestamp")]

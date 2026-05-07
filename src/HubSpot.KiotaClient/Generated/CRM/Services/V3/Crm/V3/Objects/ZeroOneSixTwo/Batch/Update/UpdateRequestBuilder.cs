@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Services.V3.Crm.V3.Objects.ZeroOneSixT
         {
         }
         /// <summary>
-        /// Update a batch of services by internal ID, or unique property values
+        /// Update a batch of objects
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Services.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Services.V3.Crm.V3.Objects.ZeroOneSixT
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Services.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Services.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of services by internal ID, or unique property values
+        /// Update a batch of objects
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

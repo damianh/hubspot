@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The correctCname property</summary>
+        /// <summary>The expected CNAME record for the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrectCname { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models
 #else
         public string CorrectCname { get; set; }
 #endif
-        /// <summary>The created property</summary>
+        /// <summary>The date and time when the domain was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The actual domain or sub-domain. e.g. www.hubspot.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models
 #endif
         /// <summary>Whether the DNS for this domain is optimally configured for use with HubSpot.</summary>
         public bool? IsResolving { get; set; }
-        /// <summary>The isSslEnabled property</summary>
+        /// <summary>Indicates whether SSL is enabled for the domain.</summary>
         public bool? IsSslEnabled { get; set; }
-        /// <summary>The isSslOnly property</summary>
+        /// <summary>Indicates whether the domain is accessible only via SSL.</summary>
         public bool? IsSslOnly { get; set; }
         /// <summary>Whether the domain is used for CMS blog posts.</summary>
         public bool? IsUsedForBlogPost { get; set; }
@@ -56,19 +56,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models
         public bool? IsUsedForLandingPage { get; set; }
         /// <summary>Whether the domain is used for CMS site pages.</summary>
         public bool? IsUsedForSitePage { get; set; }
-        /// <summary>The manuallyMarkedAsResolving property</summary>
+        /// <summary>Indicates whether the domain has been manually marked as resolving.</summary>
         public bool? ManuallyMarkedAsResolving { get; set; }
-        /// <summary>The primaryBlogPost property</summary>
+        /// <summary>Indicates whether the domain is the primary domain for blog posts.</summary>
         public bool? PrimaryBlogPost { get; set; }
-        /// <summary>The primaryEmail property</summary>
+        /// <summary>Indicates whether the domain is the primary domain for email pages.</summary>
         public bool? PrimaryEmail { get; set; }
-        /// <summary>The primaryKnowledge property</summary>
+        /// <summary>Indicates whether the domain is the primary domain for knowledge pages.</summary>
         public bool? PrimaryKnowledge { get; set; }
-        /// <summary>The primaryLandingPage property</summary>
+        /// <summary>Indicates whether the domain is the primary domain for landing pages.</summary>
         public bool? PrimaryLandingPage { get; set; }
-        /// <summary>The primarySitePage property</summary>
+        /// <summary>Indicates whether the domain is the primary domain for site pages.</summary>
         public bool? PrimarySitePage { get; set; }
-        /// <summary>The secondaryToDomain property</summary>
+        /// <summary>Specifies the domain to which this domain is secondary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryToDomain { get; set; }
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models
 #else
         public string SecondaryToDomain { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The date and time when the domain was last updated.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Domains.V3.Models.Domain"/> and sets the default values.

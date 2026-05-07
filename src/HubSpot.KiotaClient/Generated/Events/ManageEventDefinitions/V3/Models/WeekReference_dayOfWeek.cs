@@ -8,25 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum WeekReference_dayOfWeek
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "MONDAY")]
-        #pragma warning disable CS1591
-        MONDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "TUESDAY")]
-        #pragma warning disable CS1591
-        TUESDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "WEDNESDAY")]
-        #pragma warning disable CS1591
-        WEDNESDAY,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "THURSDAY")]
-        #pragma warning disable CS1591
-        THURSDAY,
-        #pragma warning restore CS1591
         [EnumMember(Value = "FRIDAY")]
         #pragma warning disable CS1591
         FRIDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MONDAY")]
+        #pragma warning disable CS1591
+        MONDAY,
         #pragma warning restore CS1591
         [EnumMember(Value = "SATURDAY")]
         #pragma warning disable CS1591
@@ -35,6 +23,18 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         [EnumMember(Value = "SUNDAY")]
         #pragma warning disable CS1591
         SUNDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "THURSDAY")]
+        #pragma warning disable CS1591
+        THURSDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TUESDAY")]
+        #pragma warning disable CS1591
+        TUESDAY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEDNESDAY")]
+        #pragma warning disable CS1591
+        WEDNESDAY,
         #pragma warning restore CS1591
     }
 }

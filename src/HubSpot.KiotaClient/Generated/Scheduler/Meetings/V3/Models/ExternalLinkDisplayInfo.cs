@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar property</summary>
+        /// <summary>The URL of the user&apos;s custom uploaded avatar image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Avatar { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Avatar { get; set; }
 #endif
-        /// <summary>The companyAvatar property</summary>
+        /// <summary>The URL of the company&apos;s avatar image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyAvatar { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string CompanyAvatar { get; set; }
 #endif
-        /// <summary>The headline property</summary>
+        /// <summary>Deprecated field with no impact of link display info.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Headline { get; set; }
@@ -38,14 +38,8 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Headline { get; set; }
 #endif
-        /// <summary>The publicDisplayAvatarOption property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PublicDisplayAvatarOption { get; set; }
-#nullable restore
-#else
-        public string PublicDisplayAvatarOption { get; set; }
-#endif
+        /// <summary>Option for determining which avatar to display on scheduling page. Accepted values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,</summary>
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkDisplayInfo_publicDisplayAvatarOption? PublicDisplayAvatarOption { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkDisplayInfo"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "companyAvatar", n => { CompanyAvatar = n.GetStringValue(); } },
                 { "headline", n => { Headline = n.GetStringValue(); } },
-                { "publicDisplayAvatarOption", n => { PublicDisplayAvatarOption = n.GetStringValue(); } },
+                { "publicDisplayAvatarOption", n => { PublicDisplayAvatarOption = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkDisplayInfo_publicDisplayAvatarOption>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteStringValue("companyAvatar", CompanyAvatar);
             writer.WriteStringValue("headline", Headline);
-            writer.WriteStringValue("publicDisplayAvatarOption", PublicDisplayAvatarOption);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkDisplayInfo_publicDisplayAvatarOption>("publicDisplayAvatarOption", PublicDisplayAvatarOption);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

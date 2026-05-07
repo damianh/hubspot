@@ -51,7 +51,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Crm.V3.Objects.Goal_tar
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a goal target by its ID. You can specify what is returned using the `properties` query parameter.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Models.SimplePublicObjectWithAssociations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Crm.V3.Objects.Goal_tar
             return requestInfo;
         }
         /// <summary>
-        /// Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a goal target by its ID. You can specify what is returned using the `properties` query parameter.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Crm.V3.Objects.Goal_tar
         {
         }
         /// <summary>
-        /// Read an Object identified by `{goalTargetId}`. `{goalTargetId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param.  Control what is returned via the `properties` query param.
+        /// Retrieve a goal target by its ID. You can specify what is returned using the `properties` query parameter.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGoalTargetItemRequestBuilderGetQueryParameters 
@@ -183,7 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Crm.V3.Objects.Goal_tar
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]
@@ -228,7 +228,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.GoalTargets.V3.Crm.V3.Objects.Goal_tar
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGoalTargetItemRequestBuilderPatchQueryParameters 
         {
-            /// <summary>The name of a property whose values are unique for this object</summary>
+            /// <summary>The name of a property whose values are unique for this object type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idProperty")]

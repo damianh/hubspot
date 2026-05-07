@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 {
+    /// <summary>Type of data represented by this property.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ObjectToken_dataType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "BOOLEAN")]
         #pragma warning disable CS1591
@@ -36,13 +35,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         #pragma warning disable CS1591
         NUMERIC,
         #pragma warning restore CS1591
-        [EnumMember(Value = "STRING")]
-        #pragma warning disable CS1591
-        STRING,
-        #pragma warning restore CS1591
         [EnumMember(Value = "STATUS")]
         #pragma warning disable CS1591
         STATUS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STRING")]
+        #pragma warning disable CS1591
+        STRING,
         #pragma warning restore CS1591
     }
 }

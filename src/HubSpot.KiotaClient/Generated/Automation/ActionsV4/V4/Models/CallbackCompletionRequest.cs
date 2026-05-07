@@ -14,13 +14,37 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The outputFields property</summary>
+        /// <summary>Indicates the reason for the failure of a callback completion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FailureReasonType { get; set; }
+#nullable restore
+#else
+        public string FailureReasonType { get; set; }
+#endif
+        /// <summary>Contains the output fields associated with the callback, with each field represented as a key-value pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_outputFields? OutputFields { get; set; }
 #nullable restore
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_outputFields OutputFields { get; set; }
+#endif
+        /// <summary>Specifies the context in which the request is made, which can be one of several predefined contexts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext? RequestContext { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext RequestContext { get; set; }
+#endif
+        /// <summary>Holds the typed outputs related to the callback, structured as an object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_typedOutputs? TypedOutputs { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_typedOutputs TypedOutputs { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest"/> and sets the default values.
@@ -47,7 +71,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "failureReasonType", n => { FailureReasonType = n.GetStringValue(); } },
                 { "outputFields", n => { OutputFields = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_outputFields>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_outputFields.CreateFromDiscriminatorValue); } },
+                { "requestContext", n => { RequestContext = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext.CreateFromDiscriminatorValue); } },
+                { "typedOutputs", n => { TypedOutputs = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_typedOutputs>(global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_typedOutputs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,8 +84,146 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("failureReasonType", FailureReasonType);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_outputFields>("outputFields", OutputFields);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext>("requestContext", RequestContext);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest_typedOutputs>("typedOutputs", TypedOutputs);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CallbackCompletionRequest_requestContext : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext? AgentRequestContext { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext AgentRequestContext { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext? CopilotRequestContext { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext CopilotRequestContext { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext? StandaloneRequestContext { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext StandaloneRequestContext { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext? TestRequestContext { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext TestRequestContext { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext? WorkflowsRequestContext { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext WorkflowsRequestContext { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CallbackCompletionRequest.CallbackCompletionRequest_requestContext();
+                if("AgentRequestContext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.AgentRequestContext = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext();
+                }
+                else if("CopilotRequestContext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CopilotRequestContext = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext();
+                }
+                else if("StandaloneRequestContext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.StandaloneRequestContext = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext();
+                }
+                else if("TestRequestContext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.TestRequestContext = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext();
+                }
+                else if("WorkflowsRequestContext".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WorkflowsRequestContext = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AgentRequestContext != null)
+                {
+                    return AgentRequestContext.GetFieldDeserializers();
+                }
+                else if(CopilotRequestContext != null)
+                {
+                    return CopilotRequestContext.GetFieldDeserializers();
+                }
+                else if(StandaloneRequestContext != null)
+                {
+                    return StandaloneRequestContext.GetFieldDeserializers();
+                }
+                else if(TestRequestContext != null)
+                {
+                    return TestRequestContext.GetFieldDeserializers();
+                }
+                else if(WorkflowsRequestContext != null)
+                {
+                    return WorkflowsRequestContext.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(AgentRequestContext != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.AgentRequestContext>(null, AgentRequestContext);
+                }
+                else if(CopilotRequestContext != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.CopilotRequestContext>(null, CopilotRequestContext);
+                }
+                else if(StandaloneRequestContext != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StandaloneRequestContext>(null, StandaloneRequestContext);
+                }
+                else if(TestRequestContext != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.TestRequestContext>(null, TestRequestContext);
+                }
+                else if(WorkflowsRequestContext != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.WorkflowsRequestContext>(null, WorkflowsRequestContext);
+                }
+            }
         }
     }
 }

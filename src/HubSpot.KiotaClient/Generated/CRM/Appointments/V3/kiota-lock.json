@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "F3707A1F837B131EE17F2511B23370080DC9882C7D87EB119A51AAB737EF1BFC2E13BE14CBF35F1689D03240FE07619738EA13F6334FBAF4BF991F212922C1DB",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Appointments/versions/424",
+  "descriptionHash": "74920E38A88E04BAC39CA91DFE7318ADB59421E98EE84C152349A53D0EB3B3234A7BA93C5E6E54F1E74564C3FE0B4EA0B89AEB9957D496227DC019A6AC0DE519",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22138/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMAppointmentsV3Client",

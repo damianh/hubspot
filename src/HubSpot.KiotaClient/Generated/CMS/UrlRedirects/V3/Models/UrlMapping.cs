@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created property</summary>
+        /// <summary>The date and time when the URL mapping was initially created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>The destination URL, where the target URL should be redirected if it matches the `routePrefix`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models
 #else
         public string RoutePrefix { get; set; }
 #endif
-        /// <summary>The updated property</summary>
+        /// <summary>The date and time when the URL mapping was last modified.</summary>
         public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models.UrlMapping"/> and sets the default values.

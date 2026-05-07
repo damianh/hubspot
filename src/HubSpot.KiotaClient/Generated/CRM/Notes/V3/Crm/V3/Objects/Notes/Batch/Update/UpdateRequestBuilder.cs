@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Up
         {
         }
         /// <summary>
-        /// Update a batch of notes by internal ID, or unique property values
+        /// Update multiple notes using their internal IDs or unique property values. This operation allows you to modify the properties of several notes in a single request, streamlining the process of managing note data in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Crm.V3.Objects.Notes.Batch.Up
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of notes by internal ID, or unique property values
+        /// Update multiple notes using their internal IDs or unique property values. This operation allows you to modify the properties of several notes in a single request, streamlining the process of managing note data in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

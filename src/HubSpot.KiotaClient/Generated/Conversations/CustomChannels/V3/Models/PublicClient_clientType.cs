@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         #pragma warning disable CS1591
         HUBSPOT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "SYSTEM")]
-        #pragma warning disable CS1591
-        SYSTEM,
-        #pragma warning restore CS1591
         [EnumMember(Value = "INTEGRATION")]
         #pragma warning disable CS1591
         INTEGRATION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SYSTEM")]
+        #pragma warning disable CS1591
+        SYSTEM,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591

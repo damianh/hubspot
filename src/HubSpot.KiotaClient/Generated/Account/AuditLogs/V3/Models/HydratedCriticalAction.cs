@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The approximate country code.</summary>
+        /// <summary>The approximate country code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #endif
         /// <summary>The time the activity took place.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique ID of the activity.</summary>
+        /// <summary>The activity&apos;s unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #else
         public string IpAddress { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The approximate location where the activity took place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -73,7 +73,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The approximate region code.</summary>
+        /// <summary>The approximate region code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionCode { get; set; }
@@ -82,13 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         public string RegionCode { get; set; }
 #endif
         /// <summary>The type of activity.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models.HydratedCriticalAction_type? Type { get; set; }
         /// <summary>The user&apos;s unique ID.</summary>
         public int? UserId { get; set; }
         /// <summary>
@@ -125,7 +119,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "regionCode", n => { RegionCode = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models.HydratedCriticalAction_type>(); } },
                 { "userId", n => { UserId = n.GetIntValue(); } },
             };
         }
@@ -145,7 +139,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("regionCode", RegionCode);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models.HydratedCriticalAction_type>("type", Type);
             writer.WriteIntValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

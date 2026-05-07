@@ -7,14 +7,6 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FileUpdateInput_access
     {
-        [EnumMember(Value = "PUBLIC_INDEXABLE")]
-        #pragma warning disable CS1591
-        PUBLIC_INDEXABLE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "PUBLIC_NOT_INDEXABLE")]
-        #pragma warning disable CS1591
-        PUBLIC_NOT_INDEXABLE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "HIDDEN_INDEXABLE")]
         #pragma warning disable CS1591
         HIDDEN_INDEXABLE,
@@ -27,13 +19,21 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Models
         #pragma warning disable CS1591
         HIDDEN_PRIVATE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "HIDDEN_SENSITIVE")]
+        #pragma warning disable CS1591
+        HIDDEN_SENSITIVE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PRIVATE")]
         #pragma warning disable CS1591
         PRIVATE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "HIDDEN_SENSITIVE")]
+        [EnumMember(Value = "PUBLIC_INDEXABLE")]
         #pragma warning disable CS1591
-        HIDDEN_SENSITIVE,
+        PUBLIC_INDEXABLE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PUBLIC_NOT_INDEXABLE")]
+        #pragma warning disable CS1591
+        PUBLIC_NOT_INDEXABLE,
         #pragma warning restore CS1591
         [EnumMember(Value = "SENSITIVE")]
         #pragma warning disable CS1591

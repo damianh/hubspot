@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "8D9D900126BF69B6E83A4D001A70752C496D92CF5C75870724F8B6748B603FA2B3F5EEF60C80AD36429C1ED9672B3E5B208F6B5962918EC8F6A4212DAB1AB573",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CMS/Media%20Bridge/versions/787",
+  "descriptionHash": "A39FE353E98773BEA57CC28F1C6BB98D7D59B5C826ECAC47D0C6017E7286DC123B7B1D4891B2B60819C11B54F3759FA9341FF4D6D8BA06506818551AB8A4284E",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22129/version/1",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCMSMediaBridgeV1Client",

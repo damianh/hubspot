@@ -170,7 +170,7 @@ internal static class CmsCommand
             try
             {
                 var client = new HubSpotCMSDomainsV3Client(cli.Adapter);
-                var result = await client.Cms.V3.Domains.EmptyPathSegment.GetAsync(q =>
+                var result = await client.Cms.V3.Domains.GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
                     q.QueryParameters.Archived = archived;
@@ -271,7 +271,7 @@ internal static class CmsCommand
             try
             {
                 var client = new HubSpotCMSUrlRedirectsV3Client(cli.Adapter);
-                var result = await client.Cms.V3.UrlRedirects.EmptyPathSegment.GetAsync(q =>
+                var result = await client.Cms.UrlRedirects.V3.GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
                     q.QueryParameters.Archived = archived;
@@ -379,7 +379,7 @@ internal static class CmsCommand
                 };
 
                 var client = new HubSpotCMSUrlRedirectsV3Client(cli.Adapter);
-                var result = await client.Cms.V3.UrlRedirects.EmptyPathSegment.PostAsync(body, cancellationToken: cancellationToken);
+                var result = await client.Cms.UrlRedirects.V3.PostAsync(body, cancellationToken: cancellationToken);
 
                 if (result is null)
                 {

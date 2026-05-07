@@ -59,45 +59,45 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
         {
         }
         /// <summary>
-        /// Read a page of subscriptions. Control what is returned via the `properties` query param.
+        /// Retrieve a list of subscription objects, with options to filter by properties, associations, and archived status.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociations"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociations?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Objects.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Objects.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociations> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Objects.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Objects.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a subscription with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard subscriptions is provided.
+        /// Create a new subscription object with specified properties and optional associations.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CreatedResponseSimplePublicObject"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject"/></returns>
         /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CreatedResponseSimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CreatedResponseSimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CreatedResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.CreatedResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read a page of subscriptions. Control what is returned via the `properties` query param.
+        /// Retrieve a list of subscription objects, with options to filter by properties, associations, and archived status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return requestInfo;
         }
         /// <summary>
-        /// Create a subscription with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard subscriptions is provided.
+        /// Create a new subscription object with specified properties and optional associations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
@@ -147,7 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             return new global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Objects.Subscriptions.SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read a page of subscriptions. Control what is returned via the `properties` query param.
+        /// Retrieve a list of subscription objects, with options to filter by properties, associations, and archived status.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 
@@ -188,7 +188,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Crm.V3.Object
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
-            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of subscriptions that can be read by a single request.</summary>
+            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of objects that can be read by a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("propertiesWithHistory")]

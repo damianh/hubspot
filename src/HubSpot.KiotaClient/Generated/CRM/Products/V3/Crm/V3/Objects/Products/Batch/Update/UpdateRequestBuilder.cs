@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
         {
         }
         /// <summary>
-        /// Update a batch of products by internal ID, or unique property values
+        /// Update multiple products in a single request using their internal IDs or unique property values. This batch operation allows for efficient modifications of product records by specifying the properties to be updated. Ensure that the provided property values are correct, as read-only and non-existent properties will result in an error.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V3.Crm.V3.Objects.Products.Ba
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Products.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of products by internal ID, or unique property values
+        /// Update multiple products in a single request using their internal IDs or unique property values. This batch operation allows for efficient modifications of product records by specifying the properties to be updated. Ensure that the provided property values are correct, as read-only and non-existent properties will result in an error.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

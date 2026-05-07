@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithContactItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/contacts/{contactId}{?archived*,associations*,properties*,propertiesWithHistory*}", pathParameters)
+        public WithContactItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/contacts/{contactId}{?archived*,associations*,idProperty*,properties*,propertiesWithHistory*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/contacts/{contactId}{?archived*,associations*,properties*,propertiesWithHistory*}", rawUrl)
+        public WithContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/objects/contacts/{contactId}{?archived*,associations*,idProperty*,properties*,propertiesWithHistory*}", rawUrl)
         {
         }
         /// <summary>
@@ -77,11 +77,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObject?> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObject?> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Item.WithContactItemRequestBuilder.WithContactItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObject> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObject> PatchAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Item.WithContactItemRequestBuilder.WithContactItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -133,11 +133,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Item.WithContactItemRequestBuilder.WithContactItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Models.SimplePublicObjectInput body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Item.WithContactItemRequestBuilder.WithContactItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -183,6 +183,16 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
             [QueryParameter("associations")]
             public string[] Associations { get; set; }
 #endif
+            /// <summary>The name of a property whose values are unique for this object type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idProperty")]
+            public string? IdProperty { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idProperty")]
+            public string IdProperty { get; set; }
+#endif
             /// <summary>A comma separated list of the properties to be returned in the response. If any of the specified properties are not present on the requested object(s), they will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,11 +223,28 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.It
         {
         }
         /// <summary>
+        /// Update an existing contact, identified by ID or email/unique property value. To identify a contact by ID, include the ID in the request URL path. To identify a contact by their email or other unique property, include the email/property value in the request URL path, and add the `idProperty` query parameter (`/crm/v3/objects/contacts/jon@website.com?idProperty=email`). Provided property values will be overwritten. Read-only and non-existent properties will result in an error. Properties values can be cleared by passing an empty string.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithContactItemRequestBuilderPatchQueryParameters 
+        {
+            /// <summary>The name of a property whose values are unique for this object type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idProperty")]
+            public string? IdProperty { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idProperty")]
+            public string IdProperty { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithContactItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithContactItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V3.Crm.V3.Objects.Contacts.Item.WithContactItemRequestBuilder.WithContactItemRequestBuilderPatchQueryParameters>
         {
         }
     }

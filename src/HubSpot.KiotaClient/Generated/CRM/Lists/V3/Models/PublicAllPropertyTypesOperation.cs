@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Indication of whether objects with no value should be included</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>Type of operation (ALL_PROPERTY)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAllPropertyTypesOperation_operationType? OperationType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Operator to be applied (IS_KNOWN, IS_UNKNOWN)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }

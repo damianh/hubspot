@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
         {
         }
         /// <summary>
-        /// Update a batch of partner services by internal ID, or unique property values
+        /// Update multiple partner services using their internal IDs or unique property values. This operation allows for batch processing of updates, ensuring efficient synchronization of service data between HubSpot and other systems.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Crm.V3.Objects.Part
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PartnerServices.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of partner services by internal ID, or unique property values
+        /// Update multiple partner services using their internal IDs or unique property values. This operation allows for batch processing of updates, ensuring efficient synchronization of service data between HubSpot and other systems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

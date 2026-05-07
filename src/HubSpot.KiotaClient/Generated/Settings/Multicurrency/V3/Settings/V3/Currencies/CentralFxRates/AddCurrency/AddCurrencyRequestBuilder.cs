@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
         public AddCurrencyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings/v3/currencies/central-fx-rates/add-currency", rawUrl)
         {
         }
+        /// <summary>
+        /// Create a new currency with central exchange rates in the portal. Unsupported currencies cannot be added here.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.ExchangeRate.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new currency with central exchange rates in the portal. Unsupported currencies cannot be added here.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

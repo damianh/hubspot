@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The unique ID of the activity.</summary>
+        /// <summary>The login activity&apos;s unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

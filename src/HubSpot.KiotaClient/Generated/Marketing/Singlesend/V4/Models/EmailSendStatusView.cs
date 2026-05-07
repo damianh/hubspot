@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V4.Models.EventIdView EventId { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>A human readable message describing the error along with remediation steps where appropriate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }

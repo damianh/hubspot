@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The engagementId property</summary>
+        /// <summary>The unique identifier for the engagement associated with the call recording.</summary>
         public long? EngagementId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models.MarkRecordingAsReadyRequest"/> and sets the default values.

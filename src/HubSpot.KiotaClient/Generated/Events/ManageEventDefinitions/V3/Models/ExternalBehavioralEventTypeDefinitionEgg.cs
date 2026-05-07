@@ -14,6 +14,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customMatchingId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingRequest? CustomMatchingId { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingRequest CustomMatchingId { get; set; }
+#endif
         /// <summary>A description of the event that will be shown as help text in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +30,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The includeDefaultProperties property</summary>
+        public bool? IncludeDefaultProperties { get; set; }
         /// <summary>Human readable label for the event. Used in HubSpot UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +89,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customMatchingId", n => { CustomMatchingId = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingRequest>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingRequest.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "includeDefaultProperties", n => { IncludeDefaultProperties = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "primaryObject", n => { PrimaryObject = n.GetStringValue(); } },
@@ -93,7 +105,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalObjectResolutionMappingRequest>("customMatchingId", CustomMatchingId);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("includeDefaultProperties", IncludeDefaultProperties);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primaryObject", PrimaryObject);

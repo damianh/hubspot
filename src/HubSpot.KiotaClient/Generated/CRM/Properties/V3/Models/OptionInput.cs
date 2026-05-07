@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models
 #endif
         /// <summary>Options are shown in order starting with the lowest positive integer value. Values of -1 will cause the option to be displayed after any positive values.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>If true, the option will not be shown in forms, bots, or meeting scheduling pages. Supported for contact, company, ticket, and custom object enumeration properties.</summary>
+        /// <summary>Hidden options won&apos;t be shown in HubSpot.</summary>
         public bool? Hidden { get; set; }
         /// <summary>A human-readable option label that will be shown in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

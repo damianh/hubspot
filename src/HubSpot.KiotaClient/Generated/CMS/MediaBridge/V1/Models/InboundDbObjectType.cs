@@ -112,16 +112,18 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
+        /// <summary>The objectTypeIdString property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ObjectTypeIdString { get; set; }
+#nullable restore
+#else
+        public string ObjectTypeIdString { get; set; }
+#endif
         /// <summary>The ownerPortalId property</summary>
         public int? OwnerPortalId { get; set; }
         /// <summary>The permissioningType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PermissioningType { get; set; }
-#nullable restore
-#else
-        public string PermissioningType { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_permissioningType? PermissioningType { get; set; }
         /// <summary>The pipelineCloseDatePropertyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,21 +215,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public string SingularForm { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status? Status { get; set; }
         /// <summary>The visibility property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Visibility { get; set; }
-#nullable restore
-#else
-        public string Visibility { get; set; }
-#endif
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility? Visibility { get; set; }
         /// <summary>The writeScopeName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,8 +273,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "metaTypeId", n => { MetaTypeId = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
+                { "objectTypeIdString", n => { ObjectTypeIdString = n.GetStringValue(); } },
                 { "ownerPortalId", n => { OwnerPortalId = n.GetIntValue(); } },
-                { "permissioningType", n => { PermissioningType = n.GetStringValue(); } },
+                { "permissioningType", n => { PermissioningType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_permissioningType>(); } },
                 { "pipelineCloseDatePropertyName", n => { PipelineCloseDatePropertyName = n.GetStringValue(); } },
                 { "pipelinePropertyName", n => { PipelinePropertyName = n.GetStringValue(); } },
                 { "pipelineStagePropertyName", n => { PipelineStagePropertyName = n.GetStringValue(); } },
@@ -297,8 +288,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "scopeMappings", n => { ScopeMappings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secondaryDisplayLabelPropertyNames", n => { SecondaryDisplayLabelPropertyNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "singularForm", n => { SingularForm = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status>(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility>(); } },
                 { "writeScopeName", n => { WriteScopeName = n.GetStringValue(); } },
             };
         }
@@ -331,8 +322,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteIntValue("metaTypeId", MetaTypeId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
+            writer.WriteStringValue("objectTypeIdString", ObjectTypeIdString);
             writer.WriteIntValue("ownerPortalId", OwnerPortalId);
-            writer.WriteStringValue("permissioningType", PermissioningType);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_permissioningType>("permissioningType", PermissioningType);
             writer.WriteStringValue("pipelineCloseDatePropertyName", PipelineCloseDatePropertyName);
             writer.WriteStringValue("pipelinePropertyName", PipelinePropertyName);
             writer.WriteStringValue("pipelineStagePropertyName", PipelineStagePropertyName);
@@ -345,8 +337,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ScopeMapping>("scopeMappings", ScopeMappings);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayLabelPropertyNames", SecondaryDisplayLabelPropertyNames);
             writer.WriteStringValue("singularForm", SingularForm);
-            writer.WriteStringValue("status", Status);
-            writer.WriteStringValue("visibility", Visibility);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status>("status", Status);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility>("visibility", Visibility);
             writer.WriteStringValue("writeScopeName", WriteScopeName);
             writer.WriteAdditionalData(AdditionalData);
         }

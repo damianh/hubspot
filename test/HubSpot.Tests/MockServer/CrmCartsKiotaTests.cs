@@ -41,7 +41,7 @@ public class CrmCartsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Carts.PostAsync(input);
-        var cart = created!.Entity!;
+        var cart = created!;
 
         cart.ShouldNotBeNull();
         cart.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmCartsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Carts.PostAsync(input);
-        var cartId = created!.Entity!.Id!;
+        var cartId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Carts[cartId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmCartsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Carts.PostAsync(input);
-        var cartId = created!.Entity!.Id!;
+        var cartId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

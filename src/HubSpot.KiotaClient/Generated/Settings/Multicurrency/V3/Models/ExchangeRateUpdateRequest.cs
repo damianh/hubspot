@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversionRate property</summary>
+        /// <summary>The updated conversion rate between the to and from currency code of this exchange rate.</summary>
         public double? ConversionRate { get; set; }
-        /// <summary>The effectiveAt property</summary>
+        /// <summary>The date the exchange rate will be in effect.</summary>
         public DateTimeOffset? EffectiveAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>A unique identifier for the exchange rate being updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

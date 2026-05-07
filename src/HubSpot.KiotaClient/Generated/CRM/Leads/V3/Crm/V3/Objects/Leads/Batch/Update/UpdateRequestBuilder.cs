@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Up
         {
         }
         /// <summary>
-        /// Update a batch of leads by internal ID, or unique property values
+        /// Update multiple lead records using their internal IDs or unique property values. This endpoint allows batch processing of updates, where each lead&apos;s properties can be modified based on the provided input. Ensure that the properties being updated exist on the lead objects to avoid errors.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Crm.V3.Objects.Leads.Batch.Up
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Leads.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of leads by internal ID, or unique property values
+        /// Update multiple lead records using their internal IDs or unique property values. This endpoint allows batch processing of updates, where each lead&apos;s properties can be modified based on the provided input. Ensure that the properties being updated exist on the lead objects to avoid errors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

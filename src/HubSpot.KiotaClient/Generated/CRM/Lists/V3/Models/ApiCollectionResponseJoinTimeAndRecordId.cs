@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.JoinTimeAndRecordId> Results { get; set; }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>The total number of records that match the query.</summary>
         public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId"/> and sets the default values.

@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
     /// <summary>
-    /// A more specific error category within each main category.
+    /// The Sub-category of the error
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardError_subCategory : IAdditionalDataHolder, IParsable

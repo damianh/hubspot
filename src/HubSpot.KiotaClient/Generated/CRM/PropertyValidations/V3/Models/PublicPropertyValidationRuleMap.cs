@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The propertyName property</summary>
+        /// <summary>The name of the property for which validation rules are defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyName { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models
 #else
         public string PropertyName { get; set; }
 #endif
-        /// <summary>The propertyValidationRules property</summary>
+        /// <summary>A list of validation rules applicable to the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V3.Models.PublicPropertyValidationRule>? PropertyValidationRules { get; set; }

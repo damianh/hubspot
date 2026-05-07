@@ -17,18 +17,18 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         /// <summary>Specifies the paging information needed to retrieve the next set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1? Next { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage? Next { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1 Next { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage Next { get; set; }
 #endif
         /// <summary>specifies the paging information needed to retrieve the previous set of results in a paginated API response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1? Prev { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage? Prev { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1 Prev { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage Prev { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.Paging"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next", n => { Next = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1.CreateFromDiscriminatorValue); } },
-                { "prev", n => { Prev = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1.CreateFromDiscriminatorValue); } },
+                { "next", n => { Next = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage.CreateFromDiscriminatorValue); } },
+                { "prev", n => { Prev = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage_1>("next", Next);
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage_1>("prev", Prev);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.NextPage>("next", Next);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PreviousPage>("prev", Prev);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

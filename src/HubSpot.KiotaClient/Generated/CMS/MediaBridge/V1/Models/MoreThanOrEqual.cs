@@ -80,7 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AbsoluteValue"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AddNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AddTime"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.And"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BeginsWith"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BooleanPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BooleanTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConcatStrings"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantBoolean"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Contains"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DatedExchangeRate"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DateObject"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DivideNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Euler"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentEmailReplyHtml"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentEmailReplyText"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentPlainTextEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchCurrencyDecimalPlaces"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchExchangeRate"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchSingleCurrencyPortalCurrency"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatFullName"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.HasEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.HasPlainTextEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfBoolean"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LessThan"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LessThanOrEqual"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LowerCase"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MaxNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MinNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Month"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MoreThan"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MoreThanOrEqual"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MultiplyNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Not"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Now"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberEquals"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberToString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Or"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ParseNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PeriodToMonths"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PeriodToWeeks"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PipelineProbability"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Power"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundDownNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundNearestNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundUpNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SetContainsString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SquareRoot"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringEquals"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringLength"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Substring"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SubtractNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SubtractTime"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetween"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimestampOfPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimestampOfTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.UpperCase"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Xor"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Year"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AbsoluteValue"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AddNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AddTime"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.And"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BeginsWith"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BooleanPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.BooleanTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConcatStrings"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantBoolean"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ConstantString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Contains"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DatedExchangeRate"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DateObject"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.DivideNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Euler"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentEmailReplyHtml"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentEmailReplyText"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ExtractMostRecentPlainTextEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchCurrencyDecimalPlaces"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchExchangeRate"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchSingleCurrencyPortalCurrency"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatFullName"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.HasEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.HasPlainTextEmailReply"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfBoolean"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LessThan"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LessThanOrEqual"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LowerCase"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MaxNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MinNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Month"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MoreThan"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MoreThanOrEqual"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MultiplyNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Not"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Now"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberEquals"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.NumberToString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Or"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.ParseNumber"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PeriodToMonths"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PeriodToWeeks"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.PipelineProbability"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Power"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundDownNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundNearestNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundUpNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SetContainsString"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SquareRoot"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringEquals"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringLength"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.StringTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Substring"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SubtractNumbers"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.SubtractTime"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetween"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimestampOfPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimestampOfTargetPropertyVariable"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.UpperCase"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Xor"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Year"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MoreThanOrEqual_inputs : IComposedTypeWrapper, IParsable
@@ -253,6 +253,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchExchangeRate FetchExchangeRate { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency? FetchPortalHomeCurrency { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency FetchPortalHomeCurrency { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchSingleCurrencyPortalCurrency"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,6 +276,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatFullName FormatFullName { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber? FormatPhoneNumber { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber FormatPhoneNumber { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber? FormatSearchablePhoneNumber { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber FormatSearchablePhoneNumber { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.HasEmailReply"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -309,6 +333,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfString IfString { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank? IsBlank { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank IsBlank { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod? IsDayBasedIsoPeriod { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod IsDayBasedIsoPeriod { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -316,6 +356,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType IsEngagementType { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod? IsMonthBasedIsoPeriod { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod IsMonthBasedIsoPeriod { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf? IsMultipleOf { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf IsMultipleOf { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -325,6 +381,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed IsPipelineStageClosed { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency? IsPortalEnabledCurrency { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency IsPortalEnabledCurrency { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled? IsPortalMulticurrencyEnabled { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled IsPortalMulticurrencyEnabled { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -332,6 +404,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent IsPresent { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod? IsValidIsoPeriod { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod IsValidIsoPeriod { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.LessThan"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -501,6 +581,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Power Power { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches? RegexMatches { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches RegexMatches { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundDownNumbers"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -604,6 +692,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetween TimeBetween { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends? TimeBetweenSkipWeekends { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends TimeBetweenSkipWeekends { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimestampOfPropertyVariable"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -739,6 +835,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     result.FetchExchangeRate = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchExchangeRate();
                 }
+                else if("FetchPortalHomeCurrency".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FetchPortalHomeCurrency = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency();
+                }
                 else if("FetchSingleCurrencyPortalCurrency".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FetchSingleCurrencyPortalCurrency = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchSingleCurrencyPortalCurrency();
@@ -746,6 +846,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if("FormatFullName".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FormatFullName = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatFullName();
+                }
+                else if("FormatPhoneNumber".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FormatPhoneNumber = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber();
+                }
+                else if("FormatSearchablePhoneNumber".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.FormatSearchablePhoneNumber = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber();
                 }
                 else if("HasEmailReply".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -767,17 +875,45 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     result.IfString = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfString();
                 }
+                else if("IsBlank".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsBlank = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank();
+                }
+                else if("IsDayBasedIsoPeriod".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsDayBasedIsoPeriod = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod();
+                }
                 else if("IsEngagementType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.IsEngagementType = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType();
+                }
+                else if("IsMonthBasedIsoPeriod".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsMonthBasedIsoPeriod = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod();
+                }
+                else if("IsMultipleOf".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsMultipleOf = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf();
                 }
                 else if("IsPipelineStageClosed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.IsPipelineStageClosed = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed();
                 }
+                else if("IsPortalEnabledCurrency".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsPortalEnabledCurrency = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency();
+                }
+                else if("IsPortalMulticurrencyEnabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsPortalMulticurrencyEnabled = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled();
+                }
                 else if("IsPresent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.IsPresent = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent();
+                }
+                else if("IsValidIsoPeriod".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.IsValidIsoPeriod = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod();
                 }
                 else if("LessThan".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -863,6 +999,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     result.Power = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Power();
                 }
+                else if("RegexMatches".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RegexMatches = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches();
+                }
                 else if("RoundDownNumbers".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.RoundDownNumbers = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundDownNumbers();
@@ -914,6 +1054,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if("TimeBetween".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.TimeBetween = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetween();
+                }
+                else if("TimeBetweenSkipWeekends".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.TimeBetweenSkipWeekends = new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends();
                 }
                 else if("TimestampOfPropertyVariable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -1027,6 +1171,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     return FetchExchangeRate.GetFieldDeserializers();
                 }
+                else if(FetchPortalHomeCurrency != null)
+                {
+                    return FetchPortalHomeCurrency.GetFieldDeserializers();
+                }
                 else if(FetchSingleCurrencyPortalCurrency != null)
                 {
                     return FetchSingleCurrencyPortalCurrency.GetFieldDeserializers();
@@ -1034,6 +1182,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if(FormatFullName != null)
                 {
                     return FormatFullName.GetFieldDeserializers();
+                }
+                else if(FormatPhoneNumber != null)
+                {
+                    return FormatPhoneNumber.GetFieldDeserializers();
+                }
+                else if(FormatSearchablePhoneNumber != null)
+                {
+                    return FormatSearchablePhoneNumber.GetFieldDeserializers();
                 }
                 else if(HasEmailReply != null)
                 {
@@ -1055,17 +1211,45 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     return IfString.GetFieldDeserializers();
                 }
+                else if(IsBlank != null)
+                {
+                    return IsBlank.GetFieldDeserializers();
+                }
+                else if(IsDayBasedIsoPeriod != null)
+                {
+                    return IsDayBasedIsoPeriod.GetFieldDeserializers();
+                }
                 else if(IsEngagementType != null)
                 {
                     return IsEngagementType.GetFieldDeserializers();
+                }
+                else if(IsMonthBasedIsoPeriod != null)
+                {
+                    return IsMonthBasedIsoPeriod.GetFieldDeserializers();
+                }
+                else if(IsMultipleOf != null)
+                {
+                    return IsMultipleOf.GetFieldDeserializers();
                 }
                 else if(IsPipelineStageClosed != null)
                 {
                     return IsPipelineStageClosed.GetFieldDeserializers();
                 }
+                else if(IsPortalEnabledCurrency != null)
+                {
+                    return IsPortalEnabledCurrency.GetFieldDeserializers();
+                }
+                else if(IsPortalMulticurrencyEnabled != null)
+                {
+                    return IsPortalMulticurrencyEnabled.GetFieldDeserializers();
+                }
                 else if(IsPresent != null)
                 {
                     return IsPresent.GetFieldDeserializers();
+                }
+                else if(IsValidIsoPeriod != null)
+                {
+                    return IsValidIsoPeriod.GetFieldDeserializers();
                 }
                 else if(LessThan != null)
                 {
@@ -1151,6 +1335,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     return Power.GetFieldDeserializers();
                 }
+                else if(RegexMatches != null)
+                {
+                    return RegexMatches.GetFieldDeserializers();
+                }
                 else if(RoundDownNumbers != null)
                 {
                     return RoundDownNumbers.GetFieldDeserializers();
@@ -1202,6 +1390,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if(TimeBetween != null)
                 {
                     return TimeBetween.GetFieldDeserializers();
+                }
+                else if(TimeBetweenSkipWeekends != null)
+                {
+                    return TimeBetweenSkipWeekends.GetFieldDeserializers();
                 }
                 else if(TimestampOfPropertyVariable != null)
                 {
@@ -1316,6 +1508,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchExchangeRate>(null, FetchExchangeRate);
                 }
+                else if(FetchPortalHomeCurrency != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchPortalHomeCurrency>(null, FetchPortalHomeCurrency);
+                }
                 else if(FetchSingleCurrencyPortalCurrency != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FetchSingleCurrencyPortalCurrency>(null, FetchSingleCurrencyPortalCurrency);
@@ -1323,6 +1519,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if(FormatFullName != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatFullName>(null, FormatFullName);
+                }
+                else if(FormatPhoneNumber != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatPhoneNumber>(null, FormatPhoneNumber);
+                }
+                else if(FormatSearchablePhoneNumber != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.FormatSearchablePhoneNumber>(null, FormatSearchablePhoneNumber);
                 }
                 else if(HasEmailReply != null)
                 {
@@ -1344,17 +1548,45 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IfString>(null, IfString);
                 }
+                else if(IsBlank != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsBlank>(null, IsBlank);
+                }
+                else if(IsDayBasedIsoPeriod != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsDayBasedIsoPeriod>(null, IsDayBasedIsoPeriod);
+                }
                 else if(IsEngagementType != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType>(null, IsEngagementType);
+                }
+                else if(IsMonthBasedIsoPeriod != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMonthBasedIsoPeriod>(null, IsMonthBasedIsoPeriod);
+                }
+                else if(IsMultipleOf != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsMultipleOf>(null, IsMultipleOf);
                 }
                 else if(IsPipelineStageClosed != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPipelineStageClosed>(null, IsPipelineStageClosed);
                 }
+                else if(IsPortalEnabledCurrency != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalEnabledCurrency>(null, IsPortalEnabledCurrency);
+                }
+                else if(IsPortalMulticurrencyEnabled != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPortalMulticurrencyEnabled>(null, IsPortalMulticurrencyEnabled);
+                }
                 else if(IsPresent != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsPresent>(null, IsPresent);
+                }
+                else if(IsValidIsoPeriod != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsValidIsoPeriod>(null, IsValidIsoPeriod);
                 }
                 else if(LessThan != null)
                 {
@@ -1440,6 +1672,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.Power>(null, Power);
                 }
+                else if(RegexMatches != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RegexMatches>(null, RegexMatches);
+                }
                 else if(RoundDownNumbers != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.RoundDownNumbers>(null, RoundDownNumbers);
@@ -1491,6 +1727,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 else if(TimeBetween != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetween>(null, TimeBetween);
+                }
+                else if(TimeBetweenSkipWeekends != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.TimeBetweenSkipWeekends>(null, TimeBetweenSkipWeekends);
                 }
                 else if(TimestampOfPropertyVariable != null)
                 {

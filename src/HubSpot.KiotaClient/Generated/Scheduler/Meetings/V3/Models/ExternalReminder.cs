@@ -14,16 +14,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The numberOfTimeUnits property</summary>
+        /// <summary>The number of timeUnits prior to the meeting start when the reminder will be sent.</summary>
         public int? NumberOfTimeUnits { get; set; }
-        /// <summary>The timeUnit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TimeUnit { get; set; }
-#nullable restore
-#else
-        public string TimeUnit { get; set; }
-#endif
+        /// <summary>Accepted values are: WEEKS, DAYS, HOURS, MINUTES.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalReminder_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalReminder"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "numberOfTimeUnits", n => { NumberOfTimeUnits = n.GetIntValue(); } },
-                { "timeUnit", n => { TimeUnit = n.GetStringValue(); } },
+                { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalReminder_timeUnit>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("numberOfTimeUnits", NumberOfTimeUnits);
-            writer.WriteStringValue("timeUnit", TimeUnit);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalReminder_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

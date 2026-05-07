@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The pluralLabel property</summary>
+        /// <summary>The plural form of the label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralLabel { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string PluralLabel { get; set; }
 #endif
-        /// <summary>The singularLabel property</summary>
+        /// <summary>The singular form of the label for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SingularLabel { get; set; }
@@ -38,8 +38,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public string SingularLabel { get; set; }
 #endif
-        /// <summary>The usage property</summary>
-        public int? Usage { get; set; }
+        /// <summary>The number of records used for the object type.</summary>
+        public long? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.UsageForObjectType"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
                 { "objectTypeId", n => { ObjectTypeId = n.GetStringValue(); } },
                 { "pluralLabel", n => { PluralLabel = n.GetStringValue(); } },
                 { "singularLabel", n => { SingularLabel = n.GetStringValue(); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             writer.WriteStringValue("objectTypeId", ObjectTypeId);
             writer.WriteStringValue("pluralLabel", PluralLabel);
             writer.WriteStringValue("singularLabel", SingularLabel);
-            writer.WriteIntValue("usage", Usage);
+            writer.WriteLongValue("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

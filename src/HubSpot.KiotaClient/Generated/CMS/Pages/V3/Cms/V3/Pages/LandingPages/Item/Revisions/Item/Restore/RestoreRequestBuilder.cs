@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
         {
         }
         /// <summary>
-        /// Takes a specified version of a Landing Page and restores it.
+        /// Restores a previous version of a landing page, specified by page ID and revision ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Ite
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Takes a specified version of a Landing Page and restores it.
+        /// Restores a previous version of a landing page, specified by page ID and revision ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

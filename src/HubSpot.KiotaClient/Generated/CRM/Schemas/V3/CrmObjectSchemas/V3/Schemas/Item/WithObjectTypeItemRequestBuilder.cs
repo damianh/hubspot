@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm-object-schemas/v3/schemas/{objectType}{?archived*}", pathParameters)
+        public WithObjectTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm-object-schemas/v3/schemas/{objectType}{?archived*,includeAssociationDefinitions*,includeAuditMetadata*,includePropertyDefinitions*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,11 +36,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm-object-schemas/v3/schemas/{objectType}{?archived*}", rawUrl)
+        public WithObjectTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm-object-schemas/v3/schemas/{objectType}{?archived*,includeAssociationDefinitions*,includeAuditMetadata*,includePropertyDefinitions*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.
+        /// Remove a custom object schema from the account using its object type ID or fully qualified name.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,25 +57,25 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns an existing object schema.
+        /// Retrieve details of a custom object schema, including its properties and associations, using the object type ID or fully qualified name.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder.WithObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder.WithObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the details for an existing object schema.
+        /// Update attributes of a custom object schema, such as properties and labels, using the object type ID or fully qualified name.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinition"/></returns>
         /// <param name="body">Defines attributes to update on an object type.</param>
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.ObjectTypeDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.
+        /// Remove a custom object schema from the account using its object type ID or fully qualified name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,17 +113,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             return requestInfo;
         }
         /// <summary>
-        /// Returns an existing object schema.
+        /// Retrieve details of a custom object schema, including its properties and associations, using the object type ID or fully qualified name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder.WithObjectTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder.WithObjectTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,7 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             return requestInfo;
         }
         /// <summary>
-        /// Update the details for an existing object schema.
+        /// Update attributes of a custom object schema, such as properties and labels, using the object type ID or fully qualified name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines attributes to update on an object type.</param>
@@ -163,7 +163,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
             return new global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Deletes a schema. Any existing records of this schema must be deleted **first**. Otherwise this call will fail.
+        /// Remove a custom object schema from the account using its object type ID or fully qualified name.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithObjectTypeItemRequestBuilderDeleteQueryParameters 
@@ -181,11 +181,24 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas
         {
         }
         /// <summary>
+        /// Retrieve details of a custom object schema, including its properties and associations, using the object type ID or fully qualified name.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithObjectTypeItemRequestBuilderGetQueryParameters 
+        {
+            [QueryParameter("includeAssociationDefinitions")]
+            public bool? IncludeAssociationDefinitions { get; set; }
+            [QueryParameter("includeAuditMetadata")]
+            public bool? IncludeAuditMetadata { get; set; }
+            [QueryParameter("includePropertyDefinitions")]
+            public bool? IncludePropertyDefinitions { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithObjectTypeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithObjectTypeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.CrmObjectSchemas.V3.Schemas.Item.WithObjectTypeItemRequestBuilder.WithObjectTypeItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fromCurrencyCode property</summary>
+        /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you want to convert from.</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CurrencyPairUpdate_fromCurrencyCode? FromCurrencyCode { get; set; }
-        /// <summary>The toCurrencyCode property</summary>
+        /// <summary>This represents the three-letter currency code (such as USD for US Dollar) of the currency you want to convert to.</summary>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CurrencyPairUpdate_toCurrencyCode? ToCurrencyCode { get; set; }
-        /// <summary>The visibleInUI property</summary>
+        /// <summary>This indicates if the currency pair is shown in the MultiCurrency settings page. Setting this to false will remove the currency pair from the settings page.</summary>
         public bool? VisibleInUI { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Models.CurrencyPairUpdate"/> and sets the default values.

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The language property</summary>
+        /// <summary>The language in which the communication preference link should be presented, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string Language { get; set; }
 #endif
-        /// <summary>The subscriberIdString property</summary>
+        /// <summary>The unique identifier for the subscriber, represented as a string. This property is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriberIdString { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.
 #else
         public string SubscriberIdString { get; set; }
 #endif
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The unique identifier for the subscription, represented as an integer.</summary>
         public long? SubscriptionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models.LinkGenerationRequest"/> and sets the default values.

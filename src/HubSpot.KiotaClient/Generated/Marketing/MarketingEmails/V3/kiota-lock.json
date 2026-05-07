@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "23924DC452B11CF94E53160080A967F9269E59415FE1CBE59DDC08355E1015C0232D7564FAAC85ECEAE6B92DC4B8128CF4957B852EB7A9E9D1D4E86E7F955D5F",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Marketing%20Emails/versions/145892",
+  "descriptionHash": "72C8B57F1DBFDBE224C4D1049B4E0B54288B6D5273554F6A9EF49FCB4DD700DA1A80FF5483CBD64F5957290610E2A80283DA43CD98C86E075820FA8D2D5E20B1",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/35045/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingMarketingEmailsV3Client",

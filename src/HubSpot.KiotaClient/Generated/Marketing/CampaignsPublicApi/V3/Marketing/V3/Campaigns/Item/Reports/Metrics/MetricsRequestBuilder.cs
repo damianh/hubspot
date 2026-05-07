@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsRequestBuilderGetQueryParameters 
         {
-            /// <summary>End date for the report data, formatted as YYYY-MM-DD.Default value: Current date</summary>
+            /// <summary>The end date for fetching attribution data, in YYYY-MM-DD format.Optional. Example: 2000-01-27       </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endDate")]
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.CampaignsPublicApi.V3.Marketing.
             [QueryParameter("endDate")]
             public string EndDate { get; set; }
 #endif
-            /// <summary>The start date for the report data, formatted as YYYY-MM-DD.Default value: 2006-01-01</summary>
+            /// <summary>The start date for fetching attribution data, in YYYY-MM-DD format.Optional. Example: 2000-01-20</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("startDate")]

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allLabels property</summary>
+        /// <summary>A list of all association labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllLabels { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition FromObjectType { get; set; }
 #endif
-        /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
-        /// <summary>The percentage property</summary>
+        /// <summary>The maximum number of association labels allowed.</summary>
+        public long? Limit { get; set; }
+        /// <summary>The percentage of the association label limit that has been used.</summary>
         public double? Percentage { get; set; }
         /// <summary>The toObjectType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,8 +42,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition ToObjectType { get; set; }
 #endif
-        /// <summary>The usage property</summary>
-        public int? Usage { get; set; }
+        /// <summary>The current number of association labels used.</summary>
+        public long? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.AssociationLabelLimitResponse"/> and sets the default values.
         /// </summary>
@@ -71,10 +71,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             {
                 { "allLabels", n => { AllLabels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fromObjectType", n => { FromObjectType = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition>(global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition.CreateFromDiscriminatorValue); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
                 { "toObjectType", n => { ToObjectType = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition>(global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition.CreateFromDiscriminatorValue); } },
-                { "usage", n => { Usage = n.GetIntValue(); } },
+                { "usage", n => { Usage = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -86,10 +86,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allLabels", AllLabels);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition>("fromObjectType", FromObjectType);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteDoubleValue("percentage", Percentage);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V3.Models.ObjectTypeDefinition>("toObjectType", ToObjectType);
-            writer.WriteIntValue("usage", Usage);
+            writer.WriteLongValue("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

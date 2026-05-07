@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
         {
         }
         /// <summary>
-        /// Update a batch of objects by internal ID, or unique property values
+        /// Update a batch of CRM objects by their internal IDs or unique property values, allowing for efficient modifications of multiple records in a single request.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Crm.V3.Objects.Item.B
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of objects by internal ID, or unique property values
+        /// Update a batch of CRM objects by their internal IDs or unique property values, allowing for efficient modifications of multiple records in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

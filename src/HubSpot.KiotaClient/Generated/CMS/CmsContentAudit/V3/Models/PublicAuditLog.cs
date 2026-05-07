@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models
 #else
         public string FullName { get; set; }
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>Supplementary metadata associated with the audit log entry. It provides additional context about the audited event (ex: rows deleted/updated for a HubDB event, the specific fields that were changed for a Content Settings event).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V3.Models.PublicAuditLog_meta? Meta { get; set; }

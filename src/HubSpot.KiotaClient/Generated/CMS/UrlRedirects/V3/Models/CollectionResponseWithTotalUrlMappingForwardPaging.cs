@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models.UrlMapping> Results { get; set; }
 #endif
-        /// <summary>The total property</summary>
+        /// <summary>The total number of URL mappings available.</summary>
         public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Models.CollectionResponseWithTotalUrlMappingForwardPaging"/> and sets the default values.

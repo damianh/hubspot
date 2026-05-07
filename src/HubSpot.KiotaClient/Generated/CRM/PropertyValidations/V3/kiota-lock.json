@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "1629FCBC78EF9CE788EE82AEA186DFA0F849B62ABCCB77D8FCC958CEA2766D92112135543166968ECBC882513CDD8B9ED421503888A2BAA79AEE2C00B9869419",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Property%20Validations/versions/215885",
+  "descriptionHash": "D64F9387AE4388643B5D4F8ADAEEAB6F8A2F3CC73E1EFF1D57367EABDB345EC1C9FD41CB3269F4E58574F7A4B1624F394C37FD0B5E7B2C5185ED8D908AC1CC76",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22181/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMPropertyValidationsV3Client",

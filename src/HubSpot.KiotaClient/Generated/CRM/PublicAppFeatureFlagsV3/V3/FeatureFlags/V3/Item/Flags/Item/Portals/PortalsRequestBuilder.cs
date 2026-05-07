@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.featureFlags.v3.item.flags.item.portals.item collection</summary>
-        /// <param name="position">The ID of the account that installed the app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder this[int position]
         {
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.featureFlags.v3.item.flags.item.portals.item collection</summary>
-        /// <param name="position">The ID of the account that installed the app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlags.V3.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder this[string position]
@@ -117,10 +117,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PortalsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return in a single request.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>The initial account ID for listing, enabling pagination.</summary>
             [QueryParameter("startPortalId")]
             public int? StartPortalId { get; set; }
         }

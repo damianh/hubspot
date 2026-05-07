@@ -112,21 +112,16 @@ internal static partial class ApiRoutes
         var newHubSpotObject = new NewHubSpotObject(input.Properties, hubSpotAssociations);
         var hubSpotObject = repo.Create(newHubSpotObject);
 
-        var response = new CreatedResponseSimplePublicObject
+        var simplePublicObject = new SimplePublicObject
         {
-            CreatedResourceId = hubSpotObject.Id.Value.ToString(),
-            Entity = new SimplePublicObject
-            {
-                Id = hubSpotObject.Id.Value.ToString(),
-                CreatedAt = hubSpotObject.CreatedAt,
-                UpdatedAt = hubSpotObject.UpdatedAt,
-                Archived = false,
-                Properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue)
-            },
-            Location = $"/crm/objects/2025-09/{objectType}/{hubSpotObject.Id.Value}"
+            Id = hubSpotObject.Id.Value.ToString(),
+            CreatedAt = hubSpotObject.CreatedAt,
+            UpdatedAt = hubSpotObject.UpdatedAt,
+            Archived = false,
+            Properties = hubSpotObject.Properties.ToDictionary(p => p.Key, p => p.Value.CurrentValue)
         };
 
-        return Results.Ok(response);
+        return Results.Created($"/crm/objects/2025-09/{objectType}/{hubSpotObject.Id.Value}", simplePublicObject);
     }
 
     private static IResult GetObjectByIdV202509(

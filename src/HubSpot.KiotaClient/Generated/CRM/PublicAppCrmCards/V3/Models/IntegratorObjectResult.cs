@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
     public partial class IntegratorObjectResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actions property</summary>
+        /// <summary>A list of actions associated with the card, which can include action hooks, confirmation action hooks, or iframes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.IntegratorObjectResult.IntegratorObjectResult_actions>? Actions { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The linkUrl property</summary>
+        /// <summary>A URL used on the title of the card</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkUrl { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string LinkUrl { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The top-level title for this card. Displayed to users in the CRM UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The tokens property</summary>
+        /// <summary>A collection of tokens representing specific properties related to the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.ObjectToken>? Tokens { get; set; }

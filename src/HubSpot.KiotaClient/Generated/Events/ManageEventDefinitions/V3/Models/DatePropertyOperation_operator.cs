@@ -8,17 +8,17 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum DatePropertyOperation_operator
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "EQUAL")]
+        [EnumMember(Value = "AFTER")]
         #pragma warning disable CS1591
-        EQUAL,
+        AFTER,
         #pragma warning restore CS1591
         [EnumMember(Value = "BEFORE")]
         #pragma warning disable CS1591
         BEFORE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AFTER")]
+        [EnumMember(Value = "EQUAL")]
         #pragma warning disable CS1591
-        AFTER,
+        EQUAL,
         #pragma warning restore CS1591
     }
 }

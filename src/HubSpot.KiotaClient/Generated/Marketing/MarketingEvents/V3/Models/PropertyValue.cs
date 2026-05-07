@@ -15,11 +15,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, and &quot;highly_sensitive&quot;.</summary>
+        /// <summary>Level of data sensitivity</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.PropertyValue_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>Whether the property value is encrypted.</summary>
+        /// <summary>Indicates whether the property is encrypted</summary>
         public bool? IsEncrypted { get; set; }
-        /// <summary>The isLargeValue property</summary>
+        /// <summary>Indicates whether the property value is stored as a large value in the storage</summary>
         public bool? IsLargeValue { get; set; }
         /// <summary>Name of custom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,9 +29,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The persistenceTimestamp property</summary>
+        /// <summary>The timestamp that indicates when the value being written is persisted in storage</summary>
         public long? PersistenceTimestamp { get; set; }
-        /// <summary>A unique ID associated with this request.</summary>
+        /// <summary>The ID of the request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId { get; set; }
@@ -39,13 +39,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>Whether the value was selected by a user.</summary>
+        /// <summary>Indicates whether the property is selected</summary>
         public bool? SelectedByUser { get; set; }
-        /// <summary>The timestamp when the value was selected by a user, if applicable.</summary>
+        /// <summary>Timestamp of when the property was selected by the user</summary>
         public long? SelectedByUserTimestamp { get; set; }
-        /// <summary>The origin of the property value, such as &quot;IMPORT&quot; or &quot;API&quot;.</summary>
+        /// <summary>Source of the property</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models.PropertyValue_source? Source { get; set; }
-        /// <summary>The ID of the property source indicating where it was created.</summary>
+        /// <summary>ID of the source of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get; set; }
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>A human-readable label.</summary>
+        /// <summary>Label of the source of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceLabel { get; set; }
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string SourceLabel { get; set; }
 #endif
-        /// <summary>Source metadata encoded as a base64 string. For example: `ZXhhbXBsZSBzdHJpbmc=`</summary>
+        /// <summary>Source metadata encoded as a base64 string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceMetadata { get; set; }
@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string SourceMetadata { get; set; }
 #endif
-        /// <summary>The sourceUpstreamDeployable property</summary>
+        /// <summary>Indicates which upstream service made the property change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceUpstreamDeployable { get; set; }
@@ -85,9 +85,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public List<long?> SourceVid { get; set; }
 #endif
-        /// <summary>When the value was set, as a 64-bit integer.</summary>
+        /// <summary>Timestamp of the request</summary>
         public long? Timestamp { get; set; }
-        /// <summary>The unit of measurement or context for the value.</summary>
+        /// <summary>The unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get; set; }
@@ -95,9 +95,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 #else
         public string Unit { get; set; }
 #endif
-        /// <summary>The ID of the user who updated the property.</summary>
+        /// <summary>The ID of the user who last updated the property</summary>
         public int? UpdatedByUserId { get; set; }
-        /// <summary>The useTimestampAsPersistenceTimestamp property</summary>
+        /// <summary>Indicates if the persistence timestamp is the same as storage version timestamp</summary>
         public bool? UseTimestampAsPersistenceTimestamp { get; set; }
         /// <summary>Custom property value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

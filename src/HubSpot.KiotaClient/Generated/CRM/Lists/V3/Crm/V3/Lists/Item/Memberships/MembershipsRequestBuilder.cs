@@ -63,9 +63,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         public MembershipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists/{listId}/memberships{?after*,before*,limit*}", rawUrl)
         {
         }
-        /// <summary>
-        /// Remove **all** of the records from a list. ***Note:*** *The list is not deleted.*This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.This endpoint only supports lists that have less than 100,000 memberships.
-        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +77,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Fetch the memberships of a list in order sorted by the `recordId` of the records in the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,9 +92,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.ApiCollectionResponseJoinTimeAndRecordId.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// Remove **all** of the records from a list. ***Note:*** *The list is not deleted.*This endpoint only works for lists that have a `processingType` of `MANUAL` or `SNAPSHOT`.This endpoint only supports lists that have less than 100,000 memberships.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,9 +107,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
-        /// <summary>
-        /// Fetch the memberships of a list in order sorted by the `recordId` of the records in the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,13 +140,12 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
         public partial class MembershipsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
-        /// <summary>
-        /// Fetch the memberships of a list in order sorted by the `recordId` of the records in the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
-        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        #pragma warning disable CS1591
         public partial class MembershipsRequestBuilderGetQueryParameters 
+        #pragma warning restore CS1591
         {
-            /// <summary>The paging offset token for the page that comes `after` the previously requested records.If provided, then the records in the response will be the records following the offset, sorted in *ascending* order. Takes precedence over the `before` offset.</summary>
+            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -168,7 +155,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>The paging offset token for the page that comes `before` the previously requested records.If provided, then the records in the response will be the records preceding the offset, sorted in *descending* order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -178,7 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Item.Memberships
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The number of records to return in the response. The maximum `limit` is 250.</summary>
+            /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

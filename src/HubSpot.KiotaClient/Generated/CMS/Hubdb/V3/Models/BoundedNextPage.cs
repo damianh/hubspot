@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The link property</summary>
+        /// <summary>A URL that can be used to retrieve the next set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models
 #else
         public string Link { get; set; }
 #endif
-        /// <summary>The offset property</summary>
+        /// <summary>The offset value indicating the starting point for the next set of results.</summary>
         public int? Offset { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V3.Models.BoundedNextPage"/> and sets the default values.

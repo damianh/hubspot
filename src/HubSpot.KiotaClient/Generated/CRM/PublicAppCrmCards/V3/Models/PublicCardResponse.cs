@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The auditHistory property</summary>
+        /// <summary>A list of actions performed on the card, including creation, deletion, and updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse>? AuditHistory { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardAuditResponse> AuditHistory { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the card was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Configuration for displayed info on a card</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.PublicCardFetchBody Fetch { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique id of the card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The top-level title for this card. Displayed to users in the CRM UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the card was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.PublicCardResponse"/> and sets the default values.

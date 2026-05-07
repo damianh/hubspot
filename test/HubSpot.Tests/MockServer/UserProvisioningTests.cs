@@ -25,7 +25,7 @@ public class UserProvisioningTests : IAsyncLifetime
     [Fact]
     public async Task GetUsers_ReturnsUserList()
     {
-        var users = await _client.Settings.V3.Users.EmptyPathSegment.GetAsync();
+        var users = await _client.Settings.Users.V3.GetAsync();
 
         users.ShouldNotBeNull();
         users.Results.ShouldNotBeNull();

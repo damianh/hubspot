@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "2FD747534961BA2218951D75ABB1E06D60CAAF6F62D00546C468C58F784FB86BB45FBF0930C10783C899F7373E52DC08DABA55AC311C181AE7285A1B3558A2A7",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/CRM/Associations/versions/130902?specVersion=2025-09",
+  "descriptionHash": "528A1F4C2B2EFE4759F332433F952F467697F51E84694DBA5DB3EB46243674BF965ECAD7BD53DB2C995981312BE4540C45A8001CF8D3AE5BD1D776D6F9087680",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75259/version/2025-09",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotCRMAssociationsV202509Client",

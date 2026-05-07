@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 {
+    /// <summary>The type of operation, which is (CALENDAR_DATE).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicCalendarDatePropertyOperation_operationType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CALENDAR_DATE")]
         #pragma warning disable CS1591

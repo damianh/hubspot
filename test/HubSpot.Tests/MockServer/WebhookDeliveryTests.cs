@@ -75,7 +75,7 @@ public class WebhookDeliveryTests : IAsyncLifetime
 
         var evt = payload[0]!.AsObject();
         evt["subscriptionType"]!.GetValue<string>().ShouldBe("contact.creation");
-        evt["objectId"]!.GetValue<string>().ShouldBe(created!.Entity!.Id);
+        evt["objectId"]!.GetValue<string>().ShouldBe(created!.Id);
     }
 
     [Fact]
@@ -100,7 +100,7 @@ public class WebhookDeliveryTests : IAsyncLifetime
         // Consume the creation call (no subscription for it)
         _receiver.Clear();
 
-        await _crmClient.Crm.V3.Objects.Contacts[created!.Entity!.Id].PatchAsync(new SimplePublicObjectInput
+        await _crmClient.Crm.V3.Objects.Contacts[created!.Id].PatchAsync(new SimplePublicObjectInput
         {
             Properties = new SimplePublicObjectInput_properties
             {
@@ -114,7 +114,7 @@ public class WebhookDeliveryTests : IAsyncLifetime
         var evt = payload![0]!.AsObject();
         evt["propertyName"]!.GetValue<string>().ShouldBe("firstname");
         evt["propertyValue"]!.GetValue<string>().ShouldBe("Bob");
-        evt["objectId"]!.GetValue<string>().ShouldBe(created.Entity.Id);
+        evt["objectId"]!.GetValue<string>().ShouldBe(created.Id);
     }
 
     [Fact]
@@ -137,13 +137,13 @@ public class WebhookDeliveryTests : IAsyncLifetime
 
         _receiver.Clear();
 
-        await _crmClient.Crm.V3.Objects.Contacts[created!.Entity!.Id].DeleteAsync();
+        await _crmClient.Crm.V3.Objects.Contacts[created!.Id].DeleteAsync();
 
         var payload = await _receiver.WaitForPayloadAsync(timeoutMs: 3000);
 
         payload.ShouldNotBeNull();
         var evt = payload![0]!.AsObject();
-        evt["objectId"]!.GetValue<string>().ShouldBe(created.Entity.Id);
+        evt["objectId"]!.GetValue<string>().ShouldBe(created.Id);
     }
 
     [Fact]
@@ -188,7 +188,7 @@ public class WebhookDeliveryTests : IAsyncLifetime
         });
         _receiver.Clear();
 
-        await _crmClient.Crm.V3.Objects.Contacts[created!.Entity!.Id].PatchAsync(new SimplePublicObjectInput
+        await _crmClient.Crm.V3.Objects.Contacts[created!.Id].PatchAsync(new SimplePublicObjectInput
         {
             Properties = new SimplePublicObjectInput_properties
             {

@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.crm.v3.extensions.videoconferencing.settings.item collection</summary>
-        /// <param name="position">The ID of the video conference application. This is the identifier of the application created in your HubSpot developer portal.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.Extensions.Videoconferencing.Settings.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.Extensions.Videoconferencing.Settings.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.E
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.crm.v3.extensions.videoconferencing.settings.item collection</summary>
-        /// <param name="position">The ID of the video conference application. This is the identifier of the application created in your HubSpot developer portal.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.Extensions.Videoconferencing.Settings.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V3.Crm.V3.Extensions.Videoconferencing.Settings.Item.WithAppItemRequestBuilder this[string position]

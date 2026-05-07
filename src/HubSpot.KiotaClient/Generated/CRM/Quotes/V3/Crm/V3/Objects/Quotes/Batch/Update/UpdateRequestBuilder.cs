@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Crm.V3.Objects.Quotes.Batch.
         {
         }
         /// <summary>
-        /// Update a batch of quotes by internal ID, or unique property values
+        /// Update multiple quotes using their internal IDs or unique property values. This endpoint allows batch processing of quote updates, ensuring efficient management of multiple records in a single request.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Crm.V3.Objects.Quotes.Batch.
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Quotes.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of quotes by internal ID, or unique property values
+        /// Update multiple quotes using their internal IDs or unique property values. This endpoint allows batch processing of quote updates, ensuring efficient management of multiple records in a single request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

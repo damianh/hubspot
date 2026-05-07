@@ -3,14 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 {
+    /// <summary>Describes the field&apos;s type in the UI, with accepted values like booleancheckbox, calculation_equation, checkbox, date, file, html, number, phonenumber, radio, select, text, textarea, unknown.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FieldTypeDefinition_fieldType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "booleancheckbox")]
         #pragma warning disable CS1591
         Booleancheckbox,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calculation_equation")]
+        #pragma warning disable CS1591
+        Calculation_equation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calculation_read_time")]
+        #pragma warning disable CS1591
+        Calculation_read_time,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calculation_rollup")]
+        #pragma warning disable CS1591
+        Calculation_rollup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "calculation_score")]
+        #pragma warning disable CS1591
+        Calculation_score,
         #pragma warning restore CS1591
         [EnumMember(Value = "checkbox")]
         #pragma warning disable CS1591
@@ -23,6 +38,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         [EnumMember(Value = "file")]
         #pragma warning disable CS1591
         File,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "html")]
+        #pragma warning disable CS1591
+        Html,
         #pragma warning restore CS1591
         [EnumMember(Value = "number")]
         #pragma warning disable CS1591
@@ -48,29 +67,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         #pragma warning disable CS1591
         Textarea,
         #pragma warning restore CS1591
-        [EnumMember(Value = "calculation_equation")]
-        #pragma warning disable CS1591
-        Calculation_equation,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "calculation_rollup")]
-        #pragma warning disable CS1591
-        Calculation_rollup,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "calculation_score")]
-        #pragma warning disable CS1591
-        Calculation_score,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "calculation_read_time")]
-        #pragma warning disable CS1591
-        Calculation_read_time,
-        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591
         Unknown,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "html")]
-        #pragma warning disable CS1591
-        Html,
         #pragma warning restore CS1591
     }
 }

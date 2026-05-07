@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
     public enum TimePointOperation_operator
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "IS_BEFORE")]
-        #pragma warning disable CS1591
-        IS_BEFORE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "IS_AFTER")]
         #pragma warning disable CS1591
         IS_AFTER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IS_BEFORE")]
+        #pragma warning disable CS1591
+        IS_BEFORE,
         #pragma warning restore CS1591
     }
 }

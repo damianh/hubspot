@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         public ReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/associations/{fromObjectType}/{toObjectType}/batch/read", rawUrl)
         {
         }
+        /// <summary>
+        /// This endpoint allows you to retrieve multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// This endpoint allows you to retrieve multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

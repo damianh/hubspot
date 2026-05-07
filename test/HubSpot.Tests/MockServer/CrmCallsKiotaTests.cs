@@ -43,7 +43,7 @@ public class CrmCallsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Calls.PostAsync(input);
-        var call = created!.Entity!;
+        var call = created!;
 
         call.ShouldNotBeNull();
         call.Id.ShouldNotBeNullOrEmpty();
@@ -68,7 +68,7 @@ public class CrmCallsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Calls.PostAsync(input);
-        var callId = created!.Entity!.Id!;
+        var callId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Calls[callId].GetAsync();
 
@@ -93,7 +93,7 @@ public class CrmCallsKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Calls.PostAsync(input);
-        var callId = created!.Entity!.Id!;
+        var callId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

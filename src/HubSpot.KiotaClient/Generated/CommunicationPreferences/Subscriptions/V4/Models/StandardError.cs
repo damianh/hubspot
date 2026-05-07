@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V4.Models
 {
     /// <summary>
-    /// Ye olde error
+    /// Represents a standard error response in the HubSpot API, providing detailed information about an error that occurred during an API request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardError : IAdditionalDataHolder, IParsable

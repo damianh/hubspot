@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 {
+    /// <summary>
+    /// A map of link names to associated URIs for additional resources or documentation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BatchResponseDealToDealSplits_links : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

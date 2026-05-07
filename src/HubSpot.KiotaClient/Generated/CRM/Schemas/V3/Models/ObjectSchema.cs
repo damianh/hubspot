@@ -15,6 +15,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowsSensitiveProperties property</summary>
+        public bool? AllowsSensitiveProperties { get; set; }
         /// <summary>The archived property</summary>
         public bool? Archived { get; set; }
         /// <summary>Associations defined for a given object type.</summary>
@@ -146,6 +148,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowsSensitiveProperties", n => { AllowsSensitiveProperties = n.GetBoolValue(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "associations", n => { Associations = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition>(global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -172,6 +175,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowsSensitiveProperties", AllowsSensitiveProperties);
             writer.WriteBoolValue("archived", Archived);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V3.Models.AssociationDefinition>("associations", Associations);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);

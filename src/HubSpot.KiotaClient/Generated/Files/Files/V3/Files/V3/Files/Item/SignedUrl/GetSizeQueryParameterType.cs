@@ -8,10 +8,6 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item.SignedU
     public enum GetSizeQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "thumb")]
-        #pragma warning disable CS1591
-        Thumb,
-        #pragma warning restore CS1591
         [EnumMember(Value = "icon")]
         #pragma warning disable CS1591
         Icon,
@@ -23,6 +19,10 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Item.SignedU
         [EnumMember(Value = "preview")]
         #pragma warning disable CS1591
         Preview,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "thumb")]
+        #pragma warning disable CS1591
+        Thumb,
         #pragma warning restore CS1591
     }
 }

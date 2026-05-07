@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fiscalYearStart property</summary>
+        /// <summary>The month in which the fiscal year starts.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicCalendarDatePropertyOperation_fiscalYearStart? FiscalYearStart { get; set; }
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>Indicates whether objects with no value set for the property should be included.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>The type of operation, which is (CALENDAR_DATE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicCalendarDatePropertyOperation_operationType? OperationType { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied to the calendar date property (IN_THIS_TIME_UNIT, IN_THIS_TIME_UNIT_SO_FAR, IN_NEXT_TIME_UNIT, IN_LAST_TIME_UNIT).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string Operator { get; set; }
 #endif
-        /// <summary>The timeUnit property</summary>
+        /// <summary>The unit of time to be used in the operation (DAY, WEEK, MONTH, QUARTER, YEAR).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeUnit { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string TimeUnit { get; set; }
 #endif
-        /// <summary>The timeUnitCount property</summary>
+        /// <summary>The count of time units to be applied in the operation (1).</summary>
         public int? TimeUnitCount { get; set; }
-        /// <summary>The useFiscalYear property</summary>
+        /// <summary>Specifies whether the fiscal year should be used in the operation.</summary>
         public bool? UseFiscalYear { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicCalendarDatePropertyOperation"/> and sets the default values.

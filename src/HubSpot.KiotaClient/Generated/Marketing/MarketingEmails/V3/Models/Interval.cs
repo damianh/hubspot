@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end property</summary>
+        /// <summary>The end timestamp of the interval, in ISO8601 format.</summary>
         public DateTimeOffset? End { get; set; }
-        /// <summary>The start property</summary>
+        /// <summary>The start timestamp of the interval, in ISO8601 format.</summary>
         public DateTimeOffset? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models.Interval"/> and sets the default values.

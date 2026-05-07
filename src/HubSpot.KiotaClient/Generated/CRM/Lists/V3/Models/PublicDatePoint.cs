@@ -14,21 +14,21 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The day property</summary>
+        /// <summary>The day component of the date.</summary>
         public int? Day { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>The hour component of the time.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>The millisecond component of the time.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>The minute component of the time.</summary>
         public int? Minute { get; set; }
-        /// <summary>The month property</summary>
+        /// <summary>The month component of the date.</summary>
         public int? Month { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>The second component of the time.</summary>
         public int? Second { get; set; }
-        /// <summary>The timeType property</summary>
+        /// <summary>Specifies the type of time (DATE).</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicDatePoint_timeType? TimeType { get; set; }
-        /// <summary>The timezoneSource property</summary>
+        /// <summary>The source of the time zone information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimezoneSource { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string TimezoneSource { get; set; }
 #endif
-        /// <summary>The year property</summary>
+        /// <summary>The year component of the date.</summary>
         public int? Year { get; set; }
-        /// <summary>The zoneId property</summary>
+        /// <summary>The identifier for the time zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

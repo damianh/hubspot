@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The timestamp this setting was created</summary>
+        /// <summary>The date and time when the channel connection settings were created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>If true, this app will be considered to support channel connection</summary>
+        /// <summary>Indicates whether the channel connection settings are ready for use.</summary>
         public bool? IsReady { get; set; }
-        /// <summary>The timestamp this setting was last updated</summary>
+        /// <summary>The date and time when the channel connection settings were last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The URL to fetch phone numbers available for channel connection</summary>
+        /// <summary>The URL associated with the channel connection settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

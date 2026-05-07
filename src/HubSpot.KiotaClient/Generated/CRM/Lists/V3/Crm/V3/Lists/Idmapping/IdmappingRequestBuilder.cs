@@ -33,9 +33,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping
         public IdmappingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/lists/idmapping{?legacyListId*}", rawUrl)
         {
         }
-        /// <summary>
-        /// This API allows translation of legacy list id to list id. This is a temporary API allowed for mapping old id&apos;s to new id&apos;s and will expire on May 30th, 2025.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMigrationMapping"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,9 +48,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMigrationMapping>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicMigrationMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// This API allows translation of a batch of legacy list id&apos;s to list id&apos;s. This allows for a maximum of 10,000 id&apos;s. This is a temporary API allowed for mapping old id&apos;s to new id&apos;s and will expire on May 30th, 2025.
-        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicBatchMigrationMapping"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,9 +65,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicBatchMigrationMapping>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicBatchMigrationMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
-        /// <summary>
-        /// This API allows translation of legacy list id to list id. This is a temporary API allowed for mapping old id&apos;s to new id&apos;s and will expire on May 30th, 2025.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,9 +81,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
-        /// <summary>
-        /// This API allows translation of a batch of legacy list id&apos;s to list id&apos;s. This allows for a maximum of 10,000 id&apos;s. This is a temporary API allowed for mapping old id&apos;s to new id&apos;s and will expire on May 30th, 2025.
-        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,13 +109,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Crm.V3.Lists.Idmapping.IdmappingRequestBuilder(rawUrl, RequestAdapter);
         }
-        /// <summary>
-        /// This API allows translation of legacy list id to list id. This is a temporary API allowed for mapping old id&apos;s to new id&apos;s and will expire on May 30th, 2025.
-        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        #pragma warning disable CS1591
         public partial class IdmappingRequestBuilderGetQueryParameters 
+        #pragma warning restore CS1591
         {
-            /// <summary>The legacy list id from lists v1 API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("legacyListId")]

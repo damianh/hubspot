@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
         {
         }
         /// <summary>
-        /// Takes a specified version of a Folder and restores it.
+        /// Takes a specified version of a landing page folder and restores it.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Takes a specified version of a Folder and restores it.
+        /// Takes a specified version of a landing page folder and restores it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

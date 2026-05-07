@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models
     public partial class PublicTaxRateGroup : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The active property</summary>
+        /// <summary>Indicates whether the tax rate group is currently active.</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the tax rate was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the tax rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>The display label for the tax rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the tax rate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The percentageRate property</summary>
+        /// <summary>The percentage rate applied.</summary>
         public double? PercentageRate { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the tax rate was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.Models.PublicTaxRateGroup"/> and sets the default values.

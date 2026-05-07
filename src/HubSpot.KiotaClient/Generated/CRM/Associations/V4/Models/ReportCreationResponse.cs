@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.DateTimeObject EnqueueTime { get; set; }
 #endif
-        /// <summary>The userEmail property</summary>
+        /// <summary>Email of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserEmail { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
 #else
         public string UserEmail { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>ID of the user</summary>
         public int? UserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.ReportCreationResponse"/> and sets the default values.

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associationCategory property</summary>
+        /// <summary>Specifies the category of the association for the filter branch (HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED, WORK).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssociationCategory { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string AssociationCategory { get; set; }
 #endif
-        /// <summary>The associationTypeId property</summary>
+        /// <summary>Type id of the association</summary>
         public int? AssociationTypeId { get; set; }
         /// <summary>The filterBranches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAssociationFilterBranch.PublicAssociationFilterBranch_filterBranches> FilterBranches { get; set; }
 #endif
-        /// <summary>The filterBranchOperator property</summary>
+        /// <summary>Filter branch operator (AND)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilterBranchOperator { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string FilterBranchOperator { get; set; }
 #endif
-        /// <summary>The filterBranchType property</summary>
+        /// <summary>Type of the filter branch (ASSOCIATION)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAssociationFilterBranch_filterBranchType? FilterBranchType { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models.PublicAssociationFilterBranch.PublicAssociationFilterBranch_filters> Filters { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The ID representing the type of object associated with the filter branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>Defines the operation to be applied within the filter branch (IN_LIST, NOT_IN_LIST).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operator { get; set; }

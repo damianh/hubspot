@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 {
+    /// <summary>The HTTP method to be used when making the call, which can be set to GET, POST, PUT, DELETE, or PATCH. If using GET or DELETE</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ActionHookActionBody_httpMethod
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONNECT")]
         #pragma warning disable CS1591

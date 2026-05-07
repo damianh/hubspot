@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The Unix time in milliseconds when the meeting link was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The defaultLink property</summary>
+        /// <summary>Whether the meeting link is the user&apos;s default link.</summary>
         public bool? DefaultLink { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The link property</summary>
+        /// <summary>The URL of the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Link { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The organizerUserId property</summary>
+        /// <summary>The user ID of the meeting link&apos;s organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizerUserId { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string OrganizerUserId { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>The slug of the meeting link, located directly after the domain in the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -58,15 +58,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The type of the external meeting link. Accepted values are: PERSONAL_LINK, GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkMetadata_type? Type { get; set; }
+        /// <summary>The Unix time in milliseconds when the meeting link was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The userIdsOfLinkMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizerUserId", n => { OrganizerUserId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkMetadata_type>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "userIdsOfLinkMembers", n => { UserIdsOfLinkMembers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -127,7 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizerUserId", OrganizerUserId);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkMetadata_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("userIdsOfLinkMembers", UserIdsOfLinkMembers);
             writer.WriteAdditionalData(AdditionalData);

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.integrators.timeline.v3.item collection</summary>
-        /// <param name="position">The ID of the target app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.integrators.timeline.v3.item collection</summary>
-        /// <param name="position">The ID of the target app.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.WithAppItemRequestBuilder this[string position]

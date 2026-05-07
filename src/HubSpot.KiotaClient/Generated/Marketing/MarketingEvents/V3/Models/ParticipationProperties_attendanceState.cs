@@ -3,15 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
 {
+    /// <summary>The state of the participation</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ParticipationProperties_attendanceState
-    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "REGISTERED")]
-        #pragma warning disable CS1591
-        REGISTERED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ATTENDED")]
         #pragma warning disable CS1591
         ATTENDED,
@@ -27,6 +22,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Models
         [EnumMember(Value = "NO_SHOW")]
         #pragma warning disable CS1591
         NO_SHOW,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "REGISTERED")]
+        #pragma warning disable CS1591
+        REGISTERED,
         #pragma warning restore CS1591
     }
 }

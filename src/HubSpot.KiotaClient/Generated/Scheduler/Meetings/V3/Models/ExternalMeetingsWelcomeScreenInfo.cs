@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A brief description displayed the welcome screen below the title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The logoUrl property</summary>
+        /// <summary>The URL of the logo image to be displayed on the welcome screen, only used if `useCompanyLogo` is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string LogoUrl { get; set; }
 #endif
-        /// <summary>The showWelcomeScreen property</summary>
+        /// <summary>Deprecated property. Value can be ignored but will always be false.</summary>
         public bool? ShowWelcomeScreen { get; set; }
-        /// <summary>The title property</summary>
+        /// <summary>The main heading displayed on the welcome screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The useCompanyLogo property</summary>
+        /// <summary>Whether the company&apos;s logo should be displayed on the welcome screen.</summary>
         public bool? UseCompanyLogo { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalMeetingsWelcomeScreenInfo"/> and sets the default values.

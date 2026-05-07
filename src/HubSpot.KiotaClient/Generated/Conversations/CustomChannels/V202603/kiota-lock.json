@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "9AE25E9E83299BDFA52DB48D891E3F257EB01ECAE7E78A9DDF1E5B1ED288E2ED92F14B6FF2ABF6D9DE827EF7CA70CEB044F517AD34E9B58D730061683E794321",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75359/version/2026-03",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.29.0",
+  "clientClassName": "HubSpotConversationsCustomChannelsV202603Client",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

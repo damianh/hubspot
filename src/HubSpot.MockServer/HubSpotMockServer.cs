@@ -41,6 +41,7 @@ using DamianH.HubSpot.MockServer.Repositories.TaxRate;
 using DamianH.HubSpot.MockServer.Repositories.Timeline;
 using DamianH.HubSpot.MockServer.Repositories.TransactionalEmail;
 using DamianH.HubSpot.MockServer.Repositories.Transcription;
+using DamianH.HubSpot.MockServer.Repositories.UrlMapping;
 using DamianH.HubSpot.MockServer.Repositories.UrlRedirect;
 using DamianH.HubSpot.MockServer.Repositories.UserProvisioning;
 using DamianH.HubSpot.MockServer.Repositories.VideoConferencing;
@@ -129,6 +130,7 @@ public class HubSpotMockServer : IAsyncDisposable
             .AddSingleton<PageRepository>()
             .AddSingleton<DomainRepository>()
             .AddSingleton<UrlRedirectRepository>()
+            .AddSingleton<UrlMappingRepository>()
             .AddSingleton<HubDbRepository>()
             .AddSingleton<SourceCodeRepository>()
             .AddSingleton<SiteSearchRepository>()
@@ -162,7 +164,6 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCrmCommunications(app);
         ApiRoutes.RegisterCrmPostalMail(app);
         ApiRoutes.RegisterCrmFeedbackSubmissions(app);
-        ApiRoutes.RegisterCrmGoals(app);
 
         // Batch 1: Additional standard objects
         ApiRoutes.RegisterCrmAppointments(app);
@@ -194,9 +195,13 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.Associations.RegisterAssociationsV3(app);
         ApiRoutes.Associations.RegisterAssociationsV4(app);
         ApiRoutes.Associations.RegisterAssociationsV202509(app);
+        ApiRoutes.Associations.RegisterAssociationsV202509AtKiotaPath(app);
 
         // Register V202509 CRM Objects API (before generic to ensure proper route matching)
         ApiRoutes.RegisterCrmObjectsV202509(app);
+
+        // Register V202603 CRM Objects API (same as V202509 but without gdpr-delete)
+        ApiRoutes.RegisterCrmObjectsV202603(app);
 
         // Register generic CRM Objects API for dynamic/custom object types
         // Note: This must be registered AFTER specific object routes and associations
@@ -206,6 +211,7 @@ public class HubSpotMockServer : IAsyncDisposable
         // Register Properties APIs
         ApiRoutes.Properties.RegisterPropertiesV3(app);
         ApiRoutes.Properties.RegisterPropertiesV202509(app);
+        ApiRoutes.Properties.RegisterPropertiesV202509AtKiotaPath(app);
         ApiRoutes.Properties.RegisterPropertyValidationsV3(app);
 
         // Register Pipelines APIs
@@ -220,10 +226,13 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.Marketing.RegisterMarketingEmailsApi(app);
         ApiRoutes.Marketing.RegisterCampaignsApi(app);
         ApiRoutes.Marketing.RegisterSingleSendApi(app);
+        ApiRoutes.Marketing.RegisterSingleSendV202603Api(app);
 
         // Register Communication Preferences APIs
         ApiRoutes.Subscriptions.RegisterSubscriptionsV3Api(app);
+        ApiRoutes.Subscriptions.RegisterSubscriptionsV3KiotaApi(app);
         ApiRoutes.Subscriptions.RegisterSubscriptionsV4Api(app);
+        ApiRoutes.Subscriptions.RegisterSubscriptionsV4KiotaApi(app);
 
         // Register Webhooks APIs
         ApiRoutes.Webhooks.RegisterWebhooksApi(app);
@@ -256,6 +265,7 @@ public class HubSpotMockServer : IAsyncDisposable
         // Register Account & Settings APIs
         ApiRoutes.Account.RegisterAccountInfoV3Api(app);
         ApiRoutes.Account.RegisterAccountInfoV202509Api(app);
+        ApiRoutes.Account.RegisterAccountInfoKiotaV202509Api(app);
         ApiRoutes.Account.RegisterAuditLogsV3Api(app);
         ApiRoutes.Multicurrency.RegisterMulticurrencyV3Api(app);
         ApiRoutes.UserProvisioning.RegisterUserProvisioningV3Api(app);
@@ -266,6 +276,7 @@ public class HubSpotMockServer : IAsyncDisposable
 
         // Register Scheduler APIs
         ApiRoutes.Scheduler.RegisterSchedulerMeetingsV3Api(app);
+        ApiRoutes.Scheduler.RegisterSchedulerMeetingsV3KiotaApi(app);
 
         // Register CMS Blog APIs
         ApiRoutes.CmsTags.RegisterCmsTagsV3Api(app);
@@ -275,8 +286,10 @@ public class HubSpotMockServer : IAsyncDisposable
 
         // Register CMS Pages & Content APIs
         ApiRoutes.RegisterCmsPagesApi(app);
+        ApiRoutes.RegisterCmsPagesKiotaApi(app);
         ApiRoutes.RegisterCmsDomainsApi(app);
         ApiRoutes.RegisterCmsUrlRedirectsApi(app);
+        ApiRoutes.RegisterCmsUrlMappingsApi(app);
 
         // Register CMS Advanced Features APIs
         ApiRoutes.RegisterCmsHubDbApi(app);
@@ -284,6 +297,9 @@ public class HubSpotMockServer : IAsyncDisposable
         ApiRoutes.RegisterCmsSiteSearchApi(app);
         ApiRoutes.RegisterCmsContentAuditApi(app);
         ApiRoutes.RegisterCmsMediaBridgeApi(app);
+
+        // Register Meta APIs
+        ApiRoutes.MetaOrigins.RegisterMetaOriginsV1Api(app);
 
         await app.StartAsync();
 

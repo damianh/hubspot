@@ -41,7 +41,7 @@ public class CrmTaxesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Taxes.PostAsync(input);
-        var tax = created!.Entity!;
+        var tax = created!;
 
         tax.ShouldNotBeNull();
         tax.Id.ShouldNotBeNullOrEmpty();
@@ -66,7 +66,7 @@ public class CrmTaxesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Taxes.PostAsync(input);
-        var taxId = created!.Entity!.Id!;
+        var taxId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Taxes[taxId].GetAsync();
 
@@ -90,7 +90,7 @@ public class CrmTaxesKiotaTests : IAsyncLifetime
         };
 
         var created = await _client.Crm.V3.Objects.Taxes.PostAsync(input);
-        var taxId = created!.Entity!.Id!;
+        var taxId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
         {

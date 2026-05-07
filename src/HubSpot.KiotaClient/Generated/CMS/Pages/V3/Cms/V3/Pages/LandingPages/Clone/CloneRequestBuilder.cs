@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Clo
         {
         }
         /// <summary>
-        /// Clone a Landing Page
+        /// Create a copy of an existing landing page.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page"/></returns>
         /// <param name="body">Request body object for cloning content.</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Clo
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.Page.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clone a Landing Page
+        /// Create a copy of an existing landing page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body object for cloning content.</param>

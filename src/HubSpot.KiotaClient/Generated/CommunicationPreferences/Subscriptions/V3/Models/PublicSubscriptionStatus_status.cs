@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicSubscriptionStatus_status
     {
-        [EnumMember(Value = "SUBSCRIBED")]
-        #pragma warning disable CS1591
-        SUBSCRIBED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "NOT_SUBSCRIBED")]
         #pragma warning disable CS1591
         NOT_SUBSCRIBED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SUBSCRIBED")]
+        #pragma warning disable CS1591
+        SUBSCRIBED,
         #pragma warning restore CS1591
     }
 }

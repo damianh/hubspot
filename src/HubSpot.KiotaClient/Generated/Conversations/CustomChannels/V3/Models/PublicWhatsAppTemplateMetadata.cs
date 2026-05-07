@@ -14,6 +14,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The contentId property</summary>
+        public long? ContentId { get; set; }
         /// <summary>The crmObjectIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,13 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_crmObjectIds CrmObjectIds { get; set; }
 #endif
         /// <summary>The mappedTemplateId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MappedTemplateId { get; set; }
-#nullable restore
-#else
-        public string MappedTemplateId { get; set; }
-#endif
+        public long? MappedTemplateId { get; set; }
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +34,8 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_parameters Parameters { get; set; }
 #endif
+        /// <summary>The rootMicId property</summary>
+        public long? RootMicId { get; set; }
         /// <summary>The type property</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_type? Type { get; set; }
         /// <summary>
@@ -66,9 +64,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "contentId", n => { ContentId = n.GetLongValue(); } },
                 { "crmObjectIds", n => { CrmObjectIds = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_crmObjectIds>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_crmObjectIds.CreateFromDiscriminatorValue); } },
-                { "mappedTemplateId", n => { MappedTemplateId = n.GetStringValue(); } },
+                { "mappedTemplateId", n => { MappedTemplateId = n.GetLongValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_parameters>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_parameters.CreateFromDiscriminatorValue); } },
+                { "rootMicId", n => { RootMicId = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_type>(); } },
             };
         }
@@ -79,9 +79,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("contentId", ContentId);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_crmObjectIds>("crmObjectIds", CrmObjectIds);
-            writer.WriteStringValue("mappedTemplateId", MappedTemplateId);
+            writer.WriteLongValue("mappedTemplateId", MappedTemplateId);
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_parameters>("parameters", Parameters);
+            writer.WriteLongValue("rootMicId", RootMicId);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Models.PublicWhatsAppTemplateMetadata_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

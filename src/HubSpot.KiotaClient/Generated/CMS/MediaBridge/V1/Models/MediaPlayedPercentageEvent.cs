@@ -16,6 +16,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the contact in HubSpot’s system that consumed the media. This can be fetched using HubSpot&apos;s Get contact by usertoken (utk) API. The API also supports supplying a usertoken, and will handle converting this into a contact ID automatically.</summary>
         public long? ContactId { get; set; }
+        /// <summary>The externalPlayContext property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedPercentageEvent_externalPlayContext? ExternalPlayContext { get; set; }
         /// <summary>The mediaBridgeId property</summary>
         public long? MediaBridgeId { get; set; }
         /// <summary>The mediaBridgeObjectCoordinates property</summary>
@@ -120,6 +122,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "contactId", n => { ContactId = n.GetLongValue(); } },
+                { "externalPlayContext", n => { ExternalPlayContext = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedPercentageEvent_externalPlayContext>(); } },
                 { "mediaBridgeId", n => { MediaBridgeId = n.GetLongValue(); } },
                 { "mediaBridgeObjectCoordinates", n => { MediaBridgeObjectCoordinates = n.GetStringValue(); } },
                 { "mediaBridgeObjectTypeId", n => { MediaBridgeObjectTypeId = n.GetStringValue(); } },
@@ -145,6 +148,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("contactId", ContactId);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.MediaPlayedPercentageEvent_externalPlayContext>("externalPlayContext", ExternalPlayContext);
             writer.WriteLongValue("mediaBridgeId", MediaBridgeId);
             writer.WriteStringValue("mediaBridgeObjectCoordinates", MediaBridgeObjectCoordinates);
             writer.WriteStringValue("mediaBridgeObjectTypeId", MediaBridgeObjectTypeId);

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The flagState property</summary>
+        /// <summary>The flag state for this portal (e.g. ON or OFF)</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.BatchPortalEntry_flagState? FlagState { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>The ID of the portal</summary>
         public int? PortalId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models.BatchPortalEntry"/> and sets the default values.

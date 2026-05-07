@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Up
         {
         }
         /// <summary>
-        /// Update a batch of users by internal ID, or unique property values
+        /// Update multiple user records in a single request by specifying their internal IDs or unique property values. This operation allows for batch processing of user data, ensuring efficient updates across multiple user profiles.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Users.V3.Crm.V3.Objects.Users.Batch.Up
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Users.V3.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a batch of users by internal ID, or unique property values
+        /// Update multiple user records in a single request by specifying their internal IDs or unique property values. This operation allows for batch processing of user data, ensuring efficient updates across multiple user profiles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

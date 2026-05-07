@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
 {
+    /// <summary>The type of status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ActionHookActionBody_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ACTION_HOOK")]
         #pragma warning disable CS1591

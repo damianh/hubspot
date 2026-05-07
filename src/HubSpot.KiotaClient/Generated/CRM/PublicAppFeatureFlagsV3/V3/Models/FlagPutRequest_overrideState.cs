@@ -3,11 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
 {
+    /// <summary>A flag value that supercedes all other overrides, including portal-level values. Mostly used for things like emergency overrides</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FlagPutRequest_overrideState
-    #pragma warning restore CS1591
     {
+        [EnumMember(Value = "ABSENT")]
+        #pragma warning disable CS1591
+        ABSENT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OFF")]
         #pragma warning disable CS1591
         OFF,
@@ -15,10 +18,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.Models
         [EnumMember(Value = "ON")]
         #pragma warning disable CS1591
         ON,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ABSENT")]
-        #pragma warning disable CS1591
-        ABSENT,
         #pragma warning restore CS1591
     }
 }

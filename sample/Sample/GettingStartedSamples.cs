@@ -54,7 +54,7 @@ public class GettingStartedSamples : IAsyncLifetime
         };
 
         var result = await _client.Crm.V3.Objects.Companies.PostAsync(input, cancellationToken: ct);
-        var company = result!.Entity!;
+        var company = result!;
 
         company.ShouldNotBeNull();
         company.Id.ShouldNotBeNullOrEmpty();
@@ -75,7 +75,7 @@ public class GettingStartedSamples : IAsyncLifetime
                 AdditionalData = new Dictionary<string, object> { { "name", "Read Me Inc" } }
             }
         }, cancellationToken: ct);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Companies[companyId].GetAsync(cancellationToken: ct);
 
@@ -95,7 +95,7 @@ public class GettingStartedSamples : IAsyncLifetime
                 AdditionalData = new Dictionary<string, object> { { "name", "Old Name" }, { "city", "Seattle" } }
             }
         }, cancellationToken: ct);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         var updated = await _client.Crm.V3.Objects.Companies[companyId].PatchAsync(new SimplePublicObjectInput
         {
@@ -122,7 +122,7 @@ public class GettingStartedSamples : IAsyncLifetime
                 AdditionalData = new Dictionary<string, object> { { "name", "To Be Deleted" } }
             }
         }, cancellationToken: ct);
-        var companyId = created!.Entity!.Id!;
+        var companyId = created!.Id!;
 
         // Delete — returns 204 No Content on success
         await _client.Crm.V3.Objects.Companies[companyId].DeleteAsync(cancellationToken: ct);

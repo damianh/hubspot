@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "0E4E0FD880E9BA2E4AAFB9AAC971E0076D99541350C128E1861F8C631C2F1A2F5778B65C1A4432AB9B5ADDB3794CCF86A2F8BC788612B13D3730D95653546310",
-  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v1/specs/Marketing/Transactional%20Single%20Send/versions/140892",
+  "descriptionHash": "8447CF268FCC87D7BEE291F44C388A613DD2DE926324D7E0F5A9FA2FBA2BE9A329E5F0DDD6005CCF35D7398203EA25BA4932B1425768257B21BED076E87D36BE",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22209/version/3",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.29.0",
   "clientClassName": "HubSpotMarketingTransactionalSingleSendV3Client",

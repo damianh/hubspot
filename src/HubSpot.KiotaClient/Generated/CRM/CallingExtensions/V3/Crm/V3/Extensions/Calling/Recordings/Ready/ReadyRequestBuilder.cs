@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
         {
         }
         /// <summary>
-        /// Mark a call recording as ready for transcription, specifying the call by its ID (`engagementid`).
+        /// This endpoint is used to mark a call recording as ready. It requires the engagementId to identify the specific recording.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a call recording as ready for transcription, specifying the call by its ID (`engagementid`).
+        /// This endpoint is used to mark a call recording as ready. It requires the engagementId to identify the specific recording.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

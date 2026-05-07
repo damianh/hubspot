@@ -47,7 +47,7 @@ internal static class ResponseMapper
     }
 
     public static IReadOnlyList<IDictionary<string, object?>> MapCollection(
-        CollectionResponseSimplePublicObjectWithAssociations response)
+        CollectionResponseSimplePublicObjectWithAssociationsForwardPaging response)
     {
         if (response.Results is null)
         {

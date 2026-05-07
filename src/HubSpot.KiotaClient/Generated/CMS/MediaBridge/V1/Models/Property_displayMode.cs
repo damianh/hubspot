@@ -7,13 +7,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_displayMode
     {
-        [EnumMember(Value = "current_value")]
-        #pragma warning disable CS1591
-        Current_value,
-        #pragma warning restore CS1591
         [EnumMember(Value = "all_unique_versions")]
         #pragma warning disable CS1591
         All_unique_versions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "current_value")]
+        #pragma warning disable CS1591
+        Current_value,
         #pragma warning restore CS1591
     }
 }

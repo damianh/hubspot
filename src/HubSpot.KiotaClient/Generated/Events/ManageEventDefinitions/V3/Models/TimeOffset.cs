@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
-        public int? Amount { get; set; }
+        public long? Amount { get; set; }
         /// <summary>The offsetDirection property</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimeOffset_offsetDirection? OffsetDirection { get; set; }
         /// <summary>The timeUnit property</summary>
@@ -45,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetIntValue(); } },
+                { "amount", n => { Amount = n.GetLongValue(); } },
                 { "offsetDirection", n => { OffsetDirection = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimeOffset_offsetDirection>(); } },
                 { "timeUnit", n => { TimeUnit = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimeOffset_timeUnit>(); } },
             };
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("amount", Amount);
+            writer.WriteLongValue("amount", Amount);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimeOffset_offsetDirection>("offsetDirection", OffsetDirection);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.TimeOffset_timeUnit>("timeUnit", TimeUnit);
             writer.WriteAdditionalData(AdditionalData);

@@ -8,13 +8,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V3.Cms.V3.SiteSearch.Search
     public enum GetLengthQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "SHORT")]
-        #pragma warning disable CS1591
-        SHORT,
-        #pragma warning restore CS1591
         [EnumMember(Value = "LONG")]
         #pragma warning disable CS1591
         LONG,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SHORT")]
+        #pragma warning disable CS1591
+        SHORT,
         #pragma warning restore CS1591
     }
 }
