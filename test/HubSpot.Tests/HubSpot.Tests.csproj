@@ -18,7 +18,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.5.0" />
-    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.22.1" />
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="2.0.0" />
     <PackageReference Include="Shouldly" Version="4.3.0" />
     <PackageReference Include="xunit.v3.core.mtp-v2" Version="3.2.2" />
   </ItemGroup>

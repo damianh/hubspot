@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.CommandLine" Version="2.0.6" />
-    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.22.1" />
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
