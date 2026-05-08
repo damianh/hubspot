@@ -143,6 +143,7 @@ public class HubSpotMockServer : IAsyncDisposable
         builder.Services.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+            options.SerializerOptions.Converters.Add(new Apis.Models.StringValueDictionaryConverter());
             options.SerializerOptions.PropertyNameCaseInsensitive = true;
         });
 
