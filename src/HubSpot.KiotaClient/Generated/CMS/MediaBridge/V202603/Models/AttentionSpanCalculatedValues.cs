@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The totalPercentPlayed property</summary>
+        /// <summary>The percentage of the media content that was played. This is a numerical value indicating how much of the total content was viewed, expressed as a percentage.</summary>
         public double? TotalPercentPlayed { get; set; }
-        /// <summary>The totalSecondsPlayed property</summary>
+        /// <summary>The total duration in seconds that the media content was played. This is a numerical value representing the cumulative playtime.</summary>
         public int? TotalSecondsPlayed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanCalculatedValues"/> and sets the default values.

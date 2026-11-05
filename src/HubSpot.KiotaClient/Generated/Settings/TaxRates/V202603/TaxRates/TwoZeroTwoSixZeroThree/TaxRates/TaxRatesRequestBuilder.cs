@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V202603.TaxRates.TwoZero
     public partial class TaxRatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Settings.TaxRates.V202603.taxRates.TwoZeroTwoSixZeroThree.taxRates.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the tax rate group to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V202603.TaxRates.TwoZeroTwoSixZeroThree.TaxRates.Item.WithTaxRateGroupItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Settings.TaxRates.V202603.TaxRates.TwoZeroTwoSixZeroThree.TaxRates.Item.WithTaxRateGroupItemRequestBuilder this[string position]
         {
@@ -98,6 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V202603.TaxRates.TwoZero
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaxRatesRequestBuilderGetQueryParameters 
         {
+            /// <summary>A boolean to filter results by their active status.</summary>
             [QueryParameter("active")]
             public bool? Active { get; set; }
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>

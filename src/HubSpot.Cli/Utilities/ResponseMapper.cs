@@ -1,4 +1,4 @@
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V3.Models;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models;
 
 namespace DamianH.HubSpot.Cli.Utilities;
 

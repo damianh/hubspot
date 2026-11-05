@@ -104,32 +104,40 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V3.Crm.V3.Owners
         public partial class OwnersRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
-            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string? After { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string After { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>Whether to return only results that have been archived.</summary>
+            #pragma warning disable CS1591
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Filter by email address (optional)</summary>
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("email")]
             public string? Email { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("email")]
             public string Email { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

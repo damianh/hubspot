@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyFilterContext Context { get; set; }
 #endif
-        /// <summary>The filterInsightsId property</summary>
+        /// <summary>An integer that serves as the identifier for the filter insights.</summary>
         public int? FilterInsightsId { get; set; }
-        /// <summary>The filterType property</summary>
+        /// <summary>A string indicating the type of filter being applied. The default value is &apos;PROPERTY&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyFilter_filterType? FilterType { get; set; }
-        /// <summary>The frameworkFilterId property</summary>
+        /// <summary>An integer representing the unique identifier for the framework filter. It is formatted as an int64.</summary>
         public long? FrameworkFilterId { get; set; }
-        /// <summary>The operation property</summary>
+        /// <summary>An object defining the operation to be performed on the property. This can be one of several types of operations, such as BoolPropertyOperation, NumberPropertyOperation, StringPropertyOperation, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyFilter.PropertyFilter_operation? Operation { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyFilter.PropertyFilter_operation Operation { get; set; }
 #endif
-        /// <summary>The property property</summary>
+        /// <summary>A string representing the name of the property on which the filter is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Property { get; set; }

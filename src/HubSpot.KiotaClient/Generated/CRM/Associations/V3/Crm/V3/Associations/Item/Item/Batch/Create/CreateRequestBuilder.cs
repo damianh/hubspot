@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         {
         }
         /// <summary>
-        /// This endpoint allows you to create multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// Batch create associations for objects
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociation"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociation>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to create multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// Batch create associations for objects
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

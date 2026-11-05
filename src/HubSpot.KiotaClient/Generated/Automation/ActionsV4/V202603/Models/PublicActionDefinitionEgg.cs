@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp indicating when the action was archived.</summary>
         public long? ArchivedAt { get; set; }
-        /// <summary>The executionRules property</summary>
+        /// <summary>An array of PublicExecutionTranslationRule objects that define rules for executing the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicExecutionTranslationRule>? ExecutionRules { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicExecutionTranslationRule> ExecutionRules { get; set; }
 #endif
-        /// <summary>The functions property</summary>
+        /// <summary>An array of PublicActionFunction objects that define the functions associated with the action, including their type and source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionFunction>? Functions { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionFunction> Functions { get; set; }
 #endif
-        /// <summary>The inputFieldDependencies property</summary>
+        /// <summary>An array that can contain either PublicSingleFieldDependency or PublicConditionalSingleFieldDependency objects, defining dependencies between input fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionDefinitionEgg.PublicActionDefinitionEgg_inputFieldDependencies>? InputFieldDependencies { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionDefinitionEgg.PublicActionDefinitionEgg_inputFieldDependencies> InputFieldDependencies { get; set; }
 #endif
-        /// <summary>The inputFields property</summary>
+        /// <summary>An array of PublicInputFieldDefinition objects defining the input fields required for the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicInputFieldDefinition>? InputFields { get; set; }
@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicObjectRequestOptions ObjectRequestOptions { get; set; }
 #endif
-        /// <summary>The objectTypes property</summary>
+        /// <summary>An array of strings representing the types of objects associated with the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ObjectTypes { get; set; }
@@ -80,7 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<string> ObjectTypes { get; set; }
 #endif
-        /// <summary>The outputFields property</summary>
+        /// <summary>An array of OutputFieldDefinition objects specifying the output fields of the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.OutputFieldDefinition>? OutputFields { get; set; }

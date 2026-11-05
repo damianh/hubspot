@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The category of the URL, indicating its purpose. Valid values include &apos;HOME&apos; and &apos;WORK&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ContactUrl_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HOME")]
         #pragma warning disable CS1591

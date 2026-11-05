@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the batch process was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>An array of StandardError objects detailing any errors that occurred during the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models.StandardError>? Errors { get; set; }
@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models.StandardError> Errors { get; set; }
 #endif
-        /// <summary>An object containing relevant links related to the batch request.</summary>
+        /// <summary>A map of link names to associated URIs, providing additional information or actions related to the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models.BatchResponsePublicDefaultAssociation_links? Links { get; set; }
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models
         public int? NumErrors { get; set; }
         /// <summary>The timestamp when the batch process was initiated, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of PublicDefaultAssociation objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Products.V202603.Models.PublicDefaultAssociation>? Results { get; set; }

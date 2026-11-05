@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The timestamp when the association was created, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this association definition was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The ID of the source object type (e.g., 0-1 for contacts).</summary>
+        /// <summary>The unique identifier of the object type from which the association originates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromObjectTypeId { get; set; }
@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string FromObjectTypeId { get; set; }
 #endif
-        /// <summary>The unique ID of the associated object (e.g., a contact ID).</summary>
+        /// <summary>The unique identifier for this association definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>For labeled association types, the internal name of the association.</summary>
+        /// <summary>The name of the association, which serves as a human-readable identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -41,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ID of the destination object type (e.g., 0-3 for deals).</summary>
+        /// <summary>The unique identifier of the object type to which the association points.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectTypeId { get; set; }
@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ToObjectTypeId { get; set; }
 #endif
-        /// <summary>The timestamp when the last update was made to an association, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this association definition was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition"/> and sets the default values.

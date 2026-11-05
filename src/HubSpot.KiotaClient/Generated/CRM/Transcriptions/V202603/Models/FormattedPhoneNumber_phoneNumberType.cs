@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 {
+    /// <summary>The type of phone number, represented as a string. Valid values include &apos;FIXED_LINE&apos;, &apos;MOBILE&apos;, &apos;FIXED_LINE_OR_MOBILE&apos;, &apos;TOLL_FREE&apos;, &apos;PREMIUM_RATE&apos;, &apos;SHARED_COST&apos;, &apos;VOIP&apos;, &apos;PERSONAL_NUMBER&apos;, &apos;PAGER&apos;, &apos;UAN&apos;, &apos;VOICEMAIL&apos;, and &apos;UNKNOWN&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FormattedPhoneNumber_phoneNumberType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "FIXED_LINE")]
         #pragma warning disable CS1591

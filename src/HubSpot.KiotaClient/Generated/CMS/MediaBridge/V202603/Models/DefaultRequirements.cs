@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gates property</summary>
+        /// <summary>An array of conditions or constraints that must be satisfied. Each element in the array represents a specific gate or requirement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Gates { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> Gates { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>A string representing the logical operator used to evaluate the requirements. Common operators include &apos;AND&apos; and &apos;OR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.DefaultRequirements_operator? Operator { get; set; }
-        /// <summary>The scopeNames property</summary>
+        /// <summary>An array of scope names that define the permissions or access levels required. Each scope name corresponds to a specific permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeNames { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> ScopeNames { get; set; }
 #endif
-        /// <summary>The settings property</summary>
+        /// <summary>A collection of configuration settings that influence the behavior of the operation. These settings may include various options and parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Settings { get; set; }

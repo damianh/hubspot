@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.
             get => new global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.TwoZeroTwoSixZeroThree.Settings.MultiLanguage.MultiLanguageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.cms.blogSettings.TwoZeroTwoSixZeroThree.settings.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the blog whose settings you want to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.TwoZeroTwoSixZeroThree.Settings.Item.WithBlogItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.TwoZeroTwoSixZeroThree.Settings.Item.WithBlogItemRequestBuilder this[string position]
         {
@@ -117,15 +117,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Filter results to include only those created after the specified date and time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Filter results by the exact creation date and time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter results to include only those created before the specified date and time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Specify the order in which results are returned. Accepts an array of fields to sort by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -135,10 +139,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter results to include only those updated after the specified date and time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter results by the exact update date and time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter results to include only those updated before the specified date and time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

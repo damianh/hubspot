@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.CollectionResponsePipelineStageNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.CollectionResponsePipelineStageNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a pipeline stage
+        /// Create a new stage within the specified pipeline.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Create a pipeline stage
+        /// Create a new stage within the specified pipeline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

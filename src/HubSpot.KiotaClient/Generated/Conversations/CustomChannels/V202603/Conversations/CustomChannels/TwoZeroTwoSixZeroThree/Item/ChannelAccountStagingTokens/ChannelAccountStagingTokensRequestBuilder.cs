@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
     public partial class ChannelAccountStagingTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item.channelAccountStagingTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique token of the channel account staging to be updated.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccountStagingTokens.Item.WithAccountTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccountStagingTokens.Item.WithAccountTokenItemRequestBuilder this[string position]
         {

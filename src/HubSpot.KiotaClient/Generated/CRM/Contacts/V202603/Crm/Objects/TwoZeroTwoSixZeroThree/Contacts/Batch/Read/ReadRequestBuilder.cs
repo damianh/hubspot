@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
         public ReadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/objects/2026-03/contacts/batch/read{?archived*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a batch of contacts by ID (`contactId`) or unique property value (`idProperty`). 
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicObject"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a batch of contacts by ID (`contactId`) or unique property value (`idProperty`). 
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Specifies the input for reading a batch of CRM objects, including arrays of object IDs, requested property names (with optional history), and an optional unique identifying property.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,10 +84,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contacts.Batch.Read.ReadRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a batch of contacts by ID (`contactId`) or unique property value (`idProperty`). 
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class ReadRequestBuilderPostQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]

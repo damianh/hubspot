@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
         {
         }
         /// <summary>
-        /// Book a meeting for a specified meeting page.
+        /// Book a meeting using a specified meeting link. This endpoint allows you to create a meeting by providing necessary details such as duration, email, and start time. It is useful for scheduling meetings programmatically through HubSpot&apos;s API.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalMeetingBookingResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalMeetingBookingResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalMeetingBookingResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Book a meeting for a specified meeting page.
+        /// Book a meeting using a specified meeting link. This endpoint allows you to create a meeting by providing necessary details such as duration, email, and start time. It is useful for scheduling meetings programmatically through HubSpot&apos;s API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
     /// <summary>
-    /// Available booking slots for the meeting, grouped by the duration.
+    /// An object where each key is a duration and the value is an availability object for that duration. This provides detailed availability information for each specified meeting duration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExternalLinkAvailability_linkAvailabilityByDuration : IAdditionalDataHolder, IParsable

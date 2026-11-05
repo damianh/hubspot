@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Models
 #endif
         /// <summary>The timestamp indicating when the batch operation was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of Property objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Models.Property>? Results { get; set; }

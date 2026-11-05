@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     public partial class InboundDbObjectType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessScopeName property</summary>
+        /// <summary>The name of the scope required to access the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessScopeName { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowsSensitiveProperties property</summary>
+        /// <summary>A boolean indicating whether the object type allows sensitive properties.</summary>
         public bool? AllowsSensitiveProperties { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the object type was created, in ISO 8601 format.</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The createDatePropertyName property</summary>
+        /// <summary>The property name that stores the creation date of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreateDatePropertyName { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string CreateDatePropertyName { get; set; }
 #endif
-        /// <summary>The defaultSearchPropertyNames property</summary>
+        /// <summary>An array of strings representing the default property names used for search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DefaultSearchPropertyNames { get; set; }
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> DefaultSearchPropertyNames { get; set; }
 #endif
-        /// <summary>The deleted property</summary>
+        /// <summary>A boolean indicating whether the object type is deleted.</summary>
         public bool? Deleted { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The fullyQualifiedName property</summary>
+        /// <summary>The fully qualified name of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullyQualifiedName { get; set; }
@@ -60,23 +60,23 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string FullyQualifiedName { get; set; }
 #endif
-        /// <summary>The hasCustomProperties property</summary>
+        /// <summary>A boolean indicating whether the object type has custom properties.</summary>
         public bool? HasCustomProperties { get; set; }
-        /// <summary>The hasDefaultProperties property</summary>
+        /// <summary>A boolean indicating whether the object type has default properties.</summary>
         public bool? HasDefaultProperties { get; set; }
-        /// <summary>The hasExternalObjectIds property</summary>
+        /// <summary>A boolean indicating whether the object type supports external object IDs.</summary>
         public bool? HasExternalObjectIds { get; set; }
-        /// <summary>The hasOwners property</summary>
+        /// <summary>A boolean indicating whether the object type can have owners.</summary>
         public bool? HasOwners { get; set; }
-        /// <summary>The hasPipelines property</summary>
+        /// <summary>A boolean indicating whether the object type supports pipelines.</summary>
         public bool? HasPipelines { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the object type.</summary>
         public int? Id { get; set; }
-        /// <summary>The indexedForFiltersAndReports property</summary>
+        /// <summary>A boolean indicating whether the object type is indexed for filters and reports.</summary>
         public bool? IndexedForFiltersAndReports { get; set; }
-        /// <summary>The integrationAppId property</summary>
+        /// <summary>The ID of the integration application associated with the object type.</summary>
         public int? IntegrationAppId { get; set; }
-        /// <summary>The janusGroup property</summary>
+        /// <summary>The Janus group associated with the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JanusGroup { get; set; }
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string JanusGroup { get; set; }
 #endif
-        /// <summary>The lastModifiedPropertyName property</summary>
+        /// <summary>The property name that stores the last modified date of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedPropertyName { get; set; }
@@ -92,11 +92,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string LastModifiedPropertyName { get; set; }
 #endif
-        /// <summary>The metaType property</summary>
+        /// <summary>The metadata type associated with the object.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_metaType? MetaType { get; set; }
-        /// <summary>The metaTypeId property</summary>
+        /// <summary>The unique identifier for the metadata type.</summary>
         public int? MetaTypeId { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the database object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -112,7 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The objectTypeIdString property</summary>
+        /// <summary>The string representation of the object type ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeIdString { get; set; }
@@ -120,11 +120,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ObjectTypeIdString { get; set; }
 #endif
-        /// <summary>The ownerPortalId property</summary>
+        /// <summary>The portal ID of the owner associated with the object type.</summary>
         public int? OwnerPortalId { get; set; }
-        /// <summary>The permissioningType property</summary>
+        /// <summary>The type of permissioning applied to the object type.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_permissioningType? PermissioningType { get; set; }
-        /// <summary>The pipelineCloseDatePropertyName property</summary>
+        /// <summary>The property name associated with the pipeline close date of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PipelineCloseDatePropertyName { get; set; }
@@ -132,7 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PipelineCloseDatePropertyName { get; set; }
 #endif
-        /// <summary>The pipelinePropertyName property</summary>
+        /// <summary>The property name associated with the pipeline of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PipelinePropertyName { get; set; }
@@ -140,7 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PipelinePropertyName { get; set; }
 #endif
-        /// <summary>The pipelineStagePropertyName property</summary>
+        /// <summary>The property name associated with the pipeline stage of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PipelineStagePropertyName { get; set; }
@@ -148,7 +148,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PipelineStagePropertyName { get; set; }
 #endif
-        /// <summary>The pipelineTimeToClosePropertyName property</summary>
+        /// <summary>The property name associated with the time to close in the pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PipelineTimeToClosePropertyName { get; set; }
@@ -156,7 +156,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PipelineTimeToClosePropertyName { get; set; }
 #endif
-        /// <summary>The pluralForm property</summary>
+        /// <summary>The plural form of the object type&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PluralForm { get; set; }
@@ -164,7 +164,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PluralForm { get; set; }
 #endif
-        /// <summary>The primaryDisplayLabelPropertyName property</summary>
+        /// <summary>The property name used as the primary display label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryDisplayLabelPropertyName { get; set; }
@@ -172,7 +172,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PrimaryDisplayLabelPropertyName { get; set; }
 #endif
-        /// <summary>The readScopeName property</summary>
+        /// <summary>The name of the scope required to read the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReadScopeName { get; set; }
@@ -180,7 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ReadScopeName { get; set; }
 #endif
-        /// <summary>The requiredProperties property</summary>
+        /// <summary>An array of strings representing the properties that are required for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RequiredProperties { get; set; }
@@ -188,9 +188,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> RequiredProperties { get; set; }
 #endif
-        /// <summary>The restorable property</summary>
+        /// <summary>A boolean indicating whether the object type can be restored if deleted.</summary>
         public bool? Restorable { get; set; }
-        /// <summary>The scopeMappings property</summary>
+        /// <summary>Mappings of scopes related to the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ScopeMapping>? ScopeMappings { get; set; }
@@ -198,7 +198,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ScopeMapping> ScopeMappings { get; set; }
 #endif
-        /// <summary>The secondaryDisplayLabelPropertyNames property</summary>
+        /// <summary>An array of strings representing the property names used as secondary display labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecondaryDisplayLabelPropertyNames { get; set; }
@@ -206,7 +206,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> SecondaryDisplayLabelPropertyNames { get; set; }
 #endif
-        /// <summary>The singularForm property</summary>
+        /// <summary>The singular form of the object type&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SingularForm { get; set; }
@@ -214,11 +214,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string SingularForm { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of the object type.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_status? Status { get; set; }
-        /// <summary>The visibility property</summary>
+        /// <summary>An array representing different visibility settings for the object type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibilities?>? Visibilities { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibilities?> Visibilities { get; set; }
+#endif
+        /// <summary>The visibility setting of the object type.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibility? Visibility { get; set; }
-        /// <summary>The writeScopeName property</summary>
+        /// <summary>The name of the scope required to write to the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WriteScopeName { get; set; }
@@ -289,6 +297,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
                 { "secondaryDisplayLabelPropertyNames", n => { SecondaryDisplayLabelPropertyNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "singularForm", n => { SingularForm = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_status>(); } },
+                { "visibilities", n => { Visibilities = n.GetCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibilities>()?.AsList(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibility>(); } },
                 { "writeScopeName", n => { WriteScopeName = n.GetStringValue(); } },
             };
@@ -338,6 +347,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayLabelPropertyNames", SecondaryDisplayLabelPropertyNames);
             writer.WriteStringValue("singularForm", SingularForm);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_status>("status", Status);
+            writer.WriteCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibilities>("visibilities", Visibilities);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.InboundDbObjectType_visibility>("visibility", Visibility);
             writer.WriteStringValue("writeScopeName", WriteScopeName);
             writer.WriteAdditionalData(AdditionalData);

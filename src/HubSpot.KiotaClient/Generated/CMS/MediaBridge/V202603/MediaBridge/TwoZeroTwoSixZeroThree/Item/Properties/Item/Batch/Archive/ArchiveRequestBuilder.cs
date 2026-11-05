@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Archive a batch of existing properties for the specified types.
+        /// Archive multiple properties for a specified object type within a given app. This endpoint is useful for managing large sets of properties that are no longer needed or should be hidden from active use. It requires specifying the app ID and object type in the path parameters.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archive a batch of existing properties for the specified types.
+        /// Archive multiple properties for a specified object type within a given app. This endpoint is useful for managing large sets of properties that are no longer needed or should be hidden from active use. It requires specifying the app ID and object type in the path parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

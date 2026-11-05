@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
-    /// <summary>The cardinality from the source object&apos;s perspective, either &quot;ONE_TO_ONE&quot; or &quot;ONE_TO_MANY&quot;.</summary>
+    /// <summary>Defines the nature of the association in terms of quantity. Valid values are &apos;ONE_TO_ONE&apos; and &apos;ONE_TO_MANY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationDefinition_cardinality
     {

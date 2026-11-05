@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZe
     public partial class AssociationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.crmObjectSchemas.TwoZeroTwoSixZeroThree.schemas.item.associations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the association definition to delete.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZeroTwoSixZeroThree.Schemas.Item.Associations.Item.WithAssociationIdentifierItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZeroTwoSixZeroThree.Schemas.Item.Associations.Item.WithAssociationIdentifierItemRequestBuilder this[string position]
         {

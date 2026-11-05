@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The portalStates property</summary>
+        /// <summary>An array of portal flag state entries to be updated. Each entry contains details about the portal ID and the desired flag state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Models.BatchPortalEntry>? PortalStates { get; set; }

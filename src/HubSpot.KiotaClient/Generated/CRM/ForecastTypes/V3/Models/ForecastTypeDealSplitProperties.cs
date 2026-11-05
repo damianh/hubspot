@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dealCustomAmountProperty property</summary>
+        /// <summary>A string representing the custom amount property for a deal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealCustomAmountProperty { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealCustomAmountProperty { get; set; }
 #endif
-        /// <summary>The dealCustomAmountPropertyInHomeCurrency property</summary>
+        /// <summary>A string representing the custom amount property for a deal, converted to the home currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealCustomAmountPropertyInHomeCurrency { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealCustomAmountPropertyInHomeCurrency { get; set; }
 #endif
-        /// <summary>The dealCustomDateProperty property</summary>
+        /// <summary>A string representing the custom date property for a deal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealCustomDateProperty { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealCustomDateProperty { get; set; }
 #endif
-        /// <summary>The dealSplitCustomAmountProperty property</summary>
+        /// <summary>A string representing the custom amount property for a deal split.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealSplitCustomAmountProperty { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealSplitCustomAmountProperty { get; set; }
 #endif
-        /// <summary>The dealSplitCustomAmountPropertyInHomeCurrency property</summary>
+        /// <summary>A string representing the custom amount property for a deal split, converted to the home currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealSplitCustomAmountPropertyInHomeCurrency { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealSplitCustomAmountPropertyInHomeCurrency { get; set; }
 #endif
-        /// <summary>The dealSplitWeightedCustomAmountProperty property</summary>
+        /// <summary>A string representing the weighted custom amount property for a deal split.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealSplitWeightedCustomAmountProperty { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string DealSplitWeightedCustomAmountProperty { get; set; }
 #endif
-        /// <summary>The dealSplitWeightedCustomAmountPropertyInHomeCurrency property</summary>
+        /// <summary>A string representing the weighted custom amount property for a deal split, converted to the home currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DealSplitWeightedCustomAmountPropertyInHomeCurrency { get; set; }

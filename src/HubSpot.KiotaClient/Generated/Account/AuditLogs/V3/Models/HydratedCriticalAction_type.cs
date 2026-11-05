@@ -103,9 +103,25 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         #pragma warning disable CS1591
         CHANGE_PASSWORD,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CHANNEL_SENSITIVE_DATA_DISABLED")]
+        #pragma warning disable CS1591
+        CHANNEL_SENSITIVE_DATA_DISABLED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CHANNEL_SENSITIVE_DATA_ENABLED")]
+        #pragma warning disable CS1591
+        CHANNEL_SENSITIVE_DATA_ENABLED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CONTACT_DATA_EXPORT")]
         #pragma warning disable CS1591
         CONTACT_DATA_EXPORT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONTACT_OWNER_AUTO_ASSIGN_DISABLED")]
+        #pragma warning disable CS1591
+        CONTACT_OWNER_AUTO_ASSIGN_DISABLED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONTACT_OWNER_AUTO_ASSIGN_ENABLED")]
+        #pragma warning disable CS1591
+        CONTACT_OWNER_AUTO_ASSIGN_ENABLED,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATA_ACCESS_REQUEST_SUBMITTED")]
         #pragma warning disable CS1591
@@ -166,6 +182,18 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         [EnumMember(Value = "DOMAIN_BASED_INVITES_ENABLED")]
         #pragma warning disable CS1591
         DOMAIN_BASED_INVITES_ENABLED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMAIL_LOGGING_SYNC_SET_ALL")]
+        #pragma warning disable CS1591
+        EMAIL_LOGGING_SYNC_SET_ALL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMAIL_LOGGING_SYNC_SET_CONTACTS")]
+        #pragma warning disable CS1591
+        EMAIL_LOGGING_SYNC_SET_CONTACTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EMAIL_LOGGING_SYNC_SET_REPLIES")]
+        #pragma warning disable CS1591
+        EMAIL_LOGGING_SYNC_SET_REPLIES,
         #pragma warning restore CS1591
         [EnumMember(Value = "EMAIL_TRACKING_DISABLED")]
         #pragma warning disable CS1591
@@ -479,6 +507,10 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         #pragma warning disable CS1591
         SEQUENCE_MODIFIED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE_KEY_AUTO_ROTATE")]
+        #pragma warning disable CS1591
+        SERVICE_KEY_AUTO_ROTATE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SERVICE_KEY_CREATE")]
         #pragma warning disable CS1591
         SERVICE_KEY_CREATE,
@@ -498,6 +530,18 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         [EnumMember(Value = "SERVICE_KEY_ROTATE")]
         #pragma warning disable CS1591
         SERVICE_KEY_ROTATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE_KEY_ROTATION_SCHEDULE_REMOVED")]
+        #pragma warning disable CS1591
+        SERVICE_KEY_ROTATION_SCHEDULE_REMOVED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE_KEY_ROTATION_SCHEDULE_SET")]
+        #pragma warning disable CS1591
+        SERVICE_KEY_ROTATION_SCHEDULE_SET,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SERVICE_KEY_ROTATION_SCHEDULE_UPDATED")]
+        #pragma warning disable CS1591
+        SERVICE_KEY_ROTATION_SCHEDULE_UPDATED,
         #pragma warning restore CS1591
         [EnumMember(Value = "SMTP_TOKEN_CREATED")]
         #pragma warning disable CS1591
@@ -531,6 +575,10 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         #pragma warning disable CS1591
         TEAM_USER_DELETED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TEMPLATE_DELETED")]
+        #pragma warning disable CS1591
+        TEMPLATE_DELETED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TEMPLATE_MODIFIED")]
         #pragma warning disable CS1591
         TEMPLATE_MODIFIED,
@@ -538,6 +586,14 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.Models
         [EnumMember(Value = "TOUCHLESS_PURCHASE")]
         #pragma warning disable CS1591
         TOUCHLESS_PURCHASE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TWO_FACTOR_PROTECTED_ENDPOINT_BLOCKED")]
+        #pragma warning disable CS1591
+        TWO_FACTOR_PROTECTED_ENDPOINT_BLOCKED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TWO_FACTOR_PROTECTED_ENDPOINT_SUCCEEDED")]
+        #pragma warning disable CS1591
+        TWO_FACTOR_PROTECTED_ENDPOINT_SUCCEEDED,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNIFIED_RESTORE_UNDO_EXECUTION")]
         #pragma warning disable CS1591

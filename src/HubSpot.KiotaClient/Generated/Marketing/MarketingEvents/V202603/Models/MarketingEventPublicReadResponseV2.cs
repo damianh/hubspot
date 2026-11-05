@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
         public int? Cancellations { get; set; }
         /// <summary>The creation date and time of the marketing event</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The customProperties property</summary>
+        /// <summary>An array of custom properties associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.CrmPropertyWrapper>? CustomProperties { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
 #else
         public string EventStatus { get; set; }
 #endif
-        /// <summary>The eventStatusV2 property</summary>
+        /// <summary>The version 2 status of the event, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventStatusV2 { get; set; }

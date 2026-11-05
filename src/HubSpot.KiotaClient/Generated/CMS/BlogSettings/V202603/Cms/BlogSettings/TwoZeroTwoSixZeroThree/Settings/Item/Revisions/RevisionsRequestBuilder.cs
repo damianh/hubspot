@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.cms.blogSettings.TwoZeroTwoSixZeroThree.settings.item.revisions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the specific revision of the blog settings to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.TwoZeroTwoSixZeroThree.Settings.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.TwoZeroTwoSixZeroThree.Settings.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -108,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Cms.BlogSettings.
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A cursor token to retrieve results before a specific point in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]

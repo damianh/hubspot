@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The type of address, which can be either &apos;HOME&apos; or &apos;WORK&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ContactAddress_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HOME")]
         #pragma warning disable CS1591

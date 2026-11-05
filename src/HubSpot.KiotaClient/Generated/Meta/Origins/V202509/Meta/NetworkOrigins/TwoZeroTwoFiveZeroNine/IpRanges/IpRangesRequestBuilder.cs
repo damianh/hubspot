@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.T
         {
         }
         /// <summary>
-        /// Retrieve a collection of IP ranges associated with specific services and directions, such as EMAIL, API, DNS, or WEB_SCRAPING. The response includes details like CIDR notation, description, and the direction of IP traffic.
+        /// Retrieve a collection of IP ranges associated with specific services and directions, such as `EMAIL`, `API`, `DNS`, or `WEB_SCRAPING`. The response includes details like CIDR notation, description, and the direction of IP traffic.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.CollectionResponseIpRangeNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.T
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.CollectionResponseIpRangeNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.CollectionResponseIpRangeNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a collection of IP ranges associated with specific services and directions, such as EMAIL, API, DNS, or WEB_SCRAPING. The response includes details like CIDR notation, description, and the direction of IP traffic.
+        /// Retrieve a collection of IP ranges associated with specific services and directions, such as `EMAIL`, `API`, `DNS`, or `WEB_SCRAPING`. The response includes details like CIDR notation, description, and the direction of IP traffic.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.T
             return new global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.TwoZeroTwoFiveZeroNine.IpRanges.IpRangesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a collection of IP ranges associated with specific services and directions, such as EMAIL, API, DNS, or WEB_SCRAPING. The response includes details like CIDR notation, description, and the direction of IP traffic.
+        /// Retrieve a collection of IP ranges associated with specific services and directions, such as `EMAIL`, `API`, `DNS`, or `WEB_SCRAPING`. The response includes details like CIDR notation, description, and the direction of IP traffic.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IpRangesRequestBuilderGetQueryParameters 
@@ -94,40 +94,56 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.T
             [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public string[]? Direction { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public string[] Direction { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.TwoZeroTwoFiveZeroNine.IpRanges.GetDirectionQueryParameterType[]? DirectionAsGetDirectionQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.TwoZeroTwoFiveZeroNine.IpRanges.GetDirectionQueryParameterType[] DirectionAsGetDirectionQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use ServiceAsGetServiceQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public string[]? Service { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public string[] Service { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.TwoZeroTwoFiveZeroNine.IpRanges.GetServiceQueryParameterType[]? ServiceAsGetServiceQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Meta.NetworkOrigins.TwoZeroTwoFiveZeroNine.IpRanges.GetServiceQueryParameterType[] ServiceAsGetServiceQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

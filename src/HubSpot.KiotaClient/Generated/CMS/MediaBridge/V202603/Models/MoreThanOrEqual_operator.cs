@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the operation to be performed. For this component, the operator is &apos;MORE_THAN_OR_EQUAL&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MoreThanOrEqual_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MORE_THAN_OR_EQUAL")]
         #pragma warning disable CS1591

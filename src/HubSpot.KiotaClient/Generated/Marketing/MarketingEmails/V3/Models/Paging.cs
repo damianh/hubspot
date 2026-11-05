@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Models
 {
     /// <summary>
-    /// Contains information pagination of results.
+    /// Represents the pagination information for navigating through a list of results in the API. It provides details on how to access the previous or next set of results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Paging : IAdditionalDataHolder, IParsable

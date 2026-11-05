@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The type of media content, such as &apos;PHOTO&apos;, &apos;VIDEO&apos;, &apos;CAROUSEL&apos;, &apos;LINK&apos;, &apos;ARTICLE&apos;, &apos;GIF&apos;, &apos;DOCUMENT&apos;, &apos;POLL&apos;, &apos;NONE&apos;, &apos;STORY&apos;, or &apos;AUDIO&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SocialMetadata_mediaType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ARTICLE")]
         #pragma warning disable CS1591

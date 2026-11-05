@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The externalPlayContext property</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.AttentionSpanEventRequest_externalPlayContext? ExternalPlayContext { get; set; }
-        /// <summary>The _hsenc property</summary>
+        /// <summary>The hsenc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hsenc { get; set; }

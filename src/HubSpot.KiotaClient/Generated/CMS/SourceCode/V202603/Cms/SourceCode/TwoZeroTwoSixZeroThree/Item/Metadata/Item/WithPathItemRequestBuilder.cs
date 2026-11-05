@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPathItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma-separated list of specific properties to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

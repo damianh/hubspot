@@ -199,6 +199,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models
         #pragma warning disable CS1591
         LIMIT_EXCEEDED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LINE_ITEM_MULTIPLE_PARENTS_IN_ROW")]
+        #pragma warning disable CS1591
+        LINE_ITEM_MULTIPLE_PARENTS_IN_ROW,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MANY_DUPLICATE_ERRORS")]
+        #pragma warning disable CS1591
+        MANY_DUPLICATE_ERRORS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MANY_ERRORS_IN_ROW")]
         #pragma warning disable CS1591
         MANY_ERRORS_IN_ROW,

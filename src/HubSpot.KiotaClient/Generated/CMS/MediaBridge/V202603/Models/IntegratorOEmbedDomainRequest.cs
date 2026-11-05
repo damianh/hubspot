@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.Endpoints Endpoints { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>An integer representing the unique identifier of the HubSpot portal where the oEmbed domain is being configured.</summary>
         public int? PortalId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.IntegratorOEmbedDomainRequest"/> and sets the default values.

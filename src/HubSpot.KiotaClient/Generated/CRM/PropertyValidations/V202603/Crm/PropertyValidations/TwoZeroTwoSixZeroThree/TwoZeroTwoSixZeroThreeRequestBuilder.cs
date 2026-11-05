@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.Proper
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.crm.propertyValidations.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the object type for which to retrieve property validation rules.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.PropertyValidations.TwoZeroTwoSixZeroThree.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.PropertyValidations.TwoZeroTwoSixZeroThree.Item.WithObjectTypeItemRequestBuilder this[string position]
         {

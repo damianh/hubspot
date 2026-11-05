@@ -53,40 +53,40 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
         /// <summary>
         /// Retrieves a user identified by `userId`. `userId` refers to the user&apos;s ID by default, or optionally email as specified by the `IdProperty` query param.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Modifies a user identified by `userId`. `userId` refers to the user&apos;s ID by default, or optionally email as specified by the `IdProperty` query param.
         /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser?> PutAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026?> PutAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdateMarch2026 body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser> PutAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026> PutAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdateMarch2026 body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026>(requestInfo, global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserMarch2026.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes a user identified by `userId`. `userId` refers to the user&apos;s ID by default, or optionally email as specified by the `IdProperty` query param.
@@ -133,11 +133,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdateMarch2026 body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdate body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUserUpdateMarch2026 body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -165,15 +165,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
             [Obsolete("This property is deprecated, use IdPropertyAsDeleteIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.DeleteIdPropertyQueryParameterType? IdPropertyAsDeleteIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -192,15 +198,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
             [Obsolete("This property is deprecated, use IdPropertyAsGetIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.GetIdPropertyQueryParameterType? IdPropertyAsGetIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -219,15 +231,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
             [Obsolete("This property is deprecated, use IdPropertyAsPutIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings.Users.TwoZeroTwoSixZeroThree.Item.PutIdPropertyQueryParameterType? IdPropertyAsPutIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

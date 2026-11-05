@@ -108,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item.Revis
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A paging cursor token for retrieving previous pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -117,7 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Cms.V3.Blogs.Posts.Item.Revis
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            /// <summary>The maximum number of results to return. Default is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

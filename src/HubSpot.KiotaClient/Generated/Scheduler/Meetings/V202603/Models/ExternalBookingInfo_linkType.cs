@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The type of the meeting link. Accepted values are: GROUP_CALENDAR, PERSONAL_LINK, ROUND_ROBIN_CALENDAR.</summary>
+    /// <summary>The type of meeting link. Valid values include &apos;PERSONAL_LINK&apos;, &apos;GROUP_CALENDAR&apos;, and &apos;ROUND_ROBIN_CALENDAR&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalBookingInfo_linkType
     {

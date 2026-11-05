@@ -65,6 +65,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>The warnings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.PublicObjectWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.PublicObjectWarning> Warnings { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicUpsertObject"/> and sets the default values.
         /// </summary>
@@ -100,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models
                 { "propertiesWithHistory", n => { PropertiesWithHistory = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicUpsertObject_propertiesWithHistory>(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicUpsertObject_propertiesWithHistory.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.PublicObjectWarning>(global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.PublicObjectWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.SimplePublicUpsertObject_propertiesWithHistory>("propertiesWithHistory", PropertiesWithHistory);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Invoices.V3.Models.PublicObjectWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

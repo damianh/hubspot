@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>A string representing the display name of the group, used for user-friendly identification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get; set; }
@@ -22,15 +22,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer that determines the order in which the group is displayed relative to other groups.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The fulcrumPortalId property</summary>
+        /// <summary>An integer representing the ID of the portal associated with this group.</summary>
         public int? FulcrumPortalId { get; set; }
-        /// <summary>The fulcrumTimestamp property</summary>
+        /// <summary>A Unix timestamp in milliseconds indicating when the group was last updated.</summary>
         public long? FulcrumTimestamp { get; set; }
-        /// <summary>The hubspotDefined property</summary>
+        /// <summary>A boolean indicating whether the group is defined by HubSpot. If true, the group is a default HubSpot group.</summary>
         public bool? HubspotDefined { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the group. It is a string that uniquely identifies the group within the context of the MediaBridgeService.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

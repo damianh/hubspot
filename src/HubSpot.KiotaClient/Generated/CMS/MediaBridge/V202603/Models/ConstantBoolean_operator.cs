@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string that specifies the operator type. For ConstantBoolean, this is typically set to &apos;CONSTANT_BOOLEAN&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ConstantBoolean_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONSTANT_BOOLEAN")]
         #pragma warning disable CS1591

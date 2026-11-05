@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>An integer specifying the month component of the date.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum DatePropertyOperation_month
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "APR")]
         #pragma warning disable CS1591

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "5FFBD02BBA962747FF73A4A655BED3FDCC0553919E1CC0202BB04C2336ED41710C83C602E7F96E4EFB65698B37BB197CAFF26053159AC85414CEC72CD127103B",
+  "descriptionHash": "E3CA7F3E9520D5B5DE4D2A74C0C18330C6E4268B388ED23430EF03FEFA3C19FE82B1ECCABAC2087C1982F5E5D54F3FA463FB4EA79EE02112594A09AAF35D9A79",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75226/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMAppointmentsV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

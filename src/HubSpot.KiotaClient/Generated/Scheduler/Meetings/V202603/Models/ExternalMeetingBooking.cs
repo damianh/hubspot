@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The duration of the meeting in milliseconds.</summary>
+        /// <summary>An integer representing the duration of the meeting in minutes.</summary>
         public long? Duration { get; set; }
         /// <summary>The email address of the person booking the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The formFields property</summary>
+        /// <summary>An array of form fields filled out by the participant, each containing a name and value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingFormField>? FormFields { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The legalConsentResponses property</summary>
+        /// <summary>An array of legal consent responses, each detailing the consent given by the participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLegalConsentResponse>? LegalConsentResponses { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLegalConsentResponse> LegalConsentResponses { get; set; }
 #endif
-        /// <summary>The likelyAvailableUserIds property</summary>
+        /// <summary>An array of strings representing the user IDs of those likely available for the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LikelyAvailableUserIds { get; set; }
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public List<string> LikelyAvailableUserIds { get; set; }
 #endif
-        /// <summary>The locale used for formatting dates and times in the meeting booking.</summary>
+        /// <summary>A string representing the locale of the person booking the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale { get; set; }
@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Locale { get; set; }
 #endif
-        /// <summary>The unique path identifier for the meeting page.</summary>
+        /// <summary>A string representing the unique identifier for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -80,9 +80,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The date and time when the meeting is scheduled to start, in ISO 8601 format.</summary>
+        /// <summary>The start time of the meeting in ISO 8601 date-time format.</summary>
         public DateTimeOffset? StartTime { get; set; }
-        /// <summary>The timezone in which the meeting is scheduled.</summary>
+        /// <summary>A string representing the timezone of the person booking the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }

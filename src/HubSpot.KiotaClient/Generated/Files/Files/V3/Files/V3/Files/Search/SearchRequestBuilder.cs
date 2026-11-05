@@ -173,12 +173,16 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
             public long? IdLte { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("ids")]
             public long?[]? Ids { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("ids")]
             public long?[] Ids { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>If true shows files that have been marked to be used in new content. It false shows files that should not be used in new content.</summary>
             [QueryParameter("isUsableInContent")]
@@ -198,12 +202,16 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Files.Search
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("parentFolderIds")]
             public long?[]? ParentFolderIds { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("parentFolderIds")]
             public long?[] ParentFolderIds { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Search files by path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

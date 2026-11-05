@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.Draft;
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.Revisions;
+using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -64,42 +65,40 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
         /// <summary>
         /// Retrieve a blog post by the post ID.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Partially updates a single blog post by ID. You only need to specify the values that you want to update.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">Binary request body</param>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PatchAsync(Stream body, string contentType, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost?> PatchAsync(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PatchAsync(Stream body, string contentType, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost> PatchAsync(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
-            var requestInfo = ToPatchRequestInformation(body, contentType, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a blog post by ID.
@@ -135,31 +134,29 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
         /// Partially updates a single blog post by ID. You only need to specify the values that you want to update.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="contentType">The request body content type.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Stream body, string contentType, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Stream body, string contentType, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder.WithObjectItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
-            requestInfo.SetStreamContent(body, contentType);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -198,6 +195,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>A specific property of the blog post to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]

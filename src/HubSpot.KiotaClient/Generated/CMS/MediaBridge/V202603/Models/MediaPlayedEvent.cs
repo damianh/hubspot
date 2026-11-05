@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactId property</summary>
+        /// <summary>The unique identifier for the contact associated with this media event.</summary>
         public long? ContactId { get; set; }
-        /// <summary>The externalPlayContext property</summary>
+        /// <summary>Additional context provided by external systems about the play event.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent_externalPlayContext? ExternalPlayContext { get; set; }
-        /// <summary>The iframeUrl property</summary>
+        /// <summary>The URL of the iframe where the media was embedded and played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IframeUrl { get; set; }
@@ -26,9 +26,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string IframeUrl { get; set; }
 #endif
-        /// <summary>The mediaBridgeId property</summary>
+        /// <summary>The unique identifier for the media bridge instance associated with this event.</summary>
         public long? MediaBridgeId { get; set; }
-        /// <summary>The mediaBridgeObjectCoordinates property</summary>
+        /// <summary>Coordinates that specify the location or context of the media bridge object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectCoordinates { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectCoordinates { get; set; }
 #endif
-        /// <summary>The mediaBridgeObjectTypeId property</summary>
+        /// <summary>The type identifier of the media bridge object involved in the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectTypeId { get; set; }
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectTypeId { get; set; }
 #endif
-        /// <summary>The mediaName property</summary>
+        /// <summary>The name of the media content that was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaName { get; set; }
@@ -52,9 +52,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaName { get; set; }
 #endif
-        /// <summary>The mediaType property</summary>
+        /// <summary>The type of media that was played, such as video or audio.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent_mediaType? MediaType { get; set; }
-        /// <summary>The mediaUrl property</summary>
+        /// <summary>The URL where the media content is hosted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaUrl { get; set; }
@@ -62,11 +62,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaUrl { get; set; }
 #endif
-        /// <summary>The occurredTimestamp property</summary>
+        /// <summary>A Unix timestamp in milliseconds indicating when the media play event occurred.</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The pageId property</summary>
+        /// <summary>The unique identifier for the page where the media was played.</summary>
         public long? PageId { get; set; }
-        /// <summary>The pageName property</summary>
+        /// <summary>The name of the page where the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageName { get; set; }
 #endif
-        /// <summary>The pageObjectCoordinates property</summary>
+        /// <summary>Coordinates that specify the location or context of the page object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageObjectCoordinates { get; set; }
@@ -82,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageObjectCoordinates { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the page where the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -90,11 +90,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>The unique identifier of the HubSpot portal where the event occurred.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The providerId property</summary>
+        /// <summary>The unique identifier for the media provider.</summary>
         public int? ProviderId { get; set; }
-        /// <summary>The sessionId property</summary>
+        /// <summary>The unique identifier for the session during which the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string SessionId { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The state of the media play event, such as &apos;started&apos; or &apos;completed&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent_state? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent"/> and sets the default values.

@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Cu
             get => new global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Currencies.TwoZeroTwoSixZeroThree.ExchangeRates.UpdateVisibility.UpdateVisibilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.settings.currencies.TwoZeroTwoSixZeroThree.exchangeRates.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the exchange rate to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Currencies.TwoZeroTwoSixZeroThree.ExchangeRates.Item.WithExchangeRateItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Currencies.TwoZeroTwoSixZeroThree.ExchangeRates.Item.WithExchangeRateItemRequestBuilder this[string position]
         {
@@ -168,6 +168,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Cu
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>Filter results by the source currency code. Valid values include standard currency codes such as &apos;USD&apos;, &apos;EUR&apos;, etc.</summary>
             [Obsolete("This property is deprecated, use FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,11 +179,13 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Cu
             [QueryParameter("fromCurrencyCode")]
             public string FromCurrencyCode { get; set; }
 #endif
+            /// <summary>Filter results by the source currency code. Valid values include standard currency codes such as &apos;USD&apos;, &apos;EUR&apos;, etc.</summary>
             [QueryParameter("fromCurrencyCode")]
             public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Currencies.TwoZeroTwoSixZeroThree.ExchangeRates.GetFromCurrencyCodeQueryParameterType? FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Filter results by the target currency code. Valid values include standard currency codes such as &apos;USD&apos;, &apos;EUR&apos;, etc.</summary>
             [Obsolete("This property is deprecated, use ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,6 +196,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Cu
             [QueryParameter("toCurrencyCode")]
             public string ToCurrencyCode { get; set; }
 #endif
+            /// <summary>Filter results by the target currency code. Valid values include standard currency codes such as &apos;USD&apos;, &apos;EUR&apos;, etc.</summary>
             [QueryParameter("toCurrencyCode")]
             public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Settings.Currencies.TwoZeroTwoSixZeroThree.ExchangeRates.GetToCurrencyCodeQueryParameterType? ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType { get; set; }
         }

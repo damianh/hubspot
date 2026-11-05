@@ -27,7 +27,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models
 #endif
         /// <summary>The timestamp when the batch process was initiated, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of SimplePublicUpsertObject items representing the results of the batch upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Deals.V3.Models.SimplePublicUpsertObject>? Results { get; set; }

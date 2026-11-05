@@ -1,5 +1,6 @@
 using DamianH.HubSpot.KiotaClient.CRM.Contracts.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Contracts.V3.Models;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -10,6 +11,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
     private readonly ITestOutputHelper _outputHelper = TestContext.Current.TestOutputHelper!;
     private HubSpotMockServer _server = null!;
     private HubSpotCRMContractsV3Client _client = null!;
+    private HubSpotCRMCustomObjectsV3Client _writeClient = null!;
 
     public async ValueTask InitializeAsync()
     {
@@ -22,6 +24,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
             BaseUrl = _server.Uri.ToString()
         };
         _client = new HubSpotCRMContractsV3Client(requestAdapter);
+        _writeClient = new HubSpotCRMCustomObjectsV3Client(requestAdapter);
     }
 
     [Fact]
@@ -40,7 +43,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
             }
         };
 
-        var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
+        var created = await _writeClient.Crm.V3.Objects["contracts"].PostAsync(input);
         var contract = created!;
 
         contract.ShouldNotBeNull();
@@ -65,7 +68,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
             }
         };
 
-        var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
+        var created = await _writeClient.Crm.V3.Objects["contracts"].PostAsync(input);
         var contractId = created!.Id!;
 
         var retrieved = await _client.Crm.V3.Objects.Contracts[contractId].GetAsync();
@@ -89,7 +92,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
             }
         };
 
-        var created = await _client.Crm.V3.Objects.Contracts.PostAsync(input);
+        var created = await _writeClient.Crm.V3.Objects["contracts"].PostAsync(input);
         var contractId = created!.Id!;
 
         var updateInput = new SimplePublicObjectInput
@@ -103,7 +106,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
             }
         };
 
-        var updated = await _client.Crm.V3.Objects.Contracts[contractId].PatchAsync(updateInput);
+        var updated = await _writeClient.Crm.V3.Objects["contracts"][contractId].PatchAsync(updateInput);
 
         updated.ShouldNotBeNull();
         updated.Properties!.AdditionalData.ShouldContainKeyAndValue("hs_contract_status", "SIGNED");
@@ -125,7 +128,7 @@ public class CrmContractsKiotaTests : IAsyncLifetime
                     }
                 }
             };
-            await _client.Crm.V3.Objects.Contracts.PostAsync(input);
+            await _writeClient.Crm.V3.Objects["contracts"].PostAsync(input);
         }
 
         var response = await _client.Crm.V3.Objects.Contracts.GetAsync(config =>

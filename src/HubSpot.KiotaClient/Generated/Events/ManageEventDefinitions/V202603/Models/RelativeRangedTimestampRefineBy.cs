@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.TimeOffset LowerBoundOffset { get; set; }
 #endif
-        /// <summary>The rangeType property</summary>
+        /// <summary>A string that indicates the type of range operation. Valid values are &apos;BETWEEN&apos; and &apos;NOT_BETWEEN&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RelativeRangedTimestampRefineBy_rangeType? RangeType { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of the refinement operation. Default value is &apos;RelativeRangedTimestampRefineBy&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RelativeRangedTimestampRefineBy_type? Type { get; set; }
         /// <summary>The upperBoundOffset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

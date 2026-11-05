@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models
 {
-    /// <summary>The category of the association, such as &quot;HUBSPOT_DEFINED&quot;.</summary>
+    /// <summary>The category of the association, indicating its origin or purpose. Valid values include &quot;HUBSPOT_DEFINED&quot;, &quot;USER_DEFINED&quot;, &quot;INTEGRATOR_DEFINED&quot;, and &quot;WORK&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationSpec_associationCategory
     {

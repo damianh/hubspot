@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
         public JoinOrderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/lists/2026-03/{listId}/memberships/join-order{?after*,before*,limit*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Fetch the memberships of a list in order sorted by the time the records were added to the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ApiCollectionResponseJoinTimeAndRecordId"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ApiCollectionResponseJoinTimeAndRecordId>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ApiCollectionResponseJoinTimeAndRecordId.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Fetch the memberships of a list in order sorted by the time the records were added to the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,12 +79,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Item.Memberships.JoinOrder.JoinOrderRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Fetch the memberships of a list in order sorted by the time the records were added to the list.The `recordId`s are sorted in *ascending* order if an `after` offset or no offset is provided. If only a `before` offset is provided, then the records are sorted in *descending* order.The `after` offset parameter will take precedence over the `before` offset in a case where both are provided.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class JoinOrderRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
-            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
+            /// <summary>The paging offset token for the page that comes `after` the previously requested records.If provided, then the records in the response will be the records following the offset, sorted in *ascending* order. Takes precedence over the `before` offset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("after")]
@@ -88,6 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>The paging offset token for the page that comes `before` the previously requested records.If provided, then the records in the response will be the records preceding the offset, sorted in *descending* order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -97,7 +105,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            /// <summary>The number of records to return in the response. The maximum `limit` is 250.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

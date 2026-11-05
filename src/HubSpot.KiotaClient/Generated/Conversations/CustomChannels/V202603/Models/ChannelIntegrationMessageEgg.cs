@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associateWithContactId property</summary>
+        /// <summary>The ID of the contact with which this message should be associated.</summary>
         public long? AssociateWithContactId { get; set; }
-        /// <summary>The attachments property</summary>
+        /// <summary>An array of attachments included with the message, which can be files, locations, contacts, or other supported types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg.ChannelIntegrationMessageEgg_attachments>? Attachments { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg.ChannelIntegrationMessageEgg_attachments> Attachments { get; set; }
 #endif
-        /// <summary>The channelAccountId property</summary>
+        /// <summary>The ID of the channel account through which the message is sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelAccountId { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelAccountId { get; set; }
 #endif
-        /// <summary>The inReplyToId property</summary>
+        /// <summary>The ID of the message this message is replying to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InReplyToId { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string InReplyToId { get; set; }
 #endif
-        /// <summary>The integrationIdempotencyId property</summary>
+        /// <summary>A unique identifier to ensure idempotency of the message within the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntegrationIdempotencyId { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string IntegrationIdempotencyId { get; set; }
 #endif
-        /// <summary>The integrationThreadId property</summary>
+        /// <summary>A unique identifier for the thread within the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IntegrationThreadId { get; set; }
@@ -56,9 +56,17 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string IntegrationThreadId { get; set; }
 #endif
-        /// <summary>The messageDirection property</summary>
+        /// <summary>The direction of the message, indicating whether it is &apos;INCOMING&apos; or &apos;OUTGOING&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection? MessageDirection { get; set; }
-        /// <summary>The recipients property</summary>
+        /// <summary>The preResolvedContacts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts? PreResolvedContacts { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts PreResolvedContacts { get; set; }
+#endif
+        /// <summary>An array of participants representing the recipients of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>? Recipients { get; set; }
@@ -66,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant> Recipients { get; set; }
 #endif
-        /// <summary>The richText property</summary>
+        /// <summary>The rich text content of the message, allowing for formatting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RichText { get; set; }
@@ -74,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string RichText { get; set; }
 #endif
-        /// <summary>The senders property</summary>
+        /// <summary>An array of participants representing the senders of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>? Senders { get; set; }
@@ -82,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant> Senders { get; set; }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>The plain text content of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -90,7 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>The date and time when the message was created, in ISO 8601 format.</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg"/> and sets the default values.
@@ -124,6 +132,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
                 { "integrationIdempotencyId", n => { IntegrationIdempotencyId = n.GetStringValue(); } },
                 { "integrationThreadId", n => { IntegrationThreadId = n.GetStringValue(); } },
                 { "messageDirection", n => { MessageDirection = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection>(); } },
+                { "preResolvedContacts", n => { PreResolvedContacts = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts.CreateFromDiscriminatorValue); } },
                 { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "richText", n => { RichText = n.GetStringValue(); } },
                 { "senders", n => { Senders = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>(global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -145,6 +154,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
             writer.WriteStringValue("integrationIdempotencyId", IntegrationIdempotencyId);
             writer.WriteStringValue("integrationThreadId", IntegrationThreadId);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationMessageEgg_messageDirection>("messageDirection", MessageDirection);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PreResolvedContacts>("preResolvedContacts", PreResolvedContacts);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>("recipients", Recipients);
             writer.WriteStringValue("richText", RichText);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ChannelIntegrationParticipant>("senders", Senders);

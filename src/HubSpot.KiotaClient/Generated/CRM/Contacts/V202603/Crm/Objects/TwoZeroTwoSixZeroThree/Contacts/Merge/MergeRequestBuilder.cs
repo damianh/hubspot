@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
         {
         }
         /// <summary>
-        /// Merge two contacts
+        /// Merge two contact records. Learn more about [merging records](https://knowledge.hubspot.com/records/merge-records). 
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.SimplePublicObject"/></returns>
         /// <param name="body">Input data for merging two records.</param>
@@ -53,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Merge two contact records. Learn more about [merging records](https://knowledge.hubspot.com/records/merge-records). 
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Input data for merging two records.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

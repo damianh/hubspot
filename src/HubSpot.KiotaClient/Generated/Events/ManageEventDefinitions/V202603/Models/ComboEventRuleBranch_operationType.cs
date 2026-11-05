@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the type of logical operation to be applied between the rules in this branch. Valid values are &apos;AND&apos; and &apos;OR&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ComboEventRuleBranch_operationType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AND")]
         #pragma warning disable CS1591

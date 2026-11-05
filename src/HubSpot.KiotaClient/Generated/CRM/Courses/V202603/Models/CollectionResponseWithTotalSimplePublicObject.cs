@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The paging property</summary>
+        /// <summary>Represents the pagination information for navigating through a list of results in the API. It provides details on how to access the previous or next set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.Paging? Paging { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.Paging Paging { get; set; }
 #endif
-        /// <summary>The results property</summary>
+        /// <summary>An array containing the simple public objects that are part of the collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicObject>? Results { get; set; }
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicObject> Results { get; set; }
 #endif
-        /// <summary>The number of available results</summary>
+        /// <summary>An integer representing the total number of simple public objects in the collection.</summary>
         public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.CollectionResponseWithTotalSimplePublicObject"/> and sets the default values.

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The setType property</summary>
+        /// <summary>A string that indicates the set type used for refinement. Valid values include &apos;ALL&apos;, &apos;ALL_INCLUDE_EMPTY&apos;, &apos;ANY&apos;, &apos;NONE&apos;, &apos;NONE_EXCLUDE_EMPTY&apos;, and &apos;ANY_INCLUDE_EMPTY&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.SetOccurrencesRefineBy_setType? SetType { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of refinement being applied. The default value is &apos;SetOccurrencesRefineBy&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.SetOccurrencesRefineBy_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.SetOccurrencesRefineBy"/> and sets the default values.

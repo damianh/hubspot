@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The discovery property</summary>
+        /// <summary>Information related to the discovery of the endpoint, which may include metadata or additional details for client integration.</summary>
         public bool? Discovery { get; set; }
-        /// <summary>The schemes property</summary>
+        /// <summary>An array of supported schemes for the endpoint, such as &apos;http&apos; or &apos;https&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Schemes { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> Schemes { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>The URL of the endpoint, specifying where the API can be accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

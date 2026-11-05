@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactProfile ContactProfile { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of attachment. The default value is &apos;CONTACT&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactAttachment_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactAttachment"/> and sets the default values.

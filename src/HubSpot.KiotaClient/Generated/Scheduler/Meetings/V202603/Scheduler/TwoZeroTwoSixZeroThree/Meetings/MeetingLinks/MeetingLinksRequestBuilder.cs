@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
         {
         }
         /// <summary>
-        /// Get a paged list meeting scheduling pages
+        /// Retrieve a list of meeting links available in the HubSpot account. This endpoint allows filtering by various criteria such as meeting name, organizer user ID, and meeting type. It supports pagination to navigate through large sets of results.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.CollectionResponseWithTotalExternalLinkMetadata"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.CollectionResponseWithTotalExternalLinkMetadata>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.CollectionResponseWithTotalExternalLinkMetadata.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a paged list meeting scheduling pages
+        /// Retrieve a list of meeting links available in the HubSpot account. This endpoint allows filtering by various criteria such as meeting name, organizer user ID, and meeting type. It supports pagination to navigate through large sets of results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZeroTwoSixZeroThree.Meetings.MeetingLinks.MeetingLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a paged list meeting scheduling pages
+        /// Retrieve a list of meeting links available in the HubSpot account. This endpoint allows filtering by various criteria such as meeting name, organizer user ID, and meeting type. It supports pagination to navigate through large sets of results.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeetingLinksRequestBuilderGetQueryParameters 
@@ -106,34 +106,48 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string? Name { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string Name { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string? OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string? Type { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string Type { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZeroTwoSixZeroThree.Meetings.MeetingLinks.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

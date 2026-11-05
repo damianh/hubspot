@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V202603.Crm.Objects.TwoZeroTwoSix
         /// Update multiple fee records in a single request using their internal IDs or unique property values. This operation allows you to modify the properties of several fees simultaneously, streamlining the process of managing fee data in bulk.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Fees.V202603.Models.BatchResponseSimplePublicObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input component used to handle multiple simple public objects in a single API request. This component is typically used when performing batch operations to create, update, or delete multiple records simultaneously.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V202603.Crm.Objects.TwoZeroTwoSix
         /// Update multiple fee records in a single request using their internal IDs or unique property values. This operation allows you to modify the properties of several fees simultaneously, streamlining the process of managing fee data in bulk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input component used to handle multiple simple public objects in a single API request. This component is typically used when performing batch operations to create, update, or delete multiple records simultaneously.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

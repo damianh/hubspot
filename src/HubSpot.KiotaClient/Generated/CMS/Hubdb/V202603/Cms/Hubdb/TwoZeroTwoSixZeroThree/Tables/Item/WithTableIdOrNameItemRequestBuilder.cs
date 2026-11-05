@@ -161,8 +161,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Include foreign IDs in the response.</summary>
             [QueryParameter("includeForeignIds")]
             public bool? IncludeForeignIds { get; set; }
+            /// <summary>Retrieve the localized schema if available.</summary>
             [QueryParameter("isGetLocalizedSchema")]
             public bool? IsGetLocalizedSchema { get; set; }
         }

@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Models
 #endif
         /// <summary>The timestamp indicating when the batch request was made.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of HubDbTableRowV3 objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Models.HubDbTableRowV3>? Results { get; set; }

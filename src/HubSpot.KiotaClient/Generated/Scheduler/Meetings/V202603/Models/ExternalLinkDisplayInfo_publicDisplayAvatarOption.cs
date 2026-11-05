@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>Option for determining which avatar to display on scheduling page. Accepted values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,</summary>
+    /// <summary>A string indicating the avatar display option, with valid values including &apos;PROFILE_IMAGE&apos;, &apos;COMPANY_LOGO&apos;, and &apos;CUSTOM_AVATAR&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalLinkDisplayInfo_publicDisplayAvatarOption
     {

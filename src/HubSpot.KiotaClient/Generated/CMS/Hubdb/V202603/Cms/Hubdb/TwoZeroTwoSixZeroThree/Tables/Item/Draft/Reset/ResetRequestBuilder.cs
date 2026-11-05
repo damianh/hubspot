@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResetRequestBuilderPostQueryParameters 
         {
+            /// <summary>A boolean indicating whether to include foreign IDs in the response.</summary>
             [QueryParameter("includeForeignIds")]
             public bool? IncludeForeignIds { get; set; }
         }

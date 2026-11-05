@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>A string representing the address of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Address { get; set; }
 #endif
-        /// <summary>The latitude property</summary>
+        /// <summary>A number representing the latitude of the location.</summary>
         public double? Latitude { get; set; }
-        /// <summary>The longitude property</summary>
+        /// <summary>A number representing the longitude of the location.</summary>
         public double? Longitude { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>A string representing the name of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of the component, which is &apos;LOCATION&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicLocation_type? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>A string representing a URL associated with the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

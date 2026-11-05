@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>The domain associated with the event occurrence, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>The email address associated with the event occurrence, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The eventTypeName property</summary>
+        /// <summary>The name of the event type, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventTypeName { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string EventTypeName { get; set; }
 #endif
-        /// <summary>The extraData property</summary>
+        /// <summary>An object containing additional data related to the event occurrence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.AppEventOccurrence_extraData? ExtraData { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.AppEventOccurrence_extraData ExtraData { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for this event occurrence, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The objectId property</summary>
+        /// <summary>The unique identifier of the object related to the event, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string ObjectId { get; set; }
 #endif
-        /// <summary>The objectTypeFullyQualifiedName property</summary>
+        /// <summary>The fully qualified name of the object type associated with the event, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeFullyQualifiedName { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string ObjectTypeFullyQualifiedName { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>A map of custom property names to their values, represented as an object with string values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.AppEventOccurrence_properties? Properties { get; set; }
@@ -86,9 +86,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.TimelineEventIFrame TimelineIFrame { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>The date and time when the event occurred, represented in ISO 8601 format.</summary>
         public DateTimeOffset? Timestamp { get; set; }
-        /// <summary>The utk property</summary>
+        /// <summary>The user token key (utk) associated with the event, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Utk { get; set; }

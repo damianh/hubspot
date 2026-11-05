@@ -18,6 +18,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.scheduler.v3.meetings.meetingLinks.book.availabilityPage.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Book.AvailabilityPage.Item.WithSlugItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Book.AvailabilityPage.Item.WithSlugItemRequestBuilder this[string position]
         {
             get

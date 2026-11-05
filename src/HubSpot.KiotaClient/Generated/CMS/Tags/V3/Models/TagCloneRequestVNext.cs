@@ -47,6 +47,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
 #else
         public string PrimaryLanguage { get; set; }
 #endif
+        /// <summary>The usePublished property</summary>
+        public bool? UsePublished { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models.TagCloneRequestVNext"/> and sets the default values.
         /// </summary>
@@ -76,6 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "primaryLanguage", n => { PrimaryLanguage = n.GetStringValue(); } },
+                { "usePublished", n => { UsePublished = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -89,6 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Tags.V3.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("primaryLanguage", PrimaryLanguage);
+            writer.WriteBoolValue("usePublished", UsePublished);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -98,6 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Filter results by the content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("contentType")]
@@ -107,17 +108,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             [QueryParameter("contentType")]
             public string ContentType { get; set; }
 #endif
+            /// <summary>Filter results to include only those created after the specified date and time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Filter results by the exact creation date and time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter results to include only those created before the specified date and time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
+            /// <summary>Whether to retrieve the localized schema.</summary>
             [QueryParameter("isGetLocalizedSchema")]
             public bool? IsGetLocalizedSchema { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>An array of fields to sort the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -127,10 +133,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter results to include only those updated after the specified date and time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter results by the exact update date and time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter results to include only those updated before the specified date and time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

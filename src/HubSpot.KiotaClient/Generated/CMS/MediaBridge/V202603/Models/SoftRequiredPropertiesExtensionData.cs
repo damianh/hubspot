@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The isSoftRequiredProperty property</summary>
+        /// <summary>A boolean indicating whether a property is considered soft-required. This means the property is recommended but not mandatory.</summary>
         public bool? IsSoftRequiredProperty { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.SoftRequiredPropertiesExtensionData"/> and sets the default values.

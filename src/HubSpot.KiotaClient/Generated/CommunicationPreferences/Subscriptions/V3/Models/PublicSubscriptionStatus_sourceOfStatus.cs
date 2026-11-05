@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models
 {
-    /// <summary>Where the status is determined from e.g. PORTAL_WIDE_STATUS if the contact opted out from the portal.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum PublicSubscriptionStatus_sourceOfStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "BRAND_WIDE_STATUS")]
         #pragma warning disable CS1591

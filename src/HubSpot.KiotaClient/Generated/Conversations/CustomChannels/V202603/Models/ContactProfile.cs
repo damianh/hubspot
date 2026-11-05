@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The addresses property</summary>
+        /// <summary>An array of addresses associated with the contact, where each address includes details such as type (e.g., HOME, WORK), street, city, state, zip, country, and country code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactAddress>? Addresses { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactAddress> Addresses { get; set; }
 #endif
-        /// <summary>The emails property</summary>
+        /// <summary>An array of email addresses for the contact, with each email having a type (e.g., HOME, WORK) and the email address itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactEmail>? Emails { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactOrg Org { get; set; }
 #endif
-        /// <summary>The phones property</summary>
+        /// <summary>An array of phone numbers for the contact, with each phone number including a type (e.g., CELL, MAIN, HOME, WORK) and the phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactPhone>? Phones { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactPhone> Phones { get; set; }
 #endif
-        /// <summary>The urls property</summary>
+        /// <summary>An array of URLs related to the contact, where each URL includes a type (e.g., HOME, WORK) and the URL itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactUrl>? Urls { get; set; }

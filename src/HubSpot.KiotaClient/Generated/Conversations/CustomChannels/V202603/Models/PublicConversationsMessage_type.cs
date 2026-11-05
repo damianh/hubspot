@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The type of the message, which is always &apos;MESSAGE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicConversationsMessage_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MESSAGE")]
         #pragma warning disable CS1591

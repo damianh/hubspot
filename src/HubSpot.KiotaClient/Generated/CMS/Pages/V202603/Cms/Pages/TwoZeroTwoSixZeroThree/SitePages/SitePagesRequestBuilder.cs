@@ -98,22 +98,20 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
         /// Create a new website page.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page"/></returns>
-        /// <param name="body">Binary request body</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page?> PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page?> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page> PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
-            var requestInfo = ToPostRequestInformation(body, contentType, requestConfiguration);
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -139,24 +137,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
         /// Create a new website page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="contentType">The request body content type.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.Page body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetStreamContent(body, contentType);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -187,19 +183,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
-            /// <summary>Filter pages created after a specific date and time.</summary>
+            /// <summary>Filter pages created after the specified date-time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
-            /// <summary>Filter pages by the exact creation timestamp. Format is date-time.</summary>
+            /// <summary>Filter pages by their exact creation timestamp. Format should be date-time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
-            /// <summary>Filter pages created before a specific date-time.</summary>
+            /// <summary>Filter pages created before the specified date-time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Specify properties to include in the response.</summary>
+            /// <summary>Specify which properties to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -209,7 +205,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
-            /// <summary>Specify the order of results. Accepts an array of field names to sort by.</summary>
+            /// <summary>Specify the order of the results. Accepts an array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -222,10 +218,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             /// <summary>Filter pages updated after the specified date-time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
-            /// <summary>Filter pages by their exact update timestamp in ISO 8601 format.</summary>
+            /// <summary>Filter pages by their exact update timestamp. Format should be date-time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
-            /// <summary>Filter pages updated before a specific date and time. Format should be date-time.</summary>
+            /// <summary>Filter pages updated before the specified date-time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

@@ -17,6 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The events property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.EventsRequestBuilder Events
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.EventsRequestBuilder(PathParameters, RequestAdapter);

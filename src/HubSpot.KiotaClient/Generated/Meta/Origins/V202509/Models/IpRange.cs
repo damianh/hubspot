@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cidr property</summary>
+        /// <summary>The CIDR notation representing the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cidr { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
 #else
         public string Cidr { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A description of the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The direction property</summary>
+        /// <summary>The direction of the IP traffic, which can be INGRESS or EGRESS.</summary>
         public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.IpRange_direction? Direction { get; set; }
-        /// <summary>The service property</summary>
+        /// <summary>The service associated with the IP range, such as EMAIL, API, DNS, or WEB_SCRAPING.</summary>
         public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.IpRange_service? Service { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.IpRange"/> and sets the default values.

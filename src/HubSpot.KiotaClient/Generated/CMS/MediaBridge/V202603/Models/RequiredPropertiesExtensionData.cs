@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The isRequiredProperty property</summary>
+        /// <summary>A boolean indicating if the property is required. This field is used to determine the necessity of a property within a given schema or operation.</summary>
         public bool? IsRequiredProperty { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.RequiredPropertiesExtensionData"/> and sets the default values.

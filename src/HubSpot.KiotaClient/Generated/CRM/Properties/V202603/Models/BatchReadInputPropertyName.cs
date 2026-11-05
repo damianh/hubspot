@@ -18,7 +18,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Models
         public bool? Archived { get; set; }
         /// <summary>Indicates the sensitivity level of the data, such as &apos;non_sensitive&apos;, &apos;sensitive&apos;, or &apos;highly_sensitive&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Models.BatchReadInputPropertyName_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of property names to be included in the batch read operation. Each item in the array is a reference to a PropertyName object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Models.PropertyName>? Inputs { get; set; }

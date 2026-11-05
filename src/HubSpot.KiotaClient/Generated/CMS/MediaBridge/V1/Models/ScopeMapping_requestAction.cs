@@ -16,6 +16,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         DELETE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DELETE_SCHEMA")]
+        #pragma warning disable CS1591
+        DELETE_SCHEMA,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EDIT")]
         #pragma warning disable CS1591
         EDIT,
@@ -24,6 +28,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         EDIT_ASSOCIATION,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EDIT_SCHEMA")]
+        #pragma warning disable CS1591
+        EDIT_SCHEMA,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MERGE")]
         #pragma warning disable CS1591
         MERGE,
@@ -31,6 +39,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         [EnumMember(Value = "VIEW")]
         #pragma warning disable CS1591
         VIEW,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEW_SCHEMA")]
+        #pragma warning disable CS1591
+        VIEW_SCHEMA,
         #pragma warning restore CS1591
     }
 }

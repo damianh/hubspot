@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowsSensitiveProperties property</summary>
+        /// <summary>A boolean that specifies if the object type allows properties marked as sensitive.</summary>
         public bool? AllowsSensitiveProperties { get; set; }
-        /// <summary>The clearDescription property</summary>
+        /// <summary>A boolean indicating whether the description should be cleared or reset.</summary>
         public bool? ClearDescription { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectTypeDefinitionLabels Labels { get; set; }
 #endif
-        /// <summary>The primaryDisplayProperty property</summary>
+        /// <summary>A string that identifies the primary property used for displaying the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryDisplayProperty { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PrimaryDisplayProperty { get; set; }
 #endif
-        /// <summary>The requiredProperties property</summary>
+        /// <summary>An array of strings indicating which properties are required for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RequiredProperties { get; set; }
@@ -50,9 +50,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> RequiredProperties { get; set; }
 #endif
-        /// <summary>The restorable property</summary>
+        /// <summary>A boolean indicating whether the object type can be restored after deletion.</summary>
         public bool? Restorable { get; set; }
-        /// <summary>The searchableProperties property</summary>
+        /// <summary>An array of strings specifying which properties can be used in search queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SearchableProperties { get; set; }
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> SearchableProperties { get; set; }
 #endif
-        /// <summary>The secondaryDisplayProperties property</summary>
+        /// <summary>An array of strings that list additional properties used for displaying the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecondaryDisplayProperties { get; set; }

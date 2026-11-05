@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string that indicates the type of range operation. Valid values are &apos;BETWEEN&apos; and &apos;NOT_BETWEEN&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RelativeRangedTimestampRefineBy_rangeType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "BETWEEN")]
         #pragma warning disable CS1591

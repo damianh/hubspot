@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZe
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZeroTwoSixZeroThree.Schemas.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.crmObjectSchemas.TwoZeroTwoSixZeroThree.schemas.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier for the CRM object type whose schema is being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZeroTwoSixZeroThree.Schemas.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZeroTwoSixZeroThree.Schemas.Item.WithObjectTypeItemRequestBuilder this[string position]
         {
@@ -149,10 +149,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.CrmObjectSchemas.TwoZe
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Whether to include association definitions in the response. Defaults to true.</summary>
             [QueryParameter("includeAssociationDefinitions")]
             public bool? IncludeAssociationDefinitions { get; set; }
+            /// <summary>Whether to include audit metadata in the response. Defaults to true.</summary>
             [QueryParameter("includeAuditMetadata")]
             public bool? IncludeAuditMetadata { get; set; }
+            /// <summary>Whether to include property definitions in the response. Defaults to true.</summary>
             [QueryParameter("includePropertyDefinitions")]
             public bool? IncludePropertyDefinitions { get; set; }
         }

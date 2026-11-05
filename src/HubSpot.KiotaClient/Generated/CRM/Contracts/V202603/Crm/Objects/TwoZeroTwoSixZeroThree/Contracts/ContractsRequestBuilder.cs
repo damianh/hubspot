@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Batch;
 using DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Item;
-using DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Search;
 using DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,11 +23,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroT
         public global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Batch.BatchRequestBuilder Batch
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The search property</summary>
-        public global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Search.SearchRequestBuilder Search
-        {
-            get => new global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.crm.objects.TwoZeroTwoSixZeroThree.contracts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -77,26 +71,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroT
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a contract with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard contracts is provided.
-        /// </summary>
-        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObject"/></returns>
-        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObject?> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObject> PostAsync(global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
         /// Read a page of contracts. Control what is returned via the `properties` query param.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -113,28 +87,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroT
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Create a contract with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard contracts is provided.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Is the input object used to create a new CRM object, containing the properties to be set and optional associations to link the new record with other CRM objects.</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Models.SimplePublicObjectInputForCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -205,14 +157,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroT
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContractsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Contracts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Contracts.ContractsRequestBuilder.ContractsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ContractsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

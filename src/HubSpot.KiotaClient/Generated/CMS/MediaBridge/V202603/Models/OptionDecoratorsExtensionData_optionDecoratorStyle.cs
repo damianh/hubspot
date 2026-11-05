@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the style applied to the option decorators. This property defines how the decorators should be visually presented.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum OptionDecoratorsExtensionData_optionDecoratorStyle
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "LABEL_ONLY")]
         #pragma warning disable CS1591

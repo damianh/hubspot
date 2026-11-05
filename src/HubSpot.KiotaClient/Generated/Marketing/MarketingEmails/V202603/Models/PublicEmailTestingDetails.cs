@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time limit on gathering test results. After this time is up, the winning version will be sent to the remaining contacts.</summary>
         public int? HoursToWait { get; set; }
-        /// <summary>The isAbVariation property</summary>
+        /// <summary>A boolean indicating whether the email is an A/B test variation.</summary>
         public bool? IsAbVariation { get; set; }
         /// <summary>The ID of the AB test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

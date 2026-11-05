@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callerIdType property</summary>
+        /// <summary>A string indicating the type of caller ID, which is &apos;CONTACT&apos; by default.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.ContactCallerId_callerIdType? CallerIdType { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the contact, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>The first name of the contact, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>The last name of the contact, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }

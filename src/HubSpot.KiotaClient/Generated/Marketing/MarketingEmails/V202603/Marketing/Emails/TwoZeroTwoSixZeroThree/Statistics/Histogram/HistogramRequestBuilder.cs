@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistogramRequestBuilderGetQueryParameters 
         {
+            /// <summary>A list of email IDs to filter the statistics. This is a form-style parameter that can include multiple IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailIds")]
@@ -94,15 +95,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("emailIds")]
             public long?[] EmailIds { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The end timestamp for the statistics data range. Must be in date-time format.</summary>
             [QueryParameter("endTimestamp")]
-            public string? EndTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("endTimestamp")]
-            public string EndTimestamp { get; set; }
-#endif
+            public DateTimeOffset? EndTimestamp { get; set; }
+            /// <summary>The time interval for the histogram. Valid values are YEAR, QUARTER, MONTH, WEEK, DAY, HOUR, QUARTER_HOUR, MINUTE, and SECOND.</summary>
             [Obsolete("This property is deprecated, use IntervalAsGetIntervalQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,17 +109,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("interval")]
             public string Interval { get; set; }
 #endif
+            /// <summary>The time interval for the histogram. Valid values are YEAR, QUARTER, MONTH, WEEK, DAY, HOUR, QUARTER_HOUR, MINUTE, and SECOND.</summary>
             [QueryParameter("interval")]
             public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Statistics.Histogram.GetIntervalQueryParameterType? IntervalAsGetIntervalQueryParameterType { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The start timestamp for the statistics data range. Must be in date-time format.</summary>
             [QueryParameter("startTimestamp")]
-            public string? StartTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("startTimestamp")]
-            public string StartTimestamp { get; set; }
-#endif
+            public DateTimeOffset? StartTimestamp { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

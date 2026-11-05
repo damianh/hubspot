@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Contact&apos;s email address.</summary>
+        /// <summary>The emailAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string EmailAddress { get; set; }
 #endif
-        /// <summary>Legal basis for updating the contact&apos;s status (required for GDPR enabled portals).</summary>
+        /// <summary>The legalBasis property</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicUpdateSubscriptionStatusRequest_legalBasis? LegalBasis { get; set; }
-        /// <summary>A more detailed explanation to go with the legal basis (required for GDPR enabled portals).</summary>
+        /// <summary>The legalBasisExplanation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalBasisExplanation { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string LegalBasisExplanation { get; set; }
 #endif
-        /// <summary>ID of the subscription being updated for the contact.</summary>
+        /// <summary>The subscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId { get; set; }

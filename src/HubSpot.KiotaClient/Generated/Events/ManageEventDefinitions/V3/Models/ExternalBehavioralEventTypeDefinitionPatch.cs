@@ -22,6 +22,22 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The detailTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetailTemplate { get; set; }
+#nullable restore
+#else
+        public string DetailTemplate { get; set; }
+#endif
+        /// <summary>The headerTemplate property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HeaderTemplate { get; set; }
+#nullable restore
+#else
+        public string HeaderTemplate { get; set; }
+#endif
         /// <summary>Human readable label for the event. Used in HubSpot UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +45,14 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #nullable restore
 #else
         public string Label { get; set; }
+#endif
+        /// <summary>The propertyOrder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyPatch>? PropertyOrder { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyPatch> PropertyOrder { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.ExternalBehavioralEventTypeDefinitionPatch"/> and sets the default values.
@@ -56,7 +80,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "detailTemplate", n => { DetailTemplate = n.GetStringValue(); } },
+                { "headerTemplate", n => { HeaderTemplate = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "propertyOrder", n => { PropertyOrder = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyPatch>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyPatch.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +94,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("detailTemplate", DetailTemplate);
+            writer.WriteStringValue("headerTemplate", HeaderTemplate);
             writer.WriteStringValue("label", Label);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyPatch>("propertyOrder", PropertyOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

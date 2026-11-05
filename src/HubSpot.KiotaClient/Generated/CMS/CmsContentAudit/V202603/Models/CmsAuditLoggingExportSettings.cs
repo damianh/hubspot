@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>A string specifying the email address to which notifications about the export should be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -30,13 +30,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models.CmsAuditLoggingExportFilters Filters { get; set; }
 #endif
-        /// <summary>The format property</summary>
+        /// <summary>A string specifying the format of the export file. Valid values include &apos;XLS&apos;, &apos;XLSX&apos;, and &apos;CSV&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models.CmsAuditLoggingExportSettings_format? Format { get; set; }
-        /// <summary>The partition property</summary>
+        /// <summary>An integer used for partitioning the export data, if applicable.</summary>
         public int? Partition { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>An integer representing the ID of the portal from which the audit logs are being exported.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The recipientUserIds property</summary>
+        /// <summary>An array of integers specifying the IDs of users who should receive the exported file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? RecipientUserIds { get; set; }
@@ -44,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
 #else
         public List<int?> RecipientUserIds { get; set; }
 #endif
-        /// <summary>The shouldMarkExportFileAsSensitive property</summary>
+        /// <summary>A boolean indicating whether the export file should be marked as sensitive.</summary>
         public bool? ShouldMarkExportFileAsSensitive { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of export being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>An integer representing the ID of the user initiating the export.</summary>
         public int? UserId { get; set; }
-        /// <summary>The userTimeZone property</summary>
+        /// <summary>A string representing the time zone of the user initiating the export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserTimeZone { get; set; }

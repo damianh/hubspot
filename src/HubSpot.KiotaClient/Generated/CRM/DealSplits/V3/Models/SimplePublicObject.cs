@@ -29,7 +29,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>An identifier used for tracing the write request for the object.</summary>
+        /// <summary>An identifier used to trace the write request for the object. Set a unique ID for each write operation; it is returned with any errors so you can identify which request encountered which error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectWriteTraceId { get; set; }
@@ -45,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_properties Properties { get; set; }
 #endif
-        /// <summary>Key-value pairs representing the properties of the object along with their history.</summary>
+        /// <summary>Key-value pairs representing the properties of the object along with their history, each with a timestamp and source information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.DealSplits.V3.Models.SimplePublicObject_propertiesWithHistory? PropertiesWithHistory { get; set; }

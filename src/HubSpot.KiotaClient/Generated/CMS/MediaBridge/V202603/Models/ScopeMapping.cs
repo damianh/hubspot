@@ -12,13 +12,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     public partial class ScopeMapping : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessLevel property</summary>
+        /// <summary>A string indicating the level of access granted for the scope.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ScopeMapping_accessLevel? AccessLevel { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The requestAction property</summary>
+        /// <summary>A string representing the action that can be requested within the scope.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ScopeMapping_requestAction? RequestAction { get; set; }
-        /// <summary>The scopeName property</summary>
+        /// <summary>A string representing the name of the scope for which the access permissions are defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeName { get; set; }

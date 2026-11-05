@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string indicating the operation type. It defaults to &apos;IF_STRING&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IfString_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "IF_STRING")]
         #pragma warning disable CS1591

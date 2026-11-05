@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Crm.Objects.V3.Item.Ba
         /// <summary>
         /// Archive multiple appointments using their IDs.
         /// </summary>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input payload containing a list of simple public object IDs. This component is used when performing batch operations on multiple objects within HubSpot.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Crm.Objects.V3.Item.Ba
         /// Archive multiple appointments using their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input payload containing a list of simple public object IDs. This component is used when performing batch operations on multiple objects within HubSpot.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

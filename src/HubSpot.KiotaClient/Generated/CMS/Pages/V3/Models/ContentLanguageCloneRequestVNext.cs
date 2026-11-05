@@ -39,6 +39,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
 #else
         public string PrimaryLanguage { get; set; }
 #endif
+        /// <summary>If true, clone from the published version of the content. Defaults to false (clones from the current draft).</summary>
+        public bool? UsePublished { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models.ContentLanguageCloneRequestVNext"/> and sets the default values.
         /// </summary>
@@ -67,6 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "primaryLanguage", n => { PrimaryLanguage = n.GetStringValue(); } },
+                { "usePublished", n => { UsePublished = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("primaryLanguage", PrimaryLanguage);
+            writer.WriteBoolValue("usePublished", UsePublished);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models
 #endif
         /// <summary>The date and time when the batch update operation was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of results from the batch update operation. Each item in the array is a PublicAssociationDefinitionConfigurationUpdateResult object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models.PublicAssociationDefinitionConfigurationUpdateResult>? Results { get; set; }

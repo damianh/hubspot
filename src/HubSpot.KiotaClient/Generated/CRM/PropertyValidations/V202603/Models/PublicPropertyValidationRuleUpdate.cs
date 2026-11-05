@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Models
 #else
         public List<string> RuleArguments { get; set; }
 #endif
-        /// <summary>The shouldApplyNormalization property</summary>
+        /// <summary>A boolean indicating whether normalization should be applied to the property value as part of the validation process.</summary>
         public bool? ShouldApplyNormalization { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Models.PublicPropertyValidationRuleUpdate"/> and sets the default values.

@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Crm.Objects.TwoZe
         {
         }
         /// <summary>
-        /// List all associations of an object by object type. Limit 500 per call.
+        /// Retrieve all associations between a specific record and an object type. Limit 500 per call.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Crm.Objects.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.CollectionResponseMultiAssociatedObjectWithLabelForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all associations of an object by object type. Limit 500 per call.
+        /// Retrieve all associations between a specific record and an object type. Limit 500 per call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Crm.Objects.TwoZe
             return new global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Crm.Objects.TwoZeroTwoFiveZeroNine.Item.Item.Associations.Item.WithToObjectTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all associations of an object by object type. Limit 500 per call.
+        /// Retrieve all associations between a specific record and an object type. Limit 500 per call.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithToObjectTypeItemRequestBuilderGetQueryParameters 

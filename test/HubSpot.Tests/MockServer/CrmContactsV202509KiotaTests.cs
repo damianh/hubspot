@@ -1,5 +1,5 @@
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V202509;
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V202509.Models;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V202509;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V202509.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -9,7 +9,7 @@ public class CrmContactsV202509KiotaTests : IAsyncLifetime
 {
     private readonly ITestOutputHelper _outputHelper = TestContext.Current.TestOutputHelper!;
     private HubSpotMockServer _server = null!;
-    private HubSpotCRMObjectsV202509Client _client = null!;
+    private HubSpotCRMCustomObjectsV202509Client _client = null!;
 
     public async ValueTask InitializeAsync()
     {
@@ -19,7 +19,7 @@ public class CrmContactsV202509KiotaTests : IAsyncLifetime
         {
             BaseUrl = _server.Uri.ToString()
         };
-        _client = new HubSpotCRMObjectsV202509Client(requestAdapter);
+        _client = new HubSpotCRMCustomObjectsV202509Client(requestAdapter);
     }
 
     public async ValueTask DisposeAsync() => await _server.DisposeAsync();

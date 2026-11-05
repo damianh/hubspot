@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A Unix timestamp in milliseconds indicating when the translation was created. It is an integer.</summary>
+        /// <summary>The timestamp indicating when the subscription translation was created.</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>A string providing a description of the subscription in the specified language.</summary>
+        /// <summary>A text description of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The code representing the language of the translation. It is a string.</summary>
+        /// <summary>The code representing the language of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageCode { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string LanguageCode { get; set; }
 #endif
-        /// <summary>The localized name of the subscription. It is a string.</summary>
+        /// <summary>The name of the subscription translation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The unique identifier for the subscription, represented as an integer.</summary>
+        /// <summary>The unique identifier for the subscription associated with the translation.</summary>
         public long? SubscriptionId { get; set; }
-        /// <summary>A timestamp indicating when the translation was last updated, represented as an integer.</summary>
+        /// <summary>The timestamp indicating when the subscription translation was last updated.</summary>
         public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionTranslation"/> and sets the default values.

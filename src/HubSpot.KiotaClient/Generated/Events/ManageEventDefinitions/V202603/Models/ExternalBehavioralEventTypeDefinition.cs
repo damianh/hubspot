@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the event type is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The associations property</summary>
+        /// <summary>An array of association definitions that define the associations related to the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition>? Associations { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComboEventRuleBranch ComboEventRules { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>A string representing the date and time when the event type was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdUserId property</summary>
+        /// <summary>An integer representing the ID of the user who created the event type.</summary>
         public int? CreatedUserId { get; set; }
         /// <summary>The customMatchingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ExternalObjectResolutionMappingResponse CustomMatchingId { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The detailTemplate property</summary>
+        /// <summary>A string used as a template for the details of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetailTemplate { get; set; }
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string DetailTemplate { get; set; }
 #endif
-        /// <summary>The fullyQualifiedName property</summary>
+        /// <summary>A string representing the fully qualified name of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullyQualifiedName { get; set; }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string FullyQualifiedName { get; set; }
 #endif
-        /// <summary>The headerTemplate property</summary>
+        /// <summary>A string used as a template for the header of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeaderTemplate { get; set; }
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string HeaderTemplate { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>A string representing the unique identifier of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.BehavioralEventTypeDefinitionLabels Labels { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>A string representing the name of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -100,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>A string representing the object type ID of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -108,7 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The primaryObject property</summary>
+        /// <summary>A string representing the primary object associated with the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryObject { get; set; }
@@ -116,7 +116,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string PrimaryObject { get; set; }
 #endif
-        /// <summary>The primaryObjectId property</summary>
+        /// <summary>A string representing the ID of the primary object associated with the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryObjectId { get; set; }
@@ -124,7 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string PrimaryObjectId { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>An array of property objects that define the properties of the event type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property>? Properties { get; set; }
@@ -132,11 +132,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property> Properties { get; set; }
 #endif
-        /// <summary>The trackingType property</summary>
+        /// <summary>A string specifying the tracking type of the event. Valid values include &apos;VISITED_URL&apos;, &apos;CLICKED_ELEMENT&apos;, &apos;CUSTOM_SCRIPT&apos;, and others.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ExternalBehavioralEventTypeDefinition_trackingType? TrackingType { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>A string representing the date and time when the event type was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedUserId property</summary>
+        /// <summary>An integer representing the ID of the user who last updated the event type.</summary>
         public int? UpdatedUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ExternalBehavioralEventTypeDefinition"/> and sets the default values.

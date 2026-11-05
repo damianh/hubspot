@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Model
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time when the send was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The ID of a send event.</summary>
+        /// <summary>The eventId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.EventIdView? EventId { get; set; }

@@ -216,10 +216,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderDeleteQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -243,10 +247,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderPatchQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -262,10 +270,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V3.Crm.V3.Pipelines.Item.Ite
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderPutQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

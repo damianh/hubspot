@@ -6,6 +6,7 @@ using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroT
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item;
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.MultiLanguage;
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Schedule;
+using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -48,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.cms.blogs.TwoZeroTwoSixZeroThree.posts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the blog post to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.WithObjectItemRequestBuilder this[string position]
         {
@@ -78,41 +79,40 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
         /// <summary>
         /// Retrieve all blog posts, with paging and filtering options. This method would be useful for an integration that ingests posts and suggests edits.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.CollectionResponseWithTotalBlogPostForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.CollectionResponseWithTotalBlogPostForwardPaging?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.CollectionResponseWithTotalBlogPostForwardPaging> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.CollectionResponseWithTotalBlogPostForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.CollectionResponseWithTotalBlogPostForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new blog post, specifying its content in the request body.
         /// </summary>
-        /// <param name="body">Binary request body</param>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost?> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
-            var requestInfo = ToPostRequestInformation(body, contentType, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all blog posts, with paging and filtering options. This method would be useful for an integration that ingests posts and suggests edits.
@@ -130,31 +130,29 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
         /// Create a new blog post, specifying its content in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="contentType">The request body content type.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
-            requestInfo.SetStreamContent(body, contentType);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -185,15 +183,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Filter posts created after the specified date and time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Filter posts by their creation date and time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter posts created before the specified date and time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Specify which properties to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -203,6 +205,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
+            /// <summary>Specify the order in which to sort the results. Accepts an array of field names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -212,10 +215,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter posts updated after the specified date and time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter posts by their last update date and time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter posts updated before the specified date and time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

@@ -59,7 +59,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroT
         {
         }
         /// <summary>
-        /// List
+        /// Read a page of discounts. Control what is returned via the `properties` query param.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Models.CollectionResponseSimplePublicObjectWithAssociationsForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,6 +96,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroT
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Models.SimplePublicObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Models.SimplePublicObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Read a page of discounts. Control what is returned via the `properties` query param.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroT
             return new global::DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Discounts.DiscountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List
+        /// Read a page of discounts. Control what is returned via the `properties` query param.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DiscountsRequestBuilderGetQueryParameters 

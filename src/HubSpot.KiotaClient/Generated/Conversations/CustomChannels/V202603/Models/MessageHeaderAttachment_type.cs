@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>A string representing the type of attachment, which is always &apos;MESSAGE_HEADER&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MessageHeaderAttachment_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MESSAGE_HEADER")]
         #pragma warning disable CS1591

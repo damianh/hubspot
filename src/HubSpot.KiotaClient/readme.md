@@ -4,7 +4,7 @@ Auto-generated .NET HubSpot API client built with [Microsoft Kiota](https://lear
 
 ## What is this?
 
-This package provides strongly-typed .NET clients for the HubSpot REST API, generated directly from [HubSpot's official OpenAPI definitions](https://api.hubspot.com/api-catalog-public/v1/apis). Each HubSpot API area is exposed as a separate client class so you only take the dependencies you need.
+This package provides strongly-typed .NET clients for the HubSpot REST API, generated directly from [HubSpot's official OpenAPI catalog](https://api.hubspot.com/public/api/spec/v1/specs). Each HubSpot API area is exposed as a separate client class so you only take the dependencies you need.
 
 ## Quick Install
 
@@ -94,8 +94,18 @@ Clients are generated per HubSpot API area:
 
 The clients in this package are generated from HubSpot's OpenAPI catalog. To regenerate:
 
-```bash
-./generate.ps1
+```powershell
+.\tool\generate.ps1
 ```
+
+Run this from the repository root, or use this package's `generate.ps1` wrapper.
+Generation fetches uncached specifications for every catalog entry, including
+beta/developer-preview versions and Test APIs, using the repository-pinned Kiota
+tool. Failed runs preserve existing output and exit nonzero; successful runs
+replace the generated clients with the exact catalog inventory.
+
+Catalog removals can remove public types. Generic `CRM.Objects` clients are no
+longer published; use the matching `CRM.CustomObjects` version for generic
+object-type operations or the corresponding object-specific client.
 
 See the [repository](https://github.com/damianh/hubspot) for full details.

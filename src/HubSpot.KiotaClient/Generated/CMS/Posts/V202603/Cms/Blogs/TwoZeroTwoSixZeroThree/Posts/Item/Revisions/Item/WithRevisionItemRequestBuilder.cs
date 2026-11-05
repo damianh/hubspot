@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.Revisions.Item.Restore;
 using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZeroThree.Posts.Item.Revisions.Item.RestoreToDraft;
+using DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -47,20 +48,20 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
         /// <summary>
         /// Retrieve a previous version of a blog post.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPostVersion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPostVersion?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPostVersion> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPostVersion>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Models.BlogPostVersion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a previous version of a blog post.
@@ -78,7 +79,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V202603.Cms.Blogs.TwoZeroTwoSixZ
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "*/*");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

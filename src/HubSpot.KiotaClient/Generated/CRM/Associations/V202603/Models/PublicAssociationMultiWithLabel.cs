@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.PublicObjectId From { get; set; }
 #endif
-        /// <summary>The paging property</summary>
+        /// <summary>Represents the pagination information for navigating through a list of results in the API. It provides details on how to access the previous or next set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging? Paging { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging_1? Paging { get; set; }
 #nullable restore
 #else
-        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging Paging { get; set; }
+        public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging_1 Paging { get; set; }
 #endif
         /// <summary>The to property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "from", n => { From = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.PublicObjectId>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.PublicObjectId.CreateFromDiscriminatorValue); } },
-                { "paging", n => { Paging = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging.CreateFromDiscriminatorValue); } },
+                { "paging", n => { Paging = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging_1.CreateFromDiscriminatorValue); } },
                 { "to", n => { To = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.MultiAssociatedObjectWithLabel>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.MultiAssociatedObjectWithLabel.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.PublicObjectId>("from", From);
-            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging>("paging", Paging);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.Paging_1>("paging", Paging);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202603.Models.MultiAssociatedObjectWithLabel>("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }

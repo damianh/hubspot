@@ -47,5 +47,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         #pragma warning disable CS1591
         String,
         #pragma warning restore CS1591
+        [EnumMember(Value = "time_range")]
+        #pragma warning disable CS1591
+        Time_range,
+        #pragma warning restore CS1591
     }
 }

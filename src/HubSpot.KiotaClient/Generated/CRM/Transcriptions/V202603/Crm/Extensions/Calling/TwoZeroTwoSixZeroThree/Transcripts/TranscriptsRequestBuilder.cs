@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.
     public partial class TranscriptsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.crm.extensions.calling.TwoZeroTwoSixZeroThree.transcripts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the transcript to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.Calling.TwoZeroTwoSixZeroThree.Transcripts.Item.WithTranscriptItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.Calling.TwoZeroTwoSixZeroThree.Transcripts.Item.WithTranscriptItemRequestBuilder this[string position]
         {
@@ -46,6 +46,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.
         public TranscriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/extensions/calling/2026-03/transcripts", rawUrl)
         {
         }
+        /// <summary>
+        /// Create a new transcript for a call in your HubSpot account. This endpoint allows you to submit the details of a call transcript, including engagement ID and utterances, to be stored and managed within HubSpot. This is useful for integrating call transcription data into your CRM workflows.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.TranscriptCreateResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,6 +66,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.TranscriptCreateResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.TranscriptCreateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new transcript for a call in your HubSpot account. This endpoint allows you to submit the details of a call transcript, including engagement ID and utterances, to be stored and managed within HubSpot. This is useful for integrating call transcription data into your CRM workflows.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

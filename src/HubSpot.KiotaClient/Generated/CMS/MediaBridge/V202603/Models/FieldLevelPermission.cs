@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     public partial class FieldLevelPermission : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessLevel property</summary>
+        /// <summary>The level of access granted for the field. This is a string value that specifies the permission level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessLevel { get; set; }

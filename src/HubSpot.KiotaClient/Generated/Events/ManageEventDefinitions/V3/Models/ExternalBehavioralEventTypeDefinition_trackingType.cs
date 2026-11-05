@@ -40,6 +40,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         MANUAL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "POLLING")]
+        #pragma warning disable CS1591
+        POLLING,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PROPERTY_CHANGE")]
         #pragma warning disable CS1591
         PROPERTY_CHANGE,

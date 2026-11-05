@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The collectedAt property</summary>
+        /// <summary>Indicates when the cache was last updated.</summary>
         public DateTimeOffset? CollectedAt { get; set; }
-        /// <summary>The currentUsage property</summary>
+        /// <summary>How many API calls an account has made for the current day.</summary>
         public int? CurrentUsage { get; set; }
-        /// <summary>The fetchStatus property</summary>
+        /// <summary>Status of fetching the information, including if the data came from the cache.</summary>
         public global::DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models.ApiUsage_fetchStatus? FetchStatus { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the limit type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -28,9 +28,9 @@ namespace DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The resetsAt property</summary>
+        /// <summary>Time that the limit will reset.</summary>
         public DateTimeOffset? ResetsAt { get; set; }
-        /// <summary>The usageLimit property</summary>
+        /// <summary>Limits by which a single integration can consume the HubSpot public APIs.</summary>
         public int? UsageLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Account.AccountInfo.V202509.Models.ApiUsage"/> and sets the default values.

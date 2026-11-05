@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Models
 #endif
         /// <summary>The category of validation applied to the property, such as FORMAT, ALPHANUMERIC, or MAX_LENGTH.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Models.PublicPropertyValidationRule_ruleType? RuleType { get; set; }
-        /// <summary>The shouldApplyNormalization property</summary>
+        /// <summary>A boolean indicating whether normalization should be applied to the property value before validation.</summary>
         public bool? ShouldApplyNormalization { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Models.PublicPropertyValidationRule"/> and sets the default values.

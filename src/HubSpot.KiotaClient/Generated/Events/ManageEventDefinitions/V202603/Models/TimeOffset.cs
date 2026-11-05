@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>An integer representing the amount of time units for the offset.</summary>
         public long? Amount { get; set; }
-        /// <summary>The offsetDirection property</summary>
+        /// <summary>A string indicating the direction of the time offset. Valid values are &apos;PAST&apos; and &apos;FUTURE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.TimeOffset_offsetDirection? OffsetDirection { get; set; }
-        /// <summary>The timeUnit property</summary>
+        /// <summary>A string specifying the unit of time for the offset. Valid values include &apos;WEEKS&apos;, &apos;DAYS&apos;, &apos;HOURS&apos;, and &apos;MINUTES&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.TimeOffset_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.TimeOffset"/> and sets the default values.

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The developerSymbol property</summary>
+        /// <summary>A string representing the developer&apos;s unique symbol or identifier within the project. This symbol is used in conjunction with the project name to resolve the fully qualified name of an App Event Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeveloperSymbol { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public string DeveloperSymbol { get; set; }
 #endif
-        /// <summary>The projectName property</summary>
+        /// <summary>The name of the project associated with the developer. It is a string that identifies the project within the developer&apos;s scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectName { get; set; }

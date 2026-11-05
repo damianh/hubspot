@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>Deprecated. Use externalOptionsReferenceType instead.</summary>
+    /// <summary>A string indicating the type of object referenced by the property.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_referencedObjectType
     {

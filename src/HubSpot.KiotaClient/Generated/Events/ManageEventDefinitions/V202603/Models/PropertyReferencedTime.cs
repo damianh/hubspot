@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The property property</summary>
+        /// <summary>A string indicating the property from which the time reference is derived.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Property { get; set; }
@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Property { get; set; }
 #endif
-        /// <summary>The referenceType property</summary>
+        /// <summary>A string that defines the type of reference, with possible values including &apos;VALUE&apos;, &apos;UPDATED_AT&apos;, &apos;ANNIVERSARY&apos;, &apos;VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION&apos;, and &apos;ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyReferencedTime_referenceType? ReferenceType { get; set; }
-        /// <summary>The timeType property</summary>
+        /// <summary>A string indicating the type of time reference, with a default value of &apos;PROPERTY_REFERENCED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyReferencedTime_timeType? TimeType { get; set; }
-        /// <summary>The timezoneSource property</summary>
+        /// <summary>A string specifying the source of the timezone, which can be &apos;CUSTOM&apos;, &apos;USER&apos;, or &apos;PORTAL&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyReferencedTime_timezoneSource? TimezoneSource { get; set; }
-        /// <summary>The zoneId property</summary>
+        /// <summary>A string representing the identifier for the timezone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

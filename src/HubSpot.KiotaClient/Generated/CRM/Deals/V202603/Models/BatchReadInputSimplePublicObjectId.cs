@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Deals.V202603.Models
 #else
         public string IdProperty { get; set; }
 #endif
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of SimplePublicObjectId objects, each containing the ID of an object to be read.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Deals.V202603.Models.SimplePublicObjectId>? Inputs { get; set; }

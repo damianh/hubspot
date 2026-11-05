@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string that specifies the type of the refinement operation. Default value is &apos;RelativeRangedTimestampRefineBy&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RelativeRangedTimestampRefineBy_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "RelativeRangedTimestampRefineBy")]
         #pragma warning disable CS1591

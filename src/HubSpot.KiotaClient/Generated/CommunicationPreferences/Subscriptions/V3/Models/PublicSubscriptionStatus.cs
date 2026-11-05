@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the brand that the subscription is associated with, if there is one.</summary>
+        /// <summary>The brandId property</summary>
         public long? BrandId { get; set; }
-        /// <summary>A description of the subscription.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The ID for the subscription.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The legal reason for the current status of the subscription.</summary>
+        /// <summary>The legalBasis property</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionStatus_legalBasis? LegalBasis { get; set; }
-        /// <summary>A more detailed explanation to go with the legal basis.</summary>
+        /// <summary>The legalBasisExplanation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalBasisExplanation { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string LegalBasisExplanation { get; set; }
 #endif
-        /// <summary>The name of the subscription.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The name of the preferences group that the subscription is associated with.</summary>
+        /// <summary>The preferenceGroupName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferenceGroupName { get; set; }
@@ -58,9 +58,9 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.
 #else
         public string PreferenceGroupName { get; set; }
 #endif
-        /// <summary>Where the status is determined from e.g. PORTAL_WIDE_STATUS if the contact opted out from the portal.</summary>
+        /// <summary>The sourceOfStatus property</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionStatus_sourceOfStatus? SourceOfStatus { get; set; }
-        /// <summary>Whether the contact is subscribed.</summary>
+        /// <summary>The status property</summary>
         public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionStatus_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models.PublicSubscriptionStatus"/> and sets the default values.

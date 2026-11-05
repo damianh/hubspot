@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.cms.v3.blogSettings.settings.item.revisions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The Blog version id.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Settings.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Settings.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -110,14 +110,18 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V3.Cms.V3.BlogSettings.Se
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("before")]
             public string? Before { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("before")]
             public string Before { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            /// <summary>The maximum number of results to return. Default is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
         }

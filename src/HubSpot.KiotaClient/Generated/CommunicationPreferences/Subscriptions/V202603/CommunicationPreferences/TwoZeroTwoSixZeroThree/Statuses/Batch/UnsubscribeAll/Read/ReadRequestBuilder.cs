@@ -90,10 +90,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
-            /// <summary>The ID of the business unit to filter the results. This is an optional parameter.</summary>
+            /// <summary>An optional integer representing the business unit ID to filter the results.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The communication channel to filter the unsubscribe statuses. This parameter is required and currently supports &apos;EMAIL&apos; as a valid value.</summary>
+            /// <summary>A required string specifying the communication channel. Currently, only &apos;EMAIL&apos; is supported.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The communication channel to filter the unsubscribe statuses. This parameter is required and currently supports &apos;EMAIL&apos; as a valid value.</summary>
+            /// <summary>A required string specifying the communication channel. Currently, only &apos;EMAIL&apos; is supported.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Batch.UnsubscribeAll.Read.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
         }

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Featur
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.featureFlags.TwoZeroTwoSixZeroThree.item.flags.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the feature flag to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.WithFlagNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.WithFlagNameItemRequestBuilder this[string position]
         {

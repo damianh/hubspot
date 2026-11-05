@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allUsersBusyTimes property</summary>
+        /// <summary>An array of objects representing the busy times for all users associated with the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalUserBusyTimes>? AllUsersBusyTimes { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalMeetingsLinkSettings CustomParams { get; set; }
 #endif
-        /// <summary>Whether the meeting was booked offline, meaning no associated calendar event was created.</summary>
+        /// <summary>A boolean indicating whether the meeting link is offline.</summary>
         public bool? IsOffline { get; set; }
         /// <summary>The linkAvailability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string LinkId { get; set; }
 #endif
-        /// <summary>The type of the meeting link. Accepted values are: GROUP_CALENDAR, PERSONAL_LINK, ROUND_ROBIN_CALENDAR.</summary>
+        /// <summary>The type of meeting link. Valid values include &apos;PERSONAL_LINK&apos;, &apos;GROUP_CALENDAR&apos;, and &apos;ROUND_ROBIN_CALENDAR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingInfo_linkType? LinkType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingInfo"/> and sets the default values.

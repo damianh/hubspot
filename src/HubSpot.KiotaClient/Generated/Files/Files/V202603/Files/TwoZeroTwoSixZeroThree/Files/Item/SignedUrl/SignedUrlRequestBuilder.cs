@@ -85,22 +85,32 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V202603.Files.TwoZeroTwoSixZer
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SignedUrlRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("expirationSeconds")]
             public long? ExpirationSeconds { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("This property is deprecated, use SizeAsGetSizeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("size")]
             public string? Size { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("size")]
             public string Size { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("size")]
             public global::DamianH.HubSpot.KiotaClient.Files.Files.V202603.Files.TwoZeroTwoSixZeroThree.Files.Item.SignedUrl.GetSizeQueryParameterType? SizeAsGetSizeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("upscale")]
             public bool? Upscale { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

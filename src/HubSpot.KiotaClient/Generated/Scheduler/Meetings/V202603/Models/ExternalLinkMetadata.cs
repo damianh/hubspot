@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Unix time in milliseconds when the meeting link was created.</summary>
+        /// <summary>The date and time when the meeting link was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Whether the meeting link is the user&apos;s default link.</summary>
+        /// <summary>A boolean indicating whether this is the default meeting link.</summary>
         public bool? DefaultLink { get; set; }
         /// <summary>The unique identifier for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The URL of the meeting link.</summary>
+        /// <summary>The full URL of the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }
@@ -42,7 +42,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The user ID of the meeting link&apos;s organizer.</summary>
+        /// <summary>The unique identifier of the user who organized the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizerUserId { get; set; }
@@ -50,7 +50,15 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string OrganizerUserId { get; set; }
 #endif
-        /// <summary>The slug of the meeting link, located directly after the domain in the URL.</summary>
+        /// <summary>An integer representing the identifier for the payment link associated with the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentLinkId { get; set; }
+#nullable restore
+#else
+        public string PaymentLinkId { get; set; }
+#endif
+        /// <summary>A string representing the unique part of the URL for the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -58,11 +66,11 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The type of the external meeting link. Accepted values are: PERSONAL_LINK, GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.</summary>
+        /// <summary>The type of meeting link. Valid values include &apos;PERSONAL_LINK&apos;, &apos;GROUP_CALENDAR&apos;, and &apos;ROUND_ROBIN_CALENDAR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkMetadata_type? Type { get; set; }
-        /// <summary>The Unix time in milliseconds when the meeting link was last updated.</summary>
+        /// <summary>The date and time when the meeting link was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The userIdsOfLinkMembers property</summary>
+        /// <summary>An array of user IDs representing the members associated with the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UserIdsOfLinkMembers { get; set; }
@@ -101,6 +109,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizerUserId", n => { OrganizerUserId = n.GetStringValue(); } },
+                { "paymentLinkId", n => { PaymentLinkId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkMetadata_type>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -120,6 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizerUserId", OrganizerUserId);
+            writer.WriteStringValue("paymentLinkId", PaymentLinkId);
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkMetadata_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

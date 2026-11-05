@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string indicating the type of media involved in the event, such as &apos;VIDEO&apos;, &apos;AUDIO&apos;, etc.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AttentionSpanEvent_mediaType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AUDIO")]
         #pragma warning disable CS1591

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of ExchangeRateCreateRequest objects, each representing the details required to create a single exchange rate. This includes properties like fromCurrencyCode, conversionRate, and effectiveAt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V202603.Models.ExchangeRateCreateRequest>? Inputs { get; set; }

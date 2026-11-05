@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The color property</summary>
+        /// <summary>An object representing the color settings of the divider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicDividerStyleSettings_color? Color { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicDividerStyleSettings_color Color { get; set; }
 #endif
-        /// <summary>The height property</summary>
+        /// <summary>An integer representing the height of the divider.</summary>
         public int? Height { get; set; }
-        /// <summary>The lineType property</summary>
+        /// <summary>A string indicating the type of line used for the divider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LineType { get; set; }

@@ -14,25 +14,25 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The day property</summary>
+        /// <summary>An integer representing the day component of the date.</summary>
         public int? Day { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>An integer representing the hour component of the time.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>An integer representing the millisecond component of the time.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>An integer representing the minute component of the time.</summary>
         public int? Minute { get; set; }
-        /// <summary>The month property</summary>
+        /// <summary>An integer representing the month component of the date.</summary>
         public int? Month { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>An integer representing the second component of the time.</summary>
         public int? Second { get; set; }
-        /// <summary>The timeType property</summary>
+        /// <summary>A string indicating the type of time representation, defaulting to &apos;DATE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.DatePoint_timeType? TimeType { get; set; }
-        /// <summary>The timezoneSource property</summary>
+        /// <summary>A string specifying the source of the timezone, with valid values including &apos;CUSTOM&apos;, &apos;USER&apos;, and &apos;PORTAL&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.DatePoint_timezoneSource? TimezoneSource { get; set; }
-        /// <summary>The year property</summary>
+        /// <summary>An integer representing the year component of the date.</summary>
         public int? Year { get; set; }
-        /// <summary>The zoneId property</summary>
+        /// <summary>A string representing the identifier for the timezone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

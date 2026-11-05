@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Fees.V202603.Models
 #else
         public string FromObjectTypeId { get; set; }
 #endif
-        /// <summary>The labels property</summary>
+        /// <summary>An array of labels that describe the relationship between the two objects. This is a required property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Labels { get; set; }

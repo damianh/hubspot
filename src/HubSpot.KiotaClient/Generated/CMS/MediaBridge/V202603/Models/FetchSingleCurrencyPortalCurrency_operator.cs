@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string that specifies the operation to be performed. It is required and has a default value of &apos;FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FetchSingleCurrencyPortalCurrency_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY")]
         #pragma warning disable CS1591

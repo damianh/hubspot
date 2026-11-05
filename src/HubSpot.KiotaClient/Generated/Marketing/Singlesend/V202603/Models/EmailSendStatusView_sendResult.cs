@@ -95,6 +95,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V202603.Models
         #pragma warning disable CS1591
         LOW_CONTACT_QUALITY_SCORE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MARKETING_ACTIVATION_DISALLOWED")]
+        #pragma warning disable CS1591
+        MARKETING_ACTIVATION_DISALLOWED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MISSING_CONTENT")]
         #pragma warning disable CS1591
         MISSING_CONTENT,
@@ -174,6 +178,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.Singlesend.V202603.Models
         [EnumMember(Value = "RECIPIENT_FATIGUE_SUPPRESSED")]
         #pragma warning disable CS1591
         RECIPIENT_FATIGUE_SUPPRESSED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "RECIPIENT_SEND_LIMIT_EXCEEDED")]
+        #pragma warning disable CS1591
+        RECIPIENT_SEND_LIMIT_EXCEEDED,
         #pragma warning restore CS1591
         [EnumMember(Value = "SENT")]
         #pragma warning disable CS1591

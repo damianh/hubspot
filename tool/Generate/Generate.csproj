@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="SimpleExec" Version="13.1.0" />
+    <InternalsVisibleTo Include="HubSpot.Tests" />
   </ItemGroup>
 
 </Project>

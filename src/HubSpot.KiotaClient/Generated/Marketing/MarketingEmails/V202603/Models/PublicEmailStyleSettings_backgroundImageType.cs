@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 {
+    /// <summary>The type of background image display, with valid values including &apos;SINGLE&apos;, &apos;STRETCH&apos;, and &apos;REPEAT&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicEmailStyleSettings_backgroundImageType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "REPEAT")]
         #pragma warning disable CS1591

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "E7DE70250958207A6FB3AEF5F677BD14D865E7EF9CC03281B01286501E12655EFE6C35F7F9D41521D6666300D9D6E11C044609E016E5D33068D457790BF8A7EE",
+  "descriptionHash": "4A3FE7D4D708AFDAF7E84AB621933FB85B7103B7F9F435ACBE10E038BAF3DFACA73EC00CADF07E315390715E1E2D97121D15B0C0FA9C9C08E2CD25F6130900AE",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22146/version/3",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMCommercePaymentsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.CommercePayments.V3",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

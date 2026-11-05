@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maxOccurrences property</summary>
+        /// <summary>An integer representing the maximum number of occurrences allowed.</summary>
         public int? MaxOccurrences { get; set; }
-        /// <summary>The minOccurrences property</summary>
+        /// <summary>An integer representing the minimum number of occurrences required.</summary>
         public int? MinOccurrences { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of refinement, which is &apos;NumOccurrencesRefineBy&apos; by default.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.NumOccurrencesRefineBy_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.NumOccurrencesRefineBy"/> and sets the default values.

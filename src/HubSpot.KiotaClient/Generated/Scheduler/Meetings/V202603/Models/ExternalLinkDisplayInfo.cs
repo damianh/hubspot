@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The URL of the user&apos;s custom uploaded avatar image.</summary>
+        /// <summary>A string representing the URL of the avatar image to be displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Avatar { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Avatar { get; set; }
 #endif
-        /// <summary>The URL of the company&apos;s avatar image.</summary>
+        /// <summary>A string representing the URL of the company avatar image to be displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyAvatar { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyAvatar { get; set; }
 #endif
-        /// <summary>Deprecated field with no impact of link display info.</summary>
+        /// <summary>A string representing the headline text to be displayed with the meeting link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Headline { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Headline { get; set; }
 #endif
-        /// <summary>Option for determining which avatar to display on scheduling page. Accepted values are: PROFILE_IMAGE, COMPANY_LOGO, CUSTOM_AVATAR,</summary>
+        /// <summary>A string indicating the avatar display option, with valid values including &apos;PROFILE_IMAGE&apos;, &apos;COMPANY_LOGO&apos;, and &apos;CUSTOM_AVATAR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkDisplayInfo_publicDisplayAvatarOption? PublicDisplayAvatarOption { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkDisplayInfo"/> and sets the default values.

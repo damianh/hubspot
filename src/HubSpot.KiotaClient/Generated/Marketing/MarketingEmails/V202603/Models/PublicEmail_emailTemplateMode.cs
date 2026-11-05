@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 {
+    /// <summary>The mode of the email template, such as &apos;DESIGN_MANAGER&apos; or &apos;DRAG_AND_DROP&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicEmail_emailTemplateMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DESIGN_MANAGER")]
         #pragma warning disable CS1591

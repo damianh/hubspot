@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             get => new global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions.Calling.Recordings.RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.crm.v3.extensions.calling.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier for the app whose calling extension settings are being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions.Calling.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions.Calling.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.crm.v3.extensions.calling.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier for the app whose calling extension settings are being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions.Calling.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.CallingExtensions.V3.Crm.V3.Extensions.Calling.Item.WithAppItemRequestBuilder this[string position]

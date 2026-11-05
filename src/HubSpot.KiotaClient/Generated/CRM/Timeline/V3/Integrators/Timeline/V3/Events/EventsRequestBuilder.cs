@@ -20,7 +20,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Ev
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The batch property</summary>
-        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Batch.BatchRequestBuilder Batch
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);

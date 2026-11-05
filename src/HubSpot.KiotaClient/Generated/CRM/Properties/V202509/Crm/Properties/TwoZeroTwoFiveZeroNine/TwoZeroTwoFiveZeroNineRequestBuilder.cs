@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
     public partial class TwoZeroTwoFiveZeroNineRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.crm.properties.TwoZeroTwoFiveZeroNine.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The type of CRM object for which properties are being retrieved, such as &apos;contacts&apos;, &apos;companies&apos;, etc.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.WithObjectTypeItemRequestBuilder this[string position]
         {

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A brief description displayed the welcome screen below the title.</summary>
+        /// <summary>A descriptive text shown on the welcome screen. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The URL of the logo image to be displayed on the welcome screen, only used if `useCompanyLogo` is false.</summary>
+        /// <summary>The URL of the logo image displayed on the welcome screen. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string LogoUrl { get; set; }
 #endif
-        /// <summary>Deprecated property. Value can be ignored but will always be false.</summary>
+        /// <summary>A boolean indicating whether the welcome screen should be displayed to users.</summary>
         public bool? ShowWelcomeScreen { get; set; }
-        /// <summary>The main heading displayed on the welcome screen.</summary>
+        /// <summary>The title displayed on the welcome screen. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>Whether the company&apos;s logo should be displayed on the welcome screen.</summary>
+        /// <summary>A boolean indicating whether the company&apos;s logo should be used on the welcome screen.</summary>
         public bool? UseCompanyLogo { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalMeetingsWelcomeScreenInfo"/> and sets the default values.

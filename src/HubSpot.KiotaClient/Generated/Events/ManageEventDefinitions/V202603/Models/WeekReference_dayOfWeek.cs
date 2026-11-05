@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string representing the day of the week. Valid values include &apos;MONDAY&apos;, &apos;TUESDAY&apos;, &apos;WEDNESDAY&apos;, &apos;THURSDAY&apos;, &apos;FRIDAY&apos;, &apos;SATURDAY&apos;, and &apos;SUNDAY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum WeekReference_dayOfWeek
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "FRIDAY")]
         #pragma warning disable CS1591

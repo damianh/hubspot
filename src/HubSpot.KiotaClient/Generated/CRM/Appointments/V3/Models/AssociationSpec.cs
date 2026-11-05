@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category of the association, such as &quot;HUBSPOT_DEFINED&quot;.</summary>
+        /// <summary>The category of the association, indicating its origin or purpose. Valid values include &quot;HUBSPOT_DEFINED&quot;, &quot;USER_DEFINED&quot;, &quot;INTEGRATOR_DEFINED&quot;, and &quot;WORK&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.AssociationSpec_associationCategory? AssociationCategory { get; set; }
-        /// <summary>The ID representing the specific type of association.</summary>
+        /// <summary>An integer representing the unique identifier for the type of association.</summary>
         public int? AssociationTypeId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Models.AssociationSpec"/> and sets the default values.

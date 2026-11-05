@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the operation type. For this component, it is set to a specific operation related to constant strings.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ConstantString_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONSTANT_STRING")]
         #pragma warning disable CS1591

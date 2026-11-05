@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Rows.Draft.DraftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.cms.hubdb.TwoZeroTwoSixZeroThree.tables.item.rows.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the row to retrieve. Must be a numeric string.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Rows.Item.WithRowItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Rows.Item.WithRowItemRequestBuilder this[string position]
         {
@@ -168,8 +168,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The number of rows to skip before starting to collect the result set.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>An array of property names to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]
@@ -179,6 +181,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
+            /// <summary>An array of property names to sort the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

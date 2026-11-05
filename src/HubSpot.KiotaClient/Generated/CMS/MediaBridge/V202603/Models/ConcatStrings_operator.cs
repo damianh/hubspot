@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string indicating the type of operation, which is &apos;CONCAT_STRINGS&apos; by default.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ConcatStrings_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONCAT_STRINGS")]
         #pragma warning disable CS1591

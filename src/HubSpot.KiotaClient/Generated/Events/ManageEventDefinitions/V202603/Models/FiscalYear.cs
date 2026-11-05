@@ -14,19 +14,19 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The day property</summary>
+        /// <summary>An integer representing the day component of the fiscal year.</summary>
         public int? Day { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>An integer representing the hour component of the time.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>An integer representing the millisecond component of the time.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>An integer representing the minute component of the time.</summary>
         public int? Minute { get; set; }
-        /// <summary>The month property</summary>
+        /// <summary>An integer representing the month component of the fiscal year.</summary>
         public int? Month { get; set; }
-        /// <summary>The referenceType property</summary>
+        /// <summary>A string representing the type of reference, which is &apos;FISCAL_YEAR&apos; by default.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.FiscalYear_referenceType? ReferenceType { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>An integer representing the second component of the time.</summary>
         public int? Second { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.FiscalYear"/> and sets the default values.

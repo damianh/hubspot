@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTw
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.crm.owners.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the owner to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTwoSixZeroThree.Item.WithOwnerItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTwoSixZeroThree.Item.WithOwnerItemRequestBuilder this[int position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTw
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.crm.owners.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the owner to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTwoSixZeroThree.Item.WithOwnerItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTwoSixZeroThree.Item.WithOwnerItemRequestBuilder this[string position]
@@ -59,6 +59,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTw
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/owners/2026-03{?after*,archived*,email*,limit*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a paginated list of owners from your HubSpot account. This endpoint allows filtering by email and supports pagination through the &apos;after&apos; parameter. You can also specify the maximum number of results per page and choose to include archived owners in the response.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.CollectionResponsePublicOwnerForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +77,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTw
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.CollectionResponsePublicOwnerForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.CollectionResponsePublicOwnerForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a paginated list of owners from your HubSpot account. This endpoint allows filtering by email and supports pagination through the &apos;after&apos; parameter. You can also specify the maximum number of results per page and choose to include archived owners in the response.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,10 +105,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTw
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Crm.Owners.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a paginated list of owners from your HubSpot account. This endpoint allows filtering by email and supports pagination through the &apos;after&apos; parameter. You can also specify the maximum number of results per page and choose to include archived owners in the response.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

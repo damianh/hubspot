@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The paging property</summary>
+        /// <summary>Paging information for forward-only pagination. Contains the next page reference when more results are available; omitted or empty on the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.ForwardPaging? Paging { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.ForwardPaging Paging { get; set; }
 #endif
-        /// <summary>The results property</summary>
+        /// <summary>An array of PublicOwner objects, each representing an individual owner with their specific details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.CrmOwners.V202603.Models.PublicOwner>? Results { get; set; }

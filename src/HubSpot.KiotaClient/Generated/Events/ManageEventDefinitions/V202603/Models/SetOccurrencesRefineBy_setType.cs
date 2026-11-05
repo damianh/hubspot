@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string that indicates the set type used for refinement. Valid values include &apos;ALL&apos;, &apos;ALL_INCLUDE_EMPTY&apos;, &apos;ANY&apos;, &apos;NONE&apos;, &apos;NONE_EXCLUDE_EMPTY&apos;, and &apos;ANY_INCLUDE_EMPTY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SetOccurrencesRefineBy_setType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ALL")]
         #pragma warning disable CS1591

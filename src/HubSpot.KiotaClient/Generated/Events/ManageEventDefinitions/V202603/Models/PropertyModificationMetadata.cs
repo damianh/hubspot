@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archivable property</summary>
+        /// <summary>A boolean indicating whether the property can be archived.</summary>
         public bool? Archivable { get; set; }
-        /// <summary>The readOnlyDefinition property</summary>
+        /// <summary>A boolean indicating if the property&apos;s definition is read-only.</summary>
         public bool? ReadOnlyDefinition { get; set; }
-        /// <summary>The readOnlyOptions property</summary>
+        /// <summary>A boolean indicating if the options for the property are read-only.</summary>
         public bool? ReadOnlyOptions { get; set; }
-        /// <summary>The readOnlyValue property</summary>
+        /// <summary>A boolean indicating if the property&apos;s value is read-only.</summary>
         public bool? ReadOnlyValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyModificationMetadata"/> and sets the default values.

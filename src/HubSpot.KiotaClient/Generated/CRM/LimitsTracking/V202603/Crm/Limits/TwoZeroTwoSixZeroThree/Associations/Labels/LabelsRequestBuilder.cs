@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LabelsRequestBuilderGetQueryParameters 
         {
+            /// <summary>The ID of the object type from which the association starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("fromObjectTypeId")]
@@ -94,6 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZ
             [QueryParameter("fromObjectTypeId")]
             public string FromObjectTypeId { get; set; }
 #endif
+            /// <summary>The ID of the object type to which the association points.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("toObjectTypeId")]

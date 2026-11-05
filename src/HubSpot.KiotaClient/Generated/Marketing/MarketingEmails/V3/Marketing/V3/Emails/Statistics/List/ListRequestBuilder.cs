@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter by email IDs. Only include statistics of emails with these IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailIds")]
@@ -94,15 +95,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("emailIds")]
             public long?[] EmailIds { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The end timestamp of the time span, in ISO8601 representation.</summary>
             [QueryParameter("endTimestamp")]
-            public string? EndTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("endTimestamp")]
-            public string EndTimestamp { get; set; }
-#endif
+            public DateTimeOffset? EndTimestamp { get; set; }
+            /// <summary>Specifies which email properties should be returned. All properties will be returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -112,15 +108,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The start timestamp of the time span, in ISO8601 representation.</summary>
             [QueryParameter("startTimestamp")]
-            public string? StartTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("startTimestamp")]
-            public string StartTimestamp { get; set; }
-#endif
+            public DateTimeOffset? StartTimestamp { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

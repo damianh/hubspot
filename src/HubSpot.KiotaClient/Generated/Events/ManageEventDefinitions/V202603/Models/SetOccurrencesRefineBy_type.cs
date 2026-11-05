@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string that specifies the type of refinement being applied. The default value is &apos;SetOccurrencesRefineBy&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SetOccurrencesRefineBy_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "SetOccurrencesRefineBy")]
         #pragma warning disable CS1591

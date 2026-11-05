@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "A39FE353E98773BEA57CC28F1C6BB98D7D59B5C826ECAC47D0C6017E7286DC123B7B1D4891B2B60819C11B54F3759FA9341FF4D6D8BA06506818551AB8A4284E",
+  "descriptionHash": "A2EAFF98A7BCC8DF876369FEC72203A61D2151B63A675B03A3130CC2027194CAC69FA09AEA7D2797CBBE362C2360337BB6F3E275B4702E5D23CC90B0CB4606DB",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22129/version/1",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCMSMediaBridgeV1Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

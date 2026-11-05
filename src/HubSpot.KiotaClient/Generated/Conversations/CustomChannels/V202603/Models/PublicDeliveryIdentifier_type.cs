@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>A string representing the type of delivery identifier. Valid values include &apos;HS_EMAIL_ADDRESS&apos;, &apos;HS_PHONE_NUMBER&apos;, &apos;HS_SHORT_CODE&apos;, and &apos;CHANNEL_SPECIFIC_OPAQUE_ID&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicDeliveryIdentifier_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CHANNEL_SPECIFIC_OPAQUE_ID")]
         #pragma warning disable CS1591

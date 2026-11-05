@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>Specifies whether the property is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The dataSensitivity property</summary>
+        /// <summary>Indicates the sensitivity level of the data, such as &apos;non_sensitive&apos;, &apos;sensitive&apos;, or &apos;highly_sensitive&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchReadInputPropertyName_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of property names to be included in the batch read operation. Each item in the array is a reference to a PropertyName object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.PropertyName>? Inputs { get; set; }

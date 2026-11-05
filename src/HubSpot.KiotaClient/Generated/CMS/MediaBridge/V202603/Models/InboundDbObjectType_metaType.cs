@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>The metadata type associated with the object.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum InboundDbObjectType_metaType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CMS_HUBDB")]
         #pragma warning disable CS1591

@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.StandardError_context Context { get; set; }
 #endif
-        /// <summary>The detailed error objects.</summary>
+        /// <summary>An array of ErrorDetail objects providing further information about the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.ErrorDetail>? Errors { get; set; }

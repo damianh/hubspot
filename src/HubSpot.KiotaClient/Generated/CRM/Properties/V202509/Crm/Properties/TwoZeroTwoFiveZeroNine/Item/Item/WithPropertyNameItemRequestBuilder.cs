@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of a property identified by &apos;{propertyName}&apos;. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of a property identified by &apos;{propertyName}&apos;. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,6 +173,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>The level of data sensitivity to filter properties by. Valid values are &apos;non_sensitive&apos;, &apos;sensitive&apos;, and &apos;highly_sensitive&apos;. Defaults to &apos;non_sensitive&apos;.</summary>
             [Obsolete("This property is deprecated, use DataSensitivityAsGetDataSensitivityQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,8 +184,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             [QueryParameter("dataSensitivity")]
             public string DataSensitivity { get; set; }
 #endif
+            /// <summary>The level of data sensitivity to filter properties by. Valid values are &apos;non_sensitive&apos;, &apos;sensitive&apos;, and &apos;highly_sensitive&apos;. Defaults to &apos;non_sensitive&apos;.</summary>
             [QueryParameter("dataSensitivity")]
             public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZeroTwoFiveZeroNine.Item.Item.GetDataSensitivityQueryParameterType? DataSensitivityAsGetDataSensitivityQueryParameterType { get; set; }
+            /// <summary>The locale to use for property labels and descriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locale")]
@@ -194,6 +197,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Crm.Properties.TwoZ
             [QueryParameter("locale")]
             public string Locale { get; set; }
 #endif
+            /// <summary>A comma-separated list of property names to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

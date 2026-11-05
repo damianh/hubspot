@@ -95,13 +95,16 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V202603.AccountInfo.TwoZ
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>The start of the time range for the security activity in Unix timestamp format.</summary>
             [QueryParameter("fromTimestamp")]
             public long? FromTimestamp { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The end of the time range for the security activity in Unix timestamp format.</summary>
             [QueryParameter("toTimestamp")]
             public long? ToTimestamp { get; set; }
+            /// <summary>The unique identifier of the user whose security activity you want to retrieve.</summary>
             [QueryParameter("userId")]
             public int? UserId { get; set; }
         }

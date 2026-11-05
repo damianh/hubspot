@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "27EAA7B14A95CFC584FF52D0D6769071D4D4A77FA0BE43F2A4FBD1BAF0A47FFCB7F72BEADD9990788EF767132BEA288C8134078B158BA329040C1D5DD0E589B1",
+  "descriptionHash": "CC1DB718795843F7BD8EDC71CB8F17B215467BD7AC33E6D32A33D374734E990EFF2934BC31D07E06326049A93AC27CBCC9C15B8E6B6E27BED271A4570B2692F7",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22212/version/1",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotSettingsTaxRatesV1Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

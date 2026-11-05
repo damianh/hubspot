@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Batch;
 using DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Item;
+using DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Merge;
 using DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Search;
 using DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -24,6 +25,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoS
         public global::DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Batch.BatchRequestBuilder Batch
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The merge property</summary>
+        public global::DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Merge.MergeRequestBuilder Merge
+        {
+            get => new global::DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Merge.MergeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Orders.V202603.Crm.Objects.TwoZeroTwoSixZeroThree.Orders.Search.SearchRequestBuilder Search

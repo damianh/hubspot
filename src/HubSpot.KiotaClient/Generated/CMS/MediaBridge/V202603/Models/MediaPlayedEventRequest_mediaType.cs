@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>The type of media that was played, such as &apos;VIDEO&apos;, &apos;AUDIO&apos;, &apos;DOCUMENT&apos;, &apos;OTHER&apos;, or &apos;IMAGE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MediaPlayedEventRequest_mediaType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AUDIO")]
         #pragma warning disable CS1591

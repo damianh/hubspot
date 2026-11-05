@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #endif
         /// <summary>Determines if the email is archived or not.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The businessUnitId property</summary>
+        /// <summary>The ID of the business unit associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessUnitId { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string CampaignName { get; set; }
 #endif
-        /// <summary>The campaignUtm property</summary>
+        /// <summary>The UTM parameters associated with the email&apos;s campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CampaignUtm { get; set; }
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #endif
         /// <summary>The date and time the email was deleted at, in ISO8601 representation.</summary>
         public DateTimeOffset? DeletedAt { get; set; }
-        /// <summary>The emailCampaignGroupId property</summary>
+        /// <summary>The ID of the email campaign group associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailCampaignGroupId { get; set; }
@@ -100,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string EmailCampaignGroupId { get; set; }
 #endif
-        /// <summary>The emailTemplateMode property</summary>
+        /// <summary>The mode of the email template, such as &apos;DESIGN_MANAGER&apos; or &apos;DRAG_AND_DROP&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail_emailTemplateMode? EmailTemplateMode { get; set; }
         /// <summary>The ID of the feedback survey linked to the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,9 +110,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string FeedbackSurveyId { get; set; }
 #endif
-        /// <summary>The folderId property</summary>
+        /// <summary>Deprecated — this field is no longer functional. Use folderIdV2 instead.</summary>
         public long? FolderId { get; set; }
-        /// <summary>The folderIdV2 property</summary>
+        /// <summary>The version 2 ID of the folder where the email is stored, as a 64-bit integer.</summary>
         public long? FolderIdV2 { get; set; }
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,15 +130,15 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The isAb property</summary>
+        /// <summary>A boolean indicating whether the email is part of an A/B test.</summary>
         public bool? IsAb { get; set; }
         /// <summary>Returns the published status of the email. This is read only.</summary>
         public bool? IsPublished { get; set; }
         /// <summary>Returns whether the email is a transactional email or not. This is read only.</summary>
         public bool? IsTransactional { get; set; }
-        /// <summary>The jitterSendTime property</summary>
+        /// <summary>A boolean indicating whether to apply a jitter to the send time.</summary>
         public bool? JitterSendTime { get; set; }
-        /// <summary>The language property</summary>
+        /// <summary>The language code of the email, following ISO 639-1 and ISO 3166-1 standards.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail_language? Language { get; set; }
         /// <summary>The name of the email, as displayed on the email dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +148,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The previewKey property</summary>
+        /// <summary>The preview key for the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviewKey { get; set; }
@@ -156,7 +156,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string PreviewKey { get; set; }
 #endif
-        /// <summary>The primaryEmailCampaignId property</summary>
+        /// <summary>The primary email campaign ID associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryEmailCampaignId { get; set; }
@@ -236,7 +236,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmailSubscriptionDetails SubscriptionDetails { get; set; }
 #endif
-        /// <summary>The teamsWithAccess property</summary>
+        /// <summary>An array of team IDs who have access to the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TeamsWithAccess { get; set; }
@@ -262,7 +262,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #endif
         /// <summary>The email type, this is derived from other properties on the email such as subcategory.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail_type? Type { get; set; }
-        /// <summary>The unpublishedAt property</summary>
+        /// <summary>The date and time when the email was unpublished, in ISO 8601 format.</summary>
         public DateTimeOffset? UnpublishedAt { get; set; }
         /// <summary>The date and time of the last update to the email, in ISO8601 representation.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -274,7 +274,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string UpdatedById { get; set; }
 #endif
-        /// <summary>The usersWithAccess property</summary>
+        /// <summary>An array of user IDs who have access to the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UsersWithAccess { get; set; }

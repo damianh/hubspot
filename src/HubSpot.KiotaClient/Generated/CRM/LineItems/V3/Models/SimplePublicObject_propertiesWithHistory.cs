@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.LineItems.V3.Models
 {
     /// <summary>
-    /// Key-value pairs representing the properties of the object along with their history.
+    /// Key-value pairs representing the properties of the object along with their history, each with a timestamp and source information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimplePublicObject_propertiesWithHistory : IAdditionalDataHolder, IParsable

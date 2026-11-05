@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>A string specifying the usage type of the file, which can be &apos;STICKER&apos;, &apos;VOICE_RECORDING&apos;, &apos;IMAGE&apos;, &apos;AUDIO&apos;, or &apos;OTHER&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicFile_fileUsageType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AUDIO")]
         #pragma warning disable CS1591

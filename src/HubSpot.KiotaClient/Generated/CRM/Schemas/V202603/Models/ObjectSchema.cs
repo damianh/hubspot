@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowsSensitiveProperties property</summary>
+        /// <summary>A boolean indicating whether the object schema allows sensitive properties.</summary>
         public bool? AllowsSensitiveProperties { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the object schema is archived.</summary>
         public bool? Archived { get; set; }
         /// <summary>Associations defined for a given object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
 #endif
         /// <summary>When the object schema was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdByUserId property</summary>
+        /// <summary>An integer representing the ID of the user who created the object schema.</summary>
         public int? CreatedByUserId { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the object schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>A string representing the type ID of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -120,7 +120,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
 #endif
         /// <summary>When the object schema was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedByUserId property</summary>
+        /// <summary>An integer representing the ID of the user who last updated the object schema.</summary>
         public int? UpdatedByUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models.ObjectSchema"/> and sets the default values.

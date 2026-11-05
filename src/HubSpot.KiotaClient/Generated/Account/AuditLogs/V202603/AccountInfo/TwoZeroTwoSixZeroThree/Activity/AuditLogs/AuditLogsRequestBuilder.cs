@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V202603.AccountInfo.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogsRequestBuilderGetQueryParameters 
         {
+            /// <summary>An array of user IDs to filter the audit logs by the acting users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actingUserId")]
@@ -104,15 +105,19 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V202603.AccountInfo.TwoZ
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A boolean indicating whether to fill the final timestamp in the response.</summary>
             [QueryParameter("fillFinalTimestamp")]
             public bool? FillFinalTimestamp { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The start date and time for filtering logs, in ISO 8601 format.</summary>
             [QueryParameter("occurredAfter")]
             public DateTimeOffset? OccurredAfter { get; set; }
+            /// <summary>The end date and time for filtering logs, in ISO 8601 format.</summary>
             [QueryParameter("occurredBefore")]
             public DateTimeOffset? OccurredBefore { get; set; }
+            /// <summary>An array of fields to sort the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

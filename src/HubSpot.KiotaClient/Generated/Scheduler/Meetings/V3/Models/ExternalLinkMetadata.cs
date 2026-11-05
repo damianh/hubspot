@@ -50,6 +50,14 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
 #else
         public string OrganizerUserId { get; set; }
 #endif
+        /// <summary>The paymentLinkId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PaymentLinkId { get; set; }
+#nullable restore
+#else
+        public string PaymentLinkId { get; set; }
+#endif
         /// <summary>The slug of the meeting link, located directly after the domain in the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +109,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizerUserId", n => { OrganizerUserId = n.GetStringValue(); } },
+                { "paymentLinkId", n => { PaymentLinkId = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkMetadata_type>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -120,6 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizerUserId", OrganizerUserId);
+            writer.WriteStringValue("paymentLinkId", PaymentLinkId);
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalLinkMetadata_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

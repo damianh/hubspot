@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The e164Number property</summary>
+        /// <summary>The phone number formatted in E.164 standard, which includes the country code and the subscriber number as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? E164Number { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string E164Number { get; set; }
 #endif
-        /// <summary>The extension property</summary>
+        /// <summary>An optional string representing the extension number associated with the phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Extension { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string Extension { get; set; }
 #endif
-        /// <summary>The phoneNumberType property</summary>
+        /// <summary>The type of phone number, represented as a string. Valid values include &apos;FIXED_LINE&apos;, &apos;MOBILE&apos;, &apos;FIXED_LINE_OR_MOBILE&apos;, &apos;TOLL_FREE&apos;, &apos;PREMIUM_RATE&apos;, &apos;SHARED_COST&apos;, &apos;VOIP&apos;, &apos;PERSONAL_NUMBER&apos;, &apos;PAGER&apos;, &apos;UAN&apos;, &apos;VOICEMAIL&apos;, and &apos;UNKNOWN&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.FormattedPhoneNumber_phoneNumberType? PhoneNumberType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.FormattedPhoneNumber"/> and sets the default values.

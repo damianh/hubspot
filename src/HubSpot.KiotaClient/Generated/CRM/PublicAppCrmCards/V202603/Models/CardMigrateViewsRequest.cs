@@ -14,14 +14,16 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowDuplicateAppCardIds property</summary>
+        /// <summary>A boolean flag indicating whether duplicate app card IDs are allowed during the migration process.</summary>
         public bool? AllowDuplicateAppCardIds { get; set; }
-        /// <summary>The appCardId property</summary>
+        /// <summary>The unique identifier for the new app card to which views will be migrated. This is an integer in int64 format.</summary>
         public long? AppCardId { get; set; }
-        /// <summary>The helpdeskAppCardId property</summary>
+        /// <summary>The unique identifier for the helpdesk app card, if applicable. This is an integer in int64 format.</summary>
         public long? HelpdeskAppCardId { get; set; }
-        /// <summary>The legacyCrmCardId property</summary>
+        /// <summary>The unique identifier for the legacy CRM card. This is an integer in int64 format.</summary>
         public long? LegacyCrmCardId { get; set; }
+        /// <summary>The tabAppCardId property</summary>
+        public long? TabAppCardId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models.CardMigrateViewsRequest"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models
                 { "appCardId", n => { AppCardId = n.GetLongValue(); } },
                 { "helpdeskAppCardId", n => { HelpdeskAppCardId = n.GetLongValue(); } },
                 { "legacyCrmCardId", n => { LegacyCrmCardId = n.GetLongValue(); } },
+                { "tabAppCardId", n => { TabAppCardId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Models
             writer.WriteLongValue("appCardId", AppCardId);
             writer.WriteLongValue("helpdeskAppCardId", HelpdeskAppCardId);
             writer.WriteLongValue("legacyCrmCardId", LegacyCrmCardId);
+            writer.WriteLongValue("tabAppCardId", TabAppCardId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
     public partial class MessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item.messages.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the message to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.Messages.Item.WithMessageItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.Messages.Item.WithMessageItemRequestBuilder this[string position]
         {

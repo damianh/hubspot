@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models
 {
-    /// <summary>The legal reason for the current status of the subscription.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum PublicSubscriptionStatus_legalBasis
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONSENT_WITH_NOTICE")]
         #pragma warning disable CS1591

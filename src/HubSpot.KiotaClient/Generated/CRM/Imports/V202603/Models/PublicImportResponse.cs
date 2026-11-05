@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.ImportTemplate ImportTemplate { get; set; }
 #endif
-        /// <summary>The mappedObjectTypeIds property</summary>
+        /// <summary>An array of object type IDs that are mapped during the import.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MappedObjectTypeIds { get; set; }

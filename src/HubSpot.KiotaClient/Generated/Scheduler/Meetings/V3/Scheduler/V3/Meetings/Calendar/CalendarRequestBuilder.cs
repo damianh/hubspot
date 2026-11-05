@@ -40,6 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalenderMeetingEventResponse?> PostAsync(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,6 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.ExternalCalendarMeetingEventCreateRequest body, Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder.CalendarRequestBuilderPostQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder WithUrl(string rawUrl)
         {
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder(rawUrl, RequestAdapter);
@@ -92,12 +95,16 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string? OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

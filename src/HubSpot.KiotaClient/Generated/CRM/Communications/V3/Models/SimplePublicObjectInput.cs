@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Communications.V3.Models
 {
     /// <summary>
-    /// Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.
+    /// Represents the input required to update a CRM object, containing an object with property names and their corresponding values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimplePublicObjectInput : IAdditionalDataHolder, IParsable

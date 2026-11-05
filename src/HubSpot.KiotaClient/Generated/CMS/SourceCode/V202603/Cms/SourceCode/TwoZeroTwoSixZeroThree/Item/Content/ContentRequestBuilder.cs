@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZ
     public partial class ContentRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.cms.sourceCode.TwoZeroTwoSixZeroThree.item.content.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The path to the specific content file within the environment. It identifies the location of the file to be retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZeroTwoSixZeroThree.Item.Content.Item.WithPathItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZeroTwoSixZeroThree.Item.Content.Item.WithPathItemRequestBuilder this[string position]
         {

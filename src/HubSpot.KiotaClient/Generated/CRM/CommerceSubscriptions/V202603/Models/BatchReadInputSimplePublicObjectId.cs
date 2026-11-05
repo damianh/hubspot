@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The idProperty property</summary>
+        /// <summary>When using a custom unique value property to retrieve records, the name of the property. Do not include this parameter if retrieving by record ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdProperty { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models
 #else
         public string IdProperty { get; set; }
 #endif
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of SimplePublicObjectId objects, each containing the ID of an object to be read.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models.SimplePublicObjectId>? Inputs { get; set; }
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models.SimplePublicObjectId> Inputs { get; set; }
 #endif
-        /// <summary>Key-value pairs for setting properties for the new object.</summary>
+        /// <summary>An array of the property names to be returned in the response. If a specified property is not present on the requested object(s), it will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Properties { get; set; }
@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models
 #else
         public List<string> Properties { get; set; }
 #endif
-        /// <summary>Key-value pairs for setting properties for the new object and their histories.</summary>
+        /// <summary>An array of the property names to be returned along with their history of previous values. If a specified property is not present on the requested object(s), it will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PropertiesWithHistory { get; set; }

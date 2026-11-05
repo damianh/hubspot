@@ -1,7 +1,7 @@
 using System.CommandLine;
 using DamianH.HubSpot.Cli.Utilities;
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V3.Models;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models;
 
 namespace DamianH.HubSpot.Cli.Commands.Crm;
 
@@ -51,7 +51,7 @@ internal static class CrmObjectCommand
 
             try
             {
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType].GetAsync(q =>
                 {
                     q.QueryParameters.Limit = limit;
@@ -116,7 +116,7 @@ internal static class CrmObjectCommand
 
             try
             {
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType][id!].GetAsync(q =>
                 {
                     if (properties is { Length: > 0 })
@@ -182,7 +182,7 @@ internal static class CrmObjectCommand
                     },
                 };
 
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType].PostAsync(input, cancellationToken: cancellationToken);
 
                 if (result is not null)
@@ -238,7 +238,7 @@ internal static class CrmObjectCommand
                     },
                 };
 
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType][id!].PatchAsync(input, cancellationToken: cancellationToken);
 
                 if (result is not null)
@@ -280,7 +280,7 @@ internal static class CrmObjectCommand
 
             try
             {
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 await client.Crm.V3.Objects[objectType][id!].DeleteAsync(cancellationToken: cancellationToken);
 
                 var result = new Dictionary<string, object?> { ["deleted"] = true, ["id"] = id };
@@ -382,7 +382,7 @@ internal static class CrmObjectCommand
                     ];
                 }
 
-                var client = new HubSpotCRMObjectsV3Client(cli.Adapter);
+                var client = new HubSpotCRMCustomObjectsV3Client(cli.Adapter);
                 var result = await client.Crm.V3.Objects[objectType].Search.PostAsync(searchRequest, cancellationToken: cancellationToken);
 
                 if (result is null)

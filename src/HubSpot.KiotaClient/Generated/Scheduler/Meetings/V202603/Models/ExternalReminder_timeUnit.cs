@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>Accepted values are: WEEKS, DAYS, HOURS, MINUTES.</summary>
+    /// <summary>The unit of time for the reminder. Valid values include &apos;WEEKS&apos;, &apos;DAYS&apos;, &apos;HOURS&apos;, and &apos;MINUTES&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalReminder_timeUnit
     {

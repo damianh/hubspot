@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.Proper
     public partial class RuleTypeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.crm.propertyValidations.TwoZeroTwoSixZeroThree.item.item.ruleType.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The type of validation rule to retrieve. Valid values include FORMAT, ALPHANUMERIC, MAX_LENGTH, MIN_LENGTH, MIN_NUMBER, MAX_NUMBER, START_DATE, END_DATE, SPECIAL_CHARACTERS, WHITESPACE, DECIMAL, BEFORE_DURATION, AFTER_DURATION, DAYS_OF_WEEK, REGEX, START_DATETIME, END_DATETIME, BEFORE_DATETIME_DURATION, AFTER_DATETIME_DURATION, PHONE_NUMBER_WITH_EXPLICIT_COUNTRY_CODE, URL, URL_ALLOWED_DOMAINS, URL_BLOCKED_DOMAINS, EMAIL, EMAIL_ALLOWED_DOMAINS, EMAIL_BLOCKED_DOMAINS, DOMAIN.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.PropertyValidations.TwoZeroTwoSixZeroThree.Item.Item.RuleType.Item.WithRuleTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PropertyValidations.V202603.Crm.PropertyValidations.TwoZeroTwoSixZeroThree.Item.Item.RuleType.Item.WithRuleTypeItemRequestBuilder this[string position]
         {

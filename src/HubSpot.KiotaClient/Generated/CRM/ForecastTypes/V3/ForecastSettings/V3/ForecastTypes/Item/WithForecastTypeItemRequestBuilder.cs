@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
         public WithForecastTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forecast-settings/v3/forecast-types/{forecastTypeId}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a specific forecast type by its ID. This endpoint allows you to access detailed information about a particular forecast type configured in your HubSpot portal. It is useful for understanding how forecasts are calculated based on specific properties.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a specific forecast type by its ID. This endpoint allows you to access detailed information about a particular forecast type configured in your HubSpot portal. It is useful for understanding how forecasts are calculated based on specific properties.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

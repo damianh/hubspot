@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models
 {
-    /// <summary>The sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, and &quot;highly_sensitive&quot;.</summary>
+    /// <summary>A string indicating the sensitivity level of the data. Valid values are &apos;none&apos;, &apos;standard&apos;, and &apos;high&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PropertyValue_dataSensitivity
     {

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of timeUnits prior to the meeting start when the reminder will be sent.</summary>
+        /// <summary>The number of time units before the meeting when the reminder should be sent. This is an integer value.</summary>
         public int? NumberOfTimeUnits { get; set; }
-        /// <summary>Accepted values are: WEEKS, DAYS, HOURS, MINUTES.</summary>
+        /// <summary>The unit of time for the reminder. Valid values include &apos;WEEKS&apos;, &apos;DAYS&apos;, &apos;HOURS&apos;, and &apos;MINUTES&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalReminder_timeUnit? TimeUnit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalReminder"/> and sets the default values.

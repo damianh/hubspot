@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the message is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The attachments property</summary>
+        /// <summary>An array of attachments included with the message, which can be files, locations, contacts, or other supported types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage.PublicConversationsMessage_attachments>? Attachments { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage.PublicConversationsMessage_attachments> Attachments { get; set; }
 #endif
-        /// <summary>The channelAccountId property</summary>
+        /// <summary>The identifier of the channel account associated with the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelAccountId { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelAccountId { get; set; }
 #endif
-        /// <summary>The channelId property</summary>
+        /// <summary>The identifier of the channel through which the message was sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelId { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicClient Client { get; set; }
 #endif
-        /// <summary>The conversationsThreadId property</summary>
+        /// <summary>The identifier for the conversation thread to which this message belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationsThreadId { get; set; }
@@ -56,9 +56,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ConversationsThreadId { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the message was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The identifier of the user or system that created the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedBy { get; set; }
@@ -66,9 +66,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string CreatedBy { get; set; }
 #endif
-        /// <summary>The direction property</summary>
+        /// <summary>The direction of the message, either &apos;INCOMING&apos; or &apos;OUTGOING&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage_direction? Direction { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -76,7 +76,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The inReplyToId property</summary>
+        /// <summary>The identifier of the message to which this message is a reply, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InReplyToId { get; set; }
@@ -84,7 +84,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string InReplyToId { get; set; }
 #endif
-        /// <summary>The recipients property</summary>
+        /// <summary>An array of recipients of the message, each containing recipient details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicRecipient>? Recipients { get; set; }
@@ -92,7 +92,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicRecipient> Recipients { get; set; }
 #endif
-        /// <summary>The richText property</summary>
+        /// <summary>The rich text content of the message, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RichText { get; set; }
@@ -100,7 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string RichText { get; set; }
 #endif
-        /// <summary>The senders property</summary>
+        /// <summary>An array of senders associated with the message, each containing sender details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicSender>? Senders { get; set; }
@@ -116,7 +116,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageStatus Status { get; set; }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the message, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject { get; set; }
@@ -124,7 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>The plain text content of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -132,11 +132,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The truncationStatus property</summary>
+        /// <summary>Indicates whether the message content is truncated. Valid values are &apos;NOT_TRUNCATED&apos;, &apos;TRUNCATED_TO_MOST_RECENT_REPLY&apos;, and &apos;TRUNCATED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage_truncationStatus? TruncationStatus { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The type of the message, which is always &apos;MESSAGE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage_type? Type { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the message was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicConversationsMessage"/> and sets the default values.

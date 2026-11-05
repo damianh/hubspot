@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blogEmailType property</summary>
+        /// <summary>A string representing the type of blog email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BlogEmailType { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string BlogEmailType { get; set; }
 #endif
-        /// <summary>The blogImageMaxWidth property</summary>
+        /// <summary>The maximum width for images in the blog, specified as an integer.</summary>
         public int? BlogImageMaxWidth { get; set; }
-        /// <summary>The blogLayout property</summary>
+        /// <summary>The layout of the blog in the email. Valid values include &apos;SUMMARY_NO_FEATURED_IMAGE&apos;, &apos;SUMMARY_WITH_FEATURED_IMAGE&apos;, and &apos;FULL_POST&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicRssEmailDetails_blogLayout? BlogLayout { get; set; }
-        /// <summary>The hubspotBlogId property</summary>
+        /// <summary>The unique identifier of the HubSpot blog associated with the RSS email. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HubspotBlogId { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string HubspotBlogId { get; set; }
 #endif
-        /// <summary>The maxEntries property</summary>
+        /// <summary>The maximum number of entries to include from the RSS feed. It is an integer value.</summary>
         public int? MaxEntries { get; set; }
-        /// <summary>The rssEntryTemplate property</summary>
+        /// <summary>A string representing the template used for each RSS entry in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RssEntryTemplate { get; set; }
@@ -44,7 +44,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string RssEntryTemplate { get; set; }
 #endif
-        /// <summary>The timing property</summary>
+        /// <summary>An object representing the timing configuration for the RSS email. The specific properties of this object are not detailed in the specification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicRssEmailDetails_timing? Timing { get; set; }
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicRssEmailDetails_timing Timing { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>The URL of the RSS feed to be used in the email. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -60,7 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The useHeadlineAsSubject property</summary>
+        /// <summary>A boolean indicating whether to use the headline of the RSS entry as the subject of the email.</summary>
         public bool? UseHeadlineAsSubject { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicRssEmailDetails"/> and sets the default values.

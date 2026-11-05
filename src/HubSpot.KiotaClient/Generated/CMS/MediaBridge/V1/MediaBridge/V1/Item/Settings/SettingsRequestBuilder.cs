@@ -38,6 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Set
             get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.OembedDomains.OembedDomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The register property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.Register.RegisterRequestBuilder Register
         {
             get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.MediaBridge.V1.Item.Settings.Register.RegisterRequestBuilder(PathParameters, RequestAdapter);

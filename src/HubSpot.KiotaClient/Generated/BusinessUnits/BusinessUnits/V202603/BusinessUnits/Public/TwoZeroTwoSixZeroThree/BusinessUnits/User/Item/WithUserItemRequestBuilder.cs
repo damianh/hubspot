@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V202603.Busine
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUserItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>A list of business unit names to filter the response by. Only business units with matching names will be included in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -94,6 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.BusinessUnits.BusinessUnits.V202603.Busine
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
+            /// <summary>A list of specific properties to include in the response. This allows for filtering the business unit details returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The timestamp indicating when the batch operation was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The links property</summary>
+        /// <summary>A collection of URLs linking to documentation or resources related to the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links? Links { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_links Links { get; set; }
 #endif
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The timestamp indicating when the batch operation was requested.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of Property objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property>? Results { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.Property> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The timestamp indicating when the batch operation began processing.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the batch operation, with possible values being CANCELED, COMPLETE, PENDING, or PROCESSING.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models.BatchResponseProperty"/> and sets the default values.

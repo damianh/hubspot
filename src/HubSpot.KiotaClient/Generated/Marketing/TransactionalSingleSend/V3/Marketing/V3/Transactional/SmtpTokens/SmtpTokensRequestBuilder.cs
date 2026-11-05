@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
     public partial class SmtpTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.marketing.v3.transactional.smtpTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Identifier generated when a token is created.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marketing.V3.Transactional.SmtpTokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marketing.V3.Transactional.SmtpTokens.Item.WithTokenItemRequestBuilder this[string position]
         {
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
         /// Create a SMTP API token.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Models.SmtpApiTokenView"/></returns>
-        /// <param name="body">A request object to create a SMTP API token</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
         /// Create a SMTP API token.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A request object to create a SMTP API token</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +150,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A name for the campaign tied to the SMTP API token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("campaignName")]
@@ -159,6 +160,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V3.Marke
             [QueryParameter("campaignName")]
             public string CampaignName { get; set; }
 #endif
+            /// <summary>Identifier assigned to the campaign provided during the token creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailCampaignId")]

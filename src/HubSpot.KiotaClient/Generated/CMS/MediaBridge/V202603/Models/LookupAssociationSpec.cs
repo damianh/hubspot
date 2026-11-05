@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationSpec AssociationSpec { get; set; }
 #endif
-        /// <summary>The cardinality property</summary>
+        /// <summary>Specifies the nature of the association in terms of its cardinality, such as one-to-one or one-to-many.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.LookupAssociationSpec_cardinality? Cardinality { get; set; }
-        /// <summary>The maxToObjectIds property</summary>
+        /// <summary>An integer indicating the maximum number of target object IDs that can be associated. This sets a limit on how many associations can be made to the target object type.</summary>
         public int? MaxToObjectIds { get; set; }
-        /// <summary>The toObjectTypeId property</summary>
+        /// <summary>A string representing the unique identifier of the target object type to which the association is made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectTypeId { get; set; }

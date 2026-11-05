@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
     public partial class ForecastTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.forecastSettings.v3.forecastTypes.item collection</summary>
-        /// <param name="position">The ID of the forecast type to retrieve</param>
+        /// <param name="position">The ID of the forecast type to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.ForecastTypes.Item.WithForecastTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.ForecastTypes.Item.WithForecastTypeItemRequestBuilder this[long position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.forecastSettings.v3.forecastTypes.item collection</summary>
-        /// <param name="position">The ID of the forecast type to retrieve</param>
+        /// <param name="position">The ID of the forecast type to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.ForecastTypes.Item.WithForecastTypeItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.ForecastTypes.Item.WithForecastTypeItemRequestBuilder this[string position]
@@ -59,6 +59,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
         public ForecastTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/forecast-settings/v3/forecast-types", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve all forecast types configured for your portal. Forecast types define which properties are used to calculate forecasts, helping you understand and manage your sales projections effectively.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +77,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.ForecastSettings.V3.F
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeSettingPublicResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve all forecast types configured for your portal. Forecast types define which properties are used to calculate forecasts, helping you understand and manage your sales projections effectively.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

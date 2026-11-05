@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
 {
+    /// <summary>A string specifying the format of the export file. Valid values include &apos;XLS&apos;, &apos;XLSX&apos;, and &apos;CSV&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CmsAuditLoggingExportSettings_format
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CSV")]
         #pragma warning disable CS1591

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>The mode in which the property is displayed. Can be: &quot;current_value&quot; or &quot;all_unique_versions&quot;.</summary>
+    /// <summary>A string indicating the display mode of the property.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_displayMode
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>Specifies how to sort property options. Can be either &quot;DISPLAY_ORDER&quot; to defer to the displayOrder field, or &quot;ALPHABETICAL&quot;.</summary>
+    /// <summary>A string indicating the strategy used to sort options.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_optionSortStrategy
     {

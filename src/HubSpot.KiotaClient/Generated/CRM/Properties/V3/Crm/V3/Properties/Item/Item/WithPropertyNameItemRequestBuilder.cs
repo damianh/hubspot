@@ -69,7 +69,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by &apos;{propertyName}&apos;. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Models.Property"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
             return requestInfo;
         }
         /// <summary>
-        /// Perform a partial update of a property identified by { propertyName }. Provided fields will be overwritten.
+        /// Perform a partial update of a property identified by &apos;{propertyName}&apos;. Provided fields will be overwritten.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -176,32 +176,46 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.I
             [Obsolete("This property is deprecated, use DataSensitivityAsGetDataSensitivityQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("dataSensitivity")]
             public string? DataSensitivity { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("dataSensitivity")]
             public string DataSensitivity { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("dataSensitivity")]
             public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V3.Crm.V3.Properties.Item.Item.GetDataSensitivityQueryParameterType? DataSensitivityAsGetDataSensitivityQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("locale")]
             public string? Locale { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("locale")]
             public string Locale { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("properties")]
             public string? Properties { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("properties")]
             public string Properties { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PHONE.</summary>
+    /// <summary>The type of location for the meeting. Valid values include &apos;PHONE&apos;, &apos;ADDRESS&apos;, and &apos;CUSTOM&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalCalendarMeetingEventResponseProperties_hs_meeting_location_type
     {

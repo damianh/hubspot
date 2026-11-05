@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time when the batch operation was completed.</summary>
+        /// <summary>The completedAt property</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>URLs linking to resources or documentation associated with the batch operation.</summary>
+        /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti_links? Links { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti_links Links { get; set; }
 #endif
-        /// <summary>The date and time when the batch request was made.</summary>
+        /// <summary>The requestedAt property</summary>
         public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicAssociationMulti> Results { get; set; }
 #endif
-        /// <summary>The date and time when the batch operation started.</summary>
+        /// <summary>The startedAt property</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The current status of the batch operation, with possible values: PENDING, PROCESSING, CANCELED, COMPLETE.</summary>
+        /// <summary>The status property</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti"/> and sets the default values.

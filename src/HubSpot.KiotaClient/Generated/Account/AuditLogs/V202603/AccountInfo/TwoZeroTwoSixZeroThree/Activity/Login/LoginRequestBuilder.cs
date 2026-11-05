@@ -98,6 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V202603.AccountInfo.TwoZ
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The unique identifier of the user whose login activity is being queried.</summary>
             [QueryParameter("userId")]
             public int? UserId { get; set; }
         }

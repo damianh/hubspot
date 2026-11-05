@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The indexReference property</summary>
+        /// <summary>An object that references a specific point in time, which can be one of several types such as NowReference, TodayReference, or YearReference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.IndexedTimePoint.IndexedTimePoint_indexReference? IndexReference { get; set; }
@@ -30,13 +30,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.IndexOffset Offset { get; set; }
 #endif
-        /// <summary>The shouldGenerateRefreshTime property</summary>
+        /// <summary>A boolean indicating whether the refresh time should be generated.</summary>
         public bool? ShouldGenerateRefreshTime { get; set; }
-        /// <summary>The timeType property</summary>
+        /// <summary>A string indicating the type of time point, with a default value of &apos;INDEXED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.IndexedTimePoint_timeType? TimeType { get; set; }
-        /// <summary>The timezoneSource property</summary>
+        /// <summary>A string representing the source of the timezone. Valid values include &apos;CUSTOM&apos;, &apos;USER&apos;, and &apos;PORTAL&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.IndexedTimePoint_timezoneSource? TimezoneSource { get; set; }
-        /// <summary>The zoneId property</summary>
+        /// <summary>A string specifying the identifier for the timezone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }

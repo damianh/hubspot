@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The endTimeMillis property</summary>
+        /// <summary>The end time of the utterance, given as a Unix timestamp in milliseconds. It marks when the utterance ended.</summary>
         public long? EndTimeMillis { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>A unique identifier for the utterance, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The languageCode property</summary>
+        /// <summary>The language code of the utterance, represented as a string. This indicates the language in which the text was spoken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageCode { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.Speaker Speaker { get; set; }
 #endif
-        /// <summary>The startTimeMillis property</summary>
+        /// <summary>The start time of the utterance, given as a Unix timestamp in milliseconds. It marks when the utterance began.</summary>
         public long? StartTimeMillis { get; set; }
-        /// <summary>The text property</summary>
+        /// <summary>The spoken text of the utterance. It is a string representing the actual words spoken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }

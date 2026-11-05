@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistogramRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter by email IDs. Only include statistics of emails with these IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailIds")]
@@ -94,15 +95,10 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("emailIds")]
             public long?[] EmailIds { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The end timestamp of the time span, in ISO8601 representation.</summary>
             [QueryParameter("endTimestamp")]
-            public string? EndTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("endTimestamp")]
-            public string EndTimestamp { get; set; }
-#endif
+            public DateTimeOffset? EndTimestamp { get; set; }
+            /// <summary>The interval to aggregate statistics for.</summary>
             [Obsolete("This property is deprecated, use IntervalAsGetIntervalQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,17 +109,12 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             [QueryParameter("interval")]
             public string Interval { get; set; }
 #endif
+            /// <summary>The interval to aggregate statistics for.</summary>
             [QueryParameter("interval")]
             public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.Emails.Statistics.Histogram.GetIntervalQueryParameterType? IntervalAsGetIntervalQueryParameterType { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>The start timestamp of the time span, in ISO8601 representation.</summary>
             [QueryParameter("startTimestamp")]
-            public string? StartTimestamp { get; set; }
-#nullable restore
-#else
-            [QueryParameter("startTimestamp")]
-            public string StartTimestamp { get; set; }
-#endif
+            public DateTimeOffset? StartTimestamp { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

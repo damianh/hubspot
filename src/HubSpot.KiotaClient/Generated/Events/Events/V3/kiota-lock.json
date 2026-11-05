@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "2E57C0B221BBBA17A545D6DCFFFB95D6FB40C30966EF070D6880FB20E32B46761715DE5F956A5AFB79217A8D3559317C3914CD6FD018B4ED08C06EB831C4A58A",
+  "descriptionHash": "631E6D6A1D0A35D25223F430847230F09DA246F828F19EA42A328AC0C8AEE1D0B0F3D62FB96719806E603EE82369AB683E819018637BF4D987FFDF132C9A7201",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22199/version/3",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotEventsEventsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Events.Events.V3",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

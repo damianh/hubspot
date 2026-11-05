@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 {
+    /// <summary>Indicates the origin of the transcript, which can be either &apos;HUBSPOT_GENERATED&apos; or &apos;INTEGRATOR_GENERATED&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TranscriptResponse_transcriptSource
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HUBSPOT_GENERATED")]
         #pragma warning disable CS1591

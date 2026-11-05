@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of IpRange objects, each representing a specific IP range with associated details such as CIDR, direction, service, and description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models.IpRange>? Results { get; set; }

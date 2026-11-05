@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The optionDecorators property</summary>
+        /// <summary>An array containing the option decorators. Each decorator provides additional configuration or styling options for media elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionDecoratorsExtensionData_optionDecorators? OptionDecorators { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionDecoratorsExtensionData_optionDecorators OptionDecorators { get; set; }
 #endif
-        /// <summary>The optionDecoratorStyle property</summary>
+        /// <summary>A string representing the style applied to the option decorators. This property defines how the decorators should be visually presented.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionDecoratorsExtensionData_optionDecoratorStyle? OptionDecoratorStyle { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionDecoratorsExtensionData"/> and sets the default values.

@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the input field is mandatory.</summary>
         public bool? IsRequired { get; set; }
-        /// <summary>The supportedValueTypes property</summary>
+        /// <summary>An array indicating the types of values that the input field can support. Valid values include &apos;STATIC_VALUE&apos; and &apos;OBJECT_PROPERTY&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicInputFieldDefinition_supportedValueTypes?>? SupportedValueTypes { get; set; }

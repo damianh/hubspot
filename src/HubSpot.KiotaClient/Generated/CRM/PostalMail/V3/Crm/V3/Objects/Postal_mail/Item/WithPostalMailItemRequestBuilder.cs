@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.SimplePublicObjectWithAssociations>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.SimplePublicObjectWithAssociations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Models.SimplePublicObject"/></returns>
-        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
+        /// <param name="body">Represents the input required to update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PostalMail.V3.Crm.V3.Objects.Postal_ma
             return requestInfo;
         }
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
+        /// <param name="body">Represents the input required to update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

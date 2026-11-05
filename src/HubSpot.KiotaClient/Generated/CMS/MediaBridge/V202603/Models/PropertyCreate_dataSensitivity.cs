@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string indicating the sensitivity level of the data, such as &apos;PII&apos; (Personally Identifiable Information).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyCreate_dataSensitivity
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "highly_sensitive")]
         #pragma warning disable CS1591

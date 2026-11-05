@@ -71,7 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAllPropertyTypesOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicBoolPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCalendarDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicDateTimePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEnumerationPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicMultiStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedTimeOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRollingDateRangePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRollingPropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicTimePointOperation"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAllPropertyTypesOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicBoolPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCalendarDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicDateTimePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEnumerationPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicMultiStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedDatePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedNumberPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRangedTimeOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRollingDateRangePropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRollingPropertyUpdatedOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicStringPropertyOperation"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicTimePointOperation"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicEventFilterMetadata_operation : IComposedTypeWrapper, IParsable
@@ -108,6 +108,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeDatePropertyOperation PublicComparativeDatePropertyOperation { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation? PublicComparativeNumberPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation PublicComparativeNumberPropertyOperation { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,6 +123,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation PublicComparativePropertyUpdatedOperation { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation? PublicComparativeStringPropertyOperation { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation PublicComparativeStringPropertyOperation { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicDatePropertyOperation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -238,9 +254,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     result.PublicComparativeDatePropertyOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeDatePropertyOperation();
                 }
+                else if("PublicComparativeNumberPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicComparativeNumberPropertyOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation();
+                }
                 else if("PublicComparativePropertyUpdatedOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicComparativePropertyUpdatedOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation();
+                }
+                else if("PublicComparativeStringPropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PublicComparativeStringPropertyOperation = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation();
                 }
                 else if("PublicDatePropertyOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -314,9 +338,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     return PublicComparativeDatePropertyOperation.GetFieldDeserializers();
                 }
+                else if(PublicComparativeNumberPropertyOperation != null)
+                {
+                    return PublicComparativeNumberPropertyOperation.GetFieldDeserializers();
+                }
                 else if(PublicComparativePropertyUpdatedOperation != null)
                 {
                     return PublicComparativePropertyUpdatedOperation.GetFieldDeserializers();
+                }
+                else if(PublicComparativeStringPropertyOperation != null)
+                {
+                    return PublicComparativeStringPropertyOperation.GetFieldDeserializers();
                 }
                 else if(PublicDatePropertyOperation != null)
                 {
@@ -391,9 +423,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeDatePropertyOperation>(null, PublicComparativeDatePropertyOperation);
                 }
+                else if(PublicComparativeNumberPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeNumberPropertyOperation>(null, PublicComparativeNumberPropertyOperation);
+                }
                 else if(PublicComparativePropertyUpdatedOperation != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativePropertyUpdatedOperation>(null, PublicComparativePropertyUpdatedOperation);
+                }
+                else if(PublicComparativeStringPropertyOperation != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicComparativeStringPropertyOperation>(null, PublicComparativeStringPropertyOperation);
                 }
                 else if(PublicDatePropertyOperation != null)
                 {

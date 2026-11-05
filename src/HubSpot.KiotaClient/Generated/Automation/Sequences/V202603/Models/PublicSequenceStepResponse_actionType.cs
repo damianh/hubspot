@@ -7,6 +7,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.Sequences.V202603.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PublicSequenceStepResponse_actionType
     {
+        [EnumMember(Value = "ADAPTIVE_CONTAINER")]
+        #pragma warning disable CS1591
+        ADAPTIVE_CONTAINER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EMAIL")]
         #pragma warning disable CS1591
         EMAIL,

@@ -94,40 +94,56 @@ namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202603.Meta.NetworkOrigins.T
             [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public string[]? Direction { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public string[] Direction { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202603.Meta.NetworkOrigins.TwoZeroTwoSixZeroThree.IpRanges.GetDirectionQueryParameterType[]? DirectionAsGetDirectionQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202603.Meta.NetworkOrigins.TwoZeroTwoSixZeroThree.IpRanges.GetDirectionQueryParameterType[] DirectionAsGetDirectionQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use ServiceAsGetServiceQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public string[]? Service { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public string[] Service { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202603.Meta.NetworkOrigins.TwoZeroTwoSixZeroThree.IpRanges.GetServiceQueryParameterType[]? ServiceAsGetServiceQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("service")]
             public global::DamianH.HubSpot.KiotaClient.Meta.Origins.V202603.Meta.NetworkOrigins.TwoZeroTwoSixZeroThree.IpRanges.GetServiceQueryParameterType[] ServiceAsGetServiceQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

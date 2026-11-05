@@ -151,7 +151,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ArrayFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.BooleanFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.DoubleFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.IntegerFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.LongFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ObjectFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StringFieldSchema"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ArrayFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.BooleanFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.DoubleFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.IntegerFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.LongFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.ObjectFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StringFieldSchema"/>, <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FieldTypeDefinition_schema : IComposedTypeWrapper, IParsable
@@ -212,6 +212,14 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StringFieldSchema StringFieldSchema { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema? UnknownFieldSchema { get; set; }
+#nullable restore
+#else
+            public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema UnknownFieldSchema { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -250,6 +258,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
                 {
                     result.StringFieldSchema = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StringFieldSchema();
                 }
+                else if("UnknownFieldSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.UnknownFieldSchema = new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema();
+                }
                 return result;
             }
             /// <summary>
@@ -285,6 +297,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
                 else if(StringFieldSchema != null)
                 {
                     return StringFieldSchema.GetFieldDeserializers();
+                }
+                else if(UnknownFieldSchema != null)
+                {
+                    return UnknownFieldSchema.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -322,6 +338,10 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
                 else if(StringFieldSchema != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.StringFieldSchema>(null, StringFieldSchema);
+                }
+                else if(UnknownFieldSchema != null)
+                {
+                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models.UnknownFieldSchema>(null, UnknownFieldSchema);
                 }
             }
         }

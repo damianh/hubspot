@@ -33,7 +33,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroT
         public ArchiveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/objects/2026-03/discounts/batch/archive", rawUrl)
         {
         }
-        /// <param name="body">The request body</param>
+        /// <summary>
+        /// Archive a batch of discounts by ID
+        /// </summary>
+        /// <param name="body">Represents a batch input payload containing a list of simple public object IDs. This component is used when performing batch operations on multiple objects within HubSpot.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,7 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Crm.Objects.TwoZeroT
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input payload containing a list of simple public object IDs. This component is used when performing batch operations on multiple objects within HubSpot.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
