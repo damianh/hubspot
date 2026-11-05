@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowsSensitiveProperties property</summary>
+        /// <summary>A boolean indicating whether the object allows sensitive properties.</summary>
         public bool? AllowsSensitiveProperties { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the object is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The associations property</summary>
+        /// <summary>A reference to the associations of the object, which are defined elsewhere in the schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition>? Associations { get; set; }
@@ -26,11 +26,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition> Associations { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>A string in date-time format indicating when the object was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdByUserId property</summary>
+        /// <summary>A string representing the ID of the user who created the object.</summary>
         public int? CreatedByUserId { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The fullyQualifiedName property</summary>
+        /// <summary>A string representing the fully qualified name of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FullyQualifiedName { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string FullyQualifiedName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>A string representing the unique identifier of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectTypeDefinitionLabels Labels { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>A string representing the name of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>A string representing the type identifier of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -78,7 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The primaryDisplayProperty property</summary>
+        /// <summary>A string representing the primary property used for displaying the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryDisplayProperty { get; set; }
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PrimaryDisplayProperty { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>A reference to the properties of the object, which are defined elsewhere in the schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.Property_1>? Properties { get; set; }
@@ -94,7 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.Property_1> Properties { get; set; }
 #endif
-        /// <summary>The requiredProperties property</summary>
+        /// <summary>An array of strings representing the properties that are required for the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RequiredProperties { get; set; }
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> RequiredProperties { get; set; }
 #endif
-        /// <summary>The searchableProperties property</summary>
+        /// <summary>An array of strings indicating which properties of the object are searchable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SearchableProperties { get; set; }
@@ -110,7 +110,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> SearchableProperties { get; set; }
 #endif
-        /// <summary>The secondaryDisplayProperties property</summary>
+        /// <summary>An array of strings representing additional properties used for displaying the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecondaryDisplayProperties { get; set; }
@@ -118,9 +118,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> SecondaryDisplayProperties { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>A string in date-time format indicating when the object was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedByUserId property</summary>
+        /// <summary>A string representing the ID of the user who last updated the object.</summary>
         public int? UpdatedByUserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectSchema"/> and sets the default values.

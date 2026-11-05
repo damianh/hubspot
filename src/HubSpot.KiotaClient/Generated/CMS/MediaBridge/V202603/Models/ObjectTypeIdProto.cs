@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The innerId property</summary>
+        /// <summary>A property likely representing an internal identifier for the object type. The data type is not specified in the provided spec.</summary>
         public int? InnerId { get; set; }
-        /// <summary>The metaTypeId property</summary>
+        /// <summary>A property that probably refers to a meta type identifier associated with the object type. The data type is not specified in the provided spec.</summary>
         public int? MetaTypeId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectTypeIdProto"/> and sets the default values.

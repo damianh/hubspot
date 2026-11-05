@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>Hint for how the text is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted_single_line&quot;, &quot;multi_line&quot;, &quot;email&quot;, &quot;phone_number&quot;, &quot;domain_name&quot;, &quot;ip_address&quot;, &quot;physical_address&quot;, or &quot;postal_code&quot;.</summary>
+    /// <summary>A string providing a hint for displaying text, with options like &apos;unformatted_single_line&apos;, &apos;multi_line&apos;, &apos;email&apos;, &apos;phone_number&apos;, &apos;domain_name&apos;, &apos;ip_address&apos;, &apos;physical_address&apos;, or &apos;postal_code&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_textDisplayHint
     {

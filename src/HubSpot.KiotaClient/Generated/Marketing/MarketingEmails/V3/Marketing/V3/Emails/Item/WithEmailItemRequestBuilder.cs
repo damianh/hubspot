@@ -215,21 +215,32 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V3.Marketing.V3.
             public bool? Archived { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("includedProperties")]
             public string[]? IncludedProperties { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("includedProperties")]
             public string[] IncludedProperties { get; set; }
+            #pragma warning restore CS1591
 #endif
+            /// <summary>Include statistics with email</summary>
             [QueryParameter("includeStats")]
             public bool? IncludeStats { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("marketingCampaignNames")]
             public bool? MarketingCampaignNames { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("variantStats")]
             public bool? VariantStats { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("workflowNames")]
             public bool? WorkflowNames { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

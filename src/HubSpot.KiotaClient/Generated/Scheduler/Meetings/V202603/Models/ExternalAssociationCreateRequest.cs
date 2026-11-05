@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.PublicObjectId To { get; set; }
 #endif
-        /// <summary>The types property</summary>
+        /// <summary>An array of association specifications, detailing the types of associations to be created. Each item in the array is an object that defines the association type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.AssociationSpec>? Types { get; set; }

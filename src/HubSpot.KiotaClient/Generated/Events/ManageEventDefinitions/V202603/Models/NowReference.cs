@@ -14,15 +14,15 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The hour property</summary>
+        /// <summary>An integer representing the hour of the current time.</summary>
         public int? Hour { get; set; }
-        /// <summary>The millisecond property</summary>
+        /// <summary>An integer representing the millisecond of the current time.</summary>
         public int? Millisecond { get; set; }
-        /// <summary>The minute property</summary>
+        /// <summary>An integer representing the minute of the current time.</summary>
         public int? Minute { get; set; }
-        /// <summary>The referenceType property</summary>
+        /// <summary>A string indicating the type of reference, which is always &apos;NOW&apos; for this component.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.NowReference_referenceType? ReferenceType { get; set; }
-        /// <summary>The second property</summary>
+        /// <summary>An integer representing the second of the current time.</summary>
         public int? Second { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.NowReference"/> and sets the default values.

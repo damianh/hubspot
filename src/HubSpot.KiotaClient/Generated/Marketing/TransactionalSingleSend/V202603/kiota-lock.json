@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "275BA160945F5964430D2E94F486895603ACF77814A3181E104BA95B3D5EC73367D752EBAAC1CA76D6330A6C94BAA7407F06B60FE1E5A9C065A2A9F789ED0598",
+  "descriptionHash": "C1E10B059E516D70DDE1D39BCF1AB901F45182F2DA868ADAFF863D90F3774C430EA9C21AE001A2E0AE18D97BF3A38D995EA67D2154DC63CCC0817713A3FCEA62",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75348/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotMarketingTransactionalSingleSendV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

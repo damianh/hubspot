@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the type of property. Defaults to &apos;timepoint&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TimePointOperation_propertyType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "timepoint")]
         #pragma warning disable CS1591

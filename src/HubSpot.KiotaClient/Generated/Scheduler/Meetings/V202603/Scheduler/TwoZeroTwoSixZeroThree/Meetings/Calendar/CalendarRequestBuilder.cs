@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
         {
         }
         /// <summary>
-        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// Create a new calendar meeting event in your HubSpot account. This endpoint allows you to specify details such as the meeting title, start and end times, and associated users. The organizerUserId is required to identify the meeting organizer.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalCalenderMeetingEventResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalCalenderMeetingEventResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalCalenderMeetingEventResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// Create a new calendar meeting event in your HubSpot account. This endpoint allows you to specify details such as the meeting title, start and end times, and associated users. The organizerUserId is required to identify the meeting organizer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -85,19 +85,23 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZeroTwoSixZeroThree.Meetings.Calendar.CalendarRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Create a new calendar event and meeting object by providing the necessary details such as associations, email reminders, meeting object properties, and timezone.
+        /// Create a new calendar meeting event in your HubSpot account. This endpoint allows you to specify details such as the meeting title, start and end times, and associated users. The organizerUserId is required to identify the meeting organizer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CalendarRequestBuilderPostQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string? OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

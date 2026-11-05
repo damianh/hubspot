@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the property group is archived. It is required.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer indicating the order in which the property group should be displayed.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>A human-readable label for the property group. It is a string and is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -26,7 +26,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the property group. It is a string and is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

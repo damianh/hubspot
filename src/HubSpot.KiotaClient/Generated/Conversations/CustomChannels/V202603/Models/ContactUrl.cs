@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The category of the URL, indicating its purpose. Valid values include &apos;HOME&apos; and &apos;WORK&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactUrl_type? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The actual URL string associated with the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

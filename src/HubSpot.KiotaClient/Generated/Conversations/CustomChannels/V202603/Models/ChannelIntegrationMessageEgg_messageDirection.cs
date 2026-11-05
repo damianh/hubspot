@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The direction of the message, indicating whether it is &apos;INCOMING&apos; or &apos;OUTGOING&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ChannelIntegrationMessageEgg_messageDirection
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "INCOMING")]
         #pragma warning disable CS1591

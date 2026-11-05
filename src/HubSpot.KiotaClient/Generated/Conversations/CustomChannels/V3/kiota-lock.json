@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "5584E6CD2D7E4E9CB2D14023CD41DF041562FAA9A2BD4B1AA85D14E80BBA83D5EE0208336F7DB0B7FAB239D5B2615165EF42D8FF07A94A27338F1ED3F77D6F62",
+  "descriptionHash": "7E6085B3818460DF58BA72C2FEE021C7106AE8DD45DFF7A619D2A1DB6A16F663BD0D6B1A4B65D57EB5A638BDD934C995D3DFC2CCAC32DB49C7779BA9D3BA9F18",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22197/version/3",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotConversationsCustomChannelsV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

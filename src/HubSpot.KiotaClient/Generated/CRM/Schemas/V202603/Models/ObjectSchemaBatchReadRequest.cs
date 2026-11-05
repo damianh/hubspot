@@ -20,7 +20,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
         public bool? IncludeAuditMetadata { get; set; }
         /// <summary>Indicates whether to include property definitions in the response.</summary>
         public bool? IncludePropertyDefinitions { get; set; }
-        /// <summary>The inputs property</summary>
+        /// <summary>An array of strings representing the identifiers of the object schemas to be read.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Inputs { get; set; }

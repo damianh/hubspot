@@ -120,8 +120,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V3.FeatureFlag
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("startPortalId")]
             public int? StartPortalId { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

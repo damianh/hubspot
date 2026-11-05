@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZeroThree.LandingPages.Folders.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.cms.pages.TwoZeroTwoSixZeroThree.landingPages.folders.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the folder to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZeroThree.LandingPages.Folders.Item.WithObjectItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZeroThree.LandingPages.Folders.Item.WithObjectItemRequestBuilder this[string position]
         {
@@ -74,22 +74,20 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
         /// Create a new folder for landing pages.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder"/></returns>
-        /// <param name="body">Binary request body</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder?> PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder?> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder> PostAsync(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder> PostAsync(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
-            var requestInfo = ToPostRequestInformation(body, contentType, requestConfiguration);
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
@@ -115,24 +113,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
         /// Create a new folder for landing pages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Binary request body</param>
-        /// <param name="contentType">The request body content type.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Stream body, string contentType, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models.ContentFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetStreamContent(body, contentType);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -166,15 +162,16 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             /// <summary>Filter folders created after the specified date and time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
-            /// <summary>Filter folders by their exact creation date and time.</summary>
+            /// <summary>Filter folders by the exact creation date and time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter folders created before the specified date and time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Specify a property to include in the response.</summary>
+            /// <summary>Specify properties to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -184,6 +181,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
+            /// <summary>Specify the order of results. Accepts an array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -193,10 +191,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter folders updated after the specified date and time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter folders by the exact update date and time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter folders updated before the specified date and time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

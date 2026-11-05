@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string specifying the operation to be performed, with valid values being &apos;UPDATED_IN_LAST_X_DAYS&apos; and &apos;NOT_UPDATED_IN_LAST_X_DAYS&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RollingPropertyUpdatedOperation_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NOT_UPDATED_IN_LAST_X_DAYS")]
         #pragma warning disable CS1591

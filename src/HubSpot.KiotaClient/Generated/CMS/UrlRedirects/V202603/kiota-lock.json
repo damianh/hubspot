@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "2445F5546B61F2D1FBF0B1A4551C42C74369DB6B6FA6D1991FE6DEE4B8770FE36175B6C8463D6B8C793FC824EC981ACF03DE15A64F9F40AAD3D46B57E19BDCC3",
+  "descriptionHash": "5D1613227892412E40689C8E41331A7372EFBA2C73F4D50332B22330A9BDBC85ACEA5F3E4DE661A6277854858DA1115B3DCBC5EE1238F38DA9C848C12C3F08EC",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75326/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCMSUrlRedirectsV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

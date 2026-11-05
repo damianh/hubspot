@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>A string representing the unique identifier for the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The objectTypeName property</summary>
+        /// <summary>A string representing the name of the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeName { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ObjectTypeName { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>An array of properties that belong to the object type, each defining specific attributes of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyDefinition>? Properties { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyDefinition> Properties { get; set; }
 #endif
-        /// <summary>The propertyGroups property</summary>
+        /// <summary>An array of property groups associated with the object type, detailing how properties are grouped together.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.GroupView>? PropertyGroups { get; set; }

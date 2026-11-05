@@ -114,19 +114,23 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.User
         public partial class V3RequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
-            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string? After { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string After { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

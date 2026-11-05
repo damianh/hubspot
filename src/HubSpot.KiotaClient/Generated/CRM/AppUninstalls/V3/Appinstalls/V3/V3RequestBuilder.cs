@@ -16,6 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The externalInstall property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.ExternalInstall.ExternalInstallRequestBuilder ExternalInstall
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.ExternalInstall.ExternalInstallRequestBuilder(PathParameters, RequestAdapter);

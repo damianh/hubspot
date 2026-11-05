@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "11B491CA10D06985E9D768522C028CD32744C7D8BF0F551952CECA6E1E8EE7849794BDFDF5C107E59E83535CD173E751983B1E2277547D74600B63272C3241FF",
+  "descriptionHash": "B14DD06AE10B331573A4E4C55CE05E0A2604B1118FE6B6FCD66CB667037D74B304E456B62E2D7922CA8F379DB05743F2F4CC0B3408CA585F1D0773913E74FC62",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75352/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotSchedulerMeetingsV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

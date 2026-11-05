@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZ
             get => new global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZeroTwoSixZeroThree.Extract.ExtractRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.cms.sourceCode.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The environment from which to retrieve the content. It specifies the context or stage of the source code.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZeroTwoSixZeroThree.Item.WithEnvironmentItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.SourceCode.V202603.Cms.SourceCode.TwoZeroTwoSixZeroThree.Item.WithEnvironmentItemRequestBuilder this[string position]
         {

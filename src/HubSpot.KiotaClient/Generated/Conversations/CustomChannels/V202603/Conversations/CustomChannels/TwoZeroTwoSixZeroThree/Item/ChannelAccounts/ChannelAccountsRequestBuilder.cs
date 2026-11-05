@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
     public partial class ChannelAccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item.channelAccounts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the channel account to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder this[long position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item.channelAccounts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the channel account to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccounts.Item.WithChannelAccountItemRequestBuilder this[string position]
@@ -166,8 +166,10 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>The default number of results to display per page.</summary>
             [QueryParameter("defaultPageLength")]
             public int? DefaultPageLength { get; set; }
+            /// <summary>An array of delivery identifier types to filter the results. Valid values include HS_EMAIL_ADDRESS, HS_PHONE_NUMBER, HS_SHORT_CODE, and CHANNEL_SPECIFIC_OPAQUE_ID.</summary>
             [Obsolete("This property is deprecated, use DeliveryIdentifierTypeAsGetDeliveryIdentifierTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,6 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             [QueryParameter("deliveryIdentifierType")]
             public string[] DeliveryIdentifierType { get; set; }
 #endif
+            /// <summary>An array of delivery identifier types to filter the results. Valid values include HS_EMAIL_ADDRESS, HS_PHONE_NUMBER, HS_SHORT_CODE, and CHANNEL_SPECIFIC_OPAQUE_ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deliveryIdentifierType")]
@@ -187,6 +190,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             [QueryParameter("deliveryIdentifierType")]
             public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.ChannelAccounts.GetDeliveryIdentifierTypeQueryParameterType[] DeliveryIdentifierTypeAsGetDeliveryIdentifierTypeQueryParameterType { get; set; }
 #endif
+            /// <summary>An array of delivery identifier values to filter the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deliveryIdentifierValue")]
@@ -199,6 +203,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>An array specifying the sort order of the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

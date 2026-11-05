@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The backgroundColor property</summary>
+        /// <summary>The background color of the email, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackgroundColor { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string BackgroundColor { get; set; }
 #endif
-        /// <summary>The backgroundImage property</summary>
+        /// <summary>The URL of the background image used in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackgroundImage { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string BackgroundImage { get; set; }
 #endif
-        /// <summary>The backgroundImageType property</summary>
+        /// <summary>The type of background image display, with valid values including &apos;SINGLE&apos;, &apos;STRETCH&apos;, and &apos;REPEAT&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmailStyleSettings_backgroundImageType? BackgroundImageType { get; set; }
-        /// <summary>The bodyBorderColor property</summary>
+        /// <summary>The color of the border around the email body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BodyBorderColor { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string BodyBorderColor { get; set; }
 #endif
-        /// <summary>The bodyBorderColorChoice property</summary>
+        /// <summary>A string representing the choice of border color for the email body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BodyBorderColorChoice { get; set; }
@@ -48,9 +48,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string BodyBorderColorChoice { get; set; }
 #endif
-        /// <summary>The bodyBorderWidth property</summary>
+        /// <summary>The width of the border around the email body, represented as a number.</summary>
         public double? BodyBorderWidth { get; set; }
-        /// <summary>The bodyColor property</summary>
+        /// <summary>The color of the email body, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BodyColor { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicButtonStyleSettings ButtonStyleSettings { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite1 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite1 { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string ColorPickerFavorite1 { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite2 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite2 { get; set; }
@@ -82,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string ColorPickerFavorite2 { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite3 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite3 { get; set; }
@@ -90,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string ColorPickerFavorite3 { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite4 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite4 { get; set; }
@@ -98,7 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string ColorPickerFavorite4 { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite5 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite5 { get; set; }
@@ -106,7 +106,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string ColorPickerFavorite5 { get; set; }
 #endif
-        /// <summary>The colorPickerFavorite6 property</summary>
+        /// <summary>A favorite color option available in the color picker, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ColorPickerFavorite6 { get; set; }
@@ -122,7 +122,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicDividerStyleSettings DividerStyleSettings { get; set; }
 #endif
-        /// <summary>The emailBodyPadding property</summary>
+        /// <summary>The padding applied to the email body, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailBodyPadding { get; set; }
@@ -130,7 +130,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string EmailBodyPadding { get; set; }
 #endif
-        /// <summary>The emailBodyWidth property</summary>
+        /// <summary>The width of the email body, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailBodyWidth { get; set; }
@@ -162,7 +162,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicFontStyle LinksFont { get; set; }
 #endif
-        /// <summary>The primaryAccentColor property</summary>
+        /// <summary>The primary accent color used in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryAccentColor { get; set; }
@@ -170,7 +170,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string PrimaryAccentColor { get; set; }
 #endif
-        /// <summary>The primaryFont property</summary>
+        /// <summary>The primary font used in the email, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryFont { get; set; }
@@ -178,7 +178,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string PrimaryFont { get; set; }
 #endif
-        /// <summary>The primaryFontColor property</summary>
+        /// <summary>The color of the primary font.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryFontColor { get; set; }
@@ -186,7 +186,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string PrimaryFontColor { get; set; }
 #endif
-        /// <summary>The primaryFontLineHeight property</summary>
+        /// <summary>The line height of the primary font, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryFontLineHeight { get; set; }
@@ -194,9 +194,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string PrimaryFontLineHeight { get; set; }
 #endif
-        /// <summary>The primaryFontSize property</summary>
+        /// <summary>The size of the primary font, represented as a number.</summary>
         public double? PrimaryFontSize { get; set; }
-        /// <summary>The secondaryAccentColor property</summary>
+        /// <summary>The secondary accent color used in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryAccentColor { get; set; }
@@ -204,7 +204,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string SecondaryAccentColor { get; set; }
 #endif
-        /// <summary>The secondaryFont property</summary>
+        /// <summary>The secondary font used in the email, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryFont { get; set; }
@@ -212,7 +212,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string SecondaryFont { get; set; }
 #endif
-        /// <summary>The secondaryFontColor property</summary>
+        /// <summary>The color of the secondary font.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryFontColor { get; set; }
@@ -220,7 +220,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string SecondaryFontColor { get; set; }
 #endif
-        /// <summary>The secondaryFontLineHeight property</summary>
+        /// <summary>The line height of the secondary font, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryFontLineHeight { get; set; }
@@ -228,7 +228,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string SecondaryFontLineHeight { get; set; }
 #endif
-        /// <summary>The secondaryFontSize property</summary>
+        /// <summary>The size of the secondary font, represented as a number.</summary>
         public double? SecondaryFontSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmailStyleSettings"/> and sets the default values.

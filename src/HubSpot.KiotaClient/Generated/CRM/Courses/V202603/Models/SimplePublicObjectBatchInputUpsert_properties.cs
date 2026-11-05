@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 {
     /// <summary>
-    /// Key value pairs representing the properties of the object.
+    /// An object containing key-value pairs representing the properties of the CRM object. Each key is a property name, and each value is the property&apos;s value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimplePublicObjectBatchInputUpsert_properties : IAdditionalDataHolder, IParsable

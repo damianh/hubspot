@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Ac
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.automation.actions.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the application to retrieve extension definitions for.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Ac
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.automation.actions.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the application to retrieve extension definitions for.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder this[string position]

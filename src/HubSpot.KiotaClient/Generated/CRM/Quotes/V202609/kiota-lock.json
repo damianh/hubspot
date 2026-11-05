@@ -1,0 +1,35 @@
+{
+  "descriptionHash": "8DFE04B25B6FFA2BB3626057DA42605664646245690738F4058C6B4D3F6BF0B5139E23C077C8C9D7220BC9970BCCEF1FB9D873D2F7CAAB2C8DA51457B43BAC0D",
+  "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/165168/version/2026-09",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.38.0",
+  "clientClassName": "HubSpotCRMQuotesV202609Client",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Quotes.V202609",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
+}

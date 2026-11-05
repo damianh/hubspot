@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A string providing additional information about the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer indicating the order in which the option should appear relative to other options.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>A boolean indicating whether the option should be hidden from the user interface.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The display label for the option, shown to users. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The underlying value associated with the option, used in data processing. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

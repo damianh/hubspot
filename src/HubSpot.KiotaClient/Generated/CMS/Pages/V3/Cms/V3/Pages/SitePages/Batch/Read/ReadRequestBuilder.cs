@@ -90,7 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.SitePages.Batch.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
-            /// <summary>Whether to return only results that have been archived.</summary>
+            /// <summary>Specifies whether to return deleted Site Pages. Defaults to `false`.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
         }

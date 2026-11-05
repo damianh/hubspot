@@ -96,10 +96,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnsubscribeAllRequestBuilderPostQueryParameters 
         {
-            /// <summary>An optional integer representing the business unit ID for which the operation is being performed.</summary>
+            /// <summary>The ID of the business unit for which the operation is being performed. This is an optional parameter.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The communication channel from which subscribers will be unsubscribed. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel from which to unsubscribe all subscribers. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,10 +110,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The communication channel from which subscribers will be unsubscribed. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel from which to unsubscribe all subscribers. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Batch.UnsubscribeAll.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
-            /// <summary>A boolean indicating whether to include detailed information in the response. Defaults to false.</summary>
+            /// <summary>A boolean flag indicating whether to include detailed information in the response. Defaults to false.</summary>
             [QueryParameter("verbose")]
             public bool? Verbose { get; set; }
         }

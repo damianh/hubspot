@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparison property</summary>
+        /// <summary>A string that indicates the comparison direction, either &apos;BEFORE&apos; or &apos;AFTER&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RelativeComparativeTimestampRefineBy_comparison? Comparison { get; set; }
         /// <summary>The timeOffset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.TimeOffset TimeOffset { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of the refinement, which is &apos;RelativeComparativeTimestampRefineBy&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RelativeComparativeTimestampRefineBy_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RelativeComparativeTimestampRefineBy"/> and sets the default values.

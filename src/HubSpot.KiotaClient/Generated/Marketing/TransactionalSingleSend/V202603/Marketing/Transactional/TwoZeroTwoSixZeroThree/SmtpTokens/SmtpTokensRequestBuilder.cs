@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.
     public partial class SmtpTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.marketing.transactional.TwoZeroTwoSixZeroThree.smtpTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the SMTP API token to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.Marketing.Transactional.TwoZeroTwoSixZeroThree.SmtpTokens.Item.WithTokenItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.Marketing.Transactional.TwoZeroTwoSixZeroThree.SmtpTokens.Item.WithTokenItemRequestBuilder this[string position]
         {
@@ -150,6 +150,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>Filter the results by the name of the campaign. This is a string parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("campaignName")]
@@ -159,6 +160,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.
             [QueryParameter("campaignName")]
             public string CampaignName { get; set; }
 #endif
+            /// <summary>Filter the results by the unique identifier of the email campaign. This is a string parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("emailCampaignId")]

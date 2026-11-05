@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models
 {
     /// <summary>
-    /// An object containing relevant links related to the batch request.
+    /// A map of link names to associated URIs, providing additional information or actions related to the batch operation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BatchResponseSimplePublicUpsertObject_links : IAdditionalDataHolder, IParsable

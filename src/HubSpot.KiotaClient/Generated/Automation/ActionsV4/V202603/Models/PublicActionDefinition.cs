@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
     public partial class PublicActionDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actionUrl property</summary>
+        /// <summary>The URL endpoint where the action is executed. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActionUrl { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archivedAt property</summary>
+        /// <summary>A Unix timestamp in milliseconds representing when the action was archived. It is an integer.</summary>
         public long? ArchivedAt { get; set; }
-        /// <summary>The executionRules property</summary>
+        /// <summary>An array of execution translation rules for the action, where each item is a PublicExecutionTranslationRule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicExecutionTranslationRule>? ExecutionRules { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicExecutionTranslationRule> ExecutionRules { get; set; }
 #endif
-        /// <summary>The functions property</summary>
+        /// <summary>An array of function identifiers associated with the action, where each item is a PublicActionFunctionIdentifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionFunctionIdentifier>? Functions { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionFunctionIdentifier> Functions { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the action definition. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The inputFieldDependencies property</summary>
+        /// <summary>An array of dependencies between input fields, where each item can be a PublicSingleFieldDependency or PublicConditionalSingleFieldDependency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionDefinition.PublicActionDefinition_inputFieldDependencies>? InputFieldDependencies { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionDefinition.PublicActionDefinition_inputFieldDependencies> InputFieldDependencies { get; set; }
 #endif
-        /// <summary>The inputFields property</summary>
+        /// <summary>An array of input field definitions required for the action. Each item is a PublicInputFieldDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicInputFieldDefinition>? InputFields { get; set; }
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicInputFieldDefinition> InputFields { get; set; }
 #endif
-        /// <summary>The labels property</summary>
+        /// <summary>An object containing labels for the action, with each property being a PublicActionLabels object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicActionDefinition_labels? Labels { get; set; }
@@ -80,7 +80,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicObjectRequestOptions ObjectRequestOptions { get; set; }
 #endif
-        /// <summary>The objectTypes property</summary>
+        /// <summary>An array of strings representing the types of objects associated with the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ObjectTypes { get; set; }
@@ -88,7 +88,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<string> ObjectTypes { get; set; }
 #endif
-        /// <summary>The outputFields property</summary>
+        /// <summary>An array of output field definitions produced by the action. Each item is an OutputFieldDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.OutputFieldDefinition>? OutputFields { get; set; }
@@ -96,9 +96,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.OutputFieldDefinition> OutputFields { get; set; }
 #endif
-        /// <summary>The published property</summary>
+        /// <summary>A boolean indicating whether the action is published and available for use.</summary>
         public bool? Published { get; set; }
-        /// <summary>The revisionId property</summary>
+        /// <summary>The unique identifier for the current revision of the action definition. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RevisionId { get; set; }

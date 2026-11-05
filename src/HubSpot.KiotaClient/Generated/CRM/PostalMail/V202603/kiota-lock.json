@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "9AD42694F415CB5A05E8E34587E90DBB3EBFF6B9DD46A2682C7A95AA217C6B6B5CD136DA5C92634BFFF28EB15F71BEF64306C2C49DA379B542A7B5FBF8C73A3F",
+  "descriptionHash": "AC141DB5A3368237FDACA81B54326F1B59215DF6A8AC683FDF1CFC1DBFAC2BF7726A8A681993ECE42AC2C109A35FA22D3E512995C49C250C650745B72B5A7049",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75248/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMPostalMailV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.PostalMail.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

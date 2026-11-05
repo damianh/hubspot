@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactProfile ContactProfile { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of the component, which is &apos;CONTACT&apos; by default.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicContact_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicContact"/> and sets the default values.

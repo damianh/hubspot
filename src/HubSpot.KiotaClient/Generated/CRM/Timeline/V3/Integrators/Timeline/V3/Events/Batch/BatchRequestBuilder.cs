@@ -16,6 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Ev
     public partial class BatchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Batch.Create.CreateRequestBuilder Create
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Events.Batch.Create.CreateRequestBuilder(PathParameters, RequestAdapter);

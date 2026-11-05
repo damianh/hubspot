@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Create an event containing the viewers attention span details for the media.
+        /// Create a new attention span event in the MediaBridgeService. This endpoint is used to record attention span events, which can be useful for tracking user engagement with media content. The request must include a valid JSON body conforming to the AttentionSpanEventRequest schema.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an event containing the viewers attention span details for the media.
+        /// Create a new attention span event in the MediaBridgeService. This endpoint is used to record attention span events, which can be useful for tracking user engagement with media content. The request must include a valid JSON body conforming to the AttentionSpanEventRequest schema.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

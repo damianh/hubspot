@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
     public partial class AssociationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.mediaBridge.TwoZeroTwoSixZeroThree.item.schemas.item.associations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the association to be deleted.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Schemas.Item.Associations.Item.WithAssociationItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Schemas.Item.Associations.Item.WithAssociationItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Create a new association definition for the specified object type.
+        /// Create new associations for a specified object type within a given app. This endpoint allows you to define relationships between different object types, enhancing data connectivity and integration within your HubSpot account.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationDefinition.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new association definition for the specified object type.
+        /// Create new associations for a specified object type within a given app. This endpoint allows you to define relationships between different object types, enhancing data connectivity and integration within your HubSpot account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

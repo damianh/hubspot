@@ -21,6 +21,14 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
         public bool? IsEncrypted { get; set; }
         /// <summary>Indicates whether the property value is stored as a large value in the storage</summary>
         public bool? IsLargeValue { get; set; }
+        /// <summary>The maskedSubstrings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MaskedSubstrings? MaskedSubstrings { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MaskedSubstrings MaskedSubstrings { get; set; }
+#endif
         /// <summary>Name of custom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
 #else
         public string SourceUpstreamDeployable { get; set; }
 #endif
-        /// <summary>The unique identifier associated with the source.</summary>
+        /// <summary>An array of integers representing IDs associated with the source of the property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<long?>? SourceVid { get; set; }
@@ -135,6 +143,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
                 { "dataSensitivity", n => { DataSensitivity = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.PropertyValue_dataSensitivity>(); } },
                 { "isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
                 { "isLargeValue", n => { IsLargeValue = n.GetBoolValue(); } },
+                { "maskedSubstrings", n => { MaskedSubstrings = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MaskedSubstrings>(global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MaskedSubstrings.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "persistenceTimestamp", n => { PersistenceTimestamp = n.GetLongValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
@@ -163,6 +172,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.PropertyValue_dataSensitivity>("dataSensitivity", DataSensitivity);
             writer.WriteBoolValue("isEncrypted", IsEncrypted);
             writer.WriteBoolValue("isLargeValue", IsLargeValue);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MaskedSubstrings>("maskedSubstrings", MaskedSubstrings);
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("persistenceTimestamp", PersistenceTimestamp);
             writer.WriteStringValue("requestId", RequestId);

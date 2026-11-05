@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The type of consent required for processing. Accepted values are: IMPLICIT, REQUIRED_CHECKBOX.</summary>
+    /// <summary>A string indicating the type of processing consent. Valid values are &apos;IMPLICIT&apos; and &apos;REQUIRED_CHECKBOX&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalLegalConsentOptions_processingConsentType
     {

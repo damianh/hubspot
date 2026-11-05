@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
     public partial class OembedDomainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.mediaBridge.TwoZeroTwoSixZeroThree.item.settings.oembedDomains.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the oEmbed domain to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.OembedDomains.Item.WithOEmbedDomainItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.OembedDomains.Item.WithOEmbedDomainItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Delete an existing oEmbed domain.
+        /// Delete oEmbed domains associated with a specific app in HubSpot. This operation allows you to manage and remove domains that are no longer needed for embedding media content within the app&apos;s settings.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details for existing oEmbed domains for your app
+        /// Retrieve the list of OEmbed domains associated with a specific app in your HubSpot account. This endpoint is useful for managing and verifying the domains that are allowed to embed media content. It provides a way to ensure that only trusted domains are used for embedding media.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OEmbedDomainsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OEmbedDomainsCollectionResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OEmbedDomainsCollectionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set up a new oEmbed domain for your media bridge app.
+        /// Create a new oEmbed domain setting for a specific app in your HubSpot account. This endpoint allows you to define domains that can be used for oEmbed purposes, facilitating the integration of media content from external sources.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.IntegratorOEmbedDomainModel"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.IntegratorOEmbedDomainModel>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.IntegratorOEmbedDomainModel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing oEmbed domain.
+        /// Delete oEmbed domains associated with a specific app in HubSpot. This operation allows you to manage and remove domains that are no longer needed for embedding media content within the app&apos;s settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Get the details for existing oEmbed domains for your app
+        /// Retrieve the list of OEmbed domains associated with a specific app in your HubSpot account. This endpoint is useful for managing and verifying the domains that are allowed to embed media content. It provides a way to ensure that only trusted domains are used for embedding media.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Set up a new oEmbed domain for your media bridge app.
+        /// Create a new oEmbed domain setting for a specific app in your HubSpot account. This endpoint allows you to define domains that can be used for oEmbed purposes, facilitating the integration of media content from external sources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,13 +170,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.OembedDomains.OembedDomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete an existing oEmbed domain.
+        /// Delete oEmbed domains associated with a specific app in HubSpot. This operation allows you to manage and remove domains that are no longer needed for embedding media content within the app&apos;s settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OembedDomainsRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>The portal ID associated with the domain. Defaults to -1.</summary>
             [QueryParameter("domainPortalId")]
             public int? DomainPortalId { get; set; }
+            /// <summary>The unique identifier of the oEmbed domain to delete.</summary>
             [QueryParameter("id")]
             public long? Id { get; set; }
         }
@@ -189,11 +191,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Get the details for existing oEmbed domains for your app
+        /// Retrieve the list of OEmbed domains associated with a specific app in your HubSpot account. This endpoint is useful for managing and verifying the domains that are allowed to embed media content. It provides a way to ensure that only trusted domains are used for embedding media.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OembedDomainsRequestBuilderGetQueryParameters 
         {
+            /// <summary>The ID of the domain portal to filter the oEmbed domains. Defaults to -1.</summary>
             [QueryParameter("domainPortalId")]
             public int? DomainPortalId { get; set; }
         }

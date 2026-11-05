@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of PublicAssociationDefinitionUserConfiguration objects, each representing a user configuration for an association definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models.PublicAssociationDefinitionUserConfiguration>? Results { get; set; }

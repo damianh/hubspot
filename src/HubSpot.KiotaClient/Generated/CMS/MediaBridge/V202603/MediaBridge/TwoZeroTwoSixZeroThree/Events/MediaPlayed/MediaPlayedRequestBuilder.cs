@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Create an event for when a user begins playing a piece of media.
+        /// Create a media played event in the HubSpot account. This endpoint is used to log when media content has been played, which can be useful for tracking user engagement with media resources.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an event for when a user begins playing a piece of media.
+        /// Create a media played event in the HubSpot account. This endpoint is used to log when media content has been played, which can be useful for tracking user engagement with media resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

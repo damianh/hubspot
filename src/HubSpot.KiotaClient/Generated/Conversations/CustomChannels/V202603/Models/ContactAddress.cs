@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The city property</summary>
+        /// <summary>The city where the contact is located. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? City { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string City { get; set; }
 #endif
-        /// <summary>The country property</summary>
+        /// <summary>The country where the contact is located. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The countryCode property</summary>
+        /// <summary>The code representing the country of the contact&apos;s address. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryCode { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string CountryCode { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The state where the contact is located. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string State { get; set; }
 #endif
-        /// <summary>The street property</summary>
+        /// <summary>The street address of the contact. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Street { get; set; }
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Street { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of address, which can be either &apos;HOME&apos; or &apos;WORK&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.ContactAddress_type? Type { get; set; }
-        /// <summary>The zip property</summary>
+        /// <summary>The postal code of the contact&apos;s address. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Zip { get; set; }

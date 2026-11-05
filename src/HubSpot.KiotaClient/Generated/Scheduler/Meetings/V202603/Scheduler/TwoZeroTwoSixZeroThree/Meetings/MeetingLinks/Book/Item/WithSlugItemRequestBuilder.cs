@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
         {
         }
         /// <summary>
-        /// Get details about the initial information necessary for a meeting scheduler.
+        /// Retrieve detailed booking information for a specific meeting link using its slug. This endpoint provides insights into the availability and settings associated with the meeting link. It is useful for understanding the booking context and ensuring that the correct timezone is applied.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingInfo>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBookingInfo.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get details about the initial information necessary for a meeting scheduler.
+        /// Retrieve detailed booking information for a specific meeting link using its slug. This endpoint provides insights into the availability and settings associated with the meeting link. It is useful for understanding the booking context and ensuring that the correct timezone is applied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,19 +80,23 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZeroTwoSixZeroThree.Meetings.MeetingLinks.Book.Item.WithSlugItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get details about the initial information necessary for a meeting scheduler.
+        /// Retrieve detailed booking information for a specific meeting link using its slug. This endpoint provides insights into the availability and settings associated with the meeting link. It is useful for understanding the booking context and ensuring that the correct timezone is applied.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSlugItemRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("timezone")]
             public string? Timezone { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("timezone")]
             public string Timezone { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

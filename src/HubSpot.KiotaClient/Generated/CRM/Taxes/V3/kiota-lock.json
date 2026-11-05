@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "617FF4D4D3874D35A6C8D51CD6270BD4D0A8D49167426D13A0B50F9783DEC483A1E6D70FE6D87DE2C49360CBFA39EEB49A78B39CF561B9C7B94B9A06B50D9298",
+  "descriptionHash": "7FEB0B6108A3097E993BDC69178FF1EE929DB9A5486433A7D9BA5B2459BE8A8D8C10607F171631D6345680074BC7E43711CD307D386D3F117A5AB084921C230A",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/22188/version/3",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMTaxesV3Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.Taxes.V3",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

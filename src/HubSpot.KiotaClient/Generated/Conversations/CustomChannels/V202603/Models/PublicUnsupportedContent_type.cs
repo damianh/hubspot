@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>A string that specifies the type of unsupported content. The default and only valid value is &apos;UNSUPPORTED_CONTENT&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicUnsupportedContent_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "UNSUPPORTED_CONTENT")]
         #pragma warning disable CS1591

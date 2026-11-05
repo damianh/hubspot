@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The options property</summary>
+        /// <summary>An array of options available for the field, each defined by the PublicOption schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models.PublicOption>? Options { get; set; }

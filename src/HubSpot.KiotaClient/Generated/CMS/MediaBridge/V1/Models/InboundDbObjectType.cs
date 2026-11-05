@@ -216,6 +216,14 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
 #endif
         /// <summary>The status property</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status? Status { get; set; }
+        /// <summary>The visibilities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibilities?>? Visibilities { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibilities?> Visibilities { get; set; }
+#endif
         /// <summary>The visibility property</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility? Visibility { get; set; }
         /// <summary>The writeScopeName property</summary>
@@ -289,6 +297,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
                 { "secondaryDisplayLabelPropertyNames", n => { SecondaryDisplayLabelPropertyNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "singularForm", n => { SingularForm = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status>(); } },
+                { "visibilities", n => { Visibilities = n.GetCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibilities>()?.AsList(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility>(); } },
                 { "writeScopeName", n => { WriteScopeName = n.GetStringValue(); } },
             };
@@ -338,6 +347,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayLabelPropertyNames", SecondaryDisplayLabelPropertyNames);
             writer.WriteStringValue("singularForm", SingularForm);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_status>("status", Status);
+            writer.WriteCollectionOfEnumValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibilities>("visibilities", Visibilities);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.InboundDbObjectType_visibility>("visibility", Visibility);
             writer.WriteStringValue("writeScopeName", WriteScopeName);
             writer.WriteAdditionalData(AdditionalData);

@@ -63,7 +63,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Discounts.V202603.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The HTTP status code associated with the error.</summary>
+        /// <summary>A text status code for the error, typically &quot;error&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }

@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The includeHelpdeskRoutableTeamsOnly property</summary>
+        /// <summary>A boolean indicating whether to include only teams that are routable by the helpdesk in the results.</summary>
         public bool? IncludeHelpdeskRoutableTeamsOnly { get; set; }
-        /// <summary>The includeUnconfirmedUsers property</summary>
+        /// <summary>A boolean indicating whether to include users who have not been confirmed in the results.</summary>
         public bool? IncludeUnconfirmedUsers { get; set; }
-        /// <summary>The listProcessingTypes property</summary>
+        /// <summary>An array of strings specifying the types of processing to be included in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ListProcessingTypes { get; set; }
@@ -26,13 +26,21 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<string> ListProcessingTypes { get; set; }
 #endif
-        /// <summary>The pipelineIds property</summary>
+        /// <summary>An array of strings representing the IDs of pipelines to filter the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PipelineIds { get; set; }
 #nullable restore
 #else
         public List<string> PipelineIds { get; set; }
+#endif
+        /// <summary>An array of strings representing the IDs of teams to filter the results by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TeamIds { get; set; }
+#nullable restore
+#else
+        public List<string> TeamIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.FilteringMetaData"/> and sets the default values.
@@ -63,6 +71,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
                 { "includeUnconfirmedUsers", n => { IncludeUnconfirmedUsers = n.GetBoolValue(); } },
                 { "listProcessingTypes", n => { ListProcessingTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pipelineIds", n => { PipelineIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "teamIds", n => { TeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
             writer.WriteBoolValue("includeUnconfirmedUsers", IncludeUnconfirmedUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("listProcessingTypes", ListProcessingTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("pipelineIds", PipelineIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("teamIds", TeamIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

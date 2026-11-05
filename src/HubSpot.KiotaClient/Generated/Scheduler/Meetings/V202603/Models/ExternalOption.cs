@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A brief description of the option.</summary>
+        /// <summary>A string providing a detailed description of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The order in which the option should be displayed.</summary>
+        /// <summary>An integer indicating the order in which the option should be displayed relative to other options.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>Deprecated property. Will always be 0.</summary>
+        /// <summary>A number that may hold additional data associated with the option.</summary>
         public double? DoubleData { get; set; }
-        /// <summary>Whether the option should be hidden from the user.</summary>
+        /// <summary>A boolean indicating whether the option is hidden from display.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The text label for the option.</summary>
+        /// <summary>A string representing the display name of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Whether the option is read-only.</summary>
+        /// <summary>A boolean indicating whether the option is read-only and cannot be modified.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>The value associated with the option.</summary>
+        /// <summary>A string representing the internal value associated with the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

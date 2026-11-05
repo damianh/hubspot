@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 {
+    /// <summary>The final status of the call. Valid values include &apos;QUEUED&apos;, &apos;RINGING&apos;, &apos;IN_PROGRESS&apos;, &apos;CANCELED&apos;, &apos;COMPLETED&apos;, &apos;BUSY&apos;, &apos;FAILED&apos;, &apos;NO_ANSWER&apos;, &apos;CONNECTING&apos;, &apos;CALLING_CRM_USER&apos;, &apos;MISSED&apos;, &apos;HOLD&apos;, and &apos;UNKNOWN&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CompletedThirdPartyCallRequest_finalCallStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "BUSY")]
         #pragma warning disable CS1591

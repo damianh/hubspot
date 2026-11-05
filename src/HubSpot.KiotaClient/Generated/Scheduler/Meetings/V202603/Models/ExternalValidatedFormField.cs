@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The specific input type of the form field. Corresponds to property types (e.g., `select`, `radio`, `date`, etc).</summary>
+        /// <summary>The type of the form field, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldType { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string FieldType { get; set; }
 #endif
-        /// <summary>Whether the form field is a custom field.</summary>
+        /// <summary>A boolean indicating whether the form field is custom-defined.</summary>
         public bool? IsCustom { get; set; }
-        /// <summary>The text label associated with the form field.</summary>
+        /// <summary>The display label for the form field, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -32,7 +32,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name identifier for the form field, includes underscores in place of spaces (e.g., the label `my form` is converted to `my_form`).</summary>
+        /// <summary>The name of the form field, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The translated text label for the form field.</summary>
+        /// <summary>The translated label for the form field, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TranslatedLabel { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string TranslatedLabel { get; set; }
 #endif
-        /// <summary>The value associated with the form field.</summary>
+        /// <summary>The value assigned to the form field, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Value { get; set; }
 #endif
-        /// <summary>The text label associated to a form field selection or option.</summary>
+        /// <summary>A label for the field&apos;s value, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ValueLabel { get; set; }

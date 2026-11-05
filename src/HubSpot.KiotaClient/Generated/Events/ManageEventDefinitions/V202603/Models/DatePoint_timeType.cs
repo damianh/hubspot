@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the type of time representation, defaulting to &apos;DATE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum DatePoint_timeType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DATE")]
         #pragma warning disable CS1591

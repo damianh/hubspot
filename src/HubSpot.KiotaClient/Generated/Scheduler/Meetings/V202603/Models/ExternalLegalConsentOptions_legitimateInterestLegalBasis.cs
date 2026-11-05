@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The legal basis for processing under legitimate interest. Accepted values are: LEGITIMATE_INTEREST_PQL, LEGITIMATE_INTEREST_CLIENT, PERFORMANCE_OF_CONTRACT, CONSENT_WITH_NOTICE, NON_GDPR, PROCESS_AND_STORE, LEGITIMATE_INTEREST_OTHER.</summary>
+    /// <summary>A string indicating the legal basis for legitimate interest. Valid values include &apos;LEGITIMATE_INTEREST_PQL&apos;, &apos;LEGITIMATE_INTEREST_CLIENT&apos;, &apos;PERFORMANCE_OF_CONTRACT&apos;, &apos;CONSENT_WITH_NOTICE&apos;, &apos;NON_GDPR&apos;, &apos;PROCESS_AND_STORE&apos;, and &apos;LEGITIMATE_INTEREST_OTHER&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalLegalConsentOptions_legitimateInterestLegalBasis
     {

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZ
             get => new global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZeroTwoSixZeroThree.Associations.Records.From.FromRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.crm.limits.TwoZeroTwoSixZeroThree.associations.records.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the object type from which the associations are being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZeroTwoSixZeroThree.Associations.Records.Item.WithFromObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Crm.Limits.TwoZeroTwoSixZeroThree.Associations.Records.Item.WithFromObjectTypeItemRequestBuilder this[string position]
         {

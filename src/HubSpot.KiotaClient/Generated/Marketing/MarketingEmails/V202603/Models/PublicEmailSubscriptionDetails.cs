@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string OfficeLocationId { get; set; }
 #endif
-        /// <summary>The preferencesGroupId property</summary>
+        /// <summary>The identifier for the preferences group associated with the subscription. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferencesGroupId { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string SubscriptionId { get; set; }
 #endif
-        /// <summary>The subscriptionName property</summary>
+        /// <summary>The name of the email subscription. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionName { get; set; }

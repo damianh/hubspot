@@ -1,5 +1,5 @@
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V3;
-using DamianH.HubSpot.KiotaClient.CRM.Objects.V3.Models;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3;
+using DamianH.HubSpot.KiotaClient.CRM.CustomObjects.V3.Models;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
@@ -8,7 +8,7 @@ namespace DamianH.HubSpot.MockServer;
 public class CrmGenericObjectsTests : IAsyncLifetime
 {
     private HubSpotMockServer _server = null!;
-    private HubSpotCRMObjectsV3Client _client = null!;
+    private HubSpotCRMCustomObjectsV3Client _client = null!;
 
     public async ValueTask InitializeAsync()
     {
@@ -17,7 +17,7 @@ public class CrmGenericObjectsTests : IAsyncLifetime
         {
             BaseUrl = _server.Uri.ToString()
         };
-        _client = new HubSpotCRMObjectsV3Client(requestAdapter);
+        _client = new HubSpotCRMCustomObjectsV3Client(requestAdapter);
     }
 
     public async ValueTask DisposeAsync() => await _server.DisposeAsync();

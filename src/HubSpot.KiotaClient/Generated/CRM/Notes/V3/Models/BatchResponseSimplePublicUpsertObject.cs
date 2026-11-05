@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the batch process was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>An object containing relevant links related to the batch request.</summary>
+        /// <summary>A map of link names to associated URIs, providing additional information or actions related to the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.BatchResponseSimplePublicUpsertObject_links? Links { get; set; }
@@ -27,7 +27,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models
 #endif
         /// <summary>The timestamp when the batch process was initiated, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of SimplePublicUpsertObject items representing the results of the batch upsert operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Notes.V3.Models.SimplePublicUpsertObject>? Results { get; set; }

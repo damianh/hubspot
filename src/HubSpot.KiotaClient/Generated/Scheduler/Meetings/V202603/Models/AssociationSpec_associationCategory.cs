@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The category of the association, such as &quot;HUBSPOT_DEFINED&quot;.</summary>
+    /// <summary>A string indicating the category of the association. Valid values include &apos;HUBSPOT_DEFINED&apos;, &apos;USER_DEFINED&apos;, &apos;INTEGRATOR_DEFINED&apos;, and &apos;WORK&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationSpec_associationCategory
     {

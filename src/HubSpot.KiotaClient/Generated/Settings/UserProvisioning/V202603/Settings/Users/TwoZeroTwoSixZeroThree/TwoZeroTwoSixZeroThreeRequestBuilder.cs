@@ -79,11 +79,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser?> PostAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser?> PostAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequestMarch2026 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser> PostAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.PublicUser> PostAsync(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequestMarch2026 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -111,11 +111,11 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequestMarch2026 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models.UserProvisionRequestMarch2026 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -139,19 +139,23 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Settings
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
-            /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string? After { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string After { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>The maximum number of results to display per page.</summary>
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

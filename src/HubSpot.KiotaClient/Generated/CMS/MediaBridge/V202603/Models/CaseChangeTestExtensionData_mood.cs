@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A property representing the mood, typically used for testing case changes in text. The data type and constraints are not specified in the provided schema.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CaseChangeTestExtensionData_mood
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ANGRY")]
         #pragma warning disable CS1591

@@ -47,5 +47,9 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V4.Models
         #pragma warning disable CS1591
         String,
         #pragma warning restore CS1591
+        [EnumMember(Value = "time_range")]
+        #pragma warning disable CS1591
+        Time_range,
+        #pragma warning restore CS1591
     }
 }

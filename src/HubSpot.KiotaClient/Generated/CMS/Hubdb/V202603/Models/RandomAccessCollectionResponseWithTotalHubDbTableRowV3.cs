@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Models.BoundedPaging Paging { get; set; }
 #endif
-        /// <summary>The results property</summary>
+        /// <summary>An array containing the HubDb table rows wrapped in a HubDbTableRowV3Wrapper object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UntypedNode>? Results { get; set; }

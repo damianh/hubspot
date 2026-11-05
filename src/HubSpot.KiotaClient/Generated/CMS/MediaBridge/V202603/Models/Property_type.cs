@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>The data type of the property, such as string or number.</summary>
+    /// <summary>A string indicating the type of the property, such as &apos;bool&apos;, &apos;date&apos;, &apos;datetime&apos;, &apos;enumeration&apos;, &apos;number&apos;, &apos;phone_number&apos;, or &apos;string&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Property_type
     {
@@ -46,6 +46,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
         [EnumMember(Value = "string")]
         #pragma warning disable CS1591
         String,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "time_range")]
+        #pragma warning disable CS1591
+        Time_range,
         #pragma warning restore CS1591
     }
 }

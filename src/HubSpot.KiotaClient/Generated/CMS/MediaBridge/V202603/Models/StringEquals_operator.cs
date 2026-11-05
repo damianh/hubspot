@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string indicating the type of operation, which defaults to &apos;STRING_EQUALS&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum StringEquals_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "STRING_EQUALS")]
         #pragma warning disable CS1591

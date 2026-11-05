@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fileId property</summary>
+        /// <summary>A string representing the unique identifier for the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileId { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string FileId { get; set; }
 #endif
-        /// <summary>The fileUsageType property</summary>
+        /// <summary>A string specifying the usage type of the file, which can be &apos;STICKER&apos;, &apos;VOICE_RECORDING&apos;, &apos;IMAGE&apos;, &apos;AUDIO&apos;, or &apos;OTHER&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicFile_fileUsageType? FileUsageType { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>A string containing the name of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of the attachment, which is always &apos;FILE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicFile_type? Type { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>A string containing the URL where the file can be accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

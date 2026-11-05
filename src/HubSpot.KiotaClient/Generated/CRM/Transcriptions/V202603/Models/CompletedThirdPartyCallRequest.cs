@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callStartedTimestamp property</summary>
+        /// <summary>The date and time when the call started, in ISO 8601 format.</summary>
         public DateTimeOffset? CallStartedTimestamp { get; set; }
-        /// <summary>The createEngagement property</summary>
+        /// <summary>A boolean indicating whether an engagement should be created for this call.</summary>
         public bool? CreateEngagement { get; set; }
-        /// <summary>The durationSeconds property</summary>
+        /// <summary>The duration of the call in seconds, represented as an integer.</summary>
         public int? DurationSeconds { get; set; }
-        /// <summary>The engagementProperties property</summary>
+        /// <summary>A map of custom property names to their values, used to store additional information about the engagement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallRequest_engagementProperties? EngagementProperties { get; set; }
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallRequest_engagementProperties EngagementProperties { get; set; }
 #endif
-        /// <summary>The externalCallId property</summary>
+        /// <summary>A unique identifier for the call provided by the external system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalCallId { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string ExternalCallId { get; set; }
 #endif
-        /// <summary>The finalCallStatus property</summary>
+        /// <summary>The final status of the call. Valid values include &apos;QUEUED&apos;, &apos;RINGING&apos;, &apos;IN_PROGRESS&apos;, &apos;CANCELED&apos;, &apos;COMPLETED&apos;, &apos;BUSY&apos;, &apos;FAILED&apos;, &apos;NO_ANSWER&apos;, &apos;CONNECTING&apos;, &apos;CALLING_CRM_USER&apos;, &apos;MISSED&apos;, &apos;HOLD&apos;, and &apos;UNKNOWN&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallRequest_finalCallStatus? FinalCallStatus { get; set; }
         /// <summary>The fromNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.FormattedPhoneNumber FromNumber { get; set; }
 #endif
-        /// <summary>The potentialRecipientUserIds property</summary>
+        /// <summary>An array of integers representing the user IDs of potential recipients of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? PotentialRecipientUserIds { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.FormattedPhoneNumber ToNumber { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The unique identifier of the user associated with the call. This is an integer.</summary>
         public int? UserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallRequest"/> and sets the default values.

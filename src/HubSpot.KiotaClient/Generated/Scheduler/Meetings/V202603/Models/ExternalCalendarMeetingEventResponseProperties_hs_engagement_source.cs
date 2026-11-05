@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The source of the engagement, will always be `MEETINGS`.</summary>
+    /// <summary>The source of the engagement. Valid values include a wide range of sources such as &apos;UNKNOWN&apos;, &apos;IMPORT&apos;, &apos;API&apos;, &apos;FORM&apos;, and many others.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalCalendarMeetingEventResponseProperties_hs_engagement_source
     {
@@ -99,6 +99,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
         #pragma warning disable CS1591
         BOT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BREEZE_AGENT")]
+        #pragma warning disable CS1591
+        BREEZE_AGENT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CALCULATED")]
         #pragma warning disable CS1591
         CALCULATED,
@@ -171,6 +175,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
         #pragma warning disable CS1591
         CUSTOMER_AGENT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOMER_PORTAL")]
+        #pragma warning disable CS1591
+        CUSTOMER_PORTAL,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DATA_ENRICHMENT")]
         #pragma warning disable CS1591
         DATA_ENRICHMENT,
@@ -194,6 +202,10 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
         [EnumMember(Value = "DELETE_OBJECTS")]
         #pragma warning disable CS1591
         DELETE_OBJECTS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DI_WRITE_TO_CRM")]
+        #pragma warning disable CS1591
+        DI_WRITE_TO_CRM,
         #pragma warning restore CS1591
         [EnumMember(Value = "EMAIL")]
         #pragma warning disable CS1591

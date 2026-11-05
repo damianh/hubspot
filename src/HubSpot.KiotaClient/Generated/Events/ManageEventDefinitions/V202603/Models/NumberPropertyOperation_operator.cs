@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string representing the comparison operator used in the operation. Valid values include &apos;IS_EQUAL_TO&apos;, &apos;IS_NOT_EQUAL_TO&apos;, &apos;IS_GREATER_THAN&apos;, &apos;IS_GREATER_THAN_OR_EQUAL_TO&apos;, &apos;IS_LESS_THAN&apos;, &apos;IS_LESS_THAN_OR_EQUAL_TO&apos;, &apos;HAS_EVER_BEEN_EQUAL_TO&apos;, and &apos;HAS_NEVER_BEEN_EQUAL_TO&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum NumberPropertyOperation_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HAS_EVER_BEEN_EQUAL_TO")]
         #pragma warning disable CS1591

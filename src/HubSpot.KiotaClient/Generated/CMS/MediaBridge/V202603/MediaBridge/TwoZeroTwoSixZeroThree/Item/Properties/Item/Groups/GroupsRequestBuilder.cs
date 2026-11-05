@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
     public partial class GroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.mediaBridge.TwoZeroTwoSixZeroThree.item.properties.item.groups.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the property group to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Properties.Item.Groups.Item.WithGroupNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Properties.Item.Groups.Item.WithGroupNameItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Get the property groups for a specified object type.
+        /// Retrieve a list of property groups for a specified object type within a given app. This endpoint is useful for obtaining organizational information about properties associated with different object types in your application.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponsePropertyGroupNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponsePropertyGroupNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponsePropertyGroupNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new property group for the specified object type.
+        /// Create a new property group for a specified object type within a given app. This endpoint allows you to organize properties into groups, making it easier to manage and categorize them within your application.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyGroup>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyGroup.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the property groups for a specified object type.
+        /// Retrieve a list of property groups for a specified object type within a given app. This endpoint is useful for obtaining organizational information about properties associated with different object types in your application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Create a new property group for the specified object type.
+        /// Create a new property group for a specified object type within a given app. This endpoint allows you to organize properties into groups, making it easier to manage and categorize them within your application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

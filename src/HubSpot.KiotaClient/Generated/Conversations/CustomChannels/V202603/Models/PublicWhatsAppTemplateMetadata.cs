@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contentId property</summary>
+        /// <summary>An integer representing the content ID associated with the template. This is a 64-bit integer.</summary>
         public long? ContentId { get; set; }
-        /// <summary>The crmObjectIds property</summary>
+        /// <summary>An object mapping CRM object types to their respective IDs, where each ID is a 64-bit integer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata_crmObjectIds? CrmObjectIds { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata_crmObjectIds CrmObjectIds { get; set; }
 #endif
-        /// <summary>The mappedTemplateId property</summary>
+        /// <summary>An integer representing the ID of the mapped template. This is a 64-bit integer.</summary>
         public long? MappedTemplateId { get; set; }
-        /// <summary>The parameters property</summary>
+        /// <summary>An object containing key-value pairs of parameters used for template customization, where each value is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata_parameters? Parameters { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata_parameters Parameters { get; set; }
 #endif
-        /// <summary>The rootMicId property</summary>
+        /// <summary>An integer representing the root message interaction context ID. This is a 64-bit integer.</summary>
         public long? RootMicId { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of metadata, which is &apos;WHATSAPP_TEMPLATE_METADATA&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicWhatsAppTemplateMetadata"/> and sets the default values.

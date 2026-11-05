@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparisonPropertyName property</summary>
+        /// <summary>A string specifying the name of the property to be compared against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComparisonPropertyName { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string ComparisonPropertyName { get; set; }
 #endif
-        /// <summary>The defaultValue property</summary>
+        /// <summary>A string representing the default value to be used if the property value is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string DefaultValue { get; set; }
 #endif
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>A boolean indicating whether objects with no value set for the property should be included in the operation.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>A string representing the type of operation being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperationType { get; set; }
@@ -40,9 +40,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperationType { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>A string representing the comparison operator used in the operation. Valid values include &apos;IS_EQUAL_TO&apos;, &apos;IS_NOT_EQUAL_TO&apos;, &apos;CONTAINS&apos;, &apos;DOES_NOT_CONTAIN&apos;, &apos;STARTS_WITH&apos;, and &apos;ENDS_WITH&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_operator? Operator { get; set; }
-        /// <summary>The operatorName property</summary>
+        /// <summary>A string that provides a human-readable name for the operator used in the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatorName { get; set; }
@@ -50,9 +50,17 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperatorName { get; set; }
 #endif
-        /// <summary>The propertyType property</summary>
+        /// <summary>The propertyAspect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect? PropertyAspect { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect PropertyAspect { get; set; }
+#endif
+        /// <summary>A string indicating the type of property operation, which is &apos;string-comparative&apos; for this component.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_propertyType? PropertyType { get; set; }
-        /// <summary>The renderSpec property</summary>
+        /// <summary>A string that provides rendering specifications for the operation, though its specific use is not detailed in the spec.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenderSpec { get; set; }
@@ -92,6 +100,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
+                { "propertyAspect", n => { PropertyAspect = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect.CreateFromDiscriminatorValue); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_propertyType>(); } },
                 { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
             };
@@ -109,6 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
             writer.WriteStringValue("operationType", OperationType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>("propertyAspect", PropertyAspect);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComparativeStringPropertyOperation_propertyType>("propertyType", PropertyType);
             writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteAdditionalData(AdditionalData);

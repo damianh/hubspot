@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer indicating the display order of the property group.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>A string representing the label of the property group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }

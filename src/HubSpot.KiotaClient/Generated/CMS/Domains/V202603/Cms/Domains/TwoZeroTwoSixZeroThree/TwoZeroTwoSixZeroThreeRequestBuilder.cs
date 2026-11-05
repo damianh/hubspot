@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.cms.domains.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the domain to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwoSixZeroThree.Item.WithDomainItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwoSixZeroThree.Item.WithDomainItemRequestBuilder this[string position]
         {
@@ -46,6 +46,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/domains/2026-03{?after*,archived*,createdAfter*,createdAt*,createdBefore*,limit*,sort*,updatedAfter*,updatedAt*,updatedBefore*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a list of content domains associated with your HubSpot account. This endpoint allows filtering by creation and update timestamps, sorting, and pagination. It is useful for managing and reviewing the domains configured in your CMS.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Models.CollectionResponseWithTotalDomain"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,6 +64,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Models.CollectionResponseWithTotalDomain>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Models.CollectionResponseWithTotalDomain.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a list of content domains associated with your HubSpot account. This endpoint allows filtering by creation and update timestamps, sorting, and pagination. It is useful for managing and reviewing the domains configured in your CMS.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,10 +92,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
         {
             return new global::DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a list of content domains associated with your HubSpot account. This endpoint allows filtering by creation and update timestamps, sorting, and pagination. It is useful for managing and reviewing the domains configured in your CMS.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,15 +111,19 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Filter results to include only domains created after the specified date and time. Format should be date-time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Filter results by the exact creation date and time of the domain. Format should be date-time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter results to include only domains created before the specified date and time. Format should be date-time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Specify the fields by which to sort the results. Accepts an array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -122,10 +133,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Domains.V202603.Cms.Domains.TwoZeroTwo
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter results to include only domains updated after the specified date and time. Format should be date-time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter results by the exact update date and time of the domain. Format should be date-time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter results to include only domains updated before the specified date and time. Format should be date-time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

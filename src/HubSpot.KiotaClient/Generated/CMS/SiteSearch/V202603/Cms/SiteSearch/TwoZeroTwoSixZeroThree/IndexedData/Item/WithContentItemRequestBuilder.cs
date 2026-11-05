@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithContentItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>The type of content to retrieve indexed data for. It can include types like LANDING_PAGE, BLOG_POST, SITE_PAGE, KNOWLEDGE_ARTICLE, LISTING_PAGE, or STRUCTURED_CONTENT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The category of the association, such as &quot;HUBSPOT_DEFINED&quot;.</summary>
+        /// <summary>A string representing the category of the association. This property defines the broader classification of the association.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationSpec_associationCategory? AssociationCategory { get; set; }
-        /// <summary>The ID representing the specific type of association.</summary>
+        /// <summary>A string representing the unique identifier for the type of association. This property specifies the specific type of association within the given category.</summary>
         public int? AssociationTypeId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AssociationSpec"/> and sets the default values.

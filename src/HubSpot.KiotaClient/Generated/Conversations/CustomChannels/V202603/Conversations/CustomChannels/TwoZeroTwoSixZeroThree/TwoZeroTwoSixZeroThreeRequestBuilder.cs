@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the custom channel to retrieve. It is an integer value.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.WithChannelItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.WithChannelItemRequestBuilder this[int position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.conversations.customChannels.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the custom channel to retrieve. It is an integer value.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.WithChannelItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.Item.WithChannelItemRequestBuilder this[string position]
@@ -59,6 +59,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/conversations/custom-channels/2026-03{?after*,defaultPageLength*,limit*,sort*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a list of custom conversation channels for the specified version. This endpoint allows you to paginate through the results and sort them according to your preferences.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.CollectionResponseWithTotalPublicChannelIntegrationChannel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +77,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.CollectionResponseWithTotalPublicChannelIntegrationChannel>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.CollectionResponseWithTotalPublicChannelIntegrationChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new custom channel integration in your HubSpot account. This endpoint allows you to define the capabilities and properties of the custom channel, such as its name, description, and webhook URL. The request must include a JSON body with the necessary details for the new channel integration.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannel"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,6 +97,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannel>(requestInfo, global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannel.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a list of custom conversation channels for the specified version. This endpoint allows you to paginate through the results and sort them according to your preferences.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,6 +116,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a new custom channel integration in your HubSpot account. This endpoint allows you to define the capabilities and properties of the custom channel, such as its name, description, and webhook URL. The request must include a JSON body with the necessary details for the new channel integration.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,10 +147,11 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
         {
             return new global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conversations.CustomChannels.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a list of custom conversation channels for the specified version. This endpoint allows you to paginate through the results and sort them according to your preferences.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -150,11 +163,13 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Conve
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>The default number of results to display per page.</summary>
             [QueryParameter("defaultPageLength")]
             public int? DefaultPageLength { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>An array of fields to sort the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

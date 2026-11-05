@@ -108,8 +108,10 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Crm.Objects.V3.Item.It
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("includeFA")]
             public bool? IncludeFA { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

@@ -269,6 +269,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
         public bool? PublicAccessRulesEnabled { get; set; }
         /// <summary>The date (ISO8601 format) the blog post is to be published at.</summary>
         public DateTimeOffset? PublishDate { get; set; }
+        /// <summary>The publishedAt property</summary>
+        public DateTimeOffset? PublishedAt { get; set; }
         /// <summary>Set this to true if you want to be published immediately when the schedule publish endpoint is called, and to ignore the publish_date setting.</summary>
         public bool? PublishImmediately { get; set; }
         /// <summary>The contents of the RSS body for this Blog Post.</summary>
@@ -443,6 +445,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
                 { "publicAccessRulesEnabled", n => { PublicAccessRulesEnabled = n.GetBoolValue(); } },
                 { "publishDate", n => { PublishDate = n.GetDateTimeOffsetValue(); } },
                 { "publishImmediately", n => { PublishImmediately = n.GetBoolValue(); } },
+                { "publishedAt", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
                 { "rssBody", n => { RssBody = n.GetStringValue(); } },
                 { "rssSummary", n => { RssSummary = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -512,6 +515,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.PublicAccessRule>("publicAccessRules", PublicAccessRules);
             writer.WriteBoolValue("publicAccessRulesEnabled", PublicAccessRulesEnabled);
             writer.WriteDateTimeOffsetValue("publishDate", PublishDate);
+            writer.WriteDateTimeOffsetValue("publishedAt", PublishedAt);
             writer.WriteBoolValue("publishImmediately", PublishImmediately);
             writer.WriteStringValue("rssBody", RssBody);
             writer.WriteStringValue("rssSummary", RssSummary);

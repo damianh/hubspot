@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that specifies the type of unsupported content. The default and only valid value is &apos;UNSUPPORTED_CONTENT&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicUnsupportedContent_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicUnsupportedContent"/> and sets the default values.

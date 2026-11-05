@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
     public partial class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.cms.hubdb.TwoZeroTwoSixZeroThree.tables.item.versions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the version to be deleted. Must be a numeric value.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Versions.Item.WithVersionItemRequestBuilder this[long position]
         {
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.cms.hubdb.TwoZeroTwoSixZeroThree.tables.item.versions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the version to be deleted. Must be a numeric value.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZeroThree.Tables.Item.Versions.Item.WithVersionItemRequestBuilder this[string position]

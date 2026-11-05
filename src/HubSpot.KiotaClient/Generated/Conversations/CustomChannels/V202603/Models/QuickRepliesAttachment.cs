@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The quickReplies property</summary>
+        /// <summary>An array of QuickReply objects, each representing a predefined option that a user can select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.QuickReply>? QuickReplies { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.QuickReply> QuickReplies { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of attachment. The default value is &apos;QUICK_REPLIES&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.QuickRepliesAttachment_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.QuickRepliesAttachment"/> and sets the default values.

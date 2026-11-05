@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "66516408222F3EBC157F272A1346625D8A316CF67A0A0620C4E759CBD37FD1DFBAD721AA307A569F40A108BB42A55EA91E11EF917F889977C657C02EB019B4F7",
+  "descriptionHash": "62BE55E22DDF5E76E2E4247252314567EC84362298FB4BA2183B5B9F7EDEC319F63069AEB3995C9A26D959C31B6769972E2B4E9A7E47EB6A6854635F76BDC115",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75331/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCMSCmsContentAuditV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

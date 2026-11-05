@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
     public partial class NameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.crm.lists.TwoZeroTwoSixZeroThree.objectTypeId.item.name.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the list to fetch. This is **not** case sensitive.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.ObjectTypeId.Item.Name.Item.WithListNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.ObjectTypeId.Item.Name.Item.WithListNameItemRequestBuilder this[string position]
         {

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
     public partial class SchemasRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.mediaBridge.TwoZeroTwoSixZeroThree.item.schemas.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The type of object for which the schema is being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Schemas.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Schemas.Item.WithObjectTypeItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Get the schemas for all object types.
+        /// Retrieve the schemas associated with a specific app in the HubSpot account. This endpoint allows you to fetch schema details, which can be useful for understanding the data structure and properties associated with the app. You can optionally filter the results to include only archived schemas.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponseObjectSchemaNoPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponseObjectSchemaNoPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CollectionResponseObjectSchemaNoPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the schemas for all object types.
+        /// Retrieve the schemas associated with a specific app in the HubSpot account. This endpoint allows you to fetch schema details, which can be useful for understanding the data structure and properties associated with the app. You can optionally filter the results to include only archived schemas.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Schemas.SchemasRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the schemas for all object types.
+        /// Retrieve the schemas associated with a specific app in the HubSpot account. This endpoint allows you to fetch schema details, which can be useful for understanding the data structure and properties associated with the app. You can optionally filter the results to include only archived schemas.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SchemasRequestBuilderGetQueryParameters 

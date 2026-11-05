@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F4B2C8BA80342AD5AC4B07628E7305384B89C422FBEFA3782B9B1AB76454EC3B7521FDB0F3B5B73CDADA6A5966D791CCB2936CE1BCF5126BD57FDAC58BFA62E5",
+  "descriptionHash": "7DB5369FBA7CCDF75FC39E7C69C8F0950DBB7DA40A693D2FE15AD7FE741D5D515EC2E81995F15677AD85DD66575A82439F92BEBF8D0DCA9ACB23A30313411D9A",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75350/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMVideoConferencingExtensionV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

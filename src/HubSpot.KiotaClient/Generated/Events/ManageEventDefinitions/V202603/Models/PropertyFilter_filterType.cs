@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the type of filter being applied. The default value is &apos;PROPERTY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PropertyFilter_filterType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PROPERTY")]
         #pragma warning disable CS1591

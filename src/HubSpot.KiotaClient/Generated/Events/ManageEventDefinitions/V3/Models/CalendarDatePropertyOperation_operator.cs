@@ -12,6 +12,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         #pragma warning disable CS1591
         IN_LAST_TIME_UNIT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "IN_LAST_TIME_UNIT_SO_FAR")]
+        #pragma warning disable CS1591
+        IN_LAST_TIME_UNIT_SO_FAR,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IN_NEXT_TIME_UNIT")]
         #pragma warning disable CS1591
         IN_NEXT_TIME_UNIT,

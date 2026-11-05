@@ -116,10 +116,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
         /// <summary>A list of valid options for the property. This field is required for enumerated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option>? Options { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option_1>? Options { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option> Options { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option_1> Options { get; set; }
 #endif
         /// <summary>Deprecated. Use externalOptionsReferenceType instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,6 +139,8 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
 #endif
         /// <summary>Whether to show the currency symbol in HubSpot&apos;s UI.</summary>
         public bool? ShowCurrencySymbol { get; set; }
+        /// <summary>Hint for how the text is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted_single_line&quot;, &quot;multi_line&quot;, &quot;email&quot;, &quot;phone_number&quot;, &quot;domain_name&quot;, &quot;ip_address&quot;, &quot;physical_address&quot;, or &quot;postal_code&quot;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_textDisplayHint? TextDisplayHint { get; set; }
         /// <summary>The data type of the property, such as string or number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,10 +206,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
                 { "modificationMetadata", n => { ModificationMetadata = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "numberDisplayHint", n => { NumberDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_numberDisplayHint>(); } },
-                { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option_1>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
                 { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
+                { "textDisplayHint", n => { TextDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_textDisplayHint>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedUserId", n => { UpdatedUserId = n.GetStringValue(); } },
@@ -242,10 +245,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.PropertyModificationMetadata>("modificationMetadata", ModificationMetadata);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_numberDisplayHint>("numberDisplayHint", NumberDisplayHint);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option>("options", Options);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Option_1>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V3.Models.Property_textDisplayHint>("textDisplayHint", TextDisplayHint);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedUserId", UpdatedUserId);

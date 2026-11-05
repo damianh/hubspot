@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 {
+    /// <summary>A string representing the type of caller ID. The only valid value is &apos;COMPANY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CompanyCallerId_callerIdType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "COMPANY")]
         #pragma warning disable CS1591

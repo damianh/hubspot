@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
         public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/lists/2026-03/search", rawUrl)
         {
         }
+        /// <summary>
+        /// Search lists by list name or page through all lists by providing an empty `query` value.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ListSearchResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ListSearchResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.ListSearchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Search lists by list name or page through all lists by providing an empty `query` value.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

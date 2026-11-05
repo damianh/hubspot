@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A paging cursor token for retrieving previous pages.</summary>
+        /// <summary>A string that serves as a cursor indicating the position before the first item in the current set of results, used to fetch the previous set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Before { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
 #else
         public string Before { get; set; }
 #endif
-        /// <summary>A URL that can be used to retrieve the previous pages&apos; results.</summary>
+        /// <summary>A string containing the URL link to the previous page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }

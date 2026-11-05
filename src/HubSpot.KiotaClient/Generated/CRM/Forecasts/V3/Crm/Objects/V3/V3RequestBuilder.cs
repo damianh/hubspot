@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Forecasts.V3.Crm.Objects.V3
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Forecasts.V3.crm.objects.v3.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the object (`forecast`)</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Forecasts.V3.Crm.Objects.V3.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Forecasts.V3.Crm.Objects.V3.Item.WithObjectTypeItemRequestBuilder this[string position]
         {

@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The timestamp (ISO8601 format) when this page was deleted.</summary>
+        /// <summary>The timestamp when this page was deleted.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
         /// <summary>If True, the page will not show up in your dashboard, although the page could still be live.</summary>
         public bool? ArchivedInDashboard { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Models
 #endif
         /// <summary>ID of the type of object this is. Should always .</summary>
         public int? CategoryId { get; set; }
-        /// <summary>The unique identifier for the content group associated with the page.</summary>
+        /// <summary>Required when creating or cloning blog posts. The unique identifier for the content group associated with the blog. </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentGroupId { get; set; }

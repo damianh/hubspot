@@ -14,15 +14,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventType property</summary>
+        /// <summary>A string representing the type of event whose visibility settings are being changed.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.EventVisibilityChange_eventType? EventType { get; set; }
-        /// <summary>The showInReporting property</summary>
+        /// <summary>A boolean indicating whether the event should be included in reporting.</summary>
         public bool? ShowInReporting { get; set; }
-        /// <summary>The showInTimeline property</summary>
+        /// <summary>A boolean indicating whether the event should be displayed in the timeline.</summary>
         public bool? ShowInTimeline { get; set; }
-        /// <summary>The showInWorkflows property</summary>
+        /// <summary>A boolean indicating whether the event should be available for use in workflows.</summary>
         public bool? ShowInWorkflows { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>A string representing the date and time when the visibility settings were last updated, in ISO 8601 format.</summary>
         public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.EventVisibilityChange"/> and sets the default values.

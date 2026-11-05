@@ -31,6 +31,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 #else
         public string Language { get; set; }
 #endif
+        /// <summary>The usePublished property</summary>
+        public bool? UsePublished { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models.BlogPostLanguageCloneRequestVNext"/> and sets the default values.
         /// </summary>
@@ -58,6 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "usePublished", n => { UsePublished = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language", Language);
+            writer.WriteBoolValue("usePublished", UsePublished);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

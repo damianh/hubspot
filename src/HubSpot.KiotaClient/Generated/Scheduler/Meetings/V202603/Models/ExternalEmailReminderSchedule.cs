@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reminders property</summary>
+        /// <summary>An array of ExternalReminder objects that specify the timing and frequency of the email reminders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalReminder>? Reminders { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalReminder> Reminders { get; set; }
 #endif
-        /// <summary>Whether the invite description should be included in the reminder.</summary>
+        /// <summary>A boolean indicating whether the invite description should be included in the email reminder.</summary>
         public bool? ShouldIncludeInviteDescription { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalEmailReminderSchedule"/> and sets the default values.

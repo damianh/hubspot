@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the batch process was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>An array of StandardError objects detailing any errors that occurred during the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.StandardError>? Errors { get; set; }
@@ -33,21 +33,21 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_links Links { get; set; }
 #endif
-        /// <summary>The total number of errors that occurred during the operation.</summary>
+        /// <summary>The number of errors encountered during the batch processing.</summary>
         public int? NumErrors { get; set; }
         /// <summary>The timestamp when the batch process was initiated, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of PublicDefaultAssociation objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation>? Results { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation_1>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation> Results { get; set; }
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation_1> Results { get; set; }
 #endif
         /// <summary>The timestamp when the batch process began execution, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status of the batch processing request. Can be: &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;CANCELED&quot;, or &quot;COMPLETE&quot;.</summary>
+        /// <summary>The status of the batch processing request: &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;CANCELLED&quot;, or &quot;COMPLETE&quot;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation"/> and sets the default values.
@@ -79,7 +79,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
                 { "links", n => { Links = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_links>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_links.CreateFromDiscriminatorValue); } },
                 { "numErrors", n => { NumErrors = n.GetIntValue(); } },
                 { "requestedAt", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation_1>(global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startedAt", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_status>(); } },
             };
@@ -96,7 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_links>("links", Links);
             writer.WriteIntValue("numErrors", NumErrors);
             writer.WriteDateTimeOffsetValue("requestedAt", RequestedAt);
-            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.PublicDefaultAssociation_1>("results", Results);
             writer.WriteDateTimeOffsetValue("startedAt", StartedAt);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.BatchResponsePublicDefaultAssociation_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

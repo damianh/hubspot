@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\tool\Generate\Generate.csproj" />
     <ProjectReference Include="..\..\src\HubSpot.KiotaClient\HubSpot.KiotaClient.csproj" />
     <ProjectReference Include="..\..\src\HubSpot.MockServer\HubSpot.MockServer.csproj" />
   </ItemGroup>

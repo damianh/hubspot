@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The capabilities property</summary>
+        /// <summary>An object that defines the capabilities of the channel. This can include various properties that describe what the channel can do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_capabilities? Capabilities { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_capabilities Capabilities { get; set; }
 #endif
-        /// <summary>The channelAccountConnectionRedirectUrl property</summary>
+        /// <summary>An object representing the URL used to redirect for channel account connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl? ChannelAccountConnectionRedirectUrl { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelAccountConnectionRedirectUrl ChannelAccountConnectionRedirectUrl { get; set; }
 #endif
-        /// <summary>The channelDescription property</summary>
+        /// <summary>An object containing the description of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelDescription? ChannelDescription { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelDescription ChannelDescription { get; set; }
 #endif
-        /// <summary>The channelLogoUrl property</summary>
+        /// <summary>An object representing the URL of the channel&apos;s logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl? ChannelLogoUrl { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_channelLogoUrl ChannelLogoUrl { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>An object representing the name of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_name? Name { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_name Name { get; set; }
 #endif
-        /// <summary>The webhookUrl property</summary>
+        /// <summary>An object representing the URL for the webhook associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelPatch_webhookUrl? WebhookUrl { get; set; }

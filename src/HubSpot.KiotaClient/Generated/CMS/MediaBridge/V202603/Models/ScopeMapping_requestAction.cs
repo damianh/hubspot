@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the action that can be requested within the scope.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ScopeMapping_requestAction
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "COMMUNICATE")]
         #pragma warning disable CS1591
@@ -16,6 +15,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
         #pragma warning disable CS1591
         DELETE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DELETE_SCHEMA")]
+        #pragma warning disable CS1591
+        DELETE_SCHEMA,
+        #pragma warning restore CS1591
         [EnumMember(Value = "EDIT")]
         #pragma warning disable CS1591
         EDIT,
@@ -24,6 +27,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
         #pragma warning disable CS1591
         EDIT_ASSOCIATION,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EDIT_SCHEMA")]
+        #pragma warning disable CS1591
+        EDIT_SCHEMA,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MERGE")]
         #pragma warning disable CS1591
         MERGE,
@@ -31,6 +38,10 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
         [EnumMember(Value = "VIEW")]
         #pragma warning disable CS1591
         VIEW,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEW_SCHEMA")]
+        #pragma warning disable CS1591
+        VIEW_SCHEMA,
         #pragma warning restore CS1591
     }
 }

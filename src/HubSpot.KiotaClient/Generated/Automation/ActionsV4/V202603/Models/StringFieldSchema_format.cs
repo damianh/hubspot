@@ -15,9 +15,17 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Models
         #pragma warning disable CS1591
         DATE_TIME,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MONTH_AND_DAY")]
+        #pragma warning disable CS1591
+        MONTH_AND_DAY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OBJECT_COORDINATE")]
         #pragma warning disable CS1591
         OBJECT_COORDINATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OBJECT_TYPE")]
+        #pragma warning disable CS1591
+        OBJECT_TYPE,
         #pragma warning restore CS1591
         [EnumMember(Value = "TIME")]
         #pragma warning disable CS1591

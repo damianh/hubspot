@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models
 {
+    /// <summary>
+    /// Represents the associations for a specific object in HubSpot, detailing the types of associations and the related objects involved.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PublicAssociationsForObject : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -22,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.PublicObjectId To { get; set; }
 #endif
-        /// <summary>The types property</summary>
+        /// <summary>The types of associations that exist between the object and other entities, indicating the nature of their relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V3.Models.AssociationSpec>? Types { get; set; }

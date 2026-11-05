@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
         {
         }
         /// <summary>
-        /// Retrieve event occurrences for the specified time frame. This endpoint allows filtering by various parameters such as object type, event type, and occurrence time. It supports pagination and sorting of results.
+        /// Retrieve event occurrences for a specified date in September 2026. This endpoint allows you to filter and sort events based on various criteria, such as event type, object type, and occurrence dates. It supports pagination and can return specific properties of events if requested.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.Events.V202603.Models.CollectionResponseExternalUnifiedEvent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Events.Events.V202603.Models.CollectionResponseExternalUnifiedEvent>(requestInfo, global::DamianH.HubSpot.KiotaClient.Events.Events.V202603.Models.CollectionResponseExternalUnifiedEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve event occurrences for the specified time frame. This endpoint allows filtering by various parameters such as object type, event type, and occurrence time. It supports pagination and sorting of results.
+        /// Retrieve event occurrences for a specified date in September 2026. This endpoint allows you to filter and sort events based on various criteria, such as event type, object type, and occurrence dates. It supports pagination and can return specific properties of events if requested.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             return new global::DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurrences.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve event occurrences for the specified time frame. This endpoint allows filtering by various parameters such as object type, event type, and occurrence time. It supports pagination and sorting of results.
+        /// Retrieve event occurrences for a specified date in September 2026. This endpoint allows you to filter and sort events based on various criteria, such as event type, object type, and occurrence dates. It supports pagination and can return specific properties of events if requested.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
@@ -101,6 +101,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A cursor token for pagination. Use the value from the previous response&apos;s paging.prev.before field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -110,6 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
+            /// <summary>The type of events to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("eventType")]
@@ -119,6 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("eventType")]
             public string EventType { get; set; }
 #endif
+            /// <summary>An array of event IDs to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("id")]
@@ -131,8 +134,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The unique identifier of the object associated with the events.</summary>
             [QueryParameter("objectId")]
             public long? ObjectId { get; set; }
+            /// <summary>Filter events based on specific object properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("objectProperty%2E%7Bpropname")]
@@ -142,6 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("objectProperty%2E%7Bpropname")]
             public string ObjectPropertypropname { get; set; }
 #endif
+            /// <summary>The type of object associated with the events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("objectType")]
@@ -151,10 +157,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("objectType")]
             public string ObjectType { get; set; }
 #endif
+            /// <summary>Filter events that occurred after this date-time.</summary>
             [QueryParameter("occurredAfter")]
             public DateTimeOffset? OccurredAfter { get; set; }
+            /// <summary>Filter events that occurred before this date-time.</summary>
             [QueryParameter("occurredBefore")]
             public DateTimeOffset? OccurredBefore { get; set; }
+            /// <summary>An array of property names to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("properties")]
@@ -164,6 +173,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
+            /// <summary>Filter events based on specific event properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property%2E%7Bpropname")]
@@ -173,6 +183,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.Events.V202603.Events.EventOccurren
             [QueryParameter("property%2E%7Bpropname")]
             public string Propertypropname { get; set; }
 #endif
+            /// <summary>An array of fields to sort the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

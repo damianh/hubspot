@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The mood property</summary>
+        /// <summary>A property representing the mood, typically used for testing case changes in text. The data type and constraints are not specified in the provided schema.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CaseChangeTestExtensionData_mood? Mood { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CaseChangeTestExtensionData"/> and sets the default values.

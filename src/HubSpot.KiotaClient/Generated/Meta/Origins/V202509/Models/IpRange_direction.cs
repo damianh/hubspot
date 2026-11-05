@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
 {
+    /// <summary>The direction of the IP traffic, which can be INGRESS or EGRESS.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IpRange_direction
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "EGRESS")]
         #pragma warning disable CS1591

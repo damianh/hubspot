@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fileId property</summary>
+        /// <summary>A string representing the unique identifier for the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileId { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string FileId { get; set; }
 #endif
-        /// <summary>The fileUsageType property</summary>
+        /// <summary>A string that specifies the usage type of the file. Valid values include &apos;STICKER&apos;, &apos;VOICE_RECORDING&apos;, &apos;IMAGE&apos;, &apos;AUDIO&apos;, and &apos;OTHER&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.FileAttachment_fileUsageType? FileUsageType { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that indicates the type of attachment. The default value is &apos;FILE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.FileAttachment_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.FileAttachment"/> and sets the default values.

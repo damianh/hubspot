@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
         public ScheduleConversionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/lists/2026-03/{listId}/schedule-conversion", rawUrl)
         {
         }
+        /// <summary>
+        /// Delete an existing scheduled conversion for a list.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +50,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve the conversion details for a list. This can be used to check for an upcoming conversion, or to get the details of when a list was already converted.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,6 +68,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Schedule the conversion of an active list into a static list, or update the already scheduled conversion. This can be scheduled for a specific date or based on activity.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,6 +88,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicListConversionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Delete an existing scheduled conversion for a list.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +106,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
+        /// <summary>
+        /// Retrieve the conversion details for a list. This can be used to check for an upcoming conversion, or to get the details of when a list was already converted.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,6 +125,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Schedule the conversion of an active list into a static list, or update the already scheduled conversion. This can be scheduled for a specific date or based on activity.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.PublicObjectId To { get; set; }
 #endif
-        /// <summary>The type of association between the &apos;from&apos; and &apos;to&apos; objects.</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

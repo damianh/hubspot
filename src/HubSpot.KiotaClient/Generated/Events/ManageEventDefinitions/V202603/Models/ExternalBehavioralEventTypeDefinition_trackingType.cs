@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string specifying the tracking type of the event. Valid values include &apos;VISITED_URL&apos;, &apos;CLICKED_ELEMENT&apos;, &apos;CUSTOM_SCRIPT&apos;, and others.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ExternalBehavioralEventTypeDefinition_trackingType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "APP_EVENT")]
         #pragma warning disable CS1591
@@ -39,6 +38,10 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
         [EnumMember(Value = "MANUAL")]
         #pragma warning disable CS1591
         MANUAL,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "POLLING")]
+        #pragma warning disable CS1591
+        POLLING,
         #pragma warning restore CS1591
         [EnumMember(Value = "PROPERTY_CHANGE")]
         #pragma warning disable CS1591

@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of when the request was completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>An array of errors encountered during the batch operation, each item detailing a specific error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.StandardError>? Errors { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models
         public int? NumErrors { get; set; }
         /// <summary>Timestamp of when the request was sent.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of results from the batch operation, each item representing a response for an individual marketing event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.MarketingEventPublicDefaultResponse>? Results { get; set; }

@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSubscriberIdStringItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}?channel={channel}{&businessUnitId*}", pathParameters)
+        public WithSubscriberIdStringItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}{?businessUnitId*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSubscriberIdStringItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}?channel={channel}{&businessUnitId*}", rawUrl)
+        public WithSubscriberIdStringItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}{?businessUnitId*}", rawUrl)
         {
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Item.WithSubscriberIdStringItemRequestBuilder.WithSubscriberIdStringItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}?channel={channel}{&businessUnitId*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -112,7 +112,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/communication-preferences/2026-03/statuses/{subscriberIdString}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -133,10 +133,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSubscriberIdStringItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the business unit to filter the subscription status by. This is an optional parameter.</summary>
+            /// <summary>The ID of the business unit to filter the subscription status. This is an optional parameter.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The communication channel for which the subscription status is being retrieved. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the subscription status is being retrieved. Must be &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsGetChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +147,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The communication channel for which the subscription status is being retrieved. This parameter is required and currently supports only &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the subscription status is being retrieved. Must be &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Item.GetChannelQueryParameterType? ChannelAsGetChannelQueryParameterType { get; set; }
         }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string specifying the unit of time for the offset. Valid values include &apos;WEEKS&apos;, &apos;DAYS&apos;, &apos;HOURS&apos;, and &apos;MINUTES&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum TimeOffset_timeUnit
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DAYS")]
         #pragma warning disable CS1591

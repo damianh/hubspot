@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Models
 #endif
         /// <summary>The explicitly defined language of the Blog. If null, the Blog will default to the language of the Domain.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.BlogSettings.V202603.Models.Blog_language? Language { get; set; }
-        /// <summary>The listingPageId property</summary>
+        /// <summary>The ID of the listing page associated with the blog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ListingPageId { get; set; }

@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contactId property</summary>
+        /// <summary>The unique identifier for the contact associated with the media play event.</summary>
         public long? ContactId { get; set; }
-        /// <summary>The contactUtk property</summary>
+        /// <summary>The user token key associated with the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContactUtk { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ContactUtk { get; set; }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>An external identifier for the media, provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId { get; set; }
@@ -32,9 +32,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ExternalId { get; set; }
 #endif
-        /// <summary>The externalPlayContext property</summary>
+        /// <summary>Additional context provided externally about the media play event.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEventRequest_externalPlayContext? ExternalPlayContext { get; set; }
-        /// <summary>The _hsenc property</summary>
+        /// <summary>HubSpot encoding parameter for tracking purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hsenc { get; set; }
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Hsenc { get; set; }
 #endif
-        /// <summary>The mediaBridgeId property</summary>
+        /// <summary>The unique identifier for the media bridge instance.</summary>
         public long? MediaBridgeId { get; set; }
-        /// <summary>The mediaName property</summary>
+        /// <summary>The name of the media that was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaName { get; set; }
@@ -52,9 +52,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaName { get; set; }
 #endif
-        /// <summary>The mediaType property</summary>
+        /// <summary>The type of media that was played. Valid values include &apos;VIDEO&apos;, &apos;AUDIO&apos;, &apos;DOCUMENT&apos;, &apos;OTHER&apos;, and &apos;IMAGE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEventRequest_mediaType? MediaType { get; set; }
-        /// <summary>The mediaUrl property</summary>
+        /// <summary>The URL where the media is hosted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaUrl { get; set; }
@@ -62,11 +62,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaUrl { get; set; }
 #endif
-        /// <summary>The occurredTimestamp property</summary>
+        /// <summary>The timestamp when the media play event occurred.</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The pageId property</summary>
+        /// <summary>The unique identifier for the page where the media was played.</summary>
         public long? PageId { get; set; }
-        /// <summary>The pageName property</summary>
+        /// <summary>The name of the page where the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageName { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the page where the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -82,9 +82,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The playedPercent property</summary>
+        /// <summary>The percentage of the media that has been played.</summary>
         public int? PlayedPercent { get; set; }
-        /// <summary>The sessionId property</summary>
+        /// <summary>The unique identifier for the session in which the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }

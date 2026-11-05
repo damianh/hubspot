@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 {
-    /// <summary>The increment for available start times of meetings, spelt out as a word (e.g. 15 minute increment corresponds to `FIFTEEN`). `MEETING_DURATION` is also a valid value.</summary>
+    /// <summary>A string indicating the increment for start times, with valid values including &apos;MEETING_DURATION&apos;, &apos;FIVE&apos;, &apos;TEN&apos;, &apos;FIFTEEN&apos;, &apos;TWENTY&apos;, &apos;THIRTY&apos;, &apos;FORTY_FIVE&apos;, &apos;SIXTY&apos;, &apos;NINETY&apos;, and &apos;ONE_HUNDRED_TWENTY&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalMeetingsLinkSettings_startTimeIncrementMinutes
     {

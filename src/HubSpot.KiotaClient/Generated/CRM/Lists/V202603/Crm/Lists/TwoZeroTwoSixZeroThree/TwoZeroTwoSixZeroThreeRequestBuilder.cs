@@ -49,7 +49,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.crm.lists.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The **ILS ID** of the list to fetch.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Item.WithListItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Item.WithListItemRequestBuilder this[string position]
         {
@@ -157,16 +157,22 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("includeFilters")]
             public bool? IncludeFilters { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("listIds")]
             public string[]? ListIds { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("listIds")]
             public string[] ListIds { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

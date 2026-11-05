@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The engagementId property</summary>
+        /// <summary>The unique identifier for the engagement associated with this transcript. It is an integer in int64 format.</summary>
         public long? EngagementId { get; set; }
-        /// <summary>The transcriptCreateUtterances property</summary>
+        /// <summary>An array of utterances that make up the transcript. Each utterance is represented by a TranscriptCreateUtterance object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.TranscriptCreateUtterance>? TranscriptCreateUtterances { get; set; }

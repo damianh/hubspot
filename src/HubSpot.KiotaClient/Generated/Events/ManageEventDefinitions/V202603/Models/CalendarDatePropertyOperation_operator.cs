@@ -3,14 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string that specifies the operation to perform, with valid values including &apos;IN_THIS_TIME_UNIT&apos;, &apos;IN_THIS_TIME_UNIT_SO_FAR&apos;, &apos;IN_NEXT_TIME_UNIT&apos;, &apos;IN_LAST_TIME_UNIT&apos;, and &apos;IN_LAST_TIME_UNIT_SO_FAR&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CalendarDatePropertyOperation_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "IN_LAST_TIME_UNIT")]
         #pragma warning disable CS1591
         IN_LAST_TIME_UNIT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "IN_LAST_TIME_UNIT_SO_FAR")]
+        #pragma warning disable CS1591
+        IN_LAST_TIME_UNIT_SO_FAR,
         #pragma warning restore CS1591
         [EnumMember(Value = "IN_NEXT_TIME_UNIT")]
         #pragma warning disable CS1591

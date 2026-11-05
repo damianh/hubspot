@@ -200,7 +200,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V3.Crm.Objects.V3.Item
             [QueryParameter("properties")]
             public string[] Properties { get; set; }
 #endif
-            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of objects that can be read by a single request.</summary>
+            /// <summary>A comma separated list of the properties to be returned along with their history of previous values. If any of the specified properties are not present on the requested object(s), they will be ignored. Usage of this parameter will reduce the maximum number of appointments that can be read by a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("propertiesWithHistory")]

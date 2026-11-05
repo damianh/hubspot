@@ -85,137 +85,203 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("analytics")]
             public bool? Analytics { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("autocomplete")]
             public bool? Autocomplete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("boostLimit")]
             public double? BoostLimit { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("boostRecent")]
             public string? BoostRecent { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("boostRecent")]
             public string BoostRecent { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("domain")]
             public string[]? Domain { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("domain")]
             public string[] Domain { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("groupId")]
             public long?[]? GroupId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("groupId")]
             public long?[] GroupId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("hubdbQuery")]
             public string? HubdbQuery { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("hubdbQuery")]
             public string HubdbQuery { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use LanguageAsGetLanguageQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("language")]
             public string? Language { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("language")]
             public string Language { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("language")]
             public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZeroTwoSixZeroThree.Search.GetLanguageQueryParameterType? LanguageAsGetLanguageQueryParameterType { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("This property is deprecated, use LengthAsGetLengthQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("length")]
             public string? Length { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("length")]
             public string Length { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("length")]
             public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZeroTwoSixZeroThree.Search.GetLengthQueryParameterType? LengthAsGetLengthQueryParameterType { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("matchPrefix")]
             public bool? MatchPrefix { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("pathPrefix")]
             public string[]? PathPrefix { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("pathPrefix")]
             public string[] PathPrefix { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("popularityBoost")]
             public double? PopularityBoost { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("property")]
             public string[]? Property { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("property")]
             public string[] Property { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string? Q { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("tableId")]
             public long? TableId { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string[]? Type { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string[] Type { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use TypesAsGetTypesQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("types")]
             public string[]? Types { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("types")]
             public string[] Types { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("types")]
             public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZeroTwoSixZeroThree.Search.GetTypesQueryParameterType[]? TypesAsGetTypesQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("types")]
             public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Cms.SiteSearch.TwoZeroTwoSixZeroThree.Search.GetTypesQueryParameterType[] TypesAsGetTypesQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

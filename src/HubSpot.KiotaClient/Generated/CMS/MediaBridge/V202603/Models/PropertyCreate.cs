@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The calculationFormula property</summary>
+        /// <summary>A string representing the formula used to calculate the property&apos;s value, applicable for calculated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalculationFormula { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
-        /// <summary>The currencyPropertyName property</summary>
+        /// <summary>A string that specifies the name of the property used to determine the currency for currency-type properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyPropertyName { get; set; }
@@ -30,9 +30,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string CurrencyPropertyName { get; set; }
 #endif
-        /// <summary>The dataSensitivity property</summary>
+        /// <summary>A string indicating the sensitivity level of the data, such as &apos;PII&apos; (Personally Identifiable Information).</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the property, explaining its purpose or usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -40,15 +40,15 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer that determines the order in which the property is displayed relative to other properties.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The externalOptions property</summary>
+        /// <summary>A boolean that specifies whether the property options are managed externally.</summary>
         public bool? ExternalOptions { get; set; }
-        /// <summary>The fieldType property</summary>
+        /// <summary>A string indicating the field type for the property, such as &apos;booleancheckbox&apos;, &apos;calculation_equation&apos;, &apos;checkbox&apos;, &apos;date&apos;, &apos;file&apos;, &apos;html&apos;, &apos;number&apos;, &apos;phonenumber&apos;, &apos;radio&apos;, &apos;select&apos;, &apos;text&apos;, or &apos;textarea&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_fieldType? FieldType { get; set; }
-        /// <summary>The formField property</summary>
+        /// <summary>A boolean indicating whether the property is available for use in forms.</summary>
         public bool? FormField { get; set; }
-        /// <summary>The groupName property</summary>
+        /// <summary>The name of the group to which the property belongs, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName { get; set; }
@@ -56,11 +56,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>The hasUniqueValue property</summary>
+        /// <summary>A boolean indicating whether the property must have a unique value across all records.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>A boolean that specifies whether the property is hidden from user interfaces.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>A string representing the display label for the property, used in user interfaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -68,7 +68,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The unique name of the property. It is a string that identifies the property within the object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -76,9 +76,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The numberDisplayHint property</summary>
+        /// <summary>A string that provides a hint for displaying number properties, such as &apos;unformatted&apos;, &apos;formatted&apos;, &apos;currency&apos;, &apos;percentage&apos;, &apos;duration&apos;, or &apos;probability&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_numberDisplayHint? NumberDisplayHint { get; set; }
-        /// <summary>The options property</summary>
+        /// <summary>An array of OptionInput objects, specifying the options available for properties of type &apos;enumeration&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>? Options { get; set; }
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput> Options { get; set; }
 #endif
-        /// <summary>The referencedObjectType property</summary>
+        /// <summary>A string that denotes the object type referenced by the property, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferencedObjectType { get; set; }
@@ -94,9 +94,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string ReferencedObjectType { get; set; }
 #endif
-        /// <summary>The showCurrencySymbol property</summary>
+        /// <summary>A boolean indicating whether to display a currency symbol for currency-type properties.</summary>
         public bool? ShowCurrencySymbol { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string that provides a hint for displaying text properties, such as &apos;unformatted_single_line&apos;, &apos;multi_line&apos;, &apos;email&apos;, &apos;phone_number&apos;, &apos;domain_name&apos;, &apos;ip_address&apos;, &apos;physical_address&apos;, or &apos;postal_code&apos;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_textDisplayHint? TextDisplayHint { get; set; }
+        /// <summary>The data type of the property, which can be one of &apos;bool&apos;, &apos;date&apos;, &apos;datetime&apos;, &apos;enumeration&apos;, &apos;number&apos;, &apos;phone_number&apos;, or &apos;string&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate"/> and sets the default values.
@@ -140,6 +142,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
+                { "textDisplayHint", n => { TextDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_textDisplayHint>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_type>(); } },
             };
         }
@@ -167,6 +170,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>("options", Options);
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_textDisplayHint>("textDisplayHint", TextDisplayHint);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.PropertyCreate_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,15 +15,15 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether custom labels can be used in the association.</summary>
+        /// <summary>Indicates whether custom labels are allowed for this association.</summary>
         public bool? AllowsCustomLabels { get; set; }
-        /// <summary>The cardinality from the source object&apos;s perspective, either &quot;ONE_TO_ONE&quot; or &quot;ONE_TO_MANY&quot;.</summary>
+        /// <summary>Defines the nature of the association in terms of quantity. Valid values are &apos;ONE_TO_ONE&apos; and &apos;ONE_TO_MANY&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_cardinality? Cardinality { get; set; }
         /// <summary>The error category</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_category? Category { get; set; }
-        /// <summary>The name of the source object type (e.g,. &quot;DEAL&quot; or &quot;QUOTE&quot;).</summary>
+        /// <summary>The type of object from which the association originates. Valid values include various HubSpot object types such as &apos;CONTACT&apos;, &apos;COMPANY&apos;, &apos;DEAL&apos;, etc.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_fromObjectType? FromObjectType { get; set; }
-        /// <summary>The ID of the source object type (e.g., 0-1 for contacts).</summary>
+        /// <summary>The object type ID from which the association originates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FromObjectTypeId { get; set; }
@@ -31,29 +31,29 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string FromObjectTypeId { get; set; }
 #endif
-        /// <summary>Whether all potential linked objects are included in the association</summary>
+        /// <summary>Indicates whether all associated objects are included in the association.</summary>
         public bool? HasAllAssociatedObjects { get; set; }
-        /// <summary>Whether deletions in the association should cause cascading deletes to linked objects.</summary>
+        /// <summary>Indicates if the association supports cascading deletes.</summary>
         public bool? HasCascadingDeletes { get; set; }
-        /// <summary>Whether a user has set a limit for the number of source objects.</summary>
+        /// <summary>Indicates if there is a user-enforced maximum number of object IDs for the source object type.</summary>
         public bool? HasUserEnforcedMaxFromObjectIds { get; set; }
-        /// <summary>Whether a user has set a limit for the number of destination objects.</summary>
+        /// <summary>Indicates if there is a user-enforced maximum number of object IDs for the target object type.</summary>
         public bool? HasUserEnforcedMaxToObjectIds { get; set; }
-        /// <summary>Whether the association is hidden or not.</summary>
+        /// <summary>Indicates if the association is hidden.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The hiddenReason property</summary>
+        /// <summary>The reason why the association is hidden. Valid values include &apos;DEFAULT&apos;, &apos;INTERNAL&apos;, and &apos;USER_CONFIGURED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_hiddenReason? HiddenReason { get; set; }
-        /// <summary>The unique ID of the associated object (e.g., a contact ID).</summary>
+        /// <summary>The unique identifier for the association definition.</summary>
         public int? Id { get; set; }
-        /// <summary>Whether the reverse association can also support custom labels.</summary>
+        /// <summary>Indicates whether custom labels are allowed for the inverse association.</summary>
         public bool? InverseAllowsCustomLabels { get; set; }
-        /// <summary>The cardinality from the destination object&apos;s perspective, either &quot;ONE_TO_ONE&quot; or &quot;ONE_TO_MANY&quot;.</summary>
+        /// <summary>Defines the inverse nature of the association in terms of quantity. Valid values are &apos;ONE_TO_ONE&apos; and &apos;ONE_TO_MANY&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_inverseCardinality? InverseCardinality { get; set; }
-        /// <summary>Whether all potential reverse linked objects are included in the association.</summary>
+        /// <summary>Indicates whether all associated objects are included in the inverse association.</summary>
         public bool? InverseHasAllAssociatedObjects { get; set; }
-        /// <summary>The unique ID for the inverse side of the association.</summary>
+        /// <summary>The unique identifier for the inverse association definition.</summary>
         public int? InverseId { get; set; }
-        /// <summary>The label used to describe the reverse relationship in an association.</summary>
+        /// <summary>A human-readable label for the inverse association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InverseLabel { get; set; }
@@ -61,7 +61,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string InverseLabel { get; set; }
 #endif
-        /// <summary>The name used to describe the inverse relationship in this association</summary>
+        /// <summary>The name of the inverse association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InverseName { get; set; }
@@ -69,13 +69,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string InverseName { get; set; }
 #endif
-        /// <summary>The isDefault property</summary>
+        /// <summary>Indicates if this association is the default association.</summary>
         public bool? IsDefault { get; set; }
-        /// <summary>Whether the inverse association is considered primary.</summary>
+        /// <summary>Indicates if the inverse association is the primary association.</summary>
         public bool? IsInversePrimary { get; set; }
-        /// <summary>Whether the association is the primary link between the entities involved.</summary>
+        /// <summary>Indicates if this association is the primary association.</summary>
         public bool? IsPrimary { get; set; }
-        /// <summary>The label given to an association.</summary>
+        /// <summary>A human-readable label for the association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -83,11 +83,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The maximum number of source object IDs allowed in the association.</summary>
+        /// <summary>The maximum number of object IDs that can be associated from the source object type.</summary>
         public int? MaxFromObjectIds { get; set; }
-        /// <summary>The maximum number of destination object IDs allowed in the association.</summary>
+        /// <summary>The maximum number of object IDs that can be associated to the target object type.</summary>
         public int? MaxToObjectIds { get; set; }
-        /// <summary>For labeled association types, the internal name of the association.</summary>
+        /// <summary>The name of the association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -95,7 +95,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A unique across-portal ID applied to the association.</summary>
+        /// <summary>A unique identifier for the association within the portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PortalUniqueIdentifier { get; set; }
@@ -103,11 +103,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string PortalUniqueIdentifier { get; set; }
 #endif
-        /// <summary>The readOnly property</summary>
+        /// <summary>Indicates if the association is read-only.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>The name of the destination object type (e.g,. &quot;DEAL&quot; or &quot;QUOTE&quot;).</summary>
+        /// <summary>The type of object to which the association points. Valid values include various HubSpot object types such as &apos;CONTACT&apos;, &apos;COMPANY&apos;, &apos;DEAL&apos;, etc.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.AssociationDefinition_toObjectType? ToObjectType { get; set; }
-        /// <summary>The ID of the destination object type (e.g., 0-3 for deals).</summary>
+        /// <summary>The object type ID to which the association points.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToObjectTypeId { get; set; }

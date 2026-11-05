@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models;
 using DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Book;
+using DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,9 +20,23 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
     public partial class MeetingLinksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The book property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Book.BookRequestBuilder Book
         {
             get => new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Book.BookRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.scheduler.v3.meetings.meetingLinks.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Item.WithMeetingLinkSlugItemRequestBuilder"/></returns>
+        [Obsolete("")]
+        public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Item.WithMeetingLinkSlugItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("meetingLinkSlug", position);
+                return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.Item.WithMeetingLinkSlugItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder"/> and sets the default values.
@@ -45,6 +60,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.CollectionResponseWithTotalExternalLinkMetadata"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Models.CollectionResponseWithTotalExternalLinkMetadata?> GetAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder.MeetingLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,6 +78,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder.MeetingLinksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -81,6 +98,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder WithUrl(string rawUrl)
         {
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder(rawUrl, RequestAdapter);
@@ -106,34 +124,48 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string? Name { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string Name { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string? OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("organizerUserId")]
             public string OrganizerUserId { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string? Type { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string Type { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

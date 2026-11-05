@@ -30,6 +30,14 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V20260
 #else
         public string FirstName { get; set; }
 #endif
+        /// <summary>An object containing additional context about the customer agent. This field is required and can include various string properties.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V202603.Models.IdentificationTokenGenerationRequest_hsCustomerAgentContext? HsCustomerAgentContext { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V202603.Models.IdentificationTokenGenerationRequest_hsCustomerAgentContext HsCustomerAgentContext { get; set; }
+#endif
         /// <summary>The last name of the visitor that you wish to identify. This value will only be set in HubSpot for new contacts and existing contacts where last name is unknown. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V20260
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
+                { "hsCustomerAgentContext", n => { HsCustomerAgentContext = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V202603.Models.IdentificationTokenGenerationRequest_hsCustomerAgentContext>(global::DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V202603.Models.IdentificationTokenGenerationRequest_hsCustomerAgentContext.CreateFromDiscriminatorValue); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
             };
         }
@@ -77,6 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V20260
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Conversations.VisitorIdentification.V202603.Models.IdentificationTokenGenerationRequest_hsCustomerAgentContext>("hsCustomerAgentContext", HsCustomerAgentContext);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteAdditionalData(AdditionalData);
         }

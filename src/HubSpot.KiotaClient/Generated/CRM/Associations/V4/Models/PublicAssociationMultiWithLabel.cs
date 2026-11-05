@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.PublicObjectId From { get; set; }
 #endif
-        /// <summary>The paging property</summary>
+        /// <summary>Represents the pagination information for navigating through a list of results in the API. It provides details on how to access the previous or next set of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Associations.V4.Models.Paging? Paging { get; set; }

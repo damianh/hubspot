@@ -171,30 +171,42 @@ namespace DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Curr
             [Obsolete("This property is deprecated, use FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("fromCurrencyCode")]
             public string? FromCurrencyCode { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("fromCurrencyCode")]
             public string FromCurrencyCode { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("fromCurrencyCode")]
             public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.GetFromCurrencyCodeQueryParameterType? FromCurrencyCodeAsGetFromCurrencyCodeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             [Obsolete("This property is deprecated, use ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("toCurrencyCode")]
             public string? ToCurrencyCode { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("toCurrencyCode")]
             public string ToCurrencyCode { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("toCurrencyCode")]
             public global::DamianH.HubSpot.KiotaClient.Settings.Multicurrency.V3.Settings.V3.Currencies.ExchangeRates.GetToCurrencyCodeQueryParameterType? ToCurrencyCodeAsGetToCurrencyCodeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

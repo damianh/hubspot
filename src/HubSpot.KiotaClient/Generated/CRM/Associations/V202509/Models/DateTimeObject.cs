@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateOnly property</summary>
+        /// <summary>Indicates whether the DateTime value represents only a date without a time component.</summary>
         public bool? DateOnly { get; set; }
-        /// <summary>The timeZoneShift property</summary>
+        /// <summary>The integer value representing the shift in minutes from UTC for the DateTime value.</summary>
         public int? TimeZoneShift { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The integer value representing a specific point in time.</summary>
         public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V202509.Models.DateTimeObject"/> and sets the default values.

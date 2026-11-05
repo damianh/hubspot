@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The calculationFormula property</summary>
+        /// <summary>A string representing the formula used for calculating the property&apos;s value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalculationFormula { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string CalculationFormula { get; set; }
 #endif
-        /// <summary>The currencyPropertyName property</summary>
+        /// <summary>A string representing the name of the currency property associated with this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyPropertyName { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string CurrencyPropertyName { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A string providing a description of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -38,13 +38,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The displayOrder property</summary>
+        /// <summary>An integer indicating the display order of the property.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The fieldType property</summary>
+        /// <summary>A string specifying the field type of the property. Valid values include &apos;booleancheckbox&apos;, &apos;calculation_equation&apos;, &apos;checkbox&apos;, &apos;date&apos;, &apos;file&apos;, &apos;html&apos;, &apos;number&apos;, &apos;phonenumber&apos;, &apos;radio&apos;, &apos;select&apos;, &apos;text&apos;, and &apos;textarea&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_fieldType? FieldType { get; set; }
-        /// <summary>The formField property</summary>
+        /// <summary>A boolean indicating whether the property is a form field.</summary>
         public bool? FormField { get; set; }
-        /// <summary>The groupName property</summary>
+        /// <summary>A string representing the name of the group to which the property belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName { get; set; }
@@ -52,11 +52,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>The hasUniqueValue property</summary>
+        /// <summary>A boolean indicating whether the property has a unique value.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>The hidden property</summary>
+        /// <summary>A boolean indicating whether the property is hidden.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>A string representing the display label for the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -64,9 +64,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The numberDisplayHint property</summary>
+        /// <summary>A string providing a hint on how to display numbers. Valid values include &apos;unformatted&apos;, &apos;formatted&apos;, &apos;currency&apos;, &apos;percentage&apos;, &apos;duration&apos;, and &apos;probability&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_numberDisplayHint? NumberDisplayHint { get; set; }
-        /// <summary>The options property</summary>
+        /// <summary>An array of OptionInput objects representing the options available for the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>? Options { get; set; }
@@ -74,9 +74,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput> Options { get; set; }
 #endif
-        /// <summary>The showCurrencySymbol property</summary>
+        /// <summary>A boolean indicating whether to show the currency symbol for the property.</summary>
         public bool? ShowCurrencySymbol { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string providing a hint on how to display text. Valid values include &apos;unformatted_single_line&apos;, &apos;multi_line&apos;, &apos;email&apos;, &apos;phone_number&apos;, &apos;domain_name&apos;, &apos;ip_address&apos;, &apos;physical_address&apos;, and &apos;postal_code&apos;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_textDisplayHint? TextDisplayHint { get; set; }
+        /// <summary>A string indicating the data type of the property. Valid values include &apos;bool&apos;, &apos;date&apos;, &apos;datetime&apos;, &apos;enumeration&apos;, &apos;number&apos;, &apos;phone_number&apos;, and &apos;string&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate"/> and sets the default values.
@@ -116,6 +118,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
                 { "numberDisplayHint", n => { NumberDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_numberDisplayHint>(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
+                { "textDisplayHint", n => { TextDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_textDisplayHint>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_type>(); } },
             };
         }
@@ -139,6 +142,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_numberDisplayHint>("numberDisplayHint", NumberDisplayHint);
             writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.OptionInput>("options", Options);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_textDisplayHint>("textDisplayHint", TextDisplayHint);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgePropertyUpdate_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amountInHomeCurrencyProperty property</summary>
+        /// <summary>The property representing the amount in the home currency, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AmountInHomeCurrencyProperty { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string AmountInHomeCurrencyProperty { get; set; }
 #endif
-        /// <summary>The amountOrDatePropertyRestrictedForUser property</summary>
+        /// <summary>A boolean indicating whether the amount or date property is restricted for the user.</summary>
         public bool? AmountOrDatePropertyRestrictedForUser { get; set; }
-        /// <summary>The amountProperty property</summary>
+        /// <summary>The property used to determine the amount for this forecast type, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AmountProperty { get; set; }
@@ -32,13 +32,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string AmountProperty { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the forecast type was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The createdAtTimestamp property</summary>
+        /// <summary>A Unix timestamp in milliseconds indicating when the forecast type was created.</summary>
         public long? CreatedAtTimestamp { get; set; }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The ID of the user who created the forecast type, represented as an integer.</summary>
         public int? CreatedBy { get; set; }
-        /// <summary>The dateProperty property</summary>
+        /// <summary>The property used to determine the date for this forecast type, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateProperty { get; set; }
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models.ForecastTypeDealSplitProperties DealSplitProperties { get; set; }
 #endif
-        /// <summary>The defaultType property</summary>
+        /// <summary>A boolean indicating whether this is the default forecast type.</summary>
         public bool? DefaultType { get; set; }
-        /// <summary>The forecastName property</summary>
+        /// <summary>The name of the forecast type, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ForecastName { get; set; }
@@ -64,9 +64,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string ForecastName { get; set; }
 #endif
-        /// <summary>The forecastTypeId property</summary>
+        /// <summary>A unique identifier for the forecast type, represented as an integer.</summary>
         public long? ForecastTypeId { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>A unique string identifier for the forecast type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The identifier for the object type associated with this forecast, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -82,13 +82,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the forecast type was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedBy property</summary>
+        /// <summary>The ID of the user who last updated the forecast type, represented as an integer.</summary>
         public int? UpdatedBy { get; set; }
-        /// <summary>The updatedTimestamp property</summary>
+        /// <summary>A Unix timestamp in milliseconds indicating when the forecast type was last updated.</summary>
         public long? UpdatedTimestamp { get; set; }
-        /// <summary>The weightedAmountInHomeCurrencyProperty property</summary>
+        /// <summary>The property representing the weighted amount in the home currency, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WeightedAmountInHomeCurrencyProperty { get; set; }
@@ -96,7 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.ForecastTypes.V3.Models
 #else
         public string WeightedAmountInHomeCurrencyProperty { get; set; }
 #endif
-        /// <summary>The weightedAmountProperty property</summary>
+        /// <summary>The property representing the weighted amount, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WeightedAmountProperty { get; set; }

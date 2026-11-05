@@ -15,13 +15,13 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the object is archived.</summary>
+        /// <summary>Indicates whether the object is archived. A boolean value.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The timestamp when the object was archived, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this object was archived, in ISO 8601 format.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>The timestamp when the object was created, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this object was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique ID of the object.</summary>
+        /// <summary>The unique identifier for this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -29,9 +29,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether the property is new.</summary>
+        /// <summary>Indicates whether the object is newly created. A boolean value.</summary>
         public bool? New { get; set; }
-        /// <summary>An identifier used for tracing the creation or update request of the object.</summary>
+        /// <summary>A trace ID for tracking the write operation that created or updated this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectWriteTraceId { get; set; }
@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string ObjectWriteTraceId { get; set; }
 #endif
-        /// <summary>Key value pairs representing the properties of the object.</summary>
+        /// <summary>A map of property names to their values, representing the object&apos;s data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_properties? Properties { get; set; }
@@ -47,7 +47,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_properties Properties { get; set; }
 #endif
-        /// <summary>Key-value pairs representing the properties of the object along with their history.</summary>
+        /// <summary>A map of property names to arrays of their historical values, each entry containing a value and a timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_propertiesWithHistory? PropertiesWithHistory { get; set; }
@@ -55,15 +55,23 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_propertiesWithHistory PropertiesWithHistory { get; set; }
 #endif
-        /// <summary>The timestamp when the object was last updated, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this object was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The URL associated with the object.</summary>
+        /// <summary>The URL of the object in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
 #nullable restore
 #else
         public string Url { get; set; }
+#endif
+        /// <summary>An array of warnings related to the object, each containing a category, message, and context.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicObjectWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicObjectWarning> Warnings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject"/> and sets the default values.
@@ -100,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
                 { "propertiesWithHistory", n => { PropertiesWithHistory = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_propertiesWithHistory>(global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_propertiesWithHistory.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicObjectWarning>(global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicObjectWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -119,6 +128,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicUpsertObject_propertiesWithHistory>("propertiesWithHistory", PropertiesWithHistory);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicObjectWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

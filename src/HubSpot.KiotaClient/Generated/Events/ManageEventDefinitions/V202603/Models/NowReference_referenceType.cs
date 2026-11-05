@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the type of reference, which is always &apos;NOW&apos; for this component.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum NowReference_referenceType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NOW")]
         #pragma warning disable CS1591

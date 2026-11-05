@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Models.CustomObjectRecordLimitResponse CustomObjectTypes { get; set; }
 #endif
-        /// <summary>The hubspotDefinedObjectTypes property</summary>
+        /// <summary>An array of objects detailing the limits and usage for HubSpot-defined object types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.LimitsTracking.V202603.Models.LimitAndUsageForObjectType>? HubspotDefinedObjectTypes { get; set; }

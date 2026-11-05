@@ -22,7 +22,17 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.FilteringMetaData Filter { get; set; }
 #endif
-        /// <summary>The relatedObjectTypeId property</summary>
+        /// <summary>A string representing the identifier of the object from which the external options are derived or related.</summary>
+        public long? FromObjectId { get; set; }
+        /// <summary>A string indicating the name of the property for which the external options metadata is being defined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PropertyName { get; set; }
+#nullable restore
+#else
+        public string PropertyName { get; set; }
+#endif
+        /// <summary>A string representing the identifier of the related object type. This is used to specify which type of object the external options are associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelatedObjectTypeId { get; set; }
@@ -56,6 +66,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filter", n => { Filter = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.FilteringMetaData>(global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.FilteringMetaData.CreateFromDiscriminatorValue); } },
+                { "fromObjectId", n => { FromObjectId = n.GetLongValue(); } },
+                { "propertyName", n => { PropertyName = n.GetStringValue(); } },
                 { "relatedObjectTypeId", n => { RelatedObjectTypeId = n.GetStringValue(); } },
             };
         }
@@ -67,6 +79,8 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.FilteringMetaData>("filter", Filter);
+            writer.WriteLongValue("fromObjectId", FromObjectId);
+            writer.WriteStringValue("propertyName", PropertyName);
             writer.WriteStringValue("relatedObjectTypeId", RelatedObjectTypeId);
             writer.WriteAdditionalData(AdditionalData);
         }

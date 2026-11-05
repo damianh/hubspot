@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string that specifies the operation type, which is &apos;HAS_PLAIN_TEXT_EMAIL_REPLY&apos; by default.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum HasPlainTextEmailReply_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "HAS_PLAIN_TEXT_EMAIL_REPLY")]
         #pragma warning disable CS1591

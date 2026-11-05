@@ -16,6 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.It
     public partial class WithAppItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The eventTemplates property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.EventTemplates.EventTemplatesRequestBuilder EventTemplates
         {
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V3.Integrators.Timeline.V3.Item.EventTemplates.EventTemplatesRequestBuilder(PathParameters, RequestAdapter);

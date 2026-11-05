@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>A string indicating the type of message header. The default and only valid value is &apos;MESSAGE_HEADER&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicMessageHeader_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MESSAGE_HEADER")]
         #pragma warning disable CS1591

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models
         public bool? Archived { get; set; }
         /// <summary>The timestamp when the object was archived, in ISO 8601 format.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>A list defining relationships with other objects.</summary>
+        /// <summary>A map of associated object types to their associated IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.SimplePublicObjectWithAssociations_associations? Associations { get; set; }
@@ -63,13 +63,21 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models
 #endif
         /// <summary>The timestamp when the object was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The URL on the API that provide direct navigation to the corresponding UI pages for the connectors.</summary>
+        /// <summary>The URL link to access this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
 #nullable restore
 #else
         public string Url { get; set; }
+#endif
+        /// <summary>The warnings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.PublicObjectWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.PublicObjectWarning> Warnings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.SimplePublicObjectWithAssociations"/> and sets the default values.
@@ -106,6 +114,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models
                 { "propertiesWithHistory", n => { PropertiesWithHistory = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.SimplePublicObjectWithAssociations_propertiesWithHistory>(global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.SimplePublicObjectWithAssociations_propertiesWithHistory.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.PublicObjectWarning>(global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.PublicObjectWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -125,6 +134,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.SimplePublicObjectWithAssociations_propertiesWithHistory>("propertiesWithHistory", PropertiesWithHistory);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Meetings.V202603.Models.PublicObjectWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

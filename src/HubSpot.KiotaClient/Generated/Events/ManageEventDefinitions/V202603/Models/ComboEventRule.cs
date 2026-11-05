@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
+        /// <summary>An integer specifying the number of occurrences required for the event rule to be satisfied.</summary>
         public int? Count { get; set; }
-        /// <summary>The eventTypeId property</summary>
+        /// <summary>The unique identifier for the type of event. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventTypeId { get; set; }
@@ -24,9 +24,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string EventTypeId { get; set; }
 #endif
-        /// <summary>The lookbackWindowDays property</summary>
+        /// <summary>An integer representing the number of days to look back when evaluating the event rule.</summary>
         public int? LookbackWindowDays { get; set; }
-        /// <summary>The propertyFilters property</summary>
+        /// <summary>An array of property filters that define additional criteria for the event. Each filter specifies a property and the operation to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyFilter>? PropertyFilters { get; set; }

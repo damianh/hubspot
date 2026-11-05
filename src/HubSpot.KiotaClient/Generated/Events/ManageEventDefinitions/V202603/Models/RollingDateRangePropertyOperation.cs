@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The defaultValue property</summary>
+        /// <summary>A string representing the default value to use if no other value is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string DefaultValue { get; set; }
 #endif
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>A boolean indicating whether to include objects that have no value set for the property.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The numberOfDays property</summary>
+        /// <summary>An integer representing the number of days used in the rolling date range calculation.</summary>
         public int? NumberOfDays { get; set; }
-        /// <summary>The operationType property</summary>
+        /// <summary>A string indicating the type of operation being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperationType { get; set; }
@@ -34,9 +34,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperationType { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>A string specifying the operation to be performed, such as &apos;IS_LESS_THAN_X_DAYS_AGO&apos; or &apos;IS_MORE_THAN_X_DAYS_FROM_NOW&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_operator? Operator { get; set; }
-        /// <summary>The operatorName property</summary>
+        /// <summary>A string representing the name of the operator used in the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatorName { get; set; }
@@ -44,9 +44,17 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperatorName { get; set; }
 #endif
-        /// <summary>The propertyType property</summary>
+        /// <summary>The propertyAspect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect? PropertyAspect { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect PropertyAspect { get; set; }
+#endif
+        /// <summary>A string indicating the type of property operation, with a default value of &apos;datetime-rolling&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_propertyType? PropertyType { get; set; }
-        /// <summary>The renderSpec property</summary>
+        /// <summary>A string used for rendering specifications, though its specific use is not detailed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenderSpec { get; set; }
@@ -54,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string RenderSpec { get; set; }
 #endif
-        /// <summary>The requiresTimeZoneConversion property</summary>
+        /// <summary>A boolean indicating whether the operation requires conversion based on time zones.</summary>
         public bool? RequiresTimeZoneConversion { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation"/> and sets the default values.
@@ -88,6 +96,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
+                { "propertyAspect", n => { PropertyAspect = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect.CreateFromDiscriminatorValue); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_propertyType>(); } },
                 { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
                 { "requiresTimeZoneConversion", n => { RequiresTimeZoneConversion = n.GetBoolValue(); } },
@@ -106,6 +115,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
             writer.WriteStringValue("operationType", OperationType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>("propertyAspect", PropertyAspect);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RollingDateRangePropertyOperation_propertyType>("propertyType", PropertyType);
             writer.WriteStringValue("renderSpec", RenderSpec);
             writer.WriteBoolValue("requiresTimeZoneConversion", RequiresTimeZoneConversion);

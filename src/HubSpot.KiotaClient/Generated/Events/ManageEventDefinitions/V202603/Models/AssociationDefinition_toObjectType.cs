@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
-    /// <summary>The name of the destination object type (e.g,. &quot;DEAL&quot; or &quot;QUOTE&quot;).</summary>
+    /// <summary>The type of object to which the association points. Valid values include various HubSpot object types such as &apos;CONTACT&apos;, &apos;COMPANY&apos;, &apos;DEAL&apos;, etc.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationDefinition_toObjectType
     {

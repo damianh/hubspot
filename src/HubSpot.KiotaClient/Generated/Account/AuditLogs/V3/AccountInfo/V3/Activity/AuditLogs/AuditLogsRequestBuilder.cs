@@ -87,12 +87,16 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actingUserId")]
             public int?[]? ActingUserId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actingUserId")]
             public int?[] ActingUserId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,23 +108,33 @@ namespace DamianH.HubSpot.KiotaClient.Account.AuditLogs.V3.AccountInfo.V3.Activi
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("fillFinalTimestamp")]
             public bool? FillFinalTimestamp { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("occurredAfter")]
             public DateTimeOffset? OccurredAfter { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("occurredBefore")]
             public DateTimeOffset? OccurredBefore { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[]? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

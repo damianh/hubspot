@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of communication consent form being recorded.</summary>
+        /// <summary>A string representing the unique identifier for the type of communication for which consent is being recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommunicationTypeId { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CommunicationTypeId { get; set; }
 #endif
-        /// <summary>Whether the user has given consent for the specified communication type.</summary>
+        /// <summary>A boolean indicating whether the user has given consent for the communication type. It is true if consent is given, otherwise false.</summary>
         public bool? Consented { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLegalConsentResponse"/> and sets the default values.

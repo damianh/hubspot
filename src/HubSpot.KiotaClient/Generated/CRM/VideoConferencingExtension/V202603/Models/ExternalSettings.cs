@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603.Mod
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createMeetingUrl property</summary>
+        /// <summary>A string representing the URL used to create a new meeting. This property is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreateMeetingUrl { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603.Mod
 #else
         public string CreateMeetingUrl { get; set; }
 #endif
-        /// <summary>The deleteMeetingUrl property</summary>
+        /// <summary>A string representing the URL used to delete a meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeleteMeetingUrl { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603.Mod
 #else
         public string DeleteMeetingUrl { get; set; }
 #endif
-        /// <summary>The fetchAccountsUri property</summary>
+        /// <summary>A string representing the URI used to fetch account information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FetchAccountsUri { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603.Mod
 #else
         public string FetchAccountsUri { get; set; }
 #endif
-        /// <summary>The updateMeetingUrl property</summary>
+        /// <summary>A string representing the URL used to update an existing meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdateMeetingUrl { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.VideoConferencingExtension.V202603.Mod
 #else
         public string UpdateMeetingUrl { get; set; }
 #endif
-        /// <summary>The userVerifyUrl property</summary>
+        /// <summary>A string representing the URL used to verify a user&apos;s identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserVerifyUrl { get; set; }

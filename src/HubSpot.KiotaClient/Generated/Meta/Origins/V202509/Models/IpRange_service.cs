@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Meta.Origins.V202509.Models
 {
+    /// <summary>The service associated with the IP range, such as EMAIL, API, DNS, or WEB_SCRAPING.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IpRange_service
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "API")]
         #pragma warning disable CS1591

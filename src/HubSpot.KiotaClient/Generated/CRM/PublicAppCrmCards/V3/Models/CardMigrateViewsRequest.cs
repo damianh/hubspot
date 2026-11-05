@@ -22,6 +22,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
         public long? HelpdeskAppCardId { get; set; }
         /// <summary>The id of the Legacy CRM Card to swap</summary>
         public long? LegacyCrmCardId { get; set; }
+        /// <summary>The tabAppCardId property</summary>
+        public long? TabAppCardId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models.CardMigrateViewsRequest"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
                 { "appCardId", n => { AppCardId = n.GetLongValue(); } },
                 { "helpdeskAppCardId", n => { HelpdeskAppCardId = n.GetLongValue(); } },
                 { "legacyCrmCardId", n => { LegacyCrmCardId = n.GetLongValue(); } },
+                { "tabAppCardId", n => { TabAppCardId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +67,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V3.Models
             writer.WriteLongValue("appCardId", AppCardId);
             writer.WriteLongValue("helpdeskAppCardId", HelpdeskAppCardId);
             writer.WriteLongValue("legacyCrmCardId", LegacyCrmCardId);
+            writer.WriteLongValue("tabAppCardId", TabAppCardId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

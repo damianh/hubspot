@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the operation type, which is &apos;MIN_NUMBERS&apos; by default. It indicates that the operation is to find the minimum value.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MinNumbers_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MIN_NUMBERS")]
         #pragma warning disable CS1591

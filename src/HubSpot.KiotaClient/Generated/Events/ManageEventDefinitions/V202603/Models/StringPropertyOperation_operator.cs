@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>The operation to perform on the string property. Valid values include &apos;IS_EQUAL_TO&apos;, &apos;IS_NOT_EQUAL_TO&apos;, &apos;CONTAINS&apos;, &apos;DOES_NOT_CONTAIN&apos;, &apos;STARTS_WITH&apos;, &apos;ENDS_WITH&apos;, &apos;HAS_EVER_BEEN_EQUAL_TO&apos;, &apos;HAS_NEVER_BEEN_EQUAL_TO&apos;, &apos;HAS_EVER_CONTAINED&apos;, and &apos;HAS_NEVER_CONTAINED&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum StringPropertyOperation_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CONTAINS")]
         #pragma warning disable CS1591

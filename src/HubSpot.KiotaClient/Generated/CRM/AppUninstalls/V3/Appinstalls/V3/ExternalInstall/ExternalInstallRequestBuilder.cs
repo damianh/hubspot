@@ -37,6 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.Extern
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,6 +55,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.Extern
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -72,6 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.Extern
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.ExternalInstall.ExternalInstallRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.ExternalInstall.ExternalInstallRequestBuilder WithUrl(string rawUrl)
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V3.Appinstalls.V3.ExternalInstall.ExternalInstallRequestBuilder(rawUrl, RequestAdapter);

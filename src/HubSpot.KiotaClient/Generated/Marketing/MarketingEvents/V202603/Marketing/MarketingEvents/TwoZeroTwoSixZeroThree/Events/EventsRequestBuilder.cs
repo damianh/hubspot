@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketin
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.Events.Upsert.UpsertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.marketing.marketingEvents.TwoZeroTwoSixZeroThree.events.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the marketing event in the external event application.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.Events.Item.WithExternalEventItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.Events.Item.WithExternalEventItemRequestBuilder this[string position]
         {

@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associations property</summary>
+        /// <summary>An array of associations that define relationships between the objects being created and other existing objects in the CRM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicAssociationsForObject>? Associations { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.PublicAssociationsForObject> Associations { get; set; }
 #endif
-        /// <summary>A unique identifier for tracing the creation request.</summary>
+        /// <summary>A string used to trace the write operation for debugging or logging purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectWriteTraceId { get; set; }
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string ObjectWriteTraceId { get; set; }
 #endif
-        /// <summary>Key-value pairs representing the properties of the object.</summary>
+        /// <summary>An object containing key-value pairs where keys are property names and values are the corresponding property values for the CRM objects to be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicObjectBatchInputForCreate_properties? Properties { get; set; }

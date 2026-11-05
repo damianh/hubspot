@@ -122,10 +122,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnsubscribeAllRequestBuilderGetQueryParameters 
         {
-            /// <summary>The ID of the business unit to which the subscriber belongs. This is an optional parameter.</summary>
+            /// <summary>An optional integer representing the business unit ID.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The communication channel from which to unsubscribe the subscriber. This is a required parameter and must be &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the unsubscribe status is being checked. Must be &apos;EMAIL&apos;.</summary>
             [Obsolete("This property is deprecated, use ChannelAsGetChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,10 +136,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The communication channel from which to unsubscribe the subscriber. This is a required parameter and must be &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the unsubscribe status is being checked. Must be &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Item.UnsubscribeAll.GetChannelQueryParameterType? ChannelAsGetChannelQueryParameterType { get; set; }
-            /// <summary>A boolean indicating whether to include detailed information in the response. Defaults to false.</summary>
+            /// <summary>A boolean indicating whether to include detailed information. Defaults to false.</summary>
             [QueryParameter("verbose")]
             public bool? Verbose { get; set; }
         }
@@ -157,7 +157,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnsubscribeAllRequestBuilderPostQueryParameters 
         {
-            /// <summary>The ID of the business unit associated with the request. This is an optional integer parameter.</summary>
+            /// <summary>An optional integer representing the business unit ID.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
             /// <summary>The communication channel to unsubscribe from. Must be &apos;EMAIL&apos;.</summary>
@@ -174,7 +174,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             /// <summary>The communication channel to unsubscribe from. Must be &apos;EMAIL&apos;.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Statuses.Item.UnsubscribeAll.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
-            /// <summary>A boolean indicating whether to include detailed information in the response. Defaults to false.</summary>
+            /// <summary>An optional boolean to include detailed information in the response. Defaults to false.</summary>
             [QueryParameter("verbose")]
             public bool? Verbose { get; set; }
         }

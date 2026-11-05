@@ -88,6 +88,8 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
 #else
         public List<string> SecondaryDisplayProperties { get; set; }
 #endif
+        /// <summary>A boolean indicating whether associations should be created between objects of the same type.</summary>
+        public bool? ShouldCreateSameObjectAssociation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models.ObjectSchemaEgg"/> and sets the default values.
         /// </summary>
@@ -123,6 +125,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
                 { "requiredProperties", n => { RequiredProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "searchableProperties", n => { SearchableProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secondaryDisplayProperties", n => { SecondaryDisplayProperties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "shouldCreateSameObjectAssociation", n => { ShouldCreateSameObjectAssociation = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -142,6 +145,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Schemas.V202603.Models
             writer.WriteCollectionOfPrimitiveValues<string>("requiredProperties", RequiredProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("searchableProperties", SearchableProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryDisplayProperties", SecondaryDisplayProperties);
+            writer.WriteBoolValue("shouldCreateSameObjectAssociation", ShouldCreateSameObjectAssociation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

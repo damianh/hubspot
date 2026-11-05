@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors
         public ErrorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/v3/imports/{importId}/errors{?after*,includeErrorMessage*,includeRowData*,limit*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieves detailed error records for a specific import operation, enabling you to identify and troubleshoot records that failed during processing.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.CollectionResponsePublicImportErrorForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +51,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.CollectionResponsePublicImportErrorForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Models.CollectionResponsePublicImportErrorForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieves detailed error records for a specific import operation, enabling you to identify and troubleshoot records that failed during processing.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +79,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors.ErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieves detailed error records for a specific import operation, enabling you to identify and troubleshoot records that failed during processing.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class ErrorsRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +95,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V3.Crm.V3.Imports.Item.Errors
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("includeErrorMessage")]
             public bool? IncludeErrorMessage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("includeRowData")]
             public bool? IncludeRowData { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

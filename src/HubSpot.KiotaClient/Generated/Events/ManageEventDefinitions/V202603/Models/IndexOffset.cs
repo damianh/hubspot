@@ -14,23 +14,23 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The days property</summary>
+        /// <summary>An integer representing the number of days to offset.</summary>
         public int? Days { get; set; }
-        /// <summary>The hours property</summary>
+        /// <summary>An integer representing the number of hours to offset.</summary>
         public int? Hours { get; set; }
-        /// <summary>The milliseconds property</summary>
+        /// <summary>An integer representing the number of milliseconds to offset.</summary>
         public int? Milliseconds { get; set; }
-        /// <summary>The minutes property</summary>
+        /// <summary>An integer representing the number of minutes to offset.</summary>
         public int? Minutes { get; set; }
-        /// <summary>The months property</summary>
+        /// <summary>An integer representing the number of months to offset.</summary>
         public int? Months { get; set; }
-        /// <summary>The quarters property</summary>
+        /// <summary>An integer representing the number of quarters to offset.</summary>
         public int? Quarters { get; set; }
-        /// <summary>The seconds property</summary>
+        /// <summary>An integer representing the number of seconds to offset.</summary>
         public int? Seconds { get; set; }
-        /// <summary>The weeks property</summary>
+        /// <summary>An integer representing the number of weeks to offset.</summary>
         public int? Weeks { get; set; }
-        /// <summary>The years property</summary>
+        /// <summary>An integer representing the number of years to offset.</summary>
         public int? Years { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.IndexOffset"/> and sets the default values.

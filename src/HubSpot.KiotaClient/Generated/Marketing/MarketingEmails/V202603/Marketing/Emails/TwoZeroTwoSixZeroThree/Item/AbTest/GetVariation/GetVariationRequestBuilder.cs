@@ -88,6 +88,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>An array of property names to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includedProperties")]
@@ -97,12 +98,16 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("includedProperties")]
             public string[] IncludedProperties { get; set; }
 #endif
+            /// <summary>Whether to include statistics in the response. Accepts a boolean value.</summary>
             [QueryParameter("includeStats")]
             public bool? IncludeStats { get; set; }
+            /// <summary>Whether to include marketing campaign names in the response. Accepts a boolean value.</summary>
             [QueryParameter("marketingCampaignNames")]
             public bool? MarketingCampaignNames { get; set; }
+            /// <summary>Whether to include variant-specific statistics. Accepts a boolean value.</summary>
             [QueryParameter("variantStats")]
             public bool? VariantStats { get; set; }
+            /// <summary>Whether to include workflow names in the response. Accepts a boolean value.</summary>
             [QueryParameter("workflowNames")]
             public bool? WorkflowNames { get; set; }
         }

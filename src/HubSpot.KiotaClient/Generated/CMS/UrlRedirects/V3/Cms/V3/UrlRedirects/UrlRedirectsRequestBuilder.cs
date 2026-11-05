@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Cms.V3.UrlRedirects
     public partial class UrlRedirectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.cms.v3.urlRedirects.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the target redirect.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Cms.V3.UrlRedirects.Item.WithUrlRedirectItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.UrlRedirects.V3.Cms.V3.UrlRedirects.Item.WithUrlRedirectItemRequestBuilder this[string position]
         {

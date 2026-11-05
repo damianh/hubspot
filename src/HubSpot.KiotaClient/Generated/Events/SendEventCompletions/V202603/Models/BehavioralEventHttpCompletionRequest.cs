@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.SendEventCompletions.V202603.Models
 #else
         public string Utk { get; set; }
 #endif
-        /// <summary>Include a universally unique identifier to assign a unique ID to the event occurrence. Can be useful for matching data between HubSpot and other external systems.</summary>
+        /// <summary>A unique identifier for the event occurrence. Must be unique within the event type. If not provided, HubSpot will generate a random UUID. When multiple events have the same ID within a year, the first will be accepted and all others will be rejected. Can be useful for matching data between HubSpot and other external systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uuid { get; set; }

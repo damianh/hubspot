@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>Indicates whether the message content is truncated. Valid values are &apos;NOT_TRUNCATED&apos;, &apos;TRUNCATED_TO_MOST_RECENT_REPLY&apos;, and &apos;TRUNCATED&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum PublicConversationsMessage_truncationStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NOT_TRUNCATED")]
         #pragma warning disable CS1591

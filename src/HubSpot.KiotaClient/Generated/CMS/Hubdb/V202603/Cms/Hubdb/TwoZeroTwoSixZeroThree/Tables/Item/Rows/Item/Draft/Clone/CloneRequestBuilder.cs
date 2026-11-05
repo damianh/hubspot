@@ -85,6 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Hubdb.V202603.Cms.Hubdb.TwoZeroTwoSixZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CloneRequestBuilderPostQueryParameters 
         {
+            /// <summary>The new name for the cloned row. If not provided, the cloned row will retain the original name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]

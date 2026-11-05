@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the contact in HubSpot’s system that consumed the media. This can be fetched using HubSpot&apos;s Get contact by usertoken (utk) API. The API also supports supplying a usertoken, and will handle converting this into a contact ID automatically.</summary>
+        /// <summary>The unique identifier for the contact associated with the media event. It is a string value.</summary>
         public long? ContactId { get; set; }
-        /// <summary>The externalPlayContext property</summary>
+        /// <summary>Contextual information about the external environment where the media is played. It is a string value.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEvent_externalPlayContext? ExternalPlayContext { get; set; }
-        /// <summary>The mediaBridgeId property</summary>
+        /// <summary>The unique identifier for the media bridge instance. It is a string value.</summary>
         public long? MediaBridgeId { get; set; }
-        /// <summary>The mediaBridgeObjectCoordinates property</summary>
+        /// <summary>Coordinates that specify the location of the media bridge object. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectCoordinates { get; set; }
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectCoordinates { get; set; }
 #endif
-        /// <summary>The mediaBridgeObjectTypeId property</summary>
+        /// <summary>The type identifier for the media bridge object. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectTypeId { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectTypeId { get; set; }
 #endif
-        /// <summary>The mediaName property</summary>
+        /// <summary>The name of the media content being played. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaName { get; set; }
@@ -44,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaName { get; set; }
 #endif
-        /// <summary>The mediaType property</summary>
+        /// <summary>The type of media being played, such as &apos;VIDEO&apos;, &apos;AUDIO&apos;, etc. It is a string value.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEvent_mediaType? MediaType { get; set; }
-        /// <summary>The mediaUrl property</summary>
+        /// <summary>The URL of the media content being played. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaUrl { get; set; }
@@ -54,11 +54,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaUrl { get; set; }
 #endif
-        /// <summary>The occurredTimestamp property</summary>
+        /// <summary>The timestamp when the media play event occurred. It is a string value in ISO 8601 format.</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The content ID of the page that an event happened on, for HubSpot pages. Required if the page is a HubSpot page.</summary>
+        /// <summary>The unique identifier for the page where the media is being played. It is a string value.</summary>
         public long? PageId { get; set; }
-        /// <summary>The name or title of the page that an event happened on. Required for non-HubSpot pages.</summary>
+        /// <summary>The name of the page where the media is being played. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageName { get; set; }
 #endif
-        /// <summary>The pageObjectCoordinates property</summary>
+        /// <summary>Coordinates that specify the location of the page object. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageObjectCoordinates { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageObjectCoordinates { get; set; }
 #endif
-        /// <summary>The URL of the page that an event happened on. Required for non-HubSpot pages.</summary>
+        /// <summary>The URL of the page where the media is being played. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -82,13 +82,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The playedPercent property</summary>
+        /// <summary>The percentage of the media content that has been played. It is a number value.</summary>
         public int? PlayedPercent { get; set; }
-        /// <summary>The ID of the HubSpot account.</summary>
+        /// <summary>The unique identifier for the HubSpot portal. It is an integer value.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The providerId property</summary>
+        /// <summary>The unique identifier for the media provider. It is a string value.</summary>
         public int? ProviderId { get; set; }
-        /// <summary>The sessionId property</summary>
+        /// <summary>The unique identifier for the session during which the media was played. It is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }

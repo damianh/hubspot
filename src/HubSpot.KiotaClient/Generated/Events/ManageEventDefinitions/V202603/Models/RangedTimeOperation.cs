@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The defaultValue property</summary>
+        /// <summary>A string representing the default value to use if no other value is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultValue { get; set; }
@@ -22,11 +22,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string DefaultValue { get; set; }
 #endif
-        /// <summary>The includeObjectsWithNoValueSet property</summary>
+        /// <summary>A boolean indicating whether to include objects that have no value set for the specified property.</summary>
         public bool? IncludeObjectsWithNoValueSet { get; set; }
-        /// <summary>The lowerBoundEndpointBehavior property</summary>
+        /// <summary>A string indicating the behavior of the lower bound endpoint, with valid values &apos;INCLUSIVE&apos; and &apos;EXCLUSIVE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_lowerBoundEndpointBehavior? LowerBoundEndpointBehavior { get; set; }
-        /// <summary>The lowerBoundTimePoint property</summary>
+        /// <summary>Defines the lower bound of the time range, which can be a DatePoint, IndexedTimePoint, or PropertyReferencedTime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation.RangedTimeOperation_lowerBoundTimePoint? LowerBoundTimePoint { get; set; }
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation.RangedTimeOperation_lowerBoundTimePoint LowerBoundTimePoint { get; set; }
 #endif
-        /// <summary>The operationType property</summary>
+        /// <summary>A string representing the type of operation being performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperationType { get; set; }
@@ -42,9 +42,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperationType { get; set; }
 #endif
-        /// <summary>The operator property</summary>
+        /// <summary>A string representing the operation to be performed, with valid values &apos;IS_BETWEEN&apos; and &apos;IS_NOT_BETWEEN&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_operator? Operator { get; set; }
-        /// <summary>The operatorName property</summary>
+        /// <summary>A string indicating the name of the operator used in the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatorName { get; set; }
@@ -52,11 +52,19 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string OperatorName { get; set; }
 #endif
-        /// <summary>The propertyParser property</summary>
+        /// <summary>The propertyAspect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect? PropertyAspect { get; set; }
+#nullable restore
+#else
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect PropertyAspect { get; set; }
+#endif
+        /// <summary>A string specifying the parser to use for the property, with options including &apos;VALUE&apos;, &apos;UPDATED_AT&apos;, &apos;ANNIVERSARY&apos;, &apos;VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION&apos;, and &apos;ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyParser? PropertyParser { get; set; }
-        /// <summary>The propertyType property</summary>
+        /// <summary>A string indicating the type of property, defaulting to &apos;rangedtime&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyType? PropertyType { get; set; }
-        /// <summary>The renderSpec property</summary>
+        /// <summary>A string that specifies the rendering specification, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RenderSpec { get; set; }
@@ -64,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string RenderSpec { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string representing the type of the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -72,9 +80,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The upperBoundEndpointBehavior property</summary>
+        /// <summary>A string indicating the behavior of the upper bound endpoint, with valid values &apos;INCLUSIVE&apos; and &apos;EXCLUSIVE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_upperBoundEndpointBehavior? UpperBoundEndpointBehavior { get; set; }
-        /// <summary>The upperBoundTimePoint property</summary>
+        /// <summary>Defines the upper bound of the time range, which can be a DatePoint, IndexedTimePoint, or PropertyReferencedTime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation.RangedTimeOperation_upperBoundTimePoint? UpperBoundTimePoint { get; set; }
@@ -115,6 +123,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
                 { "operationType", n => { OperationType = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_operator>(); } },
                 { "operatorName", n => { OperatorName = n.GetStringValue(); } },
+                { "propertyAspect", n => { PropertyAspect = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>(global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect.CreateFromDiscriminatorValue); } },
                 { "propertyParser", n => { PropertyParser = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyParser>(); } },
                 { "propertyType", n => { PropertyType = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyType>(); } },
                 { "renderSpec", n => { RenderSpec = n.GetStringValue(); } },
@@ -137,6 +146,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
             writer.WriteStringValue("operationType", OperationType);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_operator>("operator", Operator);
             writer.WriteStringValue("operatorName", OperatorName);
+            writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyAspect>("propertyAspect", PropertyAspect);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyParser>("propertyParser", PropertyParser);
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.RangedTimeOperation_propertyType>("propertyType", PropertyType);
             writer.WriteStringValue("renderSpec", RenderSpec);

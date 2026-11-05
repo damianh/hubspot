@@ -17,11 +17,13 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meeting
     public partial class MeetingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The calendar property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder Calendar
         {
             get => new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The meetingLinks property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder MeetingLinks
         {
             get => new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V3.Scheduler.V3.Meetings.MeetingLinks.MeetingLinksRequestBuilder(PathParameters, RequestAdapter);

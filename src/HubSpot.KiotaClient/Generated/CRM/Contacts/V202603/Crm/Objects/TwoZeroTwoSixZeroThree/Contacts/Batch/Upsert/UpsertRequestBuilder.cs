@@ -33,8 +33,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
         public UpsertRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/objects/2026-03/contacts/batch/upsert", rawUrl)
         {
         }
+        /// <summary>
+        /// Upsert a batch of contacts. The `inputs` array can contain a `properties` object to define property values for each record.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicUpsertObject"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input operation for upserting simple public objects in HubSpot. This component is used to process multiple upsert operations in a single request, improving efficiency and performance.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,8 +53,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Crm.Objects.TwoZeroTw
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicUpsertObject>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Contacts.V202603.Models.BatchResponseSimplePublicUpsertObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Upsert a batch of contacts. The `inputs` array can contain a `properties` object to define property values for each record.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Represents a batch input operation for upserting simple public objects in HubSpot. This component is used to process multiple upsert operations in a single request, improving efficiency and performance.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

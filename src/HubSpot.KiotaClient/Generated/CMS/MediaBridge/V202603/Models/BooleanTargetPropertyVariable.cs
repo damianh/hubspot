@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>A string representing the operation to be performed. It is required and must be &apos;OR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.BooleanTargetPropertyVariable_operator? Operator { get; set; }
-        /// <summary>The propertyName property</summary>
+        /// <summary>The name of the property being targeted or manipulated, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyName { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PropertyName { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>A boolean value associated with the operation.</summary>
         public bool? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.BooleanTargetPropertyVariable"/> and sets the default values.

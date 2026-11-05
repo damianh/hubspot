@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             get => new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Statistics.StatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.marketing.emails.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the email to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Item.WithEmailItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Item.WithEmailItemRequestBuilder this[string position]
         {
@@ -64,6 +64,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/emails/2026-03{?after*,archived*,campaign*,createdAfter*,createdAt*,createdBefore*,includeStats*,includedProperties*,isPublished*,limit*,marketingCampaignNames*,publishedAfter*,publishedAt*,publishedBefore*,sort*,type*,updatedAfter*,updatedAt*,updatedBefore*,variantStats*,workflowNames*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a list of marketing emails from your HubSpot account. This endpoint allows you to filter emails based on various criteria such as publication date, creation date, update date, and more. You can also control the number of results per page and include additional statistics or properties in the response.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.CollectionResponseWithTotalPublicEmail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,6 +82,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.CollectionResponseWithTotalPublicEmail>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.CollectionResponseWithTotalPublicEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new marketing email in your HubSpot account using the specified parameters. This endpoint allows you to define the content, settings, and other details of the email. Upon successful creation, the URL of the newly created email resource is returned.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,6 +102,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models.PublicEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a list of marketing emails from your HubSpot account. This endpoint allows you to filter emails based on various criteria such as publication date, creation date, update date, and more. You can also control the number of results per page and include additional statistics or properties in the response.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,6 +121,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a new marketing email in your HubSpot account using the specified parameters. This endpoint allows you to define the content, settings, and other details of the email. Upon successful creation, the URL of the newly created email resource is returned.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,10 +152,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
         {
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a list of marketing emails from your HubSpot account. This endpoint allows you to filter emails based on various criteria such as publication date, creation date, update date, and more. You can also control the number of results per page and include additional statistics or properties in the response.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,6 +171,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Filter emails by campaign name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("campaign")]
@@ -167,12 +181,16 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("campaign")]
             public string Campaign { get; set; }
 #endif
+            /// <summary>Filter emails created after a specific date. Format should be date-time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Filter emails by the exact creation date. Format should be date-time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Filter emails created before a specific date. Format should be date-time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
+            /// <summary>Specify additional properties to include in the response. Accepts an array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("includedProperties")]
@@ -182,21 +200,28 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("includedProperties")]
             public string[] IncludedProperties { get; set; }
 #endif
+            /// <summary>Include statistics in the response. Accepts a boolean value.</summary>
             [QueryParameter("includeStats")]
             public bool? IncludeStats { get; set; }
+            /// <summary>Filter emails by their published status. Accepts a boolean value.</summary>
             [QueryParameter("isPublished")]
             public bool? IsPublished { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Include marketing campaign names in the response. Accepts a boolean value.</summary>
             [QueryParameter("marketingCampaignNames")]
             public bool? MarketingCampaignNames { get; set; }
+            /// <summary>Filter emails published after a specific date. Format should be date-time.</summary>
             [QueryParameter("publishedAfter")]
             public DateTimeOffset? PublishedAfter { get; set; }
+            /// <summary>Filter emails by the exact publication date. Format should be date-time.</summary>
             [QueryParameter("publishedAt")]
             public DateTimeOffset? PublishedAt { get; set; }
+            /// <summary>Filter emails published before a specific date. Format should be date-time.</summary>
             [QueryParameter("publishedBefore")]
             public DateTimeOffset? PublishedBefore { get; set; }
+            /// <summary>Specify the sorting order for the results. Accepts an array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -206,6 +231,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Filter emails by type. Accepts specific email types such as AB_EMAIL, BATCH_EMAIL, etc.</summary>
             [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,16 +242,22 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
+            /// <summary>Filter emails by type. Accepts specific email types such as AB_EMAIL, BATCH_EMAIL, etc.</summary>
             [QueryParameter("type")]
             public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            /// <summary>Filter emails updated after a specific date. Format should be date-time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Filter emails by the exact update date. Format should be date-time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Filter emails updated before a specific date. Format should be date-time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
+            /// <summary>Include variant statistics in the response. Accepts a boolean value.</summary>
             [QueryParameter("variantStats")]
             public bool? VariantStats { get; set; }
+            /// <summary>Include workflow names in the response. Accepts a boolean value.</summary>
             [QueryParameter("workflowNames")]
             public bool? WorkflowNames { get; set; }
         }

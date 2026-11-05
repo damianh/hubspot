@@ -98,8 +98,10 @@ namespace DamianH.HubSpot.KiotaClient.Settings.TaxRates.V1.TaxRates.V1.TaxRates
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TaxRatesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("active")]
             public bool? Active { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

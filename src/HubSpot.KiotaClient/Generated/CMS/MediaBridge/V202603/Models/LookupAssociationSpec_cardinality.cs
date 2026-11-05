@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>Specifies the nature of the association in terms of its cardinality, such as one-to-one or one-to-many.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum LookupAssociationSpec_cardinality
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ONE_TO_MANY")]
         #pragma warning disable CS1591

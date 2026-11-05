@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fileId property</summary>
+        /// <summary>An integer representing the ID of an associated file, formatted as an int64.</summary>
         public long? FileId { get; set; }
-        /// <summary>The text property</summary>
+        /// <summary>A string containing the text content of the message header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of message header. The default and only valid value is &apos;MESSAGE_HEADER&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageHeader_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageHeader"/> and sets the default values.

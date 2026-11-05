@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>The reason why the association is hidden. Valid values include &apos;DEFAULT&apos;, &apos;INTERNAL&apos;, and &apos;USER_CONFIGURED&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AssociationDefinition_hiddenReason
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DEFAULT")]
         #pragma warning disable CS1591

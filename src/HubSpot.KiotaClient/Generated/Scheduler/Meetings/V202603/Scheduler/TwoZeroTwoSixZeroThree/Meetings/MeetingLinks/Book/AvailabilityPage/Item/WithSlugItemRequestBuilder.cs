@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
         {
         }
         /// <summary>
-        /// Get the next availability times for a meeting page.
+        /// Retrieve the availability and busy times for a specific meeting link. This endpoint is useful for checking available slots for booking meetings based on the provided slug. It requires specifying the timezone and optionally allows adjusting the month view with an offset.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkAvailabilityAndBusyTimes"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkAvailabilityAndBusyTimes>(requestInfo, global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalLinkAvailabilityAndBusyTimes.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the next availability times for a meeting page.
+        /// Retrieve the availability and busy times for a specific meeting link. This endpoint is useful for checking available slots for booking meetings based on the provided slug. It requires specifying the timezone and optionally allows adjusting the month view with an offset.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,21 +80,27 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZe
             return new global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Scheduler.TwoZeroTwoSixZeroThree.Meetings.MeetingLinks.Book.AvailabilityPage.Item.WithSlugItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the next availability times for a meeting page.
+        /// Retrieve the availability and busy times for a specific meeting link. This endpoint is useful for checking available slots for booking meetings based on the provided slug. It requires specifying the timezone and optionally allows adjusting the month view with an offset.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSlugItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("monthOffset")]
             public int? MonthOffset { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("timezone")]
             public string? Timezone { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("timezone")]
             public string Timezone { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

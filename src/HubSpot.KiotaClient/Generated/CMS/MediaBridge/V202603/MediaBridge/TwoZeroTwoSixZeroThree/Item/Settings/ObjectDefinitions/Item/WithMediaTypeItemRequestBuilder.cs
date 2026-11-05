@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Get the existing objects types that belong to the specified media type.
+        /// Retrieve the object definitions for a specified media type within an app. This endpoint allows you to access the settings related to the object definitions of various media types such as VIDEO, AUDIO, DOCUMENT, OTHER, and IMAGE. It is useful for understanding the structure and properties associated with different media types in your application.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectDefinitionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectDefinitionResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ObjectDefinitionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the existing objects types that belong to the specified media type.
+        /// Retrieve the object definitions for a specified media type within an app. This endpoint allows you to access the settings related to the object definitions of various media types such as VIDEO, AUDIO, DOCUMENT, OTHER, and IMAGE. It is useful for understanding the structure and properties associated with different media types in your application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.ObjectDefinitions.Item.WithMediaTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the existing objects types that belong to the specified media type.
+        /// Retrieve the object definitions for a specified media type within an app. This endpoint allows you to access the settings related to the object definitions of various media types such as VIDEO, AUDIO, DOCUMENT, OTHER, and IMAGE. It is useful for understanding the structure and properties associated with different media types in your application.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithMediaTypeItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>A boolean indicating whether to include the full definition of the object. If not specified, the default behavior is to return a partial definition.</summary>
             [QueryParameter("includeFullDefinition")]
             public bool? IncludeFullDefinition { get; set; }
         }

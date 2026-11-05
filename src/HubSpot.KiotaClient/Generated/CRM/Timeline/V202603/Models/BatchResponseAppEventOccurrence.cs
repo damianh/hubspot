@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>The date and time when the batch operation was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>An array of StandardError objects detailing any errors that occurred during the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.StandardError>? Errors { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.StandardError> Errors { get; set; }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>A map of link names to associated URIs that provide additional information about the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.BatchResponseAppEventOccurrence_links? Links { get; set; }
@@ -32,11 +32,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.BatchResponseAppEventOccurrence_links Links { get; set; }
 #endif
-        /// <summary>The numErrors property</summary>
+        /// <summary>The number of errors encountered during the batch operation.</summary>
         public int? NumErrors { get; set; }
-        /// <summary>The requestedAt property</summary>
+        /// <summary>The date and time when the batch operation was requested, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of AppEventOccurrence objects representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.AppEventOccurrence>? Results { get; set; }
@@ -44,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.AppEventOccurrence> Results { get; set; }
 #endif
-        /// <summary>The startedAt property</summary>
+        /// <summary>The date and time when the batch operation started, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The current status of the batch operation. Valid values include &apos;PENDING&apos;, &apos;PROCESSING&apos;, &apos;CANCELED&apos;, and &apos;COMPLETE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.BatchResponseAppEventOccurrence_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Timeline.V202603.Models.BatchResponseAppEventOccurrence"/> and sets the default values.

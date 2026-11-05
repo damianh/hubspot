@@ -335,7 +335,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAndFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNotAllFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNotAnyFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicOrFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRestrictedFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicUnifiedEventsFilterBranch"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAndFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNotAllFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNotAnyFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicOrFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRestrictedFilterBranch"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicUnifiedEventsFilterBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicUnifiedEventsFilterBranch_filterBranches : IComposedTypeWrapper, IParsable
@@ -379,14 +379,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicOrFilterBranch PublicOrFilterBranch { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch? PublicPropertyAssociationFilterBranch { get; set; }
-#nullable restore
-#else
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch PublicPropertyAssociationFilterBranch { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRestrictedFilterBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -434,10 +426,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     result.PublicOrFilterBranch = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicOrFilterBranch();
                 }
-                else if("PublicPropertyAssociationFilterBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PublicPropertyAssociationFilterBranch = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch();
-                }
                 else if("PublicRestrictedFilterBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicRestrictedFilterBranch = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRestrictedFilterBranch();
@@ -473,10 +461,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 else if(PublicOrFilterBranch != null)
                 {
                     return PublicOrFilterBranch.GetFieldDeserializers();
-                }
-                else if(PublicPropertyAssociationFilterBranch != null)
-                {
-                    return PublicPropertyAssociationFilterBranch.GetFieldDeserializers();
                 }
                 else if(PublicRestrictedFilterBranch != null)
                 {
@@ -515,10 +499,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicOrFilterBranch>(null, PublicOrFilterBranch);
                 }
-                else if(PublicPropertyAssociationFilterBranch != null)
-                {
-                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationFilterBranch>(null, PublicPropertyAssociationFilterBranch);
-                }
                 else if(PublicRestrictedFilterBranch != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicRestrictedFilterBranch>(null, PublicRestrictedFilterBranch);
@@ -530,7 +510,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAdsSearchFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAdsTimeFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationInListFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCommunicationSubscriptionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicConstantFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCtaAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEmailEventFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEmailSubscriptionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEventAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicFormSubmissionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicFormSubmissionOnPageFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicInListFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicIntegrationEventFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPageViewAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPrivacyAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicSurveyMonkeyFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicSurveyMonkeyValueFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicUnifiedEventsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicWebinarFilter"/>
+        /// Composed type wrapper for classes <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAdsSearchFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAdsTimeFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationInListFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCommunicationSubscriptionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicConstantFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCtaAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEmailEventFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEmailSubscriptionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicEventAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicFormSubmissionFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicFormSubmissionOnPageFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicInListFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicIntegrationEventFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPageViewAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPrivacyAnalyticsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicSurveyMonkeyFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicSurveyMonkeyValueFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicUnifiedEventsFilter"/>, <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicWebinarFilter"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicUnifiedEventsFilterBranch_filters : IComposedTypeWrapper, IParsable
@@ -558,14 +538,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationInListFilter PublicAssociationInListFilter { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter? PublicCampaignInfluencedFilter { get; set; }
-#nullable restore
-#else
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter PublicCampaignInfluencedFilter { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCommunicationSubscriptionFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -647,14 +619,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicIntegrationEventFilter PublicIntegrationEventFilter { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter? PublicNumAssociationsFilter { get; set; }
-#nullable restore
-#else
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter PublicNumAssociationsFilter { get; set; }
-#endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPageViewAnalyticsFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -670,14 +634,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
 #nullable restore
 #else
             public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPrivacyAnalyticsFilter PublicPrivacyAnalyticsFilter { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter? PublicPropertyAssociationInListFilter { get; set; }
-#nullable restore
-#else
-            public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter PublicPropertyAssociationInListFilter { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -741,10 +697,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     result.PublicAssociationInListFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationInListFilter();
                 }
-                else if("PublicCampaignInfluencedFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PublicCampaignInfluencedFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter();
-                }
                 else if("PublicCommunicationSubscriptionFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicCommunicationSubscriptionFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCommunicationSubscriptionFilter();
@@ -785,10 +737,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     result.PublicIntegrationEventFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicIntegrationEventFilter();
                 }
-                else if("PublicNumAssociationsFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PublicNumAssociationsFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter();
-                }
                 else if("PublicPageViewAnalyticsFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicPageViewAnalyticsFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPageViewAnalyticsFilter();
@@ -796,10 +744,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 else if("PublicPrivacyAnalyticsFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicPrivacyAnalyticsFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPrivacyAnalyticsFilter();
-                }
-                else if("PublicPropertyAssociationInListFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PublicPropertyAssociationInListFilter = new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter();
                 }
                 else if("PublicPropertyFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -841,10 +785,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     return PublicAssociationInListFilter.GetFieldDeserializers();
                 }
-                else if(PublicCampaignInfluencedFilter != null)
-                {
-                    return PublicCampaignInfluencedFilter.GetFieldDeserializers();
-                }
                 else if(PublicCommunicationSubscriptionFilter != null)
                 {
                     return PublicCommunicationSubscriptionFilter.GetFieldDeserializers();
@@ -885,10 +825,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     return PublicIntegrationEventFilter.GetFieldDeserializers();
                 }
-                else if(PublicNumAssociationsFilter != null)
-                {
-                    return PublicNumAssociationsFilter.GetFieldDeserializers();
-                }
                 else if(PublicPageViewAnalyticsFilter != null)
                 {
                     return PublicPageViewAnalyticsFilter.GetFieldDeserializers();
@@ -896,10 +832,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 else if(PublicPrivacyAnalyticsFilter != null)
                 {
                     return PublicPrivacyAnalyticsFilter.GetFieldDeserializers();
-                }
-                else if(PublicPropertyAssociationInListFilter != null)
-                {
-                    return PublicPropertyAssociationInListFilter.GetFieldDeserializers();
                 }
                 else if(PublicPropertyFilter != null)
                 {
@@ -942,10 +874,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicAssociationInListFilter>(null, PublicAssociationInListFilter);
                 }
-                else if(PublicCampaignInfluencedFilter != null)
-                {
-                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCampaignInfluencedFilter>(null, PublicCampaignInfluencedFilter);
-                }
                 else if(PublicCommunicationSubscriptionFilter != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicCommunicationSubscriptionFilter>(null, PublicCommunicationSubscriptionFilter);
@@ -986,10 +914,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicIntegrationEventFilter>(null, PublicIntegrationEventFilter);
                 }
-                else if(PublicNumAssociationsFilter != null)
-                {
-                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicNumAssociationsFilter>(null, PublicNumAssociationsFilter);
-                }
                 else if(PublicPageViewAnalyticsFilter != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPageViewAnalyticsFilter>(null, PublicPageViewAnalyticsFilter);
@@ -997,10 +921,6 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models
                 else if(PublicPrivacyAnalyticsFilter != null)
                 {
                     writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPrivacyAnalyticsFilter>(null, PublicPrivacyAnalyticsFilter);
-                }
-                else if(PublicPropertyAssociationInListFilter != null)
-                {
-                    writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Models.PublicPropertyAssociationInListFilter>(null, PublicPropertyAssociationInListFilter);
                 }
                 else if(PublicPropertyFilter != null)
                 {

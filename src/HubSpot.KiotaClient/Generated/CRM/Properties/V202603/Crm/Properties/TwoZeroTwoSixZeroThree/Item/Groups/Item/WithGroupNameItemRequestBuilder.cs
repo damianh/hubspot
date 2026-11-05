@@ -170,6 +170,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithGroupNameItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>The language locale to use for the response. This can affect the language of the labels and descriptions returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locale")]

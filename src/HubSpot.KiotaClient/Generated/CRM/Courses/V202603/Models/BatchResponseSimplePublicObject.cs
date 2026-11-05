@@ -15,9 +15,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The timestamp when the batch processing was completed, in ISO 8601 format.</summary>
+        /// <summary>The date and time when the batch operation was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>An object containing relevant links related to the batch request.</summary>
+        /// <summary>A map of link names to associated URIs, providing additional resources or information related to the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.BatchResponseSimplePublicObject_links? Links { get; set; }
@@ -25,9 +25,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.BatchResponseSimplePublicObject_links Links { get; set; }
 #endif
-        /// <summary>The timestamp when the batch request was initially made, in ISO 8601 format.</summary>
+        /// <summary>The date and time when the batch operation was requested, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of SimplePublicObject items representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicObject>? Results { get; set; }
@@ -35,9 +35,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.SimplePublicObject> Results { get; set; }
 #endif
-        /// <summary>The timestamp when the batch processing began, in ISO 8601 format.</summary>
+        /// <summary>The date and time when the batch operation started, in ISO 8601 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The status of the batch processing request: &quot;PENDING&quot;, &quot;PROCESSING&quot;, &quot;CANCELLED&quot;, or &quot;COMPLETE&quot;</summary>
+        /// <summary>The current status of the batch operation. Valid values include &apos;PENDING&apos;, &apos;PROCESSING&apos;, &apos;CANCELED&apos;, and &apos;COMPLETE&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.BatchResponseSimplePublicObject_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.BatchResponseSimplePublicObject"/> and sets the default values.

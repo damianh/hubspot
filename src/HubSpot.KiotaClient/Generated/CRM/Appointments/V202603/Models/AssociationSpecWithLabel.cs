@@ -17,6 +17,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The category of the association, such as &apos;HUBSPOT_DEFINED&apos;, &apos;USER_DEFINED&apos;, or &apos;INTEGRATOR_DEFINED&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models.AssociationSpecWithLabel_category? Category { get; set; }
+        /// <summary>The fromObjectTypeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FromObjectTypeId { get; set; }
+#nullable restore
+#else
+        public string FromObjectTypeId { get; set; }
+#endif
         /// <summary>The label associated with the type of association.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,6 +32,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models
 #nullable restore
 #else
         public string Label { get; set; }
+#endif
+        /// <summary>The toObjectTypeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ToObjectTypeId { get; set; }
+#nullable restore
+#else
+        public string ToObjectTypeId { get; set; }
 #endif
         /// <summary>The ID representing the specific type of association.</summary>
         public int? TypeId { get; set; }
@@ -53,7 +69,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category", n => { Category = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models.AssociationSpecWithLabel_category>(); } },
+                { "fromObjectTypeId", n => { FromObjectTypeId = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "toObjectTypeId", n => { ToObjectTypeId = n.GetStringValue(); } },
                 { "typeId", n => { TypeId = n.GetIntValue(); } },
             };
         }
@@ -65,7 +83,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CRM.Appointments.V202603.Models.AssociationSpecWithLabel_category>("category", Category);
+            writer.WriteStringValue("fromObjectTypeId", FromObjectTypeId);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("toObjectTypeId", ToObjectTypeId);
             writer.WriteIntValue("typeId", TypeId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.SubscriptionLifecycle.V202609beta.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The proposedNextBillingDate property</summary>
+        /// <summary>An integer representing the proposed next billing date for the subscription, formatted as an int64.</summary>
         public long? ProposedNextBillingDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.SubscriptionLifecycle.V202609beta.Models.UnpauseRequest"/> and sets the default values.

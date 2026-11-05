@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The activity type of the meeting. Acceptable values are based on portal defined call and meeting types.</summary>
+        /// <summary>The type of activity for the meeting. This is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsActivityType { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsActivityType { get; set; }
 #endif
-        /// <summary>The hs_attachment_ids property</summary>
+        /// <summary>An array of strings representing the IDs of attachments associated with the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? HsAttachmentIds { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public List<string> HsAttachmentIds { get; set; }
 #endif
-        /// <summary>The hs_attendee_owner_ids property</summary>
+        /// <summary>An array of strings representing the IDs of the owners of the attendees for the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? HsAttendeeOwnerIds { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public List<string> HsAttendeeOwnerIds { get; set; }
 #endif
-        /// <summary>Internal notes related to the meeting.</summary>
+        /// <summary>Internal notes for the meeting. This is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsInternalMeetingNotes { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsInternalMeetingNotes { get; set; }
 #endif
-        /// <summary>The description of the meeting and calendar event.</summary>
+        /// <summary>The body content or description of the meeting. This is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsMeetingBody { get; set; }
@@ -54,9 +54,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsMeetingBody { get; set; }
 #endif
-        /// <summary>The time that the meeting should end in ISO 8601 format.</summary>
+        /// <summary>The end time of the meeting, in ISO 8601 format.</summary>
         public DateTimeOffset? HsMeetingEndTime { get; set; }
-        /// <summary>The physical address, virtual location, or phone number where the meeting will take place.</summary>
+        /// <summary>The location of the meeting. This is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsMeetingLocation { get; set; }
@@ -64,9 +64,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsMeetingLocation { get; set; }
 #endif
-        /// <summary>The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PHONE.</summary>
+        /// <summary>The type of location for the meeting. Valid values include &apos;PHONE&apos;, &apos;ADDRESS&apos;, and &apos;CUSTOM&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalCalendarMeetingEventCreateProperties_hs_meeting_location_type? HsMeetingLocationType { get; set; }
-        /// <summary>The outcome of the meeting. Acceptable default values are: SCHEDULED, COMPLETED, RESCHEDULED, NO_SHOW, CANCELED. This property can be changed to include additional custom values.</summary>
+        /// <summary>A string representing the outcome of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsMeetingOutcome { get; set; }
@@ -74,9 +74,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsMeetingOutcome { get; set; }
 #endif
-        /// <summary>The time that the meeting should start in ISO 8601 format.</summary>
+        /// <summary>The start time of the meeting, in ISO 8601 format.</summary>
         public DateTimeOffset? HsMeetingStartTime { get; set; }
-        /// <summary>The title of the meeting and calendar event.</summary>
+        /// <summary>The title of the meeting. This is a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HsMeetingTitle { get; set; }
@@ -84,9 +84,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string HsMeetingTitle { get; set; }
 #endif
-        /// <summary>The time that the meeting should start in ISO 8601 format. This value should be the same as `hs_meeting_start_time`.</summary>
+        /// <summary>A timestamp indicating when the meeting event was created, in ISO 8601 format.</summary>
         public DateTimeOffset? HsTimestamp { get; set; }
-        /// <summary>The ownerId of the HubSpot user who will host the meeting.</summary>
+        /// <summary>The unique identifier of the HubSpot owner associated with the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HubspotOwnerId { get; set; }

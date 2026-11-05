@@ -166,47 +166,65 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversati
             /// <summary>Whether to return only results that have been archived.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("defaultPageLength")]
             public int? DefaultPageLength { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("This property is deprecated, use DeliveryIdentifierTypeAsGetDeliveryIdentifierTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierType")]
             public string[]? DeliveryIdentifierType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierType")]
             public string[] DeliveryIdentifierType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierType")]
             public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.GetDeliveryIdentifierTypeQueryParameterType[]? DeliveryIdentifierTypeAsGetDeliveryIdentifierTypeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierType")]
             public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V3.Conversations.V3.CustomChannels.Item.ChannelAccounts.GetDeliveryIdentifierTypeQueryParameterType[] DeliveryIdentifierTypeAsGetDeliveryIdentifierTypeQueryParameterType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierValue")]
             public string[]? DeliveryIdentifierValue { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("deliveryIdentifierValue")]
             public string[] DeliveryIdentifierValue { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[]? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>

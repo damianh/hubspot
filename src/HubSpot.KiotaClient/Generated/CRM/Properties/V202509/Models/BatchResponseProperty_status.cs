@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 {
+    /// <summary>The current status of the batch operation, with possible values being CANCELED, COMPLETE, PENDING, or PROCESSING.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum BatchResponseProperty_status
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "CANCELED")]
         #pragma warning disable CS1591

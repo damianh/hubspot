@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether guests can be added to the meeting.</summary>
+        /// <summary>A boolean indicating whether guests can be added to the meeting.</summary>
         public bool? CanAddGuests { get; set; }
-        /// <summary>The maximum number of guests that can be added to the meeting.</summary>
+        /// <summary>An integer specifying the maximum number of guests that can be added to the meeting.</summary>
         public int? MaxGuestCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalGuestSettings"/> and sets the default values.

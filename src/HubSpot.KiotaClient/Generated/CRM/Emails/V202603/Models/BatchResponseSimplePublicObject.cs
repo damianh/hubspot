@@ -17,7 +17,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Emails.V202603.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp when the batch processing was completed, in ISO 8601 format.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>An object containing relevant links related to the batch request.</summary>
+        /// <summary>A map of link names to associated URIs, providing additional information or actions related to the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Emails.V202603.Models.BatchResponseSimplePublicObject_links? Links { get; set; }
@@ -27,7 +27,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Emails.V202603.Models
 #endif
         /// <summary>The timestamp when the batch request was initially made, in ISO 8601 format.</summary>
         public DateTimeOffset? RequestedAt { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of SimplePublicObject items representing the results of the batch operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.Emails.V202603.Models.SimplePublicObject>? Results { get; set; }

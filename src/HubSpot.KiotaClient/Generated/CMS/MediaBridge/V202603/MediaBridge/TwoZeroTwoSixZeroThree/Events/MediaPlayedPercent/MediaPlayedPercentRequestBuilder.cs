@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Create an event representing a user reaching quarterly milestones in a piece of media they&apos;re viewing.
+        /// This endpoint allows you to record the percentage of media that has been played. It is useful for tracking user engagement with media content, such as videos or audio files, by capturing the extent to which the media has been consumed. This data can be used for analytics and improving content delivery strategies.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEvent>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaPlayedPercentageEvent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an event representing a user reaching quarterly milestones in a piece of media they&apos;re viewing.
+        /// This endpoint allows you to record the percentage of media that has been played. It is useful for tracking user engagement with media content, such as videos or audio files, by capturing the extent to which the media has been consumed. This data can be used for analytics and improving content delivery strategies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

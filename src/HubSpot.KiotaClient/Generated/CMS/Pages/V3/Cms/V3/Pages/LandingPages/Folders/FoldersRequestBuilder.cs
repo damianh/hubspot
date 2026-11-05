@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             get => new global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Pages.V3.cms.v3.pages.landingPages.folders.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the landing page folder.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Item.WithObjectItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Folders.Item.WithObjectItemRequestBuilder this[string position]
         {
@@ -156,18 +156,22 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Whether to return only results that have been archived.</summary>
+            /// <summary>Specifies whether to return deleted Folders. Defaults to `false`.</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
+            /// <summary>Only return Folders created after the specified time.</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Only return Folders created at exactly the specified time.</summary>
             [QueryParameter("createdAt")]
             public DateTimeOffset? CreatedAt { get; set; }
+            /// <summary>Only return Folders created before the specified time.</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>The maximum number of results to display per page.</summary>
+            /// <summary>The maximum number of results to return. Default is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Specifies which properties of the landing page folders to include in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("property")]
@@ -177,6 +181,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             [QueryParameter("property")]
             public string Property { get; set; }
 #endif
+            /// <summary>Specifies which fields to use for sorting results. Valid fields are `name`, `createdAt`, `updatedAt`, `createdBy`, `updatedBy`. `createdAt` will be used by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -186,10 +191,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V3.Cms.V3.Pages.LandingPages.Fol
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>Only return Folders last updated after the specified time.</summary>
             [QueryParameter("updatedAfter")]
             public DateTimeOffset? UpdatedAfter { get; set; }
+            /// <summary>Only return Folders last updated at exactly the specified time.</summary>
             [QueryParameter("updatedAt")]
             public DateTimeOffset? UpdatedAt { get; set; }
+            /// <summary>Only return Folders last updated before the specified time.</summary>
             [QueryParameter("updatedBefore")]
             public DateTimeOffset? UpdatedBefore { get; set; }
         }

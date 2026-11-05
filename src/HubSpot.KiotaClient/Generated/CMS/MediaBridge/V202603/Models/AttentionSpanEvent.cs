@@ -14,13 +14,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of the contact in HubSpot’s system that consumed the media. This can be fetched using HubSpot&apos;s Get contact by usertoken (utk) API. The API also supports supplying a usertoken, and will handle converting this into a contact ID automatically.</summary>
+        /// <summary>A string representing the unique identifier for the contact associated with the event.</summary>
         public long? ContactId { get; set; }
-        /// <summary>The externalPlayContext property</summary>
+        /// <summary>A string providing additional context about the play event from an external source.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent_externalPlayContext? ExternalPlayContext { get; set; }
-        /// <summary>The mediaBridgeId property</summary>
+        /// <summary>A string representing the unique identifier for the media bridge instance.</summary>
         public long? MediaBridgeId { get; set; }
-        /// <summary>The mediaBridgeObjectCoordinates property</summary>
+        /// <summary>A string detailing the coordinates of the media bridge object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectCoordinates { get; set; }
@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectCoordinates { get; set; }
 #endif
-        /// <summary>The mediaBridgeObjectTypeId property</summary>
+        /// <summary>A string representing the type identifier for the media bridge object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaBridgeObjectTypeId { get; set; }
@@ -36,7 +36,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaBridgeObjectTypeId { get; set; }
 #endif
-        /// <summary>The mediaName property</summary>
+        /// <summary>A string representing the name of the media content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaName { get; set; }
@@ -44,9 +44,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaName { get; set; }
 #endif
-        /// <summary>The mediaType property</summary>
+        /// <summary>A string indicating the type of media involved in the event, such as &apos;VIDEO&apos;, &apos;AUDIO&apos;, etc.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent_mediaType? MediaType { get; set; }
-        /// <summary>The mediaUrl property</summary>
+        /// <summary>A string containing the URL of the media content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaUrl { get; set; }
@@ -54,11 +54,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string MediaUrl { get; set; }
 #endif
-        /// <summary>The timestamp at which this event occurred, in milliseconds since the epoch.</summary>
+        /// <summary>A string representing the timestamp of when the event occurred, in ISO 8601 format.</summary>
         public long? OccurredTimestamp { get; set; }
-        /// <summary>The ID of the page, if hosted on HubSpot. Required for HubSpot pages.</summary>
+        /// <summary>A string representing the unique identifier for the page.</summary>
         public long? PageId { get; set; }
-        /// <summary>The name of the page. Required if the page is not hosted on HubSpot.</summary>
+        /// <summary>A string representing the name of the page where the media was accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageName { get; set; }
@@ -66,7 +66,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageName { get; set; }
 #endif
-        /// <summary>The pageObjectCoordinates property</summary>
+        /// <summary>A string detailing the coordinates of the page object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageObjectCoordinates { get; set; }
@@ -74,7 +74,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageObjectCoordinates { get; set; }
 #endif
-        /// <summary>The URL of the page that an event happened on. Required if the page is not hosted on HubSpot.</summary>
+        /// <summary>A string containing the URL of the page where the media was accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
@@ -82,7 +82,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PageUrl { get; set; }
 #endif
-        /// <summary>The percentRange property</summary>
+        /// <summary>A string indicating the range of percentages that were played during the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PercentRange { get; set; }
@@ -90,11 +90,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string PercentRange { get; set; }
 #endif
-        /// <summary>The ID of the HubSpot account.</summary>
+        /// <summary>An integer representing the unique identifier for the HubSpot portal.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The providerId property</summary>
+        /// <summary>A string representing the unique identifier for the media provider.</summary>
         public int? ProviderId { get; set; }
-        /// <summary>This is the raw data which provides the most granular data about spans of the media, and how many times each span was consumed by the user. For example, for a 10 second video where each second is a span, if a visitor watches the first 5 seconds of the video, then restarts the video and watches the first 2 seconds again, the resulting `rawDataString` would be `“0=2;1=2;2=1;3=1;4=1;5=0;6=0;7=0;8=0;9=0;”`.</summary>
+        /// <summary>A string containing raw data associated with the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RawData { get; set; }
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string RawData { get; set; }
 #endif
-        /// <summary>The sessionId property</summary>
+        /// <summary>A string representing the unique identifier for the session during which the media was played.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }
@@ -110,9 +110,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string SessionId { get; set; }
 #endif
-        /// <summary>The percent of the media that the user consumed. Providers may calculate this differently depending on how they consider repeated views of the same portion of media. For this reason, the API will not attempt to validate totalPercentWatched against the attention span information for the event. If it is missing, HubSpot will calculate this from the attention span map as follows: (number of spans with a value of 1 or more)/(Total number of spans).</summary>
+        /// <summary>A number indicating the total percentage of the media that was played.</summary>
         public double? TotalPercentPlayed { get; set; }
-        /// <summary>The seconds that a user spent consuming the media. The media bridge calculates this as `totalPercentPlayed`*`mediaDuration`. If a provider would like this to be calculated differently, they can provide the pre-calculated value when they create the event.</summary>
+        /// <summary>A number representing the total seconds of media that were played.</summary>
         public int? TotalSecondsPlayed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.AttentionSpanEvent"/> and sets the default values.

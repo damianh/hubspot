@@ -90,6 +90,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReadRequestBuilderPostQueryParameters 
         {
+            /// <summary>A string specifying the locale to use for the response. This can be used to tailor the response to a specific language or region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locale")]

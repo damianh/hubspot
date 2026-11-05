@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associa
     public partial class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.crm.associations.TwoZeroTwoSixZeroThree.item.item.labels.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the association type to delete.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associations.TwoZeroTwoSixZeroThree.Item.Item.Labels.Item.WithAssociationTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associations.TwoZeroTwoSixZeroThree.Item.Item.Labels.Item.WithAssociationTypeItemRequestBuilder this[int position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associa
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.crm.associations.TwoZeroTwoSixZeroThree.item.item.labels.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the association type to delete.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associations.TwoZeroTwoSixZeroThree.Item.Item.Labels.Item.WithAssociationTypeItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Crm.Associations.TwoZeroTwoSixZeroThree.Item.Item.Labels.Item.WithAssociationTypeItemRequestBuilder this[string position]

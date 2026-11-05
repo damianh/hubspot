@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Delete an existing association definition for an object type.
+        /// Remove an existing association between schemas for a specified app in the MediaBridge service. This operation is useful when you need to disassociate entities that are no longer related or to clean up outdated associations.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing association definition for an object type.
+        /// Remove an existing association between schemas for a specified app in the MediaBridge service. This operation is useful when you need to disassociate entities that are no longer related or to clean up outdated associations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

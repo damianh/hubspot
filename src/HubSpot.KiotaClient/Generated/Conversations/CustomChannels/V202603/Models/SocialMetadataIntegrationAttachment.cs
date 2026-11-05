@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.SocialMetadata SocialMetadata { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>A string indicating the type of attachment, which is &apos;SOCIAL_MEDIA_METADATA&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.SocialMetadataIntegrationAttachment_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.SocialMetadataIntegrationAttachment"/> and sets the default values.

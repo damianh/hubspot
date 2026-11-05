@@ -45,7 +45,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject_properties Properties { get; set; }
 #endif
-        /// <summary>Key-value pairs representing the properties of the object along with their history.</summary>
+        /// <summary>Key-value pairs representing the properties of the object along with their history, each with a timestamp and source information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject_propertiesWithHistory? PropertiesWithHistory { get; set; }
@@ -62,6 +62,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models
 #nullable restore
 #else
         public string Url { get; set; }
+#endif
+        /// <summary>The warnings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.PublicObjectWarning>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.PublicObjectWarning> Warnings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject"/> and sets the default values.
@@ -97,6 +105,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models
                 { "propertiesWithHistory", n => { PropertiesWithHistory = n.GetObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject_propertiesWithHistory>(global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject_propertiesWithHistory.CreateFromDiscriminatorValue); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.PublicObjectWarning>(global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.PublicObjectWarning.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -115,6 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models
             writer.WriteObjectValue<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.SimplePublicObject_propertiesWithHistory>("propertiesWithHistory", PropertiesWithHistory);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfObjectValues<global::DamianH.HubSpot.KiotaClient.CRM.Courses.V3.Models.PublicObjectWarning>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

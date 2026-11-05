@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The firstName property</summary>
+        /// <summary>A string representing the first name of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>A string representing the last name of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The middleName property</summary>
+        /// <summary>A string representing the middle name of the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MiddleName { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string MiddleName { get; set; }
 #endif
-        /// <summary>The prefix property</summary>
+        /// <summary>A string representing the prefix of the contact&apos;s name, such as &apos;Mr.&apos;, &apos;Ms.&apos;, or &apos;Dr.&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prefix { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Prefix { get; set; }
 #endif
-        /// <summary>The suffix property</summary>
+        /// <summary>A string representing the suffix of the contact&apos;s name, such as &apos;Jr.&apos;, &apos;Sr.&apos;, or &apos;III&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Suffix { get; set; }

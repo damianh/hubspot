@@ -76,6 +76,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketin
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketing/marketing-events/2026-03{?after*,limit*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a list of marketing events for the specified API version. This endpoint supports pagination to navigate through large sets of data. Use this to access marketing event details in a paginated format.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,6 +94,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketin
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Models.CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a list of marketing events for the specified API version. This endpoint supports pagination to navigate through large sets of data. Use this to access marketing event details in a paginated format.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,10 +122,11 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketin
         {
             return new global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a list of marketing events for the specified API version. This endpoint supports pagination to navigate through large sets of data. Use this to access marketing event details in a paginated format.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The cursor indicating the position of the last retrieved item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

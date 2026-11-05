@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>The state of the media play event, indicating the current status.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MediaPlayedEventRequest_state
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "STARTED")]
         #pragma warning disable CS1591

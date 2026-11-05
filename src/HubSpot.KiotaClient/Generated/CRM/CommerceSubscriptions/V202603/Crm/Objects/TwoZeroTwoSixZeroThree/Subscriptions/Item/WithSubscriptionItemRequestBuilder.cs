@@ -72,7 +72,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Crm.Obje
         /// Update a specific subscription by its ID with new property values.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Models.SimplePublicObject"/></returns>
-        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
+        /// <param name="body">Represents the input required to update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.CommerceSubscriptions.V202603.Crm.Obje
         /// Update a specific subscription by its ID with new property values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents the input required to create or update a CRM object, containing an object with property names and their corresponding values.</param>
+        /// <param name="body">Represents the input required to update a CRM object, containing an object with property names and their corresponding values.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

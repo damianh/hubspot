@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A paging cursor token for retrieving subsequent pages.</summary>
+        /// <summary>A string token used to retrieve the next page of results. It indicates the position after the last item on the current page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? After { get; set; }
@@ -23,7 +23,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.TransactionalSingleSend.V202603.
 #else
         public string After { get; set; }
 #endif
-        /// <summary>A URL that can be used to retrieve the next page results.</summary>
+        /// <summary>A string containing the URL link to the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Link { get; set; }

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.cms.pages.TwoZeroTwoSixZeroThree.landingPages.item.revisions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the specific revision to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZeroThree.LandingPages.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZeroThree.LandingPages.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -108,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.Pages.V202603.Cms.Pages.TwoZeroTwoSixZ
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A cursor token for pagination, indicating the start of the page of results to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]

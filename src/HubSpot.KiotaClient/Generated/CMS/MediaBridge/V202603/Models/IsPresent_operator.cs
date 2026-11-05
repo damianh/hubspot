@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string that specifies the operation being performed. For the IsPresent component, this is typically a predefined value indicating presence checking.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum IsPresent_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "IS_PRESENT")]
         #pragma warning disable CS1591

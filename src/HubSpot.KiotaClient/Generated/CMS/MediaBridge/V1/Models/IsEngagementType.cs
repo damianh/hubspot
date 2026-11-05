@@ -14,25 +14,12 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The operator property</summary>
-        public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType_operator? Operator { get; set; }
-        /// <summary>The propertyName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PropertyName { get; set; }
-#nullable restore
-#else
-        public string PropertyName { get; set; }
-#endif
-        /// <summary>The value property</summary>
-        public bool? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType"/> and sets the default values.
         /// </summary>
         public IsEngagementType()
         {
             AdditionalData = new Dictionary<string, object>();
-            Operator = global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType_operator.IS_ENGAGEMENT_TYPE;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,9 +39,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operator", n => { Operator = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType_operator>(); } },
-                { "propertyName", n => { PropertyName = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +48,6 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V1.Models.IsEngagementType_operator>("operator", Operator);
-            writer.WriteStringValue("propertyName", PropertyName);
-            writer.WriteBoolValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

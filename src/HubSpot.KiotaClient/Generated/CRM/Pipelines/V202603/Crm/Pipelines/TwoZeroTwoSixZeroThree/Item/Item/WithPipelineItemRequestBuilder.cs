@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
         {
         }
         /// <summary>
-        /// Delete a pipeline
+        /// Delete a pipeline identified by its unique pipelineId
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.Pipeline>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.Pipeline.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace a pipeline
+        /// Replace all properties of an existing pipeline with the provided values.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.Pipeline"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.Pipeline>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.Pipeline.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a pipeline
+        /// Delete a pipeline identified by its unique pipelineId
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Replace a pipeline
+        /// Replace all properties of an existing pipeline with the provided values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -211,15 +211,19 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return new global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.WithPipelineItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a pipeline
+        /// Delete a pipeline identified by its unique pipelineId
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderDeleteQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -243,10 +247,14 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderPatchQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -257,15 +265,19 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
         {
         }
         /// <summary>
-        /// Replace a pipeline
+        /// Replace all properties of an existing pipeline with the provided values.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPipelineItemRequestBuilderPutQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("validateDealStageUsagesBeforeDelete")]
             public bool? ValidateDealStageUsagesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("validateReferencesBeforeDelete")]
             public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

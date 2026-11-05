@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The associations property</summary>
+        /// <summary>An array of associations related to the meeting event, each represented by an ExternalAssociationCreateRequest object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalAssociationCreateRequest>? Associations { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalCalendarMeetingEventCreateProperties Properties { get; set; }
 #endif
-        /// <summary>The timezone property that will be set on the meeting event.</summary>
+        /// <summary>A string representing the timezone in which the meeting event is scheduled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get; set; }

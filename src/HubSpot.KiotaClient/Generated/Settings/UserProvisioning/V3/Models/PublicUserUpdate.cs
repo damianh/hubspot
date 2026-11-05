@@ -46,6 +46,14 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
 #else
         public string RoleId { get; set; }
 #endif
+        /// <summary>The seatNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SeatNames { get; set; }
+#nullable restore
+#else
+        public List<string> SeatNames { get; set; }
+#endif
         /// <summary>The user&apos;s additional teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "primaryTeamId", n => { PrimaryTeamId = n.GetStringValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "seatNames", n => { SeatNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secondaryTeamIds", n => { SecondaryTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -97,6 +106,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Models
             writer.WriteStringValue("lastName", LastName);
             writer.WriteStringValue("primaryTeamId", PrimaryTeamId);
             writer.WriteStringValue("roleId", RoleId);
+            writer.WriteCollectionOfPrimitiveValues<string>("seatNames", SeatNames);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryTeamIds", SecondaryTeamIds);
             writer.WriteAdditionalData(AdditionalData);
         }

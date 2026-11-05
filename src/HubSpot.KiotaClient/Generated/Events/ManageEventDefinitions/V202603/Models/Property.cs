@@ -15,13 +15,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the property is archived.</summary>
+        /// <summary>Indicates whether the property is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The timestamp when the property was archived, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this property was archived, in ISO 8601 format.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>Whether the property is a calculated field.</summary>
+        /// <summary>Indicates whether the property is calculated.</summary>
         public bool? Calculated { get; set; }
-        /// <summary>The formula used for calculated properties.</summary>
+        /// <summary>The formula used to calculate the property, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalculationFormula { get; set; }
@@ -29,9 +29,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string CalculationFormula { get; set; }
 #endif
-        /// <summary>The timestamp when the property was created, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this property was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The ID of the user who created the property.</summary>
+        /// <summary>The ID of the user who created this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedUserId { get; set; }
@@ -39,7 +39,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string CreatedUserId { get; set; }
 #endif
-        /// <summary>The name of the related currency property.</summary>
+        /// <summary>The name of the currency property associated with this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyPropertyName { get; set; }
@@ -47,11 +47,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string CurrencyPropertyName { get; set; }
 #endif
-        /// <summary>Indicates the sensitivity level of the property, such as &quot;non_sensitive&quot;, &quot;sensitive&quot;, or &quot;highly_sensitive&quot;.</summary>
+        /// <summary>The sensitivity level of the data. Valid values include &apos;non_sensitive&apos;, &apos;sensitive&apos;, and &apos;highly_sensitive&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_dataSensitivity? DataSensitivity { get; set; }
-        /// <summary>The dateDisplayHint property</summary>
+        /// <summary>A hint for how date values should be displayed. Valid values include &apos;absolute&apos;, &apos;absolute_with_relative&apos;, &apos;time_since&apos;, and &apos;time_until&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_dateDisplayHint? DateDisplayHint { get; set; }
-        /// <summary>A summary of the property&apos;s purpose.</summary>
+        /// <summary>A description of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -59,11 +59,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The position of the item relative to others in the list.</summary>
+        /// <summary>The order in which this property is displayed.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>Applicable only for enumeration type properties. Should be set to true with a &apos;referencedObjectType&apos; of &apos;OWNER&apos;. Otherwise false.</summary>
+        /// <summary>Indicates whether the property options are external.</summary>
         public bool? ExternalOptions { get; set; }
-        /// <summary>Determines how the property will appear in HubSpot&apos;s UI or on a form. Learn more in the properties API guide.</summary>
+        /// <summary>The field type of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldType { get; set; }
@@ -71,9 +71,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string FieldType { get; set; }
 #endif
-        /// <summary>Whether the property can appear on forms.</summary>
+        /// <summary>Indicates whether the property is a form field.</summary>
         public bool? FormField { get; set; }
-        /// <summary>The name of the group to which the property is assigned.</summary>
+        /// <summary>The name of the group to which this property belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName { get; set; }
@@ -81,11 +81,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>Whether the property is a unique identifier property.</summary>
+        /// <summary>Indicates whether the property has a unique value.</summary>
         public bool? HasUniqueValue { get; set; }
-        /// <summary>Whether or not the property will be hidden from the HubSpot UI. It&apos;s recommended that this be set to false for custom properties.</summary>
+        /// <summary>Indicates whether the property is hidden.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>A boolean value set to true for HubSpot default properties.</summary>
+        /// <summary>Indicates whether the property is defined by HubSpot.</summary>
         public bool? HubspotDefined { get; set; }
         /// <summary>The display label for the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +103,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.PropertyModificationMetadata ModificationMetadata { get; set; }
 #endif
-        /// <summary>The internal name for the property.</summary>
+        /// <summary>The unique name of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -111,9 +111,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Hint for how a number property is displayed and validated in HubSpot&apos;s UI. Can be: &quot;unformatted&quot;, &quot;formatted&quot;, &quot;currency&quot;, &quot;percentage&quot;, &quot;duration&quot;, or &quot;probability&quot;.</summary>
+        /// <summary>A hint for how number values should be displayed. Valid values include &apos;unformatted&apos;, &apos;formatted&apos;, &apos;currency&apos;, &apos;percentage&apos;, &apos;duration&apos;, and &apos;probability&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_numberDisplayHint? NumberDisplayHint { get; set; }
-        /// <summary>A list of valid options for the property. This field is required for enumerated properties.</summary>
+        /// <summary>An array of options available for this property, each defined by a label, value, and other attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Option>? Options { get; set; }
@@ -121,7 +121,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Option> Options { get; set; }
 #endif
-        /// <summary>Deprecated. Use externalOptionsReferenceType instead.</summary>
+        /// <summary>The type of object that this property references.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReferencedObjectType { get; set; }
@@ -129,7 +129,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string ReferencedObjectType { get; set; }
 #endif
-        /// <summary>When sensitiveData is true, lists the type of sensitive data contained in the property (e.g., &quot;HIPAA&quot;).</summary>
+        /// <summary>An array of categories indicating the sensitivity of the data contained in the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SensitiveDataCategories { get; set; }
@@ -137,9 +137,11 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public List<string> SensitiveDataCategories { get; set; }
 #endif
-        /// <summary>Whether to show the currency symbol in HubSpot&apos;s UI.</summary>
+        /// <summary>Indicates whether a currency symbol is shown for the property.</summary>
         public bool? ShowCurrencySymbol { get; set; }
-        /// <summary>The data type of the property, such as string or number.</summary>
+        /// <summary>A hint for how text values should be displayed. Valid values include &apos;unformatted_single_line&apos;, &apos;multi_line&apos;, &apos;email&apos;, &apos;phone_number&apos;, &apos;domain_name&apos;, &apos;ip_address&apos;, &apos;physical_address&apos;, and &apos;postal_code&apos;.</summary>
+        public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_textDisplayHint? TextDisplayHint { get; set; }
+        /// <summary>The data type of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -147,9 +149,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The timestamp when the property was last updated, in ISO 8601 format.</summary>
+        /// <summary>The date and time when this property was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The updatedUserId property</summary>
+        /// <summary>The ID of the user who last updated this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedUserId { get; set; }
@@ -208,6 +210,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
                 { "referencedObjectType", n => { ReferencedObjectType = n.GetStringValue(); } },
                 { "sensitiveDataCategories", n => { SensitiveDataCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "showCurrencySymbol", n => { ShowCurrencySymbol = n.GetBoolValue(); } },
+                { "textDisplayHint", n => { TextDisplayHint = n.GetEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_textDisplayHint>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updatedUserId", n => { UpdatedUserId = n.GetStringValue(); } },
@@ -246,6 +249,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
             writer.WriteStringValue("referencedObjectType", ReferencedObjectType);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveDataCategories", SensitiveDataCategories);
             writer.WriteBoolValue("showCurrencySymbol", ShowCurrencySymbol);
+            writer.WriteEnumValue<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.Property_textDisplayHint>("textDisplayHint", TextDisplayHint);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("updatedUserId", UpdatedUserId);

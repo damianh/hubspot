@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>A string representing the type of delivery identifier. Valid values include &apos;HS_EMAIL_ADDRESS&apos;, &apos;HS_PHONE_NUMBER&apos;, &apos;HS_SHORT_CODE&apos;, and &apos;CHANNEL_SPECIFIC_OPAQUE_ID&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicDeliveryIdentifier_type? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>A string representing the value associated with the delivery identifier type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

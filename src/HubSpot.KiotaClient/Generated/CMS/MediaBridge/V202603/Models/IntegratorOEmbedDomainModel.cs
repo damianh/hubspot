@@ -14,11 +14,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appId property</summary>
+        /// <summary>The application ID associated with the oEmbed domain, represented as an integer.</summary>
         public int? AppId { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the oEmbed domain entry was created, in ISO 8601 format.</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The deletedAt property</summary>
+        /// <summary>The date and time when the oEmbed domain entry was deleted, in ISO 8601 format. This field may be null if the entry has not been deleted.</summary>
         public long? DeletedAt { get; set; }
         /// <summary>The endpoints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,11 +28,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.Endpoints Endpoints { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the oEmbed domain entry, represented as a string.</summary>
         public long? Id { get; set; }
-        /// <summary>The portalId property</summary>
+        /// <summary>The portal ID related to the oEmbed domain, represented as an integer.</summary>
         public int? PortalId { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>The date and time when the oEmbed domain entry was last updated, in ISO 8601 format.</summary>
         public long? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.IntegratorOEmbedDomainModel"/> and sets the default values.

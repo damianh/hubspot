@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensio
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.SampleResponse.SampleResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.crm.extensions.cardsDev.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">The appId of the app containing the Legacy CRM Card(s)</param>
+        /// <param name="position">The unique identifier of the app for which to retrieve the cards. It must be an integer.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder this[int position]
         {
@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensio
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.crm.extensions.cardsDev.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">The appId of the app containing the Legacy CRM Card(s)</param>
+        /// <param name="position">The unique identifier of the app for which to retrieve the cards. It must be an integer.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppCrmCards.V202603.Crm.Extensions.CardsDev.TwoZeroTwoSixZeroThree.Item.WithAppItemRequestBuilder this[string position]

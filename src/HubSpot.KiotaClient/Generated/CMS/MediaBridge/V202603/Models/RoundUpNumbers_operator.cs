@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the operation type, which is &apos;ROUND_UP_NUMBERS&apos; by default.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum RoundUpNumbers_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ROUND_UP")]
         #pragma warning disable CS1591

@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
     public partial class RevisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.marketing.emails.TwoZeroTwoSixZeroThree.item.revisions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the specific revision of the email to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Item.Revisions.Item.WithRevisionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketing.Emails.TwoZeroTwoSixZeroThree.Item.Revisions.Item.WithRevisionItemRequestBuilder this[string position]
         {
@@ -108,6 +108,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Marketin
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A cursor token for pagination to retrieve results before a specific point.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]

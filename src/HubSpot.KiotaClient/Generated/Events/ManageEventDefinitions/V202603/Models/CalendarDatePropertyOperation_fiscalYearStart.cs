@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string indicating the starting month of the fiscal year, with options like &apos;JANUARY&apos;, &apos;FEBRUARY&apos;, &apos;MARCH&apos;, etc.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CalendarDatePropertyOperation_fiscalYearStart
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "APRIL")]
         #pragma warning disable CS1591

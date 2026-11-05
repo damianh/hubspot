@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageFailureDetails FailureDetails { get; set; }
 #endif
-        /// <summary>The statusType property</summary>
+        /// <summary>The current status of the message. Valid values include &apos;SENT&apos;, &apos;FAILED&apos;, &apos;RECEIVED&apos;, and &apos;READ&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageStatus_statusType? StatusType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicMessageStatus"/> and sets the default values.

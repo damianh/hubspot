@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A description of the option.</summary>
+        /// <summary>A string providing additional information about the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -23,13 +23,13 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The position of the item relative to others in the list.</summary>
+        /// <summary>An integer indicating the order in which the option should be displayed relative to other options.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>The doubleData property</summary>
+        /// <summary>A number that may provide additional data associated with the option.</summary>
         public double? DoubleData { get; set; }
-        /// <summary>Whether the option is displayed in HubSpot&apos;s UI.</summary>
+        /// <summary>A boolean indicating whether the option is hidden from display.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>A user-friendly label that identifies the option.</summary>
+        /// <summary>A string representing the display name of the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -37,9 +37,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>Whether the option is read-only.</summary>
+        /// <summary>A boolean specifying if the option is read-only and cannot be modified.</summary>
         public bool? ReadOnly { get; set; }
-        /// <summary>The actual value of the option.</summary>
+        /// <summary>A string representing the unique value associated with the option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

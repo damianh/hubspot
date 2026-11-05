@@ -15,7 +15,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The upper boundary value when using ranged-based filters.</summary>
+        /// <summary>A string representing the upper bound of a range when filtering with range-based operators like &apos;BETWEEN&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HighValue { get; set; }
@@ -23,9 +23,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string HighValue { get; set; }
 #endif
-        /// <summary>null</summary>
+        /// <summary>A string specifying the comparison operator to use in the filter. Valid values include &apos;EQ&apos;, &apos;NEQ&apos;, &apos;LT&apos;, &apos;LTE&apos;, &apos;GT&apos;, &apos;GTE&apos;, &apos;BETWEEN&apos;, &apos;IN&apos;, &apos;NOT_IN&apos;, &apos;HAS_PROPERTY&apos;, &apos;NOT_HAS_PROPERTY&apos;, &apos;CONTAINS_TOKEN&apos;, and &apos;NOT_CONTAINS_TOKEN&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models.Filter_operator? Operator { get; set; }
-        /// <summary>The name of the property to apply the filter to.</summary>
+        /// <summary>The name of the property on which the filter is applied. It is a string representing the field to be filtered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PropertyName { get; set; }
@@ -33,7 +33,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string PropertyName { get; set; }
 #endif
-        /// <summary>The value to match against the property.</summary>
+        /// <summary>A string representing the specific value to compare against the propertyName when using the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -41,7 +41,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Courses.V202603.Models
 #else
         public string Value { get; set; }
 #endif
-        /// <summary>The values to match against the property.</summary>
+        /// <summary>An array of strings representing multiple values to compare against the propertyName when using operators like &apos;IN&apos; or &apos;NOT_IN&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Values { get; set; }

@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V3.Models
 {
-    /// <summary>Whether the contact is subscribed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum PublicSubscriptionStatus_status
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NOT_SUBSCRIBED")]
         #pragma warning disable CS1591

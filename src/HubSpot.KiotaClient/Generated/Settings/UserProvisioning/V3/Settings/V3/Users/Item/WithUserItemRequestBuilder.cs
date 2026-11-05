@@ -165,15 +165,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [Obsolete("This property is deprecated, use IdPropertyAsDeleteIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.DeleteIdPropertyQueryParameterType? IdPropertyAsDeleteIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -192,15 +198,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [Obsolete("This property is deprecated, use IdPropertyAsGetIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.GetIdPropertyQueryParameterType? IdPropertyAsGetIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -219,15 +231,21 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.U
             [Obsolete("This property is deprecated, use IdPropertyAsPutIdPropertyQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string? IdProperty { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public string IdProperty { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("idProperty")]
             public global::DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V3.Settings.V3.Users.Item.PutIdPropertyQueryParameterType? IdPropertyAsPutIdPropertyQueryParameterType { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

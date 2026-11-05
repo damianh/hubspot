@@ -14,9 +14,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectId property</summary>
+        /// <summary>The unique identifier for the object. It is an integer formatted as int64.</summary>
         public long? ObjectId { get; set; }
-        /// <summary>The objectTypeId property</summary>
+        /// <summary>The identifier for the type of object. It is a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectTypeId { get; set; }
@@ -24,7 +24,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models
 #else
         public string ObjectTypeId { get; set; }
 #endif
-        /// <summary>The portalId property</summary>
+        /// <summary>The unique identifier for the HubSpot portal. It is an integer.</summary>
         public int? PortalId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.ObjectCoordinates"/> and sets the default values.

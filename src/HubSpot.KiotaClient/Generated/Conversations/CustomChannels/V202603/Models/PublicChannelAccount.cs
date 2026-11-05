@@ -12,17 +12,17 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     public partial class PublicChannelAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The active property</summary>
+        /// <summary>A boolean indicating whether the channel account is currently active.</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The archived property</summary>
+        /// <summary>A boolean indicating whether the channel account is archived.</summary>
         public bool? Archived { get; set; }
-        /// <summary>The archivedAt property</summary>
+        /// <summary>The date and time when the channel account was archived, in ISO 8601 format.</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
-        /// <summary>The authorized property</summary>
+        /// <summary>A boolean indicating whether the channel account is authorized.</summary>
         public bool? Authorized { get; set; }
-        /// <summary>The channelId property</summary>
+        /// <summary>The unique identifier for the channel to which this account belongs, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelId { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelId { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>The date and time when the channel account was created, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The deliveryIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicDeliveryIdentifier DeliveryIdentifier { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for this channel account, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -48,7 +48,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The inboxId property</summary>
+        /// <summary>The unique identifier for the inbox associated with this channel account, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InboxId { get; set; }
@@ -56,7 +56,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string InboxId { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the channel account, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

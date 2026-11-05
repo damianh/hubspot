@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The composingRules property</summary>
+        /// <summary>An array of ComboEventRule objects that define the individual rules composing this branch of the combo event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComboEventRule>? ComposingRules { get; set; }
@@ -22,9 +22,9 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComboEventRule> ComposingRules { get; set; }
 #endif
-        /// <summary>The operationType property</summary>
+        /// <summary>A string indicating the type of logical operation to be applied between the rules in this branch. Valid values are &apos;AND&apos; and &apos;OR&apos;.</summary>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComboEventRuleBranch_operationType? OperationType { get; set; }
-        /// <summary>The ruleBranches property</summary>
+        /// <summary>An array of ComboEventRuleBranch objects, allowing for nested branching logic within the combo event rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models.ComboEventRuleBranch>? RuleBranches { get; set; }

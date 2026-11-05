@@ -85,10 +85,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefinitionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>An integer representing the ID of the business unit for which to retrieve subscription definitions.</summary>
+            /// <summary>An integer representing the unique identifier of the business unit for which to retrieve communication preferences definitions.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>A boolean indicating whether to include translations of the communication preferences definitions in the response.</summary>
+            /// <summary>A boolean indicating whether to include translations for the subscription definitions. Defaults to false if not specified.</summary>
             [QueryParameter("includeTranslations")]
             public bool? IncludeTranslations { get; set; }
         }

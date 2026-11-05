@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZ
     public partial class GroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.crm.properties.TwoZeroTwoSixZeroThree.item.groups.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the property group to retrieve details for.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZeroTwoSixZeroThree.Item.Groups.Item.WithGroupNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZeroTwoSixZeroThree.Item.Groups.Item.WithGroupNameItemRequestBuilder this[string position]
         {
@@ -140,6 +140,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202603.Crm.Properties.TwoZ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupsRequestBuilderGetQueryParameters 
         {
+            /// <summary>The language locale to use for property group labels. This can help in displaying labels in the preferred language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("locale")]

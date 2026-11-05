@@ -8,7 +8,7 @@ using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.Posts.V3.Models
 {
     /// <summary>
-    /// Model definition for forward paging.
+    /// Paging information for forward-only pagination. Contains the next page reference when more results are available; omitted or empty on the last page.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ForwardPaging : IAdditionalDataHolder, IParsable

@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
             get => new global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Records.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.crm.lists.TwoZeroTwoSixZeroThree.records.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Object type id of the record</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Records.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.Records.Item.WithObjectTypeItemRequestBuilder this[string position]
         {

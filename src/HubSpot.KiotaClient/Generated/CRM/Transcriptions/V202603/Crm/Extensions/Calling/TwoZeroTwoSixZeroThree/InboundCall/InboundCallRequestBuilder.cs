@@ -33,6 +33,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.
         public InboundCallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/extensions/calling/2026-03/inbound-call", rawUrl)
         {
         }
+        /// <summary>
+        /// This endpoint processes inbound calls by accepting a request with details about the call. It requires a JSON payload containing information such as the call&apos;s external ID, final status, and phone numbers involved. This operation is useful for integrating third-party call data into HubSpot, allowing for seamless tracking and management of inbound calls.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,6 +53,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Crm.Extensions.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Transcriptions.V202603.Models.CompletedThirdPartyCallResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// This endpoint processes inbound calls by accepting a request with details about the call. It requires a JSON payload containing information such as the call&apos;s external ID, final status, and phone numbers involved. This operation is useful for integrating third-party call data into HubSpot, allowing for seamless tracking and management of inbound calls.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

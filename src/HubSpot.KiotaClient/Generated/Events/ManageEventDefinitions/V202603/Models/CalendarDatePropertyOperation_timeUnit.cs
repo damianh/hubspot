@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Models
 {
+    /// <summary>A string representing the unit of time for the operation, such as &apos;DAY&apos;, &apos;WEEK&apos;, &apos;MONTH&apos;, &apos;QUARTER&apos;, or &apos;YEAR&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CalendarDatePropertyOperation_timeUnit
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "DAY")]
         #pragma warning disable CS1591

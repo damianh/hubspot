@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Models
 #else
         public string CombinedId { get; set; }
 #endif
-        /// <summary>The contentType property</summary>
+        /// <summary>The content type, which provides additional information about the nature of the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get; set; }
@@ -72,9 +72,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Models
 #endif
         /// <summary>The ID of the content.</summary>
         public long? Id { get; set; }
-        /// <summary>The inBeta property</summary>
+        /// <summary>A boolean indicating whether the content is in beta.</summary>
         public bool? InBeta { get; set; }
-        /// <summary>The isPrivate property</summary>
+        /// <summary>A boolean indicating whether the content is private.</summary>
         public bool? IsPrivate { get; set; }
         /// <summary>The document&apos;s language.</summary>
         public global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Models.ContentSearchResult_language? Language { get; set; }

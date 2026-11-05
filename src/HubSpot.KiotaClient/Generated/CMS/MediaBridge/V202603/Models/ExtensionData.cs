@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.CaseChangeTestExtensionData CaseChangeTestExtensionData { get; set; }
 #endif
-        /// <summary>The extensionStatusMap property</summary>
+        /// <summary>A map that holds the status of various extensions. The keys are extension identifiers, and the values represent the status of each extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.ExtensionData_extensionStatusMap? ExtensionStatusMap { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 #else
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.SoftRequiredPropertiesExtensionData SoftRequiredPropertiesExtensionData { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>An array of tags associated with the extension data. Each tag is a string that categorizes or describes the extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

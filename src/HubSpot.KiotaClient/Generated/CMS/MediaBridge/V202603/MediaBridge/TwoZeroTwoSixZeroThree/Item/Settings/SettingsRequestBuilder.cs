@@ -38,6 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.OembedDomains.OembedDomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The register property</summary>
+        [Obsolete("")]
         public global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.Register.RegisterRequestBuilder Register
         {
             get => new global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZeroTwoSixZeroThree.Item.Settings.Register.RegisterRequestBuilder(PathParameters, RequestAdapter);
@@ -64,7 +65,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
         {
         }
         /// <summary>
-        /// Update the name that your app will display when a user is selecting media bridge items.
+        /// Update the settings for a specific app in the MediaBridgeService. This endpoint allows you to modify the configuration settings associated with the specified appId. It is useful for updating app-specific settings to ensure they align with your current requirements.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgeProviderRegistrationResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +85,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.MediaBridge.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgeProviderRegistrationResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models.MediaBridgeProviderRegistrationResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the name that your app will display when a user is selecting media bridge items.
+        /// Update the settings for a specific app in the MediaBridgeService. This endpoint allows you to modify the configuration settings associated with the specified appId. It is useful for updating app-specific settings to ensure they align with your current requirements.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

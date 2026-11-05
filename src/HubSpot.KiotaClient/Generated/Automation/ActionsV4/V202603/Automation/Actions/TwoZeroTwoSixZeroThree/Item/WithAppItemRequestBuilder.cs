@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Ac
     public partial class WithAppItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.automation.actions.TwoZeroTwoSixZeroThree.item.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the extension definition to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.Item.WithDefinitionItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.TwoZeroTwoSixZeroThree.Item.Item.WithDefinitionItemRequestBuilder this[string position]
         {

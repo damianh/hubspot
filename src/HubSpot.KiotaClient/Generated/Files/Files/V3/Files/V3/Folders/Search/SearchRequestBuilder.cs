@@ -145,12 +145,16 @@ namespace DamianH.HubSpot.KiotaClient.Files.Files.V3.Files.V3.Folders.Search
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("parentFolderIds")]
             public long?[]? ParentFolderIds { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("parentFolderIds")]
             public long?[] ParentFolderIds { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Search folders by path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

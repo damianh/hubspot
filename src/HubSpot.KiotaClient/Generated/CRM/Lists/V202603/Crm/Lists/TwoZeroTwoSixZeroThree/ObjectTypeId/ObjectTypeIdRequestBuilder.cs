@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZ
     public partial class ObjectTypeIdRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.crm.lists.TwoZeroTwoSixZeroThree.objectTypeId.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The object type ID of the object types stored by the list to fetch. For example, `0-1` for a `CONTACT` list.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.ObjectTypeId.Item.WithObjectTypeItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Lists.V202603.Crm.Lists.TwoZeroTwoSixZeroThree.ObjectTypeId.Item.WithObjectTypeItemRequestBuilder this[string position]
         {

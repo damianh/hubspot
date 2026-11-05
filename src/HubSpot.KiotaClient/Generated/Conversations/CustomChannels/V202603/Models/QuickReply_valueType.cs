@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models
 {
+    /// <summary>The type of the value, indicating how the value should be interpreted. It is a string and can be either &apos;TEXT&apos; or &apos;URL&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum QuickReply_valueType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "TEXT")]
         #pragma warning disable CS1591

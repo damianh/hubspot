@@ -39,6 +39,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/cms/audit-logs/2026-03{?after*,before*,eventType*,limit*,objectId*,objectType*,sort*,userId*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve audit logs for the CMS in your HubSpot account. This endpoint allows you to filter logs by user, event type, object type, and object ID. It supports pagination and sorting, making it easier to navigate through large sets of log data. Use this endpoint to monitor changes and activities within your CMS.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models.CollectionResponsePublicAuditLog"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,6 +57,9 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models.CollectionResponsePublicAuditLog>(requestInfo, global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models.CollectionResponsePublicAuditLog.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve audit logs for the CMS in your HubSpot account. This endpoint allows you to filter logs by user, event type, object type, and object ID. It supports pagination and sorting, making it easier to navigate through large sets of log data. Use this endpoint to monitor changes and activities within your CMS.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +85,11 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
         {
             return new global::DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve audit logs for the CMS in your HubSpot account. This endpoint allows you to filter logs by user, event type, object type, and object ID. It supports pagination and sorting, making it easier to navigate through large sets of log data. Use this endpoint to monitor changes and activities within your CMS.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +101,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A string to filter logs that occurred before a specific timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("before")]
@@ -103,6 +111,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
+            /// <summary>An array of event types to filter logs by specific actions such as CREATED, UPDATED, or DELETED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("eventType")]
@@ -115,6 +124,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>An array of object IDs to filter logs by specific objects that were affected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("objectId")]
@@ -124,6 +134,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             [QueryParameter("objectId")]
             public string[] ObjectId { get; set; }
 #endif
+            /// <summary>An array of object types to filter logs by specific CMS objects like BLOG, TEMPLATE, or EMAIL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("objectType")]
@@ -133,6 +144,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             [QueryParameter("objectType")]
             public string[] ObjectType { get; set; }
 #endif
+            /// <summary>An array to specify the sorting order of the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -142,6 +154,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Cms.AuditLogs.
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
 #endif
+            /// <summary>An array of user IDs to filter logs by the user who performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("userId")]

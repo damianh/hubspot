@@ -20,7 +20,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Models
         public int? Offset { get; set; }
         /// <summary>The current page number in the paginated results.</summary>
         public int? Page { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of search results, each represented by a ContentSearchResult object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CMS.SiteSearch.V202603.Models.ContentSearchResult>? Results { get; set; }

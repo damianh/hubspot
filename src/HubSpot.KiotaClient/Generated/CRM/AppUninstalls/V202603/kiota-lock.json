@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "D4AC6CBC7E034C4C66F9622E0141FCB8E6AE4D29E327864525DC080168F53564798651F75C08D102D3943AB2EF1CE3F7C5884086D0B90B61ADD5BAE07161C46C",
+  "descriptionHash": "D5E0B18D67B3BE115C0BAB4DDEFD6DD5FA6AD1B53628E4BC7F060F8C4B8B223DEE5887EC9E7FDC76E31966C65CFAA4EFF33FAC4FC7AD940293890D9011AB06D8",
   "descriptionLocation": "https://api.hubspot.com/public/api/spec/v2/specs/release/75343/version/2026-03",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.29.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "HubSpotCRMAppUninstallsV202603Client",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "DamianH.HubSpot.KiotaClient.CRM.AppUninstalls.V202603",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

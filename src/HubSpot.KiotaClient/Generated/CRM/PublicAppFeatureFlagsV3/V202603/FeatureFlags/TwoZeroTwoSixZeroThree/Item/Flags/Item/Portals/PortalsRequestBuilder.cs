@@ -25,7 +25,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Featur
             get => new global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.Portals.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.featureFlags.TwoZeroTwoSixZeroThree.item.flags.item.portals.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the portal for which the flag state is being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder this[int position]
         {
@@ -37,7 +37,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Featur
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.featureFlags.TwoZeroTwoSixZeroThree.item.flags.item.portals.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the portal for which the flag state is being retrieved.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.FeatureFlags.TwoZeroTwoSixZeroThree.Item.Flags.Item.Portals.Item.WithPortalItemRequestBuilder this[string position]
@@ -120,6 +120,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.PublicAppFeatureFlagsV3.V202603.Featur
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>The ID of the portal to start the list from. Useful for pagination.</summary>
             [QueryParameter("startPortalId")]
             public int? StartPortalId { get; set; }
         }

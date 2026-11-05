@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
-    /// <summary>The category of the association, such as &quot;HUBSPOT_DEFINED&quot;.</summary>
+    /// <summary>A string representing the category of the association. This property defines the broader classification of the association.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AssociationSpec_associationCategory
     {

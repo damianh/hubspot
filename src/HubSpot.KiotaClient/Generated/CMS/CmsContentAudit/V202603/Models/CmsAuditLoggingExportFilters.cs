@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CMS.CmsContentAudit.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The objectType property</summary>
+        /// <summary>An array of strings representing the types of objects to filter by during the export. Valid object types include &apos;BLOG&apos;, &apos;BLOG_POST&apos;, &apos;LANDING_PAGE&apos;, &apos;WEBSITE_PAGE&apos;, &apos;TEMPLATE&apos;, &apos;MODULE&apos;, &apos;GLOBAL_MODULE&apos;, &apos;SERVERLESS_FUNCTION&apos;, &apos;DOMAIN&apos;, &apos;URL_MAPPING&apos;, &apos;EMAIL&apos;, &apos;CONTENT_SETTINGS&apos;, &apos;HUBDB_TABLE&apos;, &apos;KNOWLEDGE_BASE_ARTICLE&apos;, &apos;KNOWLEDGE_BASE&apos;, &apos;THEME&apos;, &apos;CSS&apos;, &apos;JS&apos;, &apos;CTA&apos;, &apos;FILE&apos;, &apos;WEB_INTERACTIVE&apos;, &apos;PODCAST&apos;, &apos;CASE_STUDY&apos;, and &apos;QUOTE&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ObjectType { get; set; }

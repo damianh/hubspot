@@ -34,7 +34,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
         {
         }
         /// <summary>
-        /// This endpoint allows you to retrieve multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// Batch read associations for objects to specific object type. The &apos;after&apos; field in a returned paging object  can be added alongside the &apos;id&apos; to retrieve the next page of associations from that objectId. The &apos;link&apos; field is deprecated and should be ignored. Note: The &apos;paging&apos; field will only be present if there are more pages and absent otherwise.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Crm.V3.Associations.It
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Associations.V3.Models.BatchResponsePublicAssociationMulti.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to retrieve multiple associations between specified &apos;from&apos; and &apos;to&apos; object types in a single batch request.
+        /// Batch read associations for objects to specific object type. The &apos;after&apos; field in a returned paging object  can be added alongside the &apos;id&apos; to retrieve the next page of associations from that objectId. The &apos;link&apos; field is deprecated and should be ignored. Note: The &apos;paging&apos; field will only be present if there are more pages and absent otherwise.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

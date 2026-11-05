@@ -90,10 +90,10 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GenerateRequestBuilderPostQueryParameters 
         {
-            /// <summary>The identifier of the business unit. Defaults to 0 if not specified.</summary>
+            /// <summary>The ID of the business unit for which the links are generated. It is an optional parameter and defaults to 0.</summary>
             [QueryParameter("businessUnitId")]
             public long? BusinessUnitId { get; set; }
-            /// <summary>The communication channel for which the links are generated. Must be &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the links are generated. Currently, only &apos;EMAIL&apos; is supported.</summary>
             [Obsolete("This property is deprecated, use ChannelAsPostChannelQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +104,7 @@ namespace DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V20
             [QueryParameter("channel")]
             public string Channel { get; set; }
 #endif
-            /// <summary>The communication channel for which the links are generated. Must be &apos;EMAIL&apos;.</summary>
+            /// <summary>The communication channel for which the links are generated. Currently, only &apos;EMAIL&apos; is supported.</summary>
             [QueryParameter("channel")]
             public global::DamianH.HubSpot.KiotaClient.CommunicationPreferences.Subscriptions.V202603.CommunicationPreferences.TwoZeroTwoSixZeroThree.Links.Generate.PostChannelQueryParameterType? ChannelAsPostChannelQueryParameterType { get; set; }
         }

@@ -28,7 +28,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/pipelines/2026-03/{objectType}/{pipelineId}/stages/{stageId}", pathParameters)
+        public WithStageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/pipelines/2026-03/{objectType}/{pipelineId}/stages/{stageId}{?validateReferencesBeforeDelete*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,28 +36,28 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/pipelines/2026-03/{objectType}/{pipelineId}/stages/{stageId}", rawUrl)
+        public WithStageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/pipelines/2026-03/{objectType}/{pipelineId}/stages/{stageId}{?validateReferencesBeforeDelete*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete a pipeline stage
+        /// Delete a specific stage from a pipeline.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder.WithStageItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder.WithStageItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return a pipeline stage by ID
+        /// Retrieve a specific stage from a pipeline using its ID.
         /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,6 +74,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Perform a partial update on a specific stage of a pipeline.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,17 +115,17 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Models.PipelineStage.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a pipeline stage
+        /// Delete a specific stage from a pipeline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder.WithStageItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder.WithStageItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -130,7 +133,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return requestInfo;
         }
         /// <summary>
-        /// Return a pipeline stage by ID
+        /// Retrieve a specific stage from a pipeline using its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,6 +151,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Perform a partial update on a specific stage of a pipeline.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,11 +205,22 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZer
             return new global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Delete a specific stage from a pipeline.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithStageItemRequestBuilderDeleteQueryParameters 
+        {
+            #pragma warning disable CS1591
+            [QueryParameter("validateReferencesBeforeDelete")]
+            public bool? ValidateReferencesBeforeDelete { get; set; }
+            #pragma warning restore CS1591
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithStageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithStageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::DamianH.HubSpot.KiotaClient.CRM.Pipelines.V202603.Crm.Pipelines.TwoZeroTwoSixZeroThree.Item.Item.Stages.Item.WithStageItemRequestBuilder.WithStageItemRequestBuilderDeleteQueryParameters>
         {
         }
         /// <summary>

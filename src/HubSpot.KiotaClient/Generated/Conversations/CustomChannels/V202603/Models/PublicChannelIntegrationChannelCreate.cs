@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The capabilities property</summary>
+        /// <summary>An object that defines the capabilities of the channel, with additional properties as key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelCreate_capabilities? Capabilities { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public global::DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Models.PublicChannelIntegrationChannelCreate_capabilities Capabilities { get; set; }
 #endif
-        /// <summary>The channelAccountConnectionRedirectUrl property</summary>
+        /// <summary>A string representing the URL to which users will be redirected to connect their channel account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelAccountConnectionRedirectUrl { get; set; }
@@ -30,7 +30,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelAccountConnectionRedirectUrl { get; set; }
 #endif
-        /// <summary>The channelDescription property</summary>
+        /// <summary>A string providing a description of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelDescription { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelDescription { get; set; }
 #endif
-        /// <summary>The channelLogoUrl property</summary>
+        /// <summary>A string representing the URL of the channel&apos;s logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChannelLogoUrl { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string ChannelLogoUrl { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>A string representing the name of the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Conversations.CustomChannels.V202603.Model
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The webhookUrl property</summary>
+        /// <summary>A string representing the URL to which webhook events will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookUrl { get; set; }

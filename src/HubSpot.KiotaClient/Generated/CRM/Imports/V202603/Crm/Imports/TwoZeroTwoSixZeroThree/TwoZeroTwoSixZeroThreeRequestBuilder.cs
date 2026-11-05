@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
     public partial class TwoZeroTwoSixZeroThreeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.crm.imports.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the import to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwoSixZeroThree.Item.WithImportItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwoSixZeroThree.Item.WithImportItemRequestBuilder this[long position]
         {
@@ -31,7 +31,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
             }
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.crm.imports.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the import to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwoSixZeroThree.Item.WithImportItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwoSixZeroThree.Item.WithImportItemRequestBuilder this[string position]
@@ -59,6 +59,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
         public TwoZeroTwoSixZeroThreeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crm/imports/2026-03{?after*,limit*}", rawUrl)
         {
         }
+        /// <summary>
+        /// Retrieve a list of imports in your HubSpot account. This endpoint allows you to view the imports that have been processed, providing details about each import. It supports pagination to navigate through large sets of import data.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.CollectionResponsePublicImportResponseForwardPaging"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +77,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.CollectionResponsePublicImportResponseForwardPaging>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.CollectionResponsePublicImportResponseForwardPaging.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Create a new import in your HubSpot account by uploading files and specifying import settings. This endpoint allows you to initiate the import process by providing the necessary files and configuration details.
+        /// </summary>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.PublicImportResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,6 +97,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.PublicImportResponse>(requestInfo, global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Models.PublicImportResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Retrieve a list of imports in your HubSpot account. This endpoint allows you to view the imports that have been processed, providing details about each import. It supports pagination to navigate through large sets of import data.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,6 +116,9 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Create a new import in your HubSpot account by uploading files and specifying import settings. This endpoint allows you to initiate the import process by providing the necessary files and configuration details.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,10 +147,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwo
         {
             return new global::DamianH.HubSpot.KiotaClient.CRM.Imports.V202603.Crm.Imports.TwoZeroTwoSixZeroThree.TwoZeroTwoSixZeroThreeRequestBuilder(rawUrl, RequestAdapter);
         }
+        /// <summary>
+        /// Retrieve a list of imports in your HubSpot account. This endpoint allows you to view the imports that have been processed, providing details about each import. It supports pagination to navigate through large sets of import data.
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        #pragma warning disable CS1591
         public partial class TwoZeroTwoSixZeroThreeRequestBuilderGetQueryParameters 
-        #pragma warning restore CS1591
         {
             /// <summary>The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

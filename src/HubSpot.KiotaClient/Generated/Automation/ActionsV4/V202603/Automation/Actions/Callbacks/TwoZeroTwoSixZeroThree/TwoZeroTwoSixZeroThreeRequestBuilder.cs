@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Ac
             get => new global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.Callbacks.TwoZeroTwoSixZeroThree.Complete.CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.automation.actions.callbacks.TwoZeroTwoSixZeroThree.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the callback to complete.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.Callbacks.TwoZeroTwoSixZeroThree.Item.WithCallbackItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Automation.ActionsV4.V202603.Automation.Actions.Callbacks.TwoZeroTwoSixZeroThree.Item.WithCallbackItemRequestBuilder this[string position]
         {

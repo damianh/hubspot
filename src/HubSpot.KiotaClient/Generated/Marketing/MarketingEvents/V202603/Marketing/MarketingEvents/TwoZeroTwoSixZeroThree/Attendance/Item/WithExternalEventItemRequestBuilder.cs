@@ -16,7 +16,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketin
     public partial class WithExternalEventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.marketing.marketingEvents.TwoZeroTwoSixZeroThree.attendance.item.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The state of the subscriber&apos;s attendance, such as &apos;register&apos;, &apos;attend&apos;, or &apos;cancel&apos;.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.Attendance.Item.Item.WithSubscriberStateItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V202603.Marketing.MarketingEvents.TwoZeroTwoSixZeroThree.Attendance.Item.Item.WithSubscriberStateItemRequestBuilder this[string position]
         {

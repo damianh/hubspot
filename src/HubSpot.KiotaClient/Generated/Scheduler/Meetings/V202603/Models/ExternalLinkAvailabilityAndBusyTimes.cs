@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allUsersBusyTimes property</summary>
+        /// <summary>An array of objects representing the busy times for all users associated with the meeting link. Each object includes the user&apos;s busy time ranges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalUserBusyTimes>? AllUsersBusyTimes { get; set; }

@@ -23,11 +23,11 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The position of the item relative to others in the list.</summary>
+        /// <summary>Options are displayed in order starting with the lowest positive integer value. Values of -1 will cause the option to be displayed after any positive values.</summary>
         public int? DisplayOrder { get; set; }
-        /// <summary>Whether the option is displayed in HubSpot&apos;s UI.</summary>
+        /// <summary>Hidden options will not be displayed in HubSpot.</summary>
         public bool? Hidden { get; set; }
-        /// <summary>A user-friendly label that identifies the option.</summary>
+        /// <summary>A human-readable option label that will be shown in HubSpot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -35,7 +35,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.Properties.V202509.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The actual value of the option.</summary>
+        /// <summary>The internal value of the option, which must be used when setting the property value through the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

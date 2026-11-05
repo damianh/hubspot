@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain property</summary>
+        /// <summary>A string specifying the domain where the web version of the email is hosted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get; set; }
@@ -22,13 +22,13 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>A boolean indicating whether the web version of the email is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The expiresAt property</summary>
+        /// <summary>A string in date-time format specifying when the web version page will expire.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The isPageRedirected property</summary>
+        /// <summary>A boolean indicating whether the web version page is redirected to another URL.</summary>
         public bool? IsPageRedirected { get; set; }
-        /// <summary>The metaDescription property</summary>
+        /// <summary>A string providing the meta description for the web version of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MetaDescription { get; set; }
@@ -36,9 +36,9 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string MetaDescription { get; set; }
 #endif
-        /// <summary>The pageExpiryEnabled property</summary>
+        /// <summary>A boolean indicating whether the web version page has an expiry set.</summary>
         public bool? PageExpiryEnabled { get; set; }
-        /// <summary>The redirectToPageId property</summary>
+        /// <summary>A string representing the ID of the page to which the web version is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RedirectToPageId { get; set; }
@@ -46,7 +46,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string RedirectToPageId { get; set; }
 #endif
-        /// <summary>The redirectToUrl property</summary>
+        /// <summary>A string containing the URL to which the web version page is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RedirectToUrl { get; set; }
@@ -54,7 +54,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string RedirectToUrl { get; set; }
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>A string representing the unique slug for the web version of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get; set; }
@@ -62,7 +62,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Slug { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>A string representing the title of the web version of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEmails.V202603.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>A string containing the full URL of the web version of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

@@ -70,6 +70,14 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models
 #else
         public List<string> RoleIds { get; set; }
 #endif
+        /// <summary>The seatNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SeatNames { get; set; }
+#nullable restore
+#else
+        public List<string> SeatNames { get; set; }
+#endif
         /// <summary>The user&apos;s additional teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +122,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models
                 { "primaryTeamId", n => { PrimaryTeamId = n.GetStringValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
                 { "roleIds", n => { RoleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "seatNames", n => { SeatNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "secondaryTeamIds", n => { SecondaryTeamIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sendWelcomeEmail", n => { SendWelcomeEmail = n.GetBoolValue(); } },
                 { "superAdmin", n => { SuperAdmin = n.GetBoolValue(); } },
@@ -133,6 +142,7 @@ namespace DamianH.HubSpot.KiotaClient.Settings.UserProvisioning.V202603.Models
             writer.WriteStringValue("primaryTeamId", PrimaryTeamId);
             writer.WriteStringValue("roleId", RoleId);
             writer.WriteCollectionOfPrimitiveValues<string>("roleIds", RoleIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("seatNames", SeatNames);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryTeamIds", SecondaryTeamIds);
             writer.WriteBoolValue("sendWelcomeEmail", SendWelcomeEmail);
             writer.WriteBoolValue("superAdmin", SuperAdmin);

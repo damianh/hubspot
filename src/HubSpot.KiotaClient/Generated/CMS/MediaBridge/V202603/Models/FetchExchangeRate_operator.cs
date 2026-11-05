@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace DamianH.HubSpot.KiotaClient.CMS.MediaBridge.V202603.Models
 {
+    /// <summary>A string representing the operation to be performed, with a default value of &apos;FETCH_EXCHANGE_RATE&apos;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum FetchExchangeRate_operator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "FETCH_EXCHANGE_RATE")]
         #pragma warning disable CS1591

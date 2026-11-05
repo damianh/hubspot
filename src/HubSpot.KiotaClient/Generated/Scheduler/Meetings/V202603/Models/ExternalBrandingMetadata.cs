@@ -12,7 +12,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
     public partial class ExternalBrandingMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The secondary accent color used in branding.</summary>
+        /// <summary>The second accent color used for branding, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Accent2Color { get; set; }
@@ -20,7 +20,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string Accent2Color { get; set; }
 #endif
-        /// <summary>The primary accent color used in branding.</summary>
+        /// <summary>The accent color used for branding, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccentColor { get; set; }
@@ -38,7 +38,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyAddressLine1 { get; set; }
 #endif
-        /// <summary>The second line of the company&apos;s address.</summary>
+        /// <summary>The second line of the company&apos;s address, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyAddressLine2 { get; set; }
@@ -70,7 +70,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyCountry { get; set; }
 #endif
-        /// <summary>The domain of the company&apos;s website.</summary>
+        /// <summary>The domain of the company, typically used in URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyDomain { get; set; }
@@ -86,7 +86,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyName { get; set; }
 #endif
-        /// <summary>The state where the company is located.</summary>
+        /// <summary>The state or region where the company is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyState { get; set; }
@@ -94,7 +94,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyState { get; set; }
 #endif
-        /// <summary>The ZIP code of the company&apos;s location.</summary>
+        /// <summary>The postal or ZIP code of the company&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyZip { get; set; }
@@ -102,7 +102,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string CompanyZip { get; set; }
 #endif
-        /// <summary>The alternative text for the current logo.</summary>
+        /// <summary>The alternative text for the company logo, used for accessibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoAltText { get; set; }
@@ -110,9 +110,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string LogoAltText { get; set; }
 #endif
-        /// <summary>The height of the logo in pixels.</summary>
+        /// <summary>The height of the company logo in pixels.</summary>
         public int? LogoHeight { get; set; }
-        /// <summary>The URL of a custom logo image.</summary>
+        /// <summary>The URL of the company logo image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoUrl { get; set; }
@@ -120,9 +120,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string LogoUrl { get; set; }
 #endif
-        /// <summary>The width of the logo in pixels.</summary>
+        /// <summary>The width of the company logo in pixels.</summary>
         public int? LogoWidth { get; set; }
-        /// <summary>The primary color used in branding.</summary>
+        /// <summary>The primary color used for branding, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryColor { get; set; }
@@ -130,7 +130,7 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string PrimaryColor { get; set; }
 #endif
-        /// <summary>The secondary color used in branding.</summary>
+        /// <summary>The secondary color used for branding, represented as a string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryColor { get; set; }
@@ -138,9 +138,9 @@ namespace DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models
 #else
         public string SecondaryColor { get; set; }
 #endif
-        /// <summary>Whether Hubspot Marketing ads are shown.</summary>
+        /// <summary>Indicates whether a marketing advertisement should be displayed. This is a boolean value.</summary>
         public bool? ShowMarketingAd { get; set; }
-        /// <summary>Whether Hubspot Sales ads are shown.</summary>
+        /// <summary>Indicates whether a sales advertisement should be displayed. This is a boolean value.</summary>
         public bool? ShowSalesAd { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::DamianH.HubSpot.KiotaClient.Scheduler.Meetings.V202603.Models.ExternalBrandingMetadata"/> and sets the default values.

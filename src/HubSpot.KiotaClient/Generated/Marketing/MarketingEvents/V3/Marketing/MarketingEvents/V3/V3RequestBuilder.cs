@@ -78,19 +78,23 @@ namespace DamianH.HubSpot.KiotaClient.Marketing.MarketingEvents.V3.Marketing.Mar
         public partial class V3RequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
-            /// <summary>The cursor indicating the position of the last retrieved item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string? After { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public string After { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>The limit for response size. The default value is 10, the max number is 100</summary>
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

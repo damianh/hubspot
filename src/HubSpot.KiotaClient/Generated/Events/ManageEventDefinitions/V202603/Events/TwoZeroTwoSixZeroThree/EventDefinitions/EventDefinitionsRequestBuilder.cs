@@ -19,7 +19,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Even
     public partial class EventDefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.events.TwoZeroTwoSixZeroThree.eventDefinitions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique name of the event whose definition you want to retrieve.</param>
         /// <returns>A <see cref="global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Events.TwoZeroTwoSixZeroThree.EventDefinitions.Item.WithEventNameItemRequestBuilder"/></returns>
         public global::DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Events.TwoZeroTwoSixZeroThree.EventDefinitions.Item.WithEventNameItemRequestBuilder this[string position]
         {
@@ -150,11 +150,13 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Even
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>A boolean indicating whether to include properties of the event definitions in the response.</summary>
             [QueryParameter("includeProperties")]
             public bool? IncludeProperties { get; set; }
             /// <summary>The maximum number of results to display per page.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>A string used to search for event definitions by name or other attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("searchString")]
@@ -164,6 +166,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Even
             [QueryParameter("searchString")]
             public string SearchString { get; set; }
 #endif
+            /// <summary>A string specifying the order in which results should be sorted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]

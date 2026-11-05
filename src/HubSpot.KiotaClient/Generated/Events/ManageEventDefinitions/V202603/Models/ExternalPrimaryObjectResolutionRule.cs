@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventPropertyName property</summary>
+        /// <summary>The name of the property on the event. This is a string that identifies which property of the event is being used in the resolution rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventPropertyName { get; set; }
@@ -22,7 +22,7 @@ namespace DamianH.HubSpot.KiotaClient.Events.ManageEventDefinitions.V202603.Mode
 #else
         public string EventPropertyName { get; set; }
 #endif
-        /// <summary>The targetObjectPropertyName property</summary>
+        /// <summary>The name of the property on the target object. This is a string that identifies which property of the target object is being referred to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetObjectPropertyName { get; set; }

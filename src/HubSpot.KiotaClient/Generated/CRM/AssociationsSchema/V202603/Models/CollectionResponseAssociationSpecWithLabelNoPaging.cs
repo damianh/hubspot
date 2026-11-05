@@ -14,7 +14,7 @@ namespace DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>An array of association specifications with labels, where each item defines a specific association type between two object types. Each specification includes details such as category, typeId, and labels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::DamianH.HubSpot.KiotaClient.CRM.AssociationsSchema.V202603.Models.AssociationSpecWithLabel>? Results { get; set; }
