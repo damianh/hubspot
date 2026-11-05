@@ -8,16 +8,11 @@
     <IsTrimmable>true</IsTrimmable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
-    <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == ''">0</BUILD_NUMBER>
     <AnalysisMode>All</AnalysisMode>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
-    <!--MinVer-->
-    <MinVerTagPrefix>v</MinVerTagPrefix>
-    <MinVerMinimumMajorMinor>0.1</MinVerMinimumMajorMinor>
-    <MinVerBuildMetadata>build.$(BUILD_NUMBER)</MinVerBuildMetadata>
-    <MinVerAutoIncrement>patch</MinVerAutoIncrement>
+    <Version Condition="'$(Version)' == ''">$([System.DateTime]::UtcNow.ToString('yy.M', $([System.Globalization.CultureInfo]::GetCultureInfo('')))).0-dev</Version>
 
     <!--SourceLink-->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -42,10 +37,6 @@
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MinVer" Version="8.0.0" PrivateAssets="all" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="$(PackageReadmePath)" Pack="true" PackagePath="" />

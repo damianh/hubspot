@@ -15,6 +15,30 @@ A comprehensive .NET library for interacting with HubSpot APIs.
 | **DamianH.HubSpot.MockServer** | In-memory mock HubSpot server for testing without external dependencies | [![NuGet](https://img.shields.io/nuget/v/DamianH.HubSpot.MockServer.svg)](https://www.nuget.org/packages/DamianH.HubSpot.MockServer/) | [![Downloads](https://img.shields.io/nuget/dt/DamianH.HubSpot.MockServer.svg)](https://www.nuget.org/packages/DamianH.HubSpot.MockServer/) |
 | **DamianH.HubSpot.Cli** | CLI tool for interacting with the HubSpot API | [![NuGet](https://img.shields.io/nuget/v/DamianH.HubSpot.Cli.svg)](https://www.nuget.org/packages/DamianH.HubSpot.Cli/) | [![Downloads](https://img.shields.io/nuget/dt/DamianH.HubSpot.Cli.svg)](https://www.nuget.org/packages/DamianH.HubSpot.Cli/) |
 
+## Versioning
+
+All three packages use calendar versioning: **YY.M.REVISION**, for example
+`26.11.1`. The year and month come from the UTC release date, without leading
+zeros. Stable revisions start at 1 and increment within each month, resetting
+to 1 in the next month.
+
+Run the `release` workflow to publish a stable release. It automatically chooses
+the next revision from existing `vYY.M.REVISION` tags and uses the same version
+for all packages and the GitHub release. The workflow always publishes to GitHub
+Packages; enable `push_to_nuget` to publish to NuGet.org as well. Existing tags
+are never replaced, and historical semantic-versioned releases remain intact.
+Release runs are serialized; a conflicting tag creation fails rather than
+overwriting a release.
+
+Local builds default to `YY.M.0-dev`. CI packages use
+`YY.M.0-ci.RUN_ID.RUN_ATTEMPT` and are uploaded as artifacts, not published.
+Revision 0 is reserved for these prerelease builds. To build and pack with a
+specific version, pass the same `-p:Version=26.11.1` to both commands.
+
+Calendar versions indicate release timing, **not backwards compatibility**.
+Review release notes before upgrading, particularly when generated HubSpot APIs
+have changed or been removed.
+
 ## Quick Start
 
 ### Using the HubSpot Client
