@@ -30,6 +30,17 @@ are never replaced, and historical semantic-versioned releases remain intact.
 Release runs are serialized; a conflicting tag creation fails rather than
 overwriting a release.
 
+NuGet.org publishing uses [Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing)
+instead of a stored API key. The `damianh` NuGet account must have a policy for
+repository `damianh/hubspot`, workflow `release.yml`, environment `nuget.org`,
+and permission to push new versions of `DamianH.HubSpot.*`.
+
+If a release fails after its tag and all packages have reached GitHub Packages,
+run the workflow again with `resume_tag` set to the existing tag and
+`push_to_nuget` enabled. The workflow verifies the tag's commit and reuses the
+exact packages already on GitHub; it fails if any package is missing or does not
+match the tagged commit.
+
 Local builds default to `YY.M.0-dev`. CI packages use
 `YY.M.0-ci.RUN_ID.RUN_ATTEMPT` and are uploaded as artifacts, not published.
 Revision 0 is reserved for these prerelease builds. To build and pack with a
